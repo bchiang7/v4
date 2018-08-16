@@ -1,0 +1,53 @@
+{
+  "name": "v4",
+  "description": "Personal Website V4",
+  "version": "1.0.0",
+  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bchiang7/v4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gatsby develop",
+    "precommit": "pretty-quick --staged && lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
+    "gatsby-plugin-netlify": "^1.0.21",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-sitemap": "^1.2.25",
+    "gatsby-plugin-styled-components": "^2.0.11",
+    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-remark": "^1.7.44",
+    "prop-types": "^15.6.2",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^3.4.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.3.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0"
+  }
+}
