@@ -7,13 +7,6 @@ import Email from '../components/email';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-import { Main } from '../style';
-
-const MainContainer = Main.extend`
-  padding: 0 150px;
-  counter-reset: section;
-`;
-
 const Layout = ({ children, data }) => (
   <div id="root">
     <Helmet
@@ -29,7 +22,7 @@ const Layout = ({ children, data }) => (
     <Social />
     <Email emailAddress={data.site.siteMetadata.email} />
 
-    <MainContainer>{children()}</MainContainer>
+    {children()}
 
     <Footer />
   </div>

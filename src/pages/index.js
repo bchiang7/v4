@@ -1,13 +1,22 @@
 import React from 'react';
-import Link from 'gatsby-link';
+
+import Hero from '../components/hero';
+import About from '../components/about';
+import Jobs from '../components/jobs';
+
+import { Main } from '../style';
+
+const MainContainer = Main.extend`
+  padding: 0 150px;
+  counter-reset: section;
+`;
 
 const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
+  <MainContainer>
+    <Hero />
+    <About />
+    <Jobs />
+  </MainContainer>
 );
 
 export default IndexPage;

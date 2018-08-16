@@ -14,6 +14,7 @@ import Nav from './Nav';
 import Main from './Main';
 import Section from './Section';
 import Footer from './Footer';
+import H3 from './H3';
 
 export {
   theme,
@@ -32,4 +33,5 @@ export {
   Main,
   Section,
   Footer,
+  H3,
 };

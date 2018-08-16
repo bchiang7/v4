@@ -47,6 +47,9 @@
     "no-useless-constructor": "error",
     "no-var": "error",
     "prefer-const": "error",
-    "prefer-template": "error"
+    "prefer-template": "error",
+
+    // React
+    "react/no-unescaped-entities": ["error", { "forbid": [">", "\"", "}"] }]
   }
 }

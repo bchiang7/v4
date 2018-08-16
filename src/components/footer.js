@@ -13,6 +13,9 @@ const FooterContainer = styled.footer`
   text-align: center;
   height: 80px;
 `;
+const Copy = P.extend`
+  margin-bottom: 3px;
+`;
 const GithubLink = A.extend`
   ${mixins.inlineLink};
   color: ${theme.colors.lightGrey};
@@ -26,7 +29,7 @@ const GithubLink = A.extend`
 
 const Footer = () => (
   <FooterContainer>
-    <P>Designed &amp; Developed by Brittany Chiang</P>
+    <Copy>Designed &amp; Developed by Brittany Chiang</Copy>
     <GithubLink to="#" target="_blank" rel="noopener">
       View Source
     </GithubLink>

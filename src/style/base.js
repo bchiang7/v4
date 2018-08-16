@@ -26,7 +26,7 @@ const base = injectGlobal`
     background-color: ${theme.colors.navy};
     color: ${theme.colors.slate};
     font-family: ${theme.fonts.Calibre};
-    font-size: ${theme.fontSizes.base};
+    font-size: ${theme.fontSizes.xlarge};
 
     &.loading {
       overflow: hidden;
