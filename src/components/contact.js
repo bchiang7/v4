@@ -6,7 +6,7 @@ import { theme, mixins, Section, H3, A, P } from '../style';
 const ContactContainer = Section.extend`
   text-align: center;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
 `;
 const Next = H3.extend`
   color: ${theme.colors.green};
@@ -31,6 +31,7 @@ const Title = styled.h4`
 `;
 const EmailLink = A.extend`
   ${mixins.bigButton};
+  margin-top: 50px;
 `;
 
 const Contact = () => (

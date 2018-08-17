@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import IconLogo from './icons/logo';
 
@@ -42,8 +42,6 @@ const LogoLink = A.extend`
   height: 40px;
 
   &:hover {
-    opacity: 0.8;
-
     svg {
       fill: ${theme.colors.transGreen};
     }
@@ -85,35 +83,90 @@ const ResumeLink = A.extend`
   font-size: ${theme.fontSizes.smallish};
 `;
 
-const Header = () => (
-  <HeaderContainer>
-    <Navbar>
-      <Logo>
-        <LogoLink to="/" target="_blank" rel="noopener">
-          <IconLogo />
-        </LogoLink>
-      </Logo>
-      <NavLinks>
-        <NavList>
-          <NavListItem>
-            <NavLink to="#">About</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink to="#">Experience</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink to="#">Work</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink to="#">Contact</NavLink>
-          </NavListItem>
-        </NavList>
-        <ResumeLink to="#" target="_blank" rel="noopener">
-          Resume
-        </ResumeLink>
-      </NavLinks>
-    </Navbar>
-  </HeaderContainer>
-);
+const DELTA = 5;
+
+class Header extends Component {
+  state = {
+    didScroll: false,
+    lastScrollTop: 0,
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => this.setState({ didScroll: true }));
+
+    // throttle scroll event
+    setInterval(() => {
+      if (this.state.didScroll) {
+        this.handleScroll();
+        this.setState({ didScroll: false });
+      }
+    }, 200);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const fromTop = window.scrollY;
+    const { lastScrollTop } = this.state;
+
+    const navbarHeight = this.header.offsetHeight;
+
+    // Make sure they scroll more than DELTA
+    if (Math.abs(lastScrollTop - fromTop) <= DELTA) {
+      return;
+    }
+
+    if (fromTop === 0) {
+      this.header.classList.remove('nav-down', 'nav-up');
+    } else if (fromTop > lastScrollTop && fromTop > navbarHeight) {
+      // Scroll Down
+      this.header.classList.remove('nav-down');
+      this.header.classList.add('nav-up');
+    } else {
+      // Scroll Up
+      if (fromTop + window.innerHeight < document.body.scrollHeight) {
+        this.header.classList.remove('nav-up');
+        this.header.classList.add('nav-down');
+      }
+    }
+
+    this.setState({ lastScrollTop: fromTop });
+  }
+
+  render() {
+    return (
+      <HeaderContainer innerRef={x => (this.header = x)}>
+        <Navbar>
+          <Logo>
+            <LogoLink to="/" target="_blank" rel="noopener">
+              <IconLogo />
+            </LogoLink>
+          </Logo>
+          <NavLinks>
+            <NavList>
+              <NavListItem>
+                <NavLink to="#">About</NavLink>
+              </NavListItem>
+              <NavListItem>
+                <NavLink to="#">Experience</NavLink>
+              </NavListItem>
+              <NavListItem>
+                <NavLink to="#">Work</NavLink>
+              </NavListItem>
+              <NavListItem>
+                <NavLink to="#">Contact</NavLink>
+              </NavListItem>
+            </NavList>
+            <ResumeLink to="#" target="_blank" rel="noopener">
+              Resume
+            </ResumeLink>
+          </NavLinks>
+        </Navbar>
+      </HeaderContainer>
+    );
+  }
+}
 
 export default Header;
