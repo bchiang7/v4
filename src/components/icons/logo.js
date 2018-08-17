@@ -5,7 +5,6 @@ const IconLogo = () => (
     <title>Logo</title>
     <g>
       <g
-        id="B"
         transform="translate(36, 33)"
         fill="#64FFDA"
         fontFamily="Calibre-Medium, Calibre"

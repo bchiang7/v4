@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import Loader from '../components/loader';
+import Header from '../components/header';
 import Social from '../components/social';
 import Email from '../components/email';
-import Header from '../components/header';
 import Footer from '../components/footer';
 
 const Layout = ({ children, data }) => (
@@ -17,9 +18,12 @@ const Layout = ({ children, data }) => (
       ]}
     />
 
+    <Loader />
+
     <Header />
 
     <Social />
+
     <Email emailAddress={data.site.siteMetadata.email} />
 
     {children()}

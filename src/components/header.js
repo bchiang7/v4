@@ -46,6 +46,7 @@ const LogoLink = A.extend`
   svg {
     fill: none;
     transition: ${theme.transition};
+    user-select: none;
   }
 `;
 const NavLinks = styled.div`
