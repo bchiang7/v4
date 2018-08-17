@@ -25,7 +25,6 @@ const Tab = A.extend`
   text-align: center;
   transition: ${theme.transition};
   border-left: 2px solid ${theme.colors.darkGrey};
-  border-radius: ${theme.borderRadius};
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.small};
   color: ${props => (props.isActive ? theme.colors.green : theme.colors.grey)};

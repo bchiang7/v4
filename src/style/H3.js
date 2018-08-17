@@ -5,7 +5,7 @@ const H3 = styled.h3`
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin: 10px 0 40px;
   font-size: ${theme.fontSizes.h3};
 
   &:before {

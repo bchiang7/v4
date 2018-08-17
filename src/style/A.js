@@ -8,6 +8,7 @@ const A = styled.a`
   color: inherit;
   position: relative;
   transition: ${theme.transition};
+  cursor: pointer;
 
   &:focus {
     outline-color: ${theme.colors.blue};

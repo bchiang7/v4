@@ -11,7 +11,7 @@ const FooterContainer = styled.footer`
   font-size: ${theme.fontSizes.medium};
   color: ${theme.colors.slate};
   text-align: center;
-  height: 80px;
+  height: 75px;
 `;
 const Copy = P.extend`
   margin-bottom: 3px;

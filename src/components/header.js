@@ -43,10 +43,15 @@ const LogoLink = A.extend`
 
   &:hover {
     opacity: 0.8;
+
+    svg {
+      fill: ${theme.colors.transGreen};
+    }
   }
 
   svg {
     fill: none;
+    transition: ${theme.transition};
   }
 `;
 const NavLinks = styled.div`

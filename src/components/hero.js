@@ -7,8 +7,7 @@ const HeroContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
-  padding: ${theme.navbarHeight} 0 0 0;
-  min-height: calc(100vh - ${theme.navbarHeight});
+  min-height: 100vh;
 `;
 const Hi = styled.h1`
   color: ${theme.colors.green};

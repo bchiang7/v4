@@ -25,9 +25,7 @@ const SocialContainer = styled.div`
 const SocialItemList = Ul.extend`
   margin-bottom: 10px;
 `;
-const SocialItem = styled.li`
-  margin: 5px auto;
-`;
+const SocialItem = styled.li``;
 const SocialLink = A.extend`
   padding: 10px;
 
