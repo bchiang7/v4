@@ -4,4 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
- // You can delete this file if you're not using it
+// exports.onCreateNode = ({ node, boundActionCreators }) => {
+//   const { createNode, createNodeField } = boundActionCreators;
+//   // Transform the new node here and create a new node or
+//   // create a new node field.
+// };
