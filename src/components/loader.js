@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import anime from 'animejs';
 
 import styled from 'styled-components';
@@ -35,8 +36,6 @@ const LogoWrapper = styled.div`
 `;
 
 class Loader extends Component {
-  state = {};
-
   componentDidMount() {
     document.body.style.overflow = 'hidden';
     this.animate();
