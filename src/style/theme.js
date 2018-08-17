@@ -50,7 +50,7 @@ const theme = {
   headerScrollHeight: '70px',
   margin: '20px',
   padding: '15px',
-  tabHeight: '40px',
+  tabHeight: 40,
 };
 
 export default theme;
