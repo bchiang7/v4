@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { throttle } from '../utils';
 
 import { IconLogo } from './icons';
 
@@ -15,11 +16,11 @@ const HeaderContainer = styled.header`
   z-index: 10;
   width: 100%;
   height: ${props =>
-    props.scrollDirection === 'none' ? theme.navbarHeight : theme.navbarScrollHeight};
+    props.scrollDirection === 'none' ? theme.headerHeight : theme.headerScrollHeight};
   box-shadow: ${props =>
     props.scrollDirection === 'up' ? `0 2px 4px ${theme.colors.transNavy}` : 'none'};
   transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.navbarScrollHeight}` : '0px')}
+    ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
   );
 `;
 const Navbar = Nav.extend`
@@ -84,46 +85,36 @@ const DELTA = 5;
 
 class Header extends Component {
   state = {
-    didScroll: false,
+    headerHeight: null,
     lastScrollTop: 0,
     scrollDirection: 'none',
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', () => this.setState({ didScroll: true }));
+    this.setState({ headerHeight: this.header.offsetHeight });
 
-    // throttle scroll event
-    setInterval(() => {
-      if (this.state.didScroll) {
-        this.handleScroll();
-        this.setState({ didScroll: false });
-      }
-    }, 200);
+    window.addEventListener('scroll', () => throttle(this.handleScroll()));
   }
 
   componentWillUnmount() {
-    // TODO: need to clear the setInterval
     window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll() {
-    const { lastScrollTop } = this.state;
+    const { headerHeight, lastScrollTop } = this.state;
     const fromTop = window.scrollY;
-    const navbarHeight = this.header.offsetHeight;
 
     // Make sure they scroll more than DELTA
     if (Math.abs(lastScrollTop - fromTop) <= DELTA) {
       return;
     }
 
-    if (fromTop === 0) {
+    if (fromTop < DELTA) {
       this.setState({ scrollDirection: 'none' });
-    } else if (fromTop > lastScrollTop && fromTop > navbarHeight) {
+    } else if (fromTop > lastScrollTop && fromTop > headerHeight) {
       this.setState({ scrollDirection: 'down' });
-    } else {
-      if (fromTop + window.innerHeight < document.body.scrollHeight) {
-        this.setState({ scrollDirection: 'up' });
-      }
+    } else if (fromTop + window.innerHeight < document.body.scrollHeight) {
+      this.setState({ scrollDirection: 'up' });
     }
 
     this.setState({ lastScrollTop: fromTop });

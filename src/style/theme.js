@@ -46,8 +46,8 @@ const theme = {
   transition: 'all 0.25s ease-in-out',
 
   borderRadius: '2px',
-  navbarHeight: '100px',
-  navbarScrollHeight: '70px',
+  headerHeight: '100px',
+  headerScrollHeight: '70px',
   margin: '20px',
   padding: '15px',
   tabHeight: '40px',

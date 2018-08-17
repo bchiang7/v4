@@ -13,6 +13,8 @@ const SocialContainer = styled.div`
   position: fixed;
   bottom: 0;
   left: 40px;
+  vertical-align: middle;
+  width: 40px;
 
   &:after {
     content: '';

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Personal Website V4',
+    title: 'V4',
     siteUrl: `https://brittanychiang.com`,
     description: `Description TBD`,
     email: `brittany.chiang@gmail.com`,

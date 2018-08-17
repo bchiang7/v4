@@ -11,6 +11,8 @@ const EmailContainer = styled.div`
   position: fixed;
   bottom: 0;
   right: 40px;
+  vertical-align: middle;
+  width: 40px;
 
   &:after {
     content: '';
@@ -26,8 +28,9 @@ const EmailLink = A.extend`
   color: ${theme.colors.lightSlate};
   letter-spacing: 0.5px;
   writing-mode: vertical-rl;
-  margin: 20px auto;
+  margin: 20px 0;
   padding: 10px;
+  right: -1px;
 `;
 
 const Email = ({ emailAddress }) => (
