@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import IconLogo from './icons/logo';
+import { IconLogo } from './icons';
 
 import styled from 'styled-components';
 import { theme, mixins, Nav, Ol, A } from '../style';
@@ -9,22 +9,18 @@ const HeaderContainer = styled.header`
   ${mixins.flexBetween};
   position: fixed;
   top: 0;
-  width: 100%;
-  height: ${theme.navbarHeight};
   padding: 0px 50px;
   background-color: ${theme.colors.navy};
   transition: ${theme.transition};
   z-index: 10;
-
-  &.nav-down {
-    box-shadow: 0 2px 4px ${theme.colors.transNavy};
-    height: ${theme.navbarScrollHeight};
-  }
-
-  &.nav-up {
-    height: ${theme.navbarScrollHeight};
-    transform: translateY(-${theme.navbarScrollHeight});
-  }
+  width: 100%;
+  height: ${props =>
+    props.scrollDirection === 'none' ? theme.navbarHeight : theme.navbarScrollHeight};
+  box-shadow: ${props =>
+    props.scrollDirection === 'up' ? `0 2px 4px ${theme.colors.transNavy}` : 'none'};
+  transform: translateY(
+    ${props => (props.scrollDirection === 'down' ? `-${theme.navbarScrollHeight}` : '0px')}
+  );
 `;
 const Navbar = Nav.extend`
   ${mixins.flexBetween};
@@ -89,6 +85,7 @@ class Header extends Component {
   state = {
     didScroll: false,
     lastScrollTop: 0,
+    scrollDirection: 'none',
   };
 
   componentDidMount() {
@@ -104,13 +101,13 @@ class Header extends Component {
   }
 
   componentWillUnmount() {
+    // TODO: need to clear the setInterval
     window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll() {
-    const fromTop = window.scrollY;
     const { lastScrollTop } = this.state;
-
+    const fromTop = window.scrollY;
     const navbarHeight = this.header.offsetHeight;
 
     // Make sure they scroll more than DELTA
@@ -119,16 +116,12 @@ class Header extends Component {
     }
 
     if (fromTop === 0) {
-      this.header.classList.remove('nav-down', 'nav-up');
+      this.setState({ scrollDirection: 'none' });
     } else if (fromTop > lastScrollTop && fromTop > navbarHeight) {
-      // Scroll Down
-      this.header.classList.remove('nav-down');
-      this.header.classList.add('nav-up');
+      this.setState({ scrollDirection: 'down' });
     } else {
-      // Scroll Up
       if (fromTop + window.innerHeight < document.body.scrollHeight) {
-        this.header.classList.remove('nav-up');
-        this.header.classList.add('nav-down');
+        this.setState({ scrollDirection: 'up' });
       }
     }
 
@@ -136,8 +129,10 @@ class Header extends Component {
   }
 
   render() {
+    const { scrollDirection } = this.state;
+
     return (
-      <HeaderContainer innerRef={x => (this.header = x)}>
+      <HeaderContainer innerRef={x => (this.header = x)} scrollDirection={scrollDirection}>
         <Navbar>
           <Logo>
             <LogoLink to="/" target="_blank" rel="noopener">

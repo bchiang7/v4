@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "babel-plugin-styled-components": "^1.5.1",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",

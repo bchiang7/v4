@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { IconGithub, IconExternal } from './icons';
+
 import styled from 'styled-components';
 import { theme, mixins, Section, H3, Img, Ul, A, P } from '../style';
-
-import { IconGithub, IconExternal } from './icons';
 
 const FeaturedContainer = Section.extend`
   ${mixins.flexCenter};
