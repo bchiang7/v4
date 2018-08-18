@@ -132,25 +132,6 @@ const Project = styled.div`
   }
 `;
 
-const data = [
-  {
-    id: 1,
-    name: 'Project One',
-    github: '#',
-    external: '#',
-    tech: ['thing', 'thing', 'thing'],
-    description: `Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick. Meggings franzen kogi, next level fingerstache +1 kitsch YOLO activated charcoal craft beer adaptogen twee. Yuccie tumeric irony heirloom, shoreditch kinfolk swag cold-pressed 90's chicharrones.`,
-  },
-  {
-    id: 2,
-    name: 'Project Two',
-    github: '#',
-    external: '#',
-    tech: ['thing', 'thing', 'thing'],
-    description: `Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick. Meggings franzen kogi, next level fingerstache +1 kitsch YOLO activated charcoal craft beer adaptogen twee. Yuccie tumeric irony heirloom, shoreditch kinfolk swag cold-pressed 90's chicharrones.`,
-  },
-];
-
 class Featured extends Component {
   static propTypes = {
     featured: PropTypes.array.isRequired,
