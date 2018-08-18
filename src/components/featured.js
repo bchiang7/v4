@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { IconGithub, IconExternal } from './icons';
 
@@ -100,7 +101,6 @@ const Links = styled.div`
 `;
 const Project = styled.div`
   ${mixins.flexBetween};
-  align-items: flex-start;
   margin-bottom: 100px;
   text-align: right;
 
@@ -151,42 +151,51 @@ const data = [
   },
 ];
 
-const Featured = () => (
-  <FeaturedContainer>
-    <H3>Some Things I've Built</H3>
+class Featured extends Component {
+  static propTypes = {
+    featured: PropTypes.array.isRequired,
+  };
 
-    <div className="featured__things">
-      {data &&
-        data.map(project => (
-          <Project key={project.id}>
-            <ImgContainer>
-              <ProjectImg
-                src="https://www.budapest.com/w/respsliders/bpcompromo02_1_2_1_2.jpg"
-                alt=""
-              />
-            </ImgContainer>
-            <ProjectContent>
-              <FeaturedLabel>Featured Project</FeaturedLabel>
-              <ProjectName>{project.name}</ProjectName>
-              <ProjectDescription>{project.description}</ProjectDescription>
-              <TechList>
-                {project.tech.map((tech, i) => (
-                  <li key={i}>{tech}</li>
-                ))}
-              </TechList>
-              <Links>
-                <A href={project.github} target="_blank" rel="noopener">
-                  <IconGithub />
-                </A>
-                <A href={project.external} target="_blank" rel="noopener">
-                  <IconExternal />
-                </A>
-              </Links>
-            </ProjectContent>
-          </Project>
-        ))}
-    </div>
-  </FeaturedContainer>
-);
+  render() {
+    const { featured } = this.props;
+    return (
+      <FeaturedContainer>
+        <H3>Some Things I've Built</H3>
+
+        <div className="featured__things">
+          {featured &&
+            featured.map((project, i) => (
+              <Project key={i}>
+                <ImgContainer>
+                  <ProjectImg
+                    src="https://www.budapest.com/w/respsliders/bpcompromo02_1_2_1_2.jpg"
+                    alt=""
+                  />
+                </ImgContainer>
+                <ProjectContent>
+                  <FeaturedLabel>Featured Project</FeaturedLabel>
+                  <ProjectName>{project.node.frontmatter.title}</ProjectName>
+                  <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                  <TechList>
+                    {project.node.frontmatter.tech.map((tech, i) => (
+                      <li key={i}>{tech}</li>
+                    ))}
+                  </TechList>
+                  <Links>
+                    <A href={project.node.frontmatter.github} target="_blank" rel="noopener">
+                      <IconGithub />
+                    </A>
+                    <A href={project.node.frontmatter.external} target="_blank" rel="noopener">
+                      <IconExternal />
+                    </A>
+                  </Links>
+                </ProjectContent>
+              </Project>
+            ))}
+        </div>
+      </FeaturedContainer>
+    );
+  }
+}
 
 export default Featured;

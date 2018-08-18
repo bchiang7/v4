@@ -1,6 +1,6 @@
 ---
 date: '2017-04-01'
-title: 'Project One'
+title: 'Featured Project One'
 image: ''
 github: 'asdf'
 external: 'asdfg'

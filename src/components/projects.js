@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, Ul, A, P } from '../style';
+import { theme, mixins, Section, Ul, A } from '../style';
 
 const ProjectsContainer = Section.extend`
   ${mixins.flexCenter};
@@ -39,7 +40,7 @@ const ProjectName = styled.h4`
   margin: 0 0 10px;
   font-size: ${theme.fontSizes.h4};
 `;
-const ProjectDescription = P.extend`
+const ProjectDescription = styled.div`
   font-size: ${theme.fontSizes.medium};
 `;
 const TechList = Ul.extend`
@@ -69,61 +70,44 @@ const IconLink = A.extend`
   }
 `;
 
-const data = [
-  {
-    id: 1,
-    name: 'Project One',
-    github: '#',
-    external: '#',
-    tech: ['thing', 'thing', 'thing'],
-    description: `Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick`,
-  },
-  {
-    id: 2,
-    name: 'Project Two',
-    github: '#',
-    external: '#',
-    tech: ['thing', 'thing', 'thing'],
-    description: `Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick`,
-  },
-  {
-    id: 3,
-    name: 'Project Three',
-    github: '#',
-    external: '#',
-    tech: ['thing', 'thing', 'thing'],
-    description: `Gluten-free you probably haven't heard of them jianbing pitchfork pabst. Kombucha occupy iPhone live-edge beard iceland freegan small batch before they sold out DIY marfa chillwave sustainable taiyaki bushwick`,
-  },
-];
+class Projects extends Component {
+  static propTypes = {
+    projects: PropTypes.array.isRequired,
+  };
 
-const Projects = () => (
-  <ProjectsContainer>
-    <ProjectsGrid>
-      {data &&
-        data.map(project => (
-          <Project key={project.id}>
-            <Folder>
-              <IconFolder />
-            </Folder>
-            <ProjectName>{project.name}</ProjectName>
-            <ProjectDescription>{project.description}</ProjectDescription>
-            <TechList>
-              {project.tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
-            </TechList>
-            <Links>
-              <IconLink href={project.github} target="_blank" rel="noopener">
-                <IconGithub />
-              </IconLink>
-              <IconLink href={project.external} target="_blank" rel="noopener">
-                <IconExternal />
-              </IconLink>
-            </Links>
-          </Project>
-        ))}
-    </ProjectsGrid>
-  </ProjectsContainer>
-);
+  render() {
+    const { projects } = this.props;
+
+    return (
+      <ProjectsContainer>
+        <ProjectsGrid>
+          {projects &&
+            projects.map((project, i) => (
+              <Project key={i}>
+                <Folder>
+                  <IconFolder />
+                </Folder>
+                <ProjectName>{project.node.frontmatter.title}</ProjectName>
+                <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                <TechList>
+                  {project.node.frontmatter.tech.map((tech, i) => (
+                    <li key={i}>{tech}</li>
+                  ))}
+                </TechList>
+                <Links>
+                  <IconLink href={project.node.frontmatter.github} target="_blank" rel="noopener">
+                    <IconGithub />
+                  </IconLink>
+                  <IconLink href={project.node.frontmatter.external} target="_blank" rel="noopener">
+                    <IconExternal />
+                  </IconLink>
+                </Links>
+              </Project>
+            ))}
+        </ProjectsGrid>
+      </ProjectsContainer>
+    );
+  }
+}
 
 export default Projects;

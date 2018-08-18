@@ -15,18 +15,13 @@ const MainContainer = Main.extend`
   counter-reset: section;
 `;
 
-// const IndexPage = ({
-//   data: {
-//     allMarkdownRemark: { edges },
-//   },
-// }) => (
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <MainContainer>
     <Hero />
     <About />
     <Jobs />
-    <Featured />
-    <Projects />
+    <Featured featured={data.featured.edges} />
+    <Projects projects={data.projects.edges} />
     <Contact />
   </MainContainer>
 );
@@ -40,14 +35,39 @@ export default IndexPage;
 /* eslint no-undef: off */
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    featured: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/featured/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           frontmatter {
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "MM.DD.YYYY")
             title
+            image
             tech
+            github
+            external
           }
+          html
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            date(formatString: "MM.DD.YYYY")
+            title
+            image
+            tech
+            github
+            external
+          }
+          html
         }
       }
     }
