@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import { theme, mixins, Section, A, P } from '../style';
@@ -30,11 +31,29 @@ const Subtitle = styled.h2`
 const Blurb = styled.div`
   max-width: 50%;
   max-width: 480px;
-`;
-const UpsLink = A.extend`
-  ${mixins.inlineLink};
-  &:after {
-    top: -5px;
+
+  a {
+    ${mixins.inlineLink};
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: ${theme.colors.green};
+    position: relative;
+    transition: ${theme.transition};
+    cursor: pointer;
+
+    &:focus {
+      outline-color: ${theme.colors.blue};
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: ${theme.colors.green};
+    }
+    &:after {
+      top: -5px;
+    }
   }
 `;
 const EmailLink = A.extend`
@@ -42,29 +61,30 @@ const EmailLink = A.extend`
   margin-top: 50px;
 `;
 
-const Hero = () => (
-  <HeroContainer>
-    <Hi>Hi, my name is</Hi>
-    <Name>Brittany Chiang.</Name>
-    <Subtitle>I build things for the web.</Subtitle>
-    <Blurb>
-      <P>
-        I'm a design-minded software engineer based in Boston, Massachusetts. I specialize in
-        developing (and occasionally designing) beautiful, high-quality websites and web
-        applications.
-      </P>
-      <P>
-        Currently, I'm an Engineer at
-        <UpsLink href="#" target="_blank" rel="noopener">
-          &nbsp;Upstatement&nbsp;
-        </UpsLink>
-        working on some exciting projects with some amazing people.
-      </P>
-    </Blurb>
-    <EmailLink href="#" className="git">
-      Get In Touch
-    </EmailLink>
-  </HeroContainer>
-);
+class Hero extends Component {
+  static propTypes = {
+    hero: PropTypes.array.isRequired,
+    email: PropTypes.string.isRequired,
+  };
+
+  render() {
+    const { hero, email } = this.props;
+    const { node } = hero[0];
+
+    return (
+      <HeroContainer>
+        <Hi>{node.frontmatter.title}</Hi>
+        <Name>{node.frontmatter.name}.</Name>
+        <Subtitle>{node.frontmatter.subtitle}</Subtitle>
+        <Blurb>
+          <P dangerouslySetInnerHTML={{ __html: node.html }} />
+        </Blurb>
+        <EmailLink href={`mailto:${email}`} className="git">
+          Get In Touch
+        </EmailLink>
+      </HeroContainer>
+    );
+  }
+}
 
 export default Hero;
