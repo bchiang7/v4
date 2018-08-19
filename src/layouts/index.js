@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import config from '../config';
+
 import Loader from '../components/loader';
 import Header from '../components/header';
 import Social from '../components/social';
@@ -24,7 +26,7 @@ const Layout = ({ children, data }) => (
 
     <Social />
 
-    <Email emailAddress={data.site.siteMetadata.email} />
+    <Email email={config.email} />
 
     {children()}
 
@@ -47,7 +49,6 @@ export const query = graphql`
         title
         siteUrl
         description
-        email
       }
     }
   }

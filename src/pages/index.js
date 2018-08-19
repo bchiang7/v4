@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import config from '../config';
+
 import Hero from '../components/hero';
 import About from '../components/about';
 import Jobs from '../components/jobs';
@@ -17,12 +19,12 @@ const MainContainer = Main.extend`
 
 const IndexPage = ({ data }) => (
   <MainContainer>
-    <Hero hero={data.hero.edges} email={data.site.siteMetadata.email} />
+    <Hero hero={data.hero.edges} email={config.email} />
     <About about={data.about.edges} />
     <Jobs jobs={data.jobs.edges} />
     <Featured featured={data.featured.edges} />
     <Projects projects={data.projects.edges} />
-    <Contact contact={data.contact.edges} email={data.site.siteMetadata.email} />
+    <Contact contact={data.contact.edges} email={config.email} />
   </MainContainer>
 );
 
@@ -35,11 +37,6 @@ export default IndexPage;
 /* eslint no-undef: off */
 export const query = graphql`
   query IndexQuery {
-    site {
-      siteMetadata {
-        email
-      }
-    }
     hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
       edges {
         node {
