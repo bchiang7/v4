@@ -46,10 +46,6 @@ const base = injectGlobal`
     color: ${theme.colors.white};
   }
 
-  p {
-    margin: 0;
-  }
-
   #root {
     min-height: 100vh;
     display: grid;

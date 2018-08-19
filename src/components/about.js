@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import { theme, mixins, Section, H3, P, Ul, Img } from '../style';
@@ -12,7 +13,7 @@ const Content = styled.div`
   max-width: 480px;
   width: 50%;
 `;
-const SkillsContainer = styled.div`
+const SkillsContainer = Ul.extend`
   display: grid;
   grid-template-columns: 200px 200px;
   margin-top: 20px;
@@ -36,7 +37,6 @@ const ProfPic = Img.extend`
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
 `;
-
 const PicContainer = styled.div`
   max-width: 300px;
   border-radius: ${theme.borderRadius};
@@ -84,44 +84,34 @@ const PicContainer = styled.div`
     border-radius: ${theme.borderRadius};
   }
 `;
-const About = () => (
-  <AboutContainer>
-    <H3>About Me</H3>
-    <FlexContainer>
-      <Content>
-        <P>
-          As a software engineer, I enjoy bridging the gap between engineering and design —
-          combining my technical knowledge with my keen eye for design to create a beautiful
-          product. My goal is to always build applications that are scalable and efficient under the
-          hood while providing engaging, pixel-perfect user experiences.
-        </P>
-        <P>Here's some technologies I'm good at:</P>
-        <SkillsContainer>
-          <Ul>
-            <Skill>JavaScript (ES6)</Skill>
-            <Skill>CSS/Sass</Skill>
-            <Skill>Python</Skill>
-            <Skill>React.js</Skill>
-            <Skill>Ember.js</Skill>
-            <Skill>Jekyll</Skill>
-          </Ul>
-          <Ul>
-            <Skill>Craft</Skill>
-            <Skill>Wordpress</Skill>
-            <Skill>Timber</Skill>
-            <Skill>Sketch</Skill>
-            <Skill>InDesign</Skill>
-          </Ul>
-        </SkillsContainer>
-      </Content>
-      <PicContainer>
-        <ProfPic
-          src="https://avatars3.githubusercontent.com/u/6599979?s=460&v=4"
-          alt="Profile Picture"
-        />
-      </PicContainer>
-    </FlexContainer>
-  </AboutContainer>
-);
+
+class About extends Component {
+  static propTypes = {
+    about: PropTypes.array.isRequired,
+  };
+
+  render() {
+    const { about } = this.props;
+    const { node } = about[0];
+
+    return (
+      <AboutContainer>
+        <H3>{node.frontmatter.title}</H3>
+        <FlexContainer>
+          <Content>
+            <P dangerouslySetInnerHTML={{ __html: node.html }} />
+            <SkillsContainer>
+              {node.frontmatter.skills &&
+                node.frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
+            </SkillsContainer>
+          </Content>
+          <PicContainer>
+            <ProfPic src={node.frontmatter.image} alt="Profile Picture" />
+          </PicContainer>
+        </FlexContainer>
+      </AboutContainer>
+    );
+  }
+}
 
 export default About;

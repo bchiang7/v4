@@ -37,18 +37,19 @@ const EmailLink = A.extend`
 
 class Contact extends Component {
   static propTypes = {
-    contact: PropTypes.object.isRequired,
+    contact: PropTypes.array.isRequired,
     email: PropTypes.string.isRequired,
   };
 
   render() {
     const { contact, email } = this.props;
+    const { node } = contact[0];
 
     return (
       <ContactContainer>
         <Header>What's Next?</Header>
-        <Title>{contact[0].node.frontmatter.title}</Title>
-        <P dangerouslySetInnerHTML={{ __html: contact[0].node.html }} />
+        <Title>{node.frontmatter.title}</Title>
+        <P dangerouslySetInnerHTML={{ __html: node.html }} />
         <EmailLink href={`mailto:${email}`} target="_blank" rel="noopener">
           Send An Email
         </EmailLink>
