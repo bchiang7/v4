@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import { theme, mixins, Section, H3, A, P } from '../style';
@@ -8,7 +9,7 @@ const ContactContainer = Section.extend`
   max-width: 700px;
   margin: 0 auto 100px;
 `;
-const Next = H3.extend`
+const Header = H3.extend`
   color: ${theme.colors.green};
   font-size: ${theme.fontSizes.small};
   font-family: ${theme.fonts.SFMono};
@@ -34,20 +35,26 @@ const EmailLink = A.extend`
   margin-top: 50px;
 `;
 
-const Contact = () => (
-  <ContactContainer>
-    <Next>What's Next?</Next>
-    <Title>Get In Touch</Title>
-    <P>
-      Lorem ipsum dolor amet umami kogi you probably haven't heard of them activated charcoal
-      hexagon literally. Vice art party XOXO retro blue bottle. Squid tousled skateboard man bun
-      pabst unicorn sriracha poutine echo park crucifix plaid health goth four dollar toast. XOXO
-      gochujang PBR&B kombucha brooklyn street art lyft swag.
-    </P>
-    <EmailLink href="#" target="_blank" rel="noopener">
-      Send An Email
-    </EmailLink>
-  </ContactContainer>
-);
+class Contact extends Component {
+  static propTypes = {
+    contact: PropTypes.object.isRequired,
+    email: PropTypes.string.isRequired,
+  };
+
+  render() {
+    const { contact, email } = this.props;
+
+    return (
+      <ContactContainer>
+        <Header>What's Next?</Header>
+        <Title>{contact[0].node.frontmatter.title}</Title>
+        <P dangerouslySetInnerHTML={{ __html: contact[0].node.html }} />
+        <EmailLink href={`mailto:${email}`} target="_blank" rel="noopener">
+          Send An Email
+        </EmailLink>
+      </ContactContainer>
+    );
+  }
+}
 
 export default Contact;
