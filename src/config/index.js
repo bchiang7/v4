@@ -11,6 +11,7 @@ module.exports = {
   name: 'Brittany Chiang',
   location: 'Boston, MA',
   email: 'brittany.chiang@gmail.com',
+  resume: 'https://brittanychiang.com/resume.pdf',
   socialMedia: [
     {
       name: 'Github',

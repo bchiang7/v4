@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import config from '../config';
-
 import Hero from '../components/hero';
 import About from '../components/about';
 import Jobs from '../components/jobs';
@@ -19,12 +17,12 @@ const MainContainer = Main.extend`
 
 const IndexPage = ({ data }) => (
   <MainContainer>
-    <Hero hero={data.hero.edges} email={config.email} />
+    <Hero hero={data.hero.edges} />
     <About about={data.about.edges} />
     <Jobs jobs={data.jobs.edges} />
     <Featured featured={data.featured.edges} />
     <Projects projects={data.projects.edges} />
-    <Contact contact={data.contact.edges} email={config.email} />
+    <Contact contact={data.contact.edges} />
   </MainContainer>
 );
 
@@ -72,6 +70,7 @@ export const query = graphql`
             date(formatString: "MM.DD.YYYY")
             title
             company
+            location
             range
             url
           }

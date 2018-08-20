@@ -42,7 +42,7 @@ const mixins = {
     color: ${theme.colors.green};
     border: 1px solid ${theme.colors.green};
     border-radius: ${theme.borderRadius};
-    padding: 15px 15px 10px;
+    padding: 15px 20px 10px;
     font-size: ${theme.fontSizes.medium};
 
     &:hover,

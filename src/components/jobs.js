@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
-import { theme, Section, H3, A, P } from '../style';
+import { theme, mixins, Section, H3, A, P } from '../style';
 
 const JobsContainer = Section.extend`
   position: relative;
@@ -20,7 +20,6 @@ const Tabs = styled.div`
 `;
 const Tab = A.extend`
   display: block;
-  width: 100px;
   height: ${theme.tabHeight}px;
   padding: 10px 10px 10px 20px;
   transition: ${theme.transition};
@@ -50,7 +49,7 @@ const Highlighter = styled.span`
 `;
 const ContentContainer = styled.div`
   position: relative;
-  padding: 0 ${theme.margin};
+  padding-left: ${theme.margin};
   flex-grow: 1;
 `;
 const TabContent = styled.div`
@@ -63,6 +62,23 @@ const TabContent = styled.div`
   position: ${props => (props.isActive ? 'relative' : 'absolute')};
   transition: ${theme.transition};
   transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li:before {
+      content: '>';
+      margin-right: 10px;
+      color: ${theme.colors.green};
+    }
+  }
+
+  a {
+    ${mixins.link};
+    color: ${theme.colors.green};
+  }
 `;
 
 class Jobs extends Component {
@@ -106,6 +122,15 @@ class Jobs extends Component {
             {jobs &&
               jobs.map((job, i) => (
                 <TabContent key={i} isActive={this.isActive(i)}>
+                  <h4>
+                    {job.node.frontmatter.title} @{' '}
+                    <a href={job.node.frontmatter.url} target="_blank" rel="noopener noreferrer">
+                      {job.node.frontmatter.company}
+                    </a>
+                  </h4>
+                  <h5>
+                    {job.node.frontmatter.range} &#47;&#47; {job.node.frontmatter.location}
+                  </h5>
                   <P dangerouslySetInnerHTML={{ __html: job.node.html }} />
                 </TabContent>
               ))}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import config from '../config';
+
 import styled from 'styled-components';
 import { theme, mixins, Section, H3, A, P } from '../style';
 
@@ -38,11 +40,10 @@ const EmailLink = A.extend`
 class Contact extends Component {
   static propTypes = {
     contact: PropTypes.array.isRequired,
-    email: PropTypes.string.isRequired,
   };
 
   render() {
-    const { contact, email } = this.props;
+    const { contact } = this.props;
     const { node } = contact[0];
 
     return (
@@ -50,7 +51,7 @@ class Contact extends Component {
         <Header>What's Next?</Header>
         <Title>{node.frontmatter.title}</Title>
         <P dangerouslySetInnerHTML={{ __html: node.html }} />
-        <EmailLink href={`mailto:${email}`} target="_blank" rel="noopener">
+        <EmailLink href={`mailto:${config.email}`} target="_blank" rel="noopener">
           Send An Email
         </EmailLink>
       </ContactContainer>

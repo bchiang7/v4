@@ -30,7 +30,7 @@ const GithubLink = A.extend`
 const Footer = () => (
   <FooterContainer>
     <Copy>Designed &amp; Developed by Brittany Chiang</Copy>
-    <GithubLink to="#" target="_blank" rel="noopener">
+    <GithubLink href="https://github.com/bchiang7/v4" target="_blank" rel="noopener">
       View Source
     </GithubLink>
   </FooterContainer>
