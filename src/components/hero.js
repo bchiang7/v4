@@ -33,24 +33,9 @@ const Blurb = styled.div`
   max-width: 480px;
 
   a {
+    ${mixins.link};
     ${mixins.inlineLink};
-    display: inline-block;
-    text-decoration: none;
-    text-decoration-skip-ink: auto;
-    color: ${theme.colors.green};
-    position: relative;
-    transition: ${theme.transition};
-    cursor: pointer;
 
-    &:focus {
-      outline-color: ${theme.colors.blue};
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: ${theme.colors.green};
-    }
     &:after {
       top: -5px;
     }

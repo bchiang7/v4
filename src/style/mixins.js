@@ -18,6 +18,26 @@ const mixins = {
     outline: 1px solid red;
   `,
 
+  link: css`
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: ${theme.transition};
+    cursor: pointer;
+
+    &:focus {
+      outline-color: ${theme.colors.blue};
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: ${theme.colors.green};
+    }
+  `,
+
   smallButton: css`
     color: ${theme.colors.green};
     border: 1px solid ${theme.colors.green};

@@ -38,6 +38,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "prop-types": "^15.6.2",
+    "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.4.2"
   },

@@ -139,8 +139,9 @@ class Featured extends Component {
 
   render() {
     const { featured } = this.props;
+
     return (
-      <FeaturedContainer>
+      <FeaturedContainer id="projects">
         <H3>Some Things I've Built</H3>
 
         <div className="featured__things">

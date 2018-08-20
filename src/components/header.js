@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { throttle } from '../utils';
 
 import { IconLogo } from './icons';
@@ -70,7 +71,8 @@ const NavListItem = styled.li`
     font-size: ${theme.fontSizes.xsmall};
   }
 `;
-const NavLink = A.extend`
+const NavLink = styled(AnchorLink)`
+  ${mixins.link};
   padding: 10px;
 `;
 const ResumeLink = A.extend`
@@ -133,20 +135,20 @@ class Header extends Component {
           </Logo>
           <NavLinks>
             <NavList>
-              <NavListItem onClick={this.handleNavClick}>
-                <NavLink to="#">About</NavLink>
+              <NavListItem>
+                <NavLink href="#about">About</NavLink>
               </NavListItem>
               <NavListItem>
-                <NavLink to="#">Experience</NavLink>
+                <NavLink href="#jobs">Experience</NavLink>
               </NavListItem>
               <NavListItem>
-                <NavLink to="#">Work</NavLink>
+                <NavLink href="#projects">Work</NavLink>
               </NavListItem>
               <NavListItem>
-                <NavLink to="#">Contact</NavLink>
+                <NavLink href="#contact">Contact</NavLink>
               </NavListItem>
             </NavList>
-            <ResumeLink to="#" target="_blank" rel="noopener">
+            <ResumeLink href="#" target="_blank" rel="noopener">
               Resume
             </ResumeLink>
           </NavLinks>

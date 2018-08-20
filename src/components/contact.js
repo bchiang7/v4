@@ -46,7 +46,7 @@ class Contact extends Component {
     const { node } = contact[0];
 
     return (
-      <ContactContainer>
+      <ContactContainer id="contact">
         <Header>What's Next?</Header>
         <Title>{node.frontmatter.title}</Title>
         <P dangerouslySetInnerHTML={{ __html: node.html }} />

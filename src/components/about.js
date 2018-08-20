@@ -95,7 +95,7 @@ class About extends Component {
     const { node } = about[0];
 
     return (
-      <AboutContainer>
+      <AboutContainer id="about">
         <H3>{node.frontmatter.title}</H3>
         <FlexContainer>
           <Content>
