@@ -19,7 +19,7 @@ const base = injectGlobal`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${theme.colors.navy};
-    color: ${theme.colors.slate};
+    color: ${theme.colors.lightSlate};
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
   }
@@ -35,6 +35,7 @@ const base = injectGlobal`
   h5 {
     font-weight: 600;
     color: ${theme.colors.white};
+    margin: 0 0 10px 0;
   }
 
   #root {

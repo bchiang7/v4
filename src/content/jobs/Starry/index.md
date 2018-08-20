@@ -3,7 +3,7 @@ date: '2017-12-21'
 title: 'Software Engineer Co-op'
 company: 'Starry'
 location: 'Boston, MA'
-range: '2016'
+range: 'July - Dec 2016'
 url: 'https://www.apple.com/music/'
 ---
 

@@ -23,11 +23,14 @@ const Skill = styled.li`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
   margin-bottom: 10px;
+  padding-left: 20px;
 
   &:before {
-    content: '>';
-    margin-right: 10px;
+    content: '▹';
     color: ${theme.colors.green};
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `;
 const ProfPic = Img.extend`

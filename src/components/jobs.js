@@ -21,11 +21,11 @@ const Tabs = styled.div`
 const Tab = A.extend`
   display: block;
   height: ${theme.tabHeight}px;
-  padding: 10px 10px 10px 20px;
+  padding: 12px 15px 10px;
   transition: ${theme.transition};
   border-left: 2px solid ${theme.colors.darkGrey};
   font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.small};
+  font-size: ${theme.fontSizes.smallish};
   color: ${props => (props.isActive ? theme.colors.green : theme.colors.grey)};
   &:focus {
     background-color: ${theme.colors.lightNavy};
@@ -49,7 +49,7 @@ const Highlighter = styled.span`
 `;
 const ContentContainer = styled.div`
   position: relative;
-  padding-left: ${theme.margin};
+  padding-left: 30px;
   flex-grow: 1;
 `;
 const TabContent = styled.div`
@@ -62,22 +62,53 @@ const TabContent = styled.div`
   position: ${props => (props.isActive ? 'relative' : 'absolute')};
   transition: ${theme.transition};
   transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
+  padding-top: 12px;
 
   ul {
     padding: 0;
     margin: 0;
     list-style: none;
+    font-size: ${theme.fontSizes.large};
 
-    li:before {
-      content: '>';
-      margin-right: 10px;
-      color: ${theme.colors.green};
+    li {
+      position: relative;
+      padding-left: ${theme.margin};
+      margin-bottom: 5px;
+
+      &:before {
+        content: '▹';
+        color: ${theme.colors.green};
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
   }
 
   a {
     ${mixins.link};
-    color: ${theme.colors.green};
+    ${mixins.inlineLink};
+
+    &:after {
+      top: -5px;
+    }
+  }
+`;
+const JobTitle = styled.h4`
+  font-size: ${theme.fontSizes.xlarge};
+  font-weight: 500;
+  margin-bottom: 5px;
+`;
+const JobDetails = styled.h5`
+  font-family: ${theme.fonts.SFMono};
+  font-size: ${theme.fontSizes.smallish};
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: ${theme.colors.slate};
+  margin-bottom: 30px;
+
+  svg {
+    width: 15px;
   }
 `;
 
@@ -122,15 +153,17 @@ class Jobs extends Component {
             {jobs &&
               jobs.map((job, i) => (
                 <TabContent key={i} isActive={this.isActive(i)}>
-                  <h4>
-                    {job.node.frontmatter.title} @{' '}
-                    <a href={job.node.frontmatter.url} target="_blank" rel="noopener noreferrer">
-                      {job.node.frontmatter.company}
-                    </a>
-                  </h4>
-                  <h5>
-                    {job.node.frontmatter.range} &#47;&#47; {job.node.frontmatter.location}
-                  </h5>
+                  <JobTitle>
+                    <span>{job.node.frontmatter.title} &commat; </span>
+                    <span>
+                      <a href={job.node.frontmatter.url} target="_blank" rel="noopener noreferrer">
+                        {job.node.frontmatter.company}
+                      </a>
+                    </span>
+                  </JobTitle>
+                  <JobDetails>
+                    <span>{job.node.frontmatter.range} </span>
+                  </JobDetails>
                   <P dangerouslySetInnerHTML={{ __html: job.node.html }} />
                 </TabContent>
               ))}
