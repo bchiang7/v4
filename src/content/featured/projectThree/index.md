@@ -2,8 +2,8 @@
 date: '2017-06-01'
 title: 'Featured Project Three'
 image: ''
-github: 'asdf'
-external: 'asdfg'
+github: 'https://github.com/bchiang7'
+external: 'https://brittanychiang.com/'
 tech:
   - React
   - Webpack

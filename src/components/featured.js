@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, Img, Ul, A, P } from '../style';
+import { theme, mixins, Section, H3, Img, Ul, A } from '../style';
 
 const FeaturedContainer = Section.extend`
   ${mixins.flexCenter};
@@ -67,10 +67,10 @@ const ProjectName = styled.h5`
   font-size: 36px;
   margin: 0 0 10px;
 `;
-const ProjectDescription = P.extend`
+const ProjectDescription = styled.div`
   background-color: ${theme.colors.navy};
   font-size: ${theme.fontSizes.large};
-  padding: 20px 0 20px ${theme.margin};
+  padding: 5px 0 5px ${theme.margin};
 `;
 const TechList = Ul.extend`
   display: flex;

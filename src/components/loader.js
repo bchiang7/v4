@@ -43,7 +43,7 @@ class Loader extends Component {
 
   animate() {
     const loader = anime.timeline({
-      complete: () => (document.body.style.overflow = 'visible'),
+      complete: () => (document.body.style.overflow = 'auto'),
     });
 
     loader

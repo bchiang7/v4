@@ -1,5 +1,4 @@
-const config = {
-  // Site information
+module.exports = {
   siteTitle: 'Brittany Chiang',
   siteTitleAlt: 'Brittany Chiang | Software Engineer',
   siteDescription: 'Front End Software Engineer',
@@ -38,5 +37,3 @@ const config = {
   userTwitter: '@bchiang7', // Twitter Username
   googleAnalyticsID: 'UA-12345689-1',
 };
-
-export default config;

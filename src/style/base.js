@@ -12,14 +12,9 @@ const base = injectGlobal`
     box-sizing: inherit;
   }
 
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-  }
-
   body {
     margin: 0;
+    min-height: 100%;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -27,10 +22,6 @@ const base = injectGlobal`
     color: ${theme.colors.slate};
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
-
-    &.loading {
-      overflow: hidden;
-    }
   }
 
   ::selection {

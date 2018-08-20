@@ -12,7 +12,7 @@ const HeroContainer = Section.extend`
 `;
 const Hi = styled.h1`
   color: ${theme.colors.green};
-  margin: 0 0 10px 3px;
+  margin: 0 0 20px 3px;
   font-size: ${theme.fontSizes.medium};
   font-family: ${theme.fonts.SFMono};
   font-weight: 400;

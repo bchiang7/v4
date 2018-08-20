@@ -2,8 +2,8 @@
 date: '2017-04-01'
 title: 'Project One'
 image: ''
-github: 'asdf'
-external: 'asdfg'
+github: 'https://github.com/bchiang7'
+external: 'https://brittanychiang.com/'
 tech:
   - React
   - Webpack

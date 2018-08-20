@@ -11,7 +11,7 @@ const ContactContainer = Section.extend`
 `;
 const Header = H3.extend`
   color: ${theme.colors.green};
-  font-size: ${theme.fontSizes.small};
+  font-size: ${theme.fontSizes.medium};
   font-family: ${theme.fonts.SFMono};
   font-weight: 400;
   margin-bottom: 20px;

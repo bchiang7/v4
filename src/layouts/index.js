@@ -22,9 +22,9 @@ const Layout = ({ children, data }) => (
 
     <Loader />
 
-    <Header />
-
     <Social />
+
+    <Header />
 
     <Email email={config.email} />
 
