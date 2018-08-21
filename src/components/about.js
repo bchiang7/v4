@@ -29,7 +29,7 @@ const Skill = styled.li`
     content: '▹';
     color: ${theme.colors.green};
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 0;
   }
 `;

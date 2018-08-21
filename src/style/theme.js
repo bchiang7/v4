@@ -37,8 +37,8 @@ const theme = {
     medium: '16px',
     large: '18px',
     xlarge: '20px',
+    xxlarge: '22px',
     h3: '30px',
-    h4: '24px',
   },
 
   spacing: {},

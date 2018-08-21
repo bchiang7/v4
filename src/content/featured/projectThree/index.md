@@ -1,7 +1,7 @@
 ---
 date: '2017-06-01'
 title: 'Featured Project Three'
-image: ''
+cover: './budapest.jpg'
 github: 'https://github.com/bchiang7'
 external: 'https://brittanychiang.com/'
 tech:

@@ -1,7 +1,7 @@
 ---
 date: '2017-04-01'
 title: 'Featured Project One'
-image: ''
+cover: './budapest.jpg'
 github: 'https://github.com/bchiang7'
 external: 'https://brittanychiang.com/'
 tech:

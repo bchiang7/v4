@@ -72,14 +72,14 @@ const TabContent = styled.div`
 
     li {
       position: relative;
-      padding-left: ${theme.margin};
+      padding-left: 30px;
       margin-bottom: 5px;
 
       &:before {
         content: '▹';
         color: ${theme.colors.green};
         position: absolute;
-        top: 0;
+        top: -2px;
         left: 0;
       }
     }
@@ -95,7 +95,7 @@ const TabContent = styled.div`
   }
 `;
 const JobTitle = styled.h4`
-  font-size: ${theme.fontSizes.xlarge};
+  font-size: ${theme.fontSizes.xxlarge};
   font-weight: 500;
   margin-bottom: 5px;
 `;
@@ -154,7 +154,7 @@ class Jobs extends Component {
               jobs.map((job, i) => (
                 <TabContent key={i} isActive={this.isActive(i)}>
                   <JobTitle>
-                    <span>{job.node.frontmatter.title} &commat; </span>
+                    <span>{job.node.frontmatter.title} @ </span>
                     <span>
                       <a href={job.node.frontmatter.url} target="_blank" rel="noopener noreferrer">
                         {job.node.frontmatter.company}

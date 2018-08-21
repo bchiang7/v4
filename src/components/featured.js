@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, Img, Ul, A } from '../style';
+import { theme, mixins, Section, H3, Ul, A } from '../style';
 
 const FeaturedContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
 `;
-const ProjectImg = Img.extend``;
+const FeaturedImg = styled(Img)`
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+`;
 const ImgContainer = styled.div`
   order: 0;
   position: relative;
@@ -24,7 +29,7 @@ const ImgContainer = styled.div`
     background-color: transparent;
 
     &:before,
-    ${ProjectImg} {
+    ${FeaturedImg} {
       background-color: transparent;
       filter: none;
     }
@@ -43,7 +48,7 @@ const ImgContainer = styled.div`
     background-color: ${theme.colors.navy};
     mix-blend-mode: screen;
   }
-  ${ProjectImg} {
+  ${FeaturedImg} {
     position: relative;
     mix-blend-mode: multiply;
     filter: grayscale(100%) contrast(1);
@@ -64,13 +69,17 @@ const FeaturedLabel = styled.h4`
   padding-top: 0;
 `;
 const ProjectName = styled.h5`
-  font-size: 36px;
+  font-size: 28px;
   margin: 0 0 10px;
 `;
 const ProjectDescription = styled.div`
   background-color: ${theme.colors.navy};
   font-size: ${theme.fontSizes.large};
-  padding: 5px 0 5px ${theme.margin};
+  padding: 20px 0 20px 20px;
+
+  p {
+    margin: 0;
+  }
 `;
 const TechList = Ul.extend`
   display: flex;
@@ -88,7 +97,7 @@ const Links = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: ${theme.margin};
+  margin-top: 30px;
 
   a {
     margin-left: ${theme.margin};
@@ -149,10 +158,7 @@ class Featured extends Component {
             featured.map((project, i) => (
               <Project key={i}>
                 <ImgContainer>
-                  <ProjectImg
-                    src="https://www.budapest.com/w/respsliders/bpcompromo02_1_2_1_2.jpg"
-                    alt=""
-                  />
+                  <FeaturedImg sizes={project.node.frontmatter.cover.childImageSharp.sizes} />
                 </ImgContainer>
                 <ProjectContent>
                   <FeaturedLabel>Featured Project</FeaturedLabel>

@@ -19,7 +19,7 @@ const base = injectGlobal`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${theme.colors.navy};
-    color: ${theme.colors.lightSlate};
+    color: ${theme.colors.slate};
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
   }

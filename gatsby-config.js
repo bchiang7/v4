@@ -27,9 +27,19 @@ module.exports = {
               rel: 'nofollow noopener noreferrer',
             },
           },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1100,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
         ],
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

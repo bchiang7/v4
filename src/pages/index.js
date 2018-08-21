@@ -67,7 +67,6 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            date(formatString: "MM.DD.YYYY")
             title
             company
             location
@@ -85,9 +84,14 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            date(formatString: "MM.DD.YYYY")
             title
-            image
+            cover {
+              childImageSharp {
+                sizes(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                }
+              }
+            }
             tech
             github
             external
@@ -103,7 +107,6 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            date(formatString: "MM.DD.YYYY")
             title
             image
             tech
