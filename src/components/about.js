@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, P, Ul, Img } from '../style';
+import { theme, mixins, Section, H3, P, Ul } from '../style';
 
 const AboutContainer = Section.extend``;
 const FlexContainer = styled.div`
@@ -33,7 +34,10 @@ const Skill = styled.li`
     left: 0;
   }
 `;
-const ProfPic = Img.extend`
+const Avatar = styled(Img)`
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
@@ -41,6 +45,7 @@ const ProfPic = Img.extend`
   transition: ${theme.transition};
 `;
 const PicContainer = styled.div`
+  width: 100%;
   max-width: 300px;
   border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.green};
@@ -52,7 +57,7 @@ const PicContainer = styled.div`
       left: 15px;
     }
 
-    ${ProfPic} {
+    ${Avatar} {
       filter: none;
       mix-blend-mode: normal;
     }
@@ -109,7 +114,7 @@ class About extends Component {
             </SkillsContainer>
           </Content>
           <PicContainer>
-            <ProfPic src={node.frontmatter.image} alt="Profile Picture" />
+            <Avatar sizes={node.frontmatter.avatar.childImageSharp.sizes} alt="Avatar" />
           </PicContainer>
         </FlexContainer>
       </AboutContainer>

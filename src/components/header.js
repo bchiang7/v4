@@ -60,9 +60,9 @@ const NavList = Ol.extend`
   display: flex;
 `;
 const NavListItem = styled.li`
-  margin: 10px;
+  margin: 0 10px;
   position: relative;
-  font-size: 13px;
+  font-size: ${theme.fontSizes.smallish};
   counter-increment: item 1;
 
   &:before {

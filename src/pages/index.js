@@ -53,7 +53,13 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            image
+            avatar {
+              childImageSharp {
+                sizes(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                }
+              }
+            }
             skills
           }
           html

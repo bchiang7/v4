@@ -26,7 +26,7 @@ const Tab = A.extend`
   border-left: 2px solid ${theme.colors.darkGrey};
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
-  color: ${props => (props.isActive ? theme.colors.green : theme.colors.grey)};
+  color: ${props => (props.isActive ? theme.colors.green : theme.colors.lightGrey)};
   &:focus {
     background-color: ${theme.colors.lightNavy};
   }

@@ -1,6 +1,6 @@
 ---
 title: 'About Me'
-image: 'https://avatars3.githubusercontent.com/u/6599979?s=460&v=4'
+avatar: './me.jpg'
 skills:
   - JavaScript (ES6)
   - CSS/Sass

@@ -38,7 +38,7 @@ const Folder = styled.div`
 `;
 const ProjectName = styled.h4`
   margin: 0 0 10px;
-  font-size: ${theme.fontSizes.h4};
+  font-size: ${theme.fontSizes.xxlarge};
 `;
 const ProjectDescription = styled.div`
   font-size: ${theme.fontSizes.medium};
