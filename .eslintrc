@@ -1,6 +1,11 @@
 {
-  "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended"],
-  "plugins": ["prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["jsx-a11y"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -17,15 +22,12 @@
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error"] }],
 
-    // Best Practices
     "curly": "error",
     "eqeqeq": "error",
     "no-eq-null": "error",
 
-    // Variables
     "no-use-before-define": ["error", "nofunc"],
 
-    // Stylistic Issues
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "comma-dangle": ["error", "always-multiline"],
     "comma-spacing": "error",
@@ -41,7 +43,6 @@
     "space-before-function-paren": ["error", "never"],
     "space-infix-ops": "error",
 
-    // ECMAScript 6
     "arrow-spacing": "error",
     "no-duplicate-imports": "error",
     "no-useless-constructor": "error",
@@ -49,7 +50,6 @@
     "prefer-const": "error",
     "prefer-template": "error",
 
-    // React
     "react/no-unescaped-entities": ["error", { "forbid": [">", "\"", "}"] }]
   }
 }

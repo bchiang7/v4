@@ -1,6 +1,7 @@
 import theme from './theme';
 import base from './base';
 import mixins from './mixins';
+import media from './media';
 import Img from './Img';
 import A from './A';
 import Button from './Button';
@@ -20,6 +21,7 @@ export {
   theme,
   base,
   mixins,
+  media,
   Img,
   A,
   Button,
