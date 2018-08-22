@@ -96,6 +96,9 @@ export const query = graphql`
                 sizes(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
                   ...GatsbyImageSharpSizes_withWebp_tracedSVG
                 }
+                resize(width: 500, height: 500) {
+                  src
+                }
               }
             }
             tech

@@ -25,7 +25,7 @@ const ImgContainer = styled.div`
   position: relative;
   border-radius: ${theme.borderRadius};
 
-  ${media.tablet`width: 100%;`};
+  ${media.tablet`display: none;`};
 
   &:hover {
     background-color: transparent;
@@ -61,6 +61,11 @@ const ProjectContent = styled.div`
   width: 45%;
   margin-left: -5%;
   z-index: 5;
+
+  ${media.tablet`
+    width: 100%;
+    margin: 0 !important;
+  `};
 `;
 const ProjectDetails = styled.div`
   background-color: ${theme.colors.lightNavy};
@@ -90,11 +95,15 @@ const TechList = Ul.extend`
   justify-content: flex-end;
   margin: ${theme.margin} 0 0 auto;
 
+  ${media.tablet`justify-content: flex-start;`};
+
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.smallish};
     color: ${theme.colors.lightGrey};
     margin-left: ${theme.margin};
+
+    ${media.tablet`margin: 0 20px 0 0;`};
   }
 `;
 const Links = styled.div`
@@ -104,6 +113,8 @@ const Links = styled.div`
   position: relative;
   right: -10px;
   margin-top: 10px;
+
+  ${media.tablet`right: 0;`};
 
   a {
     padding: 10px;
@@ -118,6 +129,11 @@ const Project = styled.div`
   ${mixins.flexBetween};
   margin-bottom: 100px;
   text-align: right;
+
+  ${media.tablet`
+    display: block;
+    text-align: left;
+  `};
 
   &:last-of-type {
     margin-bottom: 0;
@@ -140,6 +156,12 @@ const Project = styled.div`
         margin: 0 20px 0 0;
       }
     }
+    ${Links} {
+      right: auto;
+      left: -10px;
+
+      ${media.tablet`justify-content: flex-end;`};
+    }
   }
 `;
 
@@ -150,6 +172,7 @@ class Featured extends Component {
 
   render() {
     const { featured } = this.props;
+    // console.log(featured);
 
     return (
       <FeaturedContainer id="projects">
