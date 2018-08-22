@@ -49,8 +49,7 @@ const theme = {
   headerHeight: '100px',
   headerScrollHeight: '70px',
   margin: '20px',
-  padding: '15px',
-  tabHeight: 40,
+  tabHeight: 42,
 };
 
 export default theme;

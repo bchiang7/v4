@@ -6,7 +6,7 @@ import { throttle } from '../utils';
 import { IconLogo } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, Nav, Ol, A } from '../style';
+import { theme, mixins, media, Nav, Ol, A } from '../style';
 
 const HeaderContainer = styled.header`
   ${mixins.flexBetween};
@@ -24,6 +24,8 @@ const HeaderContainer = styled.header`
   transform: translateY(
     ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
   );
+
+  ${media.desktop`padding: 0 40px;`};
 `;
 const Navbar = Nav.extend`
   ${mixins.flexBetween};

@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import theme from './theme';
+import media from './media';
 
 const mixins = {
   flexCenter: css`
@@ -88,6 +89,14 @@ const mixins = {
       background-color: ${theme.colors.green};
       transition: ${theme.transition};
     }
+  `,
+
+  padding: css`
+    padding: 0 150px;
+
+    ${media.desktop`padding: 0 100px;`};
+    ${media.tablet`padding: 0 50px;`};
+    ${media.phablet`padding: 0 30px;`};
   `,
 };
 

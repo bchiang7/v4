@@ -1,20 +1,21 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { theme, mixins, A, P } from '../style';
+import { theme, mixins, media, A, P } from '../style';
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
+  ${mixins.padding};
   flex-direction: column;
   background-color: ${theme.colors.darkNavy};
-  padding: 25px 150px 20px;
-  font-size: ${theme.fontSizes.medium};
   color: ${theme.colors.slate};
   text-align: center;
   height: 75px;
+  ${media.phone`padding: 0 20px;`};
 `;
 const Copy = P.extend`
-  margin-bottom: 3px;
+  margin: 5px 0 3px;
+  font-size: ${theme.fontSizes.medium};
 `;
 const GithubLink = A.extend`
   ${mixins.inlineLink};

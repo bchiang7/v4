@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import config from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, A, P } from '../style';
+import { theme, mixins, media, Section, H3, A, P } from '../style';
 
 const ContactContainer = Section.extend`
   text-align: center;
@@ -19,9 +19,13 @@ const Header = H3.extend`
   margin-bottom: 20px;
   justify-content: center;
 
+  ${media.desktop`font-size: ${theme.fontSizes.small};`};
+
   &:before {
     font-size: ${theme.fontSizes.small};
     bottom: 0;
+
+    ${media.desktop`font-size: ${theme.fontSizes.smallish};`};
   }
 
   &:after {
@@ -29,8 +33,11 @@ const Header = H3.extend`
   }
 `;
 const Title = styled.h4`
-  font-size: 60px;
   margin: 0 0 20px;
+  font-size: 60px;
+
+  ${media.desktop`font-size: 50px;`};
+  ${media.tablet`font-size: 40px;`};
 `;
 const EmailLink = A.extend`
   ${mixins.bigButton};

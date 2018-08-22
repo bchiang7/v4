@@ -8,10 +8,10 @@ import Featured from '../components/featured';
 import Projects from '../components/projects';
 import Contact from '../components/contact';
 
-import { Main } from '../style';
+import { mixins, Main } from '../style';
 
 const MainContainer = Main.extend`
-  padding: 0 150px;
+  ${mixins.padding};
   counter-reset: section;
 `;
 

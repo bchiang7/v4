@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, A, P } from '../style';
+import { theme, mixins, Section, H3, P } from '../style';
 
 const JobsContainer = Section.extend`
   position: relative;
@@ -18,12 +18,16 @@ const Tabs = styled.div`
   width: max-content;
   z-index: 3;
 `;
-const Tab = A.extend`
+const Tab = styled.button`
+  ${mixins.link};
   display: block;
+  width: 100%;
+  background-color: transparent;
   height: ${theme.tabHeight}px;
-  padding: 12px 15px 10px;
+  padding: 0 20px 2px;
   transition: ${theme.transition};
   border-left: 2px solid ${theme.colors.darkGrey};
+  text-align: left;
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
   color: ${props => (props.isActive ? theme.colors.green : theme.colors.lightGrey)};
@@ -49,6 +53,7 @@ const Highlighter = styled.span`
 `;
 const ContentContainer = styled.div`
   position: relative;
+  padding-top: 14px;
   padding-left: 30px;
   flex-grow: 1;
 `;
@@ -62,7 +67,6 @@ const TabContent = styled.div`
   position: ${props => (props.isActive ? 'relative' : 'absolute')};
   transition: ${theme.transition};
   transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
-  padding-top: 12px;
 
   ul {
     padding: 0;
@@ -123,8 +127,7 @@ class Jobs extends Component {
 
   isActive = id => this.state.activeTabId === id;
 
-  setActiveTab = (activeTabId, e) => {
-    e.preventDefault();
+  setActiveTab = activeTabId => {
     this.setState({ activeTabId });
   };
 

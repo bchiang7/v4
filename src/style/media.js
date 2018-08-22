@@ -21,10 +21,4 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
   return accumulator;
 }, {});
 
-// Usage
-// const Container = styled.div`
-//   color: #333;
-//   ${media.desktop`padding: 0 20px;`}
-//   ${media.tablet`padding: 0 10px;`}
-//   ${media.phone`padding: 0 5px;`}
-// `;
+export default media;

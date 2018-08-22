@@ -5,18 +5,21 @@ import config from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, A, Ul } from '../style';
+import { theme, media, A, Ul } from '../style';
 
 const SocialContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   color: ${theme.colors.lightSlate};
+  vertical-align: middle;
+  width: 40px;
   position: fixed;
   bottom: 0;
   left: 40px;
-  vertical-align: middle;
-  width: 40px;
+
+  ${media.desktop`left: 25px;`};
+  ${media.tablet`display: none;`};
 
   &:after {
     content: '';

@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
+import media from './media';
 import * as fonts from './fonts';
 
 const base = injectGlobal`
@@ -120,6 +121,8 @@ const base = injectGlobal`
     color: ${theme.colors.slate};
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
+
+    ${media.tablet`font-size: ${theme.fontSizes.large};`}
   }
 
   ::selection {
@@ -148,6 +151,11 @@ const base = injectGlobal`
     height: 100%;
     fill: currentColor;
     vertical-align: middle;
+  }
+
+  button {
+    outline: 0;
+    border: 0;
   }
 `;
 

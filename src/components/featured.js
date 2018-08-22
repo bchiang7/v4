@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, Ul, A } from '../style';
+import { theme, mixins, media, Section, H3, Ul, A } from '../style';
 
 const FeaturedContainer = Section.extend`
   ${mixins.flexCenter};
@@ -24,6 +24,8 @@ const ImgContainer = styled.div`
   background-color: ${theme.colors.green};
   position: relative;
   border-radius: ${theme.borderRadius};
+
+  ${media.tablet`width: 100%;`};
 
   &:hover {
     background-color: transparent;
@@ -60,6 +62,10 @@ const ProjectContent = styled.div`
   margin-left: -5%;
   z-index: 5;
 `;
+const ProjectDetails = styled.div`
+  background-color: ${theme.colors.lightNavy};
+  padding: 25px 25px 15px;
+`;
 const FeaturedLabel = styled.h4`
   font-size: ${theme.fontSizes.small};
   font-weight: 400;
@@ -70,12 +76,10 @@ const FeaturedLabel = styled.h4`
 `;
 const ProjectName = styled.h5`
   font-size: 28px;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 `;
 const ProjectDescription = styled.div`
-  background-color: ${theme.colors.navy};
   font-size: ${theme.fontSizes.large};
-  padding: 20px 0 20px 20px;
 
   p {
     margin: 0;
@@ -97,7 +101,9 @@ const Links = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 30px;
+  position: relative;
+  right: -10px;
+  margin-top: 10px;
 
   a {
     padding: 10px;
@@ -127,14 +133,10 @@ const Project = styled.div`
       text-align: left;
       margin: 0 -5% 0 0;
     }
-    ${ProjectDescription} {
-      padding: ${theme.margin} ${theme.margin} ${theme.margin} 0;
-    }
     ${TechList}, ${Links} {
       justify-content: flex-start;
 
-      li,
-      a {
+      li {
         margin: 0 20px 0 0;
       }
     }
@@ -163,20 +165,22 @@ class Featured extends Component {
                 <ProjectContent>
                   <FeaturedLabel>Featured Project</FeaturedLabel>
                   <ProjectName>{project.node.frontmatter.title}</ProjectName>
-                  <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                  <TechList>
-                    {project.node.frontmatter.tech.map((tech, i) => (
-                      <li key={i}>{tech}</li>
-                    ))}
-                  </TechList>
-                  <Links>
-                    <A href={project.node.frontmatter.github} target="_blank" rel="noopener">
-                      <IconGithub />
-                    </A>
-                    <A href={project.node.frontmatter.external} target="_blank" rel="noopener">
-                      <IconExternal />
-                    </A>
-                  </Links>
+                  <ProjectDetails>
+                    <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                    <TechList>
+                      {project.node.frontmatter.tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </TechList>
+                    <Links>
+                      <A href={project.node.frontmatter.github} target="_blank" rel="noopener">
+                        <IconGithub />
+                      </A>
+                      <A href={project.node.frontmatter.external} target="_blank" rel="noopener">
+                        <IconExternal />
+                      </A>
+                    </Links>
+                  </ProjectDetails>
                 </ProjectContent>
               </Project>
             ))}

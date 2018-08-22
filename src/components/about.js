@@ -3,16 +3,21 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, H3, P, Ul } from '../style';
+import { theme, mixins, media, Section, H3, P, Ul } from '../style';
 
 const AboutContainer = Section.extend``;
 const FlexContainer = styled.div`
   ${mixins.flexBetween};
   align-items: flex-start;
+
+  ${media.tablet`display: block;`};
 `;
 const Content = styled.div`
+  width: 60%;
   max-width: 480px;
-  width: 50%;
+  padding-right: 30px;
+
+  ${media.tablet`width: 100%;`};
 `;
 const SkillsContainer = Ul.extend`
   display: grid;
@@ -45,11 +50,18 @@ const Avatar = styled(Img)`
   transition: ${theme.transition};
 `;
 const PicContainer = styled.div`
-  width: 100%;
+  width: 40%;
   max-width: 300px;
   border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.green};
   position: relative;
+
+  ${media.tablet`
+    margin: 50px auto 0;
+  `};
+  ${media.phablet`
+    width: 70%;
+  `};
 
   &:hover {
     &:after {

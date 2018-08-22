@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
-import { theme, A } from '../style';
+import { theme, media, A } from '../style';
 
 const EmailContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  vertical-align: middle;
+  width: 40px;
   position: fixed;
   bottom: 0;
   right: 40px;
-  vertical-align: middle;
-  width: 40px;
+
+  ${media.desktop`right: 25px;`};
+  ${media.tablet`display: none;`};
 
   &:after {
     content: '';

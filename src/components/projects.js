@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, Ul, A } from '../style';
+import { theme, mixins, media, Section, Ul, A } from '../style';
 
 const ProjectsContainer = Section.extend`
   ${mixins.flexCenter};
@@ -15,6 +15,10 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
+
+  ${media.desktop`
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  `};
 `;
 const Project = styled.div`
   position: relative;

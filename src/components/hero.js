@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import config from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, Section, A, P } from '../style';
+import { theme, mixins, media, Section, A, P } from '../style';
 
 const HeroContainer = Section.extend`
   ${mixins.flexCenter};
@@ -18,17 +18,28 @@ const Hi = styled.h1`
   font-size: ${theme.fontSizes.medium};
   font-family: ${theme.fonts.SFMono};
   font-weight: 400;
+
+  ${media.desktop`font-size: ${theme.fontSizes.small};`};
+  ${media.tablet`font-size: ${theme.fontSizes.smallish};`};
 `;
 const Name = styled.h1`
   font-size: 80px;
-  font-weight: 600;
   margin: 0;
+  ${media.desktop`font-size: 70px;`};
+  ${media.tablet`font-size: 60px;`};
+  ${media.phablet`font-size: 50px;`};
+  ${media.phone`font-size: 40px;`};
 `;
 const Subtitle = styled.h2`
   font-size: 80px;
   font-weight: 600;
   margin: 0 0 20px;
   color: ${theme.colors.slate};
+
+  ${media.desktop`font-size: 70px;`};
+  ${media.tablet`font-size: 60px;`};
+  ${media.phablet`font-size: 50px;`};
+  ${media.phone`font-size: 40px;`};
 `;
 const Blurb = styled.div`
   max-width: 50%;
