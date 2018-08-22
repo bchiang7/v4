@@ -93,10 +93,9 @@ const mixins = {
 
   padding: css`
     padding: 0 150px;
-
     ${media.desktop`padding: 0 100px;`};
     ${media.tablet`padding: 0 50px;`};
-    ${media.phablet`padding: 0 30px;`};
+    ${media.phablet`padding: 0 25px;`};
   `,
 };
 

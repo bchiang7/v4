@@ -15,11 +15,14 @@ const theme = {
     lightestSlate: '#ccd6f6',
     offWhite: '#dce7ff',
     white: '#e6f1ff',
-    blue: '#3686ff',
+    pink: '#ff6488',
     orange: '#ffaf36',
-    cyan: '#36ebff',
-    purple: '#b39fff',
+    limegreen: '#64ff8d',
     green: '#64ffda',
+    blue: '#64d6ff',
+    periwinkle: '#6488ff',
+    purple: '#b39fff',
+    magenta: '#db64ff',
     transGreen: 'rgba(100, 255, 218, 0.1)',
     transNavy: 'rgba(2, 12, 27, 0.9)',
   },
@@ -27,7 +30,7 @@ const theme = {
   fonts: {
     Calibre:
       'Calibre, system, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif',
-    SFMono: 'SF Mono, monospace',
+    SFMono: 'SF Mono, Fira Code, Fira Mono, monospace',
   },
 
   fontSizes: {

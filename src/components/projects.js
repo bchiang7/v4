@@ -54,7 +54,7 @@ const TechList = Ul.extend`
   li {
     margin-right: 20px;
     font-family: ${theme.fonts.SFMono};
-    font-size: ${theme.fontSizes.smallish};
+    font-size: ${theme.fontSizes.xsmall};
     color: ${theme.colors.lightGrey};
   }
 `;

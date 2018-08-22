@@ -12,27 +12,111 @@ const FeaturedContainer = Section.extend`
   flex-direction: column;
   align-items: flex-start;
 `;
+const ContentContainer = styled.div`
+  position: relative;
+  z-index: 2;
+  grid-column: 1 / 7;
+  grid-row: 1 / -1;
+  ${media.thone`
+    grid-column: 1 / -1;
+    padding: 40px 40px 30px;
+  `};
+  ${media.phablet`padding: 30px 25px 20px;`};
+`;
+const FeaturedLabel = styled.h4`
+  font-size: ${theme.fontSizes.smallish};
+  font-weight: 400;
+  color: ${theme.colors.green};
+  font-family: ${theme.fonts.SFMono};
+  margin-top: 0;
+  padding-top: 0;
+`;
+const ProjectName = styled.h5`
+  font-size: 28px;
+  margin: 0 0 20px;
+`;
+const ProjectDescription = styled.div`
+  background-color: ${theme.colors.lightNavy};
+  color: ${theme.colors.lightSlate};
+  padding: 20px;
+  border-radius: ${theme.borderRadius};
+  font-size: ${theme.fontSizes.large};
+
+  ${media.thone`
+    background-color: transparent;
+    padding: 20px 0;
+  `};
+
+  p {
+    margin: 0;
+  }
+`;
+const TechList = Ul.extend`
+  display: flex;
+  margin: ${theme.margin} 0;
+
+  li {
+    font-family: ${theme.fonts.SFMono};
+    font-size: ${theme.fontSizes.smallish};
+    color: ${theme.colors.slate};
+    margin-right: ${theme.margin};
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+`;
+const Links = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  margin-left: -10px;
+
+  a {
+    padding: 10px;
+
+    svg {
+      width: ${theme.margin};
+      height: ${theme.margin};
+    }
+  }
+`;
 const FeaturedImg = styled(Img)`
   width: 100%;
   max-width: 100%;
   vertical-align: middle;
+  border-radius: ${theme.borderRadius};
+  position: relative;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1);
+  ${media.tablet`
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+  `};
+  }
 `;
 const ImgContainer = styled.div`
-  order: 0;
   position: relative;
-  width: 60%;
-  background-color: ${theme.colors.green};
-  position: relative;
+  z-index: 1;
   border-radius: ${theme.borderRadius};
-
-  ${media.tablet`display: none;`};
+  background-color: ${theme.colors.green};
+  background: linear-gradient(0.4turn, ${theme.colors.green}, ${theme.colors.blue});
+  border-radius: 2px;
+  grid-column: 6 / -1;
+  grid-row: 1 / -1;
+  ${media.tablet`height: 100%;`};
+  ${media.thone`
+    grid-column: 1 / -1;
+    opacity: 0.25;
+  `};
 
   &:hover {
-    background-color: transparent;
+    background: transparent;
 
     &:before,
     ${FeaturedImg} {
-      background-color: transparent;
+      background: transparent;
       filter: none;
     }
   }
@@ -45,123 +129,24 @@ const ImgContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    transition: ${theme.transition};
     z-index: 3;
+    transition: ${theme.transition};
     background-color: ${theme.colors.navy};
     mix-blend-mode: screen;
   }
-  ${FeaturedImg} {
-    position: relative;
-    mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1);
-    border-radius: ${theme.borderRadius};
-  }
-`;
-const ProjectContent = styled.div`
-  width: 45%;
-  margin-left: -5%;
-  z-index: 5;
-
-  ${media.tablet`
-    width: 100%;
-    margin: 0 !important;
-  `};
-`;
-const ProjectDetails = styled.div`
-  background-color: ${theme.colors.lightNavy};
-  padding: 25px 25px 15px;
-`;
-const FeaturedLabel = styled.h4`
-  font-size: ${theme.fontSizes.small};
-  font-weight: 400;
-  color: ${theme.colors.green};
-  font-family: ${theme.fonts.SFMono};
-  margin-top: 0;
-  padding-top: 0;
-`;
-const ProjectName = styled.h5`
-  font-size: 28px;
-  margin: 0 0 20px;
-`;
-const ProjectDescription = styled.div`
-  font-size: ${theme.fontSizes.large};
-
-  p {
-    margin: 0;
-  }
-`;
-const TechList = Ul.extend`
-  display: flex;
-  justify-content: flex-end;
-  margin: ${theme.margin} 0 0 auto;
-
-  ${media.tablet`justify-content: flex-start;`};
-
-  li {
-    font-family: ${theme.fonts.SFMono};
-    font-size: ${theme.fontSizes.smallish};
-    color: ${theme.colors.lightGrey};
-    margin-left: ${theme.margin};
-
-    ${media.tablet`margin: 0 20px 0 0;`};
-  }
-`;
-const Links = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  right: -10px;
-  margin-top: 10px;
-
-  ${media.tablet`right: 0;`};
-
-  a {
-    padding: 10px;
-
-    svg {
-      width: ${theme.margin};
-      height: ${theme.margin};
-    }
-  }
 `;
 const Project = styled.div`
-  ${mixins.flexBetween};
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  align-items: center;
   margin-bottom: 100px;
-  text-align: right;
-
-  ${media.tablet`
-    display: block;
-    text-align: left;
-  `};
+  ${media.tablet`align-items: flex-start;`};
+  ${media.thone`margin-bottom: 70px;`};
 
   &:last-of-type {
     margin-bottom: 0;
-  }
-
-  &:nth-of-type(even) {
-    text-align: left;
-
-    ${ImgContainer} {
-      order: 1;
-    }
-    ${ProjectContent} {
-      text-align: left;
-      margin: 0 -5% 0 0;
-    }
-    ${TechList}, ${Links} {
-      justify-content: flex-start;
-
-      li {
-        margin: 0 20px 0 0;
-      }
-    }
-    ${Links} {
-      right: auto;
-      left: -10px;
-
-      ${media.tablet`justify-content: flex-end;`};
-    }
   }
 `;
 
@@ -182,29 +167,28 @@ class Featured extends Component {
           {featured &&
             featured.map((project, i) => (
               <Project key={i}>
+                <ContentContainer>
+                  <FeaturedLabel>Featured Project</FeaturedLabel>
+                  <ProjectName>{project.node.frontmatter.title}</ProjectName>
+                  <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                  <TechList>
+                    {project.node.frontmatter.tech.map((tech, i) => (
+                      <li key={i}>{tech}</li>
+                    ))}
+                  </TechList>
+                  <Links>
+                    <A href={project.node.frontmatter.github} target="_blank" rel="noopener">
+                      <IconGithub />
+                    </A>
+                    <A href={project.node.frontmatter.external} target="_blank" rel="noopener">
+                      <IconExternal />
+                    </A>
+                  </Links>
+                </ContentContainer>
+
                 <ImgContainer>
                   <FeaturedImg sizes={project.node.frontmatter.cover.childImageSharp.sizes} />
                 </ImgContainer>
-                <ProjectContent>
-                  <FeaturedLabel>Featured Project</FeaturedLabel>
-                  <ProjectName>{project.node.frontmatter.title}</ProjectName>
-                  <ProjectDetails>
-                    <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                    <TechList>
-                      {project.node.frontmatter.tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
-                    </TechList>
-                    <Links>
-                      <A href={project.node.frontmatter.github} target="_blank" rel="noopener">
-                        <IconGithub />
-                      </A>
-                      <A href={project.node.frontmatter.external} target="_blank" rel="noopener">
-                        <IconExternal />
-                      </A>
-                    </Links>
-                  </ProjectDetails>
-                </ProjectContent>
               </Project>
             ))}
         </div>
