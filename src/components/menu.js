@@ -3,18 +3,10 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import config from '../config';
 
-import {
-  IconLogo,
-  IconHamburger,
-  IconGithub,
-  IconLinkedin,
-  IconCodepen,
-  IconInstagram,
-  IconTwitter,
-} from './icons';
+import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Header, Nav, Ol, Ul, A } from '../style';
+import { theme, mixins, media, Nav, Ol, Ul, A } from '../style';
 
 const MenuContainer = styled.div`
   ${mixins.flexCenter};
@@ -28,74 +20,12 @@ const MenuContainer = styled.div`
   padding: 50px;
   background-color: ${theme.colors.lightNavy};
   transition: ${theme.transition};
-  z-index: 20;
+  z-index: 10;
   font-family: ${theme.fonts.SFMono};
   display: none;
   ${media.tablet`
     display: flex;
   `};
-`;
-const HeaderContainer = Header.extend`
-  ${mixins.flexBetween};
-  height: ${theme.headerScrollHeight};
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 22px;
-  display: flex;
-`;
-const Logo = styled.div`
-  ${mixins.flexCenter};
-`;
-const LogoLink = A.extend`
-  color: ${theme.colors.green};
-  width: 40px;
-  height: 40px;
-
-  &:hover {
-    svg {
-      fill: ${theme.colors.transGreen};
-    }
-  }
-
-  svg {
-    fill: none;
-    transition: ${theme.transition};
-    user-select: none;
-  }
-`;
-const Buns = styled.div`
-  width: 80px;
-
-  .ham {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: transform 400ms;
-    user-select: none;
-
-    &.active {
-      transform: rotate(45deg);
-      .top,
-      .bottom {
-        stroke-dashoffset: -68px;
-      }
-    }
-
-    .line {
-      fill: none;
-      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-      stroke: ${theme.colors.green};
-      stroke-width: 5;
-      stroke-linecap: round;
-
-      &.top,
-      &.bottom {
-        stroke-dasharray: 40 121;
-      }
-    }
-  }
 `;
 const NavLinks = Nav.extend`
   ${mixins.flexBetween};
@@ -153,27 +83,9 @@ const SocialLink = A.extend`
 `;
 
 class Menu extends Component {
-  state = {};
-
-  componentDidMount() {}
-
-  toggleMenu() {
-    document.querySelector('.ham').classList.toggle('active');
-  }
-
   render() {
     return (
       <MenuContainer>
-        <HeaderContainer>
-          <Logo>
-            <LogoLink to="/">
-              <IconLogo />
-            </LogoLink>
-          </Logo>
-          <Buns onClick={this.toggleMenu}>
-            <IconHamburger />
-          </Buns>
-        </HeaderContainer>
         <NavLinks>
           <NavList>
             <NavListItem>

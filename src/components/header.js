@@ -3,7 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import config from '../config';
 import { throttle } from '../utils';
-import { IconLogo } from './icons';
+import { IconLogo, IconHamburger } from './icons';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Nav, Ol, A } from '../style';
@@ -15,7 +15,7 @@ const HeaderContainer = styled.header`
   padding: 0px 50px;
   background-color: ${theme.colors.navy};
   transition: ${theme.transition};
-  z-index: 10;
+  z-index: 11;
   width: 100%;
   height: ${props =>
     props.scrollDirection === 'none' ? theme.headerHeight : theme.headerScrollHeight};
@@ -52,6 +52,39 @@ const LogoLink = A.extend`
     fill: none;
     transition: ${theme.transition};
     user-select: none;
+  }
+`;
+const Buns = styled.div`
+  width: 80px;
+  display: none;
+  ${media.tablet`display: block;`};
+
+  .ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    user-select: none;
+
+    &.active {
+      transform: rotate(45deg);
+      .top,
+      .bottom {
+        stroke-dashoffset: -68px;
+      }
+    }
+
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: ${theme.colors.green};
+      stroke-width: 5;
+      stroke-linecap: round;
+
+      &.top,
+      &.bottom {
+        stroke-dasharray: 40 121;
+      }
+    }
   }
 `;
 const NavLinks = styled.div`
@@ -93,6 +126,7 @@ class Header extends Component {
     headerHeight: null,
     lastScrollTop: 0,
     scrollDirection: 'none',
+    menuOpen: false,
   };
 
   componentDidMount() {
@@ -106,8 +140,12 @@ class Header extends Component {
   }
 
   handleScroll() {
-    const { headerHeight, lastScrollTop } = this.state;
+    const { headerHeight, lastScrollTop, menuOpen } = this.state;
     const fromTop = window.scrollY;
+
+    if (menuOpen) {
+      return;
+    }
 
     // Make sure they scroll more than DELTA
     if (Math.abs(lastScrollTop - fromTop) <= DELTA) {
@@ -125,6 +163,14 @@ class Header extends Component {
     this.setState({ lastScrollTop: fromTop });
   }
 
+  toggleMenu() {
+    document.querySelector('.ham').classList.toggle('active');
+
+    const { menuOpen } = this.state;
+
+    this.setState({ menuOpen: !menuOpen });
+  }
+
   render() {
     const { scrollDirection } = this.state;
 
@@ -136,6 +182,9 @@ class Header extends Component {
               <IconLogo />
             </LogoLink>
           </Logo>
+          <Buns onClick={this.toggleMenu}>
+            <IconHamburger />
+          </Buns>
           <NavLinks>
             <NavList>
               <NavListItem>
