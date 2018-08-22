@@ -24,7 +24,6 @@ const HeaderContainer = styled.header`
   transform: translateY(
     ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
   );
-
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 22px;`};
 `;
@@ -82,7 +81,6 @@ const NavLink = styled(AnchorLink)`
 `;
 const ResumeLink = A.extend`
   ${mixins.smallButton};
-  padding: 10px;
   margin-left: 10px;
   padding: 10px 15px 10px;
   font-size: ${theme.fontSizes.smallish};

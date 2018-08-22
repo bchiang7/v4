@@ -6,6 +6,7 @@ import config from '../config';
 
 import Loader from '../components/loader';
 import Header from '../components/header';
+import Menu from '../components/menu';
 import Social from '../components/social';
 import Email from '../components/email';
 import Footer from '../components/footer';
@@ -19,17 +20,12 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-
     <Loader />
-
     <Social />
-
     <Email email={config.email} />
-
+    <Menu />
     <Header />
-
     {children()}
-
     <Footer />
   </div>
 );
