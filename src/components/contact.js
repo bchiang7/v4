@@ -58,7 +58,10 @@ class Contact extends Component {
         <Header>What's Next?</Header>
         <Title>{node.frontmatter.title}</Title>
         <P dangerouslySetInnerHTML={{ __html: node.html }} />
-        <EmailLink href={`mailto:${config.email}`} target="_blank" rel="noopener">
+        <EmailLink
+          href={`mailto:${config.email}`}
+          target="_blank"
+          rel="nofollow noopener noreferrer">
           Send An Email
         </EmailLink>
       </ContactContainer>

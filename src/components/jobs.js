@@ -11,8 +11,9 @@ const JobsContainer = Section.extend`
 const TabsContainer = styled.div`
   display: flex;
   align-items: flex-start;
+  position: relative;
 
-  ${media.phablet`display: block;`};
+  ${media.thone`display: block;`};
 `;
 const Tabs = styled.div`
   display: block;
@@ -20,7 +21,7 @@ const Tabs = styled.div`
   width: max-content;
   z-index: 3;
 
-  ${media.phablet`
+  ${media.thone`
     display: flex;
     margin-bottom: 30px;
     width: 100%;
@@ -43,12 +44,12 @@ const Tab = styled.button`
   color: ${props => (props.isActive ? theme.colors.green : theme.colors.lightGrey)};
 
   ${media.tablet`padding: 0 10px 2px;`};
-  ${media.phablet`
-    padding: 0 15px 2px;
+  ${media.thone`
+    padding: 0 15px;
     text-align: center;
     border-left: 0;
     border-bottom: 2px solid ${theme.colors.darkGrey};
-    border-bottom-color: ${props => (props.isActive ? theme.colors.green : theme.colors.darkGrey)};
+    min-width: 120px;
   `};
 
   &:focus {
@@ -71,7 +72,17 @@ const Highlighter = styled.span`
     ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
   );
 
-  ${media.phablet`display: none;`};
+  ${media.thone`
+    width: 100%;
+    max-width: ${theme.tabWidth}px;
+    height: 2px;
+    top: auto;
+    bottom: 0;
+    transform: translateX(
+      ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
+    );
+
+  `};
 `;
 const ContentContainer = styled.div`
   position: relative;
@@ -79,7 +90,7 @@ const ContentContainer = styled.div`
   padding-left: 30px;
   flex-grow: 1;
   ${media.tablet`padding-left: 20px;`};
-  ${media.phablet`padding-left: 0;`};
+  ${media.thone`padding-left: 0;`};
 `;
 const TabContent = styled.div`
   top: 0;
@@ -183,7 +194,10 @@ class Jobs extends Component {
                   <JobTitle>
                     <span>{job.node.frontmatter.title} @ </span>
                     <span>
-                      <a href={job.node.frontmatter.url} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={job.node.frontmatter.url}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer">
                         {job.node.frontmatter.company}
                       </a>
                     </span>

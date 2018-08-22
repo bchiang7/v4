@@ -99,10 +99,16 @@ class Projects extends Component {
                   ))}
                 </TechList>
                 <Links>
-                  <IconLink href={project.node.frontmatter.github} target="_blank" rel="noopener">
+                  <IconLink
+                    href={project.node.frontmatter.github}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer">
                     <IconGithub />
                   </IconLink>
-                  <IconLink href={project.node.frontmatter.external} target="_blank" rel="noopener">
+                  <IconLink
+                    href={project.node.frontmatter.external}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer">
                     <IconExternal />
                   </IconLink>
                 </Links>

@@ -48,7 +48,7 @@ const Social = () => (
       {config.socialMedia &&
         config.socialMedia.map((social, i) => (
           <SocialItem key={i}>
-            <SocialLink href={social.url} target="_blank" rel="noopener">
+            <SocialLink href={social.url} target="_blank" rel="nofollow noopener noreferrer">
               {social.name === 'Github' ? (
                 <IconGithub />
               ) : social.name === 'Linkedin' ? (

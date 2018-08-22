@@ -9,20 +9,22 @@ const AboutContainer = Section.extend``;
 const FlexContainer = styled.div`
   ${mixins.flexBetween};
   align-items: flex-start;
-
   ${media.tablet`display: block;`};
 `;
 const Content = styled.div`
   width: 60%;
   max-width: 480px;
   padding-right: 30px;
-
-  ${media.tablet`width: 100%;`};
+  ${media.tablet`
+    width: 100%;
+    padding-right: 0;
+  `};
 `;
 const SkillsContainer = Ul.extend`
-  display: grid;
-  grid-template-columns: 200px 200px;
   margin-top: 20px;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
 `;
 const Skill = styled.li`
   position: relative;
@@ -50,20 +52,18 @@ const Avatar = styled(Img)`
   transition: ${theme.transition};
 `;
 const PicContainer = styled.div`
+  position: relative;
   width: 40%;
   max-width: 300px;
   border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.green};
-  position: relative;
-
-  ${media.tablet`
-    margin: 50px auto 0;
-  `};
-  ${media.phablet`
-    width: 70%;
-  `};
+  background: ${theme.gradient};
+  ${media.tablet`margin: 50px auto 0;`};
+  ${media.phablet`width: 70%;`};
 
   &:hover {
+    background: transparent;
+
     &:after {
       top: 15px;
       left: 15px;
@@ -74,7 +74,6 @@ const PicContainer = styled.div`
       mix-blend-mode: normal;
     }
   }
-
   &:before {
     content: '';
     position: absolute;
@@ -89,7 +88,6 @@ const PicContainer = styled.div`
     mix-blend-mode: screen;
     border-radius: ${theme.borderRadius};
   }
-
   &:after {
     content: '';
     display: block;

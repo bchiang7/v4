@@ -2,7 +2,7 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - JavaScript (ES6)
+  - JavaScript
   - CSS/Sass
   - Python
   - React
