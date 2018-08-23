@@ -39,6 +39,25 @@ module.exports = {
     },
   ],
 
+  navLinks: [
+    {
+      name: 'About',
+      url: '#about',
+    },
+    {
+      name: 'Experience',
+      url: '#jobs',
+    },
+    {
+      name: 'Work',
+      url: '#projects',
+    },
+    {
+      name: 'Contact',
+      url: '#contact',
+    },
+  ],
+
   twitterHandle: '@bchiang7',
   googleAnalyticsID: 'UA-12345689-1',
 

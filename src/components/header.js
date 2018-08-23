@@ -235,18 +235,6 @@ class Header extends Component {
     }
   };
 
-  handleLinkTitle(link) {
-    return link === '#about'
-      ? 'About'
-      : link === '#jobs'
-        ? 'Experience'
-        : link === '#projects'
-          ? 'Work'
-          : link === '#contact'
-            ? 'Contact'
-            : '';
-  }
-
   render() {
     const { scrollDirection, menuOpen } = this.state;
     const { navLinks } = this.props;
@@ -271,7 +259,7 @@ class Header extends Component {
               {navLinks &&
                 navLinks.map((link, i) => (
                   <NavListItem key={i}>
-                    <NavLink href={link}>{this.handleLinkTitle(link)}</NavLink>
+                    <NavLink href={link.url}>{link.name}</NavLink>
                   </NavListItem>
                 ))}
             </NavList>
@@ -282,7 +270,11 @@ class Header extends Component {
           </NavLinks>
         </Navbar>
 
-        <Menu menuOpen={menuOpen} handleMenuClick={e => this.handleMenuClick(e)} />
+        <Menu
+          navLinks={navLinks}
+          menuOpen={menuOpen}
+          handleMenuClick={e => this.handleMenuClick(e)}
+        />
       </HeaderContainer>
     );
   }

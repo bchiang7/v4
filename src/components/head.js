@@ -14,6 +14,7 @@ const Head = ({ siteMetadata }) => (
     <meta name="description" content={siteMetadata.description} />
     <meta name="keywords" content={config.siteKeywords} />
     <meta name="google-site-verification" content={siteMetadata.googleVerification} />
+
     <meta property="og:title" content={siteMetadata.title} />
     <meta property="og:description" content={siteMetadata.description} />
     <meta property="og:type" content="website" />
@@ -24,9 +25,11 @@ const Head = ({ siteMetadata }) => (
     <meta property="og:image:height" content="800" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content={config.siteLanguage} />
+
     <meta itemProp="name" content={siteMetadata.title} />
     <meta itemProp="description" content={siteMetadata.description} />
     <meta itemProp="image" content={config.siteImage} />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={siteMetadata.siteUrl} />
     <meta name="twitter:site" content={config.twitterHandle} />

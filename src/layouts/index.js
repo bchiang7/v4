@@ -13,7 +13,7 @@ import Footer from '../components/footer';
 class Layout extends Component {
   render() {
     const { children, data } = this.props;
-    const navLinks = data.nav.edges[0].node.frontmatter.links;
+    const navLinks = config.navLinks;
 
     return (
       <div id="root">
@@ -48,17 +48,6 @@ export const query = graphql`
         title
         siteUrl
         description
-      }
-    }
-    nav: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/nav/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            linkTitles
-            links
-          }
-        }
       }
     }
   }
