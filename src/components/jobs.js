@@ -174,14 +174,18 @@ class Jobs extends Component {
       <JobsContainer id="jobs">
         <H3>Where I've Worked</H3>
         <TabsContainer>
-          <Tabs>
+          <Tabs role="tablist">
             {jobs &&
               jobs.map((tab, i) => (
                 <Tab
-                  href="#"
                   key={i}
                   isActive={this.isActive(i)}
-                  onClick={e => this.setActiveTab(i, e)}>
+                  onClick={e => this.setActiveTab(i, e)}
+                  role="tab"
+                  aria-selected={this.isActive(i) ? 'true' : 'false'}
+                  aria-controls={i}
+                  id={i}
+                  tabindex={this.isActive(i) ? '0' : '-1'}>
                   <span>{tab.node.frontmatter.company}</span>
                 </Tab>
               ))}
@@ -190,7 +194,13 @@ class Jobs extends Component {
           <ContentContainer>
             {jobs &&
               jobs.map((job, i) => (
-                <TabContent key={i} isActive={this.isActive(i)}>
+                <TabContent
+                  key={i}
+                  isActive={this.isActive(i)}
+                  id={i}
+                  role="tabpanel"
+                  tabindex="0"
+                  aria-labelledby={i}>
                   <JobTitle>
                     <span>{job.node.frontmatter.title} @ </span>
                     <span>

@@ -31,6 +31,7 @@ const Sidebar = styled.div`
   right: 0;
   margin-left: auto;
   font-family: ${theme.fonts.SFMono};
+  box-shadow: -2px 0px 4px ${theme.colors.transNavy};
   ${media.thone`
     padding: 25px;
   `};

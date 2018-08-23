@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang',
-  siteTitleAlt: 'Brittany Chiang | Software Engineer',
-  siteDescription: 'Front End Software Engineer',
+  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteDescription:
+    'Design-minded software engineer based in Boston, MA who specializes in developing (and occasionally designing) beautiful, high-quality websites and applications.',
   siteUrl: 'https://brittanychiang.com',
   siteLanguage: 'en',
   ogLanguage: 'en_US',
@@ -35,7 +35,7 @@ module.exports = {
     },
   ],
 
-  userTwitter: '@bchiang7', // Twitter Username
+  userTwitter: '@bchiang7',
   googleAnalyticsID: 'UA-12345689-1',
 
   projectMaxWidth: 1100,

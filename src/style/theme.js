@@ -24,7 +24,7 @@ const theme = {
     purple: '#b39fff',
     magenta: '#db64ff',
     transGreen: 'rgba(100, 255, 218, 0.1)',
-    transNavy: 'rgba(2, 12, 27, 0.5)',
+    transNavy: 'rgba(10, 25, 47, 0.7)',
     shadowNavy: 'rgba(2, 12, 27, 0.9)',
   },
 
