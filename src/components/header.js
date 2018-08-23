@@ -24,7 +24,7 @@ const HeaderContainer = styled.header`
   height: ${props =>
     props.scrollDirection === 'none' ? theme.headerHeight : theme.headerScrollHeight};
   box-shadow: ${props =>
-    props.scrollDirection === 'up' ? `0 2px 4px ${theme.colors.transNavy}` : 'none'};
+    props.scrollDirection === 'up' ? `0 2px 4px ${theme.colors.shadowNavy}` : 'none'};
   transform: translateY(
     ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
   );
@@ -63,7 +63,7 @@ const LogoLink = A.extend`
 const Hamburger = styled.div`
   ${mixins.flexCenter};
   overflow: visible;
-  margin: 0;
+  margin: 0 -12px 0 0;
   padding: 15px;
   cursor: pointer;
   transition-timing-function: linear;
@@ -209,9 +209,13 @@ class Header extends Component {
     }
   };
 
-  handleNavClick = () => {
-    if (window.innerWidth < 768) {
-      // this.toggleMenu();
+  handleMenuClick = e => {
+    const target = e.target;
+    const isLink = target.hasAttribute('href');
+    const isContainer = target.classList ? target.classList[0].includes('MenuContainer') : false;
+
+    if (isLink || isContainer) {
+      this.toggleMenu();
     }
   };
 
@@ -252,7 +256,7 @@ class Header extends Component {
           </NavLinks>
         </Navbar>
 
-        <Menu menuOpen={menuOpen} handleNavClick={this.handleNavClick} />
+        <Menu menuOpen={menuOpen} handleMenuClick={e => this.handleMenuClick(e)} />
       </HeaderContainer>
     );
   }

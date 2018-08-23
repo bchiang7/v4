@@ -10,25 +10,32 @@ import styled from 'styled-components';
 import { theme, mixins, media, Nav, Ol, Ul, A } from '../style';
 
 const MenuContainer = styled.div`
-  ${mixins.flexCenter};
-  flex-direction: column;
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
-  width: 50vw;
+  width: 100%;
   height: 100vh;
-  padding: 50px;
-  background-color: ${theme.colors.lightNavy};
-  transition: ${theme.transition};
   z-index: 10;
-  font-family: ${theme.fonts.SFMono};
+  transition: ${theme.transition};
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
+`;
+const Sidebar = styled.div`
+  ${mixins.flexCenter};
+  flex-direction: column;
+  background-color: ${theme.colors.lightNavy};
+  padding: 50px;
+  width: 50vw;
+  height: 100%;
+  position: relative;
+  right: 0;
+  margin-left: auto;
+  font-family: ${theme.fonts.SFMono};
   ${media.thone`
     padding: 25px;
   `};
   ${media.phablet`
-    padding: 15px;
+    padding: 10px;
     width: 75vw;
   `};
 `;
@@ -77,10 +84,6 @@ const SocialContainer = styled.div`
 `;
 const SocialItemList = Ul.extend`
   ${mixins.flexBetween};
-  flex-wrap: wrap;
-  ${media.phablet`
-    ${mixins.flexCenter};
-  `};
 `;
 const SocialItem = styled.li``;
 const SocialLink = A.extend`
@@ -89,63 +92,72 @@ const SocialLink = A.extend`
   svg {
     width: 24px;
     height: 24px;
+    ${media.phablet`
+      width: 20px;
+      height: 20px;
+    `};
   }
 `;
 
 class Menu extends Component {
   static propTypes = {
     menuOpen: PropTypes.bool.isRequired,
-    handleNavClick: PropTypes.func.isRequired,
+    handleMenuClick: PropTypes.func.isRequired,
   };
 
   render() {
-    const { menuOpen, handleNavClick } = this.props;
+    const { menuOpen, handleMenuClick } = this.props;
 
     return (
-      <MenuContainer menuOpen={menuOpen}>
-        <NavLinks>
-          <NavList>
-            <NavListItem onClick={handleNavClick}>
-              <NavLink href="#about">About</NavLink>
-            </NavListItem>
-            <NavListItem onClick={handleNavClick}>
-              <NavLink href="#jobs">Experience</NavLink>
-            </NavListItem>
-            <NavListItem onClick={handleNavClick}>
-              <NavLink href="#projects">Work</NavLink>
-            </NavListItem>
-            <NavListItem onClick={handleNavClick}>
-              <NavLink href="#contact">Contact</NavLink>
-            </NavListItem>
-          </NavList>
-          <ResumeLink href={config.resume} target="_blank" rel="nofollow noopener noreferrer">
-            Resume
-          </ResumeLink>
-        </NavLinks>
-        <SocialContainer>
-          <SocialItemList>
-            {config.socialMedia &&
-              config.socialMedia.map((social, i) => (
-                <SocialItem key={i}>
-                  <SocialLink href={social.url} target="_blank" rel="nofollow noopener noreferrer">
-                    {social.name === 'Github' ? (
-                      <IconGithub />
-                    ) : social.name === 'Linkedin' ? (
-                      <IconLinkedin />
-                    ) : social.name === 'Codepen' ? (
-                      <IconCodepen />
-                    ) : social.name === 'Instagram' ? (
-                      <IconInstagram />
-                    ) : social.name === 'Twitter' ? (
-                      <IconTwitter />
-                    ) : (
-                      <IconGithub />
-                    )}
-                  </SocialLink>
-                </SocialItem>
-              ))}
-          </SocialItemList>
-        </SocialContainer>
+      <MenuContainer menuOpen={menuOpen} onClick={handleMenuClick}>
+        <Sidebar>
+          <NavLinks>
+            <NavList>
+              <NavListItem>
+                <NavLink href="#about">About</NavLink>
+              </NavListItem>
+              <NavListItem>
+                <NavLink href="#jobs">Experience</NavLink>
+              </NavListItem>
+              <NavListItem>
+                <NavLink href="#projects">Work</NavLink>
+              </NavListItem>
+              <NavListItem>
+                <NavLink href="#contact">Contact</NavLink>
+              </NavListItem>
+            </NavList>
+            <ResumeLink href={config.resume} target="_blank" rel="nofollow noopener noreferrer">
+              Resume
+            </ResumeLink>
+          </NavLinks>
+          <SocialContainer>
+            <SocialItemList>
+              {config.socialMedia &&
+                config.socialMedia.map((social, i) => (
+                  <SocialItem key={i}>
+                    <SocialLink
+                      href={social.url}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer">
+                      {social.name === 'Github' ? (
+                        <IconGithub />
+                      ) : social.name === 'Linkedin' ? (
+                        <IconLinkedin />
+                      ) : social.name === 'Codepen' ? (
+                        <IconCodepen />
+                      ) : social.name === 'Instagram' ? (
+                        <IconInstagram />
+                      ) : social.name === 'Twitter' ? (
+                        <IconTwitter />
+                      ) : (
+                        <IconGithub />
+                      )}
+                    </SocialLink>
+                  </SocialItem>
+                ))}
+            </SocialItemList>
+          </SocialContainer>
+        </Sidebar>
       </MenuContainer>
     );
   }
