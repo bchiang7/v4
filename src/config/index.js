@@ -2,10 +2,14 @@ module.exports = {
   siteTitle: 'Brittany Chiang | Software Engineer',
   siteDescription:
     'Design-minded software engineer based in Boston, MA who specializes in developing (and occasionally designing) beautiful, high-quality websites and applications.',
+  siteKeywords:
+    'brittany chiang, brittany, chiang, bchiang7, software engineer, web developer, javascript, northeastern',
   siteUrl: 'https://brittanychiang.com',
-  siteLanguage: 'en',
-  ogLanguage: 'en_US',
-  siteLogo: '/logos/logo-1024.png',
+  siteLanguage: 'en_US',
+  siteImage: '', // 1280px x 800px
+  siteIcon: '', // TODO: og icons
+
+  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
 
   avatar: '/logos/social.png',
   name: 'Brittany Chiang',
@@ -35,7 +39,7 @@ module.exports = {
     },
   ],
 
-  userTwitter: '@bchiang7',
+  twitterHandle: '@bchiang7',
   googleAnalyticsID: 'UA-12345689-1',
 
   projectMaxWidth: 1100,

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 
 import config from '../config';
 
+import Head from '../components/head';
 import Loader from '../components/loader';
 import Header from '../components/header';
 import Social from '../components/social';
@@ -17,13 +17,7 @@ class Layout extends Component {
 
     return (
       <div id="root">
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
+        <Head siteMetadata={data.site.siteMetadata} />
 
         <Loader />
 
