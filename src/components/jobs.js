@@ -141,7 +141,7 @@ const JobTitle = styled.h4`
 const JobDetails = styled.h5`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
-  font-weight: 400;
+  font-weight: normal;
   letter-spacing: 0.5px;
   color: ${theme.colors.slate};
   margin-bottom: 30px;

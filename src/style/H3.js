@@ -19,7 +19,7 @@ const H3 = styled.h3`
     content: '0' counter(section) '.';
     margin-right: 10px;
     font-family: ${theme.fonts.SFMono};
-    font-weight: 400;
+    font-weight: normal;
     color: ${theme.colors.green};
     font-size: ${theme.fontSizes.xlarge};
     position: relative;

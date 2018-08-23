@@ -25,7 +25,7 @@ const ContentContainer = styled.div`
 `;
 const FeaturedLabel = styled.h4`
   font-size: ${theme.fontSizes.smallish};
-  font-weight: 400;
+  font-weight: normal;
   color: ${theme.colors.green};
   font-family: ${theme.fonts.SFMono};
   margin-top: 0;
