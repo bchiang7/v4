@@ -11,6 +11,7 @@ const HeroContainer = Section.extend`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  ${media.tablet`padding-top: 150px;`};
 `;
 const Hi = styled.h1`
   color: ${theme.colors.green};

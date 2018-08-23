@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
+import Menu from '../components/menu';
 import config from '../config';
 import { throttle } from '../utils';
-import { IconLogo, IconHamburger } from './icons';
+import { IconLogo } from './icons';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Nav, Ol, A } from '../style';
@@ -16,6 +17,9 @@ const HeaderContainer = styled.header`
   background-color: ${theme.colors.navy};
   transition: ${theme.transition};
   z-index: 11;
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
   width: 100%;
   height: ${props =>
     props.scrollDirection === 'none' ? theme.headerHeight : theme.headerScrollHeight};
@@ -25,7 +29,7 @@ const HeaderContainer = styled.header`
     ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
   );
   ${media.desktop`padding: 0 40px;`};
-  ${media.tablet`padding: 0 22px;`};
+  ${media.tablet`padding: 0 25px;`};
 `;
 const Navbar = Nav.extend`
   ${mixins.flexBetween};
@@ -33,6 +37,8 @@ const Navbar = Nav.extend`
   width: 100%;
   color: ${theme.colors.white};
   counter-reset: item 0;
+  position: relative;
+  z-index: 12;
 `;
 const Logo = styled.div`
   ${mixins.flexCenter};
@@ -54,39 +60,74 @@ const LogoLink = A.extend`
     user-select: none;
   }
 `;
-const Buns = styled.div`
-  width: 80px;
+const Hamburger = styled.div`
+  ${mixins.flexCenter};
+  overflow: visible;
+  margin: 0;
+  padding: 15px;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
   display: none;
-  ${media.tablet`display: block;`};
+  ${media.tablet`display: flex;`};
+`;
+const HamburgerBox = styled.div`
+  position: relative;
+  display: inline-block;
+  width: ${theme.hamburgerWidth}px;
+  height: 24px;
+`;
+const HamburgerInner = styled.div`
+  background-color: ${theme.colors.green};
+  position: absolute;
+  width: ${theme.hamburgerWidth}px;
+  height: 2px;
+  border-radius: ${theme.borderRadius};
+  top: 50%;
+  left: 0;
+  right: 0;
+  transition-duration: 0.22s;
+  transition-property: transform;
+  transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
+  transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+  transition-timing-function: cubic-bezier(
+    ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
+  );
 
-  .ham {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: transform 400ms;
-    user-select: none;
-
-    &.active {
-      transform: rotate(45deg);
-      .top,
-      .bottom {
-        stroke-dashoffset: -68px;
-      }
-    }
-
-    .line {
-      fill: none;
-      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-      stroke: ${theme.colors.green};
-      stroke-width: 5;
-      stroke-linecap: round;
-
-      &.top,
-      &.bottom {
-        stroke-dasharray: 40 121;
-      }
-    }
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    background-color: ${theme.colors.green};
+    position: absolute;
+    left: auto;
+    right: 0;
+    width: ${theme.hamburgerWidth}px;
+    height: 2px;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    border-radius: 4px;
+  }
+  &:before {
+    width: ${props => (props.menuOpen ? `100%` : `120%`)};
+    top: ${props => (props.menuOpen ? `0` : `-10px`)};
+    opacity: ${props => (props.menuOpen ? 0 : 1)};
+    transition: ${props => (props.menuOpen ? theme.hamBeforeActive : theme.hamBefore)};
+  }
+  &:after {
+    width: ${props => (props.menuOpen ? `100%` : `80%`)};
+    bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
+    transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
+    transition: ${props => (props.menuOpen ? theme.hamAfterActive : theme.hamAfter)};
   }
 `;
+
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
@@ -123,15 +164,12 @@ const DELTA = 5;
 
 class Header extends Component {
   state = {
-    headerHeight: null,
     lastScrollTop: 0,
     scrollDirection: 'none',
     menuOpen: false,
   };
 
   componentDidMount() {
-    this.setState({ headerHeight: this.header.offsetHeight });
-
     window.addEventListener('scroll', () => throttle(this.handleScroll()));
   }
 
@@ -140,15 +178,12 @@ class Header extends Component {
   }
 
   handleScroll() {
-    const { headerHeight, lastScrollTop, menuOpen } = this.state;
+    const { lastScrollTop, menuOpen } = this.state;
     const fromTop = window.scrollY;
-
-    if (menuOpen) {
-      return;
-    }
+    const headerHeight = config.headerHeight;
 
     // Make sure they scroll more than DELTA
-    if (Math.abs(lastScrollTop - fromTop) <= DELTA) {
+    if (Math.abs(lastScrollTop - fromTop) <= DELTA || menuOpen) {
       return;
     }
 
@@ -163,16 +198,25 @@ class Header extends Component {
     this.setState({ lastScrollTop: fromTop });
   }
 
-  toggleMenu() {
-    document.querySelector('.ham').classList.toggle('active');
+  toggleMenu = () => {
+    if (window.innerWidth < 768) {
+      const { menuOpen } = this.state;
 
-    const { menuOpen } = this.state;
+      document.body.style.overflow = `${menuOpen ? 'auto' : 'hidden'}`;
+      document.body.classList.toggle('blur');
 
-    this.setState({ menuOpen: !menuOpen });
-  }
+      this.setState({ menuOpen: !menuOpen });
+    }
+  };
+
+  handleNavClick = () => {
+    if (window.innerWidth < 768) {
+      // this.toggleMenu();
+    }
+  };
 
   render() {
-    const { scrollDirection } = this.state;
+    const { scrollDirection, menuOpen } = this.state;
 
     return (
       <HeaderContainer innerRef={x => (this.header = x)} scrollDirection={scrollDirection}>
@@ -182,9 +226,11 @@ class Header extends Component {
               <IconLogo />
             </LogoLink>
           </Logo>
-          <Buns onClick={this.toggleMenu}>
-            <IconHamburger />
-          </Buns>
+          <Hamburger onClick={this.toggleMenu}>
+            <HamburgerBox>
+              <HamburgerInner menuOpen={menuOpen} />
+            </HamburgerBox>
+          </Hamburger>
           <NavLinks>
             <NavList>
               <NavListItem>
@@ -205,6 +251,8 @@ class Header extends Component {
             </ResumeLink>
           </NavLinks>
         </Navbar>
+
+        <Menu menuOpen={menuOpen} handleNavClick={this.handleNavClick} />
       </HeaderContainer>
     );
   }

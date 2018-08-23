@@ -98,7 +98,7 @@ const TabContent = styled.div`
   width: 100%;
   height: auto;
   opacity: ${props => (props.isActive ? 1 : 0)};
-  z-index: ${props => (props.isActive ? 2 : 0)};
+  z-index: ${props => (props.isActive ? 2 : -1)};
   position: ${props => (props.isActive ? 'relative' : 'absolute')};
   transition: ${theme.transition};
   transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};

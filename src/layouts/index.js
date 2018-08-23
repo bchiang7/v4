@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
@@ -6,29 +6,37 @@ import config from '../config';
 
 import Loader from '../components/loader';
 import Header from '../components/header';
-import Menu from '../components/menu';
 import Social from '../components/social';
 import Email from '../components/email';
 import Footer from '../components/footer';
 
-const Layout = ({ children, data }) => (
-  <div id="root">
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.description },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Loader />
-    <Social />
-    <Email email={config.email} />
-    <Menu />
-    <Header />
-    {children()}
-    <Footer />
-  </div>
-);
+class Layout extends Component {
+  render() {
+    const { children, data } = this.props;
+
+    return (
+      <div id="root">
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: data.site.siteMetadata.description },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        />
+
+        <Loader />
+
+        <Header />
+
+        <Social />
+        <Email email={config.email} />
+
+        {children()}
+        <Footer />
+      </div>
+    );
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.func,

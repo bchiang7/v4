@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import config from '../config';
@@ -14,17 +15,21 @@ const MenuContainer = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
-  width: 100%;
+  width: 50vw;
+  height: 100vh;
   padding: 50px;
   background-color: ${theme.colors.lightNavy};
   transition: ${theme.transition};
   z-index: 10;
   font-family: ${theme.fonts.SFMono};
-  display: none;
-  ${media.tablet`
-    display: flex;
+  transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
+  ${media.thone`
+    padding: 25px;
+  `};
+  ${media.phablet`
+    padding: 15px;
+    width: 75vw;
   `};
 `;
 const NavLinks = Nav.extend`
@@ -62,42 +67,54 @@ const ResumeLink = A.extend`
 const SocialContainer = styled.div`
   color: ${theme.colors.lightSlate};
   width: 100%;
-  position: fixed;
+  max-width: 500px;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  margin-bottom: 10%;
+  margin: 0 auto 10%;
   padding: 0 25px;
 `;
 const SocialItemList = Ul.extend`
   ${mixins.flexBetween};
+  flex-wrap: wrap;
+  ${media.phablet`
+    ${mixins.flexCenter};
+  `};
 `;
 const SocialItem = styled.li``;
 const SocialLink = A.extend`
   padding: 10px;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 `;
 
 class Menu extends Component {
+  static propTypes = {
+    menuOpen: PropTypes.bool.isRequired,
+    handleNavClick: PropTypes.func.isRequired,
+  };
+
   render() {
+    const { menuOpen, handleNavClick } = this.props;
+
     return (
-      <MenuContainer>
+      <MenuContainer menuOpen={menuOpen}>
         <NavLinks>
           <NavList>
-            <NavListItem>
+            <NavListItem onClick={handleNavClick}>
               <NavLink href="#about">About</NavLink>
             </NavListItem>
-            <NavListItem>
+            <NavListItem onClick={handleNavClick}>
               <NavLink href="#jobs">Experience</NavLink>
             </NavListItem>
-            <NavListItem>
+            <NavListItem onClick={handleNavClick}>
               <NavLink href="#projects">Work</NavLink>
             </NavListItem>
-            <NavListItem>
+            <NavListItem onClick={handleNavClick}>
               <NavLink href="#contact">Contact</NavLink>
             </NavListItem>
           </NavList>

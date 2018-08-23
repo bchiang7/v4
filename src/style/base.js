@@ -123,8 +123,16 @@ const base = injectGlobal`
     color: ${theme.colors.slate};
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
-
     ${media.tablet`font-size: ${theme.fontSizes.large};`}
+
+    &.blur {
+      #root > * {
+        filter: blur(5px) brightness(0.7);
+        transition: ${theme.transition};
+        pointer-events: none;
+        user-select: none;
+      }
+    }
   }
 
   ::selection {
