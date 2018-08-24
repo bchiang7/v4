@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://brittanychiang.com',
   siteLanguage: 'en_US',
   siteImage: '', // 1280px x 800px
-  siteIcon: '', // TODO: og icons
+  siteIcon: '../static/logo.png', // TODO: og icons
 
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
 

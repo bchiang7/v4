@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { IconArrow } from './icons';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P, Ul } from '../style';
@@ -11,7 +12,7 @@ const FlexContainer = styled.div`
   align-items: flex-start;
   ${media.tablet`display: block;`};
 `;
-const Content = styled.div`
+const ContentContainer = styled.div`
   width: 60%;
   max-width: 480px;
   padding-right: 30px;
@@ -41,6 +42,13 @@ const Skill = styled.li`
     left: 0;
   }
 `;
+const PicContainer = styled.div`
+  position: relative;
+  width: 40%;
+  max-width: 300px;
+  ${media.tablet`margin: 50px auto 0;`};
+  ${media.phablet`width: 70%;`};
+`;
 const Avatar = styled(Img)`
   width: 100%;
   max-width: 100%;
@@ -51,15 +59,12 @@ const Avatar = styled(Img)`
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
 `;
-const PicContainer = styled.div`
+const AvatarContainer = styled.div`
+  width: 100%;
   position: relative;
-  width: 40%;
-  max-width: 300px;
   border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.green};
   background: ${theme.gradient};
-  ${media.tablet`margin: 50px auto 0;`};
-  ${media.phablet`width: 70%;`};
 
   &:hover {
     background: transparent;
@@ -102,6 +107,22 @@ const PicContainer = styled.div`
     border-radius: ${theme.borderRadius};
   }
 `;
+const ArrowContainer = styled.div`
+  position: absolute;
+  margin-top: 50px;
+  left: -20%;
+
+  svg {
+    width: 70px;
+    transform: rotate(-0.7turn);
+  }
+`;
+const ArrowLabel = styled.span`
+  color: ${theme.colors.green};
+  font-family: ${theme.fonts.SFMono};
+  font-size: ${theme.fontSizes.small};
+  margin-right: 20px;
+`;
 
 class About extends Component {
   static propTypes = {
@@ -116,15 +137,21 @@ class About extends Component {
       <AboutContainer id="about">
         <H3>{node.frontmatter.title}</H3>
         <FlexContainer>
-          <Content>
+          <ContentContainer>
             <P dangerouslySetInnerHTML={{ __html: node.html }} />
             <SkillsContainer>
               {node.frontmatter.skills &&
                 node.frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
             </SkillsContainer>
-          </Content>
+          </ContentContainer>
           <PicContainer>
-            <Avatar sizes={node.frontmatter.avatar.childImageSharp.sizes} alt="Avatar" />
+            <AvatarContainer>
+              <Avatar sizes={node.frontmatter.avatar.childImageSharp.sizes} alt="Avatar" />
+            </AvatarContainer>
+            <ArrowContainer>
+              <ArrowLabel>that's me</ArrowLabel>
+              <IconArrow />
+            </ArrowContainer>
           </PicContainer>
         </FlexContainer>
       </AboutContainer>

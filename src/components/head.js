@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import config from '../config';
 
+import logo from '../static/logo.png';
+
 const Head = ({ siteMetadata }) => (
   <Helmet>
     <title itemProp="name" lang="en">
       {siteMetadata.title}
     </title>
 
-    <link rel="icon" type="image/png" href={config.siteIcon} />
+    <link rel="icon" type="image/png" href={logo} />
 
     <meta name="description" content={siteMetadata.description} />
     <meta name="keywords" content={config.siteKeywords} />
