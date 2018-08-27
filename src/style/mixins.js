@@ -41,6 +41,7 @@ const mixins = {
 
   smallButton: css`
     color: ${theme.colors.green};
+    background-color: transparent;
     border: 1px solid ${theme.colors.green};
     border-radius: ${theme.borderRadius};
     padding: 18px 20px 12px;
@@ -58,6 +59,7 @@ const mixins = {
 
   bigButton: css`
     color: ${theme.colors.green};
+    background-color: transparent;
     border: 1px solid ${theme.colors.green};
     border-radius: ${theme.borderRadius};
     padding: 20px 25px 15px;

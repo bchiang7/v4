@@ -9,10 +9,7 @@ const H3 = styled.h3`
   margin: 10px 0 40px;
   white-space: nowrap;
   font-size: ${theme.fontSizes.h3};
-
-  ${media.tablet`
-    font-size: 24px;
-  `};
+  ${media.tablet`font-size: 24px;`};
 
   &:before {
     counter-increment: section;
@@ -24,10 +21,7 @@ const H3 = styled.h3`
     font-size: ${theme.fontSizes.xlarge};
     position: relative;
     bottom: 4px;
-
-    ${media.tablet`
-      font-size: ${theme.fontSizes.large};
-    `};
+    ${media.tablet`font-size: ${theme.fontSizes.large};`};
   }
 
   &:after {
