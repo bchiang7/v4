@@ -23,7 +23,7 @@ const mixins = {
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
-    color: inherit;
+    color: ${theme.colors.green};
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;

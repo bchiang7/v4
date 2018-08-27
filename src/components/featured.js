@@ -203,24 +203,30 @@ class Featured extends Component {
                   <FeaturedLabel>Featured Project</FeaturedLabel>
                   <ProjectName>{project.node.frontmatter.title}</ProjectName>
                   <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                  <TechList>
-                    {project.node.frontmatter.tech.map((tech, i) => (
-                      <li key={i}>{tech}</li>
-                    ))}
-                  </TechList>
+                  {project.node.frontmatter.tech && (
+                    <TechList>
+                      {project.node.frontmatter.tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </TechList>
+                  )}
                   <Links>
-                    <A
-                      href={project.node.frontmatter.github}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer">
-                      <IconGithub />
-                    </A>
-                    <A
-                      href={project.node.frontmatter.external}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer">
-                      <IconExternal />
-                    </A>
+                    {project.node.frontmatter.github && (
+                      <A
+                        href={project.node.frontmatter.github}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer">
+                        <IconGithub />
+                      </A>
+                    )}
+                    {project.node.frontmatter.external && (
+                      <A
+                        href={project.node.frontmatter.external}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer">
+                        <IconExternal />
+                      </A>
+                    )}
                   </Links>
                 </ContentContainer>
 
