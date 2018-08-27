@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { IconArrow } from './icons';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P, Ul } from '../style';
@@ -65,6 +64,7 @@ const AvatarContainer = styled.div`
   border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.green};
   background: ${theme.gradient};
+  margin-left: -20px;
 
   &:hover {
     background: transparent;
@@ -107,22 +107,6 @@ const AvatarContainer = styled.div`
     border-radius: ${theme.borderRadius};
   }
 `;
-const ArrowContainer = styled.div`
-  position: absolute;
-  margin-top: 50px;
-  left: -20%;
-
-  svg {
-    width: 70px;
-    transform: rotate(-0.7turn);
-  }
-`;
-const ArrowLabel = styled.span`
-  color: ${theme.colors.green};
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.small};
-  margin-right: 20px;
-`;
 
 class About extends Component {
   static propTypes = {
@@ -148,10 +132,6 @@ class About extends Component {
             <AvatarContainer>
               <Avatar sizes={node.frontmatter.avatar.childImageSharp.sizes} alt="Avatar" />
             </AvatarContainer>
-            <ArrowContainer>
-              <ArrowLabel>that's me</ArrowLabel>
-              <IconArrow />
-            </ArrowContainer>
           </PicContainer>
         </FlexContainer>
       </AboutContainer>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Link from 'gatsby-link';
 
 import Menu from '../components/menu';
 import config from '../config';
@@ -44,7 +45,7 @@ const Navbar = Nav.extend`
 const Logo = styled.div`
   ${mixins.flexCenter};
 `;
-const LogoLink = A.extend`
+const LogoLink = styled(Link)`
   color: ${theme.colors.green};
   width: 40px;
   height: 40px;
@@ -165,6 +166,7 @@ const DELTA = 5;
 
 class Header extends Component {
   static propTypes = {
+    location: PropTypes.object.isRequired,
     navLinks: PropTypes.array.isRequired,
   };
 
@@ -237,7 +239,8 @@ class Header extends Component {
 
   render() {
     const { scrollDirection, menuOpen } = this.state;
-    const { navLinks } = this.props;
+    const { location, navLinks } = this.props;
+    const isHome = location.pathname === '/';
 
     return (
       <HeaderContainer innerRef={x => (this.header = x)} scrollDirection={scrollDirection}>
@@ -255,14 +258,16 @@ class Header extends Component {
           </Hamburger>
 
           <NavLinks>
-            <NavList>
-              {navLinks &&
-                navLinks.map((link, i) => (
-                  <NavListItem key={i}>
-                    <NavLink href={link.url}>{link.name}</NavLink>
-                  </NavListItem>
-                ))}
-            </NavList>
+            {isHome && (
+              <NavList>
+                {navLinks &&
+                  navLinks.map((link, i) => (
+                    <NavListItem key={i}>
+                      <NavLink href={link.url}>{link.name}</NavLink>
+                    </NavListItem>
+                  ))}
+              </NavList>
+            )}
 
             <ResumeLink href={config.resume} target="_blank" rel="nofollow noopener noreferrer">
               Resume
@@ -271,6 +276,7 @@ class Header extends Component {
         </Navbar>
 
         <Menu
+          isHome={isHome}
           navLinks={navLinks}
           menuOpen={menuOpen}
           handleMenuClick={e => this.handleMenuClick(e)}

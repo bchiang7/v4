@@ -12,7 +12,7 @@ import Footer from '../components/footer';
 
 class Layout extends Component {
   render() {
-    const { children, data } = this.props;
+    const { children, data, location } = this.props;
     const navLinks = config.navLinks;
 
     return (
@@ -21,7 +21,7 @@ class Layout extends Component {
 
         <Loader />
 
-        <Header navLinks={navLinks} />
+        <Header location={location} navLinks={navLinks} />
 
         <Social />
         <Email email={config.email} />
@@ -34,8 +34,9 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
-  data: PropTypes.object,
+  children: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;

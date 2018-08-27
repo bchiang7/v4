@@ -102,26 +102,29 @@ const SocialLink = A.extend`
 
 class Menu extends Component {
   static propTypes = {
+    isHome: PropTypes.bool.isRequired,
     menuOpen: PropTypes.bool.isRequired,
     navLinks: PropTypes.array.isRequired,
     handleMenuClick: PropTypes.func.isRequired,
   };
 
   render() {
-    const { menuOpen, navLinks, handleMenuClick } = this.props;
+    const { isHome, menuOpen, navLinks, handleMenuClick } = this.props;
 
     return (
       <MenuContainer menuOpen={menuOpen} onClick={handleMenuClick}>
         <Sidebar>
           <NavLinks>
-            <NavList>
-              {navLinks &&
-                navLinks.map((link, i) => (
-                  <NavListItem key={i}>
-                    <NavLink href={link.url}>{link.name}</NavLink>
-                  </NavListItem>
-                ))}
-            </NavList>
+            {isHome && (
+              <NavList>
+                {navLinks &&
+                  navLinks.map((link, i) => (
+                    <NavListItem key={i}>
+                      <NavLink href={link.url}>{link.name}</NavLink>
+                    </NavListItem>
+                  ))}
+              </NavList>
+            )}
             <ResumeLink href={config.resume} target="_blank" rel="nofollow noopener noreferrer">
               Resume
             </ResumeLink>
