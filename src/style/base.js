@@ -6,6 +6,24 @@ import * as fonts from './fonts';
 const base = injectGlobal`
   @font-face {
     font-family: 'Calibre';
+    src: url(${fonts.CalibreLightWOFF2}) format('woff2'),
+    url(${fonts.CalibreLightWOFF}) format('woff'),
+    url(${fonts.CalibreLightTTF}) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calibre';
+    src: url(${fonts.CalibreLightItalicWOFF2}) format('woff2'),
+    url(${fonts.CalibreLightItalicWOFF}) format('woff'),
+    url(${fonts.CalibreLightItalicTTF}) format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calibre';
     src: url(${fonts.CalibreRegularWOFF2}) format('woff2'),
     url(${fonts.CalibreRegularWOFF}) format('woff'),
     url(${fonts.CalibreRegularTTF}) format('truetype');

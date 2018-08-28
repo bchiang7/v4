@@ -56,7 +56,8 @@ const ProjectName = styled.h5`
   font-weight: 600;
 `;
 const ProjectDescription = styled.div`
-  font-size: ${theme.fontSizes.medium};
+  font-size: 17px;
+  line-height: 1.25;
 
   a {
     ${mixins.link};
@@ -103,7 +104,6 @@ const IconLink = A.extend`
   }
 `;
 const ShowMoreButton = Button.extend`
-  ${mixins.link};
   ${mixins.bigButton};
   margin: 100px auto 0;
 `;

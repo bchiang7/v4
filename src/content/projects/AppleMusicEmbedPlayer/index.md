@@ -5,7 +5,7 @@ image: ''
 github: ''
 external: 'https://tools.applemusic.com/en-us'
 tech:
-  - MusicKit JS
+  - MusicKit.js
   - JS
   - SCSS
 ---

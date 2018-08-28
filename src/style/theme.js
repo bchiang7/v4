@@ -54,7 +54,7 @@ const theme = {
   tabHeight: 42,
   tabWidth: 120,
 
-  gradient: `linear-gradient(0.4turn, #64ffda, #64d6ff)`,
+  gradient: `linear-gradient(0.4turn, #64d6ff, #64ffda)`,
 
   hamburgerWidth: 30,
   hamBefore: `top 0.1s ease-in 0.25s, opacity 0.1s ease-in`,

@@ -23,7 +23,7 @@ const mixins = {
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
-    color: ${theme.colors.green};
+    color: inherit;
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
@@ -36,42 +36,6 @@ const mixins = {
     &:active,
     &:focus {
       color: ${theme.colors.green};
-    }
-  `,
-
-  smallButton: css`
-    color: ${theme.colors.green};
-    background-color: transparent;
-    border: 1px solid ${theme.colors.green};
-    border-radius: ${theme.borderRadius};
-    padding: 18px 20px 12px;
-    font-size: ${theme.fontSizes.medium};
-    text-decoration: none;
-    cursor: pointer;
-    transition: ${theme.transition};
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: ${theme.colors.transGreen};
-    }
-  `,
-
-  bigButton: css`
-    color: ${theme.colors.green};
-    background-color: transparent;
-    border: 1px solid ${theme.colors.green};
-    border-radius: ${theme.borderRadius};
-    padding: 20px 25px 15px;
-    font-size: ${theme.fontSizes.large};
-    text-decoration: none;
-    cursor: pointer;
-    transition: ${theme.transition};
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: ${theme.colors.transGreen};
     }
   `,
 
@@ -96,6 +60,46 @@ const mixins = {
       opacity: 0;
       background-color: ${theme.colors.green};
       transition: ${theme.transition};
+    }
+  `,
+
+  smallButton: css`
+    color: ${theme.colors.green};
+    background-color: transparent;
+    border: 1px solid ${theme.colors.green};
+    border-radius: ${theme.borderRadius};
+    padding: 20px;
+    font-size: ${theme.fontSizes.smallish};
+    font-family: ${theme.fonts.SFMono};
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ${theme.transition};
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: ${theme.colors.transGreen};
+    }
+  `,
+
+  bigButton: css`
+    color: ${theme.colors.green};
+    background-color: transparent;
+    border: 1px solid ${theme.colors.green};
+    border-radius: ${theme.borderRadius};
+    padding: 20px 25px;
+    font-size: ${theme.fontSizes.small};
+    font-family: ${theme.fonts.SFMono};
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ${theme.transition};
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: ${theme.colors.transGreen};
     }
   `,
 

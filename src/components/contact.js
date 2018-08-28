@@ -12,19 +12,18 @@ const ContactContainer = Section.extend`
   margin: 0 auto 100px;
 `;
 const Header = H3.extend`
+  display: block;
   color: ${theme.colors.green};
   font-size: ${theme.fontSizes.medium};
   font-family: ${theme.fonts.SFMono};
   font-weight: normal;
   margin-bottom: 20px;
   justify-content: center;
-
   ${media.desktop`font-size: ${theme.fontSizes.small};`};
 
   &:before {
-    font-size: ${theme.fontSizes.small};
     bottom: 0;
-
+    font-size: ${theme.fontSizes.small};
     ${media.desktop`font-size: ${theme.fontSizes.smallish};`};
   }
 
@@ -62,7 +61,7 @@ class Contact extends Component {
           href={`mailto:${config.email}`}
           target="_blank"
           rel="nofollow noopener noreferrer">
-          Send An Email
+          Email Me
         </EmailLink>
       </ContactContainer>
     );
