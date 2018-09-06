@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import Img from 'gatsby-image';
 
 import { IconGithub, IconExternal } from './icons';
@@ -7,10 +8,15 @@ import { IconGithub, IconExternal } from './icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, Ul, A } from '../style';
 
+import sr from '../ScrollReveal';
+
 const FeaturedContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
+`;
+const FeaturedGrid = styled.div`
+  position: relative;
 `;
 const ContentContainer = styled.div`
   position: relative;
@@ -188,6 +194,27 @@ class Featured extends Component {
     featured: PropTypes.array.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.revealRefs = [];
+  }
+
+  componentDidMount() {
+    const config = {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay: 100,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: true,
+    };
+
+    this.revealRefs.forEach(ref => sr.reveal(ref, config));
+  }
+
   render() {
     const { featured } = this.props;
 
@@ -195,10 +222,10 @@ class Featured extends Component {
       <FeaturedContainer id="projects">
         <H3>Some Things I've Built</H3>
 
-        <div className="featured__things">
+        <FeaturedGrid>
           {featured &&
             featured.map((project, i) => (
-              <Project key={i}>
+              <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
                 <ContentContainer>
                   <FeaturedLabel>Featured Project</FeaturedLabel>
                   <ProjectName>{project.node.frontmatter.title}</ProjectName>
@@ -235,7 +262,7 @@ class Featured extends Component {
                 </ImgContainer>
               </Project>
             ))}
-        </div>
+        </FeaturedGrid>
       </FeaturedContainer>
     );
   }

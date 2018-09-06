@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import config from '../config';
 
-import logo from '../static/logo.png';
+import logo from '../../static/logo.png';
 
 const Head = ({ siteMetadata }) => (
   <Helmet>

@@ -6,6 +6,8 @@ import { IconGithub, IconExternal, IconFolder } from './icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Ul, A, Button } from '../style';
 
+import sr from '../ScrollReveal';
+
 const ProjectsContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
@@ -80,7 +82,8 @@ const TechList = Ul.extend`
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.xsmall};
-    color: ${theme.colors.lightGrey};
+    color: ${theme.colors.green};
+    opacity: 0.7;
     line-height: 2;
     margin-right: 15px;
 
@@ -114,9 +117,32 @@ class Projects extends Component {
     projects: PropTypes.array.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.revealRefs = [];
+  }
+
   state = {
     showMore: false,
   };
+
+  componentDidMount() {
+    this.revealRefs.forEach((ref, i) => sr.reveal(ref, this.revealConfig(i * 100)));
+  }
+
+  revealConfig(delay) {
+    return {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: false,
+    };
+  }
 
   showMoreToggle = () => this.setState({ showMore: !this.state.showMore });
 
@@ -132,7 +158,7 @@ class Projects extends Component {
         <ProjectsGrid>
           {projectsToShow &&
             projectsToShow.map((project, i) => (
-              <Project key={i}>
+              <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
                 <ProjectTop>
                   <Folder>
                     <IconFolder />

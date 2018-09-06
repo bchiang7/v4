@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import anime from 'animejs';
 
@@ -36,6 +37,10 @@ const LogoWrapper = styled.div`
 `;
 
 class Loader extends Component {
+  static propTypes = {
+    finishLoading: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     document.body.style.overflow = 'hidden';
     this.animate();
@@ -43,7 +48,11 @@ class Loader extends Component {
 
   animate() {
     const loader = anime.timeline({
-      complete: () => (document.body.style.overflow = 'auto'),
+      complete: () => {
+        const { finishLoading } = this.props;
+        document.body.style.overflow = 'auto';
+        finishLoading();
+      },
     });
 
     loader
@@ -56,20 +65,20 @@ class Loader extends Component {
       })
       .add({
         targets: '#logo #B',
-        duration: 750,
+        duration: 800,
         easing: 'easeInOutQuart',
         opacity: 1,
       })
       .add({
         targets: '#logo',
-        delay: 1000,
-        duration: 750,
+        delay: 500,
+        duration: 300,
         easing: 'easeInOutQuart',
         opacity: 0,
       })
       .add({
         targets: '.loader',
-        duration: 500,
+        duration: 300,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,
@@ -99,13 +108,12 @@ class Loader extends Component {
                 strokeWidth="5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="
-            M 50, 5
-            L 11, 27
-            L 11, 72
-            L 50, 95
-            L 89, 73
-            L 89, 28 z"
+                d="M 50, 5
+                  L 11, 27
+                  L 11, 72
+                  L 50, 95
+                  L 89, 73
+                  L 89, 28 z"
               />
             </g>
           </svg>

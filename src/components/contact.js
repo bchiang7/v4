@@ -6,6 +6,8 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, A, P } from '../style';
 
+import sr from '../ScrollReveal';
+
 const ContactContainer = Section.extend`
   text-align: center;
   max-width: 700px;
@@ -48,12 +50,28 @@ class Contact extends Component {
     contact: PropTypes.array.isRequired,
   };
 
+  componentDidMount() {
+    const config = {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay: 100,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: true,
+    };
+
+    sr.reveal(this.contact, config);
+  }
+
   render() {
     const { contact } = this.props;
     const { node } = contact[0];
 
     return (
-      <ContactContainer id="contact">
+      <ContactContainer id="contact" innerRef={el => (this.contact = el)}>
         <Header>What's Next?</Header>
         <Title>{node.frontmatter.title}</Title>
         <P dangerouslySetInnerHTML={{ __html: node.html }} />
@@ -61,7 +79,7 @@ class Contact extends Component {
           href={`mailto:${config.email}`}
           target="_blank"
           rel="nofollow noopener noreferrer">
-          Email Me
+          Say Hello
         </EmailLink>
       </ContactContainer>
     );

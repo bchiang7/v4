@@ -11,7 +11,7 @@ const base = injectGlobal`
     url(${fonts.CalibreLightTTF}) format('truetype');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -20,7 +20,7 @@ const base = injectGlobal`
     url(${fonts.CalibreLightItalicTTF}) format('truetype');
     font-weight: 300;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -29,7 +29,7 @@ const base = injectGlobal`
     url(${fonts.CalibreRegularTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -38,7 +38,7 @@ const base = injectGlobal`
     url(${fonts.CalibreRegularItalicTTF}) format('truetype');
     font-weight: normal;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -47,7 +47,7 @@ const base = injectGlobal`
     url(${fonts.CalibreMediumTTF}) format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -56,7 +56,7 @@ const base = injectGlobal`
     url(${fonts.CalibreMediumItalicTTF}) format('truetype');
     font-weight: 500;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -65,7 +65,7 @@ const base = injectGlobal`
     url(${fonts.CalibreSemiboldTTF}) format('truetype');
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -74,7 +74,7 @@ const base = injectGlobal`
     url(${fonts.CalibreSemiboldItalicTTF}) format('truetype');
     font-weight: 600;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -83,7 +83,7 @@ const base = injectGlobal`
     url(${fonts.SFMonoRegularTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -92,7 +92,7 @@ const base = injectGlobal`
     url(${fonts.SFMonoRegularItalicTTF}) format('truetype');
     font-weight: normal;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -101,7 +101,7 @@ const base = injectGlobal`
     url(${fonts.SFMonoMediumTTF}) format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -110,7 +110,7 @@ const base = injectGlobal`
     url(${fonts.SFMonoMediumItalicTTF}) format('truetype');
     font-weight: 500;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -119,7 +119,7 @@ const base = injectGlobal`
     url(${fonts.SFMonoSemiboldTTF}) format('truetype');
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
+    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -128,7 +128,7 @@ const base = injectGlobal`
     url(${fonts.SFMonoSemiboldItalicTTF}) format('truetype');
     font-weight: 600;
     font-style: italic;
-    font-display: swap;
+    font-display: auto;
   }
 
   html {
@@ -157,7 +157,7 @@ const base = injectGlobal`
     ${media.tablet`font-size: ${theme.fontSizes.large};`}
 
     &.blur {
-      #root > * {
+      #content > * {
         filter: blur(5px) brightness(0.7);
         transition: ${theme.transition};
         pointer-events: none;

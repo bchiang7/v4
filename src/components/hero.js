@@ -6,6 +6,8 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, A } from '../style';
 
+import sr from '../ScrollReveal';
+
 const HeroContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
@@ -64,19 +66,33 @@ class Hero extends Component {
     hero: PropTypes.array.isRequired,
   };
 
+  componentDidMount() {
+    const config = {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay: 100,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: true,
+    };
+
+    sr.reveal(this.reveal, config);
+  }
+
   render() {
     const { hero } = this.props;
     const { node } = hero[0];
 
     return (
-      <HeroContainer>
+      <HeroContainer innerRef={el => (this.reveal = el)}>
         <Hi>{node.frontmatter.title}</Hi>
         <Name>{node.frontmatter.name}.</Name>
         <Subtitle>{node.frontmatter.subtitle}</Subtitle>
         <Blurb dangerouslySetInnerHTML={{ __html: node.html }} />
-        <EmailLink href={`mailto:${config.email}`} className="git">
-          Get In Touch
-        </EmailLink>
+        <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
       </HeroContainer>
     );
   }

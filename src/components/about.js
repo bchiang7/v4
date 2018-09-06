@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P, Ul } from '../style';
 
+import sr from '../ScrollReveal';
+
 const AboutContainer = Section.extend``;
 const FlexContainer = styled.div`
   ${mixins.flexBetween};
@@ -113,12 +115,28 @@ class About extends Component {
     about: PropTypes.array.isRequired,
   };
 
+  componentDidMount() {
+    const config = {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay: 100,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: true,
+    };
+
+    sr.reveal(this.about, config);
+  }
+
   render() {
     const { about } = this.props;
     const { node } = about[0];
 
     return (
-      <AboutContainer id="about">
+      <AboutContainer id="about" innerRef={el => (this.about = el)}>
         <H3>{node.frontmatter.title}</H3>
         <FlexContainer>
           <ContentContainer>

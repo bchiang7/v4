@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import config from '../config';
 
 import styled from 'styled-components';
 import { theme, media, A } from '../style';
@@ -36,14 +37,12 @@ const EmailLink = A.extend`
   right: -1px;
 `;
 
-const Email = ({ email }) => (
+// use simple transition instead of scroll reveal to animate in from right
+
+const Email = () => (
   <EmailContainer>
-    <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
+    <EmailLink href={`mailto:${config.email}`}>{config.email}</EmailLink>
   </EmailContainer>
 );
-
-Email.propTypes = {
-  email: PropTypes.string.isRequired,
-};
 
 export default Email;

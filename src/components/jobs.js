@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P } from '../style';
 
+import sr from '../ScrollReveal';
+
 const JobsContainer = Section.extend`
   position: relative;
   max-width: 700px;
@@ -160,6 +162,22 @@ class Jobs extends Component {
     activeTabId: 0,
   };
 
+  componentDidMount() {
+    const config = {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay: 250,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: true,
+    };
+
+    sr.reveal(this.reveal, config);
+  }
+
   isActive = id => this.state.activeTabId === id;
 
   setActiveTab = activeTabId => {
@@ -171,7 +189,7 @@ class Jobs extends Component {
     const { jobs } = this.props;
 
     return (
-      <JobsContainer id="jobs">
+      <JobsContainer id="jobs" innerRef={el => (this.reveal = el)}>
         <H3>Where I've Worked</H3>
         <TabsContainer>
           <Tabs role="tablist">

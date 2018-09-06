@@ -11,7 +11,14 @@ import Email from '../components/email';
 import Footer from '../components/footer';
 
 class Layout extends Component {
+  state = {
+    loading: true,
+  };
+
+  finishLoading = () => this.setState({ loading: false });
+
   render() {
+    const { loading } = this.state;
     const { children, data, location } = this.props;
     const navLinks = config.navLinks;
 
@@ -19,15 +26,21 @@ class Layout extends Component {
       <div id="root">
         <Head siteMetadata={data.site.siteMetadata} />
 
-        <Loader />
+        {loading ? (
+          <Loader finishLoading={this.finishLoading} />
+        ) : (
+          <div id="content">
+            <Header location={location} navLinks={navLinks} />
 
-        <Header location={location} navLinks={navLinks} />
+            <Social />
 
-        <Social />
-        <Email email={config.email} />
+            <Email />
 
-        {children()}
-        <Footer />
+            {children()}
+
+            <Footer />
+          </div>
+        )}
       </div>
     );
   }

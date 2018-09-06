@@ -42,6 +42,8 @@ const SocialLink = A.extend`
   }
 `;
 
+// use simple transition instead of scroll reveal to animate in from left
+
 const Social = () => (
   <SocialContainer>
     <SocialItemList>
