@@ -6,6 +6,8 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, A } from '../style';
 
+import sr from '../ScrollReveal';
+
 const HeroContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
@@ -54,6 +56,7 @@ const Blurb = styled.div`
     }
   }
 `;
+const EmailButton = styled.div``;
 const EmailLink = A.extend`
   ${mixins.bigButton};
   font-size: ${theme.fontSizes.smallish};
@@ -66,7 +69,11 @@ class Hero extends Component {
   };
 
   componentDidMount() {
-    // sr.reveal(this.hero, config.srConfig(0));
+    sr.reveal(this.reveal0, config.srConfig(6000));
+    sr.reveal(this.reveal1, config.srConfig(6100));
+    sr.reveal(this.reveal2, config.srConfig(6200));
+    sr.reveal(this.reveal3, config.srConfig(6300));
+    sr.reveal(this.reveal4, config.srConfig(6400));
   }
 
   render() {
@@ -74,12 +81,17 @@ class Hero extends Component {
     const { node } = hero[0];
 
     return (
-      <HeroContainer innerRef={el => (this.hero = el)}>
-        <Hi>{node.frontmatter.title}</Hi>
-        <Name>{node.frontmatter.name}.</Name>
-        <Subtitle>{node.frontmatter.subtitle}</Subtitle>
-        <Blurb dangerouslySetInnerHTML={{ __html: node.html }} />
-        <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
+      <HeroContainer>
+        <Hi innerRef={el => (this.reveal0 = el)}>{node.frontmatter.title}</Hi>
+        <Name innerRef={el => (this.reveal1 = el)}>{node.frontmatter.name}.</Name>
+        <Subtitle innerRef={el => (this.reveal2 = el)}>{node.frontmatter.subtitle}</Subtitle>
+        <Blurb
+          innerRef={el => (this.reveal3 = el)}
+          dangerouslySetInnerHTML={{ __html: node.html }}
+        />
+        <EmailButton innerRef={el => (this.reveal4 = el)}>
+          <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
+        </EmailButton>
       </HeroContainer>
     );
   }
