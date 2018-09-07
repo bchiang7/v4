@@ -6,8 +6,6 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, A } from '../style';
 
-import sr from '../ScrollReveal';
-
 const HeroContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
@@ -44,7 +42,7 @@ const Subtitle = styled.h2`
   ${media.phone`font-size: 40px;`};
 `;
 const Blurb = styled.div`
-  max-width: 50%;
+  width: 50%;
   max-width: 480px;
 
   a {
@@ -57,7 +55,8 @@ const Blurb = styled.div`
   }
 `;
 const EmailLink = A.extend`
-  ${mixins.smallButton};
+  ${mixins.bigButton};
+  font-size: ${theme.fontSizes.smallish};
   margin-top: 50px;
 `;
 
@@ -67,19 +66,7 @@ class Hero extends Component {
   };
 
   componentDidMount() {
-    const config = {
-      origin: 'bottom',
-      distance: '20px',
-      duration: 300,
-      delay: 100,
-      opacity: 0,
-      scale: 1,
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      mobile: true,
-      reset: true,
-    };
-
-    sr.reveal(this.reveal, config);
+    // sr.reveal(this.hero, config.srConfig(0));
   }
 
   render() {
@@ -87,7 +74,7 @@ class Hero extends Component {
     const { node } = hero[0];
 
     return (
-      <HeroContainer innerRef={el => (this.reveal = el)}>
+      <HeroContainer innerRef={el => (this.hero = el)}>
         <Hi>{node.frontmatter.title}</Hi>
         <Name>{node.frontmatter.name}.</Name>
         <Subtitle>{node.frontmatter.subtitle}</Subtitle>

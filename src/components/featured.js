@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Img from 'gatsby-image';
 
+import config from '../config';
+
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
@@ -34,7 +36,7 @@ const FeaturedLabel = styled.h4`
   font-weight: normal;
   color: ${theme.colors.green};
   font-family: ${theme.fonts.SFMono};
-  margin-top: 0;
+  margin-top: 10px;
   padding-top: 0;
 `;
 const ProjectName = styled.h5`
@@ -200,19 +202,7 @@ class Featured extends Component {
   }
 
   componentDidMount() {
-    const config = {
-      origin: 'bottom',
-      distance: '20px',
-      duration: 300,
-      delay: 100,
-      opacity: 0,
-      scale: 1,
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      mobile: true,
-      reset: true,
-    };
-
-    this.revealRefs.forEach(ref => sr.reveal(ref, config));
+    this.revealRefs.forEach(ref => sr.reveal(ref, config.srConfig));
   }
 
   render() {

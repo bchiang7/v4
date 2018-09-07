@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import anime from 'animejs';
 
@@ -37,10 +36,6 @@ const LogoWrapper = styled.div`
 `;
 
 class Loader extends Component {
-  static propTypes = {
-    finishLoading: PropTypes.func.isRequired,
-  };
-
   componentDidMount() {
     document.body.style.overflow = 'hidden';
     this.animate();
@@ -49,16 +44,14 @@ class Loader extends Component {
   animate() {
     const loader = anime.timeline({
       complete: () => {
-        const { finishLoading } = this.props;
         document.body.style.overflow = 'auto';
-        finishLoading();
       },
     });
 
     loader
       .add({
         targets: '#logo path',
-        delay: 1000,
+        delay: 2000,
         duration: 2000,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
@@ -71,14 +64,14 @@ class Loader extends Component {
       })
       .add({
         targets: '#logo',
-        delay: 500,
+        delay: 700,
         duration: 300,
         easing: 'easeInOutQuart',
         opacity: 0,
       })
       .add({
         targets: '.loader',
-        duration: 300,
+        duration: 700,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,

@@ -63,4 +63,21 @@ module.exports = {
 
   projectMaxWidth: 1100,
   headerHeight: 100,
+
+  navyColor: '#0a192f',
+
+  srConfig: (delay = 200) => {
+    return {
+      origin: 'bottom',
+      distance: '20px',
+      duration: 300,
+      delay,
+      opacity: 0,
+      scale: 1,
+      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      mobile: true,
+      reset: true,
+      viewFactor: 0.25,
+    };
+  },
 };

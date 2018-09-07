@@ -7,6 +7,8 @@ import logo from '../../static/logo.png';
 
 const Head = ({ siteMetadata }) => (
   <Helmet>
+    <html lang="en" />
+
     <title itemProp="name" lang="en">
       {siteMetadata.title}
     </title>
@@ -51,7 +53,7 @@ const Head = ({ siteMetadata }) => (
     <link rel="apple-touch-icon" sizes="152x152" href="" />
     <meta name="application-name" content={siteMetadata.title} />
     <meta name="msapplication-TileImage" content="" />
-    <meta name="msapplication-TileColor" content="#0a192f" />
+    <meta name="msapplication-TileColor" content={config.navyColor} />
   </Helmet>
 );
 

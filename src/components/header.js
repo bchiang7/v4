@@ -129,7 +129,6 @@ const HamburgerInner = styled.div`
     transition: ${props => (props.menuOpen ? theme.hamAfterActive : theme.hamAfter)};
   }
 `;
-
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
@@ -158,7 +157,6 @@ const NavLink = styled(AnchorLink)`
 const ResumeLink = A.extend`
   ${mixins.smallButton};
   margin-left: 10px;
-  padding: 10px 15px 10px;
   font-size: ${theme.fontSizes.smallish};
 `;
 

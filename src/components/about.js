@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
+import config from '../config';
+
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P, Ul } from '../style';
 
@@ -116,19 +118,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    const config = {
-      origin: 'bottom',
-      distance: '20px',
-      duration: 300,
-      delay: 100,
-      opacity: 0,
-      scale: 1,
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      mobile: true,
-      reset: true,
-    };
-
-    sr.reveal(this.about, config);
+    sr.reveal(this.about, config.srConfig);
   }
 
   render() {

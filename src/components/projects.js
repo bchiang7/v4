@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import config from '../config';
+
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
 import styled from 'styled-components';
@@ -82,8 +84,7 @@ const TechList = Ul.extend`
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.xsmall};
-    color: ${theme.colors.green};
-    opacity: 0.7;
+    color: ${theme.colors.lightSlate};
     line-height: 2;
     margin-right: 15px;
 
@@ -127,21 +128,7 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    this.revealRefs.forEach((ref, i) => sr.reveal(ref, this.revealConfig(i * 100)));
-  }
-
-  revealConfig(delay) {
-    return {
-      origin: 'bottom',
-      distance: '20px',
-      duration: 300,
-      delay,
-      opacity: 0,
-      scale: 1,
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      mobile: true,
-      reset: false,
-    };
+    this.revealRefs.forEach((ref, i) => sr.reveal(ref, config.srConfig(i * 100)));
   }
 
   showMoreToggle = () => this.setState({ showMore: !this.state.showMore });

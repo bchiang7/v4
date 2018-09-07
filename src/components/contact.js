@@ -51,19 +51,7 @@ class Contact extends Component {
   };
 
   componentDidMount() {
-    const config = {
-      origin: 'bottom',
-      distance: '20px',
-      duration: 300,
-      delay: 100,
-      opacity: 0,
-      scale: 1,
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      mobile: true,
-      reset: true,
-    };
-
-    sr.reveal(this.contact, config);
+    sr.reveal(this.contact, config.srConfig);
   }
 
   render() {

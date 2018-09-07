@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import config from '../config';
+
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P } from '../style';
 
@@ -163,19 +165,7 @@ class Jobs extends Component {
   };
 
   componentDidMount() {
-    const config = {
-      origin: 'bottom',
-      distance: '20px',
-      duration: 300,
-      delay: 250,
-      opacity: 0,
-      scale: 1,
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-      mobile: true,
-      reset: true,
-    };
-
-    sr.reveal(this.reveal, config);
+    sr.reveal(this.jobs, config.srConfig);
   }
 
   isActive = id => this.state.activeTabId === id;
@@ -189,7 +179,7 @@ class Jobs extends Component {
     const { jobs } = this.props;
 
     return (
-      <JobsContainer id="jobs" innerRef={el => (this.reveal = el)}>
+      <JobsContainer id="jobs" innerRef={el => (this.jobs = el)}>
         <H3>Where I've Worked</H3>
         <TabsContainer>
           <Tabs role="tablist">
@@ -201,8 +191,8 @@ class Jobs extends Component {
                   onClick={e => this.setActiveTab(i, e)}
                   role="tab"
                   aria-selected={this.isActive(i) ? 'true' : 'false'}
-                  aria-controls={i}
-                  id={i}
+                  aria-controls={`tab${i}`}
+                  id={`tab${i}`}
                   tabindex={this.isActive(i) ? '0' : '-1'}>
                   <span>{tab.node.frontmatter.company}</span>
                 </Tab>
@@ -215,10 +205,10 @@ class Jobs extends Component {
                 <TabContent
                   key={i}
                   isActive={this.isActive(i)}
-                  id={i}
+                  id={`job${i}`}
                   role="tabpanel"
                   tabindex="0"
-                  aria-labelledby={i}>
+                  aria-labelledby={`job${i}`}>
                   <JobTitle>
                     <span>{job.node.frontmatter.title} @ </span>
                     <span>
