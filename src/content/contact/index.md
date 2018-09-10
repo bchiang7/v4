@@ -2,4 +2,4 @@
 title: 'Get In Touch'
 ---
 
-Lorem ipsum dolor amet umami kogi you probably haven't heard of them activated charcoal hexagon literally. Vice art party XOXO retro blue bottle. Squid tousled skateboard man bun pabst unicorn sriracha poutine echo park crucifix plaid health goth four dollar toast. XOXO gochujang PBR&B kombucha brooklyn street art lyft swag.
+Although I'm not currently looking for any freelance opportunities, my inbox is always open! Feel free to contact me whether it's for a potential project, or just to say hello. Upstatement is also currently hiring for a [bunch of positions](https://www.upstatement.com/jobs/), so drop me a line if you're interested!

@@ -202,7 +202,7 @@ class Featured extends Component {
   }
 
   componentDidMount() {
-    this.revealRefs.forEach(ref => sr.reveal(ref, config.srConfig));
+    this.revealRefs.forEach(ref => sr.reveal(ref, config.srConfig()));
   }
 
   render() {

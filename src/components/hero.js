@@ -6,8 +6,6 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, A } from '../style';
 
-import sr from '../ScrollReveal';
-
 const HeroContainer = Section.extend`
   ${mixins.flexCenter};
   flex-direction: column;
@@ -48,12 +46,7 @@ const Blurb = styled.div`
   max-width: 480px;
 
   a {
-    ${mixins.link};
     ${mixins.inlineLink};
-
-    &:after {
-      top: -5px;
-    }
   }
 `;
 const EmailButton = styled.div``;
@@ -66,19 +59,18 @@ const EmailLink = A.extend`
 class Hero extends Component {
   static propTypes = {
     hero: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
   };
 
-  componentDidMount() {
-    sr.reveal(this.reveal0, config.srConfig(6000));
-    sr.reveal(this.reveal1, config.srConfig(6100));
-    sr.reveal(this.reveal2, config.srConfig(6200));
-    sr.reveal(this.reveal3, config.srConfig(6300));
-    sr.reveal(this.reveal4, config.srConfig(6400));
-  }
+  componentDidMount() {}
 
   render() {
-    const { hero } = this.props;
+    const { hero, isLoading } = this.props;
     const { node } = hero[0];
+
+    if (!isLoading) {
+      // console.log('add animation');
+    }
 
     return (
       <HeroContainer>

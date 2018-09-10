@@ -15,9 +15,9 @@ const MainContainer = Main.extend`
   counter-reset: section;
 `;
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, isLoading }) => (
   <MainContainer>
-    <Hero hero={data.hero.edges} />
+    <Hero hero={data.hero.edges} isLoading={isLoading} />
     <About about={data.about.edges} />
     <Jobs jobs={data.jobs.edges} />
     <Featured featured={data.featured.edges} />
@@ -28,6 +28,7 @@ const IndexPage = ({ data }) => (
 
 IndexPage.propTypes = {
   data: PropTypes.object,
+  isLoading: PropTypes.bool,
 };
 
 export default IndexPage;

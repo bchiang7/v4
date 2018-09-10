@@ -118,7 +118,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    sr.reveal(this.about, config.srConfig);
+    sr.reveal(this.about, config.srConfig());
   }
 
   render() {

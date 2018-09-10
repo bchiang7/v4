@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import anime from 'animejs';
 
@@ -36,6 +37,10 @@ const LogoWrapper = styled.div`
 `;
 
 class Loader extends Component {
+  static propTypes = {
+    finishLoading: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     document.body.style.overflow = 'hidden';
     this.animate();
@@ -45,6 +50,7 @@ class Loader extends Component {
     const loader = anime.timeline({
       complete: () => {
         document.body.style.overflow = 'auto';
+        this.props.finishLoading();
       },
     });
 

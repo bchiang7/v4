@@ -12,6 +12,10 @@ const ContactContainer = Section.extend`
   text-align: center;
   max-width: 700px;
   margin: 0 auto 100px;
+
+  a {
+    ${mixins.inlineLink};
+  }
 `;
 const Header = H3.extend`
   display: block;
@@ -51,7 +55,7 @@ class Contact extends Component {
   };
 
   componentDidMount() {
-    sr.reveal(this.contact, config.srConfig);
+    sr.reveal(this.contact, config.srConfig());
   }
 
   render() {

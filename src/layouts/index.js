@@ -11,8 +11,15 @@ import Email from '../components/email';
 import Footer from '../components/footer';
 
 class Layout extends Component {
+  state = {
+    isLoading: true,
+  };
+
+  finishLoading = () => this.setState({ isLoading: false });
+
   render() {
     const { children, data, location } = this.props;
+    const { isLoading } = this.state;
     const navLinks = config.navLinks;
 
     return (
@@ -27,7 +34,7 @@ class Layout extends Component {
 
         <Email />
 
-        {children()}
+        {children({ ...this.props, isLoading })}
 
         <Footer />
       </div>

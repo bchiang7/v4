@@ -1,5 +1,6 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
+import mixins from './mixins';
 import media from './media';
 import * as fonts from './fonts';
 
@@ -185,6 +186,10 @@ const base = injectGlobal`
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-columns: 100%;
+  }
+
+  a {
+    ${mixins.link};
   }
 
   svg {

@@ -5,6 +5,7 @@ import config from '../config';
 
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
+// import styled, { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Ul, A, Button } from '../style';
 
@@ -24,11 +25,24 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
+  position: relative;
 
   ${media.desktop`
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   `};
 `;
+// const reveal = keyframes`
+//   0% {
+//     transform: translateY(20px);
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+//   100% {
+//     transform: translateY(0px);
+//     opacity: 1;
+//     visibility: visible;
+//   }
+// `;
 const Project = styled.div`
   ${mixins.flexBetween};
   flex-direction: column;
@@ -65,13 +79,8 @@ const ProjectDescription = styled.div`
   line-height: 1.25;
 
   a {
-    ${mixins.link};
     ${mixins.inlineLink};
     color: ${theme.colors.offWhite};
-
-    &:after {
-      top: -5px;
-    }
   }
 `;
 const TechList = Ul.extend`
@@ -121,6 +130,7 @@ class Projects extends Component {
   constructor(props) {
     super(props);
     this.revealRefs = [];
+    this.restRefs = [];
   }
 
   state = {
@@ -131,12 +141,17 @@ class Projects extends Component {
     this.revealRefs.forEach((ref, i) => sr.reveal(ref, config.srConfig(i * 100)));
   }
 
-  showMoreToggle = () => this.setState({ showMore: !this.state.showMore });
+  showMoreToggle = () => {
+    this.setState({ showMore: !this.state.showMore });
+  };
 
   render() {
     const { showMore } = this.state;
     const { projects } = this.props;
+
     const firstSix = projects.slice(0, 6);
+    // const rest = projects.slice(6);
+
     const projectsToShow = showMore ? projects : firstSix;
 
     return (
@@ -145,7 +160,7 @@ class Projects extends Component {
         <ProjectsGrid>
           {projectsToShow &&
             projectsToShow.map((project, i) => (
-              <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
+              <Project key={i} index={i} innerRef={el => (this.revealRefs[i] = el)}>
                 <ProjectTop>
                   <Folder>
                     <IconFolder />
@@ -193,7 +208,9 @@ class Projects extends Component {
             ))}
         </ProjectsGrid>
 
-        <ShowMoreButton onClick={this.showMoreToggle}>Show More</ShowMoreButton>
+        <ShowMoreButton onClick={this.showMoreToggle}>
+          Show {showMore ? 'Less' : 'More'}
+        </ShowMoreButton>
       </ProjectsContainer>
     );
   }

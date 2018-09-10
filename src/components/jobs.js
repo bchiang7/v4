@@ -129,12 +129,7 @@ const TabContent = styled.div`
   }
 
   a {
-    ${mixins.link};
     ${mixins.inlineLink};
-
-    &:after {
-      top: -5px;
-    }
   }
 `;
 const JobTitle = styled.h4`
@@ -165,7 +160,7 @@ class Jobs extends Component {
   };
 
   componentDidMount() {
-    sr.reveal(this.jobs, config.srConfig);
+    sr.reveal(this.jobs, config.srConfig());
   }
 
   isActive = id => this.state.activeTabId === id;
