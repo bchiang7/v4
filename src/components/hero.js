@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition } from 'react-transition-group';
 
 import config from '../config';
 
@@ -62,26 +63,26 @@ class Hero extends Component {
     isLoading: PropTypes.bool.isRequired,
   };
 
-  componentDidMount() {}
-
   render() {
     const { hero, isLoading } = this.props;
     const { node } = hero[0];
 
     if (!isLoading) {
-      // console.log('add animation');
+      //
     }
 
     return (
-      <HeroContainer>
-        <Hi>{node.frontmatter.title}</Hi>
-        <Name>{node.frontmatter.name}.</Name>
-        <Subtitle>{node.frontmatter.subtitle}</Subtitle>
-        <Blurb dangerouslySetInnerHTML={{ __html: node.html }} />
-        <EmailButton>
-          <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
-        </EmailButton>
-      </HeroContainer>
+      <CSSTransition classNames="fadeup" timeout={3000}>
+        <HeroContainer>
+          <Hi>{node.frontmatter.title}</Hi>
+          <Name>{node.frontmatter.name}.</Name>
+          <Subtitle>{node.frontmatter.subtitle}</Subtitle>
+          <Blurb dangerouslySetInnerHTML={{ __html: node.html }} />
+          <EmailButton>
+            <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
+          </EmailButton>
+        </HeroContainer>
+      </CSSTransition>
     );
   }
 }

@@ -15,7 +15,6 @@ const A = styled.a`
   }
 
   &:hover,
-  &:active,
   &:focus {
     color: ${theme.colors.green};
   }

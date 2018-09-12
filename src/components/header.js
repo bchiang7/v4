@@ -50,7 +50,8 @@ const LogoLink = styled(Link)`
   width: 40px;
   height: 40px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     svg {
       fill: ${theme.colors.transGreen};
     }

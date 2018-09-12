@@ -70,7 +70,8 @@ const AvatarContainer = styled.div`
   background: ${theme.gradient};
   margin-left: -20px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: transparent;
 
     &:after {

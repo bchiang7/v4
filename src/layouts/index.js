@@ -26,17 +26,17 @@ class Layout extends Component {
       <div id="root">
         <Head siteMetadata={data.site.siteMetadata} />
 
-        <Loader finishLoading={this.finishLoading} />
-
-        <Header location={location} navLinks={navLinks} />
-
-        <Social />
-
-        <Email />
-
-        {children({ ...this.props, isLoading })}
-
-        <Footer />
+        {isLoading ? (
+          <Loader finishLoading={this.finishLoading} />
+        ) : (
+          <div>
+            <Header location={location} navLinks={navLinks} />
+            <Social />
+            <Email />
+            {children({ ...this.props, isLoading })}
+            <Footer />
+          </div>
+        )}
       </div>
     );
   }

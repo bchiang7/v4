@@ -43,7 +43,8 @@ const Project = styled.div`
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${theme.colors.transGreen};
   }
 `;
@@ -207,7 +208,7 @@ class Projects extends Component {
         </ProjectsGrid>
 
         <ShowMoreButton onClick={this.showMoreToggle}>
-          Show {showMore ? 'Less' : 'More'}
+          {showMore ? 'Less' : 'More'} Projects
         </ShowMoreButton>
       </ProjectsContainer>
     );

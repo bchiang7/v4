@@ -121,7 +121,8 @@ const ImgContainer = styled.div`
     opacity: 0.25;
   `};
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: transparent;
 
     &:before,
