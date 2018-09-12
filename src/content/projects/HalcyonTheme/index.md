@@ -10,6 +10,7 @@ tech:
   - VS Code
   - iTerm2
   - Hyper
+show: 'false'
 ---
 
-A minimal, dark theme for Sublime Text, Atom, VS Code, and more published to [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), and [NPM](https://www.npmjs.com/package/hyper-halcyon-theme).
+A minimal, dark theme for VS Code, Sublime Text, Atom, iTerm, and more published to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [NPM](https://www.npmjs.com/package/hyper-halcyon-theme).

@@ -9,6 +9,7 @@ tech:
   - SCSS
   - JS
   - Github Pages
+show: 'false'
 ---
 
 Second iteration of my personal website. Designed and developed with a conscious effort to avoid using any superfluous frameworks like Bootstrap.

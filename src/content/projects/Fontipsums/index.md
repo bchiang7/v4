@@ -7,6 +7,7 @@ external: 'https://brittanychiang.com/fontipsums/'
 tech:
   - HTML
   - SCSS
+show: 'false'
 ---
 
-As someone who enjoys typography, I wanted a way to visually see different font combinations together. I whipped up this simple website to display some of my favorite pairings combined with some fun lorem ipsum variations I found on the web.
+Simple website to display some of my favorite font pairings combined with some fun lorem ipsum variations found on the web.

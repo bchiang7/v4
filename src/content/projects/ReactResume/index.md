@@ -8,6 +8,7 @@ tech:
   - React
   - JS
   - CSS
+show: 'false'
 ---
 
-An online version of my 2016 resume I made for fun. I was interested in learning React.js, so I found a simple tutorial and it spun into a weekend project. I probably didn't need to use React at all, but hey, at least I learned a few things!
+Online version of my 2016 resume made for fun. I was interested in learning React.js, so I found a simple tutorial and it spun into a weekend project.

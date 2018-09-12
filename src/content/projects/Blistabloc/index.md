@@ -10,6 +10,7 @@ tech:
   - WooCommerce
   - SCSS
   - JS
+show: 'false'
 ---
 
-Custom wordpress theme built with Timber and WooCommerce for blistabloc, a Northeastern start-up selling the only reactive shoe insert that prevents blisters from forming.
+Custom wordpress theme built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.

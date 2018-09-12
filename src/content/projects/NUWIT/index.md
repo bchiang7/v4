@@ -10,6 +10,7 @@ tech:
   - CSS
   - Bootstrap
   - JS
+show: 'false'
 ---
 
 Complete overhaul and redesign of NU Women in Tech's club website using Jekyll, built while serving as web chair on the e-board.

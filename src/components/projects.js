@@ -83,7 +83,7 @@ const TechList = Ul.extend`
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.xsmall};
-    color: ${theme.colors.lightSlate};
+    color: ${theme.colors.slate};
     line-height: 2;
     margin-right: 15px;
 
@@ -155,7 +155,6 @@ class Projects extends Component {
                   exit={false}>
                   <Project
                     key={i}
-                    index={i}
                     innerRef={el => (this.revealRefs[i] = el)}
                     style={{ transitionDelay: `${i > 5 ? (i - 6) * 100 : 0}ms` }}>
                     <ProjectTop>

@@ -7,6 +7,7 @@ external: ''
 tech:
   - R
   - Spotify Web API
+show: 'false'
 ---
 
-R Project for my Data Science class at Northeastern to investigate the top Spotify tracks of 2017 and what made them so popular. I created several data visualizations and conducted several statistical analyses on different audio features for each track, such as acousticness, danceability, and energy.
+R Project for my Data Science class at Northeastern to analyze the top Spotify tracks of 2017 and their audio features.
