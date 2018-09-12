@@ -87,6 +87,9 @@ const mixins = {
     &:active {
       background-color: ${theme.colors.transGreen};
     }
+    &:after {
+      display: none !important;
+    }
   `,
 
   bigButton: css`
@@ -106,6 +109,9 @@ const mixins = {
     &:focus,
     &:active {
       background-color: ${theme.colors.transGreen};
+    }
+    &:after {
+      display: none !important;
     }
   `,
 

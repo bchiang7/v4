@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import config from '../config';
 
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
-// import styled, { keyframes } from 'styled-components';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Ul, A, Button } from '../style';
 
@@ -22,27 +22,17 @@ const ProjectsTitle = styled.h4`
   ${media.tablet`font-size: 24px;`};
 `;
 const ProjectsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
-  position: relative;
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    position: relative;
 
-  ${media.desktop`
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  `};
+    ${media.desktop`
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    `};
+  }
 `;
-// const reveal = keyframes`
-//   0% {
-//     transform: translateY(20px);
-//     opacity: 0;
-//     visibility: hidden;
-//   }
-//   100% {
-//     transform: translateY(0px);
-//     opacity: 1;
-//     visibility: visible;
-//   }
-// `;
 const Project = styled.div`
   ${mixins.flexBetween};
   flex-direction: column;
@@ -148,64 +138,73 @@ class Projects extends Component {
   render() {
     const { showMore } = this.state;
     const { projects } = this.props;
-
     const firstSix = projects.slice(0, 6);
-    // const rest = projects.slice(6);
-
     const projectsToShow = showMore ? projects : firstSix;
 
     return (
       <ProjectsContainer>
         <ProjectsTitle>Other Projects</ProjectsTitle>
         <ProjectsGrid>
-          {projectsToShow &&
-            projectsToShow.map((project, i) => (
-              <Project key={i} index={i} innerRef={el => (this.revealRefs[i] = el)}>
-                <ProjectTop>
-                  <Folder>
-                    <IconFolder />
-                  </Folder>
-                  <Links>
-                    {project.node.frontmatter.github && (
-                      <IconLink
-                        href={project.node.frontmatter.github}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer">
-                        <IconGithub />
-                      </IconLink>
-                    )}
-                    {project.node.frontmatter.external && (
-                      <IconLink
-                        href={project.node.frontmatter.external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer">
-                        <IconExternal />
-                      </IconLink>
-                    )}
-                  </Links>
-                  <ProjectName>
-                    {project.node.frontmatter.external ? (
-                      <ProjectLink
-                        href={project.node.frontmatter.external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer">
-                        {project.node.frontmatter.title}
-                      </ProjectLink>
-                    ) : (
-                      project.node.frontmatter.title
-                    )}
-                  </ProjectName>
-                  <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                </ProjectTop>
-                <ProjectBottom>
-                  <TechList>
-                    {project.node.frontmatter.tech.map((tech, i) => (
-                      <li key={i}>{tech}</li>
-                    ))}
-                  </TechList>
-                </ProjectBottom>
-              </Project>
-            ))}
+          <TransitionGroup className="projects">
+            {projectsToShow &&
+              projectsToShow.map((project, i) => (
+                <CSSTransition
+                  key={i}
+                  classNames="fadeup"
+                  timeout={i > 5 ? (i - 6) * 300 : 300}
+                  exit={false}>
+                  <Project
+                    key={i}
+                    index={i}
+                    innerRef={el => (this.revealRefs[i] = el)}
+                    style={{ transitionDelay: `${i > 5 ? (i - 6) * 100 : 0}ms` }}>
+                    <ProjectTop>
+                      <Folder>
+                        <IconFolder />
+                      </Folder>
+                      <Links>
+                        {project.node.frontmatter.github && (
+                          <IconLink
+                            href={project.node.frontmatter.github}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer">
+                            <IconGithub />
+                          </IconLink>
+                        )}
+                        {project.node.frontmatter.external && (
+                          <IconLink
+                            href={project.node.frontmatter.external}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer">
+                            <IconExternal />
+                          </IconLink>
+                        )}
+                      </Links>
+                      <ProjectName>
+                        {project.node.frontmatter.external ? (
+                          <ProjectLink
+                            href={project.node.frontmatter.external}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer">
+                            {project.node.frontmatter.title}
+                          </ProjectLink>
+                        ) : (
+                          project.node.frontmatter.title
+                        )}
+                      </ProjectName>
+                      <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                    </ProjectTop>
+                    <ProjectBottom>
+                      <TechList>
+                        {project.node.frontmatter.tech.map((tech, i) => (
+                          <li key={i}>{tech}</li>
+                        ))}
+                      </TechList>
+                    </ProjectBottom>
+                  </Project>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
         </ProjectsGrid>
 
         <ShowMoreButton onClick={this.showMoreToggle}>

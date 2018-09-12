@@ -56,6 +56,7 @@ const Tab = styled.button`
     min-width: 120px;
   `};
 
+  &:hover,
   &:focus {
     background-color: ${theme.colors.lightNavy};
   }

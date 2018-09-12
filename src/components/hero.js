@@ -74,14 +74,11 @@ class Hero extends Component {
 
     return (
       <HeroContainer>
-        <Hi innerRef={el => (this.reveal0 = el)}>{node.frontmatter.title}</Hi>
-        <Name innerRef={el => (this.reveal1 = el)}>{node.frontmatter.name}.</Name>
-        <Subtitle innerRef={el => (this.reveal2 = el)}>{node.frontmatter.subtitle}</Subtitle>
-        <Blurb
-          innerRef={el => (this.reveal3 = el)}
-          dangerouslySetInnerHTML={{ __html: node.html }}
-        />
-        <EmailButton innerRef={el => (this.reveal4 = el)}>
+        <Hi>{node.frontmatter.title}</Hi>
+        <Name>{node.frontmatter.name}.</Name>
+        <Subtitle>{node.frontmatter.subtitle}</Subtitle>
+        <Blurb dangerouslySetInnerHTML={{ __html: node.html }} />
+        <EmailButton>
           <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
         </EmailButton>
       </HeroContainer>
