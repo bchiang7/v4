@@ -152,9 +152,9 @@ const base = injectGlobal`
     -webkit-font-smoothing: antialiased;
     background-color: ${theme.colors.navy};
     color: ${theme.colors.slate};
+    line-height: 1.25;
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
-    line-height: 1.25;
     ${media.tablet`font-size: ${theme.fontSizes.large};`}
 
     &.blur {
@@ -224,14 +224,26 @@ const base = injectGlobal`
     transition: opacity 300ms cubic-bezier(0.6, 0.2, 0.1, 1), transform 300ms cubic-bezier(0.6, 0.2, 0.1, 1);
   }
 
+  .fadedown-enter {
+    opacity: 0.01;
+    transform: translateY(-20px);
+    transition: opacity 300ms cubic-bezier(0.6, 0.2, 0.1, 1), transform 300ms cubic-bezier(0.6, 0.2, 0.1, 1);
+  }
+
+  .fadedown-enter-active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 300ms cubic-bezier(0.6, 0.2, 0.1, 1), transform 300ms cubic-bezier(0.6, 0.2, 0.1, 1);
+  }
+
   .fade-enter {
     opacity: 0.01;
-    transition: opacity 2000ms cubic-bezier(0.6, 0.2, 0.1, 1);
+    transition: opacity 1000ms cubic-bezier(0.6, 0.2, 0.1, 1);
   }
 
   .fade-enter-active {
     opacity: 1;
-    transition: opacity 2000ms cubic-bezier(0.6, 0.2, 0.1, 1);
+    transition: opacity 1000ms cubic-bezier(0.6, 0.2, 0.1, 1);
   }
 
 `;

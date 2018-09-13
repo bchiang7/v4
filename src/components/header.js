@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'gatsby-link';
@@ -136,7 +137,9 @@ const NavLinks = styled.div`
   ${media.tablet`display: none;`};
 `;
 const NavList = Ol.extend`
-  display: flex;
+  div {
+    display: flex;
+  }
 `;
 const NavListItem = styled.li`
   margin: 0 10px;
@@ -173,11 +176,13 @@ class Header extends Component {
     lastScrollTop: 0,
     scrollDirection: 'none',
     menuOpen: false,
+    show: false,
   };
 
   componentDidMount() {
     window.addEventListener('scroll', () => throttle(this.handleScroll()));
     window.addEventListener('resize', () => throttle(this.handleResize()));
+    setTimeout(() => this.setState({ show: true }), 100);
   }
 
   componentWillUnmount() {
@@ -237,18 +242,24 @@ class Header extends Component {
   };
 
   render() {
-    const { scrollDirection, menuOpen } = this.state;
+    const { scrollDirection, menuOpen, show } = this.state;
     const { location, navLinks } = this.props;
     const isHome = location.pathname === '/';
 
     return (
       <HeaderContainer innerRef={x => (this.header = x)} scrollDirection={scrollDirection}>
         <Navbar>
-          <Logo>
-            <LogoLink to="/">
-              <IconLogo />
-            </LogoLink>
-          </Logo>
+          <TransitionGroup>
+            {show && (
+              <CSSTransition classNames="fade" timeout={3000}>
+                <Logo>
+                  <LogoLink to="/">
+                    <IconLogo />
+                  </LogoLink>
+                </Logo>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
 
           <Hamburger onClick={this.toggleMenu}>
             <HamburgerBox>
@@ -259,18 +270,32 @@ class Header extends Component {
           <NavLinks>
             {isHome && (
               <NavList>
-                {navLinks &&
-                  navLinks.map((link, i) => (
-                    <NavListItem key={i}>
-                      <NavLink href={link.url}>{link.name}</NavLink>
-                    </NavListItem>
-                  ))}
+                <TransitionGroup>
+                  {show &&
+                    navLinks &&
+                    navLinks.map((link, i) => (
+                      <CSSTransition key={i} classNames="fadedown" timeout={3000}>
+                        <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
+                          <NavLink href={link.url}>{link.name}</NavLink>
+                        </NavListItem>
+                      </CSSTransition>
+                    ))}
+                </TransitionGroup>
               </NavList>
             )}
-
-            <ResumeLink href={config.resume} target="_blank" rel="nofollow noopener noreferrer">
-              Resume
-            </ResumeLink>
+            <TransitionGroup>
+              {show && (
+                <CSSTransition classNames="fadedown" timeout={3000}>
+                  <ResumeLink
+                    href={config.resume}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    style={{ transitionDelay: `600ms` }}>
+                    Resume
+                  </ResumeLink>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
           </NavLinks>
         </Navbar>
 

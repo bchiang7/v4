@@ -67,7 +67,7 @@ class Hero extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ show: true }), 100);
+    setTimeout(() => this.setState({ show: true }), 1000);
   }
 
   render() {
@@ -97,7 +97,7 @@ class Hero extends Component {
           {show &&
             items.map((item, i) => {
               return (
-                <CSSTransition key={i} classNames="fadeup" timeout={i * 300}>
+                <CSSTransition key={i} classNames="fadeup" timeout={3000}>
                   {item}
                 </CSSTransition>
               );
