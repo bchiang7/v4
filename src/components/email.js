@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import config from '../config';
 
@@ -14,16 +15,22 @@ const EmailContainer = styled.div`
   position: fixed;
   bottom: 0;
   right: 40px;
-
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
 
+  .link {
+    width: 100%;
+    margin: 0 auto;
+  }
+`;
+const EmailLinkWrapper = styled.div`
   &:after {
     content: '';
-    height: 90px;
-    width: 1px;
-    background-color: ${theme.colors.lightSlate};
     display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: ${theme.colors.lightSlate};
   }
 `;
 const EmailLink = A.extend`
@@ -37,12 +44,32 @@ const EmailLink = A.extend`
   right: -1px;
 `;
 
-// use simple transition instead of scroll reveal to animate in from right
+class Email extends Component {
+  state = {
+    show: false,
+  };
 
-const Email = () => (
-  <EmailContainer>
-    <EmailLink href={`mailto:${config.email}`}>{config.email}</EmailLink>
-  </EmailContainer>
-);
+  componentDidMount() {
+    setTimeout(() => this.setState({ show: true }), 2000);
+  }
+
+  render() {
+    const { show } = this.state;
+
+    return (
+      <EmailContainer>
+        <TransitionGroup className="link">
+          {show && (
+            <CSSTransition timeout={3000} classNames="fade">
+              <EmailLinkWrapper>
+                <EmailLink href={`mailto:${config.email}`}>{config.email}</EmailLink>
+              </EmailLinkWrapper>
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+      </EmailContainer>
+    );
+  }
+}
 
 export default Email;

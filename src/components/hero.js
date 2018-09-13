@@ -93,11 +93,11 @@ class Hero extends Component {
 
     return (
       <HeroContainer>
-        <TransitionGroup className="hero">
+        <TransitionGroup>
           {show &&
             items.map((item, i) => {
               return (
-                <CSSTransition key={i} classNames="fadeup" timeout={3000}>
+                <CSSTransition key={i} classNames="fadeup" timeout={i * 300}>
                   {item}
                 </CSSTransition>
               );

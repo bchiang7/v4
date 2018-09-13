@@ -1,5 +1,5 @@
-import React from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import config from '../config';
 
@@ -18,22 +18,24 @@ const SocialContainer = styled.div`
   position: fixed;
   bottom: 0;
   left: 40px;
-
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
-
+`;
+const SocialItemList = Ul.extend`
   &:after {
     content: '';
     display: block;
     width: 1px;
     height: 90px;
+    margin: 0 auto;
     background-color: ${theme.colors.lightSlate};
   }
 `;
-const SocialItemList = Ul.extend`
-  margin-bottom: 10px;
+const SocialItem = styled.li`
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
 `;
-const SocialItem = styled.li``;
 const SocialLink = A.extend`
   padding: 10px;
 
@@ -43,33 +45,54 @@ const SocialLink = A.extend`
   }
 `;
 
-const Social = () => (
-  <CSSTransition timeout={3000} classNames="social">
-    <SocialContainer>
-      <SocialItemList>
-        {config.socialMedia &&
-          config.socialMedia.map((social, i) => (
-            <SocialItem key={i}>
-              <SocialLink href={social.url} target="_blank" rel="nofollow noopener noreferrer">
-                {social.name === 'Github' ? (
-                  <IconGithub />
-                ) : social.name === 'Linkedin' ? (
-                  <IconLinkedin />
-                ) : social.name === 'Codepen' ? (
-                  <IconCodepen />
-                ) : social.name === 'Instagram' ? (
-                  <IconInstagram />
-                ) : social.name === 'Twitter' ? (
-                  <IconTwitter />
-                ) : (
-                  <IconGithub />
-                )}
-              </SocialLink>
-            </SocialItem>
-          ))}
-      </SocialItemList>
-    </SocialContainer>
-  </CSSTransition>
-);
+class Social extends Component {
+  state = {
+    show: false,
+  };
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ show: true }), 2000);
+  }
+
+  render() {
+    const { show } = this.state;
+
+    return (
+      <SocialContainer>
+        <TransitionGroup>
+          {show && (
+            <CSSTransition timeout={3000} classNames="fade">
+              <SocialItemList>
+                {config.socialMedia &&
+                  config.socialMedia.map((social, i) => (
+                    <SocialItem key={i}>
+                      <SocialLink
+                        href={social.url}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer">
+                        {social.name === 'Github' ? (
+                          <IconGithub />
+                        ) : social.name === 'Linkedin' ? (
+                          <IconLinkedin />
+                        ) : social.name === 'Codepen' ? (
+                          <IconCodepen />
+                        ) : social.name === 'Instagram' ? (
+                          <IconInstagram />
+                        ) : social.name === 'Twitter' ? (
+                          <IconTwitter />
+                        ) : (
+                          <IconGithub />
+                        )}
+                      </SocialLink>
+                    </SocialItem>
+                  ))}
+              </SocialItemList>
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+      </SocialContainer>
+    );
+  }
+}
 
 export default Social;
