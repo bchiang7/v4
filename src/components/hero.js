@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import config from '../config';
 
@@ -59,30 +59,51 @@ const EmailLink = A.extend`
 
 class Hero extends Component {
   static propTypes = {
-    hero: PropTypes.array.isRequired,
-    isLoading: PropTypes.bool.isRequired,
+    data: PropTypes.array.isRequired,
   };
 
-  render() {
-    const { hero, isLoading } = this.props;
-    const { node } = hero[0];
+  state = {
+    show: false,
+  };
 
-    if (!isLoading) {
-      //
-    }
+  componentDidMount() {
+    setTimeout(() => this.setState({ show: true }), 100);
+  }
+
+  render() {
+    const { data } = this.props;
+    const { show } = this.state;
+    const { node } = data[0];
+
+    const one = () => <Hi style={{ transitionDelay: '100ms' }}>{node.frontmatter.title}</Hi>;
+    const two = () => <Name style={{ transitionDelay: '200ms' }}>{node.frontmatter.name}.</Name>;
+    const three = () => (
+      <Subtitle style={{ transitionDelay: '300ms' }}>{node.frontmatter.subtitle}</Subtitle>
+    );
+    const four = () => (
+      <Blurb style={{ transitionDelay: '400ms' }} dangerouslySetInnerHTML={{ __html: node.html }} />
+    );
+    const five = () => (
+      <EmailButton style={{ transitionDelay: '500ms' }}>
+        <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
+      </EmailButton>
+    );
+
+    const items = [one, two, three, four, five];
 
     return (
-      <CSSTransition classNames="fadeup" timeout={3000}>
-        <HeroContainer>
-          <Hi>{node.frontmatter.title}</Hi>
-          <Name>{node.frontmatter.name}.</Name>
-          <Subtitle>{node.frontmatter.subtitle}</Subtitle>
-          <Blurb dangerouslySetInnerHTML={{ __html: node.html }} />
-          <EmailButton>
-            <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
-          </EmailButton>
-        </HeroContainer>
-      </CSSTransition>
+      <HeroContainer>
+        <TransitionGroup className="hero">
+          {show &&
+            items.map((item, i) => {
+              return (
+                <CSSTransition key={i} classNames="fadeup" timeout={3000}>
+                  {item}
+                </CSSTransition>
+              );
+            })}
+        </TransitionGroup>
+      </HeroContainer>
     );
   }
 }

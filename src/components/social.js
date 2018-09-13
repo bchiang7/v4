@@ -1,5 +1,5 @@
 import React from 'react';
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 import config from '../config';
 
@@ -43,33 +43,33 @@ const SocialLink = A.extend`
   }
 `;
 
-// use simple transition instead of scroll reveal to animate in from left
-
 const Social = () => (
-  <SocialContainer>
-    <SocialItemList>
-      {config.socialMedia &&
-        config.socialMedia.map((social, i) => (
-          <SocialItem key={i}>
-            <SocialLink href={social.url} target="_blank" rel="nofollow noopener noreferrer">
-              {social.name === 'Github' ? (
-                <IconGithub />
-              ) : social.name === 'Linkedin' ? (
-                <IconLinkedin />
-              ) : social.name === 'Codepen' ? (
-                <IconCodepen />
-              ) : social.name === 'Instagram' ? (
-                <IconInstagram />
-              ) : social.name === 'Twitter' ? (
-                <IconTwitter />
-              ) : (
-                <IconGithub />
-              )}
-            </SocialLink>
-          </SocialItem>
-        ))}
-    </SocialItemList>
-  </SocialContainer>
+  <CSSTransition timeout={3000} classNames="social">
+    <SocialContainer>
+      <SocialItemList>
+        {config.socialMedia &&
+          config.socialMedia.map((social, i) => (
+            <SocialItem key={i}>
+              <SocialLink href={social.url} target="_blank" rel="nofollow noopener noreferrer">
+                {social.name === 'Github' ? (
+                  <IconGithub />
+                ) : social.name === 'Linkedin' ? (
+                  <IconLinkedin />
+                ) : social.name === 'Codepen' ? (
+                  <IconCodepen />
+                ) : social.name === 'Instagram' ? (
+                  <IconInstagram />
+                ) : social.name === 'Twitter' ? (
+                  <IconTwitter />
+                ) : (
+                  <IconGithub />
+                )}
+              </SocialLink>
+            </SocialItem>
+          ))}
+      </SocialItemList>
+    </SocialContainer>
+  </CSSTransition>
 );
 
 export default Social;

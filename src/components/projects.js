@@ -115,7 +115,7 @@ const ShowMoreButton = Button.extend`
 
 class Projects extends Component {
   static propTypes = {
-    projects: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
   };
 
   constructor(props) {
@@ -138,9 +138,9 @@ class Projects extends Component {
 
   render() {
     const { showMore } = this.state;
-    const { projects } = this.props;
-    const firstSix = projects.slice(0, 6);
-    const projectsToShow = showMore ? projects : firstSix;
+    const { data } = this.props;
+    const firstSix = data.slice(0, 6);
+    const projectsToShow = showMore ? data : firstSix;
 
     return (
       <ProjectsContainer>

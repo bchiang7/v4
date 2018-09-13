@@ -153,7 +153,7 @@ const JobDetails = styled.h5`
 
 class Jobs extends Component {
   static propTypes = {
-    jobs: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
   };
 
   state = {
@@ -172,15 +172,15 @@ class Jobs extends Component {
 
   render() {
     const { activeTabId } = this.state;
-    const { jobs } = this.props;
+    const { data } = this.props;
 
     return (
       <JobsContainer id="jobs" innerRef={el => (this.jobs = el)}>
         <H3>Where I've Worked</H3>
         <TabsContainer>
           <Tabs role="tablist">
-            {jobs &&
-              jobs.map((tab, i) => (
+            {data &&
+              data.map((tab, i) => (
                 <Tab
                   key={i}
                   isActive={this.isActive(i)}
@@ -196,8 +196,8 @@ class Jobs extends Component {
             <Highlighter activeTabId={activeTabId} />
           </Tabs>
           <ContentContainer>
-            {jobs &&
-              jobs.map((job, i) => (
+            {data &&
+              data.map((job, i) => (
                 <TabContent
                   key={i}
                   isActive={this.isActive(i)}

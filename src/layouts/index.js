@@ -33,7 +33,7 @@ class Layout extends Component {
             <Header location={location} navLinks={navLinks} />
             <Social />
             <Email />
-            {children({ ...this.props, isLoading })}
+            {children()}
             <Footer />
           </div>
         )}

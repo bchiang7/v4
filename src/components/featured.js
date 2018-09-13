@@ -194,7 +194,7 @@ const Project = styled.div`
 
 class Featured extends Component {
   static propTypes = {
-    featured: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
   };
 
   constructor(props) {
@@ -207,15 +207,15 @@ class Featured extends Component {
   }
 
   render() {
-    const { featured } = this.props;
+    const { data } = this.props;
 
     return (
       <FeaturedContainer id="projects">
         <H3>Some Things I've Built</H3>
 
         <FeaturedGrid>
-          {featured &&
-            featured.map((project, i) => (
+          {data &&
+            data.map((project, i) => (
               <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
                 <ContentContainer>
                   <FeaturedLabel>Featured Project</FeaturedLabel>
