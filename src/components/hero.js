@@ -13,6 +13,9 @@ const HeroContainer = Section.extend`
   align-items: flex-start;
   min-height: 100vh;
   ${media.tablet`padding-top: 150px;`};
+  div {
+    width: 100%;
+  }
 `;
 const Hi = styled.h1`
   color: ${theme.colors.green};
@@ -20,7 +23,6 @@ const Hi = styled.h1`
   font-size: ${theme.fontSizes.medium};
   font-family: ${theme.fonts.SFMono};
   font-weight: normal;
-
   ${media.desktop`font-size: ${theme.fontSizes.small};`};
   ${media.tablet`font-size: ${theme.fontSizes.smallish};`};
 `;
@@ -36,7 +38,6 @@ const Subtitle = styled.h2`
   font-size: 80px;
   margin: 0 0 20px;
   color: ${theme.colors.slate};
-
   ${media.desktop`font-size: 70px;`};
   ${media.tablet`font-size: 60px;`};
   ${media.phablet`font-size: 50px;`};
@@ -44,8 +45,7 @@ const Subtitle = styled.h2`
 `;
 const Blurb = styled.div`
   width: 50%;
-  max-width: 480px;
-
+  max-width: 500px;
   a {
     ${mixins.inlineLink};
   }
