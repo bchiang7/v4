@@ -129,6 +129,7 @@ class Projects extends Component {
   };
 
   componentDidMount() {
+    sr.reveal(this.projects, config.srConfig());
     this.revealRefs.forEach((ref, i) => sr.reveal(ref, config.srConfig(i * 100)));
   }
 
@@ -144,7 +145,7 @@ class Projects extends Component {
 
     return (
       <ProjectsContainer>
-        <ProjectsTitle>Other Projects</ProjectsTitle>
+        <ProjectsTitle innerRef={el => (this.projects = el)}>Other Projects</ProjectsTitle>
         <ProjectsGrid>
           <TransitionGroup className="projects">
             {projectsToShow &&

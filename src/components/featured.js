@@ -204,6 +204,7 @@ class Featured extends Component {
   }
 
   componentDidMount() {
+    sr.reveal(this.featured, config.srConfig());
     this.revealRefs.forEach(ref => sr.reveal(ref, config.srConfig()));
   }
 
@@ -212,8 +213,7 @@ class Featured extends Component {
 
     return (
       <FeaturedContainer id="projects">
-        <H3>Some Things I've Built</H3>
-
+        <H3 innerRef={el => (this.featured = el)}>Some Things I've Built</H3>
         <FeaturedGrid>
           {data &&
             data.map((project, i) => (
