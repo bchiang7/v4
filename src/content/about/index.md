@@ -3,6 +3,7 @@ title: 'About Me'
 avatar: './me.jpg'
 skills:
   - JavaScript
+  - TypeScript
   - CSS/Sass
   - Python
   - React

@@ -76,6 +76,7 @@ module.exports = {
 
       // Time in milliseconds.
       duration: 500,
+
       delay,
 
       // Starting angles in degrees, will transition from these values to 0 in all axes.
@@ -88,7 +89,7 @@ module.exports = {
       scale: 1,
 
       // Accepts any valid CSS easing, e.g. 'ease', 'ease-in-out', 'linear', etc.
-      easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+      easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
 
       // true/false to control reveal animations on mobile.
       mobile: true,
