@@ -38,7 +38,7 @@ const Navbar = Nav.extend`
   ${mixins.flexBetween};
   font-family: ${theme.fonts.SFMono};
   width: 100%;
-  color: ${theme.colors.white};
+  color: ${theme.colors.lightestSlate};
   counter-reset: item 0;
   position: relative;
   z-index: 12;
@@ -50,14 +50,12 @@ const LogoLink = styled(Link)`
   color: ${theme.colors.green};
   width: 40px;
   height: 40px;
-
   &:hover,
   &:focus {
     svg {
       fill: ${theme.colors.transGreen};
     }
   }
-
   svg {
     fill: none;
     transition: ${theme.transition};
@@ -138,7 +136,7 @@ const NavLinks = styled.div`
 `;
 const NavList = Ol.extend`
   div {
-    display: flex;
+    ${mixins.flexBetween};
   }
 `;
 const NavListItem = styled.li`
@@ -254,7 +252,7 @@ class Header extends Component {
             {show && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
-                  <LogoLink to="/">
+                  <LogoLink to="/" aria-label="Home">
                     <IconLogo />
                   </LogoLink>
                 </Logo>

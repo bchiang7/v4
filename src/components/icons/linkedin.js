@@ -1,12 +1,8 @@
 import React from 'react';
 
 const IconLinkedin = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-labelledby="linkedin"
-    viewBox="0 0 430.117 430.117">
-    <title id="linkedin">LinkedIn</title>
+  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 430.117 430.117">
+    <title>LinkedIn</title>
     <path
       d="M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707
           c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21

@@ -234,7 +234,8 @@ class Featured extends Component {
                       <A
                         href={project.node.frontmatter.github}
                         target="_blank"
-                        rel="nofollow noopener noreferrer">
+                        rel="nofollow noopener noreferrer"
+                        aria-label="Github Link">
                         <IconGithub />
                       </A>
                     )}
@@ -242,7 +243,8 @@ class Featured extends Component {
                       <A
                         href={project.node.frontmatter.external}
                         target="_blank"
-                        rel="nofollow noopener noreferrer">
+                        rel="nofollow noopener noreferrer"
+                        aria-label="External Link">
                         <IconExternal />
                       </A>
                     )}

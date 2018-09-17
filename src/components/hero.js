@@ -26,17 +26,18 @@ const Hi = styled.h1`
   ${media.desktop`font-size: ${theme.fontSizes.small};`};
   ${media.tablet`font-size: ${theme.fontSizes.smallish};`};
 `;
-const Name = styled.h1`
+const Name = styled.h2`
   font-size: 80px;
+  line-height: 1.1;
   margin: 0;
   ${media.desktop`font-size: 70px;`};
   ${media.tablet`font-size: 60px;`};
   ${media.phablet`font-size: 50px;`};
   ${media.phone`font-size: 40px;`};
 `;
-const Subtitle = styled.h2`
+const Subtitle = styled.h3`
   font-size: 80px;
-  margin: 0 0 20px;
+  line-height: 1.1;
   color: ${theme.colors.slate};
   ${media.desktop`font-size: 70px;`};
   ${media.tablet`font-size: 60px;`};
@@ -44,6 +45,7 @@ const Subtitle = styled.h2`
   ${media.phone`font-size: 40px;`};
 `;
 const Blurb = styled.div`
+  margin-top: 25px;
   width: 50%;
   max-width: 500px;
   a {

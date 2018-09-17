@@ -12,12 +12,12 @@ const SocialContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${theme.colors.lightSlate};
   vertical-align: middle;
   width: 40px;
   position: fixed;
   bottom: 0;
   left: 40px;
+  color: ${theme.colors.lightSlate};
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
 `;
@@ -69,7 +69,8 @@ class Social extends Component {
                       <SocialLink
                         href={social.url}
                         target="_blank"
-                        rel="nofollow noopener noreferrer">
+                        rel="nofollow noopener noreferrer"
+                        aria-label={social.name}>
                         {social.name === 'Github' ? (
                           <IconGithub />
                         ) : social.name === 'Linkedin' ? (

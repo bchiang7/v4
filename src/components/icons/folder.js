@@ -1,8 +1,8 @@
 import React from 'react';
 
 const IconFolder = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="folder" viewBox="0 0 60 60">
-    <title id="folder">Folder</title>
+  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 60 60">
+    <title>Folder</title>
     <path
       d="M57.49,21.5H54v-6.268c0-1.507-1.226-2.732-2.732-2.732H26.515l-5-7H2.732C1.226,5.5,0,6.726,0,8.232v43.687l0.006,0
           c-0.005,0.563,0.17,1.114,0.522,1.575C1.018,54.134,1.76,54.5,2.565,54.5h44.759c1.156,0,2.174-0.779,2.45-1.813L60,24.649v-0.177

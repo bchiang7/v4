@@ -15,6 +15,7 @@ const EmailContainer = styled.div`
   position: fixed;
   bottom: 0;
   right: 40px;
+  color: ${theme.colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
 
@@ -36,7 +37,6 @@ const EmailLinkWrapper = styled.div`
 const EmailLink = A.extend`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};
-  color: ${theme.colors.lightSlate};
   letter-spacing: 0.5px;
   writing-mode: vertical-rl;
   margin: 20px 0;

@@ -137,7 +137,8 @@ class Menu extends Component {
                     <SocialLink
                       href={social.url}
                       target="_blank"
-                      rel="nofollow noopener noreferrer">
+                      rel="nofollow noopener noreferrer"
+                      aria-label={social.name}>
                       {social.name === 'Github' ? (
                         <IconGithub />
                       ) : social.name === 'Linkedin' ? (

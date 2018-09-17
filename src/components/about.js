@@ -18,11 +18,7 @@ const FlexContainer = styled.div`
 const ContentContainer = styled.div`
   width: 60%;
   max-width: 480px;
-  padding-right: 30px;
-  ${media.tablet`
-    width: 100%;
-    padding-right: 0;
-  `};
+  ${media.tablet`width: 100%;`};
 `;
 const SkillsContainer = Ul.extend`
   margin-top: 20px;
@@ -36,7 +32,6 @@ const Skill = styled.li`
   font-size: ${theme.fontSizes.smallish};
   margin-bottom: 10px;
   padding-left: 20px;
-
   &:before {
     content: '▹';
     color: ${theme.colors.green};
@@ -49,7 +44,8 @@ const PicContainer = styled.div`
   position: relative;
   width: 40%;
   max-width: 300px;
-  ${media.tablet`margin: 50px auto 0;`};
+  margin-left: 60px;
+  ${media.tablet`margin: 60px auto 0;`};
   ${media.phablet`width: 70%;`};
 `;
 const Avatar = styled(Img)`
@@ -69,16 +65,13 @@ const AvatarContainer = styled.div`
   background-color: ${theme.colors.green};
   background: ${theme.gradient};
   margin-left: -20px;
-
   &:hover,
   &:focus {
     background: transparent;
-
     &:after {
       top: 15px;
       left: 15px;
     }
-
     ${Avatar} {
       filter: none;
       mix-blend-mode: normal;

@@ -155,7 +155,7 @@ const base = injectGlobal`
     line-height: 1.25;
     font-family: ${theme.fonts.Calibre};
     font-size: ${theme.fontSizes.xlarge};
-    ${media.tablet`font-size: ${theme.fontSizes.large};`}
+    ${media.phablet`font-size: ${theme.fontSizes.large};`}
 
     &.blur {
       #root > #content > * {
