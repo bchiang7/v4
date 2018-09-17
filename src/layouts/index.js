@@ -29,7 +29,7 @@ class Layout extends Component {
         {isLoading ? (
           <Loader finishLoading={this.finishLoading} />
         ) : (
-          <div>
+          <div className="content">
             <Header location={location} navLinks={navLinks} />
             <Social />
             <Email />

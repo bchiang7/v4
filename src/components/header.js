@@ -156,7 +156,7 @@ const NavListItem = styled.li`
 `;
 const NavLink = styled(AnchorLink)`
   ${mixins.link};
-  padding: 10px;
+  padding: 12px 10px;
 `;
 const ResumeButton = styled.div``;
 const ResumeLink = A.extend`
