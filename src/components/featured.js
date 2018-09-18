@@ -215,32 +215,32 @@ class Featured extends Component {
         <H3 innerRef={el => (this.featured = el)}>Some Things I've Built</H3>
         <FeaturedGrid>
           {data &&
-            data.map((project, i) => (
+            data.map(({ node }, i) => (
               <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
                 <ContentContainer>
                   <FeaturedLabel>Featured Project</FeaturedLabel>
-                  <ProjectName>{project.node.frontmatter.title}</ProjectName>
-                  <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                  {project.node.frontmatter.tech && (
+                  <ProjectName>{node.frontmatter.title}</ProjectName>
+                  <ProjectDescription dangerouslySetInnerHTML={{ __html: node.html }} />
+                  {node.frontmatter.tech && (
                     <TechList>
-                      {project.node.frontmatter.tech.map((tech, i) => (
+                      {node.frontmatter.tech.map((tech, i) => (
                         <li key={i}>{tech}</li>
                       ))}
                     </TechList>
                   )}
                   <Links>
-                    {project.node.frontmatter.github && (
+                    {node.frontmatter.github && (
                       <A
-                        href={project.node.frontmatter.github}
+                        href={node.frontmatter.github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         aria-label="Github Link">
                         <IconGithub />
                       </A>
                     )}
-                    {project.node.frontmatter.external && (
+                    {node.frontmatter.external && (
                       <A
-                        href={project.node.frontmatter.external}
+                        href={node.frontmatter.external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         aria-label="External Link">
@@ -251,7 +251,7 @@ class Featured extends Component {
                 </ContentContainer>
 
                 <ImgContainer>
-                  <FeaturedImg sizes={project.node.frontmatter.cover.childImageSharp.sizes} />
+                  <FeaturedImg sizes={node.frontmatter.cover.childImageSharp.sizes} />
                 </ImgContainer>
               </Project>
             ))}

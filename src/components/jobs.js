@@ -173,7 +173,7 @@ class Jobs extends Component {
         <TabsContainer>
           <Tabs role="tablist">
             {data &&
-              data.map((tab, i) => (
+              data.map(({ node }, i) => (
                 <Tab
                   key={i}
                   isActive={this.isActive(i)}
@@ -183,14 +183,14 @@ class Jobs extends Component {
                   aria-controls={`tab${i}`}
                   id={`tab${i}`}
                   tabindex={this.isActive(i) ? '0' : '-1'}>
-                  <span>{tab.node.frontmatter.company}</span>
+                  <span>{node.frontmatter.company}</span>
                 </Tab>
               ))}
             <Highlighter activeTabId={activeTabId} />
           </Tabs>
           <ContentContainer>
             {data &&
-              data.map((job, i) => (
+              data.map(({ node }, i) => (
                 <TabContent
                   key={i}
                   isActive={this.isActive(i)}
@@ -199,20 +199,20 @@ class Jobs extends Component {
                   tabindex="0"
                   aria-labelledby={`job${i}`}>
                   <JobTitle>
-                    <span>{job.node.frontmatter.title} @ </span>
+                    <span>{node.frontmatter.title} @ </span>
                     <span>
                       <a
-                        href={job.node.frontmatter.url}
+                        href={node.frontmatter.url}
                         target="_blank"
                         rel="nofollow noopener noreferrer">
-                        {job.node.frontmatter.company}
+                        {node.frontmatter.company}
                       </a>
                     </span>
                   </JobTitle>
                   <JobDetails>
-                    <span>{job.node.frontmatter.range} </span>
+                    <span>{node.frontmatter.range}</span>
                   </JobDetails>
-                  <P dangerouslySetInnerHTML={{ __html: job.node.html }} />
+                  <P dangerouslySetInnerHTML={{ __html: node.html }} />
                 </TabContent>
               ))}
           </ContentContainer>
