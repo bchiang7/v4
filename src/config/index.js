@@ -61,7 +61,6 @@ module.exports = {
   twitterHandle: '@bchiang7',
   googleAnalyticsID: 'UA-12345689-1',
 
-  projectMaxWidth: 1100,
   headerHeight: 100,
 
   navyColor: '#0a192f',
