@@ -9,7 +9,7 @@ tech:
   - Node.js
   - Express
   - MongoDB
-show: 'false'
+show: 'true'
 ---
 
 Web application built on the MEAN (MongoDB, Express, Angular, Node) stack with the intention of providing Northeastern students a better experience browsing the courses offered at Northeastern.

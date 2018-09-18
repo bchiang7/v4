@@ -7,7 +7,7 @@ external: 'https://brittanychiang.com/fontipsums/'
 tech:
   - HTML
   - SCSS
-show: 'false'
+show: 'true'
 ---
 
 Simple website to display some of my favorite font pairings combined with some fun lorem ipsum variations found on the web.

@@ -53,7 +53,6 @@ const NavListItem = styled.li`
   position: relative;
   font-size: ${theme.fontSizes.large};
   counter-increment: item 1;
-
   &:before {
     display: block;
     content: '0' counter(item) '.';
@@ -89,7 +88,6 @@ const SocialItemList = Ul.extend`
 const SocialItem = styled.li``;
 const SocialLink = A.extend`
   padding: 10px;
-
   svg {
     width: 24px;
     height: 24px;

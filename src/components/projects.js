@@ -25,9 +25,8 @@ const ProjectsGrid = styled.div`
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 15px;
     position: relative;
-
     ${media.desktop`
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     `};
@@ -42,7 +41,6 @@ const Project = styled.div`
   padding: 25px;
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
-
   &:hover,
   &:focus {
     background-color: ${theme.colors.transGreen};
@@ -53,7 +51,6 @@ const ProjectBottom = styled.div``;
 const Folder = styled.div`
   color: ${theme.colors.green};
   margin-bottom: 30px;
-
   svg {
     width: 40px;
     height: 40px;
@@ -68,7 +65,6 @@ const ProjectLink = A.extend``;
 const ProjectDescription = styled.div`
   font-size: 17px;
   line-height: 1.25;
-
   a {
     ${mixins.inlineLink};
     color: ${theme.colors.offWhite};
@@ -80,14 +76,12 @@ const TechList = Ul.extend`
   align-items: flex-end;
   flex-wrap: wrap;
   margin-top: 20px;
-
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.xsmall};
     color: ${theme.colors.slate};
     line-height: 2;
     margin-right: 15px;
-
     &:last-of-type {
       margin-right: 0;
     }
@@ -102,7 +96,6 @@ const Links = styled.div`
 `;
 const IconLink = A.extend`
   margin-left: 15px;
-
   svg {
     width: 20px;
     height: 20px;
@@ -138,10 +131,12 @@ class Projects extends Component {
   };
 
   render() {
+    const GRID_LIMIT = 6;
     const { showMore } = this.state;
     const { data } = this.props;
-    const firstSix = data.slice(0, 6);
-    const projectsToShow = showMore ? data : firstSix;
+    const projects = data.filter(({ node }) => node.frontmatter.show === 'true');
+    const firstSix = projects.slice(0, GRID_LIMIT);
+    const projectsToShow = showMore ? projects : firstSix;
 
     return (
       <ProjectsContainer>
@@ -149,33 +144,35 @@ class Projects extends Component {
         <ProjectsGrid>
           <TransitionGroup className="projects">
             {projectsToShow &&
-              projectsToShow.map((project, i) => (
+              projectsToShow.map(({ node }, i) => (
                 <CSSTransition
                   key={i}
                   classNames="fadeup"
-                  timeout={i > 5 ? (i - 6) * 300 : 300}
+                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
                   exit={false}>
                   <Project
                     key={i}
                     innerRef={el => (this.revealRefs[i] = el)}
-                    style={{ transitionDelay: `${i > 5 ? (i - 6) * 100 : 0}ms` }}>
+                    style={{
+                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                    }}>
                     <ProjectTop>
                       <Folder>
                         <IconFolder />
                       </Folder>
                       <Links>
-                        {project.node.frontmatter.github && (
+                        {node.frontmatter.github && (
                           <IconLink
-                            href={project.node.frontmatter.github}
+                            href={node.frontmatter.github}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
                             aria-label="Github Link">
                             <IconGithub />
                           </IconLink>
                         )}
-                        {project.node.frontmatter.external && (
+                        {node.frontmatter.external && (
                           <IconLink
-                            href={project.node.frontmatter.external}
+                            href={node.frontmatter.external}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
                             aria-label="External Link">
@@ -184,23 +181,23 @@ class Projects extends Component {
                         )}
                       </Links>
                       <ProjectName>
-                        {project.node.frontmatter.external ? (
+                        {node.frontmatter.external ? (
                           <ProjectLink
-                            href={project.node.frontmatter.external}
+                            href={node.frontmatter.external}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
                             aria-label="Visit Website">
-                            {project.node.frontmatter.title}
+                            {node.frontmatter.title}
                           </ProjectLink>
                         ) : (
-                          project.node.frontmatter.title
+                          node.frontmatter.title
                         )}
                       </ProjectName>
-                      <ProjectDescription dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                      <ProjectDescription dangerouslySetInnerHTML={{ __html: node.html }} />
                     </ProjectTop>
                     <ProjectBottom>
                       <TechList>
-                        {project.node.frontmatter.tech.map((tech, i) => (
+                        {node.frontmatter.tech.map((tech, i) => (
                           <li key={i}>{tech}</li>
                         ))}
                       </TechList>

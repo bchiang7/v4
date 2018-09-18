@@ -100,7 +100,6 @@ const HamburgerInner = styled.div`
   transition-timing-function: cubic-bezier(
     ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
   );
-
   &:before,
   &:after {
     content: '';
@@ -144,7 +143,6 @@ const NavListItem = styled.li`
   position: relative;
   font-size: ${theme.fontSizes.smallish};
   counter-increment: item 1;
-
   &:before {
     content: '0' counter(item) '.';
     text-align: right;

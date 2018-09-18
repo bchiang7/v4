@@ -22,7 +22,6 @@ const GithubLink = A.extend`
   color: ${theme.colors.lightGrey};
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};
-
   &:after {
     display: none;
   }

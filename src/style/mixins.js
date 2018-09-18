@@ -27,10 +27,8 @@ const mixins = {
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
-
     &:focus {
     }
-
     &:hover,
     &:active,
     &:focus {
@@ -46,7 +44,6 @@ const mixins = {
     transition: ${theme.transition};
     cursor: pointer;
     color: ${theme.colors.green};
-
     &:hover,
     &:focus,
     &:active {
@@ -55,14 +52,13 @@ const mixins = {
         opacity: 1;
       }
     }
-
     &:after {
       content: '';
       display: block;
       width: 100%;
       height: 1px;
       position: absolute;
-      bottom: 0.25em;
+      bottom: 0.3em;
       opacity: 0;
       background-color: ${theme.colors.green};
       transition: ${theme.transition};
@@ -81,7 +77,6 @@ const mixins = {
     text-decoration: none;
     cursor: pointer;
     transition: ${theme.transition};
-
     &:hover,
     &:focus,
     &:active {
@@ -104,7 +99,6 @@ const mixins = {
     text-decoration: none;
     cursor: pointer;
     transition: ${theme.transition};
-
     &:hover,
     &:focus,
     &:active {

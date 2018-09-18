@@ -7,7 +7,7 @@ external: ''
 tech:
   - R
   - Spotify Web API
-show: 'false'
+show: 'true'
 ---
 
 R Project for my Data Science class at Northeastern to analyze the top Spotify tracks of 2017 and their audio features.

@@ -21,7 +21,6 @@ const LoaderContainer = styled.div`
 const LogoWrapper = styled.div`
   width: max-content;
   max-width: 100px;
-
   svg {
     width: 100%;
     height: 100%;
@@ -29,7 +28,6 @@ const LogoWrapper = styled.div`
     margin: 0 auto;
     fill: none;
     user-select: none;
-
     #B {
       opacity: 0;
     }

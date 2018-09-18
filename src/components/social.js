@@ -38,7 +38,6 @@ const SocialItem = styled.li`
 `;
 const SocialLink = A.extend`
   padding: 10px;
-
   svg {
     width: 18px;
     height: 18px;

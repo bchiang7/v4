@@ -10,9 +10,8 @@ import sr from '../ScrollReveal';
 
 const ContactContainer = Section.extend`
   text-align: center;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto 100px;
-
   a {
     ${mixins.inlineLink};
   }
@@ -26,13 +25,11 @@ const Header = H3.extend`
   margin-bottom: 20px;
   justify-content: center;
   ${media.desktop`font-size: ${theme.fontSizes.small};`};
-
   &:before {
     bottom: 0;
     font-size: ${theme.fontSizes.small};
     ${media.desktop`font-size: ${theme.fontSizes.smallish};`};
   }
-
   &:after {
     display: none;
   }
@@ -40,7 +37,6 @@ const Header = H3.extend`
 const Title = styled.h4`
   margin: 0 0 20px;
   font-size: 60px;
-
   ${media.desktop`font-size: 50px;`};
   ${media.tablet`font-size: 40px;`};
 `;

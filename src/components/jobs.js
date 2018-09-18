@@ -46,7 +46,6 @@ const Tab = styled.button`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
   color: ${props => (props.isActive ? theme.colors.green : theme.colors.lightGrey)};
-
   ${media.tablet`padding: 0 10px 2px;`};
   ${media.thone`
     padding: 0 15px;
@@ -55,7 +54,6 @@ const Tab = styled.button`
     border-bottom: 2px solid ${theme.colors.darkGrey};
     min-width: 120px;
   `};
-
   &:hover,
   &:focus {
     background-color: ${theme.colors.lightNavy};
@@ -76,7 +74,6 @@ const Highlighter = styled.span`
   transform: translateY(
     ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
   );
-
   ${media.thone`
     width: 100%;
     max-width: ${theme.tabWidth}px;
@@ -86,7 +83,6 @@ const Highlighter = styled.span`
     transform: translateX(
       ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
     );
-
   `};
 `;
 const ContentContainer = styled.div`
@@ -107,13 +103,11 @@ const TabContent = styled.div`
   position: ${props => (props.isActive ? 'relative' : 'absolute')};
   transition: ${theme.transition};
   transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
-
   ul {
     padding: 0;
     margin: 0;
     list-style: none;
     font-size: ${theme.fontSizes.large};
-
     li {
       position: relative;
       padding-left: 30px;
@@ -128,7 +122,6 @@ const TabContent = styled.div`
       }
     }
   }
-
   a {
     ${mixins.inlineLink};
   }

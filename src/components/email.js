@@ -18,7 +18,6 @@ const EmailContainer = styled.div`
   color: ${theme.colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
-
   .link {
     width: 100%;
     margin: 0 auto;

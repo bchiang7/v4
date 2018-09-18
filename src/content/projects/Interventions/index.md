@@ -7,7 +7,7 @@ external: 'https://interventions.design/'
 tech:
   - Jekyll
   - Github Pages
-show: 'false'
+show: 'true'
 ---
 
 Interactive marketing website for Northeastern's first annual student-led design conference, Interventions.

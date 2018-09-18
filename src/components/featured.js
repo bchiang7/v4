@@ -51,14 +51,18 @@ const ProjectDescription = styled.div`
   color: ${theme.colors.lightSlate};
   padding: 20px;
   border-radius: ${theme.borderRadius};
-  font-size: ${theme.fontSizes.large};
+  font-size: 17px;
+  line-height: 1.3;
   ${media.thone`
     background-color: transparent;
     padding: 20px 0;
   `};
-
   p {
     margin: 0;
+  }
+  a {
+    ${mixins.inlineLink};
+    color: ${theme.colors.white};
   }
 `;
 const TechList = Ul.extend`
@@ -81,10 +85,8 @@ const Links = styled.div`
   position: relative;
   margin-top: 10px;
   margin-left: -10px;
-
   a {
     padding: 10px;
-
     svg {
       width: ${theme.margin};
       height: ${theme.margin};
@@ -98,7 +100,7 @@ const FeaturedImg = styled(Img)`
   border-radius: ${theme.borderRadius};
   position: relative;
   mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1);
+  filter: grayscale(100%) contrast(1) brightness(90%);
   ${media.tablet`
     object-fit: cover;
     width: auto;
@@ -121,7 +123,6 @@ const ImgContainer = styled.div`
     grid-column: 1 / -1;
     opacity: 0.25;
   `};
-
   &:hover,
   &:focus {
     background: transparent;
@@ -154,11 +155,9 @@ const Project = styled.div`
   align-items: center;
   margin-bottom: 100px;
   ${media.thone`margin-bottom: 70px;`};
-
   &:last-of-type {
     margin-bottom: 0;
   }
-
   &:nth-of-type(odd) {
     ${ContentContainer} {
       grid-column: 7 / -1;

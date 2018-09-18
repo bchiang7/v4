@@ -11,7 +11,7 @@ tech:
   - HTML
   - CSS
   - JS
-show: 'false'
+show: 'true'
 ---
 
 A simple web application that allows users to filter through and leave reviews in a database of Lonely Planet's [Top 500 Travel Destinations](https://www.amazon.com/Lonely-Planets-Ultimate-Travel-Places/dp/1760342777).
