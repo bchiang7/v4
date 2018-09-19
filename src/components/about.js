@@ -132,7 +132,7 @@ class About extends Component {
           </ContentContainer>
           <PicContainer>
             <AvatarContainer>
-              <Avatar sizes={node.frontmatter.avatar.childImageSharp.sizes} alt="Avatar" />
+              <Avatar fluid={node.frontmatter.avatar.childImageSharp.fluid} alt="Avatar" />
             </AvatarContainer>
           </PicContainer>
         </FlexContainer>

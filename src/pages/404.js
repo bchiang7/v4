@@ -1,5 +1,7 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
+
+import Layout from '../components/layout';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '../style';
@@ -34,11 +36,13 @@ const HomeButton = styled(Link)`
 `;
 
 const NotFoundPage = () => (
-  <MainContainer>
-    <Title>404</Title>
-    <Subtitle>Page Not Found</Subtitle>
-    <HomeButton to="/">Go Home</HomeButton>
-  </MainContainer>
+  <Layout>
+    <MainContainer>
+      <Title>404</Title>
+      <Subtitle>Page Not Found</Subtitle>
+      <HomeButton to="/">Go Home</HomeButton>
+    </MainContainer>
+  </Layout>
 );
 
 export default NotFoundPage;

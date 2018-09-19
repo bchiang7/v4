@@ -18,13 +18,15 @@ class Layout extends Component {
   finishLoading = () => this.setState({ isLoading: false });
 
   render() {
-    const { children, data, location } = this.props;
+    const { children } = this.props;
     const { isLoading } = this.state;
     const navLinks = config.navLinks;
 
+    // console.log(this.props);
+
     return (
       <div id="root">
-        <Head siteMetadata={data.site.siteMetadata} />
+        <Head />
 
         {isLoading ? (
           <Loader finishLoading={this.finishLoading} />
@@ -33,7 +35,7 @@ class Layout extends Component {
             <Header location={location} navLinks={navLinks} />
             <Social />
             <Email />
-            {children()}
+            {children}
             <Footer />
           </div>
         )}
@@ -43,22 +45,8 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func.isRequired,
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+  // location: PropTypes.object.isRequired,
 };
 
 export default Layout;
-
-/* eslint no-undef: off */
-export const query = graphql`
-  query LayoutQuery {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-        description
-      }
-    }
-  }
-`;

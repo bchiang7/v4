@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import Menu from '../components/menu';
 import config from '../config';

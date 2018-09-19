@@ -1,6 +1,8 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
+import Layout from '../components/layout';
 import Hero from '../components/hero';
 import About from '../components/about';
 import Jobs from '../components/jobs';
@@ -16,14 +18,16 @@ const MainContainer = Main.extend`
 `;
 
 const IndexPage = ({ data }) => (
-  <MainContainer>
-    <Hero data={data.hero.edges} />
-    <About data={data.about.edges} />
-    <Jobs data={data.jobs.edges} />
-    <Featured data={data.featured.edges} />
-    <Projects data={data.projects.edges} />
-    <Contact data={data.contact.edges} />
-  </MainContainer>
+  <Layout>
+    <MainContainer>
+      <Hero data={data.hero.edges} />
+      <About data={data.about.edges} />
+      <Jobs data={data.jobs.edges} />
+      <Featured data={data.featured.edges} />
+      <Projects data={data.projects.edges} />
+      <Contact data={data.contact.edges} />
+    </MainContainer>
+  </Layout>
 );
 
 IndexPage.propTypes = {
@@ -55,8 +59,8 @@ export const query = graphql`
             title
             avatar {
               childImageSharp {
-                sizes(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
@@ -93,8 +97,8 @@ export const query = graphql`
             title
             cover {
               childImageSharp {
-                sizes(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpSizes_withWebp_tracedSVG
+                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
