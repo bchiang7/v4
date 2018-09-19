@@ -63,6 +63,7 @@ module.exports = {
 
   headerHeight: 100,
 
+  greenColor: '#64ffda',
   navyColor: '#0a192f',
 
   srConfig: (delay = 200) => {

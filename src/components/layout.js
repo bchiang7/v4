@@ -18,11 +18,9 @@ class Layout extends Component {
   finishLoading = () => this.setState({ isLoading: false });
 
   render() {
-    const { children } = this.props;
+    const { children, location } = this.props;
     const { isLoading } = this.state;
     const navLinks = config.navLinks;
-
-    // console.log(this.props);
 
     return (
       <div id="root">
@@ -46,7 +44,7 @@ class Layout extends Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  // location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;

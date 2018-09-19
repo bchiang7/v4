@@ -17,8 +17,8 @@ const MainContainer = Main.extend`
   counter-reset: section;
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const IndexPage = ({ data, location }) => (
+  <Layout location={location}>
     <MainContainer>
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
@@ -31,12 +31,12 @@ const IndexPage = ({ data }) => (
 );
 
 IndexPage.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default IndexPage;
 
-/* eslint no-undef: off */
 export const query = graphql`
   query IndexQuery {
     hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
