@@ -8,7 +8,7 @@ import { theme, mixins, media, Section, H3, P } from '../style';
 
 import sr from '../ScrollReveal';
 
-const JobsContainer = Section.extend`
+const JobsContainer = styled(Section)`
   position: relative;
   max-width: 700px;
 `;

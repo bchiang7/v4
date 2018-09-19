@@ -21,7 +21,7 @@ const SocialContainer = styled.div`
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
 `;
-const SocialItemList = Ul.extend`
+const SocialItemList = styled(Ul)`
   &:after {
     content: '';
     display: block;
@@ -36,7 +36,7 @@ const SocialItem = styled.li`
     margin-bottom: 20px;
   }
 `;
-const SocialLink = A.extend`
+const SocialLink = styled(A)`
   padding: 10px;
   svg {
     width: 18px;

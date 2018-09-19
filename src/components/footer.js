@@ -13,11 +13,11 @@ const FooterContainer = styled.footer`
   height: 75px;
   ${media.phone`padding: 0 20px;`};
 `;
-const Copy = P.extend`
+const Copy = styled(P)`
   margin: 5px 0 3px;
   font-size: ${theme.fontSizes.medium};
 `;
-const GithubLink = A.extend`
+const GithubLink = styled(A)`
   ${mixins.inlineLink};
   color: ${theme.colors.lightGrey};
   font-family: ${theme.fonts.SFMono};

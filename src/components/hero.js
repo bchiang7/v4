@@ -7,7 +7,7 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, A } from '../style';
 
-const HeroContainer = Section.extend`
+const HeroContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
@@ -53,7 +53,7 @@ const Blurb = styled.div`
   }
 `;
 const EmailButton = styled.div``;
-const EmailLink = A.extend`
+const EmailLink = styled(A)`
   ${mixins.bigButton};
   font-size: ${theme.fontSizes.smallish};
   margin-top: 50px;

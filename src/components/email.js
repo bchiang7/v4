@@ -33,7 +33,7 @@ const EmailLinkWrapper = styled.div`
     background-color: ${theme.colors.lightSlate};
   }
 `;
-const EmailLink = A.extend`
+const EmailLink = styled(A)`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};
   letter-spacing: 0.5px;

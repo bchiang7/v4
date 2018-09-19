@@ -10,9 +10,10 @@ import Featured from '../components/featured';
 import Projects from '../components/projects';
 import Contact from '../components/contact';
 
+import styled from 'styled-components';
 import { mixins, Main } from '../style';
 
-const MainContainer = Main.extend`
+const MainContainer = styled(Main)`
   ${mixins.padding};
   counter-reset: section;
 `;

@@ -40,12 +40,12 @@ const Sidebar = styled.div`
     width: 75vw;
   `};
 `;
-const NavLinks = Nav.extend`
+const NavLinks = styled(Nav)`
   ${mixins.flexBetween};
   flex-direction: column;
   text-align: center;
 `;
-const NavList = Ol.extend`
+const NavList = styled(Ol)`
   width: 100%;
 `;
 const NavListItem = styled.li`
@@ -66,7 +66,7 @@ const NavLink = styled(AnchorLink)`
   padding: 3px 20px 20px;
   width: 100%;
 `;
-const ResumeLink = A.extend`
+const ResumeLink = styled(A)`
   ${mixins.bigButton};
   margin: 10% auto 0;
   width: max-content;
@@ -82,11 +82,11 @@ const SocialContainer = styled.div`
   margin: 0 auto 10%;
   padding: 0 25px;
 `;
-const SocialItemList = Ul.extend`
+const SocialItemList = styled(Ul)`
   ${mixins.flexBetween};
 `;
 const SocialItem = styled.li``;
-const SocialLink = A.extend`
+const SocialLink = styled(A)`
   padding: 10px;
   svg {
     width: 24px;

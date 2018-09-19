@@ -12,7 +12,7 @@ import { theme, mixins, media, Section, H3, Ul, A } from '../style';
 
 import sr from '../ScrollReveal';
 
-const FeaturedContainer = Section.extend`
+const FeaturedContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
@@ -65,7 +65,7 @@ const ProjectDescription = styled.div`
     color: ${theme.colors.white};
   }
 `;
-const TechList = Ul.extend`
+const TechList = styled(Ul)`
   display: flex;
   margin: 25px 0 10px;
 

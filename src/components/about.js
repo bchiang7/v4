@@ -9,7 +9,7 @@ import { theme, mixins, media, Section, H3, P, Ul } from '../style';
 
 import sr from '../ScrollReveal';
 
-const AboutContainer = Section.extend``;
+const AboutContainer = styled(Section);
 const FlexContainer = styled.div`
   ${mixins.flexBetween};
   align-items: flex-start;
@@ -20,7 +20,7 @@ const ContentContainer = styled.div`
   max-width: 480px;
   ${media.tablet`width: 100%;`};
 `;
-const SkillsContainer = Ul.extend`
+const SkillsContainer = styled(Ul)`
   margin-top: 20px;
   display: grid;
   overflow: hidden;

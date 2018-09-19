@@ -34,7 +34,7 @@ const HeaderContainer = styled.header`
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
 `;
-const Navbar = Nav.extend`
+const Navbar = styled(Nav)`
   ${mixins.flexBetween};
   font-family: ${theme.fonts.SFMono};
   width: 100%;
@@ -133,7 +133,7 @@ const NavLinks = styled.div`
   align-items: center;
   ${media.tablet`display: none;`};
 `;
-const NavList = Ol.extend`
+const NavList = styled(Ol)`
   div {
     ${mixins.flexBetween};
   }
@@ -155,7 +155,7 @@ const NavLink = styled(AnchorLink)`
   padding: 12px 10px;
 `;
 const ResumeButton = styled.div``;
-const ResumeLink = A.extend`
+const ResumeLink = styled(A)`
   ${mixins.smallButton};
   margin-left: 10px;
   font-size: ${theme.fontSizes.smallish};

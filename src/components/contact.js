@@ -8,7 +8,7 @@ import { theme, mixins, media, Section, H3, A, P } from '../style';
 
 import sr from '../ScrollReveal';
 
-const ContactContainer = Section.extend`
+const ContactContainer = styled(Section)`
   text-align: center;
   max-width: 600px;
   margin: 0 auto 100px;
@@ -16,7 +16,7 @@ const ContactContainer = Section.extend`
     ${mixins.inlineLink};
   }
 `;
-const Header = H3.extend`
+const Header = styled(H3)`
   display: block;
   color: ${theme.colors.green};
   font-size: ${theme.fontSizes.medium};
@@ -40,7 +40,7 @@ const Title = styled.h4`
   ${media.desktop`font-size: 50px;`};
   ${media.tablet`font-size: 40px;`};
 `;
-const EmailLink = A.extend`
+const EmailLink = styled(A)`
   ${mixins.bigButton};
   margin-top: 50px;
 `;
