@@ -29,7 +29,7 @@
     "animejs": "^2.2.0",
     "babel-plugin-styled-components": "^1.7.1",
     "gatsby": "^2.0.6",
-    "gatsby-image": "^2.0.6",
+    "gatsby-image": "^2.0.7",
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-netlify": "^2.0.0",
     "gatsby-plugin-offline": "^2.0.5",

@@ -59,7 +59,7 @@ module.exports = {
   ],
 
   twitterHandle: '@bchiang7',
-  googleAnalyticsID: 'UA-12345689-1',
+  googleAnalyticsID: 'UA-45666519-2',
 
   headerHeight: 100,
 

@@ -258,11 +258,17 @@ class Header extends Component {
             )}
           </TransitionGroup>
 
-          <Hamburger onClick={this.toggleMenu}>
-            <HamburgerBox>
-              <HamburgerInner menuOpen={menuOpen} />
-            </HamburgerBox>
-          </Hamburger>
+          <TransitionGroup>
+            {show && (
+              <CSSTransition classNames="fade" timeout={3000}>
+                <Hamburger onClick={this.toggleMenu}>
+                  <HamburgerBox>
+                    <HamburgerInner menuOpen={menuOpen} />
+                  </HamburgerBox>
+                </Hamburger>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
 
           <NavLinks>
             {isHome && (
