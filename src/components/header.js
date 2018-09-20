@@ -165,7 +165,7 @@ const DELTA = 5;
 
 class Header extends Component {
   static propTypes = {
-    location: PropTypes.object.isRequired,
+    location: PropTypes.object,
     navLinks: PropTypes.array.isRequired,
   };
 
@@ -241,7 +241,7 @@ class Header extends Component {
   render() {
     const { scrollDirection, menuOpen, show } = this.state;
     const { location, navLinks } = this.props;
-    const isHome = location.pathname === '/';
+    const isHome = location && location.pathname === '/';
 
     return (
       <HeaderContainer innerRef={x => (this.header = x)} scrollDirection={scrollDirection}>

@@ -100,7 +100,7 @@ const SocialLink = styled(A)`
 
 class Menu extends Component {
   static propTypes = {
-    isHome: PropTypes.bool.isRequired,
+    isHome: PropTypes.bool,
     menuOpen: PropTypes.bool.isRequired,
     navLinks: PropTypes.array.isRequired,
     handleMenuClick: PropTypes.func.isRequired,

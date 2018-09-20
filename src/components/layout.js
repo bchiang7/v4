@@ -11,6 +11,11 @@ import Email from '../components/email';
 import Footer from '../components/footer';
 
 class Layout extends Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    location: PropTypes.object,
+  };
+
   state = {
     isLoading: true,
   };
@@ -41,10 +46,5 @@ class Layout extends Component {
     );
   }
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  location: PropTypes.object.isRequired,
-};
 
 export default Layout;
