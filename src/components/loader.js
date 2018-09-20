@@ -55,7 +55,7 @@ class Loader extends Component {
     loader
       .add({
         targets: '#logo path',
-        delay: 1000,
+        delay: 0,
         duration: 2000,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
