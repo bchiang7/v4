@@ -9,7 +9,9 @@ import { theme, mixins, media, Section, H3, P, Ul } from '../style';
 
 import sr from '../ScrollReveal';
 
-const AboutContainer = styled(Section);
+const AboutContainer = styled(Section)`
+  position: relative;
+`;
 const FlexContainer = styled.div`
   ${mixins.flexBetween};
   align-items: flex-start;
