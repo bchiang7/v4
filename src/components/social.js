@@ -9,10 +9,6 @@ import styled from 'styled-components';
 import { theme, media, A, Ul } from '../style';
 
 const SocialContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  vertical-align: middle;
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -22,6 +18,9 @@ const SocialContainer = styled.div`
   ${media.tablet`display: none;`};
 `;
 const SocialItemList = styled(Ul)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &:after {
     content: '';
     display: block;

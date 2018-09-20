@@ -7,10 +7,6 @@ import styled from 'styled-components';
 import { theme, media, A } from '../style';
 
 const EmailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  vertical-align: middle;
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -18,12 +14,16 @@ const EmailContainer = styled.div`
   color: ${theme.colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
-  .link {
+  div {
     width: 100%;
     margin: 0 auto;
   }
 `;
 const EmailLinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
   &:after {
     content: '';
     display: block;
@@ -38,9 +38,8 @@ const EmailLink = styled(A)`
   font-size: ${theme.fontSizes.xsmall};
   letter-spacing: 0.5px;
   writing-mode: vertical-rl;
-  margin: 20px 0;
+  margin: 20px auto;
   padding: 10px;
-  right: -1px;
 `;
 
 class Email extends Component {
@@ -57,7 +56,7 @@ class Email extends Component {
 
     return (
       <EmailContainer>
-        <TransitionGroup className="link">
+        <TransitionGroup>
           {show && (
             <CSSTransition timeout={3000} classNames="fade">
               <EmailLinkWrapper>
