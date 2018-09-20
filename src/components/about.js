@@ -65,7 +65,6 @@ const AvatarContainer = styled.div`
   position: relative;
   border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.green};
-  background: ${theme.gradient};
   margin-left: -20px;
   &:hover,
   &:focus {

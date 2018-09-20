@@ -10,6 +10,42 @@ import Social from '../components/social';
 import Email from '../components/email';
 import Footer from '../components/footer';
 
+import styled from 'styled-components';
+import { theme, A } from '../style';
+
+const SkipToContent = styled(A)`
+  position: absolute;
+  top: auto;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -99;
+  &:hover {
+    background-color: ${theme.colors.darkGrey};
+  }
+  &:focus,
+  &:active {
+    outline: none;
+    color: ${theme.colors.green};
+    background-color: ${theme.colors.lightNavy};
+    border-radius: ${theme.borderRadius};
+    padding: 18px 23px;
+    font-size: ${theme.fontSizes.small};
+    font-family: ${theme.fonts.SFMono};
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ${theme.transition};
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    z-index: 99;
+  }
+`;
+
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -31,10 +67,14 @@ class Layout extends Component {
       <div id="root">
         <Head />
 
+        <SkipToContent href="#content" className="skip-to-content">
+          Skip To Content
+        </SkipToContent>
+
         {isLoading ? (
           <Loader finishLoading={this.finishLoading} />
         ) : (
-          <div className="content">
+          <div className="container">
             <Header location={location} navLinks={navLinks} />
             <Social />
             <Email />
