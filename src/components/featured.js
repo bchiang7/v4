@@ -10,7 +10,7 @@ import { IconGithub, IconExternal } from './icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, Ul, A } from '../style';
 
-import sr from '../ScrollReveal';
+import ScrollReveal from 'scrollreveal';
 
 const FeaturedContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -203,8 +203,8 @@ class Featured extends Component {
   }
 
   componentDidMount() {
-    sr.reveal(this.featured, config.srConfig());
-    this.revealRefs.forEach(ref => sr.reveal(ref, config.srConfig()));
+    ScrollReveal().reveal(this.featured, config.srConfig());
+    this.revealRefs.forEach(ref => ScrollReveal().reveal(ref, config.srConfig()));
   }
 
   render() {

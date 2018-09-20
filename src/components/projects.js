@@ -9,7 +9,7 @@ import { IconGithub, IconExternal, IconFolder } from './icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Ul, A, Button } from '../style';
 
-import sr from '../ScrollReveal';
+import ScrollReveal from 'scrollreveal';
 
 const ProjectsContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -122,8 +122,8 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    sr.reveal(this.projects, config.srConfig());
-    this.revealRefs.forEach((ref, i) => sr.reveal(ref, config.srConfig(i * 100)));
+    ScrollReveal().reveal(this.projects, config.srConfig());
+    this.revealRefs.forEach((ref, i) => ScrollReveal().reveal(ref, config.srConfig(i * 100)));
   }
 
   showMoreToggle = () => {

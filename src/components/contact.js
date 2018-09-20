@@ -6,7 +6,7 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, A, P } from '../style';
 
-import sr from '../ScrollReveal';
+import ScrollReveal from 'scrollreveal';
 
 const ContactContainer = styled(Section)`
   text-align: center;
@@ -51,7 +51,7 @@ class Contact extends Component {
   };
 
   componentDidMount() {
-    sr.reveal(this.contact, config.srConfig());
+    ScrollReveal().reveal(this.contact, config.srConfig());
   }
 
   render() {

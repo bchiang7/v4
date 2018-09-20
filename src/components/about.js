@@ -7,7 +7,7 @@ import config from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P, Ul } from '../style';
 
-import sr from '../ScrollReveal';
+import ScrollReveal from 'scrollreveal';
 
 const AboutContainer = styled(Section)`
   position: relative;
@@ -114,7 +114,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    sr.reveal(this.about, config.srConfig());
+    ScrollReveal().reveal(this.about, config.srConfig());
   }
 
   render() {
