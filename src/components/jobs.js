@@ -24,7 +24,6 @@ const Tabs = styled.div`
   position: relative;
   width: max-content;
   z-index: 3;
-
   ${media.thone`
     display: flex;
     margin-bottom: 30px;
@@ -112,13 +111,12 @@ const TabContent = styled.div`
       position: relative;
       padding-left: 30px;
       margin-bottom: 5px;
-
       &:before {
         content: '▹';
-        color: ${theme.colors.green};
         position: absolute;
-        top: -2px;
         left: 0;
+        color: ${theme.colors.green};
+        line-height: ${theme.fontSizes.xlarge};
       }
     }
   }

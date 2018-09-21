@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import Img from 'gatsby-image';
 
 import config from '../config';
@@ -44,7 +43,9 @@ const ProjectName = styled.h5`
   font-weight: 600;
   margin: 0 0 20px;
   ${media.tablet`font-size: 24px;`};
-  ${media.thone`font-size: ${theme.fontSizes.xxlarge};`};
+  a {
+    ${media.tablet`display: block;`};
+  }
 `;
 const ProjectDescription = styled.div`
   background-color: ${theme.colors.lightNavy};
@@ -67,16 +68,22 @@ const ProjectDescription = styled.div`
 `;
 const TechList = styled(Ul)`
   display: flex;
+  flex-wrap: wrap;
   margin: 25px 0 10px;
-
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.smallish};
     color: ${theme.colors.slate};
     margin-right: ${theme.margin};
+    margin-bottom: 7px;
+    white-space: nowrap;
     &:last-of-type {
       margin-right: 0;
     }
+    ${media.thone`
+      color: ${theme.colors.lightestSlate};
+      margin-right: 10px;
+    `};
   }
 `;
 const Links = styled.div`
@@ -88,8 +95,8 @@ const Links = styled.div`
   a {
     padding: 10px;
     svg {
-      width: ${theme.margin};
-      height: ${theme.margin};
+      width: 22px;
+      height: 22px;
     }
   }
 `;
@@ -126,7 +133,6 @@ const ImgContainer = styled.div`
   &:hover,
   &:focus {
     background: transparent;
-
     &:before,
     ${FeaturedImg} {
       background: transparent;
@@ -170,7 +176,6 @@ const Project = styled.div`
     }
     ${TechList} {
       justify-content: flex-end;
-
       li {
         margin-left: ${theme.margin};
         margin-right: 0;
@@ -219,7 +224,19 @@ class Featured extends Component {
               <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
                 <ContentContainer>
                   <FeaturedLabel>Featured Project</FeaturedLabel>
-                  <ProjectName>{node.frontmatter.title}</ProjectName>
+                  <ProjectName>
+                    {node.frontmatter.external ? (
+                      <A
+                        href={node.frontmatter.external}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        aria-label="External Link">
+                        {node.frontmatter.title}
+                      </A>
+                    ) : (
+                      node.frontmatter.title
+                    )}
+                  </ProjectName>
                   <ProjectDescription dangerouslySetInnerHTML={{ __html: node.html }} />
                   {node.frontmatter.tech && (
                     <TechList>

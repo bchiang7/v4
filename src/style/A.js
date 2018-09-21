@@ -10,13 +10,10 @@ const A = styled.a`
   transition: ${theme.transition};
   cursor: pointer;
 
-  &:focus {
-    outline-color: ${theme.colors.blue};
-  }
-
   &:hover,
   &:focus {
     color: ${theme.colors.green};
+    outline: 0;
   }
 `;
 

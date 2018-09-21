@@ -26,7 +26,7 @@ const SkipToContent = styled(A)`
   }
   &:focus,
   &:active {
-    outline: none;
+    outline: 0;
     color: ${theme.colors.green};
     background-color: ${theme.colors.lightNavy};
     border-radius: ${theme.borderRadius};

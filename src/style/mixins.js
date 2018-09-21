@@ -27,12 +27,11 @@ const mixins = {
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
-    &:focus {
-    }
     &:hover,
     &:active,
     &:focus {
       color: ${theme.colors.green};
+      outline: 0;
     }
   `,
 
@@ -48,6 +47,7 @@ const mixins = {
     &:focus,
     &:active {
       color: ${theme.colors.green};
+      outline: 0;
       &:after {
         opacity: 1;
       }

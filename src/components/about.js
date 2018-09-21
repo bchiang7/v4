@@ -36,10 +36,11 @@ const Skill = styled.li`
   padding-left: 20px;
   &:before {
     content: '▹';
-    color: ${theme.colors.green};
     position: absolute;
-    top: -2px;
     left: 0;
+    color: ${theme.colors.green};
+    font-size: ${theme.fontSizes.small};
+    line-height: 12px;
   }
 `;
 const PicContainer = styled.div`

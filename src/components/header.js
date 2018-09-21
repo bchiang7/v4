@@ -183,7 +183,8 @@ class Header extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', () => this.handleScroll());
+    window.removeEventListener('resize', () => this.handleResize());
   }
 
   handleScroll = () => {
@@ -242,6 +243,7 @@ class Header extends Component {
     const { scrollDirection, menuOpen, show } = this.state;
     const { location, navLinks } = this.props;
     const isHome = location && location.pathname === '/';
+    const showHamburger = window.innerWidth < 768;
 
     return (
       <HeaderContainer innerRef={el => (this.header = el)} scrollDirection={scrollDirection}>
@@ -303,12 +305,14 @@ class Header extends Component {
           </NavLinks>
         </Navbar>
 
-        <Menu
-          isHome={isHome}
-          navLinks={navLinks}
-          menuOpen={menuOpen}
-          handleMenuClick={e => this.handleMenuClick(e)}
-        />
+        {showHamburger && (
+          <Menu
+            isHome={isHome}
+            navLinks={navLinks}
+            menuOpen={menuOpen}
+            handleMenuClick={e => this.handleMenuClick(e)}
+          />
+        )}
       </HeaderContainer>
     );
   }
