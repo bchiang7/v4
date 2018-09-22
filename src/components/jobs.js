@@ -129,6 +129,9 @@ const JobTitle = styled.h4`
   font-weight: 500;
   margin-bottom: 5px;
 `;
+const Company = styled.span`
+  color: ${theme.colors.green};
+`;
 const JobDetails = styled.h5`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
@@ -197,15 +200,16 @@ class Jobs extends Component {
                   tabindex="0"
                   aria-labelledby={`job${i}`}>
                   <JobTitle>
-                    <span>{node.frontmatter.title} @ </span>
-                    <span>
+                    <span>{node.frontmatter.title}</span>
+                    <Company>
+                      &nbsp;@&nbsp;
                       <a
                         href={node.frontmatter.url}
                         target="_blank"
                         rel="nofollow noopener noreferrer">
                         {node.frontmatter.company}
                       </a>
-                    </span>
+                    </Company>
                   </JobTitle>
                   <JobDetails>
                     <span>{node.frontmatter.range}</span>
