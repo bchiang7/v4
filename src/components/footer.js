@@ -29,7 +29,7 @@ const GithubLink = styled(A)`
 
 const Footer = () => (
   <FooterContainer>
-    <Copy>Designed &amp; Developed by Brittany Chiang</Copy>
+    <Copy>Designed &amp; Built by Brittany Chiang</Copy>
     <GithubLink
       href="https://github.com/bchiang7/v4"
       target="_blank"

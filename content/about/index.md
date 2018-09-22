@@ -4,8 +4,7 @@ avatar: './me.jpg'
 skills:
   - JavaScript
   - TypeScript
-  - CSS/Sass
-  - Python
+  - HTML & CSS
   - React
   - Ember
   - Gatsby
@@ -15,6 +14,8 @@ skills:
   - Timber
 ---
 
-Hey there! I'm a design-minded, detail-oriented software engineer who enjoys bridging the gap between engineering and design. For the past 5+ years, I've been honing my craft in web development, building websites, web apps, working in the industry, and constantly learning. I strive to build apps that are scalable and efficient under the hood while providing intuitive, pixel-perfect user interfaces.
+Hey there! I'm a software engineer who enjoys working at the intersection of engineering and design. I build excellent websites and apps that provide intuitive, pixel-perfect user interfaces, while also being scalable and efficient behind the scenes.
+
+For the past 5+ years, I've been honing my skills in web development &mdash; building websites, web apps, working in the industry, and constantly learning in this ever-changing field!
 
 Here's a few things I'm experienced with:
