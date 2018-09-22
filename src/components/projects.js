@@ -213,7 +213,7 @@ class Projects extends Component {
         </ProjectsGrid>
 
         <ShowMoreButton onClick={this.showMoreToggle}>
-          {showMore ? 'Less' : 'More'} Projects
+          {showMore ? 'Fewer' : 'More'} Projects
         </ShowMoreButton>
       </ProjectsContainer>
     );
