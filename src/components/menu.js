@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import config from '../config';
+import resume from '../../static/resume.pdf';
 
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
@@ -123,7 +124,7 @@ class Menu extends Component {
                   ))}
               </NavList>
             )}
-            <ResumeLink href={config.resume} target="_blank" rel="nofollow noopener noreferrer">
+            <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">
               Resume
             </ResumeLink>
           </NavLinks>
