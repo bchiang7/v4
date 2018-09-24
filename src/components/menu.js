@@ -27,7 +27,7 @@ const Sidebar = styled.div`
   background-color: ${theme.colors.lightNavy};
   padding: 50px;
   width: 50vw;
-  height: 100%;
+  height: 100vh;
   position: relative;
   right: 0;
   margin-left: auto;
