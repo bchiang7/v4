@@ -158,7 +158,7 @@ const base = injectGlobal`
     ${media.phablet`font-size: ${theme.fontSizes.large};`}
 
     &.blur {
-      #root > #content > * {
+      #root > .container > * {
         filter: blur(5px) brightness(0.7);
         transition: ${theme.transition};
         pointer-events: none;

@@ -16,7 +16,8 @@ const MenuContainer = styled.div`
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   z-index: 10;
   transition: ${theme.transition};
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
@@ -27,19 +28,15 @@ const Sidebar = styled.div`
   background-color: ${theme.colors.lightNavy};
   padding: 50px;
   width: 50vw;
-  height: 100vh;
+  height: 100%;
   position: relative;
   right: 0;
   margin-left: auto;
   font-family: ${theme.fonts.SFMono};
   box-shadow: -2px 0px 4px ${theme.colors.transNavy};
-  ${media.thone`
-    padding: 25px;
-  `};
-  ${media.phablet`
-    padding: 10px;
-    width: 75vw;
-  `};
+  ${media.thone`padding: 25px;`};
+  ${media.phablet`width: 75vw;`};
+  ${media.tiny`padding: 10px;`};
 `;
 const NavLinks = styled(Nav)`
   ${mixins.flexBetween};
@@ -54,6 +51,13 @@ const NavListItem = styled.li`
   position: relative;
   font-size: ${theme.fontSizes.large};
   counter-increment: item 1;
+  ${media.thone`
+    margin: 0 auto 10px;
+    font-size: ${theme.fontSizes.medium};
+  `};
+  ${media.tiny`
+    font-size: ${theme.fontSizes.smallish};
+  `};
   &:before {
     display: block;
     content: '0' counter(item) '.';
@@ -69,6 +73,7 @@ const NavLink = styled(AnchorLink)`
 `;
 const ResumeLink = styled(A)`
   ${mixins.bigButton};
+  padding: 18px 50px;
   margin: 10% auto 0;
   width: max-content;
 `;
@@ -80,7 +85,7 @@ const SocialContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 auto 10%;
+  margin: 0 auto 40px;
   padding: 0 25px;
 `;
 const SocialItemList = styled(Ul)`
@@ -106,6 +111,10 @@ class Menu extends Component {
     navLinks: PropTypes.array.isRequired,
     handleMenuClick: PropTypes.func.isRequired,
   };
+
+  componentWillUnmount() {
+    document.body.classList.remove('blur');
+  }
 
   render() {
     const { isHome, menuOpen, navLinks, handleMenuClick } = this.props;

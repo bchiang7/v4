@@ -7,6 +7,7 @@ const sizes = {
   thone: 600,
   phablet: 480,
   phone: 376,
+  tiny: 330,
 };
 
 // iterate through the sizes and create a media template
