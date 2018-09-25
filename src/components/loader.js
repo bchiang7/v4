@@ -21,6 +21,8 @@ const LoaderContainer = styled.div`
 const LogoWrapper = styled.div`
   width: max-content;
   max-width: 100px;
+  transition: ${theme.transition};
+  opacity: ${props => (props.show ? 1 : 0)};
   svg {
     width: 100%;
     height: 100%;
@@ -39,9 +41,15 @@ class Loader extends Component {
     finishLoading: PropTypes.func.isRequired,
   };
 
+  state = {
+    show: false,
+  };
+
   componentDidMount() {
-    document.body.style.overflow = 'hidden';
-    this.animate();
+    this.setState({ show: true }, () => {
+      document.body.style.overflow = 'hidden';
+      this.animate();
+    });
   }
 
   animate() {
@@ -55,7 +63,7 @@ class Loader extends Component {
     loader
       .add({
         targets: '#logo path',
-        delay: 0,
+        delay: 500,
         duration: 2000,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
@@ -83,9 +91,11 @@ class Loader extends Component {
   }
 
   render() {
+    const { show } = this.state;
+
     return (
       <LoaderContainer className="loader">
-        <LogoWrapper>
+        <LogoWrapper show={show}>
           <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <title>Loader Logo</title>
             <g>

@@ -50,6 +50,7 @@ const theme = {
   headerHeight: '100px',
   headerScrollHeight: '70px',
   margin: '20px',
+
   tabHeight: 42,
   tabWidth: 120,
 

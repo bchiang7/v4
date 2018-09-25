@@ -16,7 +16,6 @@ const TabsContainer = styled.div`
   display: flex;
   align-items: flex-start;
   position: relative;
-
   ${media.thone`display: block;`};
 `;
 const Tabs = styled.div`
@@ -33,7 +32,8 @@ const Tabs = styled.div`
 `;
 const Tab = styled.button`
   ${mixins.link};
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   background-color: transparent;
   height: ${theme.tabHeight}px;
@@ -45,8 +45,9 @@ const Tab = styled.button`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.smallish};
   color: ${props => (props.isActive ? theme.colors.green : theme.colors.lightGrey)};
-  ${media.tablet`padding: 0 10px 2px;`};
+  ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
+    ${mixins.flexCenter};
     padding: 0 15px;
     text-align: center;
     border-left: 0;
