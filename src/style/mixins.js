@@ -49,17 +49,16 @@ const mixins = {
       color: ${theme.colors.green};
       outline: 0;
       &:after {
-        opacity: 1;
+        width: 100%;
       }
     }
     &:after {
       content: '';
       display: block;
-      width: 100%;
+      width: 0;
       height: 1px;
-      position: absolute;
+      position: relative;
       bottom: 0.3em;
-      opacity: 0;
       background-color: ${theme.colors.green};
       transition: ${theme.transition};
     }
