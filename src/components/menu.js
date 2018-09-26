@@ -13,11 +13,12 @@ const MenuContainer = styled.div`
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
+  height: 100vh;
   z-index: 10;
   transition: ${theme.transition};
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
+  display: none;
+  ${media.tablet`display: block;`};
 `;
 const Sidebar = styled.div`
   ${mixins.flexCenter};
@@ -82,10 +83,6 @@ class Menu extends Component {
     navLinks: PropTypes.array.isRequired,
     handleMenuClick: PropTypes.func.isRequired,
   };
-
-  componentWillUnmount() {
-    document.body.classList.remove('blur');
-  }
 
   render() {
     const { isHome, menuOpen, navLinks, handleMenuClick } = this.props;
