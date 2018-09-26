@@ -50,8 +50,8 @@ const Logo = styled.div`
 `;
 const LogoLink = styled(Link)`
   color: ${theme.colors.green};
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   &:hover,
   &:focus {
     svg {

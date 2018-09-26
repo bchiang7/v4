@@ -74,7 +74,7 @@ const TechList = styled(Ul)`
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.smallish};
-    color: ${theme.colors.slate};
+    color: ${theme.colors.lightSlate};
     margin-right: ${theme.margin};
     margin-bottom: 7px;
     white-space: nowrap;

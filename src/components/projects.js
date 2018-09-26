@@ -72,6 +72,7 @@ const Folder = styled.div`
 `;
 const Links = styled.div`
   margin-right: -10px;
+  color: ${theme.colors.lightSlate};
 `;
 const IconLink = styled(A)`
   padding: 10px;

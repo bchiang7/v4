@@ -30,10 +30,11 @@ const SkillsContainer = styled(Ul)`
 `;
 const Skill = styled.li`
   position: relative;
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.smallish};
   margin-bottom: 10px;
   padding-left: 20px;
+  font-family: ${theme.fonts.SFMono};
+  font-size: ${theme.fontSizes.smallish};
+  color: ${theme.colors.slate};
   &:before {
     content: '▹';
     position: absolute;
