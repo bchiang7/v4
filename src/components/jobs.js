@@ -126,6 +126,7 @@ const TabContent = styled.div`
   }
 `;
 const JobTitle = styled.h4`
+  color: ${theme.colors.lightestSlate};
   font-size: ${theme.fontSizes.xxlarge};
   font-weight: 500;
   margin-bottom: 5px;
@@ -138,9 +139,8 @@ const JobDetails = styled.h5`
   font-size: ${theme.fontSizes.smallish};
   font-weight: normal;
   letter-spacing: 0.5px;
-  color: ${theme.colors.slate};
+  color: ${theme.colors.lightSlate};
   margin-bottom: 30px;
-
   svg {
     width: 15px;
   }

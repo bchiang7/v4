@@ -91,7 +91,6 @@ const ProjectDescription = styled.div`
   line-height: 1.25;
   a {
     ${mixins.inlineLink};
-    color: ${theme.colors.offWhite};
   }
 `;
 const TechList = styled(Ul)`
@@ -103,8 +102,7 @@ const TechList = styled(Ul)`
   li {
     font-family: ${theme.fonts.SFMono};
     font-size: ${theme.fontSizes.xsmall};
-    color: ${theme.colors.green};
-    opacity: 0.7;
+    color: ${theme.colors.lightSlate};
     line-height: 2;
     margin-right: 15px;
     &:last-of-type {

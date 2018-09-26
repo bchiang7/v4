@@ -42,6 +42,7 @@ const ProjectName = styled.h5`
   font-size: 28px;
   font-weight: 600;
   margin: 0 0 20px;
+  color: ${theme.colors.lightestSlate};
   ${media.tablet`font-size: 24px;`};
   a {
     ${media.tablet`display: block;`};
