@@ -199,7 +199,9 @@ class Jobs extends Component {
                   id={`job${i}`}
                   role="tabpanel"
                   tabindex="0"
-                  aria-labelledby={`job${i}`}>
+                  aria-labelledby={`job${i}`}
+                  aria-hidden={!this.isActive(i)}
+                  hidden={!this.isActive(i)}>
                   <JobTitle>
                     <span>{node.frontmatter.title}</span>
                     <Company>

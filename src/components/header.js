@@ -181,6 +181,16 @@ class Header extends Component {
   componentDidMount() {
     window.addEventListener('scroll', () => throttle(this.handleScroll()));
     window.addEventListener('resize', () => throttle(this.handleResize()));
+    window.addEventListener('keydown', evt => {
+      const { menuOpen } = this.state;
+      if (!menuOpen) {
+        return;
+      }
+      if (evt.key === 'Escape' || evt.key === 'Esc') {
+        this.toggleMenu();
+      }
+    });
+
     setTimeout(() => this.setState({ show: true }), 100);
   }
 

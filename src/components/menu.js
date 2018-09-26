@@ -91,7 +91,11 @@ class Menu extends Component {
     const { isHome, menuOpen, navLinks, handleMenuClick } = this.props;
 
     return (
-      <MenuContainer menuOpen={menuOpen} onClick={handleMenuClick}>
+      <MenuContainer
+        menuOpen={menuOpen}
+        onClick={handleMenuClick}
+        aria-hidden={!menuOpen}
+        hidden={!menuOpen}>
         <Sidebar>
           <NavLinks>
             {isHome && (
