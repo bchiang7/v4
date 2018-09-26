@@ -108,7 +108,7 @@ const mixins = {
     }
   `,
 
-  padding: css`
+  sidePadding: css`
     padding: 0 150px;
     ${media.desktop`padding: 0 100px;`};
     ${media.tablet`padding: 0 50px;`};

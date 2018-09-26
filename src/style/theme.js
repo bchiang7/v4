@@ -21,6 +21,7 @@ const theme = {
     green: '#64ffda',
     blue: '#71AFFF',
     darkBlue: '#1D7FFC',
+    highlight: 'rgba(41, 61, 90, 0.99)',
     transGreen: 'rgba(100, 255, 218, 0.07)',
     transNavy: 'rgba(10, 25, 47, 0.7)',
     shadowNavy: 'rgba(2, 12, 27, 0.9)',

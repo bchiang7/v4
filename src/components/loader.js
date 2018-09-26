@@ -84,7 +84,7 @@ class Loader extends Component {
       })
       .add({
         targets: '.loader',
-        duration: 500,
+        duration: 200,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,

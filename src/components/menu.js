@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import config from '../config';
 import resume from '../../static/resume.pdf';
 
-import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
-
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, Ul, A } from '../style';
+import { theme, mixins, media, Nav, Ol, A } from '../style';
 
 const MenuContainer = styled.div`
   position: fixed;
@@ -77,32 +74,6 @@ const ResumeLink = styled(A)`
   margin: 10% auto 0;
   width: max-content;
 `;
-const SocialContainer = styled.div`
-  color: ${theme.colors.lightSlate};
-  width: 100%;
-  max-width: 500px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto 40px;
-  padding: 0 25px;
-`;
-const SocialItemList = styled(Ul)`
-  ${mixins.flexBetween};
-`;
-const SocialItem = styled.li``;
-const SocialLink = styled(A)`
-  padding: 10px;
-  svg {
-    width: 24px;
-    height: 24px;
-    ${media.phablet`
-      width: 20px;
-      height: 20px;
-    `};
-  }
-`;
 
 class Menu extends Component {
   static propTypes = {
@@ -137,34 +108,6 @@ class Menu extends Component {
               Resume
             </ResumeLink>
           </NavLinks>
-          <SocialContainer>
-            <SocialItemList>
-              {config.socialMedia &&
-                config.socialMedia.map((social, i) => (
-                  <SocialItem key={i}>
-                    <SocialLink
-                      href={social.url}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      aria-label={social.name}>
-                      {social.name === 'Github' ? (
-                        <IconGithub />
-                      ) : social.name === 'Linkedin' ? (
-                        <IconLinkedin />
-                      ) : social.name === 'Codepen' ? (
-                        <IconCodepen />
-                      ) : social.name === 'Instagram' ? (
-                        <IconInstagram />
-                      ) : social.name === 'Twitter' ? (
-                        <IconTwitter />
-                      ) : (
-                        <IconGithub />
-                      )}
-                    </SocialLink>
-                  </SocialItem>
-                ))}
-            </SocialItemList>
-          </SocialContainer>
         </Sidebar>
       </MenuContainer>
     );

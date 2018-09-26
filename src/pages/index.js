@@ -14,7 +14,7 @@ import styled from 'styled-components';
 import { mixins, Main } from '../style';
 
 const MainContainer = styled(Main)`
-  ${mixins.padding};
+  ${mixins.sidePadding};
   counter-reset: section;
 `;
 

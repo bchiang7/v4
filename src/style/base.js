@@ -168,7 +168,7 @@ const base = injectGlobal`
   }
 
   ::selection {
-    background-color: rgba(76, 87, 114, 0.5);
+    background-color: ${theme.colors.highlight};
   }
 
   h1,
