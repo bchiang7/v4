@@ -17,6 +17,7 @@ const MenuContainer = styled.div`
   z-index: 10;
   transition: ${theme.transition};
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
+  visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   display: none;
   ${media.tablet`display: block;`};
 `;
@@ -92,7 +93,7 @@ class Menu extends Component {
         menuOpen={menuOpen}
         onClick={handleMenuClick}
         aria-hidden={!menuOpen}
-        hidden={!menuOpen}>
+        tabIndex={menuOpen ? 1 : -1}>
         <Sidebar>
           <NavLinks>
             {isHome && (
