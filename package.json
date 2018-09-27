@@ -28,7 +28,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "babel-plugin-styled-components": "^1.7.1",
-    "gatsby": "^2.0.9",
+    "gatsby": "^2.0.11",
     "gatsby-image": "^2.0.10",
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-netlify": "^2.0.0",
@@ -55,13 +55,13 @@
   "devDependencies": {
     "@upstatement/eslint-config": "0.2.1",
     "@upstatement/prettier-config": "^0.2.1",
-    "babel-eslint": "^10.0.0",
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.6.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.0.0-rc.15",
+    "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.7.0"
