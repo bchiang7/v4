@@ -3,7 +3,7 @@ date: '2016-11-01'
 title: 'Screentime 2.0'
 image: ''
 github: ''
-external: ''
+external: 'https://play.google.com/store/apps/details?id=com.starry.management&hl=en_US'
 tech:
   - JS
   - Backbone

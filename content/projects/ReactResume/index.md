@@ -3,7 +3,7 @@ date: '2016-08-01'
 title: 'React Profile'
 image: ''
 github: 'https://github.com/bchiang7/react-profile'
-external: 'https://brittanychiang.com/react-profile/'
+external: 'https://bchiang7.github.io/react-profile/'
 tech:
   - React
   - JS

@@ -3,7 +3,7 @@ date: '2017-06-01'
 title: 'Personal Website V3'
 cover: './v3.png'
 github: 'https://github.com/bchiang7/v3'
-external: 'https://brittanychiang.com/v3'
+external: 'https://bchiang7.github.io/v3/'
 tech:
   - SCSS
   - JavaScript

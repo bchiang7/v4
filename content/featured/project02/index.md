@@ -3,7 +3,7 @@ date: '2018-01-01'
 title: 'Halcyon Theme'
 cover: './halcyon.png'
 github: 'https://github.com/bchiang7/halcyon-vscode'
-external: 'https://brittanychiang.com/halcyon-site/'
+external: 'https://bchiang7.github.io/halcyon-site/'
 tech:
   - VS Code
   - Sublime Text

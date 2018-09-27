@@ -3,7 +3,7 @@ date: '2017-04-03'
 title: 'myNEU Redesign'
 image: ''
 github: 'https://github.com/bchiang7/Redesign-myNEU'
-external: 'https://brittanychiang.com/Redesign-myNEU/dashboard/'
+external: 'https://bchiang7.github.io/Redesign-myNEU/'
 tech:
   - Jekyll
   - HTML

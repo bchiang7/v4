@@ -3,7 +3,7 @@ date: '2016-03-01'
 title: 'Personal Website V1'
 image: ''
 github: 'https://github.com/bchiang7/v1'
-external: 'https://brittanychiang.com/v1/'
+external: 'https://bchiang7.github.io/v1/'
 tech:
   - HTML
   - CSS

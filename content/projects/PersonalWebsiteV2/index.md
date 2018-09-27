@@ -3,7 +3,7 @@ date: '2016-12-01'
 title: 'Personal Website V2'
 image: ''
 github: 'https://github.com/bchiang7/v2'
-external: 'https://brittanychiang.com/v2/'
+external: 'https://bchiang7.github.io/v2/'
 tech:
   - Jekyll
   - SCSS
