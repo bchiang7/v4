@@ -6,12 +6,10 @@ module.exports = {
     'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
   siteUrl: 'https://brittanychiang.com',
   siteLanguage: 'en_US',
-  siteImage: '../static/og.png', // 1280px x 800px
-  siteIcon: '../static/logo.png',
+  siteImage: 'https://brittanychiang.com/og.png',
 
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
 
-  avatar: '/logos/social.png',
   name: 'Brittany Chiang',
   location: 'Boston, MA',
   email: 'brittany.chiang@gmail.com',
