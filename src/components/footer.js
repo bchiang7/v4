@@ -1,6 +1,6 @@
 import React from 'react';
 
-import config from '../config';
+import { socialMedia } from '../config';
 
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
@@ -53,8 +53,8 @@ const Footer = () => (
   <FooterContainer>
     <SocialContainer>
       <SocialItemList>
-        {config.socialMedia &&
-          config.socialMedia.map((social, i) => (
+        {socialMedia &&
+          socialMedia.map((social, i) => (
             <SocialItem key={i}>
               <SocialLink
                 href={social.url}

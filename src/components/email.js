@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import config from '../config';
+import { email } from '../config';
 
 import styled from 'styled-components';
 import { theme, media, A } from '../style';
@@ -44,23 +44,23 @@ const EmailLink = styled(A)`
 
 class Email extends Component {
   state = {
-    show: false,
+    isMounted: false,
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ show: true }), 2000);
+    setTimeout(() => this.setState({ isMounted: true }), 2000);
   }
 
   render() {
-    const { show } = this.state;
+    const { isMounted } = this.state;
 
     return (
       <EmailContainer>
         <TransitionGroup>
-          {show && (
+          {isMounted && (
             <CSSTransition timeout={3000} classNames="fade">
               <EmailLinkWrapper>
-                <EmailLink href={`mailto:${config.email}`}>{config.email}</EmailLink>
+                <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
               </EmailLinkWrapper>
             </CSSTransition>
           )}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import config from '../config';
+import { nav } from '../config';
 
 import Head from '../components/head';
 import Loader from '../components/loader';
@@ -61,21 +61,18 @@ class Layout extends Component {
   render() {
     const { children, location } = this.props;
     const { isLoading } = this.state;
-    const navLinks = config.navLinks;
 
     return (
       <div id="root">
         <Head />
 
-        <SkipToContent href="#content" className="skip-to-content">
-          Skip To Content
-        </SkipToContent>
+        <SkipToContent href="#content">Skip To Content</SkipToContent>
 
         {isLoading ? (
           <Loader finishLoading={this.finishLoading} />
         ) : (
           <div className="container">
-            <Header location={location} navLinks={navLinks} />
+            <Header location={location} navLinks={nav} />
             <Social />
             <Email />
             {children}

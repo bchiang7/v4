@@ -99,9 +99,9 @@ class Menu extends Component {
             {isHome && (
               <NavList>
                 {navLinks &&
-                  navLinks.map((link, i) => (
+                  navLinks.map(({ url, name }, i) => (
                     <NavListItem key={i}>
-                      <NavLink href={link.url}>{link.name}</NavLink>
+                      <NavLink href={url}>{name}</NavLink>
                     </NavListItem>
                   ))}
               </NavList>

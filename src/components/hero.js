@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import config from '../config';
+import { email } from '../config';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Section, A } from '../style';
@@ -65,29 +65,29 @@ class Hero extends Component {
   };
 
   state = {
-    show: false,
+    isMounted: false,
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ show: true }), 1000);
+    setTimeout(() => this.setState({ isMounted: true }), 1000);
   }
 
   render() {
     const { data } = this.props;
-    const { show } = this.state;
-    const { node } = data[0];
+    const { isMounted } = this.state;
+    const { frontmatter, html } = data[0].node;
 
-    const one = () => <Hi style={{ transitionDelay: '100ms' }}>{node.frontmatter.title}</Hi>;
-    const two = () => <Name style={{ transitionDelay: '200ms' }}>{node.frontmatter.name}.</Name>;
+    const one = () => <Hi style={{ transitionDelay: '100ms' }}>{frontmatter.title}</Hi>;
+    const two = () => <Name style={{ transitionDelay: '200ms' }}>{frontmatter.name}.</Name>;
     const three = () => (
-      <Subtitle style={{ transitionDelay: '300ms' }}>{node.frontmatter.subtitle}</Subtitle>
+      <Subtitle style={{ transitionDelay: '300ms' }}>{frontmatter.subtitle}</Subtitle>
     );
     const four = () => (
-      <Blurb style={{ transitionDelay: '400ms' }} dangerouslySetInnerHTML={{ __html: node.html }} />
+      <Blurb style={{ transitionDelay: '400ms' }} dangerouslySetInnerHTML={{ __html: html }} />
     );
     const five = () => (
       <EmailButton style={{ transitionDelay: '500ms' }}>
-        <EmailLink href={`mailto:${config.email}`}>Get In Touch</EmailLink>
+        <EmailLink href={`mailto:${email}`}>Get In Touch</EmailLink>
       </EmailButton>
     );
 
@@ -96,7 +96,7 @@ class Hero extends Component {
     return (
       <HeroContainer>
         <TransitionGroup>
-          {show &&
+          {isMounted &&
             items.map((item, i) => (
               <CSSTransition key={i} classNames="fadeup" timeout={3000}>
                 {item}

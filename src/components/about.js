@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import config from '../config';
+import { srConfig } from '../config';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Section, H3, P, Ul } from '../style';
@@ -21,6 +21,9 @@ const ContentContainer = styled.div`
   width: 60%;
   max-width: 480px;
   ${media.tablet`width: 100%;`};
+  a {
+    ${mixins.inlineLink};
+  }
 `;
 const SkillsContainer = styled(Ul)`
   margin-top: 20px;
@@ -115,27 +118,27 @@ class About extends Component {
   };
 
   componentDidMount() {
-    ScrollReveal().reveal(this.about, config.srConfig());
+    ScrollReveal().reveal(this.about, srConfig());
   }
 
   render() {
     const { data } = this.props;
-    const { node } = data[0];
+    const { frontmatter, html } = data[0].node;
 
     return (
       <AboutContainer id="about" innerRef={el => (this.about = el)}>
-        <H3>{node.frontmatter.title}</H3>
+        <H3>{frontmatter.title}</H3>
         <FlexContainer>
           <ContentContainer>
-            <P dangerouslySetInnerHTML={{ __html: node.html }} />
+            <P dangerouslySetInnerHTML={{ __html: html }} />
             <SkillsContainer>
-              {node.frontmatter.skills &&
-                node.frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
+              {frontmatter.skills &&
+                frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
             </SkillsContainer>
           </ContentContainer>
           <PicContainer>
             <AvatarContainer>
-              <Avatar fluid={node.frontmatter.avatar.childImageSharp.fluid} alt="Avatar" />
+              <Avatar fluid={frontmatter.avatar.childImageSharp.fluid} alt="Avatar" />
             </AvatarContainer>
           </PicContainer>
         </FlexContainer>

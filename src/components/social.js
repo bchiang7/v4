@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import config from '../config';
+import { socialMedia } from '../config';
 
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
@@ -45,39 +45,39 @@ const SocialLink = styled(A)`
 
 class Social extends Component {
   state = {
-    show: false,
+    isMounted: false,
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ show: true }), 2000);
+    setTimeout(() => this.setState({ isMounted: true }), 2000);
   }
 
   render() {
-    const { show } = this.state;
+    const { isMounted } = this.state;
 
     return (
       <SocialContainer>
         <TransitionGroup>
-          {show && (
+          {isMounted && (
             <CSSTransition timeout={3000} classNames="fade">
               <SocialItemList>
-                {config.socialMedia &&
-                  config.socialMedia.map((social, i) => (
+                {socialMedia &&
+                  socialMedia.map(({ url, name }, i) => (
                     <SocialItem key={i}>
                       <SocialLink
-                        href={social.url}
+                        href={url}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label={social.name}>
-                        {social.name === 'Github' ? (
+                        aria-label={name}>
+                        {name === 'Github' ? (
                           <IconGithub />
-                        ) : social.name === 'Linkedin' ? (
+                        ) : name === 'Linkedin' ? (
                           <IconLinkedin />
-                        ) : social.name === 'Codepen' ? (
+                        ) : name === 'Codepen' ? (
                           <IconCodepen />
-                        ) : social.name === 'Instagram' ? (
+                        ) : name === 'Instagram' ? (
                           <IconInstagram />
-                        ) : social.name === 'Twitter' ? (
+                        ) : name === 'Twitter' ? (
                           <IconTwitter />
                         ) : (
                           <IconGithub />

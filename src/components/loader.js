@@ -22,7 +22,7 @@ const LogoWrapper = styled.div`
   width: max-content;
   max-width: 100px;
   transition: ${theme.transition};
-  opacity: ${props => (props.show ? 1 : 0)};
+  opacity: ${props => (props.isMounted ? 1 : 0)};
   svg {
     width: 100%;
     height: 100%;
@@ -42,14 +42,18 @@ class Loader extends Component {
   };
 
   state = {
-    show: false,
+    isMounted: false,
   };
 
   componentDidMount() {
-    this.setState({ show: true }, () => {
+    this.setState({ isMounted: true }, () => {
       document.body.style.overflow = 'hidden';
       this.animate();
     });
+  }
+
+  componentWillUnmount() {
+    this.setState({ isMounted: false });
   }
 
   animate() {
@@ -92,11 +96,11 @@ class Loader extends Component {
   }
 
   render() {
-    const { show } = this.state;
+    const { isMounted } = this.state;
 
     return (
       <LoaderContainer className="loader">
-        <LogoWrapper show={show}>
+        <LogoWrapper isMounted={isMounted}>
           <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <title>Loader Logo</title>
             <g>

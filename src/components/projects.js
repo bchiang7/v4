@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import config from '../config';
+import { srConfig } from '../config';
 
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
@@ -30,9 +30,7 @@ const ProjectsGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    ${media.desktop`
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    `};
+    ${media.desktop`grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));`};
   }
 `;
 const ProjectInner = styled.div`
@@ -132,8 +130,8 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    ScrollReveal().reveal(this.projects, config.srConfig());
-    this.revealRefs.forEach((ref, i) => ScrollReveal().reveal(ref, config.srConfig(i * 100)));
+    ScrollReveal().reveal(this.projects, srConfig());
+    this.revealRefs.forEach((ref, i) => ScrollReveal().reveal(ref, srConfig(i * 100)));
   }
 
   showMoreToggle = () => {
