@@ -15,6 +15,7 @@ const MenuContainer = styled.div`
   width: 100%;
   height: 100vh;
   z-index: 10;
+  outline: 0;
   transition: ${theme.transition};
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};

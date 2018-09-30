@@ -157,7 +157,11 @@ const base = injectGlobal`
     font-size: ${theme.fontSizes.xlarge};
     ${media.phablet`font-size: ${theme.fontSizes.large};`}
 
+    &.hidden {
+      overflow: hidden;
+    }
     &.blur {
+      overflow: hidden;
       #root > .container > * {
         filter: blur(5px) brightness(0.7);
         transition: ${theme.transition};

@@ -65,9 +65,7 @@ class Layout extends Component {
     return (
       <div id="root">
         <Head />
-
         <SkipToContent href="#content">Skip To Content</SkipToContent>
-
         {isLoading ? (
           <Loader finishLoading={this.finishLoading} />
         ) : (

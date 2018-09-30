@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import anime from 'animejs';
@@ -46,10 +47,7 @@ class Loader extends Component {
   };
 
   componentDidMount() {
-    this.setState({ isMounted: true }, () => {
-      document.body.style.overflow = 'hidden';
-      this.animate();
-    });
+    this.setState({ isMounted: true }, () => this.animate());
   }
 
   componentWillUnmount() {
@@ -58,10 +56,7 @@ class Loader extends Component {
 
   animate() {
     const loader = anime.timeline({
-      complete: () => {
-        document.body.style.overflow = 'auto';
-        this.props.finishLoading();
-      },
+      complete: () => this.props.finishLoading(),
     });
 
     loader
@@ -100,6 +95,9 @@ class Loader extends Component {
 
     return (
       <LoaderContainer className="loader">
+        <Helmet>
+          <body className={isMounted ? 'hidden' : ''} />
+        </Helmet>
         <LogoWrapper isMounted={isMounted}>
           <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <title>Loader Logo</title>

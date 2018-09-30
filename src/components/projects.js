@@ -134,9 +134,7 @@ class Projects extends Component {
     this.revealRefs.forEach((ref, i) => ScrollReveal().reveal(ref, srConfig(i * 100)));
   }
 
-  showMoreToggle = () => {
-    this.setState({ showMore: !this.state.showMore });
-  };
+  showMoreToggle = () => this.setState({ showMore: !this.state.showMore });
 
   render() {
     const GRID_LIMIT = 6;

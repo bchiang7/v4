@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -179,19 +180,17 @@ class Header extends Component {
   };
 
   componentDidMount() {
+    setTimeout(() => this.setState({ isMounted: true }), 100);
+
     window.addEventListener('scroll', () => throttle(this.handleScroll()));
     window.addEventListener('resize', () => throttle(this.handleResize()));
-    window.addEventListener('keydown', evt => {
-      const { menuOpen } = this.state;
-      if (!menuOpen) {
-        return;
-      }
-      if (evt.key === 'Escape' || evt.key === 'Esc') {
-        this.toggleMenu();
-      }
-    });
+    window.addEventListener('keydown', () => this.handleKeydown());
+  }
 
-    setTimeout(() => this.setState({ isMounted: true }), 100);
+  componentWillUnmount() {
+    window.removeEventListener('scroll', () => throttle(this.handleScroll()));
+    window.removeEventListener('resize', () => throttle(this.handleResize()));
+    window.removeEventListener('keydown', () => this.handleKeydown());
   }
 
   handleScroll = () => {
@@ -226,17 +225,22 @@ class Header extends Component {
     }
   };
 
-  toggleMenu = () => {
+  handleKeydown = evt => {
     const { menuOpen } = this.state;
-    this.setState({ menuOpen: !menuOpen });
-    document.body.style.overflow = `${menuOpen ? 'auto' : 'hidden'}`;
-    document.body.classList.toggle('blur');
+    if (!menuOpen) {
+      return;
+    }
+    if (evt.key === 'Escape' || evt.key === 'Esc') {
+      this.toggleMenu();
+    }
   };
+
+  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
 
   handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
-    const isContainer = target.classList ? target.classList[0].includes('MenuContainer') : false;
+    const isContainer = target.classList && target.classList[0].includes('MenuContainer');
 
     if (isLink || isContainer) {
       this.toggleMenu();
@@ -250,6 +254,9 @@ class Header extends Component {
 
     return (
       <HeaderContainer innerRef={el => (this.header = el)} scrollDirection={scrollDirection}>
+        <Helmet>
+          <body className={menuOpen ? 'blur' : ''} />
+        </Helmet>
         <Navbar>
           <TransitionGroup>
             {isMounted && (
