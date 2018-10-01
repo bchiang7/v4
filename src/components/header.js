@@ -188,8 +188,8 @@ class Header extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', () => throttle(this.handleScroll()));
-    window.removeEventListener('resize', () => throttle(this.handleResize()));
+    window.removeEventListener('scroll', () => this.handleScroll());
+    window.removeEventListener('resize', () => this.handleResize());
     window.removeEventListener('keydown', () => this.handleKeydown());
   }
 
@@ -227,9 +227,11 @@ class Header extends Component {
 
   handleKeydown = evt => {
     const { menuOpen } = this.state;
+
     if (!menuOpen) {
       return;
     }
+
     if (evt.key === 'Escape' || evt.key === 'Esc') {
       this.toggleMenu();
     }

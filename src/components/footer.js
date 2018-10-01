@@ -54,22 +54,22 @@ const Footer = () => (
     <SocialContainer>
       <SocialItemList>
         {socialMedia &&
-          socialMedia.map((social, i) => (
+          socialMedia.map(({ name, url }, i) => (
             <SocialItem key={i}>
               <SocialLink
-                href={social.url}
+                href={url}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                aria-label={social.name}>
-                {social.name === 'Github' ? (
+                aria-label={name}>
+                {name === 'Github' ? (
                   <IconGithub />
-                ) : social.name === 'Linkedin' ? (
+                ) : name === 'Linkedin' ? (
                   <IconLinkedin />
-                ) : social.name === 'Codepen' ? (
+                ) : name === 'Codepen' ? (
                   <IconCodepen />
-                ) : social.name === 'Instagram' ? (
+                ) : name === 'Instagram' ? (
                   <IconInstagram />
-                ) : social.name === 'Twitter' ? (
+                ) : name === 'Twitter' ? (
                   <IconTwitter />
                 ) : (
                   <IconGithub />

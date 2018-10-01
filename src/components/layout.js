@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import { nav } from '../config';
@@ -63,21 +64,38 @@ class Layout extends Component {
     const { isLoading } = this.state;
 
     return (
-      <div id="root">
-        <Head />
-        <SkipToContent href="#content">Skip To Content</SkipToContent>
-        {isLoading ? (
-          <Loader finishLoading={this.finishLoading} />
-        ) : (
-          <div className="container">
-            <Header location={location} navLinks={nav} />
-            <Social />
-            <Email />
-            {children}
-            <Footer />
+      <StaticQuery
+        query={graphql`
+          query LayoutQuery {
+            site {
+              siteMetadata {
+                title
+                siteUrl
+                description
+              }
+            }
+          }
+        `}
+        render={data => (
+          <div id="root">
+            <Head metaData={data.site.siteMetadata} />
+
+            <SkipToContent href="#content">Skip To Content</SkipToContent>
+
+            {isLoading ? (
+              <Loader finishLoading={this.finishLoading} />
+            ) : (
+              <div className="container">
+                <Header location={location} navLinks={nav} />
+                <Social />
+                <Email />
+                {children}
+                <Footer />
+              </div>
+            )}
           </div>
         )}
-      </div>
+      />
     );
   }
 }
