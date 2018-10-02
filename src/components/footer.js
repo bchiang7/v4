@@ -37,16 +37,12 @@ const SocialLink = styled(A)`
 `;
 const Copy = styled(P)`
   margin: 5px 0 3px;
-  font-size: ${theme.fontSizes.medium};
 `;
 const GithubLink = styled(A)`
-  ${mixins.inlineLink};
-  color: ${theme.colors.lightGrey};
+  ${mixins.link};
+  color: ${theme.colors.slate};
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};
-  &:after {
-    display: none;
-  }
 `;
 
 const Footer = () => (
@@ -79,13 +75,14 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>Designed &amp; Built by Brittany Chiang</Copy>
-    <GithubLink
-      href="https://github.com/bchiang7/v4"
-      target="_blank"
-      rel="nofollow noopener noreferrer">
-      View Source
-    </GithubLink>
+    <Copy>
+      <GithubLink
+        href="https://github.com/bchiang7/v4"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        Designed &amp; Built by Brittany Chiang
+      </GithubLink>
+    </Copy>
   </FooterContainer>
 );
 
