@@ -42,7 +42,7 @@ const Head = ({ metaData }) => (
     <meta itemProp="name" content={metaData.title} />
     <meta itemProp="description" content={metaData.description} />
     <meta itemProp="image" content={config.siteImage} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={metaData.siteUrl} />
     <meta name="twitter:site" content={config.twitterHandle} />
     <meta name="twitter:creator" content={config.twitterHandle} />
