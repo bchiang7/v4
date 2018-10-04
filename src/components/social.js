@@ -6,7 +6,7 @@ import { socialMedia } from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, media, A, Ul } from '../style';
+import { theme, media, A, Ul } from '../styles';
 
 const SocialContainer = styled.div`
   width: 40px;

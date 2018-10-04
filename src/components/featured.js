@@ -7,7 +7,7 @@ import { srConfig } from '../config';
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, Ul, A } from '../style';
+import { theme, mixins, media, Section, H3, Ul, A } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 

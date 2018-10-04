@@ -12,7 +12,7 @@ import Email from '../components/email';
 import Footer from '../components/footer';
 
 import styled from 'styled-components';
-import { theme, A } from '../style';
+import { theme, A } from '../styles';
 
 const SkipToContent = styled(A)`
   position: absolute;

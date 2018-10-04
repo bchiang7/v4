@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, A } from '../style';
+import { theme, mixins, media, Section, A } from '../styles';
 
 const HeroContainer = styled(Section)`
   ${mixins.flexCenter};

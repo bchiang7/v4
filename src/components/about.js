@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { srConfig } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, P, Ul } from '../style';
+import { theme, mixins, media, Section, H3, P, Ul } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 

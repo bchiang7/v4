@@ -5,7 +5,7 @@ import { socialMedia } from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, A, P, Ul } from '../style';
+import { theme, mixins, media, A, P, Ul } from '../styles';
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};

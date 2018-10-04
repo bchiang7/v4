@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { srConfig, email } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, A, P } from '../style';
+import { theme, mixins, media, Section, H3, A, P } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
