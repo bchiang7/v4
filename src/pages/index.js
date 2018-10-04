@@ -11,7 +11,7 @@ import Projects from '../components/projects';
 import Contact from '../components/contact';
 
 import styled from 'styled-components';
-import { mixins, Main } from '../style';
+import { mixins, Main } from '../styles';
 
 const MainContainer = styled(Main)`
   ${mixins.sidePadding};

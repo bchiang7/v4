@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import resume from '../../static/resume.pdf';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, A } from '../style';
+import { theme, mixins, media, Nav, Ol, A } from '../styles';
 
 const MenuContainer = styled.div`
   position: fixed;

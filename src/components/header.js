@@ -13,7 +13,7 @@ import Menu from '../components/menu';
 import { IconLogo } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, A } from '../style';
+import { theme, mixins, media, Nav, Ol, A } from '../styles';
 
 const HeaderContainer = styled.header`
   ${mixins.flexBetween};

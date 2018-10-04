@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '../config';
 
 import styled from 'styled-components';
-import { theme, media, A } from '../style';
+import { theme, media, A } from '../styles';
 
 const EmailContainer = styled.div`
   width: 40px;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import anime from 'animejs';
 
 import styled from 'styled-components';
-import { theme, mixins } from '../style';
+import { theme, mixins } from '../styles';
 
 const LoaderContainer = styled.div`
   ${mixins.flexCenter};
