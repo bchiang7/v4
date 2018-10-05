@@ -12,6 +12,7 @@ import Email from '../components/email';
 import Footer from '../components/footer';
 
 import styled from 'styled-components';
+import '../styles/base';
 import { theme, A } from '../styles';
 
 const SkipToContent = styled(A)`
