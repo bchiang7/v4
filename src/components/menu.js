@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import resume from '../../static/resume.pdf';
+import resume from '../images/resume.pdf';
 
 import styled from 'styled-components';
 import { theme, mixins, media, Nav, Ol, A } from '../styles';
