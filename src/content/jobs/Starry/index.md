@@ -1,5 +1,5 @@
 ---
-date: '2017-12-21'
+date: '2016-12-21'
 title: 'Software Engineer Co-op'
 company: 'Starry'
 location: 'Boston, MA'
