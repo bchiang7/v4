@@ -11,4 +11,4 @@ tech:
   - Github Pages
 ---
 
-Third iteration of my personal website built with Jekyll and hosted on Github Pages. Used by several people as a template for their own personal sites and has gained over 30 stars on Github.
+Third iteration of my personal website built with Jekyll and hosted on Github Pages. Used by several people as a template for their own personal sites and has gained over 40 stars on Github.
