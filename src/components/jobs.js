@@ -183,7 +183,7 @@ class Jobs extends Component {
                   aria-selected={this.isActive(i) ? 'true' : 'false'}
                   aria-controls={`tab${i}`}
                   id={`tab${i}`}
-                  tabindex={this.isActive(i) ? '0' : '-1'}>
+                  tabIndex={this.isActive(i) ? '0' : '-1'}>
                   <span>{node.frontmatter.company}</span>
                 </Tab>
               ))}
@@ -197,7 +197,7 @@ class Jobs extends Component {
                   isActive={this.isActive(i)}
                   id={`job${i}`}
                   role="tabpanel"
-                  tabindex="0"
+                  tabIndex="0"
                   aria-labelledby={`job${i}`}
                   aria-hidden={!this.isActive(i)}>
                   <JobTitle>
