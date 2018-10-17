@@ -5,7 +5,7 @@ import { socialMedia } from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, A, P, Ul } from '../styles';
+import { theme, mixins, media } from '../styles';
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
@@ -24,22 +24,21 @@ const SocialContainer = styled.div`
   display: none;
   ${media.tablet`display: block;`};
 `;
-const SocialItemList = styled(Ul)`
+const SocialItemList = styled.ul`
   ${mixins.flexBetween};
 `;
 const SocialItem = styled.li``;
-const SocialLink = styled(A)`
+const SocialLink = styled.a`
   padding: 10px;
   svg {
     width: 20px;
     height: 20px;
   }
 `;
-const Copy = styled(P)`
+const Copy = styled.p`
   margin: 5px 0 3px;
 `;
-const GithubLink = styled(A)`
-  ${mixins.link};
+const GithubLink = styled.a`
   color: ${theme.colors.slate};
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};

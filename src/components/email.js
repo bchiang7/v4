@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '../config';
 
 import styled from 'styled-components';
-import { theme, media, A } from '../styles';
+import { theme, media } from '../styles';
 
 const EmailContainer = styled.div`
   width: 40px;
@@ -33,7 +33,7 @@ const EmailLinkWrapper = styled.div`
     background-color: ${theme.colors.lightSlate};
   }
 `;
-const EmailLink = styled(A)`
+const EmailLink = styled.a`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};
   letter-spacing: 0.5px;

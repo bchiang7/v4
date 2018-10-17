@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { srConfig } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, P, Ul } from '../styles';
+import { theme, mixins, media, Section, H3 } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -25,7 +25,7 @@ const ContentContainer = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const SkillsContainer = styled(Ul)`
+const SkillsContainer = styled.ul`
   margin-top: 20px;
   display: grid;
   overflow: hidden;
@@ -56,9 +56,6 @@ const PicContainer = styled.div`
   ${media.phablet`width: 70%;`};
 `;
 const Avatar = styled(Img)`
-  width: 100%;
-  max-width: 100%;
-  vertical-align: middle;
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
@@ -130,7 +127,7 @@ class About extends Component {
         <H3>{frontmatter.title}</H3>
         <FlexContainer>
           <ContentContainer>
-            <P dangerouslySetInnerHTML={{ __html: html }} />
+            <p dangerouslySetInnerHTML={{ __html: html }} />
             <SkillsContainer>
               {frontmatter.skills &&
                 frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}

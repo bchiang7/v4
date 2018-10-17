@@ -13,7 +13,7 @@ import Menu from '../components/menu';
 import { IconLogo } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, A } from '../styles';
+import { theme, mixins, media, Nav } from '../styles';
 
 const HeaderContainer = styled.header`
   ${mixins.flexBetween};
@@ -40,7 +40,6 @@ const HeaderContainer = styled.header`
 const Navbar = styled(Nav)`
   ${mixins.flexBetween};
   font-family: ${theme.fonts.SFMono};
-  width: 100%;
   color: ${theme.colors.lightestSlate};
   counter-reset: item 0;
   position: relative;
@@ -136,7 +135,7 @@ const NavLinks = styled.div`
   align-items: center;
   ${media.tablet`display: none;`};
 `;
-const NavList = styled(Ol)`
+const NavList = styled.ol`
   div {
     ${mixins.flexBetween};
   }
@@ -154,11 +153,10 @@ const NavListItem = styled.li`
   }
 `;
 const NavLink = styled(AnchorLink)`
-  ${mixins.link};
   padding: 12px 10px;
 `;
 const ResumeButton = styled.div``;
-const ResumeLink = styled(A)`
+const ResumeLink = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
   font-size: ${theme.fontSizes.smallish};

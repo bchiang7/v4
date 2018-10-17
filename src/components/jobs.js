@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { srConfig } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, P } from '../styles';
+import { theme, mixins, media, Section, H3 } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -215,7 +215,7 @@ class Jobs extends Component {
                   <JobDetails>
                     <span>{node.frontmatter.range}</span>
                   </JobDetails>
-                  <P dangerouslySetInnerHTML={{ __html: node.html }} />
+                  <p dangerouslySetInnerHTML={{ __html: node.html }} />
                 </TabContent>
               ))}
           </ContentContainer>

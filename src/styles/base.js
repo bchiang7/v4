@@ -1,6 +1,5 @@
 import { injectGlobal } from 'styled-components';
 import theme from './theme';
-import mixins from './mixins';
 import media from './media';
 import * as fonts from './fonts';
 
@@ -192,8 +191,11 @@ const base = injectGlobal`
     grid-template-columns: 100%;
   }
 
-  a {
-    ${mixins.link};
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
   }
 
   svg {
@@ -203,13 +205,58 @@ const base = injectGlobal`
     vertical-align: middle;
   }
 
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: ${theme.transition};
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: ${theme.colors.green};
+      outline: 0;
+    }
+  }
+
   button {
-    outline: 0;
+    cursor: pointer;
     border: 0;
+    border-radius: 0;
+
+    &:focus,
+    &:active {
+      outline-color: ${theme.colors.blue};
+    }
+  }
+
+  input, textarea {
+    border-radius: 0;
+    outline: 0;
+
+    &:focus {
+      outline: 0;
+    }
+    &::placeholder {
+    }
+    &:focus,
+    &:active {
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
   }
 
   p {
-    margin-top: 0;
+    margin: 0 0 10px 0;
+  }
+
+  ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
   .gatsby-image-outer-wrapper {

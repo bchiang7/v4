@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import resume from '../images/resume.pdf';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, A } from '../styles';
+import { theme, mixins, media, Nav } from '../styles';
 
 const MenuContainer = styled.div`
   position: fixed;
@@ -43,7 +43,7 @@ const NavLinks = styled(Nav)`
   flex-direction: column;
   text-align: center;
 `;
-const NavList = styled(Ol)`
+const NavList = styled.ol`
   width: 100%;
 `;
 const NavListItem = styled.li`
@@ -71,7 +71,7 @@ const NavLink = styled(AnchorLink)`
   padding: 3px 20px 20px;
   width: 100%;
 `;
-const ResumeLink = styled(A)`
+const ResumeLink = styled.a`
   ${mixins.bigButton};
   padding: 18px 50px;
   margin: 10% auto 0;

@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, A } from '../styles';
+import { theme, mixins, media, Section } from '../styles';
 
 const HeroContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -53,7 +53,7 @@ const Blurb = styled.div`
   }
 `;
 const EmailButton = styled.div``;
-const EmailLink = styled(A)`
+const EmailLink = styled.a`
   ${mixins.bigButton};
   font-size: ${theme.fontSizes.smallish};
   margin-top: 50px;

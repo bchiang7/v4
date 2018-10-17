@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { srConfig, email } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, A, P } from '../styles';
+import { theme, mixins, media, Section, H3 } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -40,7 +40,7 @@ const Title = styled.h4`
   ${media.desktop`font-size: 50px;`};
   ${media.tablet`font-size: 40px;`};
 `;
-const EmailLink = styled(A)`
+const EmailLink = styled.a`
   ${mixins.bigButton};
   margin-top: 50px;
 `;
@@ -62,7 +62,7 @@ class Contact extends Component {
       <ContactContainer id="contact" innerRef={el => (this.contact = el)}>
         <Header>What's Next?</Header>
         <Title>{frontmatter.title}</Title>
-        <P dangerouslySetInnerHTML={{ __html: html }} />
+        <p dangerouslySetInnerHTML={{ __html: html }} />
         <EmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
           Say Hello
         </EmailLink>
