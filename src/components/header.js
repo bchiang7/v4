@@ -253,7 +253,7 @@ class Header extends Component {
     const isHome = location && location.pathname === '/';
 
     return (
-      <HeaderContainer innerRef={el => (this.header = el)} scrollDirection={scrollDirection}>
+      <HeaderContainer ref={el => (this.header = el)} scrollDirection={scrollDirection}>
         <Helmet>
           <body className={menuOpen ? 'blur' : ''} />
         </Helmet>

@@ -1,9 +1,9 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import media from './media';
 import * as fonts from './fonts';
 
-const base = injectGlobal`
+const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Calibre';
     src: url(${fonts.CalibreLightWOFF2}) format('woff2'),
@@ -299,4 +299,4 @@ const base = injectGlobal`
 
 `;
 
-export default base;
+export default GlobalStyle;

@@ -216,61 +216,66 @@ class Featured extends Component {
 
     return (
       <FeaturedContainer id="projects">
-        <H3 innerRef={el => (this.featured = el)}>Some Things I've Built</H3>
+        <H3 ref={el => (this.featured = el)}>Some Things I've Built</H3>
         <FeaturedGrid>
           {data &&
-            data.map(({ node }, i) => (
-              <Project key={i} innerRef={el => (this.revealRefs[i] = el)}>
-                <ContentContainer>
-                  <FeaturedLabel>Featured Project</FeaturedLabel>
-                  <ProjectName>
-                    {node.frontmatter.external ? (
-                      <a
-                        href={node.frontmatter.external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
-                        {node.frontmatter.title}
-                      </a>
-                    ) : (
-                      node.frontmatter.title
-                    )}
-                  </ProjectName>
-                  <ProjectDescription dangerouslySetInnerHTML={{ __html: node.html }} />
-                  {node.frontmatter.tech && (
-                    <TechList>
-                      {node.frontmatter.tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
-                    </TechList>
-                  )}
-                  <Links>
-                    {node.frontmatter.github && (
-                      <a
-                        href={node.frontmatter.github}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="Github Link">
-                        <IconGithub />
-                      </a>
-                    )}
-                    {node.frontmatter.external && (
-                      <a
-                        href={node.frontmatter.external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
-                        <IconExternal />
-                      </a>
-                    )}
-                  </Links>
-                </ContentContainer>
+            data.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { external, title, tech, github, cover } = frontmatter;
 
-                <ImgContainer>
-                  <FeaturedImg fluid={node.frontmatter.cover.childImageSharp.fluid} />
-                </ImgContainer>
-              </Project>
-            ))}
+              return (
+                <Project key={i} ref={el => (this.revealRefs[i] = el)}>
+                  <ContentContainer>
+                    <FeaturedLabel>Featured Project</FeaturedLabel>
+                    <ProjectName>
+                      {external ? (
+                        <a
+                          href={external}
+                          target="_blank"
+                          rel="nofollow noopener noreferrer"
+                          aria-label="External Link">
+                          {title}
+                        </a>
+                      ) : (
+                        title
+                      )}
+                    </ProjectName>
+                    <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                    {tech && (
+                      <TechList>
+                        {tech.map((tech, i) => (
+                          <li key={i}>{tech}</li>
+                        ))}
+                      </TechList>
+                    )}
+                    <Links>
+                      {github && (
+                        <a
+                          href={github}
+                          target="_blank"
+                          rel="nofollow noopener noreferrer"
+                          aria-label="Github Link">
+                          <IconGithub />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href={external}
+                          target="_blank"
+                          rel="nofollow noopener noreferrer"
+                          aria-label="External Link">
+                          <IconExternal />
+                        </a>
+                      )}
+                    </Links>
+                  </ContentContainer>
+
+                  <ImgContainer>
+                    <FeaturedImg fluid={cover.childImageSharp.fluid} />
+                  </ImgContainer>
+                </Project>
+              );
+            })}
         </FeaturedGrid>
       </FeaturedContainer>
     );

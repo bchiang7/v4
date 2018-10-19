@@ -16,7 +16,7 @@ const ContactContainer = styled(Section)`
     ${mixins.inlineLink};
   }
 `;
-const Header = styled(H3)`
+const Heading = styled(H3)`
   display: block;
   color: ${theme.colors.green};
   font-size: ${theme.fontSizes.medium};
@@ -57,11 +57,12 @@ class Contact extends Component {
   render() {
     const { data } = this.props;
     const { frontmatter, html } = data[0].node;
+    const { title } = frontmatter;
 
     return (
-      <ContactContainer id="contact" innerRef={el => (this.contact = el)}>
-        <Header>What's Next?</Header>
-        <Title>{frontmatter.title}</Title>
+      <ContactContainer id="contact" ref={el => (this.contact = el)}>
+        <Heading>What's Next?</Heading>
+        <Title>{title}</Title>
         <p dangerouslySetInnerHTML={{ __html: html }} />
         <EmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
           Say Hello

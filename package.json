@@ -24,10 +24,30 @@
       "git add"
     ]
   },
+  "commitlint": {
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        72
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "animejs": "^2.2.0",
     "babel-plugin-styled-components": "^1.8.0",
-    "gatsby": "^2.0.25",
+    "gatsby": "^2.0.26",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -41,7 +61,7 @@
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^2.0.4",
     "gatsby-source-filesystem": "^2.0.4",
-    "gatsby-transformer-remark": "^2.1.7",
+    "gatsby-transformer-remark": "^2.1.8",
     "gatsby-transformer-sharp": "^2.1.4",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
@@ -50,9 +70,10 @@
     "react-helmet": "^5.2.0",
     "react-transition-group": "^2.5.0",
     "scrollreveal": "^4.0.4",
-    "styled-components": "^3.4.10"
+    "styled-components": "^4.0.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
     "@upstatement/eslint-config": "0.2.2",
     "@upstatement/prettier-config": "^0.2.2",
     "babel-eslint": "^10.0.1",

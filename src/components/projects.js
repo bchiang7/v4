@@ -145,75 +145,79 @@ class Projects extends Component {
 
     return (
       <ProjectsContainer>
-        <ProjectsTitle innerRef={el => (this.projects = el)}>Other Projects</ProjectsTitle>
+        <ProjectsTitle ref={el => (this.projects = el)}>Other Projects</ProjectsTitle>
         <ProjectsGrid>
           <TransitionGroup className="projects">
             {projectsToShow &&
-              projectsToShow.map(({ node }, i) => (
-                <CSSTransition
-                  key={i}
-                  classNames="fadeup"
-                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}>
-                  <Project
+              projectsToShow.map(({ node }, i) => {
+                const { frontmatter, html } = node;
+                const { github, external, title, tech } = frontmatter;
+                return (
+                  <CSSTransition
                     key={i}
-                    innerRef={el => (this.revealRefs[i] = el)}
-                    style={{
-                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}>
-                    <ProjectInner>
-                      <ProjectTop>
-                        <ProjectHeader>
-                          <Folder>
-                            <IconFolder />
-                          </Folder>
-                          <Links>
-                            {node.frontmatter.github && (
-                              <IconLink
-                                href={node.frontmatter.github}
+                    classNames="fadeup"
+                    timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                    exit={false}>
+                    <Project
+                      key={i}
+                      ref={el => (this.revealRefs[i] = el)}
+                      style={{
+                        transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                      }}>
+                      <ProjectInner>
+                        <ProjectTop>
+                          <ProjectHeader>
+                            <Folder>
+                              <IconFolder />
+                            </Folder>
+                            <Links>
+                              {github && (
+                                <IconLink
+                                  href={github}
+                                  target="_blank"
+                                  rel="nofollow noopener noreferrer"
+                                  aria-label="Github Link">
+                                  <IconGithub />
+                                </IconLink>
+                              )}
+                              {external && (
+                                <IconLink
+                                  href={external}
+                                  target="_blank"
+                                  rel="nofollow noopener noreferrer"
+                                  aria-label="External Link">
+                                  <IconExternal />
+                                </IconLink>
+                              )}
+                            </Links>
+                          </ProjectHeader>
+                          <ProjectName>
+                            {external ? (
+                              <ProjectLink
+                                href={external}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
-                                aria-label="Github Link">
-                                <IconGithub />
-                              </IconLink>
+                                aria-label="Visit Website">
+                                {title}
+                              </ProjectLink>
+                            ) : (
+                              title
                             )}
-                            {node.frontmatter.external && (
-                              <IconLink
-                                href={node.frontmatter.external}
-                                target="_blank"
-                                rel="nofollow noopener noreferrer"
-                                aria-label="External Link">
-                                <IconExternal />
-                              </IconLink>
-                            )}
-                          </Links>
-                        </ProjectHeader>
-                        <ProjectName>
-                          {node.frontmatter.external ? (
-                            <ProjectLink
-                              href={node.frontmatter.external}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Visit Website">
-                              {node.frontmatter.title}
-                            </ProjectLink>
-                          ) : (
-                            node.frontmatter.title
-                          )}
-                        </ProjectName>
-                        <ProjectDescription dangerouslySetInnerHTML={{ __html: node.html }} />
-                      </ProjectTop>
-                      <ProjectBottom>
-                        <TechList>
-                          {node.frontmatter.tech.map((tech, i) => (
-                            <li key={i}>{tech}</li>
-                          ))}
-                        </TechList>
-                      </ProjectBottom>
-                    </ProjectInner>
-                  </Project>
-                </CSSTransition>
-              ))}
+                          </ProjectName>
+                          <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                        </ProjectTop>
+                        <ProjectBottom>
+                          <TechList>
+                            {tech.map((tech, i) => (
+                              <li key={i}>{tech}</li>
+                            ))}
+                          </TechList>
+                        </ProjectBottom>
+                      </ProjectInner>
+                    </Project>
+                  </CSSTransition>
+                );
+              })}
           </TransitionGroup>
         </ProjectsGrid>
 

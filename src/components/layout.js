@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import { nav } from '../config';
-
 import Head from '../components/head';
 import Loader from '../components/loader';
 import Header from '../components/header';
@@ -11,9 +9,10 @@ import Social from '../components/social';
 import Email from '../components/email';
 import Footer from '../components/footer';
 
+import { nav } from '../config';
+
 import styled from 'styled-components';
-import '../styles/base';
-import { theme } from '../styles';
+import { GlobalStyle, theme } from '../styles';
 
 const SkipToContent = styled.a`
   position: absolute;
@@ -77,9 +76,11 @@ class Layout extends Component {
             }
           }
         `}
-        render={data => (
+        render={({ site }) => (
           <div id="root">
-            <Head metaData={data.site.siteMetadata} />
+            <Head metaData={site.siteMetadata} />
+
+            <GlobalStyle />
 
             <SkipToContent href="#content">Skip To Content</SkipToContent>
 

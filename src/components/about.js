@@ -26,10 +26,10 @@ const ContentContainer = styled.div`
   }
 `;
 const SkillsContainer = styled.ul`
-  margin-top: 20px;
   display: grid;
-  overflow: hidden;
   grid-template-columns: repeat(2, minmax(140px, 200px));
+  overflow: hidden;
+  margin-top: 20px;
 `;
 const Skill = styled.li`
   position: relative;
@@ -80,32 +80,29 @@ const AvatarContainer = styled.div`
       mix-blend-mode: normal;
     }
   }
-  &:before {
+  &:before,
+  &:after {
     content: '';
+    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: ${theme.borderRadius};
+    transition: ${theme.transition};
+  }
+  &:before {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    transition: ${theme.transition};
     background-color: ${theme.colors.navy};
     mix-blend-mode: screen;
-    border-radius: ${theme.borderRadius};
   }
   &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
     border: 2px solid ${theme.colors.green};
-    position: absolute;
     top: 20px;
     left: 20px;
     z-index: -1;
-    transition: ${theme.transition};
-    border-radius: ${theme.borderRadius};
   }
 `;
 
@@ -121,21 +118,21 @@ class About extends Component {
   render() {
     const { data } = this.props;
     const { frontmatter, html } = data[0].node;
+    const { title, skills, avatar } = frontmatter;
 
     return (
-      <AboutContainer id="about" innerRef={el => (this.about = el)}>
-        <H3>{frontmatter.title}</H3>
+      <AboutContainer id="about" ref={el => (this.about = el)}>
+        <H3>{title}</H3>
         <FlexContainer>
           <ContentContainer>
             <p dangerouslySetInnerHTML={{ __html: html }} />
             <SkillsContainer>
-              {frontmatter.skills &&
-                frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
+              {skills && skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
             </SkillsContainer>
           </ContentContainer>
           <PicContainer>
             <AvatarContainer>
-              <Avatar fluid={frontmatter.avatar.childImageSharp.fluid} alt="Avatar" />
+              <Avatar fluid={avatar.childImageSharp.fluid} alt="Avatar" />
             </AvatarContainer>
           </PicContainer>
         </FlexContainer>
