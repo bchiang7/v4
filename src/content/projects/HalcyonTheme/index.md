@@ -13,4 +13,4 @@ tech:
 show: 'false'
 ---
 
-A minimal, dark theme for VS Code, Sublime Text, Atom, iTerm, and more published to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [NPM](https://www.npmjs.com/package/hyper-halcyon-theme).
+A minimal, dark theme for VS Code, Sublime Text, Atom, iTerm, and more published to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme). Halcyon has gained over 20,000 downloads on Visual Studio Marketplace.

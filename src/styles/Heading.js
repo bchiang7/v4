@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import theme from './theme';
 import media from './media';
 
-const H3 = styled.h3`
+const Heading = styled.h3`
   position: relative;
   display: flex;
   align-items: center;
@@ -40,4 +40,4 @@ const H3 = styled.h3`
   }
 `;
 
-export default H3;
+export default Heading;

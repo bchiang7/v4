@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { srConfig, email } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3 } from '../styles';
+import { theme, mixins, media, Section, Heading } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -16,7 +16,7 @@ const ContactContainer = styled(Section)`
     ${mixins.inlineLink};
   }
 `;
-const Heading = styled(H3)`
+const GreenHeading = styled(Heading)`
   display: block;
   color: ${theme.colors.green};
   font-size: ${theme.fontSizes.medium};
@@ -61,7 +61,7 @@ class Contact extends Component {
 
     return (
       <ContactContainer id="contact" ref={el => (this.contact = el)}>
-        <Heading>What's Next?</Heading>
+        <GreenHeading>What's Next?</GreenHeading>
         <Title>{title}</Title>
         <p dangerouslySetInnerHTML={{ __html: html }} />
         <EmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">

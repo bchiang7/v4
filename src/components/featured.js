@@ -7,7 +7,7 @@ import { srConfig } from '../config';
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3 } from '../styles';
+import { theme, mixins, media, Section, Heading } from '../styles';
 
 const FeaturedContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -216,7 +216,7 @@ class Featured extends Component {
 
     return (
       <FeaturedContainer id="projects">
-        <H3 ref={el => (this.featured = el)}>Some Things I've Built</H3>
+        <Heading ref={el => (this.featured = el)}>Some Things I've Built</Heading>
         <FeaturedGrid>
           {data &&
             data.map(({ node }, i) => {

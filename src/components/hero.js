@@ -52,7 +52,6 @@ const Blurb = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const EmailButton = styled.div``;
 const EmailLink = styled.a`
   ${mixins.bigButton};
   font-size: ${theme.fontSizes.smallish};
@@ -86,9 +85,9 @@ class Hero extends Component {
       <Blurb style={{ transitionDelay: '400ms' }} dangerouslySetInnerHTML={{ __html: html }} />
     );
     const five = () => (
-      <EmailButton style={{ transitionDelay: '500ms' }}>
+      <div style={{ transitionDelay: '500ms' }}>
         <EmailLink href={`mailto:${email}`}>Get In Touch</EmailLink>
-      </EmailButton>
+      </div>
     );
 
     const items = [one, two, three, four, five];

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { srConfig } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3 } from '../styles';
+import { theme, mixins, media, Section, Heading } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -170,7 +170,7 @@ class Jobs extends Component {
 
     return (
       <JobsContainer id="jobs" ref={el => (this.jobs = el)}>
-        <H3>Where I've Worked</H3>
+        <Heading>Where I've Worked</Heading>
         <TabsContainer>
           <Tabs role="tablist">
             {data &&

@@ -7,7 +7,7 @@ import Nav from './Nav';
 import Main from './Main';
 import Section from './Section';
 import Footer from './Footer';
-import H3 from './H3';
+import Heading from './Heading';
 import Button from './Button';
 import InlineLink from './InlineLink';
 
@@ -21,7 +21,7 @@ export {
   Main,
   Section,
   Footer,
-  H3,
+  Heading,
   Button,
   InlineLink,
 };
