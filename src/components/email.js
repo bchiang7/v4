@@ -51,6 +51,10 @@ class Email extends Component {
     setTimeout(() => this.setState({ isMounted: true }), 2000);
   }
 
+  componentWillUnmount() {
+    this.setState({ isMounted: false });
+  }
+
   render() {
     const { isMounted } = this.state;
 

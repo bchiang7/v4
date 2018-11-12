@@ -113,7 +113,6 @@ const FeaturedImg = styled(Img)`
     height: 100%;
     filter: grayscale(100%) contrast(1) brightness(80%);
   `};
-  }
 `;
 const ImgContainer = styled.div`
   position: relative;

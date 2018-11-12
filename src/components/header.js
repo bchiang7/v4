@@ -186,17 +186,19 @@ class Header extends Component {
   }
 
   componentWillUnmount() {
+    this.setState({ isMounted: false });
+
     window.removeEventListener('scroll', () => this.handleScroll());
     window.removeEventListener('resize', () => this.handleResize());
     window.removeEventListener('keydown', () => this.handleKeydown());
   }
 
   handleScroll = () => {
-    const { lastScrollTop, menuOpen, scrollDirection } = this.state;
+    const { isMounted, lastScrollTop, menuOpen, scrollDirection } = this.state;
     const fromTop = window.scrollY;
 
     // Make sure they scroll more than DELTA
-    if (Math.abs(lastScrollTop - fromTop) <= DELTA || menuOpen) {
+    if (!isMounted || Math.abs(lastScrollTop - fromTop) <= DELTA || menuOpen) {
       return;
     }
 

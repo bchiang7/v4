@@ -71,6 +71,10 @@ class Hero extends Component {
     setTimeout(() => this.setState({ isMounted: true }), 1000);
   }
 
+  componentWillUnmount() {
+    this.setState({ isMounted: false });
+  }
+
   render() {
     const { data } = this.props;
     const { isMounted } = this.state;

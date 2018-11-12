@@ -57,7 +57,21 @@ class Layout extends Component {
     isLoading: true,
   };
 
-  finishLoading = () => this.setState({ isLoading: false });
+  _isMounted = false;
+
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  finishLoading = () => {
+    if (this._isMounted) {
+      this.setState({ isLoading: false });
+    }
+  };
 
   render() {
     const { children, location } = this.props;
@@ -89,9 +103,13 @@ class Layout extends Component {
             ) : (
               <div className="container">
                 <Header location={location} navLinks={nav} />
+
                 <Social />
+
                 <Email />
+
                 {children}
+
                 <Footer />
               </div>
             )}
