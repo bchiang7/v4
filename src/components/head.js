@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import config from '../config';
 
 import logo from '../images/logo.png';
+import ogImage from '../images/og.png';
 import appleIcon57x57 from '../images/favicons/apple-icon-57x57.png';
 import appleIcon60x60 from '../images/favicons/apple-icon-60x60.png';
 import appleIcon72x72 from '../images/favicons/apple-icon-72x72.png';
@@ -34,21 +35,21 @@ const Head = ({ metaData }) => (
     <meta property="og:type" content="website" />
     <meta property="og:url" content={metaData.siteUrl} />
     <meta property="og:site_name" content={metaData.title} />
-    <meta property="og:image" content={config.siteImage} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content={config.siteLanguage} />
     <meta itemProp="name" content={metaData.title} />
     <meta itemProp="description" content={metaData.description} />
-    <meta itemProp="image" content={config.siteImage} />
+    <meta itemProp="image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={metaData.siteUrl} />
     <meta name="twitter:site" content={config.twitterHandle} />
     <meta name="twitter:creator" content={config.twitterHandle} />
     <meta name="twitter:title" content={metaData.title} />
     <meta name="twitter:description" content={metaData.description} />
-    <meta name="twitter:image:src" content={config.siteImage} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={metaData.title} />
 
     <link rel="apple-touch-icon" sizes="57x57" href={appleIcon57x57} />
