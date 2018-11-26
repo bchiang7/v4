@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import theme from './theme';
 import media from './media';
+const { colors, fontSizes, fonts } = theme;
 
 const Heading = styled.h3`
   position: relative;
@@ -9,20 +10,20 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  font-size: ${theme.fontSizes.h3};
+  font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
 
   &:before {
     counter-increment: section;
     content: '0' counter(section) '.';
     margin-right: 10px;
-    font-family: ${theme.fonts.SFMono};
+    font-family: ${fonts.SFMono};
     font-weight: normal;
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.xlarge};
+    color: ${colors.green};
+    font-size: ${fontSizes.xlarge};
     position: relative;
     bottom: 4px;
-    ${media.tablet`font-size: ${theme.fontSizes.large};`};
+    ${media.tablet`font-size: ${fontSizes.large};`};
   }
 
   &:after {
@@ -30,7 +31,7 @@ const Heading = styled.h3`
     display: block;
     height: 1px;
     width: 300px;
-    background-color: ${theme.colors.mediumGrey};
+    background-color: ${colors.mediumGrey};
     position: relative;
     top: -5px;
     margin-left: 20px;

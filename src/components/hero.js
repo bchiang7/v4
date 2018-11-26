@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
 import { email } from '../config';
-
 import styled from 'styled-components';
 import { theme, mixins, media, Section } from '../styles';
+const { colors, fontSizes, fonts } = theme;
 
 const HeroContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -18,13 +17,13 @@ const HeroContainer = styled(Section)`
   }
 `;
 const Hi = styled.h1`
-  color: ${theme.colors.green};
+  color: ${colors.green};
   margin: 0 0 20px 3px;
-  font-size: ${theme.fontSizes.medium};
-  font-family: ${theme.fonts.SFMono};
+  font-size: ${fontSizes.medium};
+  font-family: ${fonts.SFMono};
   font-weight: normal;
-  ${media.desktop`font-size: ${theme.fontSizes.small};`};
-  ${media.tablet`font-size: ${theme.fontSizes.smallish};`};
+  ${media.desktop`font-size: ${fontSizes.small};`};
+  ${media.tablet`font-size: ${fontSizes.smallish};`};
 `;
 const Name = styled.h2`
   font-size: 80px;
@@ -38,7 +37,7 @@ const Name = styled.h2`
 const Subtitle = styled.h3`
   font-size: 80px;
   line-height: 1.1;
-  color: ${theme.colors.slate};
+  color: ${colors.slate};
   ${media.desktop`font-size: 70px;`};
   ${media.tablet`font-size: 60px;`};
   ${media.phablet`font-size: 50px;`};
@@ -54,7 +53,7 @@ const Blurb = styled.div`
 `;
 const EmailLink = styled.a`
   ${mixins.bigButton};
-  font-size: ${theme.fontSizes.smallish};
+  font-size: ${fontSizes.smallish};
   margin-top: 50px;
 `;
 

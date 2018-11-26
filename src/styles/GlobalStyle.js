@@ -1,131 +1,132 @@
 import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import media from './media';
-import * as fonts from './fonts';
+import * as fontFamilies from './fonts';
+const { colors, fontSizes, fonts } = theme;
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreLightWOFF2}) format('woff2'),
-    url(${fonts.CalibreLightWOFF}) format('woff'),
-    url(${fonts.CalibreLightTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreLightWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreLightWOFF}) format('woff'),
+    url(${fontFamilies.CalibreLightTTF}) format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreLightItalicWOFF2}) format('woff2'),
-    url(${fonts.CalibreLightItalicWOFF}) format('woff'),
-    url(${fonts.CalibreLightItalicTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreLightItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreLightItalicWOFF}) format('woff'),
+    url(${fontFamilies.CalibreLightItalicTTF}) format('truetype');
     font-weight: 300;
     font-style: italic;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreRegularWOFF2}) format('woff2'),
-    url(${fonts.CalibreRegularWOFF}) format('woff'),
-    url(${fonts.CalibreRegularTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreRegularWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreRegularWOFF}) format('woff'),
+    url(${fontFamilies.CalibreRegularTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreRegularItalicWOFF2}) format('woff2'),
-    url(${fonts.CalibreRegularItalicWOFF}) format('woff'),
-    url(${fonts.CalibreRegularItalicTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreRegularItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreRegularItalicWOFF}) format('woff'),
+    url(${fontFamilies.CalibreRegularItalicTTF}) format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreMediumWOFF2}) format('woff2'),
-    url(${fonts.CalibreMediumWOFF}) format('woff'),
-    url(${fonts.CalibreMediumTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreMediumWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreMediumWOFF}) format('woff'),
+    url(${fontFamilies.CalibreMediumTTF}) format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreMediumItalicWOFF2}) format('woff2'),
-    url(${fonts.CalibreMediumItalicWOFF}) format('woff'),
-    url(${fonts.CalibreMediumItalicTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreMediumItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreMediumItalicWOFF}) format('woff'),
+    url(${fontFamilies.CalibreMediumItalicTTF}) format('truetype');
     font-weight: 500;
     font-style: italic;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreSemiboldWOFF2}) format('woff2'),
-    url(${fonts.CalibreSemiboldWOFF}) format('woff'),
-    url(${fonts.CalibreSemiboldTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreSemiboldWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreSemiboldWOFF}) format('woff'),
+    url(${fontFamilies.CalibreSemiboldTTF}) format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
-    src: url(${fonts.CalibreSemiboldItalicWOFF2}) format('woff2'),
-    url(${fonts.CalibreSemiboldItalicWOFF}) format('woff'),
-    url(${fonts.CalibreSemiboldItalicTTF}) format('truetype');
+    src: url(${fontFamilies.CalibreSemiboldItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.CalibreSemiboldItalicWOFF}) format('woff'),
+    url(${fontFamilies.CalibreSemiboldItalicTTF}) format('truetype');
     font-weight: 600;
     font-style: italic;
     font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
-    src: url(${fonts.SFMonoRegularWOFF2}) format('woff2'),
-    url(${fonts.SFMonoRegularWOFF}) format('woff'),
-    url(${fonts.SFMonoRegularTTF}) format('truetype');
+    src: url(${fontFamilies.SFMonoRegularWOFF2}) format('woff2'),
+    url(${fontFamilies.SFMonoRegularWOFF}) format('woff'),
+    url(${fontFamilies.SFMonoRegularTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
-    src: url(${fonts.SFMonoRegularItalicWOFF2}) format('woff2'),
-    url(${fonts.SFMonoRegularItalicWOFF}) format('woff'),
-    url(${fonts.SFMonoRegularItalicTTF}) format('truetype');
+    src: url(${fontFamilies.SFMonoRegularItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.SFMonoRegularItalicWOFF}) format('woff'),
+    url(${fontFamilies.SFMonoRegularItalicTTF}) format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
-    src: url(${fonts.SFMonoMediumWOFF2}) format('woff2'),
-    url(${fonts.SFMonoMediumWOFF}) format('woff'),
-    url(${fonts.SFMonoMediumTTF}) format('truetype');
+    src: url(${fontFamilies.SFMonoMediumWOFF2}) format('woff2'),
+    url(${fontFamilies.SFMonoMediumWOFF}) format('woff'),
+    url(${fontFamilies.SFMonoMediumTTF}) format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
-    src: url(${fonts.SFMonoMediumItalicWOFF2}) format('woff2'),
-    url(${fonts.SFMonoMediumItalicWOFF}) format('woff'),
-    url(${fonts.SFMonoMediumItalicTTF}) format('truetype');
+    src: url(${fontFamilies.SFMonoMediumItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.SFMonoMediumItalicWOFF}) format('woff'),
+    url(${fontFamilies.SFMonoMediumItalicTTF}) format('truetype');
     font-weight: 500;
     font-style: italic;
     font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
-    src: url(${fonts.SFMonoSemiboldWOFF2}) format('woff2'),
-    url(${fonts.SFMonoSemiboldWOFF}) format('woff'),
-    url(${fonts.SFMonoSemiboldTTF}) format('truetype');
+    src: url(${fontFamilies.SFMonoSemiboldWOFF2}) format('woff2'),
+    url(${fontFamilies.SFMonoSemiboldWOFF}) format('woff'),
+    url(${fontFamilies.SFMonoSemiboldTTF}) format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
-    src: url(${fonts.SFMonoSemiboldItalicWOFF2}) format('woff2'),
-    url(${fonts.SFMonoSemiboldItalicWOFF}) format('woff'),
-    url(${fonts.SFMonoSemiboldItalicTTF}) format('truetype');
+    src: url(${fontFamilies.SFMonoSemiboldItalicWOFF2}) format('woff2'),
+    url(${fontFamilies.SFMonoSemiboldItalicWOFF}) format('woff'),
+    url(${fontFamilies.SFMonoSemiboldItalicTTF}) format('truetype');
     font-weight: 600;
     font-style: italic;
     font-display: auto;
@@ -149,12 +150,12 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${theme.colors.navy};
-    color: ${theme.colors.slate};
+    background-color: ${colors.navy};
+    color: ${colors.slate};
     line-height: 1.25;
-    font-family: ${theme.fonts.Calibre};
-    font-size: ${theme.fontSizes.xlarge};
-    ${media.phablet`font-size: ${theme.fontSizes.large};`}
+    font-family: ${fonts.Calibre};
+    font-size: ${fontSizes.xlarge};
+    ${media.phablet`font-size: ${fontSizes.large};`}
 
     &.hidden {
       overflow: hidden;
@@ -171,7 +172,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${theme.colors.highlight};
+    background-color: ${colors.highlight};
   }
 
   h1,
@@ -180,7 +181,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5 {
     font-weight: 600;
-    color: ${theme.colors.white};
+    color: ${colors.white};
     margin: 0 0 10px 0;
   }
 
@@ -216,7 +217,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: ${theme.colors.green};
+      color: ${colors.green};
       outline: 0;
     }
   }
@@ -228,7 +229,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      outline-color: ${theme.colors.blue};
+      outline-color: ${colors.blue};
     }
   }
 

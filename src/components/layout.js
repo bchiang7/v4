@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-
 import Head from '../components/head';
 import Loader from '../components/loader';
 import Header from '../components/header';
 import Social from '../components/social';
 import Email from '../components/email';
 import Footer from '../components/footer';
-
 import { nav } from '../config';
-
 import styled from 'styled-components';
 import { GlobalStyle, theme } from '../styles';
+const { colors, fontSizes, fonts } = theme;
 
 const SkipToContent = styled.a`
   position: absolute;
@@ -23,17 +21,17 @@ const SkipToContent = styled.a`
   overflow: hidden;
   z-index: -99;
   &:hover {
-    background-color: ${theme.colors.darkGrey};
+    background-color: ${colors.darkGrey};
   }
   &:focus,
   &:active {
     outline: 0;
-    color: ${theme.colors.green};
-    background-color: ${theme.colors.lightNavy};
+    color: ${colors.green};
+    background-color: ${colors.lightNavy};
     border-radius: ${theme.borderRadius};
     padding: 18px 23px;
-    font-size: ${theme.fontSizes.small};
-    font-family: ${theme.fonts.SFMono};
+    font-size: ${fontSizes.small};
+    font-family: ${fonts.SFMono};
     line-height: 1;
     text-decoration: none;
     cursor: pointer;

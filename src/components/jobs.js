@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { srConfig } from '../config';
-
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
-
 import ScrollReveal from 'scrollreveal';
+const { colors, fontSizes, fonts } = theme;
 
 const JobsContainer = styled(Section)`
   position: relative;
@@ -39,29 +37,29 @@ const Tab = styled.button`
   height: ${theme.tabHeight}px;
   padding: 0 20px 2px;
   transition: ${theme.transition};
-  border-left: 2px solid ${theme.colors.darkGrey};
+  border-left: 2px solid ${colors.darkGrey};
   text-align: left;
   white-space: nowrap;
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.smallish};
-  color: ${props => (props.isActive ? theme.colors.green : theme.colors.lightGrey)};
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smallish};
+  color: ${props => (props.isActive ? colors.green : colors.lightGrey)};
   ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
     ${mixins.flexCenter};
     padding: 0 15px;
     text-align: center;
     border-left: 0;
-    border-bottom: 2px solid ${theme.colors.darkGrey};
+    border-bottom: 2px solid ${colors.darkGrey};
     min-width: 120px;
   `};
   &:hover,
   &:focus {
-    background-color: ${theme.colors.lightNavy};
+    background-color: ${colors.lightNavy};
   }
 `;
 const Highlighter = styled.span`
   display: block;
-  background: ${theme.colors.green};
+  background: ${colors.green};
   width: 2px;
   height: ${theme.tabHeight}px;
   border-radius: ${theme.borderRadius};
@@ -108,7 +106,7 @@ const TabContent = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
-    font-size: ${theme.fontSizes.large};
+    font-size: ${fontSizes.large};
     li {
       position: relative;
       padding-left: 30px;
@@ -117,8 +115,8 @@ const TabContent = styled.div`
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${theme.colors.green};
-        line-height: ${theme.fontSizes.xlarge};
+        color: ${colors.green};
+        line-height: ${fontSizes.xlarge};
       }
     }
   }
@@ -127,20 +125,20 @@ const TabContent = styled.div`
   }
 `;
 const JobTitle = styled.h4`
-  color: ${theme.colors.lightestSlate};
-  font-size: ${theme.fontSizes.xxlarge};
+  color: ${colors.lightestSlate};
+  font-size: ${fontSizes.xxlarge};
   font-weight: 500;
   margin-bottom: 5px;
 `;
 const Company = styled.span`
-  color: ${theme.colors.green};
+  color: ${colors.green};
 `;
 const JobDetails = styled.h5`
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.smallish};
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smallish};
   font-weight: normal;
   letter-spacing: 0.5px;
-  color: ${theme.colors.lightSlate};
+  color: ${colors.lightSlate};
   margin-bottom: 30px;
   svg {
     width: 15px;

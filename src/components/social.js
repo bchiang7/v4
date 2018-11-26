@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
 import { socialMedia } from '../config';
-
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
-
 import styled from 'styled-components';
 import { theme, media } from '../styles';
+const { colors } = theme;
 
 const SocialContainer = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
   left: 40px;
-  color: ${theme.colors.lightSlate};
+  color: ${colors.lightSlate};
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
 `;
@@ -27,7 +25,7 @@ const SocialItemList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${theme.colors.lightSlate};
+    background-color: ${colors.lightSlate};
   }
 `;
 const SocialItem = styled.li`

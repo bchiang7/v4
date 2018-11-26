@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
+import ScrollReveal from 'scrollreveal';
 import { srConfig } from '../config';
-
 import { IconGithub, IconExternal, IconFolder } from './icons';
-
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '../styles';
-
-import ScrollReveal from 'scrollreveal';
+const { colors, fontSizes, fonts } = theme;
 
 const ProjectsContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -18,7 +15,7 @@ const ProjectsContainer = styled(Section)`
 `;
 const ProjectsTitle = styled.h4`
   margin: 0 auto 50px;
-  font-size: ${theme.fontSizes.h3};
+  font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
   a {
     display: block;
@@ -42,7 +39,7 @@ const ProjectInner = styled.div`
   height: 100%;
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
-  background-color: ${theme.colors.lightNavy};
+  background-color: ${colors.lightNavy};
 `;
 const Project = styled.div`
   transition: ${theme.transition};
@@ -50,8 +47,8 @@ const Project = styled.div`
   &:focus {
     ${ProjectInner} {
       transform: translateY(-5px);
-      box-shadow: 0 2px 4px ${theme.colors.shadowNavy};
-      box-shadow: 0 19px 38px ${theme.colors.darkestNavy} 0 15px 12px ${theme.colors.shadowNavy};
+      box-shadow: 0 2px 4px ${colors.shadowNavy};
+      box-shadow: 0 19px 38px ${colors.darkestNavy} 0 15px 12px ${colors.shadowNavy};
     }
   }
 `;
@@ -62,7 +59,7 @@ const ProjectHeader = styled.div`
   margin-bottom: 30px;
 `;
 const Folder = styled.div`
-  color: ${theme.colors.green};
+  color: ${colors.green};
   svg {
     width: 40px;
     height: 40px;
@@ -70,7 +67,7 @@ const Folder = styled.div`
 `;
 const Links = styled.div`
   margin-right: -10px;
-  color: ${theme.colors.lightSlate};
+  color: ${colors.lightSlate};
 `;
 const IconLink = styled.a`
   padding: 10px;
@@ -81,8 +78,8 @@ const IconLink = styled.a`
 `;
 const ProjectName = styled.h5`
   margin: 0 0 10px;
-  font-size: ${theme.fontSizes.xxlarge};
-  color: ${theme.colors.lightestSlate};
+  font-size: ${fontSizes.xxlarge};
+  color: ${colors.lightestSlate};
 `;
 const ProjectLink = styled.a``;
 const ProjectDescription = styled.div`
@@ -99,9 +96,9 @@ const TechList = styled.ul`
   flex-wrap: wrap;
   margin-top: 20px;
   li {
-    font-family: ${theme.fonts.SFMono};
-    font-size: ${theme.fontSizes.xsmall};
-    color: ${theme.colors.lightSlate};
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.xsmall};
+    color: ${colors.lightSlate};
     line-height: 2;
     margin-right: 15px;
     &:last-of-type {

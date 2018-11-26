@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
 import { email } from '../config';
-
 import styled from 'styled-components';
 import { theme, media } from '../styles';
+const { colors, fontSizes, fonts } = theme;
 
 const EmailContainer = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
   right: 40px;
-  color: ${theme.colors.lightSlate};
+  color: ${colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
   div {
@@ -30,12 +29,12 @@ const EmailLinkWrapper = styled.div`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${theme.colors.lightSlate};
+    background-color: ${colors.lightSlate};
   }
 `;
 const EmailLink = styled.a`
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.xsmall};
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xsmall};
   letter-spacing: 0.5px;
   writing-mode: vertical-rl;
   margin: 20px auto;

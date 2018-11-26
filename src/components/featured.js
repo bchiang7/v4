@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-
 import ScrollReveal from 'scrollreveal';
 import { srConfig } from '../config';
 import { IconGithub, IconExternal } from './icons';
-
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
+const { colors, fontSizes, fonts } = theme;
 
 const FeaturedContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -29,10 +28,10 @@ const ContentContainer = styled.div`
   ${media.phablet`padding: 30px 25px 20px;`};
 `;
 const FeaturedLabel = styled.h4`
-  font-size: ${theme.fontSizes.smallish};
+  font-size: ${fontSizes.smallish};
   font-weight: normal;
-  color: ${theme.colors.green};
-  font-family: ${theme.fonts.SFMono};
+  color: ${colors.green};
+  font-family: ${fonts.SFMono};
   margin-top: 10px;
   padding-top: 0;
 `;
@@ -40,15 +39,15 @@ const ProjectName = styled.h5`
   font-size: 28px;
   font-weight: 600;
   margin: 0 0 20px;
-  color: ${theme.colors.lightestSlate};
+  color: ${colors.lightestSlate};
   ${media.tablet`font-size: 24px;`};
   a {
     ${media.tablet`display: block;`};
   }
 `;
 const ProjectDescription = styled.div`
-  background-color: ${theme.colors.lightNavy};
-  color: ${theme.colors.lightSlate};
+  background-color: ${colors.lightNavy};
+  color: ${colors.lightSlate};
   padding: 20px;
   border-radius: ${theme.borderRadius};
   font-size: 17px;
@@ -62,7 +61,7 @@ const ProjectDescription = styled.div`
   }
   a {
     ${mixins.inlineLink};
-    color: ${theme.colors.white};
+    color: ${colors.white};
   }
 `;
 const TechList = styled.ul`
@@ -70,9 +69,9 @@ const TechList = styled.ul`
   flex-wrap: wrap;
   margin: 25px 0 10px;
   li {
-    font-family: ${theme.fonts.SFMono};
-    font-size: ${theme.fontSizes.smallish};
-    color: ${theme.colors.lightSlate};
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.smallish};
+    color: ${colors.lightSlate};
     margin-right: ${theme.margin};
     margin-bottom: 7px;
     white-space: nowrap;
@@ -80,7 +79,7 @@ const TechList = styled.ul`
       margin-right: 0;
     }
     ${media.thone`
-      color: ${theme.colors.lightestSlate};
+      color: ${colors.lightestSlate};
       margin-right: 10px;
     `};
   }
@@ -118,7 +117,7 @@ const ImgContainer = styled.div`
   position: relative;
   z-index: 1;
   border-radius: ${theme.borderRadius};
-  background-color: ${theme.colors.green};
+  background-color: ${colors.green};
   border-radius: 2px;
   grid-column: 6 / -1;
   grid-row: 1 / -1;
@@ -148,7 +147,7 @@ const ImgContainer = styled.div`
     bottom: 0;
     z-index: 3;
     transition: ${theme.transition};
-    background-color: ${theme.colors.navy};
+    background-color: ${colors.navy};
     mix-blend-mode: screen;
   }
 `;

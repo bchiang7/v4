@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { srConfig, email } from '../config';
-
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
+const { colors, fontSizes, fonts } = theme;
 
 import ScrollReveal from 'scrollreveal';
 
@@ -18,17 +17,17 @@ const ContactContainer = styled(Section)`
 `;
 const GreenHeading = styled(Heading)`
   display: block;
-  color: ${theme.colors.green};
-  font-size: ${theme.fontSizes.medium};
-  font-family: ${theme.fonts.SFMono};
+  color: ${colors.green};
+  font-size: ${fontSizes.medium};
+  font-family: ${fonts.SFMono};
   font-weight: normal;
   margin-bottom: 20px;
   justify-content: center;
-  ${media.desktop`font-size: ${theme.fontSizes.small};`};
+  ${media.desktop`font-size: ${fontSizes.small};`};
   &:before {
     bottom: 0;
-    font-size: ${theme.fontSizes.small};
-    ${media.desktop`font-size: ${theme.fontSizes.smallish};`};
+    font-size: ${fontSizes.small};
+    ${media.desktop`font-size: ${fontSizes.smallish};`};
   }
   &:after {
     display: none;
@@ -62,8 +61,11 @@ class Contact extends Component {
     return (
       <ContactContainer id="contact" ref={el => (this.contact = el)}>
         <GreenHeading>What's Next?</GreenHeading>
+
         <Title>{title}</Title>
+
         <p dangerouslySetInnerHTML={{ __html: html }} />
+
         <EmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
           Say Hello
         </EmailLink>

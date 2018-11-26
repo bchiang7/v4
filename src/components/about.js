@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-
 import { srConfig } from '../config';
-
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
+const { colors, fontSizes, fonts } = theme;
 
 import ScrollReveal from 'scrollreveal';
 
@@ -35,15 +34,15 @@ const Skill = styled.li`
   position: relative;
   margin-bottom: 10px;
   padding-left: 20px;
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.smallish};
-  color: ${theme.colors.slate};
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smallish};
+  color: ${colors.slate};
   &:before {
     content: '▹';
     position: absolute;
     left: 0;
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.small};
+    color: ${colors.green};
+    font-size: ${fontSizes.small};
     line-height: 12px;
   }
 `;
@@ -66,7 +65,7 @@ const AvatarContainer = styled.div`
   width: 100%;
   position: relative;
   border-radius: ${theme.borderRadius};
-  background-color: ${theme.colors.green};
+  background-color: ${colors.green};
   margin-left: -20px;
   &:hover,
   &:focus {
@@ -95,11 +94,11 @@ const AvatarContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${theme.colors.navy};
+    background-color: ${colors.navy};
     mix-blend-mode: screen;
   }
   &:after {
-    border: 2px solid ${theme.colors.green};
+    border: 2px solid ${colors.green};
     top: 20px;
     left: 20px;
     z-index: -1;
