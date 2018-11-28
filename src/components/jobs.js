@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ScrollReveal from 'scrollreveal';
 import { srConfig } from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '../styles';
-import ScrollReveal from 'scrollreveal';
 const { colors, fontSizes, fonts } = theme;
 
 const JobsContainer = styled(Section)`

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Head from '../components/head';
-import Loader from '../components/loader';
-import Header from '../components/header';
-import Social from '../components/social';
-import Email from '../components/email';
-import Footer from '../components/footer';
+import Head from './head';
+import Loader from './loader';
+import Header from './header';
+import Social from './social';
+import Email from './email';
+import Footer from './footer';
 import { nav } from '../config';
 import styled from 'styled-components';
 import { GlobalStyle, theme } from '../styles';

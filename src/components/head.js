@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import config from '../config';
-
 import logo from '../images/logo.png';
 import ogImage from '../images/og.png';
 import appleIcon57x57 from '../images/favicons/apple-icon-57x57.png';

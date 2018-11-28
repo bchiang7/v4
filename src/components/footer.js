@@ -1,9 +1,6 @@
 import React from 'react';
-
-import { socialMedia } from '../config';
-
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
-
+import { socialMedia } from '../config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '../styles';
 const { colors, fontSizes, fonts } = theme;
@@ -28,7 +25,6 @@ const SocialContainer = styled.div`
 const SocialItemList = styled.ul`
   ${mixins.flexBetween};
 `;
-const SocialItem = styled.li``;
 const SocialLink = styled.a`
   padding: 10px;
   svg {
@@ -51,7 +47,7 @@ const Footer = () => (
       <SocialItemList>
         {socialMedia &&
           socialMedia.map(({ name, url }, i) => (
-            <SocialItem key={i}>
+            <li key={i}>
               <SocialLink
                 href={url}
                 target="_blank"
@@ -71,7 +67,7 @@ const Footer = () => (
                   <IconGithub />
                 )}
               </SocialLink>
-            </SocialItem>
+            </li>
           ))}
       </SocialItemList>
     </SocialContainer>

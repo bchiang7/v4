@@ -15,13 +15,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "start": "gatsby develop",
-    "precommit": "pretty-quick --staged && lint-staged"
+    "start": "gatsby develop"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "pretty-quick --staged && lint-staged"
     }
   },
   "lint-staged": {
@@ -30,25 +28,11 @@
       "git add"
     ]
   },
-  "commitlint": {
-    "rules": {
-      "header-max-length": [
-        2,
-        "always",
-        72
-      ],
-      "subject-case": [
-        2,
-        "always",
-        "sentence-case"
-      ]
-    }
-  },
   "dependencies": {
     "animejs": "^2.2.0",
-    "babel-plugin-styled-components": "^1.9.0",
-    "gatsby": "^2.0.55",
-    "gatsby-image": "^2.0.20",
+    "babel-plugin-styled-components": "^1.9.1",
+    "gatsby": "^2.0.56",
+    "gatsby-image": "^2.0.21",
     "gatsby-plugin-google-analytics": "^2.0.7",
     "gatsby-plugin-manifest": "^2.0.10",
     "gatsby-plugin-netlify": "^2.0.5",
@@ -73,7 +57,6 @@
     "styled-components": "^4.1.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.2.1",
     "@upstatement/eslint-config": "0.3.0",
     "@upstatement/prettier-config": "^0.3.0",
     "babel-eslint": "^10.0.1",

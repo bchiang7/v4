@@ -54,9 +54,7 @@ const NavListItem = styled.li`
     margin: 0 auto 10px;
     font-size: ${fontSizes.medium};
   `};
-  ${media.tiny`
-    font-size: ${fontSizes.smallish};
-  `};
+  ${media.tiny`font-size: ${fontSizes.smallish};`};
   &:before {
     display: block;
     content: '0' counter(item) '.';
