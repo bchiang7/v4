@@ -153,7 +153,6 @@ const NavListItem = styled.li`
 const NavLink = styled(AnchorLink)`
   padding: 12px 10px;
 `;
-const ResumeButton = styled.div``;
 const ResumeLink = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
@@ -301,11 +300,11 @@ class Header extends Component {
             <TransitionGroup>
               {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
-                  <ResumeButton style={{ transitionDelay: `600ms` }}>
+                  <div style={{ transitionDelay: `600ms` }}>
                     <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">
                       Resume
                     </ResumeLink>
-                  </ResumeButton>
+                  </div>
                 </CSSTransition>
               )}
             </TransitionGroup>

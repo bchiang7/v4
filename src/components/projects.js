@@ -45,6 +45,7 @@ const Project = styled.div`
   transition: ${theme.transition};
   &:hover,
   &:focus {
+    outline: 0;
     ${ProjectInner} {
       transform: translateY(-5px);
       box-shadow: 0 2px 4px ${colors.shadowNavy};
@@ -52,8 +53,6 @@ const Project = styled.div`
     }
   }
 `;
-const ProjectTop = styled.div``;
-const ProjectBottom = styled.div``;
 const ProjectHeader = styled.div`
   ${mixins.flexBetween};
   margin-bottom: 30px;
@@ -81,7 +80,6 @@ const ProjectName = styled.h5`
   font-size: ${fontSizes.xxlarge};
   color: ${colors.lightestSlate};
 `;
-const ProjectLink = styled.a``;
 const ProjectDescription = styled.div`
   font-size: 17px;
   line-height: 1.25;
@@ -158,11 +156,12 @@ class Projects extends Component {
                     <Project
                       key={i}
                       ref={el => (this.revealRefs[i] = el)}
+                      tabIndex="0"
                       style={{
                         transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                       }}>
                       <ProjectInner>
-                        <ProjectTop>
+                        <div>
                           <ProjectHeader>
                             <Folder>
                               <IconFolder />
@@ -190,26 +189,26 @@ class Projects extends Component {
                           </ProjectHeader>
                           <ProjectName>
                             {external ? (
-                              <ProjectLink
+                              <a
                                 href={external}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
                                 aria-label="Visit Website">
                                 {title}
-                              </ProjectLink>
+                              </a>
                             ) : (
                               title
                             )}
                           </ProjectName>
                           <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-                        </ProjectTop>
-                        <ProjectBottom>
+                        </div>
+                        <div>
                           <TechList>
                             {tech.map((tech, i) => (
                               <li key={i}>{tech}</li>
                             ))}
                           </TechList>
-                        </ProjectBottom>
+                        </div>
                       </ProjectInner>
                     </Project>
                   </CSSTransition>
