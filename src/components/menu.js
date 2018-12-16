@@ -77,7 +77,7 @@ const ResumeLink = styled.a`
 
 class Menu extends Component {
   static propTypes = {
-    isHome: PropTypes.bool,
+    isHome: PropTypes.bool.isRequired,
     menuOpen: PropTypes.bool.isRequired,
     navLinks: PropTypes.array.isRequired,
     handleMenuClick: PropTypes.func.isRequired,

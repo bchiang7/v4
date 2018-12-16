@@ -48,28 +48,14 @@ const SkipToContent = styled.a`
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    location: PropTypes.object,
+    location: PropTypes.object.isRequired,
   };
 
   state = {
     isLoading: true,
   };
 
-  _isMounted = false;
-
-  componentDidMount() {
-    this._isMounted = true;
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
-
-  finishLoading = () => {
-    if (this._isMounted) {
-      this.setState({ isLoading: false });
-    }
-  };
+  finishLoading = () => this.setState({ isLoading: false });
 
   render() {
     const { children, location } = this.props;
@@ -91,23 +77,17 @@ class Layout extends Component {
         render={({ site }) => (
           <div id="root">
             <Head metaData={site.siteMetadata} />
-
             <GlobalStyle />
-
-            <SkipToContent href="#content">Skip To Content</SkipToContent>
+            <SkipToContent href="#content">Skip to Content</SkipToContent>
 
             {isLoading ? (
               <Loader finishLoading={this.finishLoading} />
             ) : (
               <div className="container">
-                <Header location={location} navLinks={nav} />
-
+                {location && nav && <Header location={location} navLinks={nav} />}
                 <Social />
-
                 <Email />
-
                 {children}
-
                 <Footer />
               </div>
             )}
