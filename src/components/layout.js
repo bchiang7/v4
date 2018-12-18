@@ -76,7 +76,7 @@ class Layout extends Component {
         `}
         render={({ site }) => (
           <div id="root">
-            <Head metaData={site.siteMetadata} />
+            <Head metadata={site.siteMetadata} />
             <GlobalStyle />
             <SkipToContent href="#content">Skip to Content</SkipToContent>
 
