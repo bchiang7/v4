@@ -9,13 +9,11 @@ skills:
   - Gatsby
   - Ember
   - Jekyll
-  - Craft
-  - Wordpress
-  - Timber
+  - Twig
 ---
 
-Hey there! I'm a software engineer who enjoys working at the intersection of engineering and design. I build exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces while also being scalable and efficient behind the scenes.
+I'm a front end software engineer who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces while being clean and efficient behind the scenes.
 
-I graduated from [Northeastern University](https://www.ccis.northeastern.edu/) with my bachelor's in 2018, and for the past 5+ years, I've been honing my skills in web development. I enjoy constantly learning and improving my skills with the technologies that keep evolving in this ever-changing field!
+Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/) in the spring of 2018, I joined [Upstatement](https://www.upstatement.com/) on the engineering team and have continued honing my skills. I enjoy constantly learning and improving my skills with the many technologies that power the web!
 
 Here's a few things I'm experienced with:

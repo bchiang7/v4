@@ -1,14 +1,15 @@
 ---
-date: '2017-06-01'
-title: 'Personal Website V3'
-cover: './v3.png'
-github: 'https://github.com/bchiang7/v3'
-external: 'https://bchiang7.github.io/v3/'
+date: '2018-01-01'
+title: 'Halcyon Theme'
+cover: './halcyon.png'
+github: 'https://github.com/bchiang7/halcyon-site'
+external: 'https://halcyon-theme.netlify.com/'
 tech:
-  - SCSS
-  - JavaScript
-  - Jekyll
-  - Github Pages
+  - VS Code
+  - Sublime Text
+  - Atom
+  - iTerm2
+  - Hyper
 ---
 
-Third iteration of my personal website built with Jekyll and hosted on Github Pages. Used by several people as a template for their own personal sites and has gained over 40 stars on Github.
+A minimal, dark theme for VS Code, Sublime Text, Atom, iTerm, and more published to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme). Halcyon has gained over 20,000 downloads on Visual Studio Marketplace.

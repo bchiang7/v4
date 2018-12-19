@@ -214,7 +214,7 @@ class Featured extends Component {
 
     return (
       <FeaturedContainer id="projects">
-        <Heading ref={el => (this.featured = el)}>Some Things I've Built</Heading>
+        <Heading ref={el => (this.featured = el)}>Some Things I've Made</Heading>
         <FeaturedGrid>
           {data &&
             data.map(({ node }, i) => {

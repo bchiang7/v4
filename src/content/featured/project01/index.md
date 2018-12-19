@@ -1,15 +1,14 @@
 ---
-date: '2018-04-01'
-title: 'blistabloc'
-cover: './blistabloc.png'
-github: ''
-external: 'https://blistabloc.com/'
+date: '2018-12-18'
+title: 'Spotify Profile'
+cover: './demo.png'
+github: 'https://github.com/bchiang7/spotify-profile'
+external: 'https://spotify-profile.herokuapp.com/'
 tech:
-  - Wordpress
-  - Timber
-  - SCSS
-  - JS
-  - PHP
+  - React
+  - Express
+  - Reach Router
+  - Styled Components
 ---
 
-Custom wordpress theme built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.
+A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.

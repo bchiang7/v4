@@ -9,7 +9,7 @@ tech:
   - SCSS
   - JS
   - Github Pages
-show: 'false'
+show: 'true'
 ---
 
 Third iteration of my personal website built with Jekyll and hosted on Github Pages.
