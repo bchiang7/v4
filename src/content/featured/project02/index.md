@@ -1,15 +1,15 @@
 ---
-date: '2018-04-01'
-title: 'blistabloc'
-cover: './blistabloc.png'
-github: ''
-external: 'https://blistabloc.com/'
+date: '2018-11-01'
+title: 'Halcyon Theme'
+cover: './halcyon.png'
+github: 'https://github.com/bchiang7/halcyon-site'
+external: 'https://halcyon-theme.netlify.com/'
 tech:
-  - Wordpress
-  - Timber
-  - SCSS
-  - JS
-  - PHP
+  - VS Code
+  - Sublime Text
+  - Atom
+  - iTerm2
+  - Hyper
 ---
 
-Custom wordpress theme built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.
+A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
