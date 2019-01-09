@@ -82,7 +82,6 @@ const ProjectName = styled.h5`
 `;
 const ProjectDescription = styled.div`
   font-size: 17px;
-  line-height: 1.25;
   a {
     ${mixins.inlineLink};
   }
@@ -97,7 +96,7 @@ const TechList = styled.ul`
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.xsmall};
     color: ${colors.lightSlate};
-    line-height: 2;
+    line-height: 1.75;
     margin-right: 15px;
     &:last-of-type {
       margin-right: 0;

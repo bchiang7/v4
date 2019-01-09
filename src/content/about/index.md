@@ -7,9 +7,9 @@ skills:
   - HTML & CSS
   - React
   - Gatsby
+  - Vue
   - Ember
   - Jekyll
-  - Twig
 ---
 
 I'm a front end software engineer who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces while being clean and efficient behind the scenes.

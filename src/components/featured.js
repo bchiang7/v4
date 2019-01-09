@@ -48,10 +48,9 @@ const ProjectName = styled.h5`
 const ProjectDescription = styled.div`
   background-color: ${colors.lightNavy};
   color: ${colors.lightSlate};
-  padding: 20px;
+  padding: 25px;
   border-radius: ${theme.borderRadius};
-  font-size: 17px;
-  line-height: 1.3;
+  font-size: ${fontSizes.large};
   ${media.thone`
     background-color: transparent;
     padding: 20px 0;

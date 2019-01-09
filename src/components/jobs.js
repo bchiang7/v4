@@ -110,7 +110,7 @@ const TabContent = styled.div`
     li {
       position: relative;
       padding-left: 30px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       &:before {
         content: '▹';
         position: absolute;

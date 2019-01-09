@@ -152,7 +152,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: ${colors.navy};
     color: ${colors.slate};
-    line-height: 1.25;
+    line-height: 1.3;
     font-family: ${fonts.Calibre};
     font-size: ${fontSizes.xlarge};
     ${media.phablet`font-size: ${fontSizes.large};`}
@@ -251,7 +251,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
   }
 
   ul, ol {
