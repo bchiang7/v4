@@ -59,7 +59,7 @@ class Contact extends Component {
 
     return (
       <ContactContainer id="contact" ref={el => (this.contact = el)}>
-        <GreenHeading>What's Next?</GreenHeading>
+        <GreenHeading>What&apos;s Next?</GreenHeading>
 
         <Title>{title}</Title>
 
