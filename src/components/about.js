@@ -123,7 +123,7 @@ class About extends Component {
         <Heading>{title}</Heading>
         <FlexContainer>
           <ContentContainer>
-            <span dangerouslySetInnerHTML={{ __html: html }} />
+            <div dangerouslySetInnerHTML={{ __html: html }} />
             <SkillsContainer>
               {skills && skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
             </SkillsContainer>
