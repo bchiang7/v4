@@ -106,6 +106,7 @@ export const query = graphql`
             tech
             github
             external
+            show
           }
           html
         }

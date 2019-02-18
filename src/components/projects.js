@@ -55,6 +55,7 @@ const Project = styled.div`
 `;
 const ProjectHeader = styled.div`
   ${mixins.flexBetween};
+  align-items: flex-end;
   margin-bottom: 30px;
 `;
 const Folder = styled.div`
@@ -71,8 +72,8 @@ const Links = styled.div`
 const IconLink = styled.a`
   padding: 10px;
   svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 `;
 const ProjectName = styled.h5`

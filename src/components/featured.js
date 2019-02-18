@@ -210,13 +210,14 @@ class Featured extends Component {
 
   render() {
     const { data } = this.props;
+    const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
 
     return (
       <FeaturedContainer id="projects">
         <Heading ref={el => (this.featured = el)}>Some Things I&apos;ve Made</Heading>
         <FeaturedGrid>
-          {data &&
-            data.map(({ node }, i) => {
+          {featuredProjects &&
+            featuredProjects.map(({ node }, i) => {
               const { frontmatter, html } = node;
               const { external, title, tech, github, cover } = frontmatter;
 
