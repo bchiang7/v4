@@ -85,7 +85,7 @@ const Highlighter = styled.span`
 `;
 const ContentContainer = styled.div`
   position: relative;
-  padding-top: 14px;
+  padding-top: 12px;
   padding-left: 30px;
   flex-grow: 1;
   ${media.tablet`padding-left: 20px;`};

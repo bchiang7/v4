@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Web Developer',
+  siteTitle: 'Brittany Chiang | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a web developer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
   siteKeywords:
     'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
   siteUrl: 'https://brittanychiang.com',
