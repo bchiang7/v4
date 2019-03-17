@@ -151,7 +151,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: ${colors.navy};
-    color: ${colors.slate};
+    color: ${colors.lightSlate};
     line-height: 1.3;
     font-family: ${fonts.Calibre};
     font-size: ${fontSizes.xlarge};

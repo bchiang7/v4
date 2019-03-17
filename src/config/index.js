@@ -1,37 +1,33 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteTitle: 'Mike Laderman | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Mike Laderman is a Software Engineer with over 6 years of experience specializing in building data-driven products for platform companies',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+    'Mike Laderman, Mike, Laderman, mladerman, software engineer, backend engineer, sql, python, java, data engineer, boston, database, kafka',
+  siteUrl: 'https://mikeladerman.com',
   siteLanguage: 'en_US',
 
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: 'TODO',
 
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
+  name: 'Mike Laderman',
+  location: 'Somerville, MA',
+  email: 'me@mikeladerman.com',
   socialMedia: [
     {
       name: 'Github',
-      url: 'https://github.com/bchiang7/',
+      url: 'https://github.com/mladerman/',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7/',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7/',
+      url: 'https://www.linkedin.com/in/michaelladerman/',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7/',
+      url: 'https://www.instagram.com/mbltoo/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/mbltoo',
     },
   ],
 
@@ -54,8 +50,8 @@ module.exports = {
     },
   ],
 
-  twitterHandle: '@bchiang7',
-  googleAnalyticsID: 'UA-45666519-2',
+  twitterHandle: '@mbltoo',
+  googleAnalyticsID: 'TODO',
 
   headerHeight: 100,
 

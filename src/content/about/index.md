@@ -1,19 +1,22 @@
 ---
 title: 'About Me'
-avatar: './me.jpg'
+avatar: './me.png'
 skills:
-  - JavaScript
-  - TypeScript
-  - HTML & CSS
-  - React
-  - Vue
-  - Ember
-  - Node.js
-  - Express
+  - Python
+  - Java
+  - SQL (MySQL/PostgreSQL/Redshift/Athena)
+  - Kafka
+  - Distributed Systems
+  - Data Pipelines
+  - Analytics
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
+Hello! I'm Mike, a software engineer with over 6 years of experience specializing in building data-driven products for platform companies.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I get to work on a variety of interesting projects and tools on a daily basis.
+With a background in economics and analytics, I'm just as comfortable analyzing data in Python with a Jupyter Notebook as I am building a real time analytics service in Java. I enjoy solving problems on small, independent, and focused teams.
+
+I have over four years of experience performing [Improv Comedy](http://http://www.improvboston.com/), and I bring the active listening and open-mindedness skills it requires to the workplace!
+
+I'm currently working on creating a first-class experience for developers building on top of [HubSpot's](https://www.hubspot.com/) platform. Focused on Webhooks, API Metrics, and Rate Limiting at scale.
 
 Here's a few things I'm experienced with:
