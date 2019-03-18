@@ -13,6 +13,9 @@ const ContactContainer = styled(Section)`
   a {
     ${mixins.inlineLink};
   }
+  p {
+    text-align: left;
+  }
 `;
 const GreenHeading = styled(Heading)`
   display: block;
@@ -66,7 +69,7 @@ class Contact extends Component {
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
         <EmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
-          Say Hello
+          Consulting Inqueries
         </EmailLink>
       </ContactContainer>
     );
