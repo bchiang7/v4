@@ -29,9 +29,7 @@ const HeaderContainer = styled.header`
     props.scrollDirection === 'none' ? theme.headerHeight : theme.headerScrollHeight};
   box-shadow: ${props =>
     props.scrollDirection === 'up' ? `0 2px 4px ${colors.shadowNavy}` : 'none'};
-  transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
-  );
+
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
 `;

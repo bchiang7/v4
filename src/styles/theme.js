@@ -48,7 +48,7 @@ const theme = {
   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 
   borderRadius: '2px',
-  headerHeight: '100px',
+  headerHeight: '70px',
   headerScrollHeight: '70px',
   margin: '20px',
 
