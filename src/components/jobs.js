@@ -23,7 +23,7 @@ const Tabs = styled.div`
   z-index: 3;
   ${media.thone`
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     width: 100%;
     overflow-x: scroll;
   `};

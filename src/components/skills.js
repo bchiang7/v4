@@ -23,7 +23,7 @@ const Tabs = styled.div`
   z-index: 3;
   ${media.thone`
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     width: 100%;
     overflow-x: scroll;
   `};
@@ -142,7 +142,7 @@ const Skill = styled.li`
   margin-bottom: 10px;
   padding-left: 20px;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.medium};
+  font-size: ${fontSizes.small};
   color: ${colors.slate};
   &:before {
     content: '▹';

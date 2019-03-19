@@ -6,7 +6,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from 'gatsby';
 import { throttle } from '../utils';
 import { headerHeight } from '../config';
-import resume from '../images/resume.pdf';
 import Menu from './menu';
 import { IconLogo } from './icons';
 import styled from 'styled-components';
@@ -150,11 +149,6 @@ const NavListItem = styled.li`
 const NavLink = styled(AnchorLink)`
   padding: 12px 10px;
 `;
-const ResumeLink = styled.a`
-  ${mixins.smallButton};
-  margin-left: 10px;
-  font-size: ${fontSizes.smallish};
-`;
 
 const DELTA = 5;
 
@@ -294,17 +288,6 @@ class Header extends Component {
                 </TransitionGroup>
               </NavList>
             )}
-            <TransitionGroup>
-              {isMounted && (
-                <CSSTransition classNames="fadedown" timeout={3000}>
-                  <div style={{ transitionDelay: `600ms` }}>
-                    <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">
-                      Resume
-                    </ResumeLink>
-                  </div>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
           </NavLinks>
         </Navbar>
 
