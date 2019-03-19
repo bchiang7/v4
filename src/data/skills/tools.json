@@ -1,0 +1,30 @@
+{
+  "topic": "Tools",
+  "priority": 5,
+  "skills": [
+    {
+      "skill": "Git"
+    },
+    {
+      "skill": "Github"
+    },
+    {
+      "skill": "Bitbucket"
+    },
+    {
+      "skill": "AWS"
+    },
+    {
+      "skill": "JIRA"
+    },
+    {
+      "skill": "Trello"
+    },
+    {
+      "skill": "MS Office"
+    },
+    {
+      "skill": "...and many more!"
+    }
+  ]
+}

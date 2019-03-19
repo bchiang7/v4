@@ -1,0 +1,42 @@
+{
+  "topic": "Data Infra",
+  "priority": 1,
+  "skills": [
+    {
+      "skill": "MySQL"
+    },
+    {
+      "skill": "PostgreSQL"
+    },
+    {
+      "skill": "Redshift"
+    },
+    {
+      "skill": "Amazon Athena"
+    },
+    {
+      "skill": "Elasticsearch"
+    },
+    {
+      "skill": "HBase"
+    },
+    {
+      "skill": "Kafka"
+    },
+    {
+      "skill": "Celery"
+    },
+    {
+      "skill": "Amazon SQS"
+    },
+    {
+      "skill": "Redis"
+    },
+    {
+      "skill": "Memcached"
+    },
+    {
+      "skill": "Amazon S3"
+    }
+  ]
+}

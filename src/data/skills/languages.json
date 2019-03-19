@@ -1,0 +1,21 @@
+{
+  "topic": "Languages",
+  "priority": 0,
+  "skills": [
+    {
+      "skill": "Python"
+    },
+    {
+      "skill": "Java 8+"
+    },
+    {
+      "skill": "JavaScript (NodeJS/ES6)"
+    },
+    {
+      "skill": "HTML5"
+    },
+    {
+      "skill": "CSS3"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import Hero from '../components/hero';
 import About from '../components/about';
 import Jobs from '../components/jobs';
+import Skills from '../components/skills';
 import Contact from '../components/contact';
 
 import styled from 'styled-components';
@@ -22,6 +23,7 @@ const IndexPage = ({ data, location }) => (
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
       <Jobs data={data.jobs.edges} />
+      <Skills data={data.skills.edges} />
       <Contact data={data.contact.edges} />
     </MainContainer>
   </Layout>
@@ -61,7 +63,6 @@ export const query = graphql`
                 }
               }
             }
-            skills
           }
           html
         }
@@ -91,6 +92,17 @@ export const query = graphql`
             title
           }
           html
+        }
+      }
+    }
+    skills: allSkillsJson(sort: { fields: [priority], order: ASC }) {
+      edges {
+        node {
+          topic
+          priority
+          skills {
+            skill
+          }
         }
       }
     }

@@ -1,0 +1,30 @@
+{
+  "topic": "Analysis",
+  "priority": 2,
+  "skills": [
+    {
+      "skill": "IPython Notebook"
+    },
+    {
+      "skill": "SQL"
+    },
+    {
+      "skill": "Pandas"
+    },
+    {
+      "skill": "Numpy"
+    },
+    {
+      "skill": "Scikit-Learn"
+    },
+    {
+      "skill": "Matplotlib"
+    },
+    {
+      "skill": "Seaborn"
+    },
+    {
+      "skill": "Excel"
+    }
+  ]
+}

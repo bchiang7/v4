@@ -1,0 +1,18 @@
+{
+  "topic": "Frameworks",
+  "priority": 3,
+  "skills": [
+    {
+      "skill": "Django"
+    },
+    {
+      "skill": "Dropwizard"
+    },
+    {
+      "skill": "Flask"
+    },
+    {
+      "skill": "Express"
+    }
+  ]
+}

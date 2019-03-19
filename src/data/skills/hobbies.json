@@ -1,0 +1,36 @@
+{
+  "topic": "Hobbies/Interests",
+  "priority": 6,
+  "skills": [
+    {
+      "skill": "Improv Comedy"
+    },
+    {
+      "skill": "Beatboxing"
+    },
+    {
+      "skill": "Drumming"
+    },
+    {
+      "skill": "Ping Pong"
+    },
+    {
+      "skill": "Cooking"
+    },
+    {
+      "skill": "Craft Beer"
+    },
+    {
+      "skill": "Ancient History"
+    },
+    {
+      "skill": "Online Courses"
+    },
+    {
+      "skill": "Tennis"
+    },
+    {
+      "skill": "Triathlon"
+    }
+  ]
+}

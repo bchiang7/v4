@@ -1,0 +1,27 @@
+{
+  "topic": "Architecture",
+  "priority": 4,
+  "skills": [
+    {
+      "skill": "API Design"
+    },
+    {
+      "skill": "Domain Modeling"
+    },
+    {
+      "skill": "Data Pipelines"
+    },
+    {
+      "skill": "Distributed Systems"
+    },
+    {
+      "skill": "SQL Schema Design"
+    },
+    {
+      "skill": "SQL Query Design"
+    },
+    {
+      "skill": "Experiment Design"
+    }
+  ]
+}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Head from './head';
-import Loader from './loader';
 import Header from './header';
 import Social from './social';
 import Email from './email';
@@ -51,15 +50,8 @@ class Layout extends Component {
     location: PropTypes.object.isRequired,
   };
 
-  state = {
-    isLoading: true,
-  };
-
-  finishLoading = () => this.setState({ isLoading: false });
-
   render() {
     const { children, location } = this.props;
-    const { isLoading } = this.state;
 
     return (
       <StaticQuery
@@ -80,17 +72,13 @@ class Layout extends Component {
             <GlobalStyle />
             <SkipToContent href="#content">Skip to Content</SkipToContent>
 
-            {isLoading ? (
-              <Loader finishLoading={this.finishLoading} />
-            ) : (
-              <div className="container">
-                {location && nav && <Header location={location} navLinks={nav} />}
-                <Social />
-                <Email />
-                {children}
-                <Footer />
-              </div>
-            )}
+            <div className="container">
+              {location && nav && <Header location={location} navLinks={nav} />}
+              <Social />
+              <Email />
+              {children}
+              <Footer />
+            </div>
           </div>
         )}
       />
