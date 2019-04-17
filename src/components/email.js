@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { email } from '../config';
+import { email } from '@config';
 import styled from 'styled-components';
-import { theme, media } from '../styles';
+import { theme, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const EmailContainer = styled.div`

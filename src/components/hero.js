@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { email } from '../config';
+import { email } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section } from '../styles';
+import { theme, mixins, media, Section } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const HeroContainer = styled(Section)`

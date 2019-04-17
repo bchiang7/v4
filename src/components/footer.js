@@ -1,8 +1,8 @@
 import React from 'react';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
-import { socialMedia } from '../config';
+import { socialMedia } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media } from '../styles';
+import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const FooterContainer = styled.footer`

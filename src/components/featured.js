@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import ScrollReveal from 'scrollreveal';
-import { srConfig } from '../config';
+import sr from '@utils/sr';
+import { srConfig } from '@config';
 import { IconGithub, IconExternal } from './icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '../styles';
+import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const FeaturedContainer = styled(Section)`
@@ -204,8 +204,8 @@ class Featured extends Component {
   }
 
   componentDidMount() {
-    ScrollReveal().reveal(this.featured, srConfig());
-    this.revealRefs.forEach(ref => ScrollReveal().reveal(ref, srConfig()));
+    sr.reveal(this.featured, srConfig());
+    this.revealRefs.forEach(ref => sr.reveal(ref, srConfig()));
   }
 
   render() {

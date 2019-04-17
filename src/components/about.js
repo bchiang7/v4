@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import ScrollReveal from 'scrollreveal';
-import { srConfig } from '../config';
+import sr from '@utils/sr';
+import { srConfig } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '../styles';
+import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const AboutContainer = styled(Section)`
@@ -110,7 +110,7 @@ class About extends Component {
   };
 
   componentDidMount() {
-    ScrollReveal().reveal(this.about, srConfig());
+    sr.reveal(this.about, srConfig());
   }
 
   render() {

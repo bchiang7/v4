@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ScrollReveal from 'scrollreveal';
-import { srConfig, email } from '../config';
+import sr from '@utils/sr';
+import { srConfig, email } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '../styles';
+import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const ContactContainer = styled(Section)`
@@ -49,7 +49,7 @@ class Contact extends Component {
   };
 
   componentDidMount() {
-    ScrollReveal().reveal(this.contact, srConfig());
+    sr.reveal(this.contact, srConfig());
   }
 
   render() {

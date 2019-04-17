@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '@components/layout';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '../styles';
+import { theme, mixins, media, Main } from '@styles';
 const { colors, fonts } = theme;
 
 const MainContainer = styled(Main)`

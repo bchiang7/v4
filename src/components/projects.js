@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import ScrollReveal from 'scrollreveal';
-import { srConfig } from '../config';
+import sr from '@utils/sr';
+import { srConfig } from '@config';
 import { IconGithub, IconExternal, IconFolder } from './icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Button } from '../styles';
+import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const ProjectsContainer = styled(Section)`
@@ -124,8 +124,8 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    ScrollReveal().reveal(this.projects, srConfig());
-    this.revealRefs.forEach((ref, i) => ScrollReveal().reveal(ref, srConfig(i * 100)));
+    sr.reveal(this.projects, srConfig());
+    this.revealRefs.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }
 
   showMoreToggle = () => this.setState({ showMore: !this.state.showMore });

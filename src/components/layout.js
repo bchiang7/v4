@@ -7,9 +7,9 @@ import Header from './header';
 import Social from './social';
 import Email from './email';
 import Footer from './footer';
-import { nav } from '../config';
+import { nav } from '@config';
 import styled from 'styled-components';
-import { GlobalStyle, theme } from '../styles';
+import { GlobalStyle, theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const SkipToContent = styled.a`
