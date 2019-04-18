@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { socialMedia } from '@config';
-import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
+import {
+  IconGithub,
+  IconLinkedin,
+  IconCodepen,
+  IconInstagram,
+  IconTwitter,
+} from '@components/icons';
 import styled from 'styled-components';
 import { theme, media } from '@styles';
 const { colors } = theme;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import resume from '@images/resume.pdf';
 import styled from 'styled-components';
-import { theme, mixins, media, Nav } from '@styles';
+import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const MenuContainer = styled.div`
@@ -37,8 +37,9 @@ const Sidebar = styled.div`
   ${media.phablet`width: 75vw;`};
   ${media.tiny`padding: 10px;`};
 `;
-const NavLinks = styled(Nav)`
+const NavLinks = styled.nav`
   ${mixins.flexBetween};
+  width: 100%;
   flex-direction: column;
   text-align: center;
 `;

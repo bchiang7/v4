@@ -1,5 +1,14 @@
 import React from 'react';
-import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
+import PropTypes from 'prop-types';
+import {
+  IconGithub,
+  IconLinkedin,
+  IconCodepen,
+  IconInstagram,
+  IconTwitter,
+  IconStar,
+  IconFork,
+} from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -13,6 +22,7 @@ const FooterContainer = styled.footer`
   color: ${colors.slate};
   text-align: center;
   height: auto;
+  min-height: 70px;
 `;
 const SocialContainer = styled.div`
   color: ${colors.lightSlate};
@@ -32,16 +42,32 @@ const SocialLink = styled.a`
     height: 20px;
   }
 `;
-const Copy = styled.p`
-  margin: 5px 0 3px;
+const Copy = styled.div`
+  margin: 10px 0;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xsmall};
+  line-height: 1;
 `;
 const GithubLink = styled.a`
   color: ${colors.slate};
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xsmall};
+`;
+const GithubInfo = styled.div`
+  margin-top: 10px;
+
+  & > span {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 7px;
+  }
+  svg {
+    display: inline-block;
+    height: 15px;
+    width: auto;
+    margin-right: 5px;
+  }
 `;
 
-const Footer = () => (
+const Footer = ({ githubInfo }) => (
   <FooterContainer>
     <SocialContainer>
       <SocialItemList>
@@ -76,10 +102,27 @@ const Footer = () => (
         href="https://github.com/bchiang7/v4"
         target="_blank"
         rel="nofollow noopener noreferrer">
-        Designed &amp; Built by Brittany Chiang
+        <div>Designed &amp; Built by Brittany Chiang</div>
+
+        {githubInfo.stars && githubInfo.forks && (
+          <GithubInfo>
+            <span>
+              <IconStar />
+              <span>{githubInfo.stars}</span>
+            </span>
+            <span>
+              <IconFork />
+              <span>{githubInfo.forks}</span>
+            </span>
+          </GithubInfo>
+        )}
       </GithubLink>
     </Copy>
   </FooterContainer>
 );
+
+Footer.propTypes = {
+  githubInfo: PropTypes.object,
+};
 
 export default Footer;

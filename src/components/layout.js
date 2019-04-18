@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Head from './head';
-import Loader from './loader';
-import Header from './header';
-import Social from './social';
-import Email from './email';
-import Footer from './footer';
-import { nav } from '@config';
+import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { navLinks } from '@config';
 import styled from 'styled-components';
 import { GlobalStyle, theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -53,13 +48,31 @@ class Layout extends Component {
 
   state = {
     isLoading: true,
+    githubInfo: {
+      stars: null,
+      forks: null,
+    },
   };
 
   finishLoading = () => this.setState({ isLoading: false });
 
+  componentDidMount() {
+    fetch('https://api.github.com/repos/bchiang7/v4')
+      .then(response => response.json())
+      .then(json => {
+        const { stargazers_count, forks_count } = json;
+        this.setState({
+          githubInfo: {
+            stars: stargazers_count,
+            forks: forks_count,
+          },
+        });
+      });
+  }
+
   render() {
     const { children, location } = this.props;
-    const { isLoading } = this.state;
+    const { isLoading, githubInfo } = this.state;
 
     return (
       <StaticQuery
@@ -77,18 +90,20 @@ class Layout extends Component {
         render={({ site }) => (
           <div id="root">
             <Head metadata={site.siteMetadata} />
+
             <GlobalStyle />
+
             <SkipToContent href="#content">Skip to Content</SkipToContent>
 
             {isLoading ? (
               <Loader finishLoading={this.finishLoading} />
             ) : (
               <div className="container">
-                {location && nav && <Header location={location} navLinks={nav} />}
+                {location && navLinks && <Nav location={location} navLinks={navLinks} />}
                 <Social />
                 <Email />
                 {children}
-                <Footer />
+                <Footer githubInfo={githubInfo} />
               </div>
             )}
           </div>

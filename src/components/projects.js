@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGithub, IconExternal, IconFolder } from './icons';
+import { IconGithub, IconExternal, IconFolder } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;

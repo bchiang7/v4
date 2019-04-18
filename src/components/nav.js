@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from 'gatsby';
 import { throttle } from '@utils';
-import { headerHeight } from '@config';
+import { navHeight } from '@config';
 import resume from '@images/resume.pdf';
-import Menu from './menu';
-import { IconLogo } from './icons';
+import Menu from '@components/menu';
+import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Nav } from '@styles';
+import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const HeaderContainer = styled.header`
+const NavContainer = styled.header`
   ${mixins.flexBetween};
   position: fixed;
   top: 0;
@@ -25,22 +25,22 @@ const HeaderContainer = styled.header`
   pointer-events: auto !important;
   user-select: auto !important;
   width: 100%;
-  height: ${props =>
-    props.scrollDirection === 'none' ? theme.headerHeight : theme.headerScrollHeight};
+  height: ${props => (props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight)};
   box-shadow: ${props =>
     props.scrollDirection === 'up' ? `0 2px 4px ${colors.shadowNavy}` : 'none'};
   transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.headerScrollHeight}` : '0px')}
+    ${props => (props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px')}
   );
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
 `;
-const Navbar = styled(Nav)`
+const Navbar = styled.nav`
   ${mixins.flexBetween};
-  font-family: ${fonts.SFMono};
-  color: ${colors.lightestSlate};
-  counter-reset: item 0;
   position: relative;
+  width: 100%;
+  color: ${colors.lightestSlate};
+  font-family: ${fonts.SFMono};
+  counter-reset: item 0;
   z-index: 12;
 `;
 const Logo = styled.div`
@@ -161,7 +161,7 @@ const ResumeLink = styled.a`
 
 const DELTA = 5;
 
-class Header extends Component {
+class Nav extends Component {
   static propTypes = {
     location: PropTypes.object.isRequired,
     navLinks: PropTypes.array.isRequired,
@@ -201,7 +201,7 @@ class Header extends Component {
 
     if (fromTop < DELTA) {
       this.setState({ scrollDirection: 'none' });
-    } else if (fromTop > lastScrollTop && fromTop > headerHeight) {
+    } else if (fromTop > lastScrollTop && fromTop > navHeight) {
       if (scrollDirection !== 'down') {
         this.setState({ scrollDirection: 'down' });
       }
@@ -252,7 +252,7 @@ class Header extends Component {
     const isHome = location && location.pathname === '/';
 
     return (
-      <HeaderContainer ref={el => (this.header = el)} scrollDirection={scrollDirection}>
+      <NavContainer ref={el => (this.header = el)} scrollDirection={scrollDirection}>
         <Helmet>
           <body className={menuOpen ? 'blur' : ''} />
         </Helmet>
@@ -319,9 +319,9 @@ class Header extends Component {
             handleMenuClick={e => this.handleMenuClick(e)}
           />
         )}
-      </HeaderContainer>
+      </NavContainer>
     );
   }
 }
 
-export default Header;
+export default Nav;

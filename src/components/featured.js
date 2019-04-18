@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGithub, IconExternal } from './icons';
+import { IconGithub, IconExternal } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;

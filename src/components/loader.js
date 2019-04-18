@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
-import { IconLoader } from './icons';
+import { IconLoader } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins } from '@styles';
 const { colors } = theme;
