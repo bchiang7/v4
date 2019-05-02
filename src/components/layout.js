@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
-import { navLinks } from '@config';
 import styled from 'styled-components';
 import { GlobalStyle, theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -43,7 +42,6 @@ const SkipToContent = styled.a`
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    location: PropTypes.object.isRequired,
   };
 
   state = {
@@ -71,7 +69,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, location } = this.props;
+    const { children } = this.props;
     const { isLoading, githubInfo } = this.state;
 
     return (
@@ -99,7 +97,7 @@ class Layout extends Component {
               <Loader finishLoading={this.finishLoading} />
             ) : (
               <div className="container">
-                {location && navLinks && <Nav location={location} navLinks={navLinks} />}
+                <Nav />
                 <Social />
                 <Email />
                 {children}

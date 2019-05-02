@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from 'gatsby';
 import { throttle } from '@utils';
-import { navHeight } from '@config';
+import { navLinks, navHeight } from '@config';
 import resume from '@images/resume.pdf';
-import Menu from '@components/menu';
+import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -162,11 +161,6 @@ const ResumeLink = styled.a`
 const DELTA = 5;
 
 class Nav extends Component {
-  static propTypes = {
-    location: PropTypes.object.isRequired,
-    navLinks: PropTypes.array.isRequired,
-  };
-
   state = {
     lastScrollTop: 0,
     scrollDirection: 'none',
@@ -179,7 +173,7 @@ class Nav extends Component {
 
     window.addEventListener('scroll', () => throttle(this.handleScroll()));
     window.addEventListener('resize', () => throttle(this.handleResize()));
-    window.addEventListener('keydown', () => this.handleKeydown());
+    window.addEventListener('keydown', e => this.handleKeydown(e));
   }
 
   componentWillUnmount() {
@@ -187,7 +181,7 @@ class Nav extends Component {
 
     window.removeEventListener('scroll', () => this.handleScroll());
     window.removeEventListener('resize', () => this.handleResize());
-    window.removeEventListener('keydown', () => this.handleKeydown());
+    window.removeEventListener('keydown', e => this.handleKeydown(e));
   }
 
   handleScroll = () => {
@@ -215,41 +209,25 @@ class Nav extends Component {
   };
 
   handleResize = () => {
-    const { menuOpen } = this.state;
-
-    if (window.innerWidth > 768 && menuOpen) {
+    if (window.innerWidth > 768 && this.state.menuOpen) {
       this.toggleMenu();
     }
   };
 
-  handleKeydown = evt => {
-    const { menuOpen } = this.state;
-
-    if (!menuOpen) {
+  handleKeydown = e => {
+    if (!this.state.menuOpen) {
       return;
     }
 
-    if (evt.key === 'Escape' || evt.key === 'Esc') {
+    if (e.which === 27 || e.key === 'Escape') {
       this.toggleMenu();
     }
   };
 
   toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
 
-  handleMenuClick = e => {
-    const target = e.target;
-    const isLink = target.hasAttribute('href');
-    const isContainer = target.classList && target.classList[0].includes('MenuContainer');
-
-    if (isLink || isContainer) {
-      this.toggleMenu();
-    }
-  };
-
   render() {
     const { scrollDirection, menuOpen, isMounted } = this.state;
-    const { location, navLinks } = this.props;
-    const isHome = location && location.pathname === '/';
 
     return (
       <NavContainer ref={el => (this.header = el)} scrollDirection={scrollDirection}>
@@ -282,21 +260,20 @@ class Nav extends Component {
           </TransitionGroup>
 
           <NavLinks>
-            {isHome && (
-              <NavList>
-                <TransitionGroup>
-                  {isMounted &&
-                    navLinks &&
-                    navLinks.map(({ url, name }, i) => (
-                      <CSSTransition key={i} classNames="fadedown" timeout={3000}>
-                        <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
-                          <NavLink href={url}>{name}</NavLink>
-                        </NavListItem>
-                      </CSSTransition>
-                    ))}
-                </TransitionGroup>
-              </NavList>
-            )}
+            <NavList>
+              <TransitionGroup>
+                {isMounted &&
+                  navLinks &&
+                  navLinks.map(({ url, name }, i) => (
+                    <CSSTransition key={i} classNames="fadedown" timeout={3000}>
+                      <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
+                        <NavLink href={url}>{name}</NavLink>
+                      </NavListItem>
+                    </CSSTransition>
+                  ))}
+              </TransitionGroup>
+            </NavList>
+
             <TransitionGroup>
               {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
@@ -311,14 +288,7 @@ class Nav extends Component {
           </NavLinks>
         </Navbar>
 
-        {navLinks && (
-          <Menu
-            isHome={isHome}
-            navLinks={navLinks}
-            menuOpen={menuOpen}
-            handleMenuClick={e => this.handleMenuClick(e)}
-          />
-        )}
+        <Menu menuOpen={menuOpen} toggleMenu={this.toggleMenu} />
       </NavContainer>
     );
   }
