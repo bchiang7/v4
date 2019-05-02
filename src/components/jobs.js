@@ -148,7 +148,7 @@ const JobDetails = styled.h5`
 const Jobs = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const revealContainer = useRef(null);
-  useEffect(() => sr.reveal(revealContainer, srConfig()), []);
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
     <JobsContainer id="jobs" ref={revealContainer}>

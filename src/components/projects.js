@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
@@ -108,121 +108,108 @@ const ShowMoreButton = styled(Button)`
   margin: 100px auto 0;
 `;
 
-class Projects extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-  };
+const Projects = ({ data }) => {
+  const [showMore, setShowMore] = useState(false);
+  const revealTitle = useRef(null);
+  const revealProjects = useRef([]);
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig());
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.revealRefs = [];
-    this.restRefs = [];
-  }
+  const GRID_LIMIT = 6;
+  const projects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const firstSix = projects.slice(0, GRID_LIMIT);
+  const projectsToShow = showMore ? projects : firstSix;
 
-  state = {
-    showMore: false,
-  };
-
-  componentDidMount() {
-    sr.reveal(this.projects, srConfig());
-    this.revealRefs.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }
-
-  showMoreToggle = () => this.setState({ showMore: !this.state.showMore });
-
-  render() {
-    const GRID_LIMIT = 6;
-    const { showMore } = this.state;
-    const { data } = this.props;
-    const projects = data.filter(({ node }) => node.frontmatter.show === 'true');
-    const firstSix = projects.slice(0, GRID_LIMIT);
-    const projectsToShow = showMore ? projects : firstSix;
-
-    return (
-      <ProjectsContainer>
-        <ProjectsTitle ref={el => (this.projects = el)}>Other Projects</ProjectsTitle>
-        <ProjectsGrid>
-          <TransitionGroup className="projects">
-            {projectsToShow &&
-              projectsToShow.map(({ node }, i) => {
-                const { frontmatter, html } = node;
-                const { github, external, title, tech } = frontmatter;
-                return (
-                  <CSSTransition
+  return (
+    <ProjectsContainer>
+      <ProjectsTitle ref={revealTitle}>Other Projects</ProjectsTitle>
+      <ProjectsGrid>
+        <TransitionGroup className="projects">
+          {projectsToShow &&
+            projectsToShow.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { github, external, title, tech } = frontmatter;
+              return (
+                <CSSTransition
+                  key={i}
+                  classNames="fadeup"
+                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                  exit={false}>
+                  <Project
                     key={i}
-                    classNames="fadeup"
-                    timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                    exit={false}>
-                    <Project
-                      key={i}
-                      ref={el => (this.revealRefs[i] = el)}
-                      tabIndex="0"
-                      style={{
-                        transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                      }}>
-                      <ProjectInner>
-                        <div>
-                          <ProjectHeader>
-                            <Folder>
-                              <IconFolder />
-                            </Folder>
-                            <Links>
-                              {github && (
-                                <IconLink
-                                  href={github}
-                                  target="_blank"
-                                  rel="nofollow noopener noreferrer"
-                                  aria-label="Github Link">
-                                  <IconGithub />
-                                </IconLink>
-                              )}
-                              {external && (
-                                <IconLink
-                                  href={external}
-                                  target="_blank"
-                                  rel="nofollow noopener noreferrer"
-                                  aria-label="External Link">
-                                  <IconExternal />
-                                </IconLink>
-                              )}
-                            </Links>
-                          </ProjectHeader>
-                          <ProjectName>
-                            {external ? (
-                              <a
+                    ref={el => (revealProjects.current[i] = el)}
+                    tabIndex="0"
+                    style={{
+                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                    }}>
+                    <ProjectInner>
+                      <div>
+                        <ProjectHeader>
+                          <Folder>
+                            <IconFolder />
+                          </Folder>
+                          <Links>
+                            {github && (
+                              <IconLink
+                                href={github}
+                                target="_blank"
+                                rel="nofollow noopener noreferrer"
+                                aria-label="Github Link">
+                                <IconGithub />
+                              </IconLink>
+                            )}
+                            {external && (
+                              <IconLink
                                 href={external}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
-                                aria-label="Visit Website">
-                                {title}
-                              </a>
-                            ) : (
-                              title
+                                aria-label="External Link">
+                                <IconExternal />
+                              </IconLink>
                             )}
-                          </ProjectName>
-                          <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-                        </div>
-                        <div>
-                          <TechList>
-                            {tech.map((tech, i) => (
-                              <li key={i}>{tech}</li>
-                            ))}
-                          </TechList>
-                        </div>
-                      </ProjectInner>
-                    </Project>
-                  </CSSTransition>
-                );
-              })}
-          </TransitionGroup>
-        </ProjectsGrid>
+                          </Links>
+                        </ProjectHeader>
+                        <ProjectName>
+                          {external ? (
+                            <a
+                              href={external}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="Visit Website">
+                              {title}
+                            </a>
+                          ) : (
+                            title
+                          )}
+                        </ProjectName>
+                        <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                      </div>
+                      <div>
+                        <TechList>
+                          {tech.map((tech, i) => (
+                            <li key={i}>{tech}</li>
+                          ))}
+                        </TechList>
+                      </div>
+                    </ProjectInner>
+                  </Project>
+                </CSSTransition>
+              );
+            })}
+        </TransitionGroup>
+      </ProjectsGrid>
 
-        <ShowMoreButton onClick={this.showMoreToggle}>
-          {showMore ? 'Fewer' : 'More'} Projects
-        </ShowMoreButton>
-      </ProjectsContainer>
-    );
-  }
-}
+      <ShowMoreButton onClick={() => setShowMore(!showMore)}>
+        {showMore ? 'Fewer' : 'More'} Projects
+      </ShowMoreButton>
+    </ProjectsContainer>
+  );
+};
+
+Projects.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Projects;

@@ -45,7 +45,7 @@ class Layout extends Component {
   };
 
   state = {
-    isLoading: true,
+    isLoading: false, //true,
     githubInfo: {
       stars: null,
       forks: null,
