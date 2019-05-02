@@ -13,9 +13,6 @@ const FeaturedContainer = styled(Section)`
   flex-direction: column;
   align-items: flex-start;
 `;
-const FeaturedGrid = styled.div`
-  position: relative;
-`;
 const ContentContainer = styled.div`
   position: relative;
   z-index: 2;
@@ -215,7 +212,7 @@ class Featured extends Component {
     return (
       <FeaturedContainer id="projects">
         <Heading ref={el => (this.featured = el)}>Some Things I&apos;ve Built</Heading>
-        <FeaturedGrid>
+        <div>
           {featuredProjects &&
             featuredProjects.map(({ node }, i) => {
               const { frontmatter, html } = node;
@@ -274,7 +271,7 @@ class Featured extends Component {
                 </Project>
               );
             })}
-        </FeaturedGrid>
+        </div>
       </FeaturedContainer>
     );
   }
