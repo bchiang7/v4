@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
@@ -37,26 +37,8 @@ const LogoWrapper = styled.div`
   }
 `;
 
-class Loader extends Component {
-  static propTypes = {
-    finishLoading: PropTypes.func.isRequired,
-  };
-
-  state = {
-    isMounted: false,
-  };
-
-  componentDidMount() {
-    this.setState({ isMounted: true }, () => this.animate());
-  }
-
-  componentWillUnmount() {
-    this.setState({ isMounted: false });
-  }
-
-  animate() {
-    const { finishLoading } = this.props;
-
+const Loader = ({ finishLoading }) => {
+  const animate = () => {
     const loader = anime.timeline({
       complete: () => finishLoading(),
     });
@@ -90,22 +72,29 @@ class Loader extends Component {
         opacity: 0,
         zIndex: -1,
       });
-  }
+  };
 
-  render() {
-    const { isMounted } = this.state;
+  const [isMounted, setIsMounted] = useState(false);
 
-    return (
-      <LoaderContainer className="loader">
-        <Helmet>
-          <body className={isMounted ? 'hidden' : ''} />
-        </Helmet>
-        <LogoWrapper isMounted={isMounted}>
-          <IconLoader />
-        </LogoWrapper>
-      </LoaderContainer>
-    );
-  }
-}
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 10);
+    animate();
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <LoaderContainer className="loader">
+      <Helmet bodyAttributes={{ class: `hidden` }} />
+
+      <LogoWrapper isMounted={isMounted}>
+        <IconLoader />
+      </LogoWrapper>
+    </LoaderContainer>
+  );
+};
+
+Loader.propTypes = {
+  finishLoading: PropTypes.func.isRequired,
+};
 
 export default Loader;

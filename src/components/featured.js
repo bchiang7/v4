@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import sr from '@utils/sr';
@@ -12,9 +12,6 @@ const FeaturedContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
-`;
-const FeaturedGrid = styled.div`
-  position: relative;
 `;
 const ContentContainer = styled.div`
   position: relative;
@@ -193,91 +190,86 @@ const Project = styled.div`
   }
 `;
 
-class Featured extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-  };
+const Featured = ({ data }) => {
+  const revealTitle = useRef(null);
+  const revealProjects = useRef([]);
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig());
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.revealRefs = [];
-  }
+  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
 
-  componentDidMount() {
-    sr.reveal(this.featured, srConfig());
-    this.revealRefs.forEach(ref => sr.reveal(ref, srConfig()));
-  }
+  return (
+    <FeaturedContainer id="projects">
+      <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
 
-  render() {
-    const { data } = this.props;
-    const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+      <div>
+        {featuredProjects &&
+          featuredProjects.map(({ node }, i) => {
+            const { frontmatter, html } = node;
+            const { external, title, tech, github, cover } = frontmatter;
 
-    return (
-      <FeaturedContainer id="projects">
-        <Heading ref={el => (this.featured = el)}>Some Things I&apos;ve Built</Heading>
-        <FeaturedGrid>
-          {featuredProjects &&
-            featuredProjects.map(({ node }, i) => {
-              const { frontmatter, html } = node;
-              const { external, title, tech, github, cover } = frontmatter;
-
-              return (
-                <Project key={i} ref={el => (this.revealRefs[i] = el)}>
-                  <ContentContainer>
-                    <FeaturedLabel>Featured Project</FeaturedLabel>
-                    <ProjectName>
-                      {external ? (
-                        <a
-                          href={external}
-                          target="_blank"
-                          rel="nofollow noopener noreferrer"
-                          aria-label="External Link">
-                          {title}
-                        </a>
-                      ) : (
-                        title
-                      )}
-                    </ProjectName>
-                    <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-                    {tech && (
-                      <TechList>
-                        {tech.map((tech, i) => (
-                          <li key={i}>{tech}</li>
-                        ))}
-                      </TechList>
+            return (
+              <Project key={i} ref={el => (revealProjects.current[i] = el)}>
+                <ContentContainer>
+                  <FeaturedLabel>Featured Project</FeaturedLabel>
+                  <ProjectName>
+                    {external ? (
+                      <a
+                        href={external}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        aria-label="External Link">
+                        {title}
+                      </a>
+                    ) : (
+                      title
                     )}
-                    <Links>
-                      {github && (
-                        <a
-                          href={github}
-                          target="_blank"
-                          rel="nofollow noopener noreferrer"
-                          aria-label="Github Link">
-                          <IconGithub />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href={external}
-                          target="_blank"
-                          rel="nofollow noopener noreferrer"
-                          aria-label="External Link">
-                          <IconExternal />
-                        </a>
-                      )}
-                    </Links>
-                  </ContentContainer>
+                  </ProjectName>
+                  <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                  {tech && (
+                    <TechList>
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </TechList>
+                  )}
+                  <Links>
+                    {github && (
+                      <a
+                        href={github}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        aria-label="Github Link">
+                        <IconGithub />
+                      </a>
+                    )}
+                    {external && (
+                      <a
+                        href={external}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        aria-label="External Link">
+                        <IconExternal />
+                      </a>
+                    )}
+                  </Links>
+                </ContentContainer>
 
-                  <ImgContainer>
-                    <FeaturedImg fluid={cover.childImageSharp.fluid} />
-                  </ImgContainer>
-                </Project>
-              );
-            })}
-        </FeaturedGrid>
-      </FeaturedContainer>
-    );
-  }
-}
+                <ImgContainer>
+                  <FeaturedImg fluid={cover.childImageSharp.fluid} />
+                </ImgContainer>
+              </Project>
+            );
+          })}
+      </div>
+    </FeaturedContainer>
+  );
+};
+
+Featured.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Featured;

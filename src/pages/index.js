@@ -1,15 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-
-import Layout from '@components/layout';
-import Hero from '@components/hero';
-import About from '@components/about';
-import Jobs from '@components/jobs';
-import Featured from '@components/featured';
-import Projects from '@components/projects';
-import Contact from '@components/contact';
-
+import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 import styled from 'styled-components';
 import { mixins, Main } from '@styles';
 
@@ -18,8 +10,8 @@ const MainContainer = styled(Main)`
   counter-reset: section;
 `;
 
-const IndexPage = ({ data, location }) => (
-  <Layout location={location}>
+const IndexPage = ({ data }) => (
+  <Layout>
     <MainContainer id="content">
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
@@ -33,13 +25,12 @@ const IndexPage = ({ data, location }) => (
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object,
 };
 
 export default IndexPage;
 
-export const query = graphql`
-  query IndexQuery {
+export const pageQuery = graphql`
+  {
     hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
       edges {
         node {

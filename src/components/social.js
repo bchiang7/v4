@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { socialMedia } from '@config';
-import {
-  IconGithub,
-  IconLinkedin,
-  IconCodepen,
-  IconInstagram,
-  IconTwitter,
-} from '@components/icons';
+import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
 import { theme, media } from '@styles';
 const { colors } = theme;
@@ -47,55 +41,38 @@ const SocialLink = styled.a`
   }
 `;
 
-class Social extends Component {
-  state = {
-    isMounted: false,
-  };
+const Social = () => {
+  const [isMounted, setIsMounted] = useState(false);
 
-  componentDidMount() {
-    setTimeout(() => this.setState({ isMounted: true }), 2000);
-  }
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 2000);
+    return () => clearTimeout(timeout);
+  }, []);
 
-  render() {
-    const { isMounted } = this.state;
-
-    return (
-      <SocialContainer>
-        <TransitionGroup>
-          {isMounted && (
-            <CSSTransition timeout={3000} classNames="fade">
-              <SocialItemList>
-                {socialMedia &&
-                  socialMedia.map(({ url, name }, i) => (
-                    <SocialItem key={i}>
-                      <SocialLink
-                        href={url}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label={name}>
-                        {name === 'Github' ? (
-                          <IconGithub />
-                        ) : name === 'Linkedin' ? (
-                          <IconLinkedin />
-                        ) : name === 'Codepen' ? (
-                          <IconCodepen />
-                        ) : name === 'Instagram' ? (
-                          <IconInstagram />
-                        ) : name === 'Twitter' ? (
-                          <IconTwitter />
-                        ) : (
-                          <IconGithub />
-                        )}
-                      </SocialLink>
-                    </SocialItem>
-                  ))}
-              </SocialItemList>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
-      </SocialContainer>
-    );
-  }
-}
+  return (
+    <SocialContainer>
+      <TransitionGroup>
+        {isMounted && (
+          <CSSTransition timeout={3000} classNames="fade">
+            <SocialItemList>
+              {socialMedia &&
+                socialMedia.map(({ url, name }, i) => (
+                  <SocialItem key={i}>
+                    <SocialLink
+                      href={url}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      aria-label={name}>
+                      <FormattedIcon name={name} />
+                    </SocialLink>
+                  </SocialItem>
+                ))}
+            </SocialItemList>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+    </SocialContainer>
+  );
+};
 
 export default Social;

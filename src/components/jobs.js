@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
@@ -145,86 +145,73 @@ const JobDetails = styled.h5`
   }
 `;
 
-class Jobs extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-  };
+const Jobs = ({ data }) => {
+  const [activeTabId, setActiveTabId] = useState(0);
+  const revealContainer = useRef(null);
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
-  state = {
-    activeTabId: 0,
-  };
+  return (
+    <JobsContainer id="jobs" ref={revealContainer}>
+      <Heading>Where I&apos;ve Worked</Heading>
+      <TabsContainer>
+        <Tabs role="tablist">
+          {data &&
+            data.map(({ node }, i) => {
+              const { company } = node.frontmatter;
+              return (
+                <Tab
+                  key={i}
+                  isActive={activeTabId === i}
+                  onClick={() => setActiveTabId(i)}
+                  role="tab"
+                  aria-selected={activeTabId === i ? 'true' : 'false'}
+                  aria-controls={`tab${i}`}
+                  id={`tab${i}`}
+                  tabIndex={activeTabId === i ? '0' : '-1'}>
+                  <span>{company}</span>
+                </Tab>
+              );
+            })}
+          <Highlighter activeTabId={activeTabId} />
+        </Tabs>
+        <ContentContainer>
+          {data &&
+            data.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { title, url, company, range } = frontmatter;
+              return (
+                <TabContent
+                  key={i}
+                  isActive={activeTabId === i}
+                  id={`job${i}`}
+                  role="tabpanel"
+                  tabIndex="0"
+                  aria-labelledby={`job${i}`}
+                  aria-hidden={activeTabId !== i}>
+                  <JobTitle>
+                    <span>{title}</span>
+                    <Company>
+                      <span>&nbsp;@&nbsp;</span>
+                      <a href={url} target="_blank" rel="nofollow noopener noreferrer">
+                        {company}
+                      </a>
+                    </Company>
+                  </JobTitle>
+                  <JobDetails>
+                    <span>{range}</span>
+                  </JobDetails>
+                  <div dangerouslySetInnerHTML={{ __html: html }} />
+                </TabContent>
+              );
+            })}
+        </ContentContainer>
+      </TabsContainer>
+    </JobsContainer>
+  );
+};
 
-  componentDidMount() {
-    sr.reveal(this.jobs, srConfig());
-  }
-
-  isActive = id => this.state.activeTabId === id;
-
-  setActiveTab = activeTabId => this.setState({ activeTabId });
-
-  render() {
-    const { activeTabId } = this.state;
-    const { data } = this.props;
-
-    return (
-      <JobsContainer id="jobs" ref={el => (this.jobs = el)}>
-        <Heading>Where I&apos;ve Worked</Heading>
-        <TabsContainer>
-          <Tabs role="tablist">
-            {data &&
-              data.map(({ node }, i) => {
-                const { company } = node.frontmatter;
-                return (
-                  <Tab
-                    key={i}
-                    isActive={this.isActive(i)}
-                    onClick={e => this.setActiveTab(i, e)}
-                    role="tab"
-                    aria-selected={this.isActive(i) ? 'true' : 'false'}
-                    aria-controls={`tab${i}`}
-                    id={`tab${i}`}
-                    tabIndex={this.isActive(i) ? '0' : '-1'}>
-                    <span>{company}</span>
-                  </Tab>
-                );
-              })}
-            <Highlighter activeTabId={activeTabId} />
-          </Tabs>
-          <ContentContainer>
-            {data &&
-              data.map(({ node }, i) => {
-                const { frontmatter, html } = node;
-                const { title, url, company, range } = frontmatter;
-                return (
-                  <TabContent
-                    key={i}
-                    isActive={this.isActive(i)}
-                    id={`job${i}`}
-                    role="tabpanel"
-                    tabIndex="0"
-                    aria-labelledby={`job${i}`}
-                    aria-hidden={!this.isActive(i)}>
-                    <JobTitle>
-                      <span>{title}</span>
-                      <Company>
-                        &nbsp;@&nbsp;
-                        <a href={url} target="_blank" rel="nofollow noopener noreferrer">
-                          {company}
-                        </a>
-                      </Company>
-                    </JobTitle>
-                    <JobDetails>
-                      <span>{range}</span>
-                    </JobDetails>
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
-                  </TabContent>
-                );
-              })}
-          </ContentContainer>
-        </TabsContainer>
-      </JobsContainer>
-    );
-  }
-}
+Jobs.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Jobs;

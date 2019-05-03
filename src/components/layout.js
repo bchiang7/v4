@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
-import { navLinks } from '@config';
 import styled from 'styled-components';
 import { GlobalStyle, theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -40,77 +39,65 @@ const SkipToContent = styled.a`
   }
 `;
 
-class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    location: PropTypes.object.isRequired,
-  };
+const Layout = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [githubInfo, setGithubInfo] = useState({
+    stars: null,
+    forks: null,
+  });
 
-  state = {
-    isLoading: true,
-    githubInfo: {
-      stars: null,
-      forks: null,
-    },
-  };
-
-  finishLoading = () => this.setState({ isLoading: false });
-
-  componentDidMount() {
+  useEffect(() => {
     fetch('https://api.github.com/repos/bchiang7/v4')
       .then(response => response.json())
       .then(json => {
         const { stargazers_count, forks_count } = json;
-        this.setState({
-          githubInfo: {
-            stars: stargazers_count,
-            forks: forks_count,
-          },
+        setGithubInfo({
+          stars: stargazers_count,
+          forks: forks_count,
         });
       });
-  }
+  }, []);
 
-  render() {
-    const { children, location } = this.props;
-    const { isLoading, githubInfo } = this.state;
-
-    return (
-      <StaticQuery
-        query={graphql`
-          query LayoutQuery {
-            site {
-              siteMetadata {
-                title
-                siteUrl
-                description
-              }
+  return (
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          site {
+            siteMetadata {
+              title
+              siteUrl
+              description
             }
           }
-        `}
-        render={({ site }) => (
-          <div id="root">
-            <Head metadata={site.siteMetadata} />
+        }
+      `}
+      render={({ site }) => (
+        <div id="root">
+          <Head metadata={site.siteMetadata} />
 
-            <GlobalStyle />
+          <GlobalStyle />
 
-            <SkipToContent href="#content">Skip to Content</SkipToContent>
+          <SkipToContent href="#content">Skip to Content</SkipToContent>
 
-            {isLoading ? (
-              <Loader finishLoading={this.finishLoading} />
-            ) : (
-              <div className="container">
-                {location && navLinks && <Nav location={location} navLinks={navLinks} />}
-                <Social />
-                <Email />
-                {children}
-                <Footer githubInfo={githubInfo} />
-              </div>
-            )}
-          </div>
-        )}
-      />
-    );
-  }
-}
+          {isLoading ? (
+            <Loader finishLoading={() => setIsLoading(false)} />
+          ) : (
+            <div className="container">
+              <Nav />
+              <Social />
+              <Email />
+              {children}
+              <Footer githubInfo={githubInfo} />
+            </div>
+          )}
+        </div>
+      )}
+    />
+  );
+};
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;
