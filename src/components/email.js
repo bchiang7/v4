@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
 import styled from 'styled-components';
@@ -41,36 +41,27 @@ const EmailLink = styled.a`
   padding: 10px;
 `;
 
-class Email extends Component {
-  state = {
-    isMounted: false,
-  };
+const Email = () => {
+  const [isMounted, setIsMounted] = useState(false);
 
-  componentDidMount() {
-    setTimeout(() => this.setState({ isMounted: true }), 2000);
-  }
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 2000);
+    return () => clearTimeout(timeout);
+  }, []);
 
-  componentWillUnmount() {
-    this.setState({ isMounted: false });
-  }
-
-  render() {
-    const { isMounted } = this.state;
-
-    return (
-      <EmailContainer>
-        <TransitionGroup>
-          {isMounted && (
-            <CSSTransition timeout={3000} classNames="fade">
-              <EmailLinkWrapper>
-                <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
-              </EmailLinkWrapper>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
-      </EmailContainer>
-    );
-  }
-}
+  return (
+    <EmailContainer>
+      <TransitionGroup>
+        {isMounted && (
+          <CSSTransition timeout={3000} classNames="fade">
+            <EmailLinkWrapper>
+              <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
+            </EmailLinkWrapper>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+    </EmailContainer>
+  );
+};
 
 export default Email;

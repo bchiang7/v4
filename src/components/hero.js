@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
@@ -57,57 +57,48 @@ const EmailLink = styled.a`
   margin-top: 50px;
 `;
 
-class Hero extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-  };
+const Hero = ({ data }) => {
+  const [isMounted, setIsMounted] = useState(false);
 
-  state = {
-    isMounted: false,
-  };
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
-  componentDidMount() {
-    setTimeout(() => this.setState({ isMounted: true }), 1000);
-  }
+  const { frontmatter, html } = data[0].node;
 
-  componentWillUnmount() {
-    this.setState({ isMounted: false });
-  }
+  const one = () => <Hi style={{ transitionDelay: '100ms' }}>{frontmatter.title}</Hi>;
+  const two = () => <Name style={{ transitionDelay: '200ms' }}>{frontmatter.name}.</Name>;
+  const three = () => (
+    <Subtitle style={{ transitionDelay: '300ms' }}>{frontmatter.subtitle}</Subtitle>
+  );
+  const four = () => (
+    <Blurb style={{ transitionDelay: '400ms' }} dangerouslySetInnerHTML={{ __html: html }} />
+  );
+  const five = () => (
+    <div style={{ transitionDelay: '500ms' }}>
+      <EmailLink href={`mailto:${email}`}>Get In Touch</EmailLink>
+    </div>
+  );
 
-  render() {
-    const { data } = this.props;
-    const { isMounted } = this.state;
-    const { frontmatter, html } = data[0].node;
+  const items = [one, two, three, four, five];
 
-    const one = () => <Hi style={{ transitionDelay: '100ms' }}>{frontmatter.title}</Hi>;
-    const two = () => <Name style={{ transitionDelay: '200ms' }}>{frontmatter.name}.</Name>;
-    const three = () => (
-      <Subtitle style={{ transitionDelay: '300ms' }}>{frontmatter.subtitle}</Subtitle>
-    );
-    const four = () => (
-      <Blurb style={{ transitionDelay: '400ms' }} dangerouslySetInnerHTML={{ __html: html }} />
-    );
-    const five = () => (
-      <div style={{ transitionDelay: '500ms' }}>
-        <EmailLink href={`mailto:${email}`}>Get In Touch</EmailLink>
-      </div>
-    );
+  return (
+    <HeroContainer>
+      <TransitionGroup>
+        {isMounted &&
+          items.map((item, i) => (
+            <CSSTransition key={i} classNames="fadeup" timeout={3000}>
+              {item}
+            </CSSTransition>
+          ))}
+      </TransitionGroup>
+    </HeroContainer>
+  );
+};
 
-    const items = [one, two, three, four, five];
-
-    return (
-      <HeroContainer>
-        <TransitionGroup>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={3000}>
-                {item}
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      </HeroContainer>
-    );
-  }
-}
+Hero.propTypes = {
+  data: PropTypes.array.isRequired,
+};
 
 export default Hero;
