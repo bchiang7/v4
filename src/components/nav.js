@@ -162,10 +162,10 @@ const DELTA = 5;
 
 class Nav extends Component {
   state = {
-    lastScrollTop: 0,
-    scrollDirection: 'none',
-    menuOpen: false,
     isMounted: false,
+    menuOpen: false,
+    scrollDirection: 'none',
+    lastScrollTop: 0,
   };
 
   componentDidMount() {
@@ -184,8 +184,10 @@ class Nav extends Component {
     window.removeEventListener('keydown', e => this.handleKeydown(e));
   }
 
+  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
+
   handleScroll = () => {
-    const { isMounted, lastScrollTop, menuOpen, scrollDirection } = this.state;
+    const { isMounted, menuOpen, scrollDirection, lastScrollTop } = this.state;
     const fromTop = window.scrollY;
 
     // Make sure they scroll more than DELTA
@@ -224,13 +226,11 @@ class Nav extends Component {
     }
   };
 
-  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
-
   render() {
-    const { scrollDirection, menuOpen, isMounted } = this.state;
+    const { isMounted, menuOpen, scrollDirection } = this.state;
 
     return (
-      <NavContainer ref={el => (this.header = el)} scrollDirection={scrollDirection}>
+      <NavContainer scrollDirection={scrollDirection}>
         <Helmet>
           <body className={menuOpen ? 'blur' : ''} />
         </Helmet>
