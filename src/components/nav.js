@@ -5,7 +5,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from 'gatsby';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
-import resume from '@images/resume.pdf';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
@@ -278,7 +277,10 @@ class Nav extends Component {
               {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
                   <div style={{ transitionDelay: `600ms` }}>
-                    <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">
+                    <ResumeLink
+                      href="/resume.pdf"
+                      target="_blank"
+                      rel="nofollow noopener noreferrer">
                       Resume
                     </ResumeLink>
                   </div>
