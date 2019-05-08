@@ -37,13 +37,17 @@ const Tabs = styled.ul`
 
   li {
     &:first-of-type {
-      margin-left: 50px;
+      ${media.thone`
+        margin-left: 50px;
+      `};
       ${media.phablet`
         margin-left: 25px;
       `};
     }
     &:last-of-type {
-      padding-right: 50px;
+      ${media.thone`
+        padding-right: 50px;
+      `};
       ${media.phablet`
         padding-right: 25px;
       `};
@@ -88,7 +92,7 @@ const Highlighter = styled.span`
   position: absolute;
   top: 0;
   left: 0;
-  transition: ${theme.transition};
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
   z-index: 10;
   transform: translateY(
