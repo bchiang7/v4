@@ -14,19 +14,41 @@ const TabsContainer = styled.div`
   display: flex;
   align-items: flex-start;
   position: relative;
-  ${media.thone`display: block;`};
+  ${media.thone`
+    display: block;
+  `};
 `;
-const Tabs = styled.div`
+const Tabs = styled.ul`
   display: block;
   position: relative;
   width: max-content;
   z-index: 3;
   ${media.thone`
     display: flex;
-    margin-bottom: 30px;
-    width: 100%;
     overflow-x: scroll;
+    margin-bottom: 30px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
   `};
+  ${media.phablet`
+    width: calc(100% + 50px);
+    margin-left: -25px;
+  `};
+
+  li {
+    &:first-of-type {
+      margin-left: 50px;
+      ${media.phablet`
+        margin-left: 25px;
+      `};
+    }
+    &:last-of-type {
+      padding-right: 50px;
+      ${media.phablet`
+        padding-right: 25px;
+      `};
+    }
+  }
 `;
 const Tab = styled.button`
   ${mixins.link};
@@ -81,6 +103,10 @@ const Highlighter = styled.span`
     transform: translateX(
       ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
     );
+    margin-left: 50px;
+  `};
+  ${media.phablet`
+    margin-left: 25px;
   `};
 `;
 const ContentContainer = styled.div`
@@ -159,17 +185,18 @@ const Jobs = ({ data }) => {
             data.map(({ node }, i) => {
               const { company } = node.frontmatter;
               return (
-                <Tab
-                  key={i}
-                  isActive={activeTabId === i}
-                  onClick={() => setActiveTabId(i)}
-                  role="tab"
-                  aria-selected={activeTabId === i ? 'true' : 'false'}
-                  aria-controls={`tab${i}`}
-                  id={`tab${i}`}
-                  tabIndex={activeTabId === i ? '0' : '-1'}>
-                  <span>{company}</span>
-                </Tab>
+                <li key={i}>
+                  <Tab
+                    isActive={activeTabId === i}
+                    onClick={() => setActiveTabId(i)}
+                    role="tab"
+                    aria-selected={activeTabId === i ? 'true' : 'false'}
+                    aria-controls={`tab${i}`}
+                    id={`tab${i}`}
+                    tabIndex={activeTabId === i ? '0' : '-1'}>
+                    <span>{company}</span>
+                  </Tab>
+                </li>
               );
             })}
           <Highlighter activeTabId={activeTabId} />
