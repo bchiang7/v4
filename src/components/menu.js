@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { navLinks } from '@config';
-import resume from '@images/resume.pdf';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -104,7 +103,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
                 </NavListItem>
               ))}
           </NavList>
-          <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">
+          <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">
             Resume
           </ResumeLink>
         </NavLinks>
