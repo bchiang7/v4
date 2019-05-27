@@ -39,6 +39,11 @@ const EmailLink = styled.a`
   writing-mode: vertical-rl;
   margin: 20px auto;
   padding: 10px;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+  }
 `;
 
 const Email = () => {

@@ -24,7 +24,7 @@ const theme = {
     highlight: 'rgba(41, 61, 90, 0.99)',
     transGreen: 'rgba(100, 255, 218, 0.07)',
     transNavy: 'rgba(10, 25, 47, 0.7)',
-    shadowNavy: 'rgba(2, 12, 27, 0.9)',
+    shadowNavy: 'rgba(2, 12, 27, 0.7)',
   },
 
   fonts: {
@@ -47,13 +47,14 @@ const theme = {
   easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 
-  borderRadius: '2px',
+  borderRadius: '3px',
   navHeight: '100px',
   navScrollHeight: '70px',
   margin: '20px',
 
   tabHeight: 42,
   tabWidth: 120,
+  radius: 3,
 
   gradient: `linear-gradient(0.4turn, #64d6ff, #64ffda)`,
 

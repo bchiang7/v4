@@ -53,7 +53,6 @@ const Blurb = styled.div`
 `;
 const EmailLink = styled.a`
   ${mixins.bigButton};
-  font-size: ${fontSizes.smallish};
   margin-top: 50px;
 `;
 

@@ -31,11 +31,12 @@ const ProjectsGrid = styled.div`
   }
 `;
 const ProjectInner = styled.div`
+  ${mixins.boxShadow};
   ${mixins.flexBetween};
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  padding: 25px;
+  padding: 2rem 1.75rem;
   height: 100%;
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
@@ -43,19 +44,17 @@ const ProjectInner = styled.div`
 `;
 const Project = styled.div`
   transition: ${theme.transition};
+  cursor: default;
   &:hover,
   &:focus {
     outline: 0;
     ${ProjectInner} {
       transform: translateY(-5px);
-      box-shadow: 0 2px 4px ${colors.shadowNavy};
-      box-shadow: 0 19px 38px ${colors.darkestNavy} 0 15px 12px ${colors.shadowNavy};
     }
   }
 `;
 const ProjectHeader = styled.div`
   ${mixins.flexBetween};
-  align-items: flex-end;
   margin-bottom: 30px;
 `;
 const Folder = styled.div`
@@ -70,7 +69,10 @@ const Links = styled.div`
   color: ${colors.lightSlate};
 `;
 const IconLink = styled.a`
+  position: relative;
+  top: -10px;
   padding: 10px;
+
   svg {
     width: 20px;
     height: 20px;
@@ -145,7 +147,7 @@ const Projects = ({ data }) => {
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                     }}>
                     <ProjectInner>
-                      <div>
+                      <header>
                         <ProjectHeader>
                           <Folder>
                             <IconFolder />
@@ -171,28 +173,16 @@ const Projects = ({ data }) => {
                             )}
                           </Links>
                         </ProjectHeader>
-                        <ProjectName>
-                          {external ? (
-                            <a
-                              href={external}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Visit Website">
-                              {title}
-                            </a>
-                          ) : (
-                            title
-                          )}
-                        </ProjectName>
+                        <ProjectName>{title}</ProjectName>
                         <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-                      </div>
-                      <div>
+                      </header>
+                      <footer>
                         <TechList>
                           {tech.map((tech, i) => (
                             <li key={i}>{tech}</li>
                           ))}
                         </TechList>
-                      </div>
+                      </footer>
                     </ProjectInner>
                   </Project>
                 </CSSTransition>

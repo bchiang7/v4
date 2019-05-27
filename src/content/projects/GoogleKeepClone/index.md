@@ -7,6 +7,7 @@ external: 'https://keep-vue.netlify.com/'
 tech:
   - Vue
   - Firebase
+  - SCSS
 show: 'true'
 ---
 

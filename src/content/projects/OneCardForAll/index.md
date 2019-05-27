@@ -3,7 +3,7 @@ date: '2015-12-01'
 title: 'One Card For All'
 image: ''
 github: ''
-external: ''
+external: 'https://us.mullenlowe.com/work/one-card-for-all/'
 tech:
   - HTML
   - SCSS

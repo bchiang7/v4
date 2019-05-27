@@ -2,8 +2,8 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - JavaScript
-  - HTML & SCSS
+  - JavaScript (ES6+)
+  - HTML & (S)CSS
   - React
   - Vue
   - Node.js

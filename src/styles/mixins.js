@@ -62,6 +62,7 @@ const mixins = {
       bottom: 0.37em;
       background-color: ${colors.green};
       transition: ${theme.transition};
+      opacity: 0.5;
     }
   `,
 
@@ -70,7 +71,7 @@ const mixins = {
     background-color: transparent;
     border: 1px solid ${colors.green};
     border-radius: ${theme.borderRadius};
-    padding: 12px 17px;
+    padding: 0.75rem 1rem;
     font-size: ${fontSizes.smallish};
     font-family: ${fonts.SFMono};
     line-height: 1;
@@ -92,7 +93,7 @@ const mixins = {
     background-color: transparent;
     border: 1px solid ${colors.green};
     border-radius: ${theme.borderRadius};
-    padding: 18px 23px;
+    padding: 1.25rem 1.75rem;
     font-size: ${fontSizes.small};
     font-family: ${fonts.SFMono};
     line-height: 1;
@@ -114,6 +115,16 @@ const mixins = {
     ${media.desktop`padding: 0 100px;`};
     ${media.tablet`padding: 0 50px;`};
     ${media.phablet`padding: 0 25px;`};
+  `,
+
+  boxShadow: css`
+    box-shadow: 0 10px 30px -15px ${colors.shadowNavy};
+    transition: ${theme.transition};
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 20px 30px -15px ${colors.shadowNavy};
+    }
   `,
 };
 

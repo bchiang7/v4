@@ -35,6 +35,10 @@ const SocialItem = styled.li`
 `;
 const SocialLink = styled.a`
   padding: 10px;
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+  }
   svg {
     width: 18px;
     height: 18px;

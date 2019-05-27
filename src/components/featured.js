@@ -43,6 +43,7 @@ const ProjectName = styled.h5`
   }
 `;
 const ProjectDescription = styled.div`
+  ${mixins.boxShadow};
   background-color: ${colors.lightNavy};
   color: ${colors.lightSlate};
   padding: 25px;
@@ -109,14 +110,14 @@ const FeaturedImg = styled(Img)`
     filter: grayscale(100%) contrast(1) brightness(80%);
   `};
 `;
-const ImgContainer = styled.div`
-  position: relative;
-  z-index: 1;
-  border-radius: ${theme.borderRadius};
-  background-color: ${colors.green};
-  border-radius: 2px;
+const ImgContainer = styled.a`
+  ${mixins.boxShadow};
   grid-column: 6 / -1;
   grid-row: 1 / -1;
+  position: relative;
+  z-index: 1;
+  background-color: ${colors.green};
+  border-radius: ${theme.radius + 1}px;
   transition: ${theme.transition};
   ${media.tablet`height: 100%;`};
   ${media.thone`
@@ -257,7 +258,10 @@ const Featured = ({ data }) => {
                   </Links>
                 </ContentContainer>
 
-                <ImgContainer>
+                <ImgContainer
+                  href={external ? external : github ? github : '#'}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer">
                   <FeaturedImg fluid={cover.childImageSharp.fluid} />
                 </ImgContainer>
               </Project>
