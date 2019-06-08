@@ -1,39 +1,39 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteTitle: 'Dennis Trautwein | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Dennis Trautwein is a software engineer based in Hamburg, Germany who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+    'Dennis Trautwein, Dennis, Trautwein, dennis-tra, software, backend, engineer, physicist, kiel, hamburg, cloud developer, golang, germany',
+  siteUrl: 'https://dtrautwein.eu',
   siteLanguage: 'en_US',
 
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
 
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
-  github: 'https://github.com/bchiang7/',
+  name: 'Dennis Trautwein',
+  location: 'Hamburg, Germany',
+  email: 'hi@dtrautwein.eu',
+  github: 'https://github.com/dennis-tra/',
   socialMedia: [
     {
       name: 'Github',
-      url: 'https://github.com/bchiang7/',
+      url: 'https://github.com/dennis-tra/',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7/',
+      url: 'https://www.linkedin.com/in/dennis-tra/',
     },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7/',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7/',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
-    },
+    // {
+    //   name: 'Codepen',
+    //   url: 'https://codepen.io/dennis-tra/',
+    // },
+    // {
+    //   name: 'Instagram',
+    //   url: 'https://www.instagram.com/dennis-tra/',
+    // },
+    // {
+    //   name: 'Twitter',
+    //   url: 'https://twitter.com/dennis-tra',
+    // },
   ],
 
   navLinks: [
@@ -55,14 +55,14 @@ module.exports = {
     },
   ],
 
-  twitterHandle: '@bchiang7',
+  twitterHandle: '@dennis-tra',
   googleAnalyticsID: 'UA-45666519-2',
 
   navHeight: 100,
 
   greenColor: '#64ffda',
-  navyColor: '#0a192f',
-  darkNavyColor: '#020c1b',
+  navyColor: '#52b7ff',
+  darkNavyColor: '#212121',
 
   srConfig: (delay = 200) => ({
     origin: 'bottom',
