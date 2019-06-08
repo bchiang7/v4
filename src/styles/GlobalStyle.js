@@ -217,7 +217,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: ${colors.green};
+      color: ${colors.primary};
       outline: 0;
     }
   }
@@ -229,7 +229,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      outline-color: ${colors.blue};
+      outline-color: ${colors.primary};
     }
   }
 

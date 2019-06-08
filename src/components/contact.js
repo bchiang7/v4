@@ -16,7 +16,7 @@ const ContactContainer = styled(Section)`
 `;
 const GreenHeading = styled(Heading)`
   display: block;
-  color: ${colors.green};
+  color: ${colors.primary};
   font-size: ${fontSizes.medium};
   font-family: ${fonts.SFMono};
   font-weight: normal;

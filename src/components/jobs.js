@@ -68,7 +68,7 @@ const Tab = styled.button`
   white-space: nowrap;
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.smallish};
-  color: ${props => (props.isActive ? colors.green : colors.lightGrey)};
+  color: ${props => (props.isActive ? colors.primary : colors.lightGrey)};
   ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
     ${mixins.flexCenter};
@@ -85,7 +85,7 @@ const Tab = styled.button`
 `;
 const Highlighter = styled.span`
   display: block;
-  background: ${colors.green};
+  background: ${colors.primary};
   width: 2px;
   height: ${theme.tabHeight}px;
   border-radius: ${theme.borderRadius};
@@ -145,7 +145,7 @@ const TabContent = styled.div`
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${colors.green};
+        color: ${colors.primary};
         line-height: ${fontSizes.xlarge};
       }
     }
@@ -161,7 +161,7 @@ const JobTitle = styled.h4`
   margin-bottom: 5px;
 `;
 const Company = styled.span`
-  color: ${colors.green};
+  color: ${colors.primary};
 `;
 const JobDetails = styled.h5`
   font-family: ${fonts.SFMono};

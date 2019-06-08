@@ -1,5 +1,7 @@
 const theme = {
   colors: {
+    primary: '#52b7ff',
+    transPrimary: 'rgba(113, 175, 255, 0.07)',
     dark: '#000007',
     darkestNavy: '#01050b',
     darkNavy: '#020c1b',

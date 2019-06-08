@@ -17,7 +17,7 @@ const HeroContainer = styled(Section)`
   }
 `;
 const Hi = styled.h1`
-  color: ${colors.green};
+  color: ${colors.primary};
   margin: 0 0 20px 3px;
   font-size: ${fontSizes.medium};
   font-family: ${fonts.SFMono};
