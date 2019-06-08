@@ -1,22 +1,47 @@
 import React from 'react';
 
 const IconLogo = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96">
+  <svg
+    width="214px"
+    height="250px"
+    viewBox="0 0 214 250"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
     <title>Logo</title>
-    <g id="Logo" transform="translate(-8.000000, -2.000000)">
-      <g transform="translate(11.000000, 5.000000)">
-        <path
-          d="M45.691667,45.15 C48.591667,46.1 50.691667,48.95 50.691667,52.2 C50.691667,57.95 46.691667,61 40.291667,61 L28.541667,61 L28.541667,30.3 L39.291667,30.3 C45.691667,30.3 49.691667,33.15 49.691667,38.65 C49.691667,41.95 47.941667,44.35 45.691667,45.15 Z M33.591667,43.2 L39.241667,43.2 C42.791667,43.2 44.691667,41.85 44.691667,38.95 C44.691667,36.05 42.791667,34.8 39.241667,34.8 L33.591667,34.8 L33.591667,43.2 Z M33.591667,47.5 L33.591667,56.5 L40.191667,56.5 C43.691667,56.5 45.591667,54.75 45.591667,52 C45.591667,49.2 43.691667,47.5 40.191667,47.5 L33.591667,47.5 Z"
-          fill="#64FFDA"
-        />
-        <polygon
-          id="Shape"
-          stroke="#64FFDA"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          points="39 0 0 22 0 67 39 90 78 68 78 23"
-        />
+    <g id="Index-Hero" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g id="Artboard" transform="translate(-613.000000, -278.000000)">
+        <g id="Favicon-Cube" transform="translate(595.000000, 278.000000)">
+          <g id="Blue-Cube">
+            <g id="Group">
+              <g id="Base-Cube">
+                <g id="Group" transform="translate(1.750000, 0.000000)">
+                  <polygon
+                    id="outer-cube"
+                    fill="#4A4A4A"
+                    points="123.25 0 229.987631 62.5 229.987631 187.5 123.25 250 16.512369 187.5 16.512369 62.5"></polygon>
+                  <polygon
+                    id="floor"
+                    fill="#303030"
+                    points="16.5125 187.5 123.25 250 229.9875 187.5 123.25 125"></polygon>
+                  <polygon
+                    id="ceiling"
+                    fill="#303030"
+                    points="16.5125 62.5 123.25 125 229.9875 62.5 123.25 0"></polygon>
+                  <polygon
+                    id="inner-cube"
+                    fillOpacity="0.8"
+                    fill="#FFFFFF"
+                    points="123.25 57 181.273702 91 181.273702 159 123.25 193 65.2262979 159 65.2262979 91"></polygon>
+                </g>
+              </g>
+              <polygon
+                id="colored-side"
+                fillOpacity="0.7"
+                fill="#247EBD"
+                points="18.2625 62.5 125 125 125 250 18.2625 187.5"></polygon>
+            </g>
+          </g>
+        </g>
       </g>
     </g>
   </svg>
