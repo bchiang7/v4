@@ -2,7 +2,7 @@
 date: '2017-01-01'
 title: 'Research Assistant'
 company: 'CAU Kiel'
-location: 'CAU Kiel, Germany'
+location: 'Kiel, Germany'
 range: '2017'
 url: 'https://web.northeastern.edu/scout/'
 ---

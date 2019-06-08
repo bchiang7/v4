@@ -7,7 +7,7 @@ range: 'Jul 2018 - Present'
 url: 'https://freiheit.com/'
 ---
 
-- Write modern, performant and maintainable code for a industry-changing project of a large automotive corporation
+- Write modern, performant and maintainable code for an industry-changing project of a large automotive corporation
 
 - Work in a micro-service environment powered by Kubernetes in the Azure cloud.
 
@@ -15,4 +15,4 @@ url: 'https://freiheit.com/'
 
 - Maintain a CI/CD pipeline based on Jenkins and Spinnaker - also experimented with canary deployments
 
-- Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis
+<!-- - Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis -->
