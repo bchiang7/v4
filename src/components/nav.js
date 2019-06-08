@@ -42,6 +42,10 @@ const Navbar = styled.nav`
 `;
 const Logo = styled.div`
   ${mixins.flexCenter};
+  flex-direction: row;
+`;
+const WebsiteTitle = styled.a`
+  margin: 0 0 0 20px;
 `;
 const LogoLink = styled.a`
   display: block;
@@ -241,6 +245,9 @@ class Nav extends Component {
                   <LogoLink href="/" aria-label="home">
                     <IconLogo />
                   </LogoLink>
+                  <WebsiteTitle href="#" aria-label="Home">
+                    dtrautwein.eu
+                  </WebsiteTitle>
                 </Logo>
               </CSSTransition>
             )}
