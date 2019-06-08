@@ -191,9 +191,11 @@ const Projects = ({ data }) => {
         </TransitionGroup>
       </ProjectsGrid>
 
-      <ShowMoreButton onClick={() => setShowMore(!showMore)}>
-        {showMore ? 'Fewer' : 'More'} Projects
-      </ShowMoreButton>
+      {projects.length > 6 && (
+        <ShowMoreButton onClick={() => setShowMore(!showMore)}>
+          {showMore ? 'Fewer' : 'More'} Projects
+        </ShowMoreButton>
+      )}
     </ProjectsContainer>
   );
 };
