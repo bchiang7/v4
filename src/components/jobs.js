@@ -209,7 +209,7 @@ const Jobs = ({ data }) => {
           {data &&
             data.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+              const { title, url, company, range, location } = frontmatter;
               return (
                 <TabContent
                   key={i}
@@ -229,7 +229,9 @@ const Jobs = ({ data }) => {
                     </Company>
                   </JobTitle>
                   <JobDetails>
-                    <span>{range}</span>
+                    <span>
+                      {range} in {location}
+                    </span>
                   </JobDetails>
                   <div dangerouslySetInnerHTML={{ __html: html }} />
                 </TabContent>
