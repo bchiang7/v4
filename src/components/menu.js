@@ -69,12 +69,12 @@ const NavLink = styled(AnchorLink)`
   padding: 3px 20px 20px;
   width: 100%;
 `;
-const ResumeLink = styled.a`
-  ${mixins.bigButton};
-  padding: 18px 50px;
-  margin: 10% auto 0;
-  width: max-content;
-`;
+// const ResumeLink = styled.a`
+//   ${mixins.bigButton};
+//   padding: 18px 50px;
+//   margin: 10% auto 0;
+//   width: max-content;
+// `;
 
 const Menu = ({ menuOpen, toggleMenu }) => {
   const handleMenuClick = e => {
@@ -103,9 +103,9 @@ const Menu = ({ menuOpen, toggleMenu }) => {
                 </NavListItem>
               ))}
           </NavList>
-          <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">
+          {/* <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">
             Resume
-          </ResumeLink>
+          </ResumeLink> */}
         </NavLinks>
       </Sidebar>
     </MenuContainer>

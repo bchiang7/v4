@@ -155,11 +155,11 @@ const NavListItem = styled.li`
 const NavLink = styled(AnchorLink)`
   padding: 12px 10px;
 `;
-const ResumeLink = styled.a`
-  ${mixins.smallButton};
-  margin-left: 10px;
-  font-size: ${fontSizes.smallish};
-`;
+// const ResumeLink = styled.a`
+//   ${mixins.smallButton};
+//   margin-left: 10px;
+//   font-size: ${fontSizes.smallish};
+// `;
 
 const DELTA = 5;
 
@@ -280,7 +280,7 @@ class Nav extends Component {
               </TransitionGroup>
             </NavList>
 
-            <TransitionGroup>
+            {/* <TransitionGroup>
               {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
                   <div style={{ transitionDelay: `600ms` }}>
@@ -293,7 +293,7 @@ class Nav extends Component {
                   </div>
                 </CSSTransition>
               )}
-            </TransitionGroup>
+            </TransitionGroup> */}
           </NavLinks>
         </Navbar>
 
