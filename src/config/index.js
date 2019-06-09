@@ -1,7 +1,7 @@
 module.exports = {
   siteTitle: 'Dennis Trautwein | Software Engineer',
   siteDescription:
-    'Dennis Trautwein is a software engineer based in Hamburg, Germany who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Dennis Trautwein is a physicist working as a software engineer based in Hamburg, Germany currently specializing in building highly available, scalable cloud native applications.',
   siteKeywords:
     'Dennis Trautwein, Dennis, Trautwein, dennis-tra, software, backend, engineer, physicist, kiel, hamburg, cloud developer, golang, germany',
   siteUrl: 'https://dtrautwein.eu',
