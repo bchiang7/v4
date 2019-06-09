@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/dennis-tra/',
+      url: 'https://www.linkedin.com/in/dennis-trautwein-6a4307106',
     },
     // {
     //   name: 'Codepen',
