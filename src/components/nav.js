@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Link } from 'gatsby';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
@@ -44,7 +43,8 @@ const Navbar = styled.nav`
 const Logo = styled.div`
   ${mixins.flexCenter};
 `;
-const LogoLink = styled(Link)`
+const LogoLink = styled.a`
+  display: block;
   color: ${colors.green};
   width: 42px;
   height: 42px;
@@ -238,7 +238,7 @@ class Nav extends Component {
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
-                  <LogoLink to="/" aria-label="Home">
+                  <LogoLink href="/" aria-label="home">
                     <IconLogo />
                   </LogoLink>
                 </Logo>
