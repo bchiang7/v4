@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '2'
 title: 'Spotify Profile'
 cover: './demo.png'
 github: 'https://github.com/bchiang7/spotify-profile'
@@ -8,7 +8,7 @@ tech:
   - React
   - Node.js
   - Express
-  - Styled Components
+  - Spotify Web API
 show: 'true'
 ---
 
