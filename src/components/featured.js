@@ -15,7 +15,6 @@ const FeaturedContainer = styled(Section)`
 `;
 const ContentContainer = styled.div`
   position: relative;
-  z-index: 2;
   grid-column: 1 / 7;
   grid-row: 1 / -1;
   ${media.thone`
@@ -44,11 +43,13 @@ const ProjectName = styled.h5`
 `;
 const ProjectDescription = styled.div`
   ${mixins.boxShadow};
+  position: relative;
+  z-index: 2;
+  padding: 25px;
   background-color: ${colors.lightNavy};
   color: ${colors.lightSlate};
-  padding: 25px;
-  border-radius: ${theme.borderRadius};
   font-size: ${fontSizes.large};
+  border-radius: ${theme.borderRadius};
   ${media.thone`
     background-color: transparent;
     padding: 20px 0;
