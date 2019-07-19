@@ -145,8 +145,7 @@ const ImgContainer = styled.a`
     bottom: 0;
     z-index: 3;
     transition: ${theme.transition};
-    background-color: ${colors.primaryColor};
-    mix-blend-mode: screen;
+    background-color: ${colors.transBackground};
   }
 `;
 const Project = styled.div`

@@ -22,14 +22,14 @@ const theme = {
     darkBlue: '#1D7FFC',
     highlight: 'rgba(41, 61, 90, 0.99)',
     transGreen: 'rgba(79,107,255,0.07)',
-    transNavy: 'rgba(10, 25, 47, 0.7)',
     shadowNavy: 'rgb(0,0,0,0.7)',
 
     primaryColor: '#70FB93',
-    primaryColorDark: '#011606',
+    primaryColorDark: '#151515',
 
     bodyColor: '#061108',
     bodyBackground: '#121212',
+    transBackground: 'rgba(18,18,18,0.7)',
     // 021109
     navBackground: '#121212',
   },
