@@ -1,19 +1,22 @@
 ---
 title: 'About Me'
-avatar: './me.jpg'
+avatar: './me.png'
 skills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
-  - React
-  - Vue
-  - Node.js
-  - Express
-  - GraphQL
-  - NativeScript
+  - Java / Kotlin
+  - Android
+  - Ethereum
+  - Spring-Boot
+  - RxJava
+  - Docker
+  - REST
+  - Microservices
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
+Hello! I'm Tudor, a software engineer based in Cluj-Napoca, Romania who enjoys building things that live on the web.
+I develop military grade mobile apps that provide intuitive, lag-free user interfaces with fast and scalable backends.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+Shortly after graduating from [Babeș-Bolyai](https://www.ccis.northeastern.edu/),
+I joined the engineering team at [Serv[US]tech](http://servustech.com/) where I work on a wide
+variety of interesting and meaningful projects on a daily basis.
 
-Here's a few technologies I've been working with recently:
+Here's a short list of technologies I've been working with recently:
