@@ -1,7 +1,7 @@
 ---
 title: 'Hi, my name is'
 name: 'Tudor Pop'
-subtitle: 'I build things for Android, Distributed Systems and Blockchains.'
+subtitle: 'I build things for the Web3.0 and Android'
 contactText: 'Get In Touch'
 ---
 

@@ -1,38 +1,30 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteTitle: 'Tudor Pop | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'I\'m a software engineer based in Cluj-Napoca (Romania), specialised in building (and occasionally designing) exceptional, high-quality systems and applications.',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+    'Tudor Pop, Tudor, tudorpop, mobile engineer, blockchain engineer, blockchain developer, ethereum, golang',
+  siteUrl: 'https://tudor-pop.com',
   siteLanguage: 'en_US',
 
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
 
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
-  github: 'https://github.com/bchiang7/',
+  name: 'Tudor Pop',
+  location: 'Cluj-Napoca, Romania',
+  email: 'tudor14pop@gmail.com',
+  github: 'https://github.com/poptudor/',
   socialMedia: [
     {
       name: 'Github',
-      url: 'https://github.com/bchiang7/',
+      url: 'https://github.com/poptudor/',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7/',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7/',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7/',
+      url: 'https://www.linkedin.com/in/tudor-pop-21958bb5/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/TudorPop_',
     },
   ],
 
@@ -55,8 +47,8 @@ module.exports = {
     },
   ],
 
-  twitterHandle: '@bchiang7',
-  googleAnalyticsID: 'UA-45666519-2',
+  twitterHandle: '@TudorPop_',
+  // googleAnalyticsID: 'UA-45666519-2',
 
   navHeight: 100,
 
