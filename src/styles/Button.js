@@ -3,9 +3,9 @@ import theme from './theme';
 const { colors, fontSizes, fonts } = theme;
 
 const Button = styled.button`
-  color: ${colors.green};
+  color: ${colors.primaryColor};
   background-color: transparent;
-  border: 1px solid ${colors.green};
+  border: 1px solid ${colors.primaryColor};
   border-radius: ${theme.borderRadius};
   font-size: ${fontSizes.smallish};
   font-family: ${fonts.SFMono};

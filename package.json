@@ -32,7 +32,7 @@
   "dependencies": {
     "animejs": "^3.0.1",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.13.21",
+    "gatsby": "^2.13.28",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-google-analytics": "^2.1.4",
     "gatsby-plugin-manifest": "^2.2.3",
@@ -55,7 +55,8 @@
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.2.1",
     "scrollreveal": "^4.0.5",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "@upstatement/eslint-config": "0.4.2",

@@ -59,7 +59,7 @@ const NavListItem = styled.li`
   &:before {
     display: block;
     content: '0' counter(item) '.';
-    color: ${colors.green};
+    color: ${colors.primaryColor};
     font-size: ${fontSizes.small};
     margin-bottom: 5px;
   }

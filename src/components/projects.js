@@ -58,7 +58,7 @@ const ProjectHeader = styled.div`
   margin-bottom: 30px;
 `;
 const Folder = styled.div`
-  color: ${colors.green};
+  color: ${colors.primaryColor};
   svg {
     width: 40px;
     height: 40px;

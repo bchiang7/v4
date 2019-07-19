@@ -40,7 +40,7 @@ const Skill = styled.li`
     content: '▹';
     position: absolute;
     left: 0;
-    color: ${colors.green};
+    color: ${colors.primaryColor};
     font-size: ${fontSizes.small};
     line-height: 12px;
   }
@@ -65,7 +65,7 @@ const AvatarContainer = styled.a`
   width: 100%;
   position: relative;
   border-radius: ${theme.borderRadius};
-  background-color: ${colors.green};
+  background-color: ${colors.primaryColor};
   margin-left: -20px;
   &:hover,
   &:focus {
@@ -98,7 +98,7 @@ const AvatarContainer = styled.a`
     mix-blend-mode: screen;
   }
   &:after {
-    border: 2px solid ${colors.green};
+    border: 2px solid ${colors.primaryColor};
     top: 20px;
     left: 20px;
     z-index: -1;

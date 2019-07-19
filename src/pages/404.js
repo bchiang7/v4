@@ -11,7 +11,7 @@ const MainContainer = styled(Main)`
   height: 100vh !important;
 `;
 const Title = styled.h1`
-  color: ${colors.green};
+  color: ${colors.primaryColor};
   font-family: ${fonts.SFMono};
   font-size: 12vw;
   line-height: 1;
