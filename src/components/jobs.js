@@ -80,7 +80,7 @@ const Tab = styled.button`
   `};
   &:hover,
   &:focus {
-    background-color: ${colors.lightNavy};
+    background-color: ${colors.primaryColorDark};
   }
 `;
 const Highlighter = styled.span`
