@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
-import { IconLogo } from '@components/icons';
+import { IconLoader } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -239,7 +239,7 @@ class Nav extends Component {
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
                   <LogoLink href="/" aria-label="home">
-                    <IconLogo />
+                    <IconLoader />
                   </LogoLink>
                 </Logo>
               </CSSTransition>
