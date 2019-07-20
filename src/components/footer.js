@@ -84,7 +84,7 @@ const Footer = () => (
         href="https://github.com/bchiang7/v4"
         target="_blank"
         rel="nofollow noopener noreferrer">
-        <div>Loud Shoutout to Brittany Chiang who Designed &amp; originally Built this website</div>
+        <div>This website is a fork of Brittany Chiangs personal site</div>
       </GithubLink>
     </Copy>
   </FooterContainer>
