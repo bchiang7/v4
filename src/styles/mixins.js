@@ -10,6 +10,13 @@ const mixins = {
     align-items: center;
     align-content: center;
   `,
+  flexCenterVertical: css`
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  `,
 
   flexBetween: css`
     display: flex;

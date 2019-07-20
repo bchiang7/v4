@@ -43,6 +43,7 @@ const SocialLink = styled.a`
   }
 `;
 const Copy = styled.div`
+  ${mixins.flexCenterVertical};
   margin: 10px 0;
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xsmall};
@@ -98,24 +99,35 @@ const Footer = ({ githubInfo }) => (
       </SocialItemList>
     </SocialContainer>
     <Copy>
+      <p>Credits</p>
+      <GithubLink
+        href="https://gatsby-hello-friend.now.sh/"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        <div>panr</div>
+        {githubInfo.stars && githubInfo.forks && (
+          <GithubInfo/>
+        )}
+      </GithubLink>
       <GithubLink
         href="https://github.com/bchiang7/v4"
         target="_blank"
         rel="nofollow noopener noreferrer">
-        <div>Inspired by the work of Brittany Chiang</div>
+        <div>Brittany Chiang</div>
         {githubInfo.stars && githubInfo.forks && (
-          <GithubInfo>
-            <span>
-              <IconStar />
-              <span>{githubInfo.stars}</span>
-            </span>
-            <span>
-              <IconFork />
-              <span>{githubInfo.forks}</span>
-            </span>
-          </GithubInfo>
+          <GithubInfo/>
         )}
       </GithubLink>
+      <GithubLink
+        href="https://themes.gohugo.io//theme/hugo-theme-hello-friend-ng/"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        <div>rhazdon</div>
+        {githubInfo.stars && githubInfo.forks && (
+          <GithubInfo/>
+        )}
+      </GithubLink>
+
     </Copy>
   </FooterContainer>
 );
