@@ -8,6 +8,7 @@ const mixins = {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
   `,
 
   flexBetween: css`

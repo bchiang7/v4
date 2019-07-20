@@ -44,10 +44,12 @@ const Logo = styled.div`
   ${mixins.flexCenter};
 `;
 const LogoLink = styled.a`
-  display: block;
+  ${mixins.flexCenter};
+  background-color: ${colors.bodyBackground};
+  z-index: 99;
   color: ${colors.primaryColor};
-  width: 42px;
-  height: 42px;
+  width: 100%;
+  height: 40px;
   &:hover,
   &:focus {
     svg {
@@ -60,6 +62,19 @@ const LogoLink = styled.a`
     user-select: none;
   }
 `;
+const LoaderText = styled.div`
+  color: ${colors.primaryColor};
+  font-size: 1em;
+  height: 40px;
+`;
+
+const LogoWrapper = styled.div`
+  width: max-content;
+  max-width: 40px;
+  transition: ${theme.transition};
+  height: 40px;
+`;
+
 const Hamburger = styled.div`
   ${mixins.flexCenter};
   overflow: visible;
@@ -239,7 +254,10 @@ class Nav extends Component {
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
                   <LogoLink href="/" aria-label="home">
-                    <IconLoader />
+                    <LoaderText>>&nbsp;welcome</LoaderText>
+                    <LogoWrapper>
+                      <IconLoader />
+                    </LogoWrapper>
                   </LogoLink>
                 </Logo>
               </CSSTransition>

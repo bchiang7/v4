@@ -20,6 +20,7 @@ const LoaderContainer = styled.div`
   z-index: 99;
 `;
 const LogoWrapper = styled.div`
+  ${mixins.flexCenter};
   width: max-content;
   max-width: 100px;
   transition: ${theme.transition};
