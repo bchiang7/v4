@@ -91,10 +91,8 @@ const Loader = ({ finishLoading }) => {
   return (
     <LoaderContainer className="loader">
       <Helmet bodyAttributes={{ class: `hidden` }} />
-      <LoaderText>root > </LoaderText>
-      <LogoWrapper isMounted={isMounted}>
-        <IconLoader />
-      </LogoWrapper>
+      <LoaderText>Crunching...</LoaderText>
+
     </LoaderContainer>
   );
 };
