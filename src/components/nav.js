@@ -69,6 +69,7 @@ const LoaderText = styled.div`
 `;
 
 const LogoWrapper = styled.div`
+  align-self: center;
   width: max-content;
   max-width: 40px;
   transition: ${theme.transition};
