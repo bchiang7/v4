@@ -2,11 +2,16 @@
 date: '2019-03-11'
 title: 'Rave Guardian'
 cover: './raveguardian.png'
+github: ''
 external: 'https://play.google.com/store/apps/details?id=com.ravemobilesafety.raveguardian'
 tech:
   - Android
-  - Kotlin
+  - Java/Kotlin
   - REST
+  - Databinding
+  - Livedata
+  - Retrofit
+  - Rx
 show: 'true'
 ---
 
