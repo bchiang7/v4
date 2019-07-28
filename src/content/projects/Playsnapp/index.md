@@ -11,4 +11,6 @@ tech:
 show: 'true'
 ---
 
-P2P video sharing app with the ability to create parallel video streams. 
+P2P video sharing app with the ability to create parallel video streams. You could create a secure
+group call with your friends trough invites or chat. Users had the ability to record remote video
+streams and to create short films out of them.
