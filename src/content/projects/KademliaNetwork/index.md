@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '2019-04-01'
 title: 'Kademlia Network'
 cover: './kad.png'
 github: 'https://github.com/PopTudor/kad-go'

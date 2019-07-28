@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2018-11-01'
 title: 'Blockchain'
 image: './blockchain.png'
 github: 'https://github.com/PopTudor/go-basic-blockchain'

@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '2016-07-01'
 title: 'Firebase Cloud Messaging'
 cover: './firebase.png'
 github: 'https://github.com/PopTudor/Java-fcm'
