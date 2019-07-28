@@ -1,11 +1,11 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "Resume",
+  "description": "Personal Website",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Tudor Pop <tudor14pop@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/PopTudor/v4"
   },
   "keywords": [
     "gatsby"
@@ -40,14 +40,14 @@
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-robots-txt": "^1.5.0",
-    "gatsby-plugin-sharp": "^2.2.7",
+    "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-plugin-sitemap": "^2.2.3",
     "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^3.1.6",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-remark": "^2.6.5",
-    "gatsby-transformer-sharp": "^2.2.3",
+    "gatsby-transformer-sharp": "^2.2.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-anchor-link-smooth-scroll": "^1.0.12",

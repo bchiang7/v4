@@ -1,9 +1,9 @@
 ---
 date: '2'
-title: 'Pin Simple'
+title: 'Pixsee'
 cover: './pin-simple.png'
-github: 'https://github.com/bchiang7/pin-simple'
-external: 'https://pin-simple.herokuapp.com/'
+github: ''
+external: 'https://www.facebook.com/Pixsee-1723883051234334/?eid=ARDggZx4c2jc0XjFUr10GspZ6RChDFOHTPWCDPQemNnK0sua-wagT1Mtxtgs9seOFj1Tm87HkC5v-kze'
 tech:
   - Vue
   - Vue Router

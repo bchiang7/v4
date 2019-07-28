@@ -1,7 +1,7 @@
 ---
 date: '2019-04-01'
 title: 'Airthereum'
-image: ''
+cover: './airthereum.png'
 github: ''
 external: 'https://flyapp.io/'
 tech:
@@ -10,6 +10,7 @@ tech:
   - RabbitMQ
   - Postgres
   - Microservices
+
 show: 'true'
 ---
 

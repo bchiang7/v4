@@ -1,4 +1,5 @@
 import IconLoader from './loader';
+import IconLoaderIntro from './loader_intro';
 import IconLogo from './logo';
 import IconGithub from './github';
 import IconLinkedin from './linkedin';
@@ -26,4 +27,5 @@ export {
   IconStar,
   IconFork,
   FormattedIcon,
+  IconLoaderIntro,
 };

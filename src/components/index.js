@@ -8,6 +8,7 @@ import Hero from './hero';
 import Jobs from './jobs';
 import Layout from './layout';
 import Loader from './loader';
+import LoaderIntro from './loader_intro';
 import Menu from './menu';
 import Nav from './nav';
 import Projects from './projects';
@@ -28,4 +29,5 @@ export {
   Nav,
   Projects,
   Social,
+  LoaderIntro,
 };

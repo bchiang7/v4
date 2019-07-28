@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
-import { IconLoader } from '@components/icons';
+import { IconLoaderIntro } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins } from '@styles';
 const { colors } = theme;
@@ -38,7 +38,7 @@ const LogoWrapper = styled.div`
   }
 `;
 
-const Loader = ({ finishLoading }) => {
+const LoaderIntro = ({ finishLoading }) => {
   const animate = () => {
     const loader = anime.timeline({
       complete: () => finishLoading(),
@@ -88,14 +88,14 @@ const Loader = ({ finishLoading }) => {
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
       <LogoWrapper isMounted={isMounted}>
-        <IconLoader />
+        <IconLoaderIntro />
       </LogoWrapper>
     </LoaderContainer>
   );
 };
 
-Loader.propTypes = {
+LoaderIntro.propTypes = {
   finishLoading: PropTypes.func.isRequired,
 };
 
-export default Loader;
+export default LoaderIntro;

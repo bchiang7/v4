@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'Blockchain'
-cover: './blockchain.png'
+image: './blockchain.png'
 github: 'https://github.com/PopTudor/go-basic-blockchain'
 external: 'https://bitcoin.org/bitcoin.pdf'
 tech:
