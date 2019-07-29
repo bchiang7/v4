@@ -10,3 +10,4 @@ url: 'http://www.romanianstartups.com/startup/style-jukebox/'
 - Worked with SQL database to manage user accounts and associated music using HttpUrlConnection, Jackson and AsyncTask
 - Synchronized background music playback with UI screen and notifications.
 - Help to improve the experience for users with negative reviews on Google Playstore.
+- Secure app with self sign certificate
