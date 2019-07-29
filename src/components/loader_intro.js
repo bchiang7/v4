@@ -37,7 +37,10 @@ const LogoWrapper = styled.div`
     }
   }
 `;
-
+const LoaderText = styled.div`
+  color: ${colors.offWhite};
+  font-size: 2em;
+`;
 const LoaderIntro = ({ finishLoading }) => {
   const animate = () => {
     const loader = anime.timeline({
@@ -88,7 +91,7 @@ const LoaderIntro = ({ finishLoading }) => {
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
       <LogoWrapper isMounted={isMounted}>
-        <IconLoaderIntro />
+        <LoaderText>Loading</LoaderText>
       </LogoWrapper>
     </LoaderContainer>
   );
