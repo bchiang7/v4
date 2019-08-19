@@ -2,15 +2,11 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status)](https://app.netlify.com/sites/brittanychiang/deploys)
 
-The fourth iteration of my personal site built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/).
+> The fourth iteration of brittanychiang.com built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/)
 
-> 📢 **PSA for those who want to fork or copy this repo and use it for their own site:**
->
-> Please be a decent person and give me proper credit by linking back to my website! Refer to this handy [quora post](https://www.quora.com/Is-it-bad-to-copy-other-peoples-code) if you're not sure.
+[Looking for v3?](https://bchiang7.github.io/) 👀
 
-👀 [Looking for v3?](https://bchiang7.github.io/)
-
-## 🚀 Quick Start
+## 🛠 Installation
 
 1. **Install the Gatsby CLI**
 
@@ -18,7 +14,7 @@ The fourth iteration of my personal site built with [Gatsby](https://www.gatsbyj
    npm install -g gatsby-cli
    ```
 
-2. **Install and switch to the correct version of Node using NVM**
+2. **Install and use the correct version of Node using NVM**
 
    ```sh
    nvm install
@@ -27,68 +23,45 @@ The fourth iteration of my personal site built with [Gatsby](https://www.gatsbyj
 3. **Install dependencies**
 
    ```sh
-   yarn install
+   yarn
    ```
 
 4. **Start the development server**
 
    ```sh
-   yarn start
+   npm start
    ```
 
-## Building and Running for Production
+## 🚀 Building and Running for Production
 
-In addition to the development server started with `yarn start`, you can also generate a full static production build and serve that to preview the site as it will appear once deployed:
+1. Generate a full static production build
 
-```sh
-yarn build
-```
+   ```sh
+   npm run build
+   ```
 
-```sh
-yarn serve
-```
+1. Preview the site as it will appear once deployed
 
-## 🧐 What's inside?
+   ```sh
+   npm run serve
+   ```
 
-A quick look at the top-level files and directories in this project.
+## 🎨 Colors
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    ├── README.md
-    └── yarn.lock
+|                             Hex                             | Color          |
+| :---------------------------------------------------------: | -------------- |
+| ![](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` | Green          |
+| ![](https://via.placeholder.com/10/0a192f?text=+) `#0a192f` | Navy           |
+| ![](https://via.placeholder.com/10/333f58?text=+) `#333f58` | Dark Grey      |
+| ![](https://via.placeholder.com/10/8892b0?text=+) `#8892b0` | Slate          |
+| ![](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` | Light Slate    |
+| ![](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` | Lightest Slate |
+| ![](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` | White          |
 
-1. **`/node_modules`**: The directory where all of the modules of code that your project depends on (npm packages) are automatically installed.
+## 🚨 Forking this repo
 
-2. **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser), like your site header, or a page template. “Src” is a convention for “source code”.
+Many people have contacted me asking me if they can use this code for their own websites. The answer to that question is _usually_ "yes", with attribution. There are some cases, such as using this code for a business or something that is greater than a personal project, that I may be less comfortable saying yes to. If in doubt, please don't hesitate to ask me.
 
-3. **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+I value keeping this site open source, but as you all know, _**plagiarism is bad**_. I spent a non-negligible amount of effort developing, designing, and trying to perfect this iteration of my website, and I am proud of it! All I ask is to not claim this effort as your own.
 
-4. **`.prettierrc`**: This is a configuration file for a tool called [Prettier](https://prettier.io/), which is a tool to help keep the formatting of your code consistent.
-
-5. **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://next.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://next.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby node APIs](https://next.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://next.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9. **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. (You won’t change this file directly).
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-13. **`yarn.lock`**: [Yarn](https://yarnpkg.com/) is a package manager alternative to npm. You can use either yarn or npm, though all of the Gatsby docs reference npm. This file serves essentially the same purpose as `package-lock.json`, just for a different package management system.
+So, feel free to fork this repo. If you do, please just give me proper credit by linking back to my website, https://brittanychiang.com. Refer to this handy [quora post](https://www.quora.com/Is-it-bad-to-copy-other-peoples-code) if you're not sure what to do. Thanks!
