@@ -48,15 +48,15 @@
 
 ## 🎨 Colors
 
-|                             Hex                             | Color          |
-| :---------------------------------------------------------: | -------------- |
-| ![](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` | Green          |
-| ![](https://via.placeholder.com/10/0a192f?text=+) `#0a192f` | Navy           |
-| ![](https://via.placeholder.com/10/333f58?text=+) `#333f58` | Dark Grey      |
-| ![](https://via.placeholder.com/10/8892b0?text=+) `#8892b0` | Slate          |
-| ![](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` | Light Slate    |
-| ![](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` | Lightest Slate |
-| ![](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` | White          |
+| Color          | Hex                                                         |
+| -------------- | ----------------------------------------------------------- |
+| Navy           | ![](https://via.placeholder.com/10/0a192f?text=+) `#0a192f` |
+| Dark Grey      | ![](https://via.placeholder.com/10/333f58?text=+) `#333f58` |
+| Slate          | ![](https://via.placeholder.com/10/8892b0?text=+) `#8892b0` |
+| Light Slate    | ![](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` |
+| Lightest Slate | ![](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
+| White          | ![](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
+| Green          | ![](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
 
 ## 🚨 Forking this repo
 
