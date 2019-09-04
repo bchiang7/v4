@@ -6,29 +6,29 @@ module.exports = {
     'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
   siteUrl: 'https://brittanychiang.com',
   siteLanguage: 'en_US',
-
+  googleAnalyticsID: 'UA-45666519-2',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
-
   name: 'Brittany Chiang',
   location: 'Boston, MA',
   email: 'brittany.chiang@gmail.com',
-  github: 'https://github.com/bchiang7/',
+  github: 'https://github.com/bchiang7',
+  twitterHandle: '@bchiang7',
   socialMedia: [
     {
       name: 'Github',
-      url: 'https://github.com/bchiang7/',
+      url: 'https://github.com/bchiang7',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7/',
+      url: 'https://www.linkedin.com/in/bchiang7',
     },
     {
       name: 'Codepen',
-      url: 'https://codepen.io/bchiang7/',
+      url: 'https://codepen.io/bchiang7',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7/',
+      url: 'https://www.instagram.com/bchiang7',
     },
     {
       name: 'Twitter',
@@ -55,11 +55,7 @@ module.exports = {
     },
   ],
 
-  twitterHandle: '@bchiang7',
-  googleAnalyticsID: 'UA-45666519-2',
-
   navHeight: 100,
-
   greenColor: '#64ffda',
   navyColor: '#0a192f',
   darkNavyColor: '#020c1b',
