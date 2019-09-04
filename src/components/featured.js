@@ -20,6 +20,7 @@ const ContentContainer = styled.div`
   ${media.thone`
     grid-column: 1 / -1;
     padding: 40px 40px 30px;
+    z-index: 5;
   `};
   ${media.phablet`padding: 30px 25px 20px;`};
 `;
@@ -37,6 +38,7 @@ const ProjectName = styled.h5`
   margin: 0 0 20px;
   color: ${colors.lightestSlate};
   ${media.tablet`font-size: 24px;`};
+  ${media.thone`color: ${colors.white};`};
   a {
     ${media.tablet`display: block;`};
   }
@@ -53,13 +55,16 @@ const ProjectDescription = styled.div`
   ${media.thone`
     background-color: transparent;
     padding: 20px 0;
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
   `};
   p {
     margin: 0;
   }
   a {
     ${mixins.inlineLink};
-    color: ${colors.white};
   }
 `;
 const TechList = styled.ul`
@@ -69,7 +74,7 @@ const TechList = styled.ul`
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.smallish};
-    color: ${colors.lightSlate};
+    color: ${colors.slate};
     margin-right: ${theme.margin};
     margin-bottom: 7px;
     white-space: nowrap;
@@ -88,6 +93,7 @@ const Links = styled.div`
   position: relative;
   margin-top: 10px;
   margin-left: -10px;
+  color: ${colors.lightestSlate};
   a {
     padding: 10px;
     svg {
@@ -155,7 +161,9 @@ const Project = styled.div`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   margin-bottom: 100px;
-  ${media.thone`margin-bottom: 70px;`};
+  ${media.thone`
+    margin-bottom: 70px;
+  `};
   &:last-of-type {
     margin-bottom: 0;
   }
