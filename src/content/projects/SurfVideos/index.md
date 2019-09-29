@@ -8,7 +8,7 @@ tech:
   - React
   - Axios
   - YouTube API
-show: 'true'
+show: 'false'
 ---
 
 Small React project to browse and search surf videos via the YouTube API.

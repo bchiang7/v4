@@ -1,32 +1,47 @@
-# V4
+<div align="center">
+  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/master/src/images/logo.png" width="100" />
+</div>
+<h1 align="center">
+  brittanychiang.com - v4
+</h1>
+<p align="center">
+  The fourth iteration of <a href="https://brittanychiang.com">brittanychiang.com</a> built with <a href="https://www.gatsbyjs.org/">Gatsby</a> and hosted with <a href="https://www.netlify.com/">Netlify</a>
+</p>
+<p align="center">
+  Previous iterations:
+  <a href="https://github.com/bchiang7/v1">v1</a>,
+  <a href="https://github.com/bchiang7/v2">v2</a>,
+  <a href="https://github.com/bchiang7/bchiang7.github.io">v3</a>
+</p>
+<div align="center">
+  <a href="https://app.netlify.com/sites/brittanychiang/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
+  </a>
+</div>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status)](https://app.netlify.com/sites/brittanychiang/deploys)
+![demo](https://raw.githubusercontent.com/bchiang7/v4/master/src/images/demo.png)
 
-> The fourth iteration of brittanychiang.com built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/)
+## 🛠 Installation & Set Up
 
-[Looking for v3?](https://bchiang7.github.io/) 👀
-
-## 🛠 Installation
-
-1. **Install the Gatsby CLI**
+1. Install the Gatsby CLI
 
    ```sh
    npm install -g gatsby-cli
    ```
 
-2. **Install and use the correct version of Node using NVM**
+2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
    ```sh
    nvm install
    ```
 
-3. **Install dependencies**
+3. Install dependencies
 
    ```sh
    yarn
    ```
 
-4. **Start the development server**
+4. Start the development server
 
    ```sh
    npm start
@@ -46,7 +61,7 @@
    npm run serve
    ```
 
-## 🎨 Colors
+## 🎨 Color Reference
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
