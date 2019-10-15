@@ -6,6 +6,12 @@ import styled from 'styled-components';
 import { GlobalStyle, theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
+// https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
+if (typeof window !== 'undefined') {
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]');
+}
+
 const SkipToContent = styled.a`
   position: absolute;
   top: auto;
@@ -39,7 +45,7 @@ const SkipToContent = styled.a`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [githubInfo, setGithubInfo] = useState({
     stars: null,
@@ -55,8 +61,25 @@ const Layout = ({ children }) => {
           stars: stargazers_count,
           forks: forks_count,
         });
-      });
+      })
+      .catch(e => console.error(e));
   }, []);
+
+  useEffect(() => {
+    if (isLoading) {
+      return;
+    }
+
+    if (location.hash) {
+      const id = location.hash.substring(1); // location.hash without the '#'
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [isLoading]);
 
   return (
     <StaticQuery
@@ -98,6 +121,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;
