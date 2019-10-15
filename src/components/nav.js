@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
@@ -148,7 +148,7 @@ const NavListItem = styled.li`
     font-size: ${fontSizes.xsmall};
   }
 `;
-const NavLink = styled(AnchorLink)`
+const NavLink = styled(Link)`
   padding: 12px 10px;
 `;
 const ResumeLink = styled.a`
@@ -266,7 +266,7 @@ class Nav extends Component {
                   navLinks.map(({ url, name }, i) => (
                     <CSSTransition key={i} classNames="fadedown" timeout={3000}>
                       <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
-                        <NavLink href={url}>{name}</NavLink>
+                        <NavLink to={url}>{name}</NavLink>
                       </NavListItem>
                     </CSSTransition>
                   ))}
