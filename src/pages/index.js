@@ -10,8 +10,8 @@ const MainContainer = styled(Main)`
   counter-reset: section;
 `;
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const IndexPage = ({ location, data }) => (
+  <Layout location={location}>
     <MainContainer id="content">
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
@@ -24,6 +24,7 @@ const IndexPage = ({ data }) => (
 );
 
 IndexPage.propTypes = {
+  location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 };
 
