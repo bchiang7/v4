@@ -13,10 +13,6 @@ const EmailContainer = styled.div`
   color: ${colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
-  div {
-    width: 100%;
-    margin: 0 auto;
-  }
 `;
 const EmailLinkWrapper = styled.div`
   display: flex;
@@ -56,7 +52,7 @@ const Email = () => {
 
   return (
     <EmailContainer>
-      <TransitionGroup>
+      <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={3000} classNames="fade">
             <EmailLinkWrapper>

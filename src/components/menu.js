@@ -21,7 +21,7 @@ const MenuContainer = styled.div`
   display: none;
   ${media.tablet`display: block;`};
 `;
-const Sidebar = styled.div`
+const Sidebar = styled.aside`
   ${mixins.flexCenter};
   flex-direction: column;
   background-color: ${colors.lightNavy};
