@@ -55,7 +55,7 @@ const Social = () => {
 
   return (
     <SocialContainer>
-      <TransitionGroup>
+      <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={3000} classNames="fade">
             <SocialItemList>

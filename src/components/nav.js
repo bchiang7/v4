@@ -132,9 +132,7 @@ const NavLinks = styled.div`
   ${media.tablet`display: none;`};
 `;
 const NavList = styled.ol`
-  div {
-    ${mixins.flexBetween};
-  }
+  ${mixins.flexBetween};
 `;
 const NavListItem = styled.li`
   margin: 0 10px;
@@ -234,7 +232,7 @@ class Nav extends Component {
           <body className={menuOpen ? 'blur' : ''} />
         </Helmet>
         <Navbar>
-          <TransitionGroup>
+          <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
@@ -246,7 +244,7 @@ class Nav extends Component {
             )}
           </TransitionGroup>
 
-          <TransitionGroup>
+          <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Hamburger onClick={this.toggleMenu}>
@@ -260,7 +258,7 @@ class Nav extends Component {
 
           <NavLinks>
             <NavList>
-              <TransitionGroup>
+              <TransitionGroup component={null}>
                 {isMounted &&
                   navLinks &&
                   navLinks.map(({ url, name }, i) => (
@@ -273,7 +271,7 @@ class Nav extends Component {
               </TransitionGroup>
             </NavList>
 
-            <TransitionGroup>
+            <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
                   <div style={{ transitionDelay: `600ms` }}>
