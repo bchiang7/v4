@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { theme, mixins } from '@styles';
 const { colors } = theme;
 
-const LoaderContainer = styled.div`
+const StyledContainer = styled.div`
   ${mixins.flexCenter};
   background-color: ${colors.darkNavy};
   position: fixed;
@@ -19,7 +19,7 @@ const LoaderContainer = styled.div`
   right: 0;
   z-index: 99;
 `;
-const LogoWrapper = styled.div`
+const StyledLogo = styled.div`
   width: max-content;
   max-width: 100px;
   transition: ${theme.transition};
@@ -83,13 +83,13 @@ const Loader = ({ finishLoading }) => {
   }, []);
 
   return (
-    <LoaderContainer className="loader">
+    <StyledContainer className="loader">
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
-      <LogoWrapper isMounted={isMounted}>
+      <StyledLogo isMounted={isMounted}>
         <IconLoader />
-      </LogoWrapper>
-    </LoaderContainer>
+      </StyledLogo>
+    </StyledContainer>
   );
 };
 

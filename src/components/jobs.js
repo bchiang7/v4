@@ -6,11 +6,11 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const JobsContainer = styled(Section)`
+const StyledContainer = styled(Section)`
   position: relative;
   max-width: 700px;
 `;
-const TabsContainer = styled.div`
+const StyledTabs = styled.div`
   display: flex;
   align-items: flex-start;
   position: relative;
@@ -18,7 +18,7 @@ const TabsContainer = styled.div`
     display: block;
   `};
 `;
-const Tabs = styled.ul`
+const StyledTabList = styled.ul`
   display: block;
   position: relative;
   width: max-content;
@@ -54,7 +54,7 @@ const Tabs = styled.ul`
     }
   }
 `;
-const Tab = styled.button`
+const StyledTabButton = styled.button`
   ${mixins.link};
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@ const Tab = styled.button`
     background-color: ${colors.lightNavy};
   }
 `;
-const Highlighter = styled.span`
+const StyledHighlight = styled.span`
   display: block;
   background: ${colors.green};
   width: 2px;
@@ -113,7 +113,7 @@ const Highlighter = styled.span`
     margin-left: 25px;
   `};
 `;
-const ContentContainer = styled.div`
+const StyledContent = styled.div`
   position: relative;
   padding-top: 12px;
   padding-left: 30px;
@@ -121,7 +121,7 @@ const ContentContainer = styled.div`
   ${media.tablet`padding-left: 20px;`};
   ${media.thone`padding-left: 0;`};
 `;
-const TabContent = styled.div`
+const StyledTabContent = styled.div`
   top: 0;
   left: 0;
   width: 100%;
@@ -154,16 +154,16 @@ const TabContent = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const JobTitle = styled.h4`
+const StyledJobTitle = styled.h4`
   color: ${colors.lightestSlate};
   font-size: ${fontSizes.xxlarge};
   font-weight: 500;
   margin-bottom: 5px;
 `;
-const Company = styled.span`
+const StyledCompany = styled.span`
   color: ${colors.green};
 `;
-const JobDetails = styled.h5`
+const StyledJobDetails = styled.h5`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.smallish};
   font-weight: normal;
@@ -181,16 +181,16 @@ const Jobs = ({ data }) => {
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
-    <JobsContainer id="jobs" ref={revealContainer}>
+    <StyledContainer id="jobs" ref={revealContainer}>
       <Heading>Where I&apos;ve Worked</Heading>
-      <TabsContainer>
-        <Tabs role="tablist">
+      <StyledTabs>
+        <StyledTabList role="tablist">
           {data &&
             data.map(({ node }, i) => {
               const { company } = node.frontmatter;
               return (
                 <li key={i}>
-                  <Tab
+                  <StyledTabButton
                     isActive={activeTabId === i}
                     onClick={() => setActiveTabId(i)}
                     role="tab"
@@ -199,19 +199,19 @@ const Jobs = ({ data }) => {
                     id={`tab${i}`}
                     tabIndex={activeTabId === i ? '0' : '-1'}>
                     <span>{company}</span>
-                  </Tab>
+                  </StyledTabButton>
                 </li>
               );
             })}
-          <Highlighter activeTabId={activeTabId} />
-        </Tabs>
-        <ContentContainer>
+          <StyledHighlight activeTabId={activeTabId} />
+        </StyledTabList>
+        <StyledContent>
           {data &&
             data.map(({ node }, i) => {
               const { frontmatter, html } = node;
               const { title, url, company, range } = frontmatter;
               return (
-                <TabContent
+                <StyledTabContent
                   key={i}
                   isActive={activeTabId === i}
                   id={`job${i}`}
@@ -219,25 +219,25 @@ const Jobs = ({ data }) => {
                   tabIndex="0"
                   aria-labelledby={`job${i}`}
                   aria-hidden={activeTabId !== i}>
-                  <JobTitle>
+                  <StyledJobTitle>
                     <span>{title}</span>
-                    <Company>
+                    <StyledCompany>
                       <span>&nbsp;@&nbsp;</span>
                       <a href={url} target="_blank" rel="nofollow noopener noreferrer">
                         {company}
                       </a>
-                    </Company>
-                  </JobTitle>
-                  <JobDetails>
+                    </StyledCompany>
+                  </StyledJobTitle>
+                  <StyledJobDetails>
                     <span>{range}</span>
-                  </JobDetails>
+                  </StyledJobDetails>
                   <div dangerouslySetInnerHTML={{ __html: html }} />
-                </TabContent>
+                </StyledTabContent>
               );
             })}
-        </ContentContainer>
-      </TabsContainer>
-    </JobsContainer>
+        </StyledContent>
+      </StyledTabs>
+    </StyledContainer>
   );
 };
 

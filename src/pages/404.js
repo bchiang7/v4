@@ -32,7 +32,7 @@ const HomeButton = styled(Link)`
 
 const NotFoundPage = ({ location }) => (
   <Layout location={location}>
-    <MainContainer id="content">
+    <MainContainer>
       <Title>404</Title>
       <Subtitle>Page Not Found</Subtitle>
       <HomeButton to="/">Go Home</HomeButton>

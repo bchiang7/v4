@@ -8,12 +8,12 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const FeaturedContainer = styled(Section)`
+const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
 `;
-const ContentContainer = styled.div`
+const StyledContent = styled.div`
   position: relative;
   grid-column: 1 / 7;
   grid-row: 1 / -1;
@@ -24,7 +24,7 @@ const ContentContainer = styled.div`
   `};
   ${media.phablet`padding: 30px 25px 20px;`};
 `;
-const FeaturedLabel = styled.h4`
+const StyledLabel = styled.h4`
   font-size: ${fontSizes.smallish};
   font-weight: normal;
   color: ${colors.green};
@@ -32,7 +32,7 @@ const FeaturedLabel = styled.h4`
   margin-top: 10px;
   padding-top: 0;
 `;
-const ProjectName = styled.h5`
+const StyledStyledProjectName = styled.h5`
   font-size: 28px;
   font-weight: 600;
   margin: 0 0 20px;
@@ -43,7 +43,7 @@ const ProjectName = styled.h5`
     ${media.tablet`display: block;`};
   }
 `;
-const ProjectDescription = styled.div`
+const StyledDescription = styled.div`
   ${mixins.boxShadow};
   position: relative;
   z-index: 2;
@@ -67,7 +67,7 @@ const ProjectDescription = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const TechList = styled.ul`
+const StyledTechList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin: 25px 0 10px;
@@ -87,7 +87,7 @@ const TechList = styled.ul`
     `};
   }
 `;
-const Links = styled.div`
+const StyledLinkWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
@@ -102,7 +102,7 @@ const Links = styled.div`
     }
   }
 `;
-const FeaturedImg = styled(Img)`
+const StyledFeaturedImg = styled(Img)`
   width: 100%;
   max-width: 100%;
   vertical-align: middle;
@@ -117,7 +117,7 @@ const FeaturedImg = styled(Img)`
     filter: grayscale(100%) contrast(1) brightness(80%);
   `};
 `;
-const ImgContainer = styled.a`
+const StyledImgContainer = styled.a`
   ${mixins.boxShadow};
   grid-column: 6 / -1;
   grid-row: 1 / -1;
@@ -135,7 +135,7 @@ const ImgContainer = styled.a`
   &:focus {
     background: transparent;
     &:before,
-    ${FeaturedImg} {
+    ${StyledFeaturedImg} {
       background: transparent;
       filter: none;
     }
@@ -155,7 +155,7 @@ const ImgContainer = styled.a`
     mix-blend-mode: screen;
   }
 `;
-const Project = styled.div`
+const StyledProject = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
@@ -168,7 +168,7 @@ const Project = styled.div`
     margin-bottom: 0;
   }
   &:nth-of-type(odd) {
-    ${ContentContainer} {
+    ${StyledContent} {
       grid-column: 7 / -1;
       text-align: right;
       ${media.thone`
@@ -177,19 +177,19 @@ const Project = styled.div`
       `};
       ${media.phablet`padding: 30px 25px 20px;`};
     }
-    ${TechList} {
+    ${StyledTechList} {
       justify-content: flex-end;
       li {
         margin-left: ${theme.margin};
         margin-right: 0;
       }
     }
-    ${Links} {
+    ${StyledLinkWrapper} {
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -10px;
     }
-    ${ImgContainer} {
+    ${StyledImgContainer} {
       grid-column: 1 / 8;
       ${media.tablet`height: 100%;`};
       ${media.thone`
@@ -202,29 +202,29 @@ const Project = styled.div`
 
 const Featured = ({ data }) => {
   const revealTitle = useRef(null);
-  const revealProjects = useRef([]);
+  const revealStyledProjects = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealStyledProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const featuredStyledProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
 
   return (
-    <FeaturedContainer id="projects">
+    <StyledContainer id="projects">
       <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
 
       <div>
-        {featuredProjects &&
-          featuredProjects.map(({ node }, i) => {
+        {featuredStyledProjects &&
+          featuredStyledProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { external, title, tech, github, cover } = frontmatter;
 
             return (
-              <Project key={i} ref={el => (revealProjects.current[i] = el)}>
-                <ContentContainer>
-                  <FeaturedLabel>Featured Project</FeaturedLabel>
-                  <ProjectName>
+              <StyledProject key={i} ref={el => (revealStyledProjects.current[i] = el)}>
+                <StyledContent>
+                  <StyledLabel>Featured StyledProject</StyledLabel>
+                  <StyledStyledProjectName>
                     {external ? (
                       <a
                         href={external}
@@ -236,16 +236,16 @@ const Featured = ({ data }) => {
                     ) : (
                       title
                     )}
-                  </ProjectName>
-                  <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                  </StyledStyledProjectName>
+                  <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
                   {tech && (
-                    <TechList>
+                    <StyledTechList>
                       {tech.map((tech, i) => (
                         <li key={i}>{tech}</li>
                       ))}
-                    </TechList>
+                    </StyledTechList>
                   )}
-                  <Links>
+                  <StyledLinkWrapper>
                     {github && (
                       <a
                         href={github}
@@ -264,20 +264,20 @@ const Featured = ({ data }) => {
                         <IconExternal />
                       </a>
                     )}
-                  </Links>
-                </ContentContainer>
+                  </StyledLinkWrapper>
+                </StyledContent>
 
-                <ImgContainer
+                <StyledImgContainer
                   href={external ? external : github ? github : '#'}
                   target="_blank"
                   rel="nofollow noopener noreferrer">
-                  <FeaturedImg fluid={cover.childImageSharp.fluid} />
-                </ImgContainer>
-              </Project>
+                  <StyledFeaturedImg fluid={cover.childImageSharp.fluid} />
+                </StyledImgContainer>
+              </StyledProject>
             );
           })}
       </div>
-    </FeaturedContainer>
+    </StyledContainer>
   );
 };
 

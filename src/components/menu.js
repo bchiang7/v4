@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const MenuContainer = styled.div`
+const StyledContainer = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -42,6 +42,7 @@ const NavLinks = styled.nav`
   width: 100%;
   flex-direction: column;
   text-align: center;
+  color: ${colors.lightestSlate};
 `;
 const NavList = styled.ol`
   width: 100%;
@@ -80,7 +81,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
   const handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
-    const isNotMenu = target.classList && target.classList[0].includes('MenuContainer');
+    const isNotMenu = target.classList && target.classList[0].includes('StyledContainer');
 
     if (isLink || isNotMenu) {
       toggleMenu();
@@ -88,7 +89,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
   };
 
   return (
-    <MenuContainer
+    <StyledContainer
       menuOpen={menuOpen}
       onClick={handleMenuClick}
       aria-hidden={!menuOpen}
@@ -108,7 +109,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
           </ResumeLink>
         </NavLinks>
       </Sidebar>
-    </MenuContainer>
+    </StyledContainer>
   );
 };
 

@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const NavContainer = styled.header`
+const StyledContainer = styled.header`
   ${mixins.flexBetween};
   position: fixed;
   top: 0;
@@ -31,7 +31,7 @@ const NavContainer = styled.header`
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
 `;
-const Navbar = styled.nav`
+const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
   width: 100%;
@@ -40,10 +40,10 @@ const Navbar = styled.nav`
   counter-reset: item 0;
   z-index: 12;
 `;
-const Logo = styled.div`
+const StyledLogo = styled.div`
   ${mixins.flexCenter};
 `;
-const LogoLink = styled.a`
+const StyledLogoLink = styled.a`
   display: block;
   color: ${colors.green};
   width: 42px;
@@ -60,7 +60,7 @@ const LogoLink = styled.a`
     user-select: none;
   }
 `;
-const Hamburger = styled.div`
+const StyledHamburger = styled.div`
   ${mixins.flexCenter};
   overflow: visible;
   margin: 0 -12px 0 0;
@@ -76,13 +76,13 @@ const Hamburger = styled.div`
   display: none;
   ${media.tablet`display: flex;`};
 `;
-const HamburgerBox = styled.div`
+const StyledHamburgerBox = styled.div`
   position: relative;
   display: inline-block;
   width: ${theme.hamburgerWidth}px;
   height: 24px;
 `;
-const HamburgerInner = styled.div`
+const StyledHamburgerInner = styled.div`
   background-color: ${colors.green};
   position: absolute;
   width: ${theme.hamburgerWidth}px;
@@ -126,15 +126,15 @@ const HamburgerInner = styled.div`
     transition: ${props => (props.menuOpen ? theme.hamAfterActive : theme.hamAfter)};
   }
 `;
-const NavLinks = styled.div`
+const StyledLink = styled.div`
   display: flex;
   align-items: center;
   ${media.tablet`display: none;`};
 `;
-const NavList = styled.ol`
+const StyledList = styled.ol`
   ${mixins.flexBetween};
 `;
-const NavListItem = styled.li`
+const StyledListItem = styled.li`
   margin: 0 10px;
   position: relative;
   font-size: ${fontSizes.smallish};
@@ -146,10 +146,10 @@ const NavListItem = styled.li`
     font-size: ${fontSizes.xsmall};
   }
 `;
-const NavLink = styled(Link)`
+const StyledListLink = styled(Link)`
   padding: 12px 10px;
 `;
-const ResumeLink = styled.a`
+const StyledResumeButton = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
   font-size: ${fontSizes.smallish};
@@ -227,19 +227,19 @@ class Nav extends Component {
     const { isMounted, menuOpen, scrollDirection } = this.state;
 
     return (
-      <NavContainer scrollDirection={scrollDirection}>
+      <StyledContainer scrollDirection={scrollDirection}>
         <Helmet>
           <body className={menuOpen ? 'blur' : ''} />
         </Helmet>
-        <Navbar>
+        <StyledNav>
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
-                <Logo>
-                  <LogoLink href="/" aria-label="home">
+                <StyledLogo>
+                  <StyledLogoLink href="/" aria-label="home">
                     <IconLogo />
-                  </LogoLink>
-                </Logo>
+                  </StyledLogoLink>
+                </StyledLogo>
               </CSSTransition>
             )}
           </TransitionGroup>
@@ -247,49 +247,49 @@ class Nav extends Component {
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
-                <Hamburger onClick={this.toggleMenu}>
-                  <HamburgerBox>
-                    <HamburgerInner menuOpen={menuOpen} />
-                  </HamburgerBox>
-                </Hamburger>
+                <StyledHamburger onClick={this.toggleMenu}>
+                  <StyledHamburgerBox>
+                    <StyledHamburgerInner menuOpen={menuOpen} />
+                  </StyledHamburgerBox>
+                </StyledHamburger>
               </CSSTransition>
             )}
           </TransitionGroup>
 
-          <NavLinks>
-            <NavList>
+          <StyledLink>
+            <StyledList>
               <TransitionGroup component={null}>
                 {isMounted &&
                   navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <CSSTransition key={i} classNames="fadedown" timeout={3000}>
-                      <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
-                        <NavLink to={url}>{name}</NavLink>
-                      </NavListItem>
+                      <StyledListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
+                        <StyledListLink to={url}>{name}</StyledListLink>
+                      </StyledListItem>
                     </CSSTransition>
                   ))}
               </TransitionGroup>
-            </NavList>
+            </StyledList>
 
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
                   <div style={{ transitionDelay: `600ms` }}>
-                    <ResumeLink
+                    <StyledResumeButton
                       href="/resume.pdf"
                       target="_blank"
                       rel="nofollow noopener noreferrer">
                       Resume
-                    </ResumeLink>
+                    </StyledResumeButton>
                   </div>
                 </CSSTransition>
               )}
             </TransitionGroup>
-          </NavLinks>
-        </Navbar>
+          </StyledLink>
+        </StyledNav>
 
         <Menu menuOpen={menuOpen} toggleMenu={this.toggleMenu} />
-      </NavContainer>
+      </StyledContainer>
     );
   }
 }

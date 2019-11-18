@@ -44,6 +44,11 @@ const SkipToContent = styled.a`
     z-index: 99;
   }
 `;
+const StyledContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
 const Layout = ({ children, location }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -105,13 +110,13 @@ const Layout = ({ children, location }) => {
           {isLoading ? (
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
-            <div className="container">
+            <StyledContent id="content">
               <Nav />
               <Social />
               <Email />
               {children}
               <Footer githubInfo={githubInfo} />
-            </div>
+            </StyledContent>
           )}
         </div>
       )}

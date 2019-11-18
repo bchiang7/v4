@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { theme, media } from '@styles';
 const { colors } = theme;
 
-const SocialContainer = styled.div`
+const StyledContainer = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -15,7 +15,7 @@ const SocialContainer = styled.div`
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
 `;
-const SocialItemList = styled.ul`
+const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,12 +28,12 @@ const SocialItemList = styled.ul`
     background-color: ${colors.lightSlate};
   }
 `;
-const SocialItem = styled.li`
+const StyledListItem = styled.li`
   &:last-of-type {
     margin-bottom: 20px;
   }
 `;
-const SocialLink = styled.a`
+const StyledLink = styled.a`
   padding: 10px;
   &:hover,
   &:focus {
@@ -54,28 +54,28 @@ const Social = () => {
   }, []);
 
   return (
-    <SocialContainer>
+    <StyledContainer>
       <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={3000} classNames="fade">
-            <SocialItemList>
+            <StyledList>
               {socialMedia &&
                 socialMedia.map(({ url, name }, i) => (
-                  <SocialItem key={i}>
-                    <SocialLink
+                  <StyledListItem key={i}>
+                    <StyledLink
                       href={url}
                       target="_blank"
                       rel="nofollow noopener noreferrer"
                       aria-label={name}>
                       <FormattedIcon name={name} />
-                    </SocialLink>
-                  </SocialItem>
+                    </StyledLink>
+                  </StyledListItem>
                 ))}
-            </SocialItemList>
+            </StyledList>
           </CSSTransition>
         )}
       </TransitionGroup>
-    </SocialContainer>
+    </StyledContainer>
   );
 };
 

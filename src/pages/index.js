@@ -3,16 +3,15 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 import styled from 'styled-components';
-import { mixins, Main } from '@styles';
+import { Main } from '@styles';
 
 const MainContainer = styled(Main)`
-  ${mixins.sidePadding};
   counter-reset: section;
 `;
 
 const IndexPage = ({ location, data }) => (
   <Layout location={location}>
-    <MainContainer id="content">
+    <MainContainer>
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
       <Jobs data={data.jobs.edges} />

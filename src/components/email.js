@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { theme, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const EmailContainer = styled.div`
+const StyledContainer = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -14,7 +14,7 @@ const EmailContainer = styled.div`
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
 `;
-const EmailLinkWrapper = styled.div`
+const StyledLinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,7 @@ const EmailLinkWrapper = styled.div`
     background-color: ${colors.lightSlate};
   }
 `;
-const EmailLink = styled.a`
+const StyledEmailLink = styled.a`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xsmall};
   letter-spacing: 0.5px;
@@ -51,17 +51,17 @@ const Email = () => {
   }, []);
 
   return (
-    <EmailContainer>
+    <StyledContainer>
       <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={3000} classNames="fade">
-            <EmailLinkWrapper>
-              <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
-            </EmailLinkWrapper>
+            <StyledLinkWrapper>
+              <StyledEmailLink href={`mailto:${email}`}>{email}</StyledEmailLink>
+            </StyledLinkWrapper>
           </CSSTransition>
         )}
       </TransitionGroup>
-    </EmailContainer>
+    </StyledContainer>
   );
 };
 
