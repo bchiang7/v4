@@ -162,7 +162,7 @@ const GlobalStyle = createGlobalStyle`
     }
     &.blur {
       overflow: hidden;
-      #root > .container > * {
+      #root > #content > * {
         filter: blur(5px) brightness(0.7);
         transition: ${theme.transition};
         pointer-events: none;

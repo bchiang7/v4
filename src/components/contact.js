@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const ContactContainer = styled(Section)`
+const StyledContainer = styled(Section)`
   text-align: center;
   max-width: 600px;
   margin: 0 auto 100px;
@@ -14,7 +14,7 @@ const ContactContainer = styled(Section)`
     ${mixins.inlineLink};
   }
 `;
-const GreenHeading = styled(Heading)`
+const StyledHeading = styled(Heading)`
   display: block;
   color: ${colors.green};
   font-size: ${fontSizes.medium};
@@ -32,13 +32,13 @@ const GreenHeading = styled(Heading)`
     display: none;
   }
 `;
-const Title = styled.h4`
+const StyledTitle = styled.h4`
   margin: 0 0 20px;
   font-size: 60px;
   ${media.desktop`font-size: 50px;`};
   ${media.tablet`font-size: 40px;`};
 `;
-const EmailLink = styled.a`
+const StyledEmailLink = styled.a`
   ${mixins.bigButton};
   margin-top: 50px;
 `;
@@ -50,17 +50,17 @@ const Contact = ({ data }) => {
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
-    <ContactContainer id="contact" ref={revealContainer}>
-      <GreenHeading>What&apos;s Next?</GreenHeading>
+    <StyledContainer id="contact" ref={revealContainer}>
+      <StyledHeading>What&apos;s Next?</StyledHeading>
 
-      <Title>{title}</Title>
+      <StyledTitle>{title}</StyledTitle>
 
       <div dangerouslySetInnerHTML={{ __html: html }} />
 
-      <EmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
+      <StyledEmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
         Say Hello
-      </EmailLink>
-    </ContactContainer>
+      </StyledEmailLink>
+    </StyledContainer>
   );
 };
 

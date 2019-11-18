@@ -7,15 +7,15 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const AboutContainer = styled(Section)`
+const StyledContainer = styled(Section)`
   position: relative;
 `;
-const FlexContainer = styled.div`
+const StyledFlexContainer = styled.div`
   ${mixins.flexBetween};
   align-items: flex-start;
   ${media.tablet`display: block;`};
 `;
-const ContentContainer = styled.div`
+const StyledContent = styled.div`
   width: 60%;
   max-width: 480px;
   ${media.tablet`width: 100%;`};
@@ -45,7 +45,7 @@ const Skill = styled.li`
     line-height: 12px;
   }
 `;
-const PicContainer = styled.div`
+const StyledPic = styled.div`
   position: relative;
   width: 40%;
   max-width: 300px;
@@ -53,14 +53,14 @@ const PicContainer = styled.div`
   ${media.tablet`margin: 60px auto 0;`};
   ${media.phablet`width: 70%;`};
 `;
-const Avatar = styled(Img)`
+const StyledAvatar = styled(Img)`
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
 `;
-const AvatarContainer = styled.a`
+const StyledAvatarLink = styled.a`
   ${mixins.boxShadow};
   width: 100%;
   position: relative;
@@ -74,7 +74,7 @@ const AvatarContainer = styled.a`
       top: 15px;
       left: 15px;
     }
-    ${Avatar} {
+    ${StyledAvatar} {
       filter: none;
       mix-blend-mode: normal;
     }
@@ -112,22 +112,22 @@ const About = ({ data }) => {
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
-    <AboutContainer id="about" ref={revealContainer}>
+    <StyledContainer id="about" ref={revealContainer}>
       <Heading>{title}</Heading>
-      <FlexContainer>
-        <ContentContainer>
+      <StyledFlexContainer>
+        <StyledContent>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           <SkillsContainer>
             {skills && skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
           </SkillsContainer>
-        </ContentContainer>
-        <PicContainer>
-          <AvatarContainer href={github}>
-            <Avatar fluid={avatar.childImageSharp.fluid} alt="Avatar" />
-          </AvatarContainer>
-        </PicContainer>
-      </FlexContainer>
-    </AboutContainer>
+        </StyledContent>
+        <StyledPic>
+          <StyledAvatarLink href={github}>
+            <StyledAvatar fluid={avatar.childImageSharp.fluid} alt="Avatar" />
+          </StyledAvatarLink>
+        </StyledPic>
+      </StyledFlexContainer>
+    </StyledContainer>
   );
 };
 

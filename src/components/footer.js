@@ -14,7 +14,7 @@ import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const FooterContainer = styled.footer`
+const StyledContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
   padding: 15px;
@@ -24,7 +24,7 @@ const FooterContainer = styled.footer`
   height: auto;
   min-height: 70px;
 `;
-const SocialContainer = styled.div`
+const StyledSocial = styled.div`
   color: ${colors.lightSlate};
   width: 100%;
   max-width: 270px;
@@ -32,26 +32,26 @@ const SocialContainer = styled.div`
   display: none;
   ${media.tablet`display: block;`};
 `;
-const SocialItemList = styled.ul`
+const StyledSocialList = styled.ul`
   ${mixins.flexBetween};
 `;
-const SocialLink = styled.a`
+const StyledSocialLink = styled.a`
   padding: 10px;
   svg {
     width: 20px;
     height: 20px;
   }
 `;
-const Copy = styled.div`
+const StyledMetadata = styled.div`
   margin: 10px 0;
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xsmall};
   line-height: 1;
 `;
-const GithubLink = styled.a`
+const StyledGithubLink = styled.a`
   color: ${colors.slate};
 `;
-const GithubInfo = styled.div`
+const StyledGithubInfo = styled.div`
   margin-top: 10px;
 
   & > span {
@@ -68,13 +68,13 @@ const GithubInfo = styled.div`
 `;
 
 const Footer = ({ githubInfo }) => (
-  <FooterContainer>
-    <SocialContainer>
-      <SocialItemList>
+  <StyledContainer>
+    <StyledSocial>
+      <StyledSocialList>
         {socialMedia &&
           socialMedia.map(({ name, url }, i) => (
             <li key={i}>
-              <SocialLink
+              <StyledSocialLink
                 href={url}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
@@ -92,20 +92,20 @@ const Footer = ({ githubInfo }) => (
                 ) : (
                   <IconGithub />
                 )}
-              </SocialLink>
+              </StyledSocialLink>
             </li>
           ))}
-      </SocialItemList>
-    </SocialContainer>
-    <Copy>
-      <GithubLink
+      </StyledSocialList>
+    </StyledSocial>
+    <StyledMetadata>
+      <StyledGithubLink
         href="https://github.com/bchiang7/v4"
         target="_blank"
         rel="nofollow noopener noreferrer">
         <div>Designed &amp; Built by Brittany Chiang</div>
 
         {githubInfo.stars && githubInfo.forks && (
-          <GithubInfo>
+          <StyledGithubInfo>
             <span>
               <IconStar />
               <span>{githubInfo.stars}</span>
@@ -114,11 +114,11 @@ const Footer = ({ githubInfo }) => (
               <IconFork />
               <span>{githubInfo.forks}</span>
             </span>
-          </GithubInfo>
+          </StyledGithubInfo>
         )}
-      </GithubLink>
-    </Copy>
-  </FooterContainer>
+      </StyledGithubLink>
+    </StyledMetadata>
+  </StyledContainer>
 );
 
 Footer.propTypes = {

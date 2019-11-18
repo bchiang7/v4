@@ -8,12 +8,12 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const ProjectsContainer = styled(Section)`
+const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
 `;
-const ProjectsTitle = styled.h4`
+const StyledTitle = styled.h4`
   margin: 0 auto 50px;
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
@@ -21,7 +21,7 @@ const ProjectsTitle = styled.h4`
     display: block;
   }
 `;
-const ProjectsGrid = styled.div`
+const StyledGrid = styled.div`
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -30,7 +30,7 @@ const ProjectsGrid = styled.div`
     ${media.desktop`grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));`};
   }
 `;
-const ProjectInner = styled.div`
+const StyledProjectInner = styled.div`
   ${mixins.boxShadow};
   ${mixins.flexBetween};
   flex-direction: column;
@@ -42,55 +42,54 @@ const ProjectInner = styled.div`
   transition: ${theme.transition};
   background-color: ${colors.lightNavy};
 `;
-const Project = styled.div`
+const StyledProject = styled.div`
   transition: ${theme.transition};
   cursor: default;
   &:hover,
   &:focus {
     outline: 0;
-    ${ProjectInner} {
+    ${StyledProjectInner} {
       transform: translateY(-5px);
     }
   }
 `;
-const ProjectHeader = styled.div`
+const StyledProjectHeader = styled.div`
   ${mixins.flexBetween};
   margin-bottom: 30px;
 `;
-const Folder = styled.div`
+const StyledFolder = styled.div`
   color: ${colors.green};
   svg {
     width: 40px;
     height: 40px;
   }
 `;
-const Links = styled.div`
+const StyledProjectLinks = styled.div`
   margin-right: -10px;
   color: ${colors.lightSlate};
 `;
-const IconLink = styled.a`
+const StyledIconLink = styled.a`
   position: relative;
   top: -10px;
   padding: 10px;
-
   svg {
     width: 20px;
     height: 20px;
   }
 `;
-const ProjectName = styled.h5`
+const StyledProjectName = styled.h5`
   margin: 0 0 10px;
   font-size: ${fontSizes.xxlarge};
   color: ${colors.lightestSlate};
 `;
-const ProjectDescription = styled.div`
+const StyledProjectDescription = styled.div`
   font-size: 17px;
   color: ${colors.lightSlate};
   a {
     ${mixins.inlineLink};
   }
 `;
-const TechList = styled.ul`
+const StyledTechList = styled.ul`
   flex-grow: 1;
   display: flex;
   align-items: flex-end;
@@ -107,7 +106,7 @@ const TechList = styled.ul`
     }
   }
 `;
-const ShowMoreButton = styled(Button)`
+const StyledMoreButton = styled(Button)`
   margin: 100px auto 0;
 `;
 
@@ -126,9 +125,9 @@ const Projects = ({ data }) => {
   const projectsToShow = showMore ? projects : firstSix;
 
   return (
-    <ProjectsContainer>
-      <ProjectsTitle ref={revealTitle}>Other Projects</ProjectsTitle>
-      <ProjectsGrid>
+    <StyledContainer>
+      <StyledTitle ref={revealTitle}>Other Projects</StyledTitle>
+      <StyledGrid>
         <TransitionGroup className="projects">
           {projectsToShow &&
             projectsToShow.map(({ node }, i) => {
@@ -140,62 +139,62 @@ const Projects = ({ data }) => {
                   classNames="fadeup"
                   timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
                   exit={false}>
-                  <Project
+                  <StyledProject
                     key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     tabIndex="0"
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                     }}>
-                    <ProjectInner>
+                    <StyledProjectInner>
                       <header>
-                        <ProjectHeader>
-                          <Folder>
+                        <StyledProjectHeader>
+                          <StyledFolder>
                             <IconFolder />
-                          </Folder>
-                          <Links>
+                          </StyledFolder>
+                          <StyledProjectLinks>
                             {github && (
-                              <IconLink
+                              <StyledIconLink
                                 href={github}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
                                 aria-label="Github Link">
                                 <IconGithub />
-                              </IconLink>
+                              </StyledIconLink>
                             )}
                             {external && (
-                              <IconLink
+                              <StyledIconLink
                                 href={external}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
                                 aria-label="External Link">
                                 <IconExternal />
-                              </IconLink>
+                              </StyledIconLink>
                             )}
-                          </Links>
-                        </ProjectHeader>
-                        <ProjectName>{title}</ProjectName>
-                        <ProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                          </StyledProjectLinks>
+                        </StyledProjectHeader>
+                        <StyledProjectName>{title}</StyledProjectName>
+                        <StyledProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
                       </header>
                       <footer>
-                        <TechList>
+                        <StyledTechList>
                           {tech.map((tech, i) => (
                             <li key={i}>{tech}</li>
                           ))}
-                        </TechList>
+                        </StyledTechList>
                       </footer>
-                    </ProjectInner>
-                  </Project>
+                    </StyledProjectInner>
+                  </StyledProject>
                 </CSSTransition>
               );
             })}
         </TransitionGroup>
-      </ProjectsGrid>
+      </StyledGrid>
 
-      <ShowMoreButton onClick={() => setShowMore(!showMore)}>
+      <StyledMoreButton onClick={() => setShowMore(!showMore)}>
         {showMore ? 'Fewer' : 'More'} Projects
-      </ShowMoreButton>
-    </ProjectsContainer>
+      </StyledMoreButton>
+    </StyledContainer>
   );
 };
 
