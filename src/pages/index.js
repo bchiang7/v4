@@ -5,20 +5,20 @@ import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@compone
 import styled from 'styled-components';
 import { Main } from '@styles';
 
-const MainContainer = styled(Main)`
+const StyledMainContainer = styled(Main)`
   counter-reset: section;
 `;
 
 const IndexPage = ({ location, data }) => (
   <Layout location={location}>
-    <MainContainer>
+    <StyledMainContainer>
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
       <Jobs data={data.jobs.edges} />
       <Featured data={data.featured.edges} />
       <Projects data={data.projects.edges} />
       <Contact data={data.contact.edges} />
-    </MainContainer>
+    </StyledMainContainer>
   </Layout>
 );
 
