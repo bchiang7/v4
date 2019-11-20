@@ -1,8 +1,8 @@
 import React from 'react';
 
-const IconGithub = () => (
+const IconGitHub = () => (
   <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 438.549 438.549">
-    <title>Github</title>
+    <title>GitHub</title>
     <path
       d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365
           c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63 c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996
@@ -27,4 +27,4 @@ const IconGithub = () => (
   </svg>
 );
 
-export default IconGithub;
+export default IconGitHub;

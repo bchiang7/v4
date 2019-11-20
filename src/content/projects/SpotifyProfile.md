@@ -7,7 +7,6 @@ external: 'https://spotify-profile.herokuapp.com/'
 tech:
   - React
   - Express
-  - Reach Router
   - Styled Components
 show: 'false'
 ---

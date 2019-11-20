@@ -6,10 +6,8 @@ github: 'https://github.com/nuwit/website'
 external: 'https://nuwit.ccs.neu.edu/'
 tech:
   - Jekyll
-  - HTML
-  - CSS
   - Bootstrap
-  - JS
+company: 'Northeastern'
 show: 'true'
 ---
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGithub, IconExternal } from '@components/icons';
+import { IconGitHub, IconExternal } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -68,6 +68,8 @@ const StyledDescription = styled.div`
   }
 `;
 const StyledTechList = styled.ul`
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   margin: 25px 0 10px;
@@ -251,8 +253,8 @@ const Featured = ({ data }) => {
                         href={github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="Github Link">
-                        <IconGithub />
+                        aria-label="GitHub Link">
+                        <IconGitHub />
                       </a>
                     )}
                     {external && (

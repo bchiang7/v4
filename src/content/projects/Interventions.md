@@ -6,7 +6,9 @@ github: ''
 external: 'https://interventions.design/'
 tech:
   - Jekyll
-  - Github Pages
+  - SCSS
+  - JS
+company: 'Scout'
 show: 'true'
 ---
 

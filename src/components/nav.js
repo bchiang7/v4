@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
@@ -42,22 +43,22 @@ const StyledNav = styled.nav`
 `;
 const StyledLogo = styled.div`
   ${mixins.flexCenter};
-`;
-const StyledLogoLink = styled.a`
-  display: block;
-  color: ${colors.green};
-  width: 42px;
-  height: 42px;
-  &:hover,
-  &:focus {
-    svg {
-      fill: ${colors.transGreen};
+  a {
+    display: block;
+    color: ${colors.green};
+    width: 42px;
+    height: 42px;
+    &:hover,
+    &:focus {
+      svg {
+        fill: ${colors.transGreen};
+      }
     }
-  }
-  svg {
-    fill: none;
-    transition: ${theme.transition};
-    user-select: none;
+    svg {
+      fill: none;
+      transition: ${theme.transition};
+      user-select: none;
+    }
   }
 `;
 const StyledHamburger = styled.div`
@@ -166,16 +167,18 @@ class Nav extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ isMounted: true }), 100);
-
-    window.addEventListener('scroll', () => throttle(this.handleScroll()));
-    window.addEventListener('resize', () => throttle(this.handleResize()));
-    window.addEventListener('keydown', e => this.handleKeydown(e));
+    setTimeout(
+      () =>
+        this.setState({ isMounted: true }, () => {
+          window.addEventListener('scroll', () => throttle(this.handleScroll()));
+          window.addEventListener('resize', () => throttle(this.handleResize()));
+          window.addEventListener('keydown', e => this.handleKeydown(e));
+        }),
+      100,
+    );
   }
 
   componentWillUnmount() {
-    this.setState({ isMounted: false });
-
     window.removeEventListener('scroll', () => this.handleScroll());
     window.removeEventListener('resize', () => this.handleResize());
     window.removeEventListener('keydown', e => this.handleKeydown(e));
@@ -225,6 +228,7 @@ class Nav extends Component {
 
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
+    const { location } = this.props;
 
     return (
       <StyledContainer scrollDirection={scrollDirection}>
@@ -236,9 +240,15 @@ class Nav extends Component {
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <StyledLogo>
-                  <StyledLogoLink href="/" aria-label="home">
-                    <IconLogo />
-                  </StyledLogoLink>
+                  {location.pathname === '/' ? (
+                    <a href="/" aria-label="home">
+                      <IconLogo />
+                    </a>
+                  ) : (
+                    <Link to="/" aria-label="home">
+                      <IconLogo />
+                    </Link>
+                  )}
                 </StyledLogo>
               </CSSTransition>
             )}
@@ -293,5 +303,9 @@ class Nav extends Component {
     );
   }
 }
+
+Nav.propTypes = {
+  location: PropTypes.object,
+};
 
 export default Nav;

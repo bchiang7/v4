@@ -51,8 +51,8 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [githubInfo, setGithubInfo] = useState({
+  const [isLoading, setIsLoading] = useState(location.pathname === '/');
+  const [githubInfo, setGitHubInfo] = useState({
     stars: null,
     forks: null,
   });
@@ -62,7 +62,7 @@ const Layout = ({ children, location }) => {
       .then(response => response.json())
       .then(json => {
         const { stargazers_count, forks_count } = json;
-        setGithubInfo({
+        setGitHubInfo({
           stars: stargazers_count,
           forks: forks_count,
         });
@@ -74,7 +74,6 @@ const Layout = ({ children, location }) => {
     if (isLoading) {
       return;
     }
-
     if (location.hash) {
       const id = location.hash.substring(1); // location.hash without the '#'
       setTimeout(() => {
@@ -111,7 +110,7 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent id="content">
-              <Nav />
+              <Nav location={location} />
               <Social />
               <Email />
               {children}

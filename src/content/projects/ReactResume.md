@@ -6,7 +6,6 @@ github: 'https://github.com/bchiang7/react-profile'
 external: 'https://bchiang7.github.io/react-profile/'
 tech:
   - React
-  - JS
   - CSS
 show: 'true'
 ---

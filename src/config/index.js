@@ -15,7 +15,7 @@ module.exports = {
   twitterHandle: '@bchiang7',
   socialMedia: [
     {
-      name: 'Github',
+      name: 'GitHub',
       url: 'https://github.com/bchiang7',
     },
     {

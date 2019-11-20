@@ -6,9 +6,9 @@ github: 'https://github.com/crowddj/crowddj-react'
 external: ''
 tech:
   - React
-  - Sass
   - Firebase
   - Spotify API
+company: HackBeanpot 2017
 show: 'true'
 ---
 

@@ -298,6 +298,12 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity 1000ms ${theme.easing};
   }
 
+  .overline {
+    color: ${colors.green};
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.medium};
+    font-weight: normal;
+  }
 `;
 
 export default GlobalStyle;

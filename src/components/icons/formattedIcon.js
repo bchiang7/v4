@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  IconGithub,
+  IconGitHub,
   IconLinkedin,
   IconCodepen,
   IconInstagram,
@@ -10,8 +10,8 @@ import {
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
-    case 'Github':
-      return <IconGithub />;
+    case 'GitHub':
+      return <IconGitHub />;
     case 'Linkedin':
       return <IconLinkedin />;
     case 'Codepen':
@@ -21,7 +21,7 @@ const FormattedIcon = ({ name }) => {
     case 'Twitter':
       return <IconTwitter />;
     default:
-      return <IconGithub />;
+      return <IconGitHub />;
   }
 };
 

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
@@ -30,15 +31,30 @@ const StyledHomeButton = styled(Link)`
   margin-top: 40px;
 `;
 
-const NotFoundPage = ({ location }) => (
-  <Layout location={location}>
-    <StyledMainContainer>
-      <StyledTitle>404</StyledTitle>
-      <StyledSubtitle>Page Not Found</StyledSubtitle>
-      <StyledHomeButton to="/">Go Home</StyledHomeButton>
-    </StyledMainContainer>
-  </Layout>
-);
+const NotFoundPage = ({ location }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <Layout location={location}>
+      <TransitionGroup component={null}>
+        {isMounted && (
+          <CSSTransition timeout={500} classNames="fade">
+            <StyledMainContainer>
+              <StyledTitle>404</StyledTitle>
+              <StyledSubtitle>Page Not Found</StyledSubtitle>
+              <StyledHomeButton to="/">Go Home</StyledHomeButton>
+            </StyledMainContainer>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+    </Layout>
+  );
+};
 
 NotFoundPage.propTypes = {
   location: PropTypes.object.isRequired,

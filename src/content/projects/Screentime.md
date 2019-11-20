@@ -5,10 +5,10 @@ image: ''
 github: ''
 external: 'https://play.google.com/store/apps/details?id=com.starry.management&hl=en_US'
 tech:
-  - JS
+  - Cordova
   - Backbone
   - Marionette
-  - Cordova
+company: 'Starry'
 show: 'true'
 ---
 

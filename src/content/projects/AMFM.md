@@ -8,6 +8,7 @@ tech:
   - Ember
   - JS
   - SCSS
+company: 'Apple'
 show: 'true'
 ---
 

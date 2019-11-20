@@ -8,6 +8,7 @@ tech:
   - MusicKit.js
   - JS
   - SCSS
+company: 'Apple'
 show: 'true'
 ---
 
