@@ -1,7 +1,6 @@
 ---
 date: '2018-04-20'
 title: 'Spotify’s Top Tracks of 2017'
-image: ''
 github: 'https://github.com/bchiang7/spotify-top-tracks-2017'
 external: ''
 tech:

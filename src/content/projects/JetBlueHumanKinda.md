@@ -1,7 +1,6 @@
 ---
 date: '2015-10-01'
 title: 'JetBlue HumanKinda'
-image: ''
 github: ''
 external: 'http://jetbluehumankinda.com/'
 tech:

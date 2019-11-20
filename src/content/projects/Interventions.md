@@ -1,7 +1,6 @@
 ---
 date: '2017-08-01'
 title: 'Interventions'
-image: ''
 github: ''
 external: 'https://interventions.design/'
 tech:

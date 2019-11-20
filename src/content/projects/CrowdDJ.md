@@ -1,7 +1,6 @@
 ---
 date: '2017-03-01'
 title: 'Crowd DJ'
-image: ''
 github: 'https://github.com/crowddj/crowddj-react'
 external: ''
 tech:

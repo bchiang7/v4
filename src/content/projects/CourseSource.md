@@ -1,7 +1,6 @@
 ---
 date: '2016-04-01'
 title: 'CourseSource'
-image: ''
 github: 'https://github.com/bchiang7/WebDevSpring2016/tree/master/public/project'
 external: ''
 tech:

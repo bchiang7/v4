@@ -1,7 +1,6 @@
 ---
 date: '2018-12-01'
 title: 'Devoted Health'
-image: ''
 github: ''
 external: 'https://www.devoted.com/'
 tech:

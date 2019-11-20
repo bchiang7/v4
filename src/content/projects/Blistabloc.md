@@ -1,7 +1,6 @@
 ---
 date: '2018-05-01'
 title: 'blistabloc'
-image: ''
 github: ''
 external: 'https://blistabloc.com/'
 tech:

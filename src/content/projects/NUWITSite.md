@@ -1,7 +1,6 @@
 ---
 date: '2015-12-20'
 title: 'NU Women in Tech'
-image: ''
 github: 'https://github.com/nuwit/website'
 external: 'https://nuwit.ccs.neu.edu/'
 tech:

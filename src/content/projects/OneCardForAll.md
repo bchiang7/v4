@@ -1,7 +1,6 @@
 ---
 date: '2015-12-01'
 title: 'One Card For All'
-image: ''
 github: ''
 external: 'https://us.mullenlowe.com/work/one-card-for-all/'
 tech:

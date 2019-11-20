@@ -217,7 +217,6 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
-            image
             tech
             github
             external
