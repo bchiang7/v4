@@ -34,14 +34,14 @@ const Skill = styled.li`
   margin-bottom: 10px;
   padding-left: 20px;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   color: ${colors.slate};
   &:before {
     content: '▹';
     position: absolute;
     left: 0;
     color: ${colors.green};
-    font-size: ${fontSizes.small};
+    font-size: ${fontSizes.sm};
     line-height: 12px;
   }
 `;

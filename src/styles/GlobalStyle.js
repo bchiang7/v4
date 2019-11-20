@@ -154,8 +154,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${colors.slate};
     line-height: 1.3;
     font-family: ${fonts.Calibre};
-    font-size: ${fontSizes.xlarge};
-    ${media.phablet`font-size: ${fontSizes.large};`}
+    font-size: ${fontSizes.xl};
+    ${media.phablet`font-size: ${fontSizes.lg};`}
 
     &.hidden {
       overflow: hidden;
@@ -301,7 +301,7 @@ const GlobalStyle = createGlobalStyle`
   .overline {
     color: ${colors.green};
     font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.medium};
+    font-size: ${fontSizes.md};
     font-weight: normal;
   }
 `;

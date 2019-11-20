@@ -67,7 +67,7 @@ const StyledTabButton = styled.button`
   text-align: left;
   white-space: nowrap;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   color: ${props => (props.isActive ? colors.green : colors.lightGrey)};
   ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
@@ -136,7 +136,7 @@ const StyledTabContent = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
-    font-size: ${fontSizes.large};
+    font-size: ${fontSizes.lg};
     li {
       position: relative;
       padding-left: 30px;
@@ -146,7 +146,7 @@ const StyledTabContent = styled.div`
         position: absolute;
         left: 0;
         color: ${colors.green};
-        line-height: ${fontSizes.xlarge};
+        line-height: ${fontSizes.xl};
       }
     }
   }
@@ -156,7 +156,7 @@ const StyledTabContent = styled.div`
 `;
 const StyledJobTitle = styled.h4`
   color: ${colors.lightestSlate};
-  font-size: ${fontSizes.xxlarge};
+  font-size: ${fontSizes.xxl};
   font-weight: 500;
   margin-bottom: 5px;
 `;
@@ -165,7 +165,7 @@ const StyledCompany = styled.span`
 `;
 const StyledJobDetails = styled.h5`
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   font-weight: normal;
   letter-spacing: 0.5px;
   color: ${colors.lightSlate};

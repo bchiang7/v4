@@ -25,7 +25,7 @@ const StyledContent = styled.div`
   ${media.phablet`padding: 30px 25px 20px;`};
 `;
 const StyledLabel = styled.h4`
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   font-weight: normal;
   color: ${colors.green};
   font-family: ${fonts.SFMono};
@@ -50,7 +50,7 @@ const StyledDescription = styled.div`
   padding: 25px;
   background-color: ${colors.lightNavy};
   color: ${colors.lightSlate};
-  font-size: ${fontSizes.large};
+  font-size: ${fontSizes.lg};
   border-radius: ${theme.borderRadius};
   ${media.thone`
     background-color: transparent;
@@ -75,7 +75,7 @@ const StyledTechList = styled.ul`
   margin: 25px 0 10px;
   li {
     font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.smallish};
+    font-size: ${fontSizes.smish};
     color: ${colors.slate};
     margin-right: ${theme.margin};
     margin-bottom: 7px;

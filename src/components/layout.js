@@ -30,7 +30,7 @@ const SkipToContent = styled.a`
     background-color: ${colors.lightNavy};
     border-radius: ${theme.borderRadius};
     padding: 18px 23px;
-    font-size: ${fontSizes.small};
+    font-size: ${fontSizes.sm};
     font-family: ${fonts.SFMono};
     line-height: 1;
     text-decoration: none;

@@ -27,7 +27,7 @@ const StyledArchiveLink = styled(Link)`
   text-align: center;
   margin: 0 auto;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   &:after {
     bottom: 0.1em;
   }
@@ -92,7 +92,7 @@ const StyledIconLink = styled.a`
 `;
 const StyledProjectName = styled.h5`
   margin: 0 0 10px;
-  font-size: ${fontSizes.xxlarge};
+  font-size: ${fontSizes.xxl};
   color: ${colors.lightestSlate};
 `;
 const StyledProjectDescription = styled.div`
@@ -110,7 +110,7 @@ const StyledTechList = styled.ul`
   margin-top: 20px;
   li {
     font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.xsmall};
+    font-size: ${fontSizes.xs};
     color: ${colors.slate};
     line-height: 1.75;
     margin-right: 15px;

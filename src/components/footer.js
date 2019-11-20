@@ -45,7 +45,7 @@ const StyledSocialLink = styled.a`
 const StyledMetadata = styled.div`
   margin: 10px 0;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xsmall};
+  font-size: ${fontSizes.xs};
   line-height: 1;
 `;
 const StyledGitHubLink = styled.a`

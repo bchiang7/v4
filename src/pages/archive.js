@@ -31,11 +31,11 @@ const StyledTitle = styled.h1`
 const StyledSubtitle = styled.p`
   color: ${colors.green};
   margin: 0 0 20px 3px;
-  font-size: ${fontSizes.medium};
+  font-size: ${fontSizes.md};
   font-family: ${fonts.SFMono};
   font-weight: normal;
-  ${media.desktop`font-size: ${fontSizes.small};`};
-  ${media.tablet`font-size: ${fontSizes.smallish};`};
+  ${media.desktop`font-size: ${fontSizes.sm};`};
+  ${media.tablet`font-size: ${fontSizes.smish};`};
 `;
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -77,22 +77,22 @@ const StyledTable = styled.table`
     &.year {
       width: 10%;
       ${media.tablet`
-        font-size: ${fontSizes.small};
+        font-size: ${fontSizes.sm};
       `};
     }
     &.title {
       padding-top: 15px;
       color: ${colors.lightestSlate};
-      font-size: ${fontSizes.xlarge};
+      font-size: ${fontSizes.xl};
       font-weight: 700;
     }
     &.company {
       width: 15%;
       padding-top: 15px;
-      font-size: ${fontSizes.large};
+      font-size: ${fontSizes.lg};
     }
     &.tech {
-      font-size: ${fontSizes.xsmall};
+      font-size: ${fontSizes.xs};
       font-family: ${fonts.SFMono};
     }
     &.links {

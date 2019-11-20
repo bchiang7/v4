@@ -138,13 +138,13 @@ const StyledList = styled.ol`
 const StyledListItem = styled.li`
   margin: 0 10px;
   position: relative;
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   counter-increment: item 1;
   &:before {
     content: '0' counter(item) '.';
     text-align: right;
     color: ${colors.green};
-    font-size: ${fontSizes.xsmall};
+    font-size: ${fontSizes.xs};
   }
 `;
 const StyledListLink = styled(Link)`
@@ -153,7 +153,7 @@ const StyledListLink = styled(Link)`
 const StyledResumeButton = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
 `;
 
 const DELTA = 5;

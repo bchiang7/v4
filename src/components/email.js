@@ -30,7 +30,7 @@ const StyledLinkWrapper = styled.div`
 `;
 const StyledEmailLink = styled.a`
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xsmall};
+  font-size: ${fontSizes.xs};
   letter-spacing: 0.5px;
   writing-mode: vertical-rl;
   margin: 20px auto;
