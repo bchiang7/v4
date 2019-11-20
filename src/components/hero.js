@@ -19,11 +19,11 @@ const StyledContainer = styled(Section)`
 const StyledOverline = styled.h1`
   color: ${colors.green};
   margin: 0 0 20px 3px;
-  font-size: ${fontSizes.medium};
+  font-size: ${fontSizes.md};
   font-family: ${fonts.SFMono};
   font-weight: normal;
-  ${media.desktop`font-size: ${fontSizes.small};`};
-  ${media.tablet`font-size: ${fontSizes.smallish};`};
+  ${media.desktop`font-size: ${fontSizes.sm};`};
+  ${media.tablet`font-size: ${fontSizes.smish};`};
 `;
 const StyledTitle = styled.h2`
   font-size: 80px;
@@ -94,7 +94,7 @@ const Hero = ({ data }) => {
       <TransitionGroup component={null}>
         {isMounted &&
           items.map((item, i) => (
-            <CSSTransition key={i} classStyledTitles="fadeup" timeout={3000}>
+            <CSSTransition key={i} classNames="fadeup" timeout={3000}>
               {item}
             </CSSTransition>
           ))}

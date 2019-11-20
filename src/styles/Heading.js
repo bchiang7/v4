@@ -20,10 +20,10 @@ const Heading = styled.h3`
     font-family: ${fonts.SFMono};
     font-weight: normal;
     color: ${colors.green};
-    font-size: ${fontSizes.xlarge};
+    font-size: ${fontSizes.xl};
     position: relative;
     bottom: 4px;
-    ${media.tablet`font-size: ${fontSizes.large};`};
+    ${media.tablet`font-size: ${fontSizes.lg};`};
   }
 
   &:after {

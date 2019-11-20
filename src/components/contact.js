@@ -17,16 +17,16 @@ const StyledContainer = styled(Section)`
 const StyledHeading = styled(Heading)`
   display: block;
   color: ${colors.green};
-  font-size: ${fontSizes.medium};
+  font-size: ${fontSizes.md};
   font-family: ${fonts.SFMono};
   font-weight: normal;
   margin-bottom: 20px;
   justify-content: center;
-  ${media.desktop`font-size: ${fontSizes.small};`};
+  ${media.desktop`font-size: ${fontSizes.sm};`};
   &:before {
     bottom: 0;
-    font-size: ${fontSizes.small};
-    ${media.desktop`font-size: ${fontSizes.smallish};`};
+    font-size: ${fontSizes.sm};
+    ${media.desktop`font-size: ${fontSizes.smish};`};
   }
   &:after {
     display: none;

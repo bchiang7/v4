@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGithub, IconExternal } from '@components/icons';
+import { IconGitHub, IconExternal } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -25,14 +25,14 @@ const StyledContent = styled.div`
   ${media.phablet`padding: 30px 25px 20px;`};
 `;
 const StyledLabel = styled.h4`
-  font-size: ${fontSizes.smallish};
+  font-size: ${fontSizes.smish};
   font-weight: normal;
   color: ${colors.green};
   font-family: ${fonts.SFMono};
   margin-top: 10px;
   padding-top: 0;
 `;
-const StyledStyledProjectName = styled.h5`
+const StyledProjectName = styled.h5`
   font-size: 28px;
   font-weight: 600;
   margin: 0 0 20px;
@@ -50,7 +50,7 @@ const StyledDescription = styled.div`
   padding: 25px;
   background-color: ${colors.lightNavy};
   color: ${colors.lightSlate};
-  font-size: ${fontSizes.large};
+  font-size: ${fontSizes.lg};
   border-radius: ${theme.borderRadius};
   ${media.thone`
     background-color: transparent;
@@ -68,12 +68,14 @@ const StyledDescription = styled.div`
   }
 `;
 const StyledTechList = styled.ul`
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   margin: 25px 0 10px;
   li {
     font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.smallish};
+    font-size: ${fontSizes.smish};
     color: ${colors.slate};
     margin-right: ${theme.margin};
     margin-bottom: 7px;
@@ -202,29 +204,29 @@ const StyledProject = styled.div`
 
 const Featured = ({ data }) => {
   const revealTitle = useRef(null);
-  const revealStyledProjects = useRef([]);
+  const revealProjects = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
-    revealStyledProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const featuredStyledProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
 
   return (
     <StyledContainer id="projects">
       <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
 
       <div>
-        {featuredStyledProjects &&
-          featuredStyledProjects.map(({ node }, i) => {
+        {featuredProjects &&
+          featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { external, title, tech, github, cover } = frontmatter;
 
             return (
-              <StyledProject key={i} ref={el => (revealStyledProjects.current[i] = el)}>
+              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <StyledContent>
                   <StyledLabel>Featured Project</StyledLabel>
-                  <StyledStyledProjectName>
+                  <StyledProjectName>
                     {external ? (
                       <a
                         href={external}
@@ -236,7 +238,7 @@ const Featured = ({ data }) => {
                     ) : (
                       title
                     )}
-                  </StyledStyledProjectName>
+                  </StyledProjectName>
                   <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
                   {tech && (
                     <StyledTechList>
@@ -251,8 +253,8 @@ const Featured = ({ data }) => {
                         href={github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="Github Link">
-                        <IconGithub />
+                        aria-label="GitHub Link">
+                        <IconGitHub />
                       </a>
                     )}
                     {external && (

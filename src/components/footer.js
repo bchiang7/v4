@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  IconGithub,
+  IconGitHub,
   IconLinkedin,
   IconCodepen,
   IconInstagram,
@@ -45,13 +45,13 @@ const StyledSocialLink = styled.a`
 const StyledMetadata = styled.div`
   margin: 10px 0;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xsmall};
+  font-size: ${fontSizes.xs};
   line-height: 1;
 `;
-const StyledGithubLink = styled.a`
+const StyledGitHubLink = styled.a`
   color: ${colors.slate};
 `;
-const StyledGithubInfo = styled.div`
+const StyledGitHubInfo = styled.div`
   margin-top: 10px;
 
   & > span {
@@ -79,8 +79,8 @@ const Footer = ({ githubInfo }) => (
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 aria-label={name}>
-                {name === 'Github' ? (
-                  <IconGithub />
+                {name === 'GitHub' ? (
+                  <IconGitHub />
                 ) : name === 'Linkedin' ? (
                   <IconLinkedin />
                 ) : name === 'Codepen' ? (
@@ -90,7 +90,7 @@ const Footer = ({ githubInfo }) => (
                 ) : name === 'Twitter' ? (
                   <IconTwitter />
                 ) : (
-                  <IconGithub />
+                  <IconGitHub />
                 )}
               </StyledSocialLink>
             </li>
@@ -98,14 +98,14 @@ const Footer = ({ githubInfo }) => (
       </StyledSocialList>
     </StyledSocial>
     <StyledMetadata>
-      <StyledGithubLink
+      <StyledGitHubLink
         href="https://github.com/bchiang7/v4"
         target="_blank"
         rel="nofollow noopener noreferrer">
         <div>Designed &amp; Built by Brittany Chiang</div>
 
         {githubInfo.stars && githubInfo.forks && (
-          <StyledGithubInfo>
+          <StyledGitHubInfo>
             <span>
               <IconStar />
               <span>{githubInfo.stars}</span>
@@ -114,9 +114,9 @@ const Footer = ({ githubInfo }) => (
               <IconFork />
               <span>{githubInfo.forks}</span>
             </span>
-          </StyledGithubInfo>
+          </StyledGitHubInfo>
         )}
-      </StyledGithubLink>
+      </StyledGitHubLink>
     </StyledMetadata>
   </StyledContainer>
 );

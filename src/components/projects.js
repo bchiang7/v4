@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGithub, IconExternal, IconFolder } from '@components/icons';
+import { IconGitHub, IconExternal, IconFolder } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -14,14 +15,26 @@ const StyledContainer = styled(Section)`
   align-items: flex-start;
 `;
 const StyledTitle = styled.h4`
-  margin: 0 auto 50px;
+  margin: 0 auto;
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
   a {
     display: block;
   }
 `;
+const StyledArchiveLink = styled(Link)`
+  ${mixins.inlineLink};
+  text-align: center;
+  margin: 0 auto;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smish};
+  &:after {
+    bottom: 0.1em;
+  }
+`;
 const StyledGrid = styled.div`
+  margin-top: 50px;
+
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -79,7 +92,7 @@ const StyledIconLink = styled.a`
 `;
 const StyledProjectName = styled.h5`
   margin: 0 0 10px;
-  font-size: ${fontSizes.xxlarge};
+  font-size: ${fontSizes.xxl};
   color: ${colors.lightestSlate};
 `;
 const StyledProjectDescription = styled.div`
@@ -97,7 +110,7 @@ const StyledTechList = styled.ul`
   margin-top: 20px;
   li {
     font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.xsmall};
+    font-size: ${fontSizes.xs};
     color: ${colors.slate};
     line-height: 1.75;
     margin-right: 15px;
@@ -113,9 +126,12 @@ const StyledMoreButton = styled(Button)`
 const Projects = ({ data }) => {
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
+  const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
+
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
+    sr.reveal(revealArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
@@ -126,7 +142,11 @@ const Projects = ({ data }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Other Projects</StyledTitle>
+      <StyledTitle ref={revealTitle}>Other Noteworthy Projects</StyledTitle>
+      <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
+        view the archive
+      </StyledArchiveLink>
+
       <StyledGrid>
         <TransitionGroup className="projects">
           {projectsToShow &&
@@ -158,8 +178,8 @@ const Projects = ({ data }) => {
                                 href={github}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
-                                aria-label="Github Link">
-                                <IconGithub />
+                                aria-label="GitHub Link">
+                                <IconGitHub />
                               </StyledIconLink>
                             )}
                             {external && (
@@ -192,7 +212,7 @@ const Projects = ({ data }) => {
       </StyledGrid>
 
       <StyledMoreButton onClick={() => setShowMore(!showMore)}>
-        {showMore ? 'Fewer' : 'More'} Projects
+        Show {showMore ? 'Fewer' : 'More'}
       </StyledMoreButton>
     </StyledContainer>
   );

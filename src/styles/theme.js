@@ -33,13 +33,13 @@ const theme = {
   },
 
   fontSizes: {
-    xsmall: '12px',
-    smallish: '13px',
-    small: '14px',
-    medium: '16px',
-    large: '18px',
-    xlarge: '20px',
-    xxlarge: '22px',
+    xs: '12px',
+    smish: '13px',
+    sm: '14px',
+    md: '16px',
+    lg: '18px',
+    xl: '20px',
+    xxl: '22px',
     h3: '32px',
   },
 
