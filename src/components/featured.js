@@ -32,7 +32,7 @@ const StyledLabel = styled.h4`
   margin-top: 10px;
   padding-top: 0;
 `;
-const StyledStyledProjectName = styled.h5`
+const StyledProjectName = styled.h5`
   font-size: 28px;
   font-weight: 600;
   margin: 0 0 20px;
@@ -204,29 +204,29 @@ const StyledProject = styled.div`
 
 const Featured = ({ data }) => {
   const revealTitle = useRef(null);
-  const revealStyledProjects = useRef([]);
+  const revealProjects = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
-    revealStyledProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const featuredStyledProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
 
   return (
     <StyledContainer id="projects">
       <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
 
       <div>
-        {featuredStyledProjects &&
-          featuredStyledProjects.map(({ node }, i) => {
+        {featuredProjects &&
+          featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { external, title, tech, github, cover } = frontmatter;
 
             return (
-              <StyledProject key={i} ref={el => (revealStyledProjects.current[i] = el)}>
+              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <StyledContent>
                   <StyledLabel>Featured Project</StyledLabel>
-                  <StyledStyledProjectName>
+                  <StyledProjectName>
                     {external ? (
                       <a
                         href={external}
@@ -238,7 +238,7 @@ const Featured = ({ data }) => {
                     ) : (
                       title
                     )}
-                  </StyledStyledProjectName>
+                  </StyledProjectName>
                   <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
                   {tech && (
                     <StyledTechList>
