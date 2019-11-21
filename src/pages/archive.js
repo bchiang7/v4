@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import { IconGitHub, IconExternal } from '@components/icons';
 import styled from 'styled-components';
-import { theme, media, Main } from '@styles';
+import { theme, mixins, media, Main } from '@styles';
 const { colors, fonts, fontSizes } = theme;
 
 const StyledMainContainer = styled(Main)`
@@ -97,7 +98,7 @@ const StyledTable = styled.table`
     }
     &.links {
       span {
-        display: flex;
+        ${mixins.flexBetween};
         a + a {
           margin-left: 10px;
         }
@@ -121,6 +122,11 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
+      <Helmet>
+        <title>Archive | Brittany Chiang</title>
+        <link rel="canonical" href="https://brittanychiang.com/archive" />
+      </Helmet>
+
       <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={500} classNames="fade">
@@ -166,7 +172,7 @@ const ArchivePage = ({ location, data }) => {
 
                             <td className="links">
                               <span>
-                                {github && (
+                                {github ? (
                                   <a
                                     href={github}
                                     target="_blank"
@@ -174,8 +180,10 @@ const ArchivePage = ({ location, data }) => {
                                     aria-label="GitHub Link">
                                     <IconGitHub />
                                   </a>
+                                ) : (
+                                  <span aria-label="Empty">—</span>
                                 )}
-                                {external && (
+                                {external ? (
                                   <a
                                     href={external}
                                     target="_blank"
@@ -183,6 +191,8 @@ const ArchivePage = ({ location, data }) => {
                                     aria-label="External Link">
                                     <IconExternal />
                                   </a>
+                                ) : (
+                                  <span aria-label="Empty">—</span>
                                 )}
                               </span>
                             </td>
