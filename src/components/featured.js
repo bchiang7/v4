@@ -203,14 +203,14 @@ const StyledProject = styled.div`
 `;
 
 const Featured = ({ data }) => {
+  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
-
-  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
 
   return (
     <StyledContainer id="projects">
