@@ -7,7 +7,7 @@ tech:
   - Craft CMS
   - Chart.js
 company: 'Upstatement'
-show: 'false'
+showInProjects: false
 ---
 
 A marketing site for an ambitious life sciences venture capital company.

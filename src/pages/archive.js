@@ -11,8 +11,6 @@ import { theme, mixins, media, Main } from '@styles';
 const { colors, fonts, fontSizes } = theme;
 
 const StyledMainContainer = styled(Main)`
-  min-height: 100vh;
-  height: 100%;
   max-width: 1600px;
 `;
 const StyledTitleContainer = styled.header`
@@ -218,7 +216,10 @@ export default ArchivePage;
 export const pageQuery = graphql`
   {
     projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { showInProjects: { ne: false } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -230,7 +231,6 @@ export const pageQuery = graphql`
             github
             external
             company
-            show
           }
           html
         }

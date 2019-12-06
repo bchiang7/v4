@@ -203,7 +203,7 @@ const StyledProject = styled.div`
 `;
 
 const Featured = ({ data }) => {
-  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const featuredProjects = data.filter(({ node }) => node);
 
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
