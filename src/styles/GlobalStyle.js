@@ -185,6 +185,26 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 10px 0;
   }
 
+  h1 {
+    font-size: 80px;
+    line-height: 1.1;
+    margin: 0;
+    ${media.desktop`font-size: 70px;`};
+    ${media.tablet`font-size: 60px;`};
+    ${media.phablet`font-size: 50px;`};
+    ${media.phone`font-size: 40px;`};
+  }
+
+  .subtitle {
+    color: ${colors.green};
+    margin: 0 0 20px 3px;
+    font-size: ${fontSizes.md};
+    font-family: ${fonts.SFMono};
+    font-weight: normal;
+    ${media.desktop`font-size: ${fontSizes.sm};`};
+    ${media.tablet`font-size: ${fontSizes.smish};`};
+  }
+
   #root {
     min-height: 100vh;
     display: grid;

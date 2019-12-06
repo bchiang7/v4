@@ -12,30 +12,10 @@ const { colors, fonts, fontSizes } = theme;
 
 const StyledMainContainer = styled(Main)`
   max-width: 1600px;
-`;
-const StyledTitleContainer = styled.header`
-  margin-top: 200px;
+  padding-top: 200px;
   ${media.tablet`
-    margin-top: 150px;
+    padding-top: 150px;
   `};
-`;
-const StyledTitle = styled.h1`
-  font-size: 80px;
-  line-height: 1.1;
-  margin: 0;
-  ${media.desktop`font-size: 70px;`};
-  ${media.tablet`font-size: 60px;`};
-  ${media.phablet`font-size: 50px;`};
-  ${media.phone`font-size: 40px;`};
-`;
-const StyledSubtitle = styled.p`
-  color: ${colors.green};
-  margin: 0 0 20px 3px;
-  font-size: ${fontSizes.md};
-  font-family: ${fonts.SFMono};
-  font-weight: normal;
-  ${media.desktop`font-size: ${fontSizes.sm};`};
-  ${media.tablet`font-size: ${fontSizes.smish};`};
 `;
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -111,7 +91,7 @@ const StyledTable = styled.table`
 `;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.projects.edges;
+  const projects = data.allMarkdownRemark.edges;
 
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
@@ -130,10 +110,10 @@ const ArchivePage = ({ location, data }) => {
       </Helmet>
 
       <StyledMainContainer>
-        <StyledTitleContainer ref={revealTitle}>
-          <StyledTitle>Archive</StyledTitle>
-          <StyledSubtitle>A big list of things I’ve worked on</StyledSubtitle>
-        </StyledTitleContainer>
+        <header ref={revealTitle}>
+          <h1>Archive</h1>
+          <p className="subtitle">A big list of things I’ve worked on</p>
+        </header>
 
         <StyledTableContainer ref={revealTable}>
           <StyledTable>
@@ -215,7 +195,7 @@ export default ArchivePage;
 
 export const pageQuery = graphql`
   {
-    projects: allMarkdownRemark(
+    allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/projects/" }
         frontmatter: { showInProjects: { ne: false } }
