@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import sr from '@utils/sr';
@@ -140,7 +140,7 @@ const PensievePage = ({ location, data }) => {
                   <StyledPost key={i} ref={el => (revealPosts.current[i] = el)} tabIndex="0">
                     <StyledPostInner>
                       <header>
-                        <a href={slug}>
+                        <Link to={slug}>
                           <StyledPostHeader>
                             <StyledFolder>
                               <IconZap />
@@ -148,7 +148,7 @@ const PensievePage = ({ location, data }) => {
                           </StyledPostHeader>
                           <StyledPostName>{title}</StyledPostName>
                           <StyledPostDescription>{description}</StyledPostDescription>
-                        </a>
+                        </Link>
                       </header>
                       <footer>
                         <StyledDate>{`${d.getMonth() + 1} / ${d.getFullYear()}`}</StyledDate>
@@ -179,7 +179,7 @@ export default PensievePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/pensieve/" }, frontmatter: { draft: { ne: true } } }
+      filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: { draft: { ne: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -191,7 +191,6 @@ export const pageQuery = graphql`
             date
             tags
             draft
-            template
           }
           html
         }

@@ -4,11 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
-
 const path = require('path');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
   if (stage === 'build-html') {
     actions.setWebpackConfig({
       module: {
@@ -38,5 +37,43 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@utils': path.resolve(__dirname, 'src/utils'),
       },
     },
+  });
+};
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions;
+  const blogPostTemplate = path.resolve(`src/templates/post.js`);
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: { draft: { ne: true } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
+
+  const posts = result.data.allMarkdownRemark.edges;
+
+  posts.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: blogPostTemplate,
+      context: {}, // additional data can be passed via context
+    });
   });
 };
