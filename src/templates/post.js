@@ -14,8 +14,9 @@ function Template({
         <h2>{frontmatter.date}</h2>
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
 
+        <h3>Tags:</h3>
         <ul>
-          {frontmatter.tags.length > 0 && frontmatter.tags.map(tag => <li key={tag}>tag</li>)}
+          {frontmatter.tags.length > 0 && frontmatter.tags.map(tag => <li key={tag}>{tag}</li>)}
         </ul>
       </div>
     </div>

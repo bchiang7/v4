@@ -6,6 +6,7 @@ draft: false
 slug: '/pensieve/wordpress-publish-error'
 tags:
   - 'WordPress'
+  - 'Errors'
 ---
 
 ```json
