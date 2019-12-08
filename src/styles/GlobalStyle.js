@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import media from './media';
+import mixins from './mixins';
 import * as fontFamilies from './fonts';
 const { colors, fontSizes, fonts } = theme;
 
@@ -185,7 +186,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 10px 0;
   }
 
-  h1 {
+  h1.bigTitle {
     font-size: 80px;
     line-height: 1.1;
     margin: 0;
@@ -201,8 +202,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.md};
     font-family: ${fonts.SFMono};
     font-weight: normal;
+    line-height: 1.5;
     ${media.desktop`font-size: ${fontSizes.sm};`};
     ${media.tablet`font-size: ${fontSizes.smish};`};
+
+    a {
+      ${mixins.inlineLink};
+      line-height: 1.5;
+    }
   }
 
   #root {

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
@@ -11,12 +12,6 @@ import { theme, mixins, media, Main } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const StyledMainContainer = styled(Main)`
-  max-width: 1600px;
-  padding-top: 200px;
-  ${media.tablet`
-    padding-top: 150px;
-  `};
-
   & > header {
     text-align: center;
     margin-bottom: 100px;
@@ -84,9 +79,9 @@ const StyledPostDescription = styled.div`
 `;
 const StyledDate = styled.span`
   text-transform: uppercase;
-  font-size: ${fontSizes.md};
-  color: ${colors.lightSlate};
-  font-weight: 600;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xs};
+  color: ${colors.slate};
 `;
 const StyledTags = styled.ul`
   display: flex;
@@ -101,6 +96,9 @@ const StyledTags = styled.ul`
     &:last-of-type {
       margin-right: 0;
     }
+    a {
+      ${mixins.inlineLink};
+    }
   }
 `;
 
@@ -108,10 +106,12 @@ const PensievePage = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges;
 
   const revealTitle = useRef(null);
+  const revealGrid = useRef(null);
   const revealPosts = useRef([]);
 
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
+    sr.reveal(revealGrid.current, srConfig());
     revealPosts.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
@@ -124,11 +124,11 @@ const PensievePage = ({ location, data }) => {
 
       <StyledMainContainer>
         <header ref={revealTitle}>
-          <h1>Pensieve</h1>
-          <p className="subtitle">A collection of memories</p>
+          <h1 className="bigTitle">Pensieve</h1>
+          <p className="subtitle">not a blog, just a collection of memories</p>
         </header>
 
-        <StyledGrid>
+        <StyledGrid ref={revealGrid}>
           <div className="posts">
             {posts.length > 0 &&
               posts.map(({ node }, i) => {
@@ -151,10 +151,12 @@ const PensievePage = ({ location, data }) => {
                         </Link>
                       </header>
                       <footer>
-                        <StyledDate>{`${d.getMonth() + 1} / ${d.getFullYear()}`}</StyledDate>
+                        <StyledDate>{`${d.toLocaleDateString()}`}</StyledDate>
                         <StyledTags>
                           {tags.map((tag, i) => (
-                            <li key={i}>#{tag}</li>
+                            <li key={i}>
+                              <Link to={`/pensieve/tags/${kebabCase(tag)}/`}>#{tag}</Link>
+                            </li>
                           ))}
                         </StyledTags>
                       </footer>

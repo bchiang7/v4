@@ -1,12 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-// Utilities
-import kebabCase from 'lodash/kebabCase';
-
-// Components
 import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import kebabCase from 'lodash/kebabCase';
+import sr from '@utils/sr';
+import { srConfig } from '@config';
+import { Layout } from '@components';
+import { IconZap } from '@components/icons';
+import styled from 'styled-components';
+import { theme, mixins, media, Main } from '@styles';
+const { colors, fontSizes, fonts } = theme;
+
+const StyledTagsContainer = styled(Main)``;
 
 const TagsPage = ({
   data: {
@@ -15,10 +20,11 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
+  location,
 }) => (
-  <div>
+  <Layout location={location}>
     <Helmet title={title} />
-    <div>
+    <StyledTagsContainer>
       <h1>Tags</h1>
       <ul>
         {group.map(tag => (
@@ -29,8 +35,8 @@ const TagsPage = ({
           </li>
         ))}
       </ul>
-    </div>
-  </div>
+    </StyledTagsContainer>
+  </Layout>
 );
 
 TagsPage.propTypes = {

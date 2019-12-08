@@ -5,8 +5,7 @@ date: '2019-12-03'
 draft: false
 slug: '/pensieve/wordpress-publish-error'
 tags:
-  - wordpress
-  - errors
+  - WordPress
 ---
 
 ```json

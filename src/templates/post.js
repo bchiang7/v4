@@ -1,32 +1,60 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import kebabCase from 'lodash/kebabCase';
+import { Layout } from '@components';
+import { IconZap } from '@components/icons';
+import styled from 'styled-components';
+import { theme, mixins, media, Main } from '@styles';
+const { colors, fontSizes, fonts } = theme;
 
-function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+const StyledPostContainer = styled(Main)``;
+const StyledPostHeader = styled.header`
+  margin-bottom: 100px;
+`;
+const StyledPostContent = styled.div`
+  margin-bottom: 100px;
+`;
+
+const PostTemplate = ({ data, location }) => {
+  const { frontmatter, html } = data.markdownRemark;
+  const { title, date, tags } = frontmatter;
+
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
+    <Layout location={location}>
+      <StyledPostContainer>
+        <Link to="/pensieve">Back to all memories</Link>
 
-        <h3>Tags:</h3>
-        <ul>
-          {frontmatter.tags.length > 0 && frontmatter.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
-      </div>
-    </div>
+        <StyledPostHeader>
+          <h1>{title}</h1>
+          <p className="subtitle">
+            <time>
+              {new Date(date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            <span>&nbsp;&mdash;&nbsp;</span>
+            {tags.map((tag, i) => (
+              <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`}>
+                #{tag}
+              </Link>
+            ))}
+          </p>
+        </StyledPostHeader>
+
+        <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
+      </StyledPostContainer>
+    </Layout>
   );
-}
+};
 
-export default Template;
+export default PostTemplate;
 
-Template.propTypes = {
+PostTemplate.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export const pageQuery = graphql`

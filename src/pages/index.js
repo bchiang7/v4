@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Main } from '@styles';
 
 const StyledMainContainer = styled(Main)`
+  padding-top: 0;
   counter-reset: section;
 `;
 

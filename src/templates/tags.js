@@ -1,37 +1,40 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-// Components
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { Layout } from '@components';
+import styled from 'styled-components';
+import { theme, mixins, media, Main } from '@styles';
 
-const Tags = ({ pageContext, data }) => {
+const StyledTagsContainer = styled(Main)``;
+
+const TagTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`;
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { title, slug } = node.frontmatter;
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/pensieve/tags">All tags</Link>
-    </div>
+    <Layout location={location}>
+      <StyledTagsContainer>
+        <Link to="/pensieve/tags">All tags</Link>
+        <h1>{tagHeader}</h1>
+        <ul>
+          {edges.map(({ node }) => {
+            const { title, slug } = node.frontmatter;
+            return (
+              <li key={slug}>
+                <Link to={slug}>{title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </StyledTagsContainer>
+    </Layout>
   );
 };
 
-Tags.propTypes = {
+export default TagTemplate;
+
+TagTemplate.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
@@ -49,9 +52,8 @@ Tags.propTypes = {
       ),
     }),
   }),
+  location: PropTypes.object,
 };
-
-export default Tags;
 
 export const pageQuery = graphql`
   query($tag: String) {

@@ -10,13 +10,7 @@ import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
 const { colors, fonts, fontSizes } = theme;
 
-const StyledMainContainer = styled(Main)`
-  max-width: 1600px;
-  padding-top: 200px;
-  ${media.tablet`
-    padding-top: 150px;
-  `};
-`;
+const StyledMainContainer = styled(Main)``;
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
   ${media.tablet`

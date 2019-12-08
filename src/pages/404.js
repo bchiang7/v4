@@ -10,7 +10,6 @@ const { colors, fonts } = theme;
 const StyledMainContainer = styled(Main)`
   ${mixins.flexCenter};
   flex-direction: column;
-  height: 100vh !important;
 `;
 const StyledTitle = styled.h1`
   color: ${colors.green};
