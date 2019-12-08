@@ -16,14 +16,19 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
     "*.js": [
       "eslint --fix",
       "git add"
@@ -32,22 +37,22 @@
   "dependencies": {
     "animejs": "^3.1.0",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.16.1",
-    "gatsby-image": "^2.2.29",
-    "gatsby-plugin-google-analytics": "^2.1.23",
-    "gatsby-plugin-manifest": "^2.2.23",
-    "gatsby-plugin-netlify": "^2.1.21",
-    "gatsby-plugin-offline": "^3.0.16",
-    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby": "^2.18.7",
+    "gatsby-image": "^2.2.34",
+    "gatsby-plugin-google-analytics": "^2.1.29",
+    "gatsby-plugin-manifest": "^2.2.31",
+    "gatsby-plugin-netlify": "^2.1.27",
+    "gatsby-plugin-offline": "^3.0.27",
+    "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-robots-txt": "^1.5.0",
-    "gatsby-plugin-sharp": "^2.2.31",
-    "gatsby-plugin-sitemap": "^2.2.19",
-    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-plugin-sitemap": "^2.2.22",
+    "gatsby-plugin-styled-components": "^3.1.14",
     "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^3.1.28",
-    "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-remark": "^2.6.30",
-    "gatsby-transformer-sharp": "^2.2.23",
+    "gatsby-remark-images": "^3.1.35",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-remark": "^2.6.39",
+    "gatsby-transformer-sharp": "^2.3.7",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
@@ -59,16 +64,15 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@upstatement/eslint-config": "0.4.2",
+    "@upstatement/eslint-config": "0.4.3",
     "@upstatement/prettier-config": "^0.3.0",
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.16.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^2.0.0"
+    "eslint-plugin-react": "^7.17.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
   }
 }
