@@ -36,11 +36,13 @@ const PostTemplate = ({ data, location }) => {
               })}
             </time>
             <span>&nbsp;&mdash;&nbsp;</span>
-            {tags.map((tag, i) => (
-              <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`}>
-                #{tag}
-              </Link>
-            ))}
+            {tags &&
+              tags.length > 0 &&
+              tags.map((tag, i) => (
+                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`}>
+                  #{tag}
+                </Link>
+              ))}
           </p>
         </StyledPostHeader>
 
@@ -58,11 +60,8 @@ PostTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($slug: String) {
-    markdownRemark(
-      fileAbsolutePath: { regex: "/posts/" }
-      frontmatter: { slug: { eq: $slug }, draft: { ne: true } }
-    ) {
+  query($path: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $path } }) {
       html
       frontmatter {
         title
