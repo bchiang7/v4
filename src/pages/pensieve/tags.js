@@ -3,15 +3,29 @@ import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
 import { Layout } from '@components';
-import { IconZap } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { theme, mixins, Main } from '@styles';
+const { colors, fontSizes } = theme;
 
-const StyledTagsContainer = styled(Main)``;
+const StyledTagsContainer = styled(Main)`
+  h1 {
+    margin-bottom: 50px;
+  }
+  ul {
+    color: ${colors.lightSlate};
+    li {
+      font-size: ${fontSizes.xxl};
+    }
+  }
+  a {
+    ${mixins.inlineLink};
+    color: ${colors.lightSlate};
+    .count {
+      color: ${colors.slate};
+    }
+  }
+`;
 
 const TagsPage = ({
   data: {
@@ -26,11 +40,11 @@ const TagsPage = ({
     <Helmet title={title} />
     <StyledTagsContainer>
       <h1>Tags</h1>
-      <ul>
+      <ul className="fancy-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
+              {tag.fieldValue} <span className="count">({tag.totalCount})</span>
             </Link>
           </li>
         ))}

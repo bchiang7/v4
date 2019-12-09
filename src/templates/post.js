@@ -3,12 +3,14 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '@components';
-import { IconZap } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, Main } from '@styles';
 
-const StyledPostContainer = styled(Main)``;
+const StyledPostContainer = styled(Main)`
+  a {
+    ${mixins.inlineLink};
+  }
+`;
 const StyledPostHeader = styled.header`
   margin-bottom: 100px;
 `;
@@ -23,8 +25,6 @@ const PostTemplate = ({ data, location }) => {
   return (
     <Layout location={location}>
       <StyledPostContainer>
-        <Link to="/pensieve">Back to all memories</Link>
-
         <StyledPostHeader>
           <h1>{title}</h1>
           <p className="subtitle">
@@ -47,6 +47,8 @@ const PostTemplate = ({ data, location }) => {
         </StyledPostHeader>
 
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
+
+        <Link to="/pensieve">&larr;&nbsp; Back to all memories</Link>
       </StyledPostContainer>
     </Layout>
   );

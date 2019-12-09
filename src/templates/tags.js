@@ -1,28 +1,84 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import kebabCase from 'lodash/kebabCase';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
+import { theme, mixins, Main } from '@styles';
+const { colors, fontSizes } = theme;
 
-const StyledTagsContainer = styled(Main)``;
+const StyledTagsContainer = styled(Main)`
+  a {
+    ${mixins.inlineLink};
+    color: ${colors.slate};
+  }
+
+  h1 {
+    ${mixins.flexBetween};
+    margin-bottom: 50px;
+
+    a {
+      font-size: ${fontSizes.lg};
+      font-weight: 400;
+    }
+  }
+
+  ul {
+    li {
+      font-size: 24px;
+      h2 {
+        font-size: inherit;
+        margin: 0;
+        a {
+          color: ${colors.lightSlate};
+        }
+      }
+      .subtitle {
+        color: ${colors.slate};
+      }
+    }
+  }
+`;
 
 const TagTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
-  const { edges, totalCount } = data.allMarkdownRemark;
-  const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`;
+  const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout location={location}>
       <StyledTagsContainer>
-        <Link to="/pensieve/tags">All tags</Link>
-        <h1>{tagHeader}</h1>
-        <ul>
+        <h1>
+          <span>#{tag}</span>
+          <span>
+            <Link to="/pensieve/tags">View all tags</Link>
+          </span>
+        </h1>
+
+        <ul className="fancy-list">
           {edges.map(({ node }) => {
-            const { title, slug } = node.frontmatter;
+            const { title, slug, date, tags } = node.frontmatter;
             return (
               <li key={slug}>
-                <Link to={slug}>{title}</Link>
+                <h2>
+                  <Link to={slug}>{title}</Link>
+                </h2>
+                <p className="subtitle">
+                  <time>
+                    {new Date(date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  <span>&nbsp;&mdash;&nbsp;</span>
+                  {tags &&
+                    tags.length > 0 &&
+                    tags.map((tag, i) => (
+                      <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`}>
+                        #{tag}
+                      </Link>
+                    ))}
+                </p>
               </li>
             );
           })}
@@ -67,7 +123,10 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            description
+            date
             slug
+            tags
           }
         }
       }

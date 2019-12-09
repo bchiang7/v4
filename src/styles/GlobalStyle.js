@@ -186,7 +186,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 10px 0;
   }
 
-  h1.bigTitle {
+  h1.big-title {
     font-size: 80px;
     line-height: 1.1;
     margin: 0;
@@ -285,6 +285,21 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     list-style: none;
+
+    &.fancy-list {
+      font-size: ${fontSizes.lg};
+      li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        &:before {
+          content: '▹';
+          position: absolute;
+          left: 0;
+          color: ${colors.green};
+        }
+      }
+    }
   }
 
   .gatsby-image-outer-wrapper {

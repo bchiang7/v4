@@ -9,7 +9,7 @@ const InlineLink = styled.a`
   position: relative;
   transition: ${theme.transition};
   cursor: pointer;
-  color: ${colors.green};
+
   &:hover,
   &:focus,
   &:active {

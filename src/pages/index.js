@@ -6,13 +6,12 @@ import styled from 'styled-components';
 import { Main } from '@styles';
 
 const StyledMainContainer = styled(Main)`
-  padding-top: 0;
   counter-reset: section;
 `;
 
 const IndexPage = ({ location, data }) => (
   <Layout location={location}>
-    <StyledMainContainer>
+    <StyledMainContainer className="fillHeight">
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
       <Jobs data={data.jobs.edges} />

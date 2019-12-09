@@ -52,6 +52,10 @@ const mixins = {
       &:after {
         width: 100%;
       }
+      & > * {
+        color: ${colors.green} !important;
+        transition: ${theme.transition};
+      }
     }
     &:after {
       content: '';
@@ -124,6 +128,21 @@ const mixins = {
     &:hover,
     &:focus {
       box-shadow: 0 20px 30px -15px ${colors.shadowNavy};
+    }
+  `,
+
+  fancyList: css`
+    font-size: ${fontSizes.lg};
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      &:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: ${colors.green};
+      }
     }
   `,
 };

@@ -15,6 +15,13 @@ const StyledMainContainer = styled(Main)`
   & > header {
     text-align: center;
     margin-bottom: 100px;
+
+    a:hover,
+    &:focus {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>⚡</text></svg>")
+          20 0,
+        auto;
+    }
   }
 
   footer {
@@ -124,8 +131,15 @@ const PensievePage = ({ location, data }) => {
 
       <StyledMainContainer>
         <header ref={revealTitle}>
-          <h1 className="bigTitle">Pensieve</h1>
-          <p className="subtitle">not a blog, just a collection of memories</p>
+          <h1 className="big-title">Pensieve</h1>
+          <p className="subtitle">
+            <a
+              href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve"
+              target="_blank"
+              rel="noopener noreferrer">
+              a collection of memories
+            </a>
+          </p>
         </header>
 
         <StyledGrid ref={revealGrid}>
