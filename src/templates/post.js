@@ -12,7 +12,7 @@ const StyledPostContainer = styled(Main)`
   }
 `;
 const StyledPostHeader = styled.header`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
 const StyledPostContent = styled.div`
   margin-bottom: 100px;
@@ -26,7 +26,7 @@ const PostTemplate = ({ data, location }) => {
     <Layout location={location}>
       <StyledPostContainer>
         <StyledPostHeader>
-          <h1>{title}</h1>
+          <h1 className="medium-title">{title}</h1>
           <p className="subtitle">
             <time>
               {new Date(date).toLocaleDateString('en-US', {
