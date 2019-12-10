@@ -5,6 +5,23 @@ import mixins from './mixins';
 import * as fontFamilies from './fonts';
 const { colors, fontSizes, fonts } = theme;
 
+const prismColors = {
+  char: `#D8DEE9`,
+  comment: `#999999`,
+  keyword: `#c5a5c5`,
+  lineHighlight: `#14161a`,
+  primitive: `#5a9bcf`,
+  string: `#8dc891`,
+  variable: `#d7deea`,
+  boolean: `#ff8b50`,
+  punctuation: `#5FB3B3`,
+  tag: `#fc929e`,
+  function: `#79b6f2`,
+  className: `#FAC863`,
+  method: `#6699CC`,
+  operator: `#fc929e`,
+};
+
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Calibre';
@@ -314,10 +331,14 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .gatsby-image-outer-wrapper {
-    height: 100%;
+  .overline {
+    color: ${colors.green};
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.md};
+    font-weight: normal;
   }
 
+  /* React CSS Transitions */
   .fadeup-enter {
     opacity: 0.01;
     transform: translateY(20px);
@@ -352,13 +373,6 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity 1000ms ${theme.easing};
   }
 
-  .overline {
-    color: ${colors.green};
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.md};
-    font-weight: normal;
-  }
-
   blockquote {
     border-left-color: ${colors.green};
     border-left-style: solid;
@@ -384,13 +398,152 @@ const GlobalStyle = createGlobalStyle`
   }
 
   code {
-    background-color: ${colors.lightNavy};
-    color: ${colors.lightestSlate};
-    padding: 0.25rem 0.5rem;
-    border-radius: ${theme.borderRadius};
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
   }
+
+
+  /* Gatsby elements */
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+
+  .gatsby-highlight-code-line {
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    background-color: ${colors.lightNavy};
+    border-left: 0.25em solid ${colors.green};
+  }
+
+  /**
+   * Add back the container background-color, border-radius, padding, margin
+   * and overflow that we removed from <pre>.
+   */
+  .gatsby-highlight {
+    background-color: ${colors.lightNavy};
+    color: ${colors.lightestSlate};
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.md};
+  }
+
+  /**
+   * Remove the default PrismJS theme background-color, border-radius, margin,
+   * padding and overflow.
+   * 1. Make the element just wide enough to fit its content.
+   * 2. Always fill the visible space in .gatsby-highlight.
+   * 3. Adjust the position of the line numbers
+   */
+  .gatsby-highlight pre[class*="language-"] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+  }
+
+  .gatsby-highlight code[class*="language-"],
+  .gatsby-highlight pre[class*="language-"]
+  {
+    height: auto !important;
+    margin: 1rem;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .gatsby-highlight + .gatsby-highlight {
+    margin-top: 1.250em;
+  }
+  .gatsby-highlight-code-line {
+    background-color: ${prismColors.lineHighlight};
+    display: block;
+    margin: -0.125rem calc(-1rem - 15px);
+    padding: 0.125rem calc(1rem + 15px);
+  }
+  .token.attr-name {
+    color: ${prismColors.keyword};
+  }
+  .token.comment,
+  .token.block-comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata
+  {
+    color: ${prismColors.comment};
+  }
+  .token.property,
+  .token.number,
+  .token.function-name,
+  .token.constant,
+  .token.symbol,
+  .token.deleted
+  {
+    color: ${prismColors.primitive};
+  }
+  .token.boolean {
+    color: ${prismColors.boolean};
+  }
+  span.token.tag {
+    color: ${prismColors.tag};
+  }
+  .token.string {
+    color: ${prismColors.string};
+  }
+  .token.punctuation {
+    color: ${prismColors.punctuation};
+  }
+  .token.selector,
+  .token.char,
+  .token.builtin,
+  .token.inserted
+  {
+    color: ${prismColors.char};
+  }
+  .token.function {
+    color: ${prismColors.function};
+  }
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .token.variable
+  {
+    color: ${prismColors.variable};
+  }
+  .token.attr-value {
+    color: ${prismColors.string};
+  }
+  .token.keyword {
+    color: ${prismColors.keyword};
+  }
+  .token.atrule,
+  .token.class-name
+  {
+    color: ${prismColors.className};
+  }
+  .token.important {
+    font-weight: 400;
+  }
+  .token.bold {
+    font-weight: 700;
+  }
+  .token.italic {
+    font-style: italic;
+  }
+  .token.entity {
+    cursor: help;
+  }
+  .namespace {
+    opacity: 0.7;
+  }
+
 `;
 
 export default GlobalStyle;
