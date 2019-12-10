@@ -183,7 +183,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-weight: 600;
-    color: ${colors.white};
+    color: ${colors.lightestSlate};
     margin: 0 0 10px 0;
   }
 
@@ -359,7 +359,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
   }
 
-  /* Markdown */
   blockquote {
     border-left-color: ${colors.green};
     border-left-style: solid;
@@ -375,13 +374,22 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${colors.grey};
+    background-color: ${colors.darkGrey};
     height: 1px;
     border-width: 0px;
     border-style: initial;
     border-color: initial;
     border-image: initial;
     margin: 1rem;
+  }
+
+  code {
+    background-color: ${colors.lightNavy};
+    color: ${colors.lightestSlate};
+    padding: 0.25rem 0.5rem;
+    border-radius: ${theme.borderRadius};
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.md};
   }
 `;
 
