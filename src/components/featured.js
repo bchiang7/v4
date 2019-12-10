@@ -72,7 +72,10 @@ const StyledTechList = styled.ul`
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
   margin: 25px 0 10px;
+  list-style: none;
+
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.smish};

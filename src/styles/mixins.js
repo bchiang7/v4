@@ -132,6 +132,9 @@ const mixins = {
   `,
 
   fancyList: css`
+    padding: 0;
+    margin: 0;
+    list-style: none;
     font-size: ${fontSizes.lg};
     li {
       position: relative;

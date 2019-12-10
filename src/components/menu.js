@@ -45,6 +45,9 @@ const NavLinks = styled.nav`
   color: ${colors.lightestSlate};
 `;
 const NavList = styled.ol`
+  padding: 0;
+  margin: 0;
+  list-style: none;
   width: 100%;
 `;
 const NavListItem = styled.li`

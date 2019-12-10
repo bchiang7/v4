@@ -103,11 +103,14 @@ const StyledProjectDescription = styled.div`
   }
 `;
 const StyledTechList = styled.ul`
-  flex-grow: 1;
   display: flex;
   align-items: flex-end;
+  flex-grow: 1;
   flex-wrap: wrap;
-  margin-top: 20px;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.xs};

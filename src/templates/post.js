@@ -4,13 +4,9 @@ import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { mixins, Main } from '@styles';
+import { Main } from '@styles';
 
-const StyledPostContainer = styled(Main)`
-  a {
-    ${mixins.inlineLink};
-  }
-`;
+const StyledPostContainer = styled(Main)``;
 const StyledPostHeader = styled.header`
   margin-bottom: 50px;
 `;

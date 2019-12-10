@@ -134,6 +134,9 @@ const StyledLink = styled.div`
 `;
 const StyledList = styled.ol`
   ${mixins.flexBetween};
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `;
 const StyledListItem = styled.li`
   margin: 0 10px;

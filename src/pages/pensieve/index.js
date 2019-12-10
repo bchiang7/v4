@@ -94,6 +94,10 @@ const StyledTags = styled.ul`
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.xs};

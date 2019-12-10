@@ -23,6 +23,10 @@ const StyledTabList = styled.ul`
   position: relative;
   width: max-content;
   z-index: 3;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
   ${media.thone`
     display: flex;
     overflow-x: scroll;

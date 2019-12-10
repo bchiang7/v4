@@ -288,14 +288,17 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     margin: 0 0 15px 0;
+
+    a {
+      ${mixins.inlineLink};
+    }
   }
 
-  ul, ol {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
+  ul {
     &.fancy-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
       font-size: ${fontSizes.lg};
       li {
         position: relative;
@@ -354,6 +357,31 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
     font-weight: normal;
+  }
+
+  /* Markdown */
+  blockquote {
+    border-left-color: ${colors.green};
+    border-left-style: solid;
+    border-left-width: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 1.5rem;
+
+    p {
+      font-style: italic;
+      font-size: 24px;
+    }
+  }
+
+  hr {
+    background-color: ${colors.grey};
+    height: 1px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    margin: 1rem;
   }
 `;
 
