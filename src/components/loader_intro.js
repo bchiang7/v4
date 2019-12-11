@@ -50,21 +50,21 @@ const LoaderIntro = ({ finishLoading }) => {
     loader
       .add({
         targets: '#logo path',
-        delay: 500,
-        duration: 2000,
+        delay: 10,
+        duration: 200,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
         targets: '#logo #B',
-        duration: 800,
+        duration: 200,
         easing: 'easeInOutQuart',
         opacity: 1,
       })
       .add({
         targets: '#logo',
-        delay: 700,
-        duration: 300,
+        delay: 200,
+        duration: 200,
         easing: 'easeInOutQuart',
         opacity: 0,
         scale: 0.1,
