@@ -10,7 +10,7 @@ const prismColors = {
   char: `#5ccfe6`,
   comment: `#8695b799`,
   keyword: `#c3a6ff`,
-  lineHighlight: `#2f3b54`,
+  lineHighlight: `#1d2d50`,
   primitive: `#c3a6ff`,
   string: `#bae67e`,
   variable: `#a2aabc`,
@@ -307,7 +307,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin: 0 0 15px 0;
 
-    a {
+    & > a {
       ${mixins.inlineLink};
     }
   }
@@ -338,6 +338,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.md};
     font-weight: normal;
   }
+
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+
 
   /* React CSS Transitions */
   .fadeup-enter {
@@ -403,10 +408,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.md};
   }
 
-
-  /* Gatsby elements */
-  .gatsby-image-outer-wrapper {
-    height: 100%;
+  p > code {
+    background-color: ${colors.lightNavy};
+    color: ${colors.offWhite};
+    border-radius: ${theme.borderRadius};
+    padding: 0.25em 0.5em;
   }
 
   /**
@@ -417,12 +423,12 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${prismColors.bg};
     color: ${prismColors.variable};
     border-radius: ${theme.borderRadius};
-    margin: 1em 0;
-    padding: 1em;
+    margin: 2em 0;
+    padding: 1.25em;
     overflow: auto;
+    position: relative;
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
-    position: relative;
   }
 
   /**
@@ -439,90 +445,64 @@ const GlobalStyle = createGlobalStyle`
     overflow: initial;
     float: left; /* 1 */
     min-width: 100%; /* 2 */
-    margin: 1rem;
+    padding-top: 2em;
   }
 
   .gatsby-highlight code[class*="language-"],
   .gatsby-highlight pre[class*="language-"] {
     height: auto !important;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: ${fontSizes.sm};
+    line-height: 1.5;
     white-space: pre-wrap;
     word-break: break-word;
   }
 
-  .gatsby-highlight + .gatsby-highlight {
-    margin-top: 1.25em;
-  }
-
+  /* Line highlighting */
   .gatsby-highlight-code-line {
+    display: block;
     background-color: ${prismColors.lineHighlight};
-    display: block;
-    margin: -0.125rem calc(-1rem - 15px);
-    padding: 0.125rem calc(1rem + 15px);
-  }
-  /* .gatsby-highlight-code-line {
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
+    border-left: 0.1em solid ${colors.green};
+    padding-left: 0.9em;
     padding-right: 1em;
-    padding-left: 0.75em;
-    background-color: ${prismColors.lineHighlight};
-    border-left: 0.25em solid ${colors.green};
-  } */
-
-
-  .gatsby-highlight pre[class*='language-'] {
-    background-color: transparent;
-    border: 0;
-    padding: 20px 0;
-    /* WebkitOverflowScrolling: touch; */
+    margin-right: calc(-1em - 5px);
+    margin-left: calc(-1em - 5px);
   }
+
+  /* Language badges */
   .gatsby-highlight pre[class*='language-']::before {
-    background: ${colors.grey};
-    border-radius: 0 0 3px 3px;
-    color: ${colors.grey};
+    background: ${colors.mediumGrey};
+    color: ${colors.offWhite};
     font-size: ${fontSizes.xs};
     font-family: ${fonts.SFMono};
     line-height: 1.5;
-    padding: 5px;
-    position: absolute;
-    left: 20px;
-    text-align: right;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    border-radius: 0 0 3px 3px;
+    position: absolute;
     top: 0;
+    left: 1.25rem;
+    padding: 0.25rem 0.5rem;
   }
   .gatsby-highlight pre[class='language-javascript']::before {
     content: 'js';
-    background: #f7df1e;
   }
   .gatsby-highlight pre[class='language-js']::before {
     content: 'js';
-    background: #f7df1e;
   }
   .gatsby-highlight pre[class='language-jsx']::before {
     content: 'jsx';
-    background: #61dafb;
   }
   .gatsby-highlight pre[class='language-graphql']::before {
     content: 'GraphQL';
-    background: #E10098;
-    color: ${colors.white};
   }
   .gatsby-highlight pre[class='language-html']::before {
     content: 'html';
-    background: #005A9C;
-    color: ${colors.white};
   }
   .gatsby-highlight pre[class='language-css']::before {
     content: 'css';
-    background: #ff9800;
-    color: ${colors.white};
   }
   .gatsby-highlight pre[class='language-mdx']::before {
     content: 'mdx';
-    background: #f9ac00;
-    color: ${colors.white};
   }
   .gatsby-highlight pre[class='language-shell']::before {
     content: 'shell';
@@ -535,28 +515,24 @@ const GlobalStyle = createGlobalStyle`
   }
   .gatsby-highlight pre[class='language-yaml']::before {
     content: 'yaml';
-    background: #ffa8df;
   }
   .gatsby-highlight pre[class='language-markdown']::before {
     content: 'md';
   }
   .gatsby-highlight pre[class='language-json']::before, .gatsby-highlight pre[class='language-json5']::before {
     content: 'json';
-    background: linen;
   }
   .gatsby-highlight pre[class='language-diff']::before {
     content: 'diff';
-    background: #e6ffed;
   }
   .gatsby-highlight pre[class='language-text']::before {
     content: 'text';
-    background: ${colors.white};
   }
   .gatsby-highlight pre[class='language-flow']::before {
     content: 'flow';
-    background: #E8BD36;
   }
 
+  /* Prism Styles */
   .token {
     display: inline;
   }
