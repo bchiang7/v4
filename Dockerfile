@@ -7,9 +7,9 @@ RUN npm install
 
 COPY gatsby-*.js ./
 COPY static ./static
-COPY public ./public
+#COPY public ./public
 
-COPY src ./src
+COPY . .
 RUN ["npm" ,"run" ,"build"]
 
 
@@ -20,6 +20,6 @@ RUN npm i -g serve
 WORKDIR /app
 EXPOSE 5000
 
-COPY --from=build /app/public ./public
+COPY --from=build /app/public ./
 
 ENTRYPOINT ["serve"]
