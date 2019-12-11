@@ -6,20 +6,21 @@ import * as fontFamilies from './fonts';
 const { colors, fontSizes, fonts } = theme;
 
 const prismColors = {
-  char: `#D8DEE9`,
-  comment: `#999999`,
-  keyword: `#c5a5c5`,
-  lineHighlight: `#14161a`,
-  primitive: `#5a9bcf`,
-  string: `#8dc891`,
-  variable: `#d7deea`,
-  boolean: `#ff8b50`,
-  punctuation: `#5FB3B3`,
-  tag: `#fc929e`,
-  function: `#79b6f2`,
-  className: `#FAC863`,
-  method: `#6699CC`,
-  operator: `#fc929e`,
+  bg: `#112340`,
+  char: `#5ccfe6`,
+  comment: `#8695b799`,
+  keyword: `#c3a6ff`,
+  lineHighlight: `#2f3b54`,
+  primitive: `#c3a6ff`,
+  string: `#bae67e`,
+  variable: `#a2aabc`,
+  boolean: `#c3a6ff`,
+  punctuation: `#a2aabc`,
+  tag: `#5ccfe6`,
+  function: `#ffd580`,
+  className: `#ffae57`,
+  method: `#ffd580`,
+  operator: `#ffae57`,
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -376,7 +377,7 @@ const GlobalStyle = createGlobalStyle`
   blockquote {
     border-left-color: ${colors.green};
     border-left-style: solid;
-    border-left-width: 4px;
+    border-left-width: 1px;
     margin-left: 0px;
     margin-right: 0px;
     padding-left: 1.5rem;
@@ -408,38 +409,29 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  .gatsby-highlight-code-line {
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    background-color: ${colors.lightNavy};
-    border-left: 0.25em solid ${colors.green};
-  }
-
   /**
-   * Add back the container background-color, border-radius, padding, margin
-   * and overflow that we removed from <pre>.
-   */
+  * Add back the container background-color, border-radius, padding, margin
+  * and overflow that we removed from <pre>.
+  */
   .gatsby-highlight {
-    background-color: ${colors.lightNavy};
-    color: ${colors.lightestSlate};
-    border-radius: 0.3em;
-    margin: 0.5em 0;
+    background-color: ${prismColors.bg};
+    color: ${prismColors.variable};
+    border-radius: ${theme.borderRadius};
+    margin: 1em 0;
     padding: 1em;
     overflow: auto;
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
+    position: relative;
   }
 
   /**
-   * Remove the default PrismJS theme background-color, border-radius, margin,
-   * padding and overflow.
-   * 1. Make the element just wide enough to fit its content.
-   * 2. Always fill the visible space in .gatsby-highlight.
-   * 3. Adjust the position of the line numbers
-   */
+  * Remove the default PrismJS theme background-color, border-radius, margin,
+  * padding and overflow.
+  * 1. Make the element just wide enough to fit its content.
+  * 2. Always fill the visible space in .gatsby-highlight.
+  * 3. Adjust the position of the line numbers
+  */
   .gatsby-highlight pre[class*="language-"] {
     background-color: transparent;
     margin: 0;
@@ -447,36 +439,135 @@ const GlobalStyle = createGlobalStyle`
     overflow: initial;
     float: left; /* 1 */
     min-width: 100%; /* 2 */
+    margin: 1rem;
   }
 
   .gatsby-highlight code[class*="language-"],
-  .gatsby-highlight pre[class*="language-"]
-  {
+  .gatsby-highlight pre[class*="language-"] {
     height: auto !important;
-    margin: 1rem;
     font-size: 14px;
     line-height: 20px;
     white-space: pre-wrap;
     word-break: break-word;
   }
+
   .gatsby-highlight + .gatsby-highlight {
-    margin-top: 1.250em;
+    margin-top: 1.25em;
   }
+
   .gatsby-highlight-code-line {
     background-color: ${prismColors.lineHighlight};
     display: block;
     margin: -0.125rem calc(-1rem - 15px);
     padding: 0.125rem calc(1rem + 15px);
   }
-  .token.attr-name {
+  /* .gatsby-highlight-code-line {
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    background-color: ${prismColors.lineHighlight};
+    border-left: 0.25em solid ${colors.green};
+  } */
+
+
+  .gatsby-highlight pre[class*='language-'] {
+    background-color: transparent;
+    border: 0;
+    padding: 20px 0;
+    /* WebkitOverflowScrolling: touch; */
+  }
+  .gatsby-highlight pre[class*='language-']::before {
+    background: ${colors.grey};
+    border-radius: 0 0 3px 3px;
+    color: ${colors.grey};
+    font-size: ${fontSizes.xs};
+    font-family: ${fonts.SFMono};
+    line-height: 1.5;
+    padding: 5px;
+    position: absolute;
+    left: 20px;
+    text-align: right;
+    text-transform: uppercase;
+    top: 0;
+  }
+  .gatsby-highlight pre[class='language-javascript']::before {
+    content: 'js';
+    background: #f7df1e;
+  }
+  .gatsby-highlight pre[class='language-js']::before {
+    content: 'js';
+    background: #f7df1e;
+  }
+  .gatsby-highlight pre[class='language-jsx']::before {
+    content: 'jsx';
+    background: #61dafb;
+  }
+  .gatsby-highlight pre[class='language-graphql']::before {
+    content: 'GraphQL';
+    background: #E10098;
+    color: ${colors.white};
+  }
+  .gatsby-highlight pre[class='language-html']::before {
+    content: 'html';
+    background: #005A9C;
+    color: ${colors.white};
+  }
+  .gatsby-highlight pre[class='language-css']::before {
+    content: 'css';
+    background: #ff9800;
+    color: ${colors.white};
+  }
+  .gatsby-highlight pre[class='language-mdx']::before {
+    content: 'mdx';
+    background: #f9ac00;
+    color: ${colors.white};
+  }
+  .gatsby-highlight pre[class='language-shell']::before {
+    content: 'shell';
+  }
+  .gatsby-highlight pre[class='language-sh']::before {
+    content: 'sh';
+  }
+  .gatsby-highlight pre[class='language-bash']::before {
+    content: 'bash';
+  }
+  .gatsby-highlight pre[class='language-yaml']::before {
+    content: 'yaml';
+    background: #ffa8df;
+  }
+  .gatsby-highlight pre[class='language-markdown']::before {
+    content: 'md';
+  }
+  .gatsby-highlight pre[class='language-json']::before, .gatsby-highlight pre[class='language-json5']::before {
+    content: 'json';
+    background: linen;
+  }
+  .gatsby-highlight pre[class='language-diff']::before {
+    content: 'diff';
+    background: #e6ffed;
+  }
+  .gatsby-highlight pre[class='language-text']::before {
+    content: 'text';
+    background: ${colors.white};
+  }
+  .gatsby-highlight pre[class='language-flow']::before {
+    content: 'flow';
+    background: #E8BD36;
+  }
+
+  .token {
+    display: inline;
+  }
+  .token.url {
     color: ${prismColors.keyword};
   }
   .token.comment,
   .token.block-comment,
   .token.prolog,
   .token.doctype,
-  .token.cdata
-  {
+  .token.cdata {
     color: ${prismColors.comment};
   }
   .token.property,
@@ -484,8 +575,7 @@ const GlobalStyle = createGlobalStyle`
   .token.function-name,
   .token.constant,
   .token.symbol,
-  .token.deleted
-  {
+  .token.deleted {
     color: ${prismColors.primitive};
   }
   .token.boolean {
@@ -503,8 +593,7 @@ const GlobalStyle = createGlobalStyle`
   .token.selector,
   .token.char,
   .token.builtin,
-  .token.inserted
-  {
+  .token.inserted {
     color: ${prismColors.char};
   }
   .token.function {
@@ -513,8 +602,7 @@ const GlobalStyle = createGlobalStyle`
   .token.operator,
   .token.entity,
   .token.url,
-  .token.variable
-  {
+  .token.variable {
     color: ${prismColors.variable};
   }
   .token.attr-value {
@@ -524,9 +612,12 @@ const GlobalStyle = createGlobalStyle`
     color: ${prismColors.keyword};
   }
   .token.atrule,
-  .token.class-name
-  {
+  .token.class-name {
     color: ${prismColors.className};
+  }
+  .token.content,
+  .token.attr-name {
+    color: ${prismColors.operator};
   }
   .token.important {
     font-weight: 400;
@@ -543,7 +634,6 @@ const GlobalStyle = createGlobalStyle`
   .namespace {
     opacity: 0.7;
   }
-
 `;
 
 export default GlobalStyle;

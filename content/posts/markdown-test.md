@@ -9,15 +9,29 @@ tags:
 ---
 
 ```javascript
-// In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [`gatsby-remark-prismjs`],
-    },
-  },
-];
+// Here is a comment
+function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+             ` class="${cls}"`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined) {
+      console.log('undefined');
+    }
+  }
+
+  return (
+    <div>
+      <web-component>{block}</web-component>
+    </div>
+  )
+}
+
+export $initHighlight;
 ```
 
 This is a paragraph.
@@ -33,6 +47,111 @@ This is a paragraph.
 
     Header 2
     --------
+
+```css
+@import 'compass/reset';
+
+// variables
+$colorGreen: #008000;
+$colorGreenDark: darken($colorGreen, 10);
+
+@mixin container {
+  max-width: 980px;
+}
+
+// mixins with parameters
+@mixin button($color: green) {
+  @if ($color == green) {
+    background-color: #008000;
+  } @else if ($color == red) {
+    background-color: #b22222;
+  }
+}
+
+button {
+  @include button(red);
+}
+
+div,
+.navbar,
+#header,
+input[type='input'] {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.row-12 > [class*='spans'] {
+  border-left: 1px solid #b5c583;
+}
+
+// nested definitions
+ul {
+  width: 100%;
+  padding: {
+    left: 5px;
+    right: 5px;
+  }
+  li {
+    float: left;
+    margin-right: 10px;
+    .home {
+      background: url('http://placehold.it/20') scroll no-repeat 0 0;
+    }
+  }
+}
+
+.banner {
+  @extend .container;
+}
+
+a {
+  color: $colorGreen;
+  &:hover {
+    color: $colorGreenDark;
+  }
+  &:visited {
+    color: #c458cb;
+  }
+}
+
+@for $i from 1 through 5 {
+  .span#{$i} {
+    width: 20px * $i;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+```
+
+```markdown
+# hello world
+
+you can write text [with links](http://example.com) inline or [link references][1].
+
+- one _thing_ has *em*phasis
+- two **things** are **bold**
+
+[1]: http://example.com
+
+---
+
+# hello world
+
+<this_is inline="xml"></this_is>
+
+> markdown is so cool
+
+    so are code segments
+
+1. one thing (yeah!)
+2. two thing `i can write code`, and `more` wipee!
+```
 
 # Header 1
 
