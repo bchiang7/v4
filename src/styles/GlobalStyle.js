@@ -453,8 +453,12 @@ const GlobalStyle = createGlobalStyle`
     height: auto !important;
     font-size: ${fontSizes.sm};
     line-height: 1.5;
-    white-space: pre-wrap;
-    word-break: break-word;
+    white-space: pre;
+  	word-spacing: normal;
+  	word-break: normal;
+  	word-wrap: normal;
+  	tab-size: 2;
+  	hyphens: none;
   }
 
   /* Line highlighting */
