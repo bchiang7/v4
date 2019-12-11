@@ -10,7 +10,6 @@ const { colors, fontSizes } = theme;
 const StyledTagsContainer = styled(Main)`
   a {
     ${mixins.inlineLink};
-    color: ${colors.slate};
   }
 
   h1 {
@@ -48,6 +47,11 @@ const TagTemplate = ({ pageContext, data, location }) => {
   return (
     <Layout location={location}>
       <StyledTagsContainer>
+        <span className="breadcrumb">
+          <span className="arrow">&larr;</span>
+          <Link to="/pensieve">All memories</Link>
+        </span>
+
         <h1>
           <span>#{tag}</span>
           <span>

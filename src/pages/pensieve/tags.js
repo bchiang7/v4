@@ -6,7 +6,7 @@ import kebabCase from 'lodash/kebabCase';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { theme, mixins, Main } from '@styles';
-const { colors, fontSizes } = theme;
+const { colors, fontSizes, fonts } = theme;
 
 const StyledTagsContainer = styled(Main)`
   h1 {
@@ -16,13 +16,16 @@ const StyledTagsContainer = styled(Main)`
     color: ${colors.lightSlate};
     li {
       font-size: ${fontSizes.xxl};
-    }
-  }
-  a {
-    ${mixins.inlineLink};
-    color: ${colors.lightSlate};
-    .count {
-      color: ${colors.slate};
+
+      a {
+        ${mixins.inlineLink};
+        color: ${colors.lightSlate};
+        .count {
+          color: ${colors.slate};
+          font-family: ${fonts.SFMono};
+          font-size: ${fontSizes.md};
+        }
+      }
     }
   }
 `;
@@ -39,6 +42,11 @@ const TagsPage = ({
   <Layout location={location}>
     <Helmet title={title} />
     <StyledTagsContainer>
+      <span className="breadcrumb">
+        <span className="arrow">&larr;</span>
+        <Link to="/pensieve">All memories</Link>
+      </span>
+
       <h1>Tags</h1>
       <ul className="fancy-list">
         {group.map(tag => (

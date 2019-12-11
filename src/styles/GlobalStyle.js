@@ -194,6 +194,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${colors.highlight};
   }
 
+  #root {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 100%;
+  }
+
   h1,
   h2,
   h3,
@@ -238,14 +245,6 @@ const GlobalStyle = createGlobalStyle`
       line-height: 1.5;
     }
   }
-
-  #root {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 100%;
-  }
-
 
   img {
     width: 100%;
@@ -339,10 +338,30 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
   }
 
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    color: ${colors.green};
+
+    .arrow {
+      display: block;
+      margin-right: 10px;
+      padding-top: 4px;
+    }
+    a {
+      ${mixins.inlineLink};
+      font-family: ${fonts.SFMono};
+      text-transform: uppercase;
+      font-size: ${fontSizes.sm};
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
+  }
+
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
-
 
   /* React CSS Transitions */
   .fadeup-enter {

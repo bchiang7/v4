@@ -21,6 +21,11 @@ const PostTemplate = ({ data, location }) => {
   return (
     <Layout location={location}>
       <StyledPostContainer>
+        <span className="breadcrumb">
+          <span className="arrow">&larr;</span>
+          <Link to="/pensieve">All memories</Link>
+        </span>
+
         <StyledPostHeader>
           <h1 className="medium-title">{title}</h1>
           <p className="subtitle">
@@ -43,8 +48,6 @@ const PostTemplate = ({ data, location }) => {
         </StyledPostHeader>
 
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
-
-        <Link to="/pensieve">&larr;&nbsp; Back to all memories</Link>
       </StyledPostContainer>
     </Layout>
   );
