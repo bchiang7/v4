@@ -31,7 +31,7 @@ const StyledLinkWrapper = styled.div`
 const StyledEmailLink = styled.a`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xs};
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
   writing-mode: vertical-rl;
   margin: 20px auto;
   padding: 10px;

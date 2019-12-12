@@ -355,7 +355,7 @@ const GlobalStyle = createGlobalStyle`
       text-transform: uppercase;
       font-size: ${fontSizes.sm};
       line-height: 1.5;
-      letter-spacing: 1px;
+      letter-spacing: 0.1em;
     }
   }
 
@@ -498,7 +498,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSizes.xs};
     font-family: ${fonts.SFMono};
     line-height: 1.5;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     border-radius: 0 0 3px 3px;
     position: absolute;

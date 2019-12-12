@@ -27,7 +27,7 @@ const StyledArchiveLink = styled(Link)`
   text-align: center;
   margin: 0 auto;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
+  font-size: ${fontSizes.sm};
   &:after {
     bottom: 0.1em;
   }

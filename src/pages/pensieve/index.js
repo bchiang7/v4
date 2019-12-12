@@ -90,7 +90,7 @@ const StyledDate = styled.span`
   text-transform: uppercase;
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xs};
-  color: ${colors.slate};
+  color: ${colors.lightSlate};
 `;
 const StyledTags = styled.ul`
   display: flex;

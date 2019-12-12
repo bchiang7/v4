@@ -156,7 +156,7 @@ const StyledJobDetails = styled.h5`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.smish};
   font-weight: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
   color: ${colors.lightSlate};
   margin-bottom: 30px;
   svg {
