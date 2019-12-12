@@ -7,20 +7,15 @@ const { colors, fontSizes, fonts } = theme;
 
 const prismColors = {
   bg: `#112340`,
-  char: `#5ccfe6`,
-  comment: `#8695b799`,
-  keyword: `#c3a6ff`,
   lineHighlight: `#1d2d50`,
-  primitive: `#c3a6ff`,
-  string: `#bae67e`,
-  variable: `#a2aabc`,
-  boolean: `#c3a6ff`,
-  punctuation: `#a2aabc`,
-  tag: `#5ccfe6`,
-  function: `#ffd580`,
-  className: `#ffae57`,
-  method: `#ffd580`,
-  operator: `#ffae57`,
+  blue: `#5ccfe6`,
+  purple: `#c3a6ff`,
+  green: `#bae67e`,
+  yellow: `#ffd580`,
+  orange: `#ffae57`,
+  red: `#ef6b73`,
+  grey: `#a2aabc`,
+  comment: `#8695b799`,
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -559,76 +554,64 @@ const GlobalStyle = createGlobalStyle`
   .token {
     display: inline;
   }
-  .token.url {
-    color: ${prismColors.keyword};
-  }
   .token.comment,
   .token.block-comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: ${prismColors.comment};
-  }
-  .token.property,
-  .token.number,
-  .token.function-name,
-  .token.constant,
-  .token.symbol,
-  .token.deleted {
-    color: ${prismColors.primitive};
-  }
-  .token.boolean {
-    color: ${prismColors.boolean};
-  }
-  span.token.tag {
-    color: ${prismColors.tag};
-  }
-  .token.string {
-    color: ${prismColors.string};
+  	color: ${prismColors.comment};
   }
   .token.punctuation {
-    color: ${prismColors.punctuation};
+  	color: ${prismColors.grey};
   }
-  .token.selector,
-  .token.char,
-  .token.builtin,
-  .token.inserted {
-    color: ${prismColors.char};
+  .token.namespace,
+  .token.deleted {
+  	color: ${prismColors.red};
   }
-  .token.function {
-    color: ${prismColors.function};
+  .token.function-name,
+  .token.function,
+  .token.class-name,
+  .token.constant,
+  .token.symbol {
+  	color: ${prismColors.yellow};
   }
+  .token.attr-name,
   .token.operator,
-  .token.entity,
-  .token.url,
-  .token.variable {
-    color: ${prismColors.variable};
+  .token.rule {
+  	color: ${prismColors.orange};
   }
-  .token.attr-value {
-    color: ${prismColors.string};
+  .token.keyword,
+  .token.boolean,
+  .token.number,
+  .token.property {
+    color: ${prismColors.purple};
   }
-  .token.keyword {
-    color: ${prismColors.keyword};
-  }
+  .token.tag,
+  .token.selector,
+  .token.important,
   .token.atrule,
-  .token.class-name {
-    color: ${prismColors.className};
+  .token.builtin,
+  .token.entity,
+  .token.url {
+  	color: ${prismColors.blue};
   }
-  .token.content,
-  .token.attr-name {
-    color: ${prismColors.operator};
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.regex,
+  .token.variable,
+  .token.inserted {
+  	color: ${prismColors.green};
   }
-  .token.important {
-    font-weight: 400;
-  }
+  .token.important,
   .token.bold {
-    font-weight: 700;
+  	font-weight: bold;
   }
   .token.italic {
-    font-style: italic;
+  	font-style: italic;
   }
   .token.entity {
-    cursor: help;
+  	cursor: help;
   }
   .namespace {
     opacity: 0.7;
