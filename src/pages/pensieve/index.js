@@ -1,10 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
 import { Layout } from '@components';
 import { IconZap } from '@components/icons';
 import styled from 'styled-components';
@@ -118,16 +116,6 @@ const StyledTags = styled.ul`
 const PensievePage = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges;
 
-  const revealTitle = useRef(null);
-  const revealGrid = useRef(null);
-  const revealPosts = useRef([]);
-
-  useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealGrid.current, srConfig());
-    revealPosts.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
-
   return (
     <Layout location={location}>
       <Helmet>
@@ -136,7 +124,7 @@ const PensievePage = ({ location, data }) => {
       </Helmet>
 
       <StyledMainContainer>
-        <header ref={revealTitle}>
+        <header>
           <h1 className="big-title">Pensieve</h1>
           <p className="subtitle">
             <a
@@ -148,7 +136,7 @@ const PensievePage = ({ location, data }) => {
           </p>
         </header>
 
-        <StyledGrid ref={revealGrid}>
+        <StyledGrid>
           <div className="posts">
             {posts.length > 0 &&
               posts.map(({ node }, i) => {
@@ -157,7 +145,7 @@ const PensievePage = ({ location, data }) => {
                 const d = new Date(date);
 
                 return (
-                  <StyledPost key={i} ref={el => (revealPosts.current[i] = el)} tabIndex="0">
+                  <StyledPost key={i} tabIndex="0">
                     <StyledPostInner>
                       <header>
                         <Link to={slug}>
