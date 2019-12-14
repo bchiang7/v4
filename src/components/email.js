@@ -48,7 +48,7 @@ const Email = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), isHome ? 2000 : 1000);
+    const timeout = setTimeout(() => setIsMounted(true), isHome ? 2000 : 0);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -56,7 +56,7 @@ const Email = ({ isHome }) => {
     <StyledContainer>
       <TransitionGroup component={null}>
         {isMounted && (
-          <CSSTransition timeout={isHome ? 3000 : 2000} classNames="fade">
+          <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
             <StyledLinkWrapper>
               <StyledEmailLink href={`mailto:${email}`}>{email}</StyledEmailLink>
             </StyledLinkWrapper>

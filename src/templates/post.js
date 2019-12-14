@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { Main, theme } from '@styles';
@@ -36,12 +34,6 @@ const StyledPostContent = styled.div`
 const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
-
-  const revealContainer = useRef(null);
-
-  useEffect(() => {
-    sr.reveal(revealContainer.current, srConfig());
-  }, []);
 
   return (
     <Layout location={location}>

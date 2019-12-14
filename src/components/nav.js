@@ -241,7 +241,7 @@ class Nav extends Component {
         <StyledNav>
           <TransitionGroup component={null}>
             {isMounted && (
-              <CSSTransition classNames="fade" timeout={3000}>
+              <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
                 <StyledLogo>
                   {isHome ? (
                     <a href="/" aria-label="home">
@@ -259,7 +259,7 @@ class Nav extends Component {
 
           <TransitionGroup component={null}>
             {isMounted && (
-              <CSSTransition classNames="fade" timeout={3000}>
+              <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
                 <StyledHamburger onClick={this.toggleMenu}>
                   <StyledHamburgerBox>
                     <StyledHamburgerInner menuOpen={menuOpen} />
@@ -275,8 +275,13 @@ class Nav extends Component {
                 {isMounted &&
                   navLinks &&
                   navLinks.map(({ url, name }, i) => (
-                    <CSSTransition key={i} classNames="fadedown" timeout={3000}>
-                      <StyledListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
+                    <CSSTransition
+                      key={i}
+                      classNames={isHome ? 'fadedown' : ''}
+                      timeout={isHome ? 3000 : 0}>
+                      <StyledListItem
+                        key={i}
+                        style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
                         <StyledListLink to={url}>{name}</StyledListLink>
                       </StyledListItem>
                     </CSSTransition>
@@ -286,8 +291,8 @@ class Nav extends Component {
 
             <TransitionGroup component={null}>
               {isMounted && (
-                <CSSTransition classNames="fadedown" timeout={3000}>
-                  <div style={{ transitionDelay: `600ms` }}>
+                <CSSTransition classNames={isHome ? 'fadedown' : ''} timeout={isHome ? 3000 : 0}>
+                  <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                     <StyledResumeButton
                       href="/resume.pdf"
                       target="_blank"
