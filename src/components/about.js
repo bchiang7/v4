@@ -27,7 +27,9 @@ const SkillsContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
   overflow: hidden;
-  margin-top: 20px;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
 `;
 const Skill = styled.li`
   position: relative;

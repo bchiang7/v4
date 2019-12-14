@@ -23,6 +23,10 @@ const StyledTabList = styled.ul`
   position: relative;
   width: max-content;
   z-index: 3;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
   ${media.thone`
     display: flex;
     overflow-x: scroll;
@@ -133,22 +137,7 @@ const StyledTabContent = styled.div`
   transition: ${theme.transition};
   transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
   ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: ${fontSizes.lg};
-    li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 10px;
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: ${colors.green};
-        line-height: ${fontSizes.xl};
-      }
-    }
+    ${mixins.fancyList};
   }
   a {
     ${mixins.inlineLink};
@@ -167,7 +156,7 @@ const StyledJobDetails = styled.h5`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.smish};
   font-weight: normal;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
   color: ${colors.lightSlate};
   margin-bottom: 30px;
   svg {

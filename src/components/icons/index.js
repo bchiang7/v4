@@ -10,6 +10,7 @@ import IconFolder from './folder';
 import IconLocation from './location';
 import IconStar from './star';
 import IconFork from './fork';
+import IconZap from './zap';
 import FormattedIcon from './formattedIcon';
 
 export {
@@ -25,5 +26,6 @@ export {
   IconLocation,
   IconStar,
   IconFork,
+  IconZap,
   FormattedIcon,
 };

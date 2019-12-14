@@ -9,7 +9,7 @@ tech:
   - Flask
   - JS
 company: 'Northeastern'
-show: 'false'
+showInProjects: false
 ---
 
 A simple web application that allows users to filter through and leave reviews in a database of Lonely Planet's Top 500 Travel Destinations.

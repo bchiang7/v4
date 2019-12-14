@@ -27,7 +27,7 @@ const StyledArchiveLink = styled(Link)`
   text-align: center;
   margin: 0 auto;
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
+  font-size: ${fontSizes.sm};
   &:after {
     bottom: 0.1em;
   }
@@ -103,11 +103,14 @@ const StyledProjectDescription = styled.div`
   }
 `;
 const StyledTechList = styled.ul`
-  flex-grow: 1;
   display: flex;
   align-items: flex-end;
+  flex-grow: 1;
   flex-wrap: wrap;
-  margin-top: 20px;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.xs};
@@ -136,7 +139,7 @@ const Projects = ({ data }) => {
   }, []);
 
   const GRID_LIMIT = 6;
-  const projects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const projects = data.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 

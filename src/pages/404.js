@@ -10,7 +10,6 @@ const { colors, fonts } = theme;
 const StyledMainContainer = styled(Main)`
   ${mixins.flexCenter};
   flex-direction: column;
-  height: 100vh !important;
 `;
 const StyledTitle = styled.h1`
   color: ${colors.green};
@@ -44,7 +43,7 @@ const NotFoundPage = ({ location }) => {
       <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={500} classNames="fade">
-            <StyledMainContainer>
+            <StyledMainContainer class="fillHeight">
               <StyledTitle>404</StyledTitle>
               <StyledSubtitle>Page Not Found</StyledSubtitle>
               <StyledHomeButton to="/">Go Home</StyledHomeButton>

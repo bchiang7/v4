@@ -34,6 +34,9 @@ const StyledSocial = styled.div`
 `;
 const StyledSocialList = styled.ul`
   ${mixins.flexBetween};
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `;
 const StyledSocialLink = styled.a`
   padding: 10px;

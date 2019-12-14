@@ -98,27 +98,34 @@ const Layout = ({ children, location }) => {
           }
         }
       `}
-      render={({ site }) => (
-        <div id="root">
-          <Head metadata={site.siteMetadata} />
+      render={({ site }) => {
+        const isHome = location.pathname === '/';
 
-          <GlobalStyle />
+        return (
+          <div id="root">
+            <Head metadata={site.siteMetadata} />
 
-          <SkipToContent href="#content">Skip to Content</SkipToContent>
+            <GlobalStyle />
 
-          {isLoading ? (
-            <Loader finishLoading={() => setIsLoading(false)} />
-          ) : (
-            <StyledContent id="content">
-              <Nav location={location} />
-              <Social />
-              <Email />
-              {children}
-              <Footer githubInfo={githubInfo} />
-            </StyledContent>
-          )}
-        </div>
-      )}
+            <SkipToContent href="#content">Skip to Content</SkipToContent>
+
+            {isLoading ? (
+              <Loader finishLoading={() => setIsLoading(false)} />
+            ) : (
+              <StyledContent id="content">
+                <Nav isHome={isHome} />
+
+                <Social isHome={isHome} />
+                <Email isHome={isHome} />
+
+                {children}
+
+                <Footer githubInfo={githubInfo} />
+              </StyledContent>
+            )}
+          </div>
+        );
+      }}
     />
   );
 };

@@ -72,7 +72,10 @@ const StyledTechList = styled.ul`
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
   margin: 25px 0 10px;
+  list-style: none;
+
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.smish};
@@ -203,7 +206,7 @@ const StyledProject = styled.div`
 `;
 
 const Featured = ({ data }) => {
-  const featuredProjects = data.filter(({ node }) => node.frontmatter.show === 'true');
+  const featuredProjects = data.filter(({ node }) => node);
 
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);

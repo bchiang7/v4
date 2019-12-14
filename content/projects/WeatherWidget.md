@@ -7,7 +7,7 @@ tech:
   - Node
   - Express
   - EJS
-show: 'false'
+showInProjects: false
 ---
 
 Simple weather app made with Node.js, Express, and Heroku. Utilized the OpenWeatherMap API and Google Maps API.
