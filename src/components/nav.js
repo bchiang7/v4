@@ -231,7 +231,7 @@ class Nav extends Component {
 
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
-    const { location } = this.props;
+    const { isHome } = this.props;
 
     return (
       <StyledContainer scrollDirection={scrollDirection}>
@@ -243,7 +243,7 @@ class Nav extends Component {
             {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <StyledLogo>
-                  {location.pathname === '/' ? (
+                  {isHome ? (
                     <a href="/" aria-label="home">
                       <IconLogo />
                     </a>
@@ -308,7 +308,7 @@ class Nav extends Component {
 }
 
 Nav.propTypes = {
-  location: PropTypes.object,
+  isHome: PropTypes.bool,
 };
 
 export default Nav;

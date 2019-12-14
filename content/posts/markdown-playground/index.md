@@ -356,4 +356,4 @@ This paragraph has some `code` in it.
 
     This paragraph has some `code` in it.
 
-![Image Alt](./images/image.jpg)
+![Image Alt](./image.jpg)

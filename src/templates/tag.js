@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
+import PropTypes from 'prop-types';
+import sr from '@utils/sr';
+import { srConfig } from '@config';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { theme, mixins, Main } from '@styles';
@@ -44,9 +46,15 @@ const TagTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
   const { edges } = data.allMarkdownRemark;
 
+  const revealContainer = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
+
   return (
     <Layout location={location}>
-      <StyledTagsContainer>
+      <StyledTagsContainer ref={revealContainer}>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
           <Link to="/pensieve">All memories</Link>

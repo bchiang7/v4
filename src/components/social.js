@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { socialMedia } from '@config';
 import { FormattedIcon } from '@components/icons';
@@ -11,6 +12,7 @@ const StyledContainer = styled.div`
   position: fixed;
   bottom: 0;
   left: 40px;
+  z-index: 10;
   color: ${colors.lightSlate};
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
@@ -49,11 +51,11 @@ const StyledLink = styled.a`
   }
 `;
 
-const Social = () => {
+const Social = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 2000);
+    const timeout = setTimeout(() => setIsMounted(true), isHome ? 2000 : 1000);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -61,7 +63,7 @@ const Social = () => {
     <StyledContainer>
       <TransitionGroup component={null}>
         {isMounted && (
-          <CSSTransition timeout={3000} classNames="fade">
+          <CSSTransition timeout={isHome ? 3000 : 2000} classNames="fade">
             <StyledList>
               {socialMedia &&
                 socialMedia.map(({ url, name }, i) => (
@@ -81,6 +83,10 @@ const Social = () => {
       </TransitionGroup>
     </StyledContainer>
   );
+};
+
+Social.propTypes = {
+  isHome: PropTypes.bool,
 };
 
 export default Social;

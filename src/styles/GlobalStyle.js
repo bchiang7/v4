@@ -3,6 +3,7 @@ import theme from './theme';
 import media from './media';
 import mixins from './mixins';
 import FontFaces from './fonts';
+import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
 const { colors, fontSizes, fonts } = theme;
 
@@ -248,9 +249,10 @@ const GlobalStyle = createGlobalStyle`
     a {
       ${mixins.inlineLink};
       font-family: ${fonts.SFMono};
-      text-transform: uppercase;
       font-size: ${fontSizes.sm};
+      font-weight: 600;
       line-height: 1.5;
+      text-transform: uppercase;
       letter-spacing: 0.1em;
     }
   }
@@ -259,40 +261,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  /* React CSS Transitions */
-  .fadeup-enter {
-    opacity: 0.01;
-    transform: translateY(20px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fadeup-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fadedown-enter {
-    opacity: 0.01;
-    transform: translateY(-20px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fadedown-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fade-enter {
-    opacity: 0.01;
-    transition: opacity 1000ms ${theme.easing};
-  }
-
-  .fade-enter-active {
-    opacity: 1;
-    transition: opacity 1000ms ${theme.easing};
-  }
+  ${TransitionStyles};
 
   ${PrismStyles};
 `;

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { graphql, Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
+import PropTypes from 'prop-types';
+import sr from '@utils/sr';
+import { srConfig } from '@config';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { Main } from '@styles';
+import { Main, theme } from '@styles';
+const { colors } = theme;
 
 const StyledPostContainer = styled(Main)``;
 const StyledPostHeader = styled.header`
@@ -24,6 +27,7 @@ const StyledPostContent = styled.div`
   p {
     margin: 1em 0;
     line-height: 1.5;
+    color: ${colors.lightSlate};
   }
 `;
 
@@ -31,9 +35,15 @@ const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
 
+  const revealContainer = useRef(null);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
+
   return (
     <Layout location={location}>
-      <StyledPostContainer>
+      <StyledPostContainer ref={revealContainer}>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
           <Link to="/pensieve">All memories</Link>

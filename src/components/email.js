@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
 import styled from 'styled-components';
@@ -10,6 +11,7 @@ const StyledContainer = styled.div`
   position: fixed;
   bottom: 0;
   right: 40px;
+  z-index: 10;
   color: ${colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
@@ -42,11 +44,11 @@ const StyledEmailLink = styled.a`
   }
 `;
 
-const Email = () => {
+const Email = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 2000);
+    const timeout = setTimeout(() => setIsMounted(true), isHome ? 2000 : 1000);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -54,7 +56,7 @@ const Email = () => {
     <StyledContainer>
       <TransitionGroup component={null}>
         {isMounted && (
-          <CSSTransition timeout={3000} classNames="fade">
+          <CSSTransition timeout={isHome ? 3000 : 2000} classNames="fade">
             <StyledLinkWrapper>
               <StyledEmailLink href={`mailto:${email}`}>{email}</StyledEmailLink>
             </StyledLinkWrapper>
@@ -63,6 +65,10 @@ const Email = () => {
       </TransitionGroup>
     </StyledContainer>
   );
+};
+
+Email.propTypes = {
+  isHome: PropTypes.bool,
 };
 
 export default Email;
