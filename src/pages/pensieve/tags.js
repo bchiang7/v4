@@ -11,6 +11,8 @@ import { theme, mixins, Main } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const StyledTagsContainer = styled(Main)`
+  max-width: 1000px;
+
   h1 {
     margin-bottom: 50px;
   }

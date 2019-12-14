@@ -9,7 +9,9 @@ import styled from 'styled-components';
 import { Main, theme } from '@styles';
 const { colors } = theme;
 
-const StyledPostContainer = styled(Main)``;
+const StyledPostContainer = styled(Main)`
+  max-width: 1000px;
+`;
 const StyledPostHeader = styled.header`
   margin-bottom: 50px;
 `;
@@ -43,7 +45,7 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <StyledPostContainer ref={revealContainer}>
+      <StyledPostContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
           <Link to="/pensieve">All memories</Link>

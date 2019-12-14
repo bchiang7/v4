@@ -10,6 +10,8 @@ import { theme, mixins, Main } from '@styles';
 const { colors, fontSizes } = theme;
 
 const StyledTagsContainer = styled(Main)`
+  max-width: 1000px;
+
   a {
     ${mixins.inlineLink};
   }
