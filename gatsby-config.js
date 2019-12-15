@@ -52,6 +52,7 @@ module.exports = {
       options: {
         plugins: [
           {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-external-links
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
@@ -59,15 +60,17 @@ module.exports = {
             },
           },
           {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-images
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1100,
-              quality: 90,
+              maxWidth: 700,
               linkImagesToOriginal: true,
+              quality: 90,
+              tracedSVG: true,
             },
           },
-          // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
           {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
