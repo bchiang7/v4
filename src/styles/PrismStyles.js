@@ -34,6 +34,19 @@ const PrismStyles = css`
     font-size: ${fontSizes.md};
   }
 
+  .gatsby-highlight code[class*='language-'],
+  .gatsby-highlight pre[class*='language-'] {
+    height: auto !important;
+    font-size: ${fontSizes.sm};
+    line-height: 1.5;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 2;
+    hyphens: none;
+  }
+
   /**
   * Remove the default PrismJS theme background-color, border-radius, margin,
   * padding and overflow.
@@ -51,28 +64,33 @@ const PrismStyles = css`
     padding-top: 2em;
   }
 
-  .gatsby-highlight code[class*='language-'],
-  .gatsby-highlight pre[class*='language-'] {
-    height: auto !important;
-    font-size: ${fontSizes.sm};
-    line-height: 1.5;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    tab-size: 2;
-    hyphens: none;
+  /* File names */
+  .gatsby-code-title {
+    padding: 1em 1.5em;
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.smish};
+    background-color: ${prismColors.bg};
+    color: ${prismColors.grey};
+    border-top-left-radius: ${theme.borderRadius};
+    border-top-right-radius: ${theme.borderRadius};
+    border-bottom: 1px solid ${prismColors.lineHighlight};
+
+    & + .gatsby-highlight {
+      margin-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
 
   /* Line highlighting */
   .gatsby-highlight-code-line {
     display: block;
     background-color: ${prismColors.lineHighlight};
-    border-left: 0.1em solid ${colors.green};
-    padding-left: 0.9em;
+    border-left: 2px solid ${colors.green};
+    padding-left: calc(1em + 2px);
     padding-right: 1em;
-    margin-right: calc(-1em - 5px);
-    margin-left: calc(-1em - 5px);
+    margin-right: -1.35em;
+    margin-left: -1.35em;
   }
 
   /* Language badges */

@@ -12,6 +12,9 @@ const StyledPostContainer = styled(Main)`
 `;
 const StyledPostHeader = styled.header`
   margin-bottom: 50px;
+  .tag {
+    margin-right: 10px;
+  }
 `;
 const StyledPostContent = styled.div`
   margin-bottom: 100px;
@@ -57,7 +60,7 @@ const PostTemplate = ({ data, location }) => {
             {tags &&
               tags.length > 0 &&
               tags.map((tag, i) => (
-                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`}>
+                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
                   #{tag}
                 </Link>
               ))}

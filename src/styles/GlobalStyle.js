@@ -153,6 +153,14 @@ const GlobalStyle = createGlobalStyle`
     & > a {
       ${mixins.inlineLink};
     }
+
+    & > code {
+      background-color: ${colors.lightNavy};
+      color: ${colors.offWhite};
+      font-size: ${fontSizes.sm};
+      border-radius: ${theme.borderRadius};
+      padding: 0.3em 0.5em;
+    }
   }
 
   ul {
@@ -202,13 +210,6 @@ const GlobalStyle = createGlobalStyle`
   code {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
-  }
-
-  p > code {
-    background-color: ${colors.lightNavy};
-    color: ${colors.offWhite};
-    border-radius: ${theme.borderRadius};
-    padding: 0.25em 0.5em;
   }
 
   .overline {
