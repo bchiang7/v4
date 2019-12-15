@@ -70,6 +70,10 @@ module.exports = {
             },
           },
           {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/
+            resolve: 'gatsby-remark-code-titles',
+          }, // IMPORTANT: this must be ahead of other plugins that use code blocks
+          {
             // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
             resolve: `gatsby-remark-prismjs`,
             options: {

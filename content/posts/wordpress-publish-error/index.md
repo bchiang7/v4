@@ -1,6 +1,6 @@
 ---
 title: Wordpress Publishing Error
-description: A weird problem I encountered while trying to add a simple post in WordPress
+description: Trying to create a simple post in WordPress
 date: '2019-12-03'
 draft: false
 slug: '/pensieve/wordpress-publish-error'

@@ -18,6 +18,23 @@ const prismColors = {
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
 
 const PrismStyles = css`
+  .gatsby-code-title {
+    padding: 1em 1.5em;
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.smish};
+    background-color: ${prismColors.bg};
+    color: ${prismColors.grey};
+    border-top-left-radius: ${theme.borderRadius};
+    border-top-right-radius: ${theme.borderRadius};
+    border-bottom: 1px solid ${prismColors.lineHighlight};
+  }
+
+  .gatsby-code-title + .gatsby-highlight {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
   /**
   * Add back the container background-color, border-radius, padding, margin
   * and overflow that we removed from <pre>.
@@ -68,11 +85,11 @@ const PrismStyles = css`
   .gatsby-highlight-code-line {
     display: block;
     background-color: ${prismColors.lineHighlight};
-    border-left: 0.1em solid ${colors.green};
-    padding-left: 0.9em;
+    border-left: 2px solid ${colors.green};
+    padding-left: calc(1em + 2px);
     padding-right: 1em;
-    margin-right: calc(-1em - 5px);
-    margin-left: calc(-1em - 5px);
+    margin-right: -1.35em;
+    margin-left: -1.35em;
   }
 
   /* Language badges */
