@@ -54,6 +54,11 @@ const StyledPic = styled.div`
   margin-left: 60px;
   ${media.tablet`margin: 60px auto 0;`};
   ${media.phablet`width: 70%;`};
+  a {
+    &:focus {
+      outline: 0;
+    }
+  }
 `;
 const StyledAvatar = styled(Img)`
   position: relative;

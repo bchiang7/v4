@@ -242,7 +242,7 @@ class Nav extends Component {
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
-                <StyledLogo>
+                <StyledLogo tabindex="-1">
                   {isHome ? (
                     <a href="/" aria-label="home">
                       <IconLogo />

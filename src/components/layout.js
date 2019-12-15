@@ -51,7 +51,7 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
-  const [isLoading, setIsLoading] = false; //useState(location.pathname === '/');
+  const [isLoading, setIsLoading] = useState(location.pathname === '/');
 
   const [githubInfo, setGitHubInfo] = useState({
     stars: null,
