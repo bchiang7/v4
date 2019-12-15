@@ -156,7 +156,7 @@ const StyledJobDetails = styled.h5`
 
 const Jobs = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
-  const [tabFocus, setTabFocus] = useState(0);
+  const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
 
   const revealContainer = useRef(null);
