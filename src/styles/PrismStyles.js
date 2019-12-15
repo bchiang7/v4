@@ -18,23 +18,6 @@ const prismColors = {
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
 
 const PrismStyles = css`
-  .gatsby-code-title {
-    padding: 1em 1.5em;
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.smish};
-    background-color: ${prismColors.bg};
-    color: ${prismColors.grey};
-    border-top-left-radius: ${theme.borderRadius};
-    border-top-right-radius: ${theme.borderRadius};
-    border-bottom: 1px solid ${prismColors.lineHighlight};
-  }
-
-  .gatsby-code-title + .gatsby-highlight {
-    margin-top: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
   /**
   * Add back the container background-color, border-radius, padding, margin
   * and overflow that we removed from <pre>.
@@ -49,6 +32,19 @@ const PrismStyles = css`
     position: relative;
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
+  }
+
+  .gatsby-highlight code[class*='language-'],
+  .gatsby-highlight pre[class*='language-'] {
+    height: auto !important;
+    font-size: ${fontSizes.sm};
+    line-height: 1.5;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 2;
+    hyphens: none;
   }
 
   /**
@@ -68,17 +64,22 @@ const PrismStyles = css`
     padding-top: 2em;
   }
 
-  .gatsby-highlight code[class*='language-'],
-  .gatsby-highlight pre[class*='language-'] {
-    height: auto !important;
-    font-size: ${fontSizes.sm};
-    line-height: 1.5;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    tab-size: 2;
-    hyphens: none;
+  /* File names */
+  .gatsby-code-title {
+    padding: 1em 1.5em;
+    font-family: ${fonts.SFMono};
+    font-size: ${fontSizes.smish};
+    background-color: ${prismColors.bg};
+    color: ${prismColors.grey};
+    border-top-left-radius: ${theme.borderRadius};
+    border-top-right-radius: ${theme.borderRadius};
+    border-bottom: 1px solid ${prismColors.lineHighlight};
+
+    & + .gatsby-highlight {
+      margin-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
 
   /* Line highlighting */
