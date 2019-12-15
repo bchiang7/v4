@@ -37,6 +37,10 @@ const StyledTagsContainer = styled(Main)`
       .subtitle {
         color: ${colors.slate};
         font-size: ${fontSizes.sm};
+
+        .tag {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -81,7 +85,7 @@ const TagTemplate = ({ pageContext, data, location }) => {
                   {tags &&
                     tags.length > 0 &&
                     tags.map((tag, i) => (
-                      <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`}>
+                      <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
                         #{tag}
                       </Link>
                     ))}
