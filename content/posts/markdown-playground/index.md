@@ -8,6 +8,8 @@ tags:
   - Testing
 ---
 
+![Image Alt](./image.jpg)
+
 ```jsx
 class FlavorForm extends React.Component { // highlight-line
   constructor(props) {
@@ -355,5 +357,3 @@ _single underscores_
 This paragraph has some `code` in it.
 
     This paragraph has some `code` in it.
-
-![Image Alt](./image.jpg)
