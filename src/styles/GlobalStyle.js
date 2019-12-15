@@ -116,7 +116,6 @@ const GlobalStyle = createGlobalStyle`
     &:hover,
     &:focus {
       color: ${colors.green};
-      outline: 0;
     }
   }
 
