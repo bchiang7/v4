@@ -117,25 +117,15 @@ const StyledHighlight = styled.span`
     margin-left: 25px;
   `};
 `;
-const StyledContent = styled.div`
-  position: relative;
-  padding-top: 12px;
-  padding-left: 30px;
-  flex-grow: 1;
-  ${media.tablet`padding-left: 20px;`};
-  ${media.thone`padding-left: 0;`};
-`;
 const StyledTabContent = styled.div`
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: auto;
-  opacity: ${props => (props.isActive ? 1 : 0)};
-  z-index: ${props => (props.isActive ? 2 : -1)};
-  position: ${props => (props.isActive ? 'relative' : 'absolute')};
-  visibility: ${props => (props.isActive ? 'visible' : 'hidden')};
-  transition: ${theme.transition};
-  transition-duration: ${props => (props.isActive ? '0.5s' : '0s')};
+  padding-top: 12px;
+  padding-left: 30px;
+  ${media.tablet`padding-left: 20px;`};
+  ${media.thone`padding-left: 0;`};
+
   ul {
     ${mixins.fancyList};
   }
@@ -166,14 +156,48 @@ const StyledJobDetails = styled.h5`
 
 const Jobs = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
+  const [tabFocus, setTabFocus] = useState(0);
+  const tabs = useRef([]);
+
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+
+  const focusTab = () => {
+    if (tabs.current[tabFocus]) {
+      tabs.current[tabFocus].focus();
+    } else {
+      // If we're at the end, go to the start
+      if (tabFocus >= tabs.current.length) {
+        setTabFocus(0);
+      }
+      // If we're at the start, move to the end
+      if (tabFocus < 0) {
+        setTabFocus(tabs.current.length - 1);
+      }
+    }
+  };
+
+  // Only re-run the effect if tabFocus changes
+  useEffect(() => focusTab(), [tabFocus]);
+
+  const onKeyPressed = e => {
+    if (e.keyCode === 38 || e.keyCode === 40) {
+      e.preventDefault();
+      if (e.keyCode === 40) {
+        // Move down
+        setTabFocus(tabFocus + 1);
+      } else if (e.keyCode === 38) {
+        // Move up
+        setTabFocus(tabFocus - 1);
+      }
+    }
+  };
 
   return (
     <StyledContainer id="jobs" ref={revealContainer}>
       <Heading>Where I&apos;ve Worked</Heading>
       <StyledTabs>
-        <StyledTabList role="tablist">
+        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyPressed(e)}>
           {data &&
             data.map(({ node }, i) => {
               const { company } = node.frontmatter;
@@ -182,10 +206,11 @@ const Jobs = ({ data }) => {
                   <StyledTabButton
                     isActive={activeTabId === i}
                     onClick={() => setActiveTabId(i)}
+                    ref={el => (tabs.current[i] = el)}
+                    id={`tab-${i}`}
                     role="tab"
-                    aria-selected={activeTabId === i ? 'true' : 'false'}
-                    aria-controls={`tab${i}`}
-                    id={`tab${i}`}
+                    aria-selected={activeTabId === i ? true : false}
+                    aria-controls={`panel-${i}`}
                     tabIndex={activeTabId === i ? '0' : '-1'}>
                     <span>{company}</span>
                   </StyledTabButton>
@@ -194,37 +219,36 @@ const Jobs = ({ data }) => {
             })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
-        <StyledContent>
-          {data &&
-            data.map(({ node }, i) => {
-              const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
-              return (
-                <StyledTabContent
-                  key={i}
-                  isActive={activeTabId === i}
-                  id={`job${i}`}
-                  role="tabpanel"
-                  tabIndex="0"
-                  aria-labelledby={`job${i}`}
-                  aria-hidden={activeTabId !== i}>
-                  <StyledJobTitle>
-                    <span>{title}</span>
-                    <StyledCompany>
-                      <span>&nbsp;@&nbsp;</span>
-                      <a href={url} target="_blank" rel="nofollow noopener noreferrer">
-                        {company}
-                      </a>
-                    </StyledCompany>
-                  </StyledJobTitle>
-                  <StyledJobDetails>
-                    <span>{range}</span>
-                  </StyledJobDetails>
-                  <div dangerouslySetInnerHTML={{ __html: html }} />
-                </StyledTabContent>
-              );
-            })}
-        </StyledContent>
+
+        {data &&
+          data.map(({ node }, i) => {
+            const { frontmatter, html } = node;
+            const { title, url, company, range } = frontmatter;
+            return (
+              <StyledTabContent
+                key={i}
+                isActive={activeTabId === i}
+                id={`panel-${i}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${i}`}
+                tabIndex={activeTabId === i ? '0' : '-1'}
+                hidden={activeTabId !== i}>
+                <StyledJobTitle>
+                  <span>{title}</span>
+                  <StyledCompany>
+                    <span>&nbsp;@&nbsp;</span>
+                    <a href={url} target="_blank" rel="nofollow noopener noreferrer">
+                      {company}
+                    </a>
+                  </StyledCompany>
+                </StyledJobTitle>
+                <StyledJobDetails>
+                  <span>{range}</span>
+                </StyledJobDetails>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+              </StyledTabContent>
+            );
+          })}
       </StyledTabs>
     </StyledContainer>
   );
