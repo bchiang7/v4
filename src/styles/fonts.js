@@ -51,7 +51,6 @@ const FontFaces = css`
       url(${CalibreLightTTF}) format('truetype');
     font-weight: 300;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -60,7 +59,6 @@ const FontFaces = css`
       url(${CalibreLightItalicTTF}) format('truetype');
     font-weight: 300;
     font-style: italic;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -68,7 +66,6 @@ const FontFaces = css`
       url(${CalibreRegularTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -77,7 +74,6 @@ const FontFaces = css`
       url(${CalibreRegularItalicTTF}) format('truetype');
     font-weight: normal;
     font-style: italic;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -85,7 +81,6 @@ const FontFaces = css`
       url(${CalibreMediumTTF}) format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -94,7 +89,6 @@ const FontFaces = css`
       url(${CalibreMediumItalicTTF}) format('truetype');
     font-weight: 500;
     font-style: italic;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -102,7 +96,6 @@ const FontFaces = css`
       url(${CalibreSemiboldTTF}) format('truetype');
     font-weight: 600;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'Calibre';
@@ -111,7 +104,6 @@ const FontFaces = css`
       url(${CalibreSemiboldItalicTTF}) format('truetype');
     font-weight: 600;
     font-style: italic;
-    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -119,7 +111,6 @@ const FontFaces = css`
       url(${SFMonoRegularTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -128,7 +119,6 @@ const FontFaces = css`
       url(${SFMonoRegularItalicTTF}) format('truetype');
     font-weight: normal;
     font-style: italic;
-    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -136,7 +126,6 @@ const FontFaces = css`
       url(${SFMonoMediumTTF}) format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -145,7 +134,6 @@ const FontFaces = css`
       url(${SFMonoMediumItalicTTF}) format('truetype');
     font-weight: 500;
     font-style: italic;
-    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -153,7 +141,6 @@ const FontFaces = css`
       url(${SFMonoSemiboldTTF}) format('truetype');
     font-weight: 600;
     font-style: normal;
-    font-display: auto;
   }
   @font-face {
     font-family: 'SF Mono';
@@ -162,7 +149,6 @@ const FontFaces = css`
       url(${SFMonoSemiboldItalicTTF}) format('truetype');
     font-weight: 600;
     font-style: italic;
-    font-display: auto;
   }
 `;
 
