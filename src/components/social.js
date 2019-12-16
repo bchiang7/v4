@@ -52,7 +52,7 @@ const StyledLink = styled.a`
 `;
 
 const Social = ({ isHome }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(!isHome);
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), isHome ? 2000 : 0);
