@@ -46,13 +46,13 @@ const StyledSocialLink = styled.a`
   }
 `;
 const StyledMetadata = styled.div`
-  margin: 10px 0;
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xs};
   line-height: 1;
 `;
 const StyledGitHubLink = styled.a`
   color: ${colors.slate};
+  padding: 10px;
 `;
 const StyledGitHubInfo = styled.div`
   margin-top: 10px;
@@ -100,7 +100,7 @@ const Footer = ({ githubInfo }) => (
           ))}
       </StyledSocialList>
     </StyledSocial>
-    <StyledMetadata>
+    <StyledMetadata tabindex="-1">
       <StyledGitHubLink
         href="https://github.com/bchiang7/v4"
         target="_blank"

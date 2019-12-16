@@ -163,7 +163,7 @@ const DELTA = 5;
 
 class Nav extends Component {
   state = {
-    isMounted: false,
+    isMounted: !this.props.isHome,
     menuOpen: false,
     scrollDirection: 'none',
     lastScrollTop: 0,

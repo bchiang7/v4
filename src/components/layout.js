@@ -113,15 +113,15 @@ const Layout = ({ children, location }) => {
             {isLoading ? (
               <Loader finishLoading={() => setIsLoading(false)} />
             ) : (
-              <StyledContent id="content">
+              <StyledContent>
                 <Nav isHome={isHome} />
-
                 <Social isHome={isHome} />
                 <Email isHome={isHome} />
 
-                {children}
-
-                <Footer githubInfo={githubInfo} />
+                <div id="content">
+                  {children}
+                  <Footer githubInfo={githubInfo} />
+                </div>
               </StyledContent>
             )}
           </div>
