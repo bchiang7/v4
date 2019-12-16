@@ -52,6 +52,10 @@ const StyledPostInner = styled.div`
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
   background-color: ${colors.lightNavy};
+  header,
+  a {
+    width: 100%;
+  }
 `;
 const StyledPost = styled.div`
   transition: ${theme.transition};

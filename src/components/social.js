@@ -55,7 +55,10 @@ const Social = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), isHome ? 2000 : 0);
+    if (!isHome) {
+      return;
+    }
+    const timeout = setTimeout(() => setIsMounted(true), 2000);
     return () => clearTimeout(timeout);
   }, []);
 
