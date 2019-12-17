@@ -51,28 +51,11 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
-  const [isLoading, setIsLoading] = useState(location.pathname === '/');
-
-  const [githubInfo, setGitHubInfo] = useState({
-    stars: null,
-    forks: null,
-  });
+  const isHome = location.pathname === '/';
+  const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/bchiang7/v4')
-      .then(response => response.json())
-      .then(json => {
-        const { stargazers_count, forks_count } = json;
-        setGitHubInfo({
-          stars: stargazers_count,
-          forks: forks_count,
-        });
-      })
-      .catch(e => console.error(e));
-  }, []);
-
-  useEffect(() => {
-    if (isLoading) {
+    if (isLoading || isHome) {
       return;
     }
     if (location.hash) {
@@ -99,34 +82,30 @@ const Layout = ({ children, location }) => {
           }
         }
       `}
-      render={({ site }) => {
-        const isHome = location.pathname === '/';
+      render={({ site }) => (
+        <div id="root">
+          <Head metadata={site.siteMetadata} />
 
-        return (
-          <div id="root">
-            <Head metadata={site.siteMetadata} />
+          <GlobalStyle />
 
-            <GlobalStyle />
+          <SkipToContent href="#content">Skip to Content</SkipToContent>
 
-            <SkipToContent href="#content">Skip to Content</SkipToContent>
+          {isLoading && isHome ? (
+            <Loader finishLoading={() => setIsLoading(false)} />
+          ) : (
+            <StyledContent>
+              <Nav isHome={isHome} />
+              <Social isHome={isHome} />
+              <Email isHome={isHome} />
 
-            {isLoading ? (
-              <Loader finishLoading={() => setIsLoading(false)} />
-            ) : (
-              <StyledContent>
-                <Nav isHome={isHome} />
-                <Social isHome={isHome} />
-                <Email isHome={isHome} />
-
-                <div id="content">
-                  {children}
-                  <Footer githubInfo={githubInfo} />
-                </div>
-              </StyledContent>
-            )}
-          </div>
-        );
-      }}
+              <div id="content">
+                {children}
+                <Footer />
+              </div>
+            </StyledContent>
+          )}
+        </div>
+      )}
     />
   );
 };
