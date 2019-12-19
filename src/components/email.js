@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
+import { Side } from '@components';
 import styled from 'styled-components';
-import { theme, media } from '@styles';
+import { theme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const StyledContainer = styled.div`
-  width: 40px;
-  position: fixed;
-  bottom: 0;
-  right: 40px;
-  z-index: 10;
-  color: ${colors.lightSlate};
-  ${media.desktop`right: 25px;`};
-  ${media.tablet`display: none;`};
-`;
 const StyledLinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,32 +34,13 @@ const StyledEmailLink = styled.a`
   }
 `;
 
-const Email = ({ isHome }) => {
-  const [isMounted, setIsMounted] = useState(!isHome);
-
-  useEffect(() => {
-    if (!isHome) {
-      return;
-    }
-    const timeout = setTimeout(() => setIsMounted(true), 2000);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  return (
-    <StyledContainer>
-      <TransitionGroup component={null}>
-        {isMounted && (
-          <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
-            <StyledLinkWrapper>
-              <StyledEmailLink href={`mailto:${email}`}>{email}</StyledEmailLink>
-            </StyledLinkWrapper>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
-    </StyledContainer>
-  );
-};
-
+const Email = ({ isHome }) => (
+  <Side isHome={isHome} orientation="right">
+    <StyledLinkWrapper>
+      <StyledEmailLink href={`mailto:${email}`}>{email}</StyledEmailLink>
+    </StyledLinkWrapper>
+  </Side>
+);
 Email.propTypes = {
   isHome: PropTypes.bool,
 };

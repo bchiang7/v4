@@ -1,31 +1,35 @@
-import About from './about';
-import Contact from './contact';
-import Email from './email';
-import Featured from './featured';
-import Footer from './footer';
+// Components
 import Head from './head';
-import Hero from './hero';
-import Jobs from './jobs';
 import Layout from './layout';
 import Loader from './loader';
-import Menu from './menu';
 import Nav from './nav';
-import Projects from './projects';
+import Menu from './menu';
+import Side from './side';
 import Social from './social';
+import Email from './email';
+import Footer from './footer';
+// Sections
+import Hero from './sections/hero';
+import About from './sections/about';
+import Jobs from './sections/jobs';
+import Featured from './sections/featured';
+import Projects from './sections/projects';
+import Contact from './sections/contact';
 
 export {
-  About,
-  Contact,
-  Email,
-  Featured,
-  Footer,
   Head,
-  Hero,
-  Jobs,
   Layout,
   Loader,
-  Menu,
   Nav,
-  Projects,
+  Menu,
+  Side,
   Social,
+  Email,
+  Hero,
+  About,
+  Jobs,
+  Featured,
+  Projects,
+  Contact,
+  Footer,
 };

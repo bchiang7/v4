@@ -28,7 +28,7 @@ The error was coming from the `-w` flag in the `docker-compose exec` command in 
 
 ## Solution
 
-Turns The fix was to update the version in my `docker-compose.yml` file to from version `3.5` to `3.6`. It's strange because 3.5 isn't anywhere close to the API version `1.35` fromm the error message 🤷‍♀️
+Turns The fix was to update the version in my `docker-compose.yml` file to from version `3.5` to `3.6`. It's strange because 3.5 isn't anywhere close to the API version `1.35` from the error message 🤷‍♀️
 
 ```yaml:title=docker-compose.yml
 version: '3.6' # highlight-line
