@@ -8,7 +8,6 @@ skills:
   - Vue
   - Node.js
   - Express
-  - GraphQL
   - NativeScript
 ---
 

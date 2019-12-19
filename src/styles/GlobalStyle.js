@@ -250,7 +250,7 @@ const GlobalStyle = createGlobalStyle`
       ${mixins.inlineLink};
       font-family: ${fonts.SFMono};
       font-size: ${fontSizes.sm};
-      font-weight: 600;
+      font-weight: bold;
       line-height: 1.5;
       text-transform: uppercase;
       letter-spacing: 0.1em;

@@ -52,7 +52,7 @@ class FlavorForm extends React.Component { // highlight-line
 }
 ```
 
-```javascript
+```javascript:title=highlight.js
 // Here is a comment
 function $initHighlight(block, cls) {
   try {
@@ -239,7 +239,7 @@ you can write text [with links](http://example.com) inline or [link references][
 
     > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-> ## This is a header.
+> ## This is a header
 >
 > 1. This is the first list item.
 > 2. This is the second list item.
