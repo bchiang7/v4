@@ -232,6 +232,9 @@ class Nav extends Component {
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
     const { isHome } = this.props;
+    const timeout = isHome ? 3000 : 0;
+    const fadeClass = isHome ? 'fade' : '';
+    const fadeDownClass = isHome ? 'fadedown' : '';
 
     return (
       <StyledContainer scrollDirection={scrollDirection}>
@@ -241,7 +244,7 @@ class Nav extends Component {
         <StyledNav>
           <TransitionGroup component={null}>
             {isMounted && (
-              <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
+              <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo tabindex="-1">
                   {isHome ? (
                     <a href="/" aria-label="home">
@@ -259,7 +262,7 @@ class Nav extends Component {
 
           <TransitionGroup component={null}>
             {isMounted && (
-              <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? 3000 : 0}>
+              <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledHamburger onClick={this.toggleMenu}>
                   <StyledHamburgerBox>
                     <StyledHamburgerInner menuOpen={menuOpen} />
@@ -275,10 +278,7 @@ class Nav extends Component {
                 {isMounted &&
                   navLinks &&
                   navLinks.map(({ url, name }, i) => (
-                    <CSSTransition
-                      key={i}
-                      classNames={isHome ? 'fadedown' : ''}
-                      timeout={isHome ? 3000 : 0}>
+                    <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                       <StyledListItem
                         key={i}
                         style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
@@ -291,7 +291,7 @@ class Nav extends Component {
 
             <TransitionGroup component={null}>
               {isMounted && (
-                <CSSTransition classNames={isHome ? 'fadedown' : ''} timeout={isHome ? 3000 : 0}>
+                <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                     <StyledResumeButton
                       href="/resume.pdf"
