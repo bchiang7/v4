@@ -31,7 +31,7 @@ const StyledLogo = styled.div`
     margin: 0 auto;
     fill: none;
     user-select: none;
-    #B {
+    #C {
       opacity: 0;
     }
   }
