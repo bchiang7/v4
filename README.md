@@ -47,20 +47,6 @@
    npm start
    ```
 
-## 🚀 Building and Running for Production
-
-1. Generate a full static production build
-
-   ```sh
-   npm run build
-   ```
-
-1. Preview the site as it will appear once deployed
-
-   ```sh
-   npm run serve
-   ```
-
 ## 🎨 Color Reference
 
 | Color          | Hex                                                                |
