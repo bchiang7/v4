@@ -1,7 +1,7 @@
 ---
 title: 'Hi, my name is'
 name: 'Cem Berke Cebi'
-subtitle: 'I'm Software Engineer.'
+subtitle: 'I am a Software Engineer.'
 contactText: 'Get In Touch'
 ---
 
