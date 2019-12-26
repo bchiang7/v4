@@ -1,18 +1,19 @@
 ---
 title: 'About Me'
-avatar: './me.jpg'
+avatar: './me.png'
 skills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
-  - React
-  - Vue
-  - Node.js
-  - Express
-  - NativeScript
+  - Java
+  - Python
+  - SQL
+  - Spring
+  - Data Structures
+  - Linux
+  - Deep Learning
+  - Machine Learning
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
+Hello! I'm Cem, a software engineer based in Istanbul, TR who enjoys working with the things that related with technology. I develop different kind of websites, games and prediction models.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+Shortly after graduating from [Istanbul Kultur University](https://www.iku.edu.tr), I joined the engineering team at [iyzico](https://www.iyzico.com/) where I work on a wide variety of interesting and meaningful projects.
 
-Here are a few technologies I've been working with recently:
+Here's a few technologies I've been working with recently:

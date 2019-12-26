@@ -52,7 +52,7 @@ const Loader = ({ finishLoading }) => {
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: '#logo #B',
+        targets: '#logo #C',
         duration: 800,
         easing: 'easeInOutQuart',
         opacity: 1,
