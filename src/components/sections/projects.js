@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { IconGitHub, IconExternal, IconFolder } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Button } from '@styles';
+import { theme, mixins, media, Section } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const StyledContainer = styled(Section)`
@@ -20,16 +19,6 @@ const StyledTitle = styled.h4`
   ${media.tablet`font-size: 24px;`};
   a {
     display: block;
-  }
-`;
-const StyledArchiveLink = styled(Link)`
-  ${mixins.inlineLink};
-  text-align: center;
-  margin: 0 auto;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.sm};
-  &:after {
-    bottom: 0.1em;
   }
 `;
 const StyledGrid = styled.div`
@@ -122,12 +111,8 @@ const StyledTechList = styled.ul`
     }
   }
 `;
-const StyledMoreButton = styled(Button)`
-  margin: 100px auto 0;
-`;
-
 const Projects = ({ data }) => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
@@ -146,9 +131,6 @@ const Projects = ({ data }) => {
   return (
     <StyledContainer>
       <StyledTitle ref={revealTitle}>Other Noteworthy Projects</StyledTitle>
-      <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </StyledArchiveLink>
 
       <StyledGrid>
         <TransitionGroup className="projects">
@@ -213,10 +195,6 @@ const Projects = ({ data }) => {
             })}
         </TransitionGroup>
       </StyledGrid>
-
-      <StyledMoreButton onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </StyledMoreButton>
     </StyledContainer>
   );
 };
