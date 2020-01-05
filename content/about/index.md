@@ -2,17 +2,13 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
+  - Java
+  - Ruby on Rails
+  - OpenAPI
   - React
-  - Vue
-  - Node.js
-  - Express
-  - NativeScript
+  - JavaScript
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
-
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+Hello! I'm Klement Tan, a NUS under graduate reading Computer Science and Applied Mathematics. I have great passion for Software Engineering, finance and entrepreneurship. Always interested and open to ideas that will help to improve people lives and optimise processes.
 
 Here are a few technologies I've been working with recently:
