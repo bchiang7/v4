@@ -130,7 +130,7 @@ const Projects = ({ data }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Other Noteworthy Projects</StyledTitle>
+      <StyledTitle ref={revealTitle}>Other Noteworthy Project</StyledTitle>
 
       <StyledGrid>
         <TransitionGroup className="projects">
