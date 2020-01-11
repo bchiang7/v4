@@ -1,7 +1,7 @@
 module.exports = {
   siteTitle: 'Klement Tan | Software Engineer',
   siteDescription:
-    'I\'m a computing under graduate at National University of Singapore, and I am passionate about improving the lives of others.',
+    'I\'m a computing undergraduate at National University of Singapore, and I am passionate about improving the lives of others.',
   siteKeywords:
     'Klement Tan, Klement, Klement Tan De Ning, Tan De Ning, Klement, software engineer, front-end engineer, web developer, javascript, nus',
   siteUrl: 'https://klementtan.com',

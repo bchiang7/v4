@@ -11,4 +11,4 @@ tech:
 showInProjects: true
 ---
 
-Automatically generated API documentation based on a Single Source of truth. Facilitates the maintenance of multiple API documentation in big corporations. Medium article [here](https://medium.com/xfers-engineering/how-we-reduce-the-time-required-for-clients-to-integrate-our-apis-by-50-d14c76430e24).
+Automatically generate API documentation based on a Single Source of truth. Facilitates the maintenance of multiple API documentation in big corporations. Medium article [here](https://medium.com/xfers-engineering/how-we-reduce-the-time-required-for-clients-to-integrate-our-apis-by-50-d14c76430e24).
