@@ -13,6 +13,9 @@ const Head = ({ metadata }) => (
 
     <meta name="description" content={metadata.description} />
     <meta name="keywords" content={config.siteKeywords} />
+    <meta name="google-site-verification" content={config.googleVerification} />
+    <meta itemProp="name" content={metadata.title} />
+    <meta itemProp="description" content={metadata.description} />
 
     <meta name="theme-color" content={config.navyColor} />
   </Helmet>
