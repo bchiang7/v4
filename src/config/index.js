@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://klementtan.com',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-155375693-1',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: 'HgP81-jbL1XzCxrYP_A-IJwHSiTwNRsg66llZt5ps3M',
   name: 'Klement Tan',
   location: 'Singapore',
   email: 'klementtan@gmail.com',
