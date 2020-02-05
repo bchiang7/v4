@@ -13,7 +13,7 @@ const Head = ({ metadata }) => (
 
     <meta name="description" content={metadata.description} />
     <meta name="keywords" content={config.siteKeywords} />
-    <meta name="google-site-verification" content={config.googleVerification} />
+    <meta name="google-site-verification" content="HgP81-jbL1XzCxrYP_A-IJwHSiTwNRsg66llZt5ps3M" />
     <meta itemProp="name" content={metadata.title} />
     <meta itemProp="description" content={metadata.description} />
 

@@ -61,6 +61,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
+    "react-typist": "^2.0.5",
     "scrollreveal": "^4.0.5",
     "smooth-scroll": "^16.1.0",
     "styled-components": "^4.4.0"
