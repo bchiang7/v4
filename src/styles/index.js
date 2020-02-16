@@ -1,5 +1,7 @@
 import theme from './theme';
 import GlobalStyle from './GlobalStyle';
+import lightTheme from './lightTheme';
+import darkTheme from './darkTheme';
 import mixins from './mixins';
 import media from './media';
 import Header from './Header';
@@ -13,6 +15,8 @@ import InlineLink from './InlineLink';
 export {
   theme,
   GlobalStyle,
+  lightTheme,
+  darkTheme,
   mixins,
   media,
   Header,

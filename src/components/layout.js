@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
-import styled from 'styled-components';
-import { GlobalStyle, theme } from '@styles';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme, lightTheme, darkTheme } from '@styles';
 const { colors, fontSizes, fonts } = theme;
-
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
@@ -53,6 +52,8 @@ const StyledContent = styled.div`
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
+  const stored = localStorage.getItem('isDarkMode');
+  const [isDarkMode, setIsDarkMode] = useState(stored === 'true' ? true : false);
 
   useEffect(() => {
     if (isLoading || isHome) {
@@ -83,28 +84,29 @@ const Layout = ({ children, location }) => {
         }
       `}
       render={({ site }) => (
-        <div id="root">
-          <Head metadata={site.siteMetadata} />
+        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+          <div id="root">
+            <Head metadata={site.siteMetadata} />
 
-          <GlobalStyle />
+            <GlobalStyle />
 
-          <SkipToContent href="#content">Skip to Content</SkipToContent>
+            <SkipToContent href="#content">Skip to Content</SkipToContent>
 
-          {isLoading && isHome ? (
-            <Loader finishLoading={() => setIsLoading(false)} />
-          ) : (
-            <StyledContent>
-              <Nav isHome={isHome} />
-              <Social isHome={isHome} />
-              <Email isHome={isHome} />
-
-              <div id="content">
-                {children}
-                <Footer />
-              </div>
-            </StyledContent>
-          )}
-        </div>
+            {isLoading && isHome ? (
+              <Loader finishLoading={() => setIsLoading(false)} />
+            ) : (
+              <StyledContent>
+                <Nav isHome={isHome} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+                <Social isHome={isHome} />
+                <Email isHome={isHome} />
+                <div id="content">
+                  {children}
+                  <Footer />
+                </div>
+              </StyledContent>
+            )}
+          </div>
+        </ThemeProvider>
       )}
     />
   );

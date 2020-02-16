@@ -5,6 +5,7 @@ import Loader from './loader';
 import Nav from './nav';
 import Menu from './menu';
 import Side from './side';
+import ToggleMode from './toggleMode';
 import Social from './social';
 import Email from './email';
 import Footer from './footer';
@@ -22,6 +23,7 @@ export {
   Loader,
   Nav,
   Menu,
+  ToggleMode,
   Side,
   Social,
   Email,

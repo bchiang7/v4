@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${colors.highlight};
+    background-color: ${props => props.theme.colors.background};
   }
 
   #root {
@@ -189,7 +189,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   blockquote {
-    border-left-color: ${colors.green};
+    border-left-color: ${props => props.theme.colors.text};
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -203,7 +203,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${colors.darkGrey};
+    background-color: ${props => props.theme.colors.background};
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -218,14 +218,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .overline {
-    color: ${colors.green};
+    color: ${props => props.theme.colors.text};
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
     font-weight: normal;
   }
 
   .subtitle {
-    color: ${colors.green};
+    color: ${props => props.theme.colors.text};
     margin: 0 0 20px 0;
     font-size: ${fontSizes.md};
     font-family: ${fonts.SFMono};
@@ -244,7 +244,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: ${colors.green};
+    color: ${props => props.theme.colors.text};
 
     .arrow {
       display: block;

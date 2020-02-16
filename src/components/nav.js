@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
-import { Menu } from '@components';
+import { Menu, ToggleMode } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -167,6 +167,7 @@ class Nav extends Component {
     menuOpen: false,
     scrollDirection: 'none',
     lastScrollTop: 0,
+    isDarkMode: true,
   };
 
   componentDidMount() {
@@ -231,7 +232,7 @@ class Nav extends Component {
 
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
-    const { isHome } = this.props;
+    const { isHome, isDarkMode, setIsDarkMode } = this.props;
     const timeout = isHome ? 3000 : 0;
     const fadeClass = isHome ? 'fade' : '';
     const fadeDownClass = isHome ? 'fadedown' : '';
@@ -299,6 +300,7 @@ class Nav extends Component {
                       rel="nofollow noopener noreferrer">
                       Resume
                     </StyledResumeButton>
+                    <ToggleMode isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
                   </div>
                 </CSSTransition>
               )}
@@ -306,7 +308,12 @@ class Nav extends Component {
           </StyledLink>
         </StyledNav>
 
-        <Menu menuOpen={menuOpen} toggleMenu={this.toggleMenu} />
+        <Menu
+          menuOpen={menuOpen}
+          toggleMenu={this.toggleMenu}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
       </StyledContainer>
     );
   }
@@ -314,6 +321,8 @@ class Nav extends Component {
 
 Nav.propTypes = {
   isHome: PropTypes.bool,
+  isDarkMode: PropTypes.bool,
+  setIsDarkMode: PropTypes.func,
 };
 
 export default Nav;

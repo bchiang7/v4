@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { navLinks } from '@config';
 import styled from 'styled-components';
+import { ToggleMode } from '@components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
@@ -24,7 +25,7 @@ const StyledContainer = styled.div`
 const Sidebar = styled.aside`
   ${mixins.flexCenter};
   flex-direction: column;
-  background-color: ${colors.lightNavy};
+  background-color: ${props => props.theme.colors.background};
   padding: 50px;
   width: 50vw;
   height: 100%;
@@ -80,7 +81,7 @@ const ResumeLink = styled.a`
   width: max-content;
 `;
 
-const Menu = ({ menuOpen, toggleMenu }) => {
+const Menu = ({ menuOpen, toggleMenu, isDarkMode, setIsDarkMode }) => {
   const handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
@@ -110,6 +111,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
           <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">
             Resume
           </ResumeLink>
+          <ToggleMode isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         </NavLinks>
       </Sidebar>
     </StyledContainer>
@@ -119,6 +121,8 @@ const Menu = ({ menuOpen, toggleMenu }) => {
 Menu.propTypes = {
   menuOpen: PropTypes.bool.isRequired,
   toggleMenu: PropTypes.func.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
+  setIsDarkMode: PropTypes.func.isRequired,
 };
 
 export default Menu;
