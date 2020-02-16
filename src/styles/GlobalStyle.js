@@ -97,6 +97,11 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
   }
 
+  img[alt=""],
+  img:not([alt]) {
+    filter: blur(5px);
+  }
+
   svg {
     width: 100%;
     height: 100%;
