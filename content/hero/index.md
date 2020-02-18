@@ -1,8 +1,8 @@
 ---
 title: 'Hi, my name is'
-name: 'Brittany Chiang'
+name: 'Rubin Bhandari'
 subtitle: 'I build things for the web.'
 contactText: 'Get In Touch'
 ---
 
-I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional, high-quality websites and applications.
+Rubin Bhandari is a software engineer based in Kathmandu, Nepal working on Rosebay Group , passionate about open source and learning new stuffs,

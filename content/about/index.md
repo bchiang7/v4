@@ -4,15 +4,15 @@ avatar: './me.jpg'
 skills:
   - JavaScript (ES6+)
   - HTML & (S)CSS
-  - React
+  - Typescript
   - Vue
+  - Python
   - Node.js
-  - Express
-  - NativeScript
+  - Express / Nestjs
+  - GraphQL
+  - Blockchain
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
-
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+Hello! I'm Rubin. I'm a Nodejs Developer for [Rosebay Group](https://rosebaycorporate.com/) in Kathmandu, Nepal. I am passionate about building excellent software that improves the lives of those around me. I specialize in creating software for clients ranging from individuals and small-businesses all the way to large enterprise corporations.
 
 Here are a few technologies I've been working with recently:

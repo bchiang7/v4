@@ -1,5 +1,5 @@
 ---
-title: 'Get In Touch'
+title: 'Get in touch'
 ---
 
-Although I'm not currently looking for freelance opportunities, my inbox is always open. Whether for a potential project or just to say hi, I'll try my best to answer your email!
+I would love to hear about your project and big idea., I'll try my best to respond to your emails asap!
