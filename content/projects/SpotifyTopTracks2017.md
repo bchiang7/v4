@@ -1,13 +1,15 @@
 ---
 date: '2018-04-20'
-title: 'Spotify’s Top Tracks of 2017'
-github: 'https://github.com/bchiang7/spotify-top-tracks-2017'
+title: 'Dagr2  is a deviantArt image downloader script written in Python.'
+github: 'https://github.com/rubiin/dagr2'
 external: ''
 tech:
-  - R
-  - Spotify Web API
-company: 'Northeastern'
+  - Python
+  - Mechanical soup
+company: ''
 showInProjects: true
 ---
 
-R Project for my Data Science class at Northeastern to analyze the top Spotify tracks of 2017 and their audio features.
+dagr2.py (deviantArt gallery ripper) is a deviantArt image downloader script written in Python.
+It can download every image (deviation) in a gallery, as well as every favorited deviation a deviant may have.
+Originally developed at http://lovecastle.org/dagr/ (now defunct), development now continues on [Github](https://github.com/rubiin/dagr2)

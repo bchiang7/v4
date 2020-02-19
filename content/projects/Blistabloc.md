@@ -1,14 +1,14 @@
 ---
 date: '2018-05-01'
-title: 'blistabloc'
+title: 'Nest-pgpromise'
 github: ''
-external: 'https://blistabloc.com/'
+external: 'https://github.com/nest-pgpromise'
 tech:
-  - WordPress
-  - Timber
-  - WooCommerce
-company: 'Scout'
+  - Nestjs
+  - Typescript
+  - Postgres
+company: ''
 showInProjects: true
 ---
 
-Custom WordPress theme and e-commerce site built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.
+A Module for Utilizing Pg-promise with NestJS
