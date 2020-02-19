@@ -1,6 +1,6 @@
 ---
 date: '2018-04-20'
-title: 'Dagr2  is a deviantArt image downloader script written in Python.'
+title: 'Dagr2.py'
 github: 'https://github.com/rubiin/dagr2'
 external: ''
 tech:
