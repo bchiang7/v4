@@ -7,6 +7,9 @@ skills:
   - Typescript
   - Vue
   - Python
+  - PostgreSql & MongoDB
+  - Git
+  - Docker
   - Node.js
   - Express / Nestjs
   - GraphQL
