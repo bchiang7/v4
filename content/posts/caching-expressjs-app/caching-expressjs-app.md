@@ -122,4 +122,4 @@ Remember redis is a key value store thus the key with which you have set data mu
 
 If you compare both the implementation, you can see that caching reduces the time taken to serve the request by almost more than 99%
 
-Follow me on Github: www.github.com/rubiin
+Follow me on [Github](https://github.com/rubiin)

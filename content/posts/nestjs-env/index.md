@@ -86,3 +86,5 @@ For example, <b>NODE_ENV=dev</b> will make the app read `.env.dev`
 ## License
 
 The package is [MIT licensed](LICENSE).
+
+Follow me on [Github](https://github.com/rubiin)

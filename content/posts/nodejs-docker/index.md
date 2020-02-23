@@ -123,3 +123,5 @@ docker run -p 49160:8080 -v $(pwd):/usr/src/app -d <your username>/node-web-app
 ```
 
 `pwd` is the command to get the current directory in linux so make sure to use the run command when you are inside the app directory
+
+Follow me on [Github](https://github.com/rubiin)

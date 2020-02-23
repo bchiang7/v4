@@ -91,6 +91,6 @@ You have to be in Normal mode. Use ESC to get out of Visual, Replace, or Insert 
     Run a command                           :!<command>
     Open a shell                            :sh
 
-For interactive tutorial, try openvim.com
+For interactive tutorial, try [openvim.com](https://openvim.com)
 
-Follow me on Github: www.github.com/rubiin
+Follow me on [Github](https://github.com/rubiin)
