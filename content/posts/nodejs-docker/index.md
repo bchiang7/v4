@@ -1,5 +1,5 @@
 ---
-title: Getting started with Api development on Nodejs
+title: Docker for nodejs
 description:
 date: '2019-09-16'
 draft: false
@@ -84,7 +84,7 @@ server/*.spec.js
 
 Go to the directory that has your Dockerfile and run the following command to build the Docker image. The -t flag lets you tag your image so it's easier to find later using the docker images command:
 
-```sh
+```shell
 docker build -t <your username>/node-web-app .
 ```
 
