@@ -3,7 +3,7 @@ date: '2'
 title: 'VS Code NestJs Snippets'
 cover: './demo.png'
 github: 'https://github.com/rubiin/vscode-nestjs-snippets'
-external: 'https://github.com/rubiin/vscode-nestjs-snippets'
+external: 'https://rubiin.github.io/vscode-nestjs-snippets'
 tech:
   - VS Code
   - Nestjs
