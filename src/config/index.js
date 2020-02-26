@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://rubiin.github.io',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-122359186-1 ',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: 'J8EFrhN9mfY_8dySyMAB6_5oZ2GwNAM6nENof-RDWm4',
   name: 'Rubin Bhandari',
   location: 'Kathmandu, Nepal',
   email: 'roobin.bhandari@gmail.com',

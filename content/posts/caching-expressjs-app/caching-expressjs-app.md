@@ -24,7 +24,7 @@ Installing redis is pretty staright forward.You can check the [link](https://red
 
 To add redis client to nodejs , simply do
 
-```sh
+```shell-session
 npm i redis
 ```
 

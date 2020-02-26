@@ -18,7 +18,7 @@ You can learn the basics on docker from the [link](https://www.docker.com/get-st
 
 The content of the Dockerfile will be like this:
 
-```Dockerfile
+```dockerfile
 
 FROM node:10
 
@@ -84,7 +84,7 @@ server/*.spec.js
 
 Go to the directory that has your Dockerfile and run the following command to build the Docker image. The -t flag lets you tag your image so it's easier to find later using the docker images command:
 
-```shell
+```shell-session
 docker build -t <your username>/node-web-app .
 ```
 
@@ -92,7 +92,7 @@ docker build -t <your username>/node-web-app .
 
 Running your image with -d runs the container in detached mode, leaving the container running in the background. The -p flag redirects a public port to a private port inside the container. Run the image you previously built:
 
-```sh
+```shell-session
 docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
@@ -101,7 +101,7 @@ However this approach doesn't reflect the changes that you made in your code aft
 Luckily docker comes with something called volume mapping which instead of copying the file maps the working directory with the files from host machine. So every time a change occurs on any file in your app, it is automatically reflected inside the container as well and wont need to build the image again.
 To use this approach , the dockerfile becomes
 
-```Dockerfile
+```dockerfile
 
 FROM node:10
 
@@ -117,7 +117,7 @@ Once you have modified the file, you can build the image as you did previously
 
 To run the built image though, there is a slight change
 
-```sh
+```shell-session
 docker run -p 49160:8080 -v $(pwd):/usr/src/app -d <your username>/node-web-app
 
 ```

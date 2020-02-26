@@ -16,38 +16,38 @@ Ever got in a situation where you have to use different nodejs versions for diff
 Getting started
 After getting nvm installed on your machines , open up terminal or cmd and type in
 
-```shell
+```shell-session
 nvm list
 ```
 
 To list all the node versions installed on the machine. To install a particular node version use
 
-```shell
+```shell-session
 nvm install <node version number>
 ```
 
 for example,
 
-```shell
+```shell-session
 nvm install 10
 ```
 
 To use a particular node version installed on your machine do
 
-```shell
+```shell-session
 nvm use <node version>
 ```
 
 To uninstall a node version, do
 
-```shell
+```shell-session
 nvm uninstall <node version>
 ```
 
 You can also pass in optional parameter which is the 32 or 64 bit version you would like to install or uninstall with install and uninstall command.
 For help type in
 
-```shell
+```shell-session
 nvm -help
 ```
 
