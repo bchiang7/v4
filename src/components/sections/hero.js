@@ -69,33 +69,18 @@ const Hero = ({ data }) => {
 
   const one = () => (
     <StyledOverline style={{ transitionDelay: '100ms' }}>
-      {' '}
-      <Typist
-        avgTypingDelay={60}
-        startDelay={1000}
-        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}>
         {frontmatter.title}
-      </Typist>
     </StyledOverline>
   );
   const two = () => (
     <StyledTitle style={{ transitionDelay: '200ms' }}>
-      <Typist
-        avgTypingDelay={60}
-        startDelay={2500}
-        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}>
+
         {frontmatter.name}.
-      </Typist>
     </StyledTitle>
   );
   const three = () => (
     <StyledSubtitle style={{ transitionDelay: '300ms' }}>
-      <Typist
-        avgTypingDelay={60}
-        startDelay={4000}
-        cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}>
         {frontmatter.subtitle}
-      </Typist>
     </StyledSubtitle>
   );
   const four = () => (
