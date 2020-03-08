@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   IconGitHub,
+  IconExternal,
   IconLinkedin,
   IconCodepen,
   IconInstagram,
   IconTwitter,
+  IconAppStore,
+  IconPlayStore,
 } from '@components/icons';
 
 const FormattedIcon = ({ name }) => {
@@ -20,8 +23,14 @@ const FormattedIcon = ({ name }) => {
       return <IconInstagram />;
     case 'Twitter':
       return <IconTwitter />;
+    case 'External':
+      return <IconExternal />;
+    case 'AppStore':
+      return <IconAppStore />;
+    case 'PlayStore':
+      return <IconPlayStore />;
     default:
-      return <IconGitHub />;
+      return <IconExternal />;
   }
 };
 
