@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGitHub, IconExternal, IconFolder } from '@components/icons';
+import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -173,7 +173,7 @@ const Projects = ({ data }) => {
                       <header>
                         <StyledProjectHeader>
                           <StyledFolder>
-                            <IconFolder />
+                            <FormattedIcon name="Folder" />
                           </StyledFolder>
                           <StyledProjectLinks>
                             {github && (
@@ -182,7 +182,7 @@ const Projects = ({ data }) => {
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
                                 aria-label="GitHub Link">
-                                <IconGitHub />
+                                <FormattedIcon name="GitHub" />
                               </StyledIconLink>
                             )}
                             {external && (
@@ -191,7 +191,7 @@ const Projects = ({ data }) => {
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
                                 aria-label="External Link">
-                                <IconExternal />
+                                <FormattedIcon name="External" />
                               </StyledIconLink>
                             )}
                           </StyledProjectLinks>

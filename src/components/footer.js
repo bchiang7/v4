@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  IconGitHub,
-  IconLinkedin,
-  IconCodepen,
-  IconInstagram,
-  IconTwitter,
-  IconStar,
-  IconFork,
-} from '@components/icons';
+import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -104,19 +96,7 @@ const Footer = () => {
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   aria-label={name}>
-                  {name === 'GitHub' ? (
-                    <IconGitHub />
-                  ) : name === 'Linkedin' ? (
-                    <IconLinkedin />
-                  ) : name === 'Codepen' ? (
-                    <IconCodepen />
-                  ) : name === 'Instagram' ? (
-                    <IconInstagram />
-                  ) : name === 'Twitter' ? (
-                    <IconTwitter />
-                  ) : (
-                    <IconGitHub />
-                  )}
+                  <FormattedIcon name={name} />
                 </StyledSocialLink>
               </li>
             ))}
@@ -132,11 +112,11 @@ const Footer = () => {
           {githubInfo.stars && githubInfo.forks && (
             <StyledGitHubInfo>
               <span>
-                <IconStar />
+                <FormattedIcon name="Star" />
                 <span>{githubInfo.stars}</span>
               </span>
               <span>
-                <IconFork />
+                <FormattedIcon name="Fork" />
                 <span>{githubInfo.forks}</span>
               </span>
             </StyledGitHubInfo>
