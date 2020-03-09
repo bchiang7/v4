@@ -25,7 +25,7 @@ const StyledContainer = styled.div`
 const Sidebar = styled.aside`
   ${mixins.flexCenter};
   flex-direction: column;
-  background-color: ${props => props.theme.colors.background};
+  background-color: ${props => props.theme.colors.card};
   padding: 50px;
   width: 50vw;
   height: 100%;
@@ -43,7 +43,7 @@ const NavLinks = styled.nav`
   width: 100%;
   flex-direction: column;
   text-align: center;
-  color: ${colors.lightestSlate};
+  color: ${props => props.theme.colors.title};
 `;
 const NavList = styled.ol`
   padding: 0;
@@ -64,7 +64,7 @@ const NavListItem = styled.li`
   &:before {
     display: block;
     content: '0' counter(item) '.';
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     font-size: ${fontSizes.sm};
     margin-bottom: 5px;
   }
@@ -86,7 +86,6 @@ const Menu = ({ menuOpen, toggleMenu, isDarkMode, setIsDarkMode }) => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
     const isNotMenu = target.classList && target.classList[0].includes('StyledContainer');
-
     if (isLink || isNotMenu) {
       toggleMenu();
     }

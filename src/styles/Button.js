@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import theme from './theme';
-const { colors, fontSizes, fonts } = theme;
+const { fontSizes, fonts } = theme;
 
 const Button = styled.button`
-  color: ${colors.green};
+  color: ${props => props.theme.colors.highLight};
   background-color: transparent;
-  border: 1px solid ${colors.green};
+  border: 1px solid ${props => props.theme.colors.highLight};
   border-radius: ${theme.borderRadius};
   font-size: ${fontSizes.smish};
   font-family: ${fonts.SFMono};
@@ -18,7 +18,7 @@ const Button = styled.button`
   &:hover,
   &:focus,
   &:active {
-    background-color: ${colors.transGreen};
+    background-color: ${props => props.theme.colors.transColor};
     outline: none;
   }
   &:after {

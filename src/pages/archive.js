@@ -8,7 +8,7 @@ import { Layout } from '@components';
 import { IconGitHub, IconExternal } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts, fontSizes } = theme;
+const { fonts, fontSizes } = theme;
 
 const StyledMainContainer = styled(Main)``;
 const StyledTableContainer = styled.div`
@@ -32,7 +32,7 @@ const StyledTable = styled.table`
 
     &:hover,
     &:focus {
-      background-color: ${colors.lightNavy};
+      background-color: ${props => props.theme.colors.card};
     }
   }
   th,
@@ -56,7 +56,7 @@ const StyledTable = styled.table`
     }
     &.title {
       padding-top: 15px;
-      color: ${colors.lightestSlate};
+      color: ${props => props.theme.colors.title};
       font-size: ${fontSizes.xl};
       font-weight: 700;
     }

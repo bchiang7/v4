@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { mixins, media } from '@styles';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 const Button = styled.button`
-  background: "white";
-  color: "black";
-  display: block;
-  margin-top: 24px;
-  max-width: 100%;
-  border: none;
-  line-height: 36px;
-  padding: 0 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor-pointer;
+  ${mixins.smallButton};
+  margin-left: 10px;
+  ${media.tablet`margin: 10% 0 auto;`};
 `;
 
 class ToggleMode extends Component {
@@ -26,7 +20,7 @@ class ToggleMode extends Component {
           setIsDarkMode(!isDarkMode);
           localStorage.setItem('isDarkMode', !isDarkMode);
         }}>
-        ToggleMode
+        {isDarkMode ? <FiMoon /> : <FiSun />}
       </Button>
     );
   }

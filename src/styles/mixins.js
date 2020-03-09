@@ -31,7 +31,7 @@ const mixins = {
     &:hover,
     &:active,
     &:focus {
-      color: ${colors.green};
+      color: ${props => props.theme.colors.highLight};
       outline: 0;
     }
   `,
@@ -43,17 +43,17 @@ const mixins = {
     position: relative;
     transition: ${theme.transition};
     cursor: pointer;
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     &:hover,
     &:focus,
     &:active {
-      color: ${colors.green};
+      color: ${props => props.theme.colors.highLight};
       outline: 0;
       &:after {
         width: 100%;
       }
       & > * {
-        color: ${colors.green} !important;
+        color: ${props => props.theme.colors.highLight} !important;
         transition: ${theme.transition};
       }
     }
@@ -64,16 +64,16 @@ const mixins = {
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: ${colors.green};
+      background-color: ${props => props.theme.colors.highLight};
       transition: ${theme.transition};
       opacity: 0.5;
     }
   `,
 
   smallButton: css`
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     background-color: transparent;
-    border: 1px solid ${colors.green};
+    border: 1px solid ${props => props.theme.colors.highLight};
     border-radius: ${theme.borderRadius};
     padding: 0.75rem 1rem;
     font-size: ${fontSizes.smish};
@@ -85,7 +85,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: ${colors.transGreen};
+      background-color: ${props => props.theme.colors.transColor};
     }
     &:after {
       display: none !important;
@@ -93,9 +93,9 @@ const mixins = {
   `,
 
   bigButton: css`
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     background-color: transparent;
-    border: 1px solid ${colors.green};
+    border: 1px solid ${props => props.theme.colors.highLight};
     border-radius: ${theme.borderRadius};
     padding: 1.25rem 1.75rem;
     font-size: ${fontSizes.sm};
@@ -107,7 +107,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: ${colors.transGreen};
+      background-color: ${props => props.theme.colors.transColor};
     }
     &:after {
       display: none !important;
@@ -144,7 +144,7 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${colors.green};
+        color: ${props => props.theme.colors.highLight};
       }
     }
   `,

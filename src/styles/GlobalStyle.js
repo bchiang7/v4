@@ -28,8 +28,9 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${colors.navy};
-    color: ${colors.slate};
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.primaryText};
+    transition: color background-color 0.25s linear;
     line-height: 1.3;
     font-family: ${fonts.Calibre};
     font-size: ${fontSizes.xl};
@@ -67,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-weight: 600;
-    color: ${colors.lightestSlate};
+    color: ${props => props.theme.colors.title};
     margin: 0 0 10px 0;
   }
 
@@ -120,7 +121,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: ${colors.green};
+      color: ${props => props.theme.colors.highLight};
     }
   }
 
@@ -182,7 +183,7 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: ${colors.green};
+          color: ${props => props.theme.colors.highLight};
         }
       }
     }

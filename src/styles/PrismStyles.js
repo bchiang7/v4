@@ -86,7 +86,7 @@ const PrismStyles = css`
   .gatsby-highlight-code-line {
     display: block;
     background-color: ${prismColors.lineHighlight};
-    border-left: 2px solid ${colors.green};
+    border-left: 2px solid ${props => props.theme.colors.highLight};
     padding-left: calc(1em + 2px);
     padding-right: 1em;
     margin-right: -1.35em;

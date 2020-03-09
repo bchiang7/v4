@@ -19,7 +19,7 @@ const Heading = styled.h3`
     margin-right: 10px;
     font-family: ${fonts.SFMono};
     font-weight: normal;
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     font-size: ${fontSizes.xl};
     position: relative;
     bottom: 4px;

@@ -16,7 +16,7 @@ const StyledContainer = styled.header`
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: ${colors.navy};
+  background-color: ${props => props.theme.colors.background};
   transition: ${theme.transition};
   z-index: 11;
   filter: none !important;
@@ -36,7 +36,7 @@ const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: ${colors.lightestSlate};
+  color: ${props => props.theme.colors.title};
   font-family: ${fonts.SFMono};
   counter-reset: item 0;
   z-index: 12;
@@ -45,13 +45,13 @@ const StyledLogo = styled.div`
   ${mixins.flexCenter};
   a {
     display: block;
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     width: 42px;
     height: 42px;
     &:hover,
     &:focus {
       svg {
-        fill: ${colors.transGreen};
+        fill: ${props => props.theme.colors.transColor};
       }
     }
     svg {
@@ -84,7 +84,7 @@ const StyledHamburgerBox = styled.div`
   height: 24px;
 `;
 const StyledHamburgerInner = styled.div`
-  background-color: ${colors.green};
+  background-color: ${props => props.theme.colors.highLight};
   position: absolute;
   width: ${theme.hamburgerWidth}px;
   height: 2px;
@@ -103,7 +103,7 @@ const StyledHamburgerInner = styled.div`
   &:after {
     content: '';
     display: block;
-    background-color: ${colors.green};
+    background-color: ${props => props.theme.colors.highLight};
     position: absolute;
     left: auto;
     right: 0;
@@ -146,7 +146,7 @@ const StyledListItem = styled.li`
   &:before {
     content: '0' counter(item) '.';
     text-align: right;
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     font-size: ${fontSizes.xs};
   }
 `;

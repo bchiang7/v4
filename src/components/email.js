@@ -4,7 +4,7 @@ import { email } from '@config';
 import { Side } from '@components';
 import styled from 'styled-components';
 import { theme } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+const { fontSizes, fonts } = theme;
 
 const StyledLinkWrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const StyledLinkWrapper = styled.div`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${colors.lightSlate};
+    background-color: ${props => props.theme.colors.icons};
   }
 `;
 const StyledEmailLink = styled.a`
@@ -27,6 +27,7 @@ const StyledEmailLink = styled.a`
   writing-mode: vertical-rl;
   margin: 20px auto;
   padding: 10px;
+  color: ${props => props.theme.colors.icons};
 
   &:hover,
   &:focus {

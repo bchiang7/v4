@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import theme from './theme';
-const { colors } = theme;
 
 const InlineLink = styled.a`
   display: inline-block;
@@ -13,7 +12,7 @@ const InlineLink = styled.a`
   &:hover,
   &:focus,
   &:active {
-    color: ${colors.green};
+    color: ${props => props.theme.colors.highLight};
     outline: 0;
     &:after {
       width: 100%;
@@ -26,7 +25,7 @@ const InlineLink = styled.a`
     height: 1px;
     position: relative;
     bottom: 0.37em;
-    background-color: ${colors.green};
+    background-color: ${props => props.theme.colors.highLight};
     transition: ${theme.transition};
   }
 `;

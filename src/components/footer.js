@@ -18,14 +18,14 @@ const StyledContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
   padding: 15px;
-  background-color: ${colors.darkNavy};
+  background-color: ${props => props.theme.colors.footer};
   color: ${colors.slate};
   text-align: center;
   height: auto;
   min-height: 70px;
 `;
 const StyledSocial = styled.div`
-  color: ${colors.lightSlate};
+  color: ${props => props.theme.colors.footerText};
   width: 100%;
   max-width: 270px;
   margin: 0 auto 10px;

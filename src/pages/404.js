@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts } = theme;
+const { fonts } = theme;
 
 const StyledMainContainer = styled(Main)`
   ${mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${colors.green};
+  color: ${props => props.theme.colors.highLight};
   font-family: ${fonts.SFMono};
   font-size: 12vw;
   line-height: 1;

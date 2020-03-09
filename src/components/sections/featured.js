@@ -27,7 +27,7 @@ const StyledContent = styled.div`
 const StyledLabel = styled.h4`
   font-size: ${fontSizes.smish};
   font-weight: normal;
-  color: ${colors.green};
+  color: ${props => props.theme.colors.highLight};
   font-family: ${fonts.SFMono};
   margin-top: 10px;
   padding-top: 0;
@@ -35,7 +35,7 @@ const StyledLabel = styled.h4`
 const StyledProjectName = styled.h5`
   font-size: 28px;
   margin: 0 0 20px;
-  color: ${colors.lightestSlate};
+  color: "${colors.lightestSlate}";
   ${media.tablet`font-size: 24px;`};
   ${media.thone`color: ${colors.white};`};
   a {
@@ -47,8 +47,8 @@ const StyledDescription = styled.div`
   position: relative;
   z-index: 2;
   padding: 25px;
-  background-color: ${colors.lightNavy};
-  color: ${colors.lightSlate};
+  background-color: ${props => props.theme.colors.card};
+  color: ${props => props.theme.colors.projectText};
   font-size: ${fontSizes.lg};
   border-radius: ${theme.borderRadius};
   ${media.thone`
@@ -78,7 +78,7 @@ const StyledTechList = styled.ul`
   li {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.smish};
-    color: ${colors.slate};
+    color: ${props => props.theme.colors.primaryText};
     margin-right: ${theme.margin};
     margin-bottom: 7px;
     white-space: nowrap;
@@ -97,7 +97,7 @@ const StyledLinkWrapper = styled.div`
   position: relative;
   margin-top: 10px;
   margin-left: -10px;
-  color: ${colors.lightestSlate};
+  color: ${props => props.theme.colors.title};
   a {
     padding: 10px;
     svg {
@@ -127,7 +127,7 @@ const StyledImgContainer = styled.a`
   grid-row: 1 / -1;
   position: relative;
   z-index: 1;
-  background-color: ${colors.green};
+  background-color: ${props => props.theme.colors.highLight};
   border-radius: ${theme.radius + 1}px;
   transition: ${theme.transition};
   ${media.tablet`height: 100%;`};

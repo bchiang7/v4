@@ -19,7 +19,7 @@ const StyledList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${props => props.theme.colors.text};
+    background-color: ${props => props.theme.colors.icons};
   }
 
   li:last-of-type {
@@ -35,6 +35,12 @@ const StyledLink = styled.a`
   svg {
     width: 18px;
     height: 18px;
+    fill: ${props => props.theme.colors.icons};
+
+    &:hover,
+    &:focus {
+      fill: ${props => props.theme.colors.highLight};
+    }
   }
 `;
 
