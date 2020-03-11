@@ -5,7 +5,6 @@ import { email } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section } from '@styles';
 const { colors, fontSizes, fonts } = theme;
-import Typist from 'react-typist';
 
 const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
