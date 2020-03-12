@@ -10,6 +10,7 @@ const { colors, fontSizes, fonts } = theme;
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
   require('smooth-scroll')('a[href*="#"]');
+  require('easter-egg-collection');
 }
 
 const SkipToContent = styled.a`
