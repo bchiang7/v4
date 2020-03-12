@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 import styled from 'styled-components';
 import { Main } from '@styles';
+// eslint-disable-next-line
+import collection from 'easter-egg-collection';
 
 const StyledMainContainer = styled(Main)`
   counter-reset: section;

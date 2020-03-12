@@ -77,11 +77,16 @@ const Footer = () => (
       </StyledSocialList>
     </StyledSocial>
     <StyledMetadata tabindex="-1">
+      <h4>
+        <span role="img" aria-label="easter">
+          The site has some easter eggs 💜🐰🥚
+        </span>
+      </h4>
       <StyledGitHubLink
         href="https://github.com/bchiang7"
         target="_blank"
         rel="nofollow noopener noreferrer">
-        <div>Designed by Brittany Chiang</div>
+        <div>Theme by Brittany Chiang</div>
       </StyledGitHubLink>
     </StyledMetadata>
   </StyledContainer>
