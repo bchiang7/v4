@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { Main, theme } from '@styles';
+import {ShareButtons} from '@components';
 const { colors } = theme;
 
 const StyledPostContainer = styled(Main)`
@@ -38,6 +39,8 @@ const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
 
+  
+
   return (
     <Layout location={location}>
       <StyledPostContainer>
@@ -45,10 +48,10 @@ const PostTemplate = ({ data, location }) => {
           <span className="arrow">&larr;</span>
           <Link to="/pensieve">All memories</Link>
         </span>
-
         <StyledPostHeader>
           <h1 className="medium-title">{title}</h1>
           <p className="subtitle">
+           
             <time>
               {new Date(date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -66,8 +69,9 @@ const PostTemplate = ({ data, location }) => {
               ))}
           </p>
         </StyledPostHeader>
-
+       
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
+        <ShareButtons />
       </StyledPostContainer>
     </Layout>
   );
