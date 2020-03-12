@@ -15,6 +15,13 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-preact`,
     {
+      resolve: `gatsby-plugin-easter-egg`,
+      options: {
+        sequence: `r u b i n`,
+        debug: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'RubinBhandari',

@@ -5752,6 +5752,11 @@ gatsby-page-utils@^0.0.39:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-easter-egg@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-easter-egg/-/gatsby-plugin-easter-egg-1.0.0.tgz#9c9fd95a99fa537ec0a17ec29c36087d11d0a087"
+  integrity sha512-MUXSyKgG9uyoNqrsrEmrRMcLOD2oUt3meBdypjhvuBy5q/FgY76jNCDED5Uzm+JNmRmMURpKSLhZWh786XU4aA==
+
 gatsby-plugin-google-analytics@^2.1.36:
   version "2.1.36"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.36.tgz#cbf19c45305ff50b6ab4612e7963ef9184f8b438"
