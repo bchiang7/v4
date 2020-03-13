@@ -232,7 +232,7 @@ class Nav extends Component {
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
     const { isHome } = this.props;
-    const timeout = isHome ? 0 : 0;
+    const timeout = isHome ? 3000 : 0;
     const fadeClass = isHome ? 'fade' : '';
     const fadeDownClass = isHome ? 'fadedown' : '';
 
