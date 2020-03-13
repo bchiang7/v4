@@ -247,13 +247,13 @@ class Nav extends Component {
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo tabindex="-1">
                   {isHome ? (
-                    <a href="/" aria-label="home">
+                    // <a href="/" aria-label="home">
                       <IconLogo />
-                    </a>
+                    // </a>
                   ) : (
-                    <Link to="/" aria-label="home">
+                    // <Link to="/" aria-label="home">
                       <IconLogo />
-                    </Link>
+                    // </Link>
                   )}
                 </StyledLogo>
               </CSSTransition>
@@ -294,10 +294,10 @@ class Nav extends Component {
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                     <StyledResumeButton
-                      href="/resume.pdf"
+                      href="/cv.pdf"
                       target="_blank"
                       rel="nofollow noopener noreferrer">
-                      Resume
+                      CV
                     </StyledResumeButton>
                   </div>
                 </CSSTransition>

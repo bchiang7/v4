@@ -1,35 +1,35 @@
-import IconAppStore from './appstore';
+import IconLoader from './loader';
+import IconLogo from './logo';
+import IconGitHub from './github';
+import IconLinkedin from './linkedin';
 import IconCodepen from './codepen';
+import IconInstagram from './instagram';
+import IconTwitter from './twitter';
 import IconExternal from './external';
 import IconFolder from './folder';
-import IconFork from './fork';
-import FormattedIcon from './formattedIcon';
-import IconGitHub from './github';
-import IconInstagram from './instagram';
-import IconLinkedin from './linkedin';
-import IconLoader from './loader';
 import IconLocation from './location';
-import IconLogo from './logo';
-import IconPlayStore from './playstore';
 import IconStar from './star';
-import IconTwitter from './twitter';
+import IconFork from './fork';
 import IconZap from './zap';
+import FormattedIcon from './formattedIcon';
+import IconScholar from './scholar'
+import IconOrcid from './orcid'
 
 export {
-  IconAppStore,
+  IconLoader,
+  IconLogo,
+  IconGitHub,
+  IconLinkedin,
   IconCodepen,
+  IconInstagram,
+  IconTwitter,
   IconExternal,
   IconFolder,
-  IconFork,
-  FormattedIcon,
-  IconGitHub,
-  IconInstagram,
-  IconLinkedin,
-  IconLoader,
   IconLocation,
-  IconLogo,
-  IconPlayStore,
   IconStar,
-  IconTwitter,
+  IconFork,
   IconZap,
+  FormattedIcon,
+  IconScholar,
+  IconOrcid,
 };

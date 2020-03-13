@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Layout } from '@components';
-import { FormattedIcon } from '@components/icons';
+import { IconGitHub, IconExternal } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
 const { colors, fonts, fontSizes } = theme;
@@ -68,20 +68,10 @@ const StyledTable = styled.table`
     &.tech {
       font-size: ${fontSizes.xs};
       font-family: ${fonts.SFMono};
-      .separator {
-        margin: 0 5px;
-      }
-      span {
-        display: inline-block;
-      }
     }
     &.links {
       span {
-        display: flex;
-        align-items: center;
-        a {
-          ${mixins.flexCenter};
-        }
+        ${mixins.flexBetween};
         a + a {
           margin-left: 10px;
         }
@@ -109,8 +99,8 @@ const ArchivePage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet>
-        <title>Archive | Brittany Chiang</title>
-        <link rel="canonical" href="https://brittanychiang.com/archive" />
+        <title>Archive | Sambit Panda</title>
+        <link rel="canonical" href="https://sampan.me/archive" />
       </Helmet>
 
       <StyledMainContainer>
@@ -126,23 +116,14 @@ const ArchivePage = ({ location, data }) => {
                 <th>Year</th>
                 <th>Title</th>
                 <th className="hide-on-mobile">Made at</th>
-                <th className="hide-on-mobile">Built with</th>
+                <th className="hide-on-mobile">Using</th>
                 <th>Link</th>
               </tr>
             </thead>
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const {
-                    date,
-                    github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                  } = node.frontmatter;
+                  const { date, github, external, title, tech, company } = node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -157,50 +138,35 @@ const ArchivePage = ({ location, data }) => {
                         {tech.length > 0 &&
                           tech.map((item, i) => (
                             <span key={i}>
-                              {item}
-                              {''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
+                              <span key={i}>{item}</span>
+                              {i !== tech.length - 1 && <span>&nbsp;&middot;&nbsp;</span>}
                             </span>
                           ))}
                       </td>
 
                       <td className="links">
                         <span>
-                          {external && (
-                            <a
-                              href={external}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
-                              <FormattedIcon name="External" />
-                            </a>
-                          )}
-                          {github && (
+                          {github ? (
                             <a
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                               aria-label="GitHub Link">
-                              <FormattedIcon name="GitHub" />
+                              <IconGitHub />
                             </a>
+                          ) : (
+                            <span aria-label="Empty">—</span>
                           )}
-                          {ios && (
+                          {external ? (
                             <a
-                              href={ios}
+                              href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
-                              <FormattedIcon name="AppStore" />
+                              aria-label="External Link">
+                              <IconExternal />
                             </a>
-                          )}
-                          {android && (
-                            <a
-                              href={android}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
-                              <FormattedIcon name="PlayStore" />
-                            </a>
+                          ) : (
+                            <span aria-label="Empty">—</span>
                           )}
                         </span>
                       </td>
@@ -224,7 +190,10 @@ export default ArchivePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { showInProjects: { ne: false } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -235,8 +204,6 @@ export const pageQuery = graphql`
             tech
             github
             external
-            ios
-            android
             company
           }
           html

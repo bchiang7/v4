@@ -2,17 +2,18 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
-  - React
-  - Vue
-  - Node.js
-  - Express
-  - NativeScript
+  - Python
+  - Matlab
+  - Git
+  - LaTeX
+  - R
+  - Java
+  - C/C++
+  - Neuroscience
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.
+Hello! I'm Sambit, a second year Master's student based at Johns Hopkins University in Baltimore, MD who enjoys building tools that enable data-driven neuroscience.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+I have a wide array of experience, from using electrochemistry to understand neural systems at the [Sombers Lab](https://www.somberslab.org/) in my undergrad at [NC State](https://www.bme.ncsu.edu/) and to building tools that enable terascale neuroscience in [NeuroData](https://neurodata.io/) at [Johns Hopkins](https://www.bme.jhu.edu/). These opportunities allowed me the pleasure to work on a wide variety of interesting and meaningful projects on a daily basis.
 
-Here are a few technologies I've been working with recently:
+Here are a few skills I've accrued thus far:

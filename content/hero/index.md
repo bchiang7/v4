@@ -1,8 +1,8 @@
 ---
 title: 'Hi, my name is'
-name: 'Brittany Chiang'
-subtitle: 'I build things for the web.'
-contactText: 'Get In Touch'
+name: 'Sambit Panda'
+subtitle: "I'm a Biomedical Engineer."
+contactText: 'Contact Me'
 ---
 
-I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional, high-quality websites and applications.
+I'm a graduate student at Johns Hopkins University passionate about open-source software development and neuroscience.

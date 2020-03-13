@@ -1,38 +1,33 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteTitle: 'Sambit Panda | Graduate Student',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Sambit Panda is a graduate student based in Baltimore, MD who specializes in developing exceptional, high-quality machine learning software and applications.',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+    'Sambit Panda, Sambit, Panda, sampan501, graduate student, data scientist, software developer, python, johns hopkins',
+  siteUrl: 'https://sampan.me',
   siteLanguage: 'en_US',
-  googleAnalyticsID: 'UA-45666519-2',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
-  github: 'https://github.com/bchiang7',
-  twitterHandle: '@bchiang7',
+  googleAnalyticsID: 'UA-159239956-1',
+  googleVerification: 'OxQ_60ky4rW9Kb3MrX8_oXsFIAVb_KW9N_no0uqmRqo',
+  name: 'Sambit Panda',
+  location: 'Baltimore, MD',
+  email: 'spanda3@jhu.edu',
+  github: 'https://github.com/sampan501',
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/sampan501',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/sampan501',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      name: 'Scholar',
+      url: 'https://scholar.google.com/citations?user=-V3CmPoAAAAJ&hl=en',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      name: 'ORCID',
+      url: 'https://orcid.org/0000-0001-8455-4243',
     },
   ],
 
@@ -46,7 +41,7 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Projects',
       url: '/#projects',
     },
     {

@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedIcon } from '@components/icons';
+import {
+  IconGitHub,
+  IconLinkedin,
+  IconCodepen,
+  IconInstagram,
+  IconTwitter,
+  IconStar,
+  IconFork,
+  IconScholar,
+  IconOrcid,
+} from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -72,7 +82,7 @@ const Footer = () => {
     if (process.env.NODE_ENV !== 'production') {
       return;
     }
-    fetch('https://api.github.com/repos/bchiang7/v4')
+    fetch('https://github.com/sampan501/sampan501.github.io')
       .then(response => response.json())
       .then(json => {
         const { stargazers_count, forks_count } = json;
@@ -96,7 +106,23 @@ const Footer = () => {
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   aria-label={name}>
-                  <FormattedIcon name={name} />
+                  {name === 'GitHub' ? (
+                    <IconGitHub />
+                  ) : name === 'Linkedin' ? (
+                    <IconLinkedin />
+                  ) : name === 'Codepen' ? (
+                    <IconCodepen />
+                  ) : name === 'Instagram' ? (
+                    <IconInstagram />
+                  ) : name === 'Twitter' ? (
+                    <IconTwitter />
+                  ) : name === 'Scholar' ? (
+                    <IconScholar />
+                  ) : name === 'ORCID' ? (
+                    <IconOrcid />
+                  ) : (
+                    <IconGitHub />
+                  )}
                 </StyledSocialLink>
               </li>
             ))}
@@ -104,23 +130,23 @@ const Footer = () => {
       </StyledSocial>
       <StyledMetadata tabindex="-1">
         <StyledGitHubLink
-          href="https://github.com/bchiang7/v4"
+          href="https://github.com/sampan501/sampan501.github.io"
           target="_blank"
           rel="nofollow noopener noreferrer">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+          <div>&copy; Sambit Panda</div>
 
-          {githubInfo.stars && githubInfo.forks && (
+          {/* {githubInfo.stars && githubInfo.forks && (
             <StyledGitHubInfo>
               <span>
-                <FormattedIcon name="Star" />
+                <IconStar />
                 <span>{githubInfo.stars}</span>
               </span>
               <span>
-                <FormattedIcon name="Fork" />
+                <IconFork />
                 <span>{githubInfo.forks}</span>
               </span>
             </StyledGitHubInfo>
-          )}
+          )} */}
         </StyledGitHubLink>
       </StyledMetadata>
     </StyledContainer>
