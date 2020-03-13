@@ -177,7 +177,7 @@ class Nav extends Component {
           window.addEventListener('resize', () => throttle(this.handleResize()));
           window.addEventListener('keydown', e => this.handleKeydown(e));
         }),
-      100,
+      0,
     );
   }
 
@@ -232,7 +232,7 @@ class Nav extends Component {
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
     const { isHome } = this.props;
-    const timeout = isHome ? 3000 : 0;
+    const timeout = isHome ? 0 : 0;
     const fadeClass = isHome ? 'fade' : '';
     const fadeDownClass = isHome ? 'fadedown' : '';
 
