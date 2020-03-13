@@ -177,7 +177,7 @@ class Nav extends Component {
           window.addEventListener('resize', () => throttle(this.handleResize()));
           window.addEventListener('keydown', e => this.handleKeydown(e));
         }),
-      100,
+      0,
     );
   }
 
