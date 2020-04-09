@@ -1,25 +1,11 @@
-import theme from './theme';
-import GlobalStyle from './GlobalStyle';
-import mixins from './mixins';
-import media from './media';
-import Header from './Header';
-import Main from './Main';
-import Section from './Section';
-import Footer from './Footer';
-import Heading from './Heading';
-import Button from './Button';
-import InlineLink from './InlineLink';
-
-export {
-  theme,
-  GlobalStyle,
-  mixins,
-  media,
-  Header,
-  Main,
-  Section,
-  Footer,
-  Heading,
-  Button,
-  InlineLink,
-};
+export { default as theme } from './theme';
+export { default as GlobalStyle } from './GlobalStyle';
+export { default as mixins } from './mixins';
+export { default as media } from './media';
+export { default as Header } from './Header';
+export { default as Main } from './Main';
+export { default as Section } from './Section';
+export { default as Footer } from './Footer';
+export { default as Heading } from './Heading';
+export { default as Button } from './Button';
+export { default as InlineLink } from './InlineLink';
