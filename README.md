@@ -2,7 +2,7 @@
 
 # sampan.me
 
-My personal portfolio built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/). Modified from [bchiang7/v4](https://github.com/bchiang7/v4) whose website can be found here: https://brittanychiang.com and also https://abhijithvijayan.in/.
+My personal portfolio built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/). Modified from [bchiang7/v4](https://github.com/bchiang7/v4) whose website can be found here: https://brittanychiang.com.
 
 ## 🛠 Installation & Set Up
 
