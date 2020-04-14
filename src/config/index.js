@@ -15,20 +15,20 @@ module.exports = {
   twitterHandle: '@sampan501',
   socialMedia: [
     {
+      name: 'Twitter',
+      url: 'https://twitter.com/sampan501',
+    },
+    {
       name: 'GitHub',
       url: 'https://github.com/sampan501',
     },
     {
-      name: 'LinkedIn',
+      name: 'Linkedin',
       url: 'https://www.linkedin.com/in/sampan501',
     },
     {
       name: 'Scholar',
       url: 'https://scholar.google.com/citations?user=-V3CmPoAAAAJ&hl=en',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/sampan501',
     },
   ],
 
