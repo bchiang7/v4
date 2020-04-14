@@ -1,9 +1,9 @@
 module.exports = {
   siteTitle: 'Sambit Panda | Graduate Student',
   siteDescription:
-    'Sambit Panda is a graduate student based in Baltimore, MD who specializes in developing exceptional, high-quality machine learning software and applications.',
+    'Sambit Panda is a P student based in Baltimore, MD who specializes in developing exceptional, high-quality machine learning software and applications.',
   siteKeywords:
-    'Sambit Panda, Sambit, Panda, sampan501, graduate student, data scientist, software developer, python, johns hopkins',
+    'Sambit Panda, Sambit, Panda, sampan501, sampan, sampanda501, graduate student, data scientist, software developer, python, johns hopkins',
   siteUrl: 'https://sampan.me',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-159239956-1',
@@ -12,7 +12,12 @@ module.exports = {
   location: 'Baltimore, MD',
   email: 'spanda3@jhu.edu',
   github: 'https://github.com/sampan501',
+  twitterHandle: '@sampan501',
   socialMedia: [
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/sampan501',
+    },
     {
       name: 'GitHub',
       url: 'https://github.com/sampan501',
@@ -24,10 +29,6 @@ module.exports = {
     {
       name: 'Scholar',
       url: 'https://scholar.google.com/citations?user=-V3CmPoAAAAJ&hl=en',
-    },
-    {
-      name: 'ORCID',
-      url: 'https://orcid.org/0000-0001-8455-4243',
     },
   ],
 
