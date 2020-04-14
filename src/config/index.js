@@ -1,7 +1,7 @@
 module.exports = {
   siteTitle: 'Sambit Panda | Graduate Student',
   siteDescription:
-    'Sambit Panda is a graduate student based in Baltimore, MD who specializes in developing exceptional, high-quality machine learning software and applications.',
+    'Sambit Panda is a P student based in Baltimore, MD who specializes in developing exceptional, high-quality machine learning software and applications.',
   siteKeywords:
     'Sambit Panda, Sambit, Panda, sampan501, sampan, sampanda501, graduate student, data scientist, software developer, python, johns hopkins',
   siteUrl: 'https://sampan.me',
