@@ -21,6 +21,18 @@
 
 ![demo](https://raw.githubusercontent.com/bchiang7/v4/master/src/images/demo.png)
 
+## 🚨 Forking this repo (please read!)
+
+Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
+
+I value keeping my site open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
+
+Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
+
+### TL;DR
+
+Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
+
 ## 🛠 Installation & Set Up
 
 1. Install the Gatsby CLI
@@ -73,11 +85,3 @@
 | Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
 | Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
-
-## 🚨 Forking this repo
-
-Many people have contacted me asking me if they can use this code for their own websites. The answer to that question is _usually_ "yes", with attribution. There are some cases, such as using this code for a business or something that is greater than a personal project, that I may be less comfortable saying yes to. If in doubt, please don't hesitate to ask me.
-
-I value keeping this site open source, but as you all know, _**plagiarism is bad**_. I spent a non-negligible amount of effort developing, designing, and trying to perfect this iteration of my website, and I am proud of it! All I ask is to not claim this effort as your own.
-
-So, feel free to fork this repo. If you do, please just give me proper credit by linking back to my website, https://brittanychiang.com. Refer to this handy [quora post](https://www.quora.com/Is-it-bad-to-copy-other-peoples-code) if you're not sure what to do. Thanks!
