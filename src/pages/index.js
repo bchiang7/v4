@@ -126,6 +126,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            buttonText
           }
           html
         }
