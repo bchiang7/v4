@@ -4,11 +4,15 @@ import Helmet from 'react-helmet';
 import config from '@config';
 import favicon from '@images/favicons/favicon.ico';
 import ogImage from '@images/og.png';
-import appleIcon from '@images/favicons/apple-icon.png';
-import androidIcon192x192 from '@images/favicons/android-icon-192x192.png';
-import androidIcon512x512 from '@images/favicons/android-icon-512x512.png';
-import favicon32x32 from '@images/favicons/favicon-32x32.png';
-import favicon16x16 from '@images/favicons/favicon-16x16.png';
+
+import icon72x72 from '@images/favicons/72x72.png';
+import icon96x96 from '@images/favicons/96x96.png';
+import icon128x128 from '@images/favicons/128x128.png';
+import icon144x144 from '@images/favicons/144x144.png';
+import icon152x152 from '@images/favicons/152x152.png';
+import icon192x192 from '@images/favicons/192x192.png';
+import icon384x384 from '@images/favicons/384x384.png';
+import icon512x512 from '@images/favicons/512x512.png';
 
 const Head = ({ metadata }) => (
   <Helmet>
@@ -44,11 +48,14 @@ const Head = ({ metadata }) => (
     <meta name="twitter:image" content={`${config.siteUrl}${ogImage}`} />
     <meta name="twitter:image:alt" content={metadata.title} />
 
-    <link rel="apple-touch-icon" sizes="180x180" href={appleIcon} />
-    <link rel="icon" type="image/png" sizes="192x192" href={androidIcon192x192} />
-    <link rel="icon" type="image/png" sizes="512x512" href={androidIcon512x512} />
-    <link rel="icon" type="image/png" sizes="32x32" href={favicon32x32} />
-    <link rel="icon" type="image/png" sizes="16x16" href={favicon16x16} />
+    <link rel="apple-touch-icon" sizes="72x72" href={icon72x72} />
+    <link rel="apple-touch-icon" sizes="128x128" href={icon128x128} />
+    <link rel="apple-touch-icon" sizes="144x144" href={icon144x144} />
+    <link rel="apple-touch-icon" sizes="152x152" href={icon152x152} />
+    <link rel="icon" type="image/png" sizes="192x192" href={icon192x192} />
+    <link rel="icon" type="image/png" sizes="96x96" href={icon96x96} />
+    <link rel="icon" type="image/png" sizes="384x384" href={icon384x384} />
+    <link rel="icon" type="image/png" sizes="512x512" href={icon512x512} />
     <meta name="msapplication-TileColor" content={config.navyColor} />
     <meta name="theme-color" content={config.navyColor} />
   </Helmet>

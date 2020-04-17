@@ -5,9 +5,12 @@ import {
   IconLinkedin,
   IconCodepen,
   IconInstagram,
+  IconLogo,
   IconTwitter,
   IconScholar,
   IconOrcid,
+  IconFolder,
+  IconPaper,
 } from '@components/icons';
 
 const FormattedIcon = ({ name }) => {
@@ -18,6 +21,12 @@ const FormattedIcon = ({ name }) => {
       return <IconLinkedin />;
     case 'Codepen':
       return <IconCodepen />;
+    case 'Logo':
+      return <IconLogo />;
+    case 'Folder':
+      return <IconFolder />;
+    case 'Paper':
+      return <IconPaper />;
     case 'Instagram':
       return <IconInstagram />;
     case 'Twitter':
