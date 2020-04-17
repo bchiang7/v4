@@ -85,15 +85,15 @@ const StyledTable = styled.table`
 `;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+  const papers = data.allMarkdownRemark.edges;
 
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
-  const revealProjects = useRef([]);
+  const revealPapers = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealTable.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
+    revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
   }, []);
 
   return (
@@ -105,8 +105,8 @@ const ArchivePage = ({ location, data }) => {
 
       <StyledMainContainer>
         <header ref={revealTitle}>
-          <h1 className="big-title">Archive</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <h1 className="big-title">Papers</h1>
+          <p className="subtitle">A big list of papers I’ve worked on</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
@@ -115,48 +115,26 @@ const ArchivePage = ({ location, data }) => {
               <tr>
                 <th>Year</th>
                 <th>Title</th>
-                <th className="hide-on-mobile">Made at</th>
-                <th className="hide-on-mobile">Using</th>
+                <th className="hide-on-mobile">Journal</th>
                 <th>Link</th>
               </tr>
             </thead>
             <tbody>
-              {projects.length > 0 &&
-                projects.map(({ node }, i) => {
-                  const { date, github, external, title, tech, company } = node.frontmatter;
+              {papers.length > 0 &&
+                papers.map(({ node }, i) => {
+                  const { date, journal, external, title } = node.frontmatter;
                   return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                    <tr key={i} ref={el => (revealPapers.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
 
-                      <td className="company hide-on-mobile">
-                        {company ? <span>{company}</span> : <span>—</span>}
-                      </td>
-
-                      <td className="tech hide-on-mobile">
-                        {tech.length > 0 &&
-                          tech.map((item, i) => (
-                            <span key={i}>
-                              <span key={i}>{item}</span>
-                              {i !== tech.length - 1 && <span>&nbsp;&middot;&nbsp;</span>}
-                            </span>
-                          ))}
+                      <td className="journal hide-on-mobile">
+                        {journal ? <span>{journal}</span> : <span>—</span>}
                       </td>
 
                       <td className="links">
                         <span>
-                          {github ? (
-                            <a
-                              href={github}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
-                              <IconGitHub />
-                            </a>
-                          ) : (
-                            <span aria-label="Empty">—</span>
-                          )}
                           {external ? (
                             <a
                               href={external}
@@ -191,8 +169,8 @@ export const pageQuery = graphql`
   {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/projects/" }
-        frontmatter: { showInProjects: { ne: false } }
+        fileAbsolutePath: { regex: "/papers/" }
+        frontmatter: { showInPapers: { ne: false } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -201,10 +179,8 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
-            tech
-            github
+            journal
             external
-            company
           }
           html
         }

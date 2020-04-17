@@ -1,8 +1,8 @@
 ---
-date: '2015-05-01'
+date: '2015-09-01'
 title: 'Intern'
-company: 'Burleson Research Technologies'
-location: 'Research Triangle Park, NC'
+company: 'B.R.T.'
+location: 'RTP, NC'
 range: 'May - Sep 2015'
 url: 'https://brt-labs.com/'
 ---

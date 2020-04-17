@@ -1,7 +1,7 @@
 ---
-date: '2017-01-01'
+date: '2017-12-01'
 title: 'Teaching Asistant'
-company: 'NC State University'
+company: 'NC State'
 location: 'Raleigh, NC'
 range: 'Jan 2017 - Dec 2017'
 url: 'https://www.bme.ncsu.edu/'

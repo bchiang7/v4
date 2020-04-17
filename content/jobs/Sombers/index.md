@@ -1,8 +1,8 @@
 ---
-date: '2014-11-01'
-title: 'Research Asistant'
+date: '2018-05-01'
+title: 'Undergraduate Student'
 company: 'Sombers Lab'
-location: 'Raleigh, NC'
+location: 'NC State'
 range: 'Nov 2014 - May 2018'
 url: 'https://www.somberslab.org/'
 ---
