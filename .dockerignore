@@ -1,0 +1,10 @@
+# ignore .git and .cache folders
+.git
+.cache
+
+# Node and gatsby
+node_modules
+public
+
+#vscode
+.vscode
