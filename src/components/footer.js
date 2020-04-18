@@ -111,11 +111,11 @@ const Footer = () => {
             <StyledGitHubInfo>
               <span>
                 <FormattedIcon name="Star" />
-                <span>{githubInfo.stars}</span>
+                <span>{githubInfo.stars.toLocaleString()}</span>
               </span>
               <span>
                 <FormattedIcon name="Fork" />
-                <span>{githubInfo.forks}</span>
+                <span>{githubInfo.forks.toLocaleString()}</span>
               </span>
             </StyledGitHubInfo>
           )}
