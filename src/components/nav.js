@@ -9,7 +9,7 @@ import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+const { colors, fontSizes, fonts, loaderDelay } = theme;
 
 const StyledContainer = styled.header`
   ${mixins.flexBetween};
@@ -232,7 +232,7 @@ class Nav extends Component {
   render() {
     const { isMounted, menuOpen, scrollDirection } = this.state;
     const { isHome } = this.props;
-    const timeout = isHome ? 3000 : 0;
+    const timeout = isHome ? loaderDelay : 0;
     const fadeClass = isHome ? 'fade' : '';
     const fadeDownClass = isHome ? 'fadedown' : '';
 

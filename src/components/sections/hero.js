@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+const { colors, fontSizes, fonts, navDelay, loaderDelay } = theme;
 
 const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -60,7 +60,7 @@ const Hero = ({ data }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -94,7 +94,7 @@ const Hero = ({ data }) => {
       <TransitionGroup component={null}>
         {isMounted &&
           items.map((item, i) => (
-            <CSSTransition key={i} classNames="fadeup" timeout={3000}>
+            <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
               {item}
             </CSSTransition>
           ))}

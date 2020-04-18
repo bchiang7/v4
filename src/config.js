@@ -1,7 +1,7 @@
 module.exports = {
   siteTitle: 'Brittany Chiang | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.',
+    'Brittany Chiang is a software engineer based in Boston, MA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
   siteKeywords:
     'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
   siteUrl: 'https://brittanychiang.com',
@@ -56,9 +56,12 @@ module.exports = {
   ],
 
   navHeight: 100,
-  greenColor: '#64ffda',
-  navyColor: '#0a192f',
-  darkNavyColor: '#020c1b',
+
+  colors: {
+    green: '#64ffda',
+    navy: '#0a192f',
+    darkNavy: '#020c1b',
+  },
 
   srConfig: (delay = 200) => ({
     origin: 'bottom',
