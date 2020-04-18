@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts } = theme;
+const { colors, fonts, navDelay } = theme;
 
 const StyledMainContainer = styled(Main)`
   ${mixins.flexCenter};
@@ -34,7 +34,7 @@ const NotFoundPage = ({ location }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
