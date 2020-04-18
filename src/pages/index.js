@@ -38,7 +38,7 @@ export const pageQuery = graphql`
             title
             name
             subtitle
-            contactText
+            buttonText
           }
           html
         }

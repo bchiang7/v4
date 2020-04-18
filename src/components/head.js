@@ -66,9 +66,9 @@ const Head = ({ metadata }) => (
     <link rel="icon" type="image/png" sizes="32x32" href={favicon32x32} />
     <link rel="icon" type="image/png" sizes="96x96" href={favicon96x96} />
     <link rel="icon" type="image/png" sizes="16x16" href={favicon16x16} />
-    <meta name="msapplication-TileColor" content={config.navyColor} />
+    <meta name="msapplication-TileColor" content={config.colors.navy} />
     <meta name="msapplication-TileImage" content={msIcon144x144} />
-    <meta name="theme-color" content={config.navyColor} />
+    <meta name="theme-color" content={config.colors.navy} />
   </Helmet>
 );
 

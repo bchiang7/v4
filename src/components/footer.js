@@ -10,8 +10,6 @@ const StyledContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
   padding: 15px;
-  background-color: ${colors.darkNavy};
-  color: ${colors.slate};
   text-align: center;
   height: auto;
   min-height: 70px;
@@ -43,7 +41,7 @@ const StyledMetadata = styled.div`
   line-height: 1;
 `;
 const StyledGitHubLink = styled.a`
-  color: ${colors.slate};
+  color: ${colors.lightSlate};
   padding: 10px;
 `;
 const StyledGitHubInfo = styled.div`

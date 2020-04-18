@@ -131,7 +131,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      outline-color: ${colors.blue};
+      outline-color: ${colors.lightblue};
     }
   }
 
@@ -215,6 +215,10 @@ const GlobalStyle = createGlobalStyle`
   code {
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.md};
+  }
+
+  #logo {
+    color: ${colors.green};
   }
 
   .overline {
