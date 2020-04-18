@@ -9,7 +9,7 @@ tech:
   - JS
   - jQuery
 company: 'MullenLowe'
-showInProjects: true
+showInProjects: false
 ---
 
 Interactive holiday site for MullenLowe built around an algorithm that generated a holiday greeting to each and every person on the planet. Check out this short [video](https://us.mullenlowe.com/work/one-card-for-all/) describing the project.

@@ -1,5 +1,5 @@
 ---
-title: Wordpress Publishing Error
+title: WordPress Publishing Error
 description: Trying to create a simple post in WordPress
 date: '2019-12-03'
 draft: false
@@ -26,6 +26,6 @@ And if I popped open the console, I saw these errors:
 
 ## Solution
 
-Since the error message had to do with a JSON response, I initially thought it was a Gutenberg or ACF issue. But it turned out this was happening because I was on the https WP admin (i.e. https://project.ups.dock/wp-admin), not the unsecure WP admin (http://project.ups.dock/wp-admin).
+Since the error message had to do with a JSON response, I initially thought it was a Gutenberg or ACF issue. But it turned out this was happening because I was on the https WP admin (i.e. [https://project.ups.dock/wp-admin](https://project.ups.dock/wp-admin)), not the unsecure WP admin ([http://project.ups.dock/wp-admin](http://project.ups.dock/wp-admin)).
 
 It was a CORS error!! I was trying to modify a non-https domain from a https domain. Switching to a non-https WP admin allowed me to publish posts with no problem.

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Helmet from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
@@ -40,6 +41,11 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <Helmet>
+        <title>{title} | Brittany Chiang</title>
+        <link rel="canonical" href="https://brittanychiang.com/pensieve" />
+      </Helmet>
+
       <StyledPostContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
