@@ -5,7 +5,7 @@ Disease.'
 conference: 'Honors Capstone'
 external: 'https://honors.dasa.ncsu.edu/spring-2018-honors-capstone-celebration/dsc03205/'
 showInPresentations: true
-type: Poster
+type: Oral
 ---
 
 **Sambit Panda**, Leslie Wilson, Catie F Mason, Leslie Sombers
