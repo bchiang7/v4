@@ -8,6 +8,7 @@ import IconTwitter from './twitter';
 import IconExternal from './external';
 import IconFolder from './folder';
 import IconPaper from './paper';
+import IconPresentation from './presentations';
 import IconLocation from './location';
 import IconStar from './star';
 import IconFork from './fork';
@@ -27,6 +28,7 @@ export {
   IconExternal,
   IconFolder,
   IconPaper,
+  IconPresentation,
   IconLocation,
   IconStar,
   IconFork,

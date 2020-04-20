@@ -13,6 +13,12 @@ const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
+
+  footer {
+    ${mixins.flexBetween};
+    margin-top: 20px;
+    width: 100%;
+  }
 `;
 const StyledTitle = styled.h4`
   margin: 0 auto;
@@ -102,7 +108,7 @@ const StyledPaperDescription = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const StyledTechList = styled.ul`
+const StyledTechList = styled.h5`
   display: flex;
   align-items: flex-end;
   flex-grow: 1;
@@ -110,20 +116,24 @@ const StyledTechList = styled.ul`
   padding: 0;
   margin: 20px 0 0 0;
   list-style: none;
-
-  li {
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.xs};
-    color: ${colors.slate};
-    line-height: 1.75;
-    margin-right: 15px;
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xs};
+  color: ${colors.slate};
+  line-height: 1.75;
 `;
 const StyledMoreButton = styled(Button)`
   margin: 100px auto 0;
+`;
+const StyledJournalName = styled.span`
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xs};
+  color: ${colors.lightSlate};
+`;
+const StyledDate = styled.span`
+  text-transform: uppercase;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xs};
+  color: ${colors.lightSlate};
 `;
 
 const Papers = ({ data }) => {
@@ -138,7 +148,7 @@ const Papers = ({ data }) => {
     revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const GRID_LIMIT = 3;
+  const GRID_LIMIT = 6;
   const papers = data.filter(({ node }) => node);
   const firstSix = papers.slice(0, GRID_LIMIT);
   const papersToShow = showMore ? papers : firstSix;
@@ -146,7 +156,7 @@ const Papers = ({ data }) => {
   return (
     <StyledContainer>
       <StyledTitle ref={revealTitle}>Papers</StyledTitle>
-      <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
+      <StyledArchiveLink to="/papers" ref={revealArchiveLink}>
         view the archive
       </StyledArchiveLink>
 
@@ -155,7 +165,7 @@ const Papers = ({ data }) => {
           {papersToShow &&
             papersToShow.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { github, external, title } = frontmatter;
+              const { external, title, journal, date } = frontmatter;
               return (
                 <CSSTransition
                   key={i}
@@ -190,6 +200,10 @@ const Papers = ({ data }) => {
                         <StyledPaperName>{title}</StyledPaperName>
                         <StyledPaperDescription dangerouslySetInnerHTML={{ __html: html }} />
                       </header>
+                      <footer>
+                        <StyledJournalName>{journal}</StyledJournalName>
+                        <StyledDate>{`${new Date(date).getFullYear()}`}</StyledDate>
+                      </footer>
                     </StyledPaperInner>
                   </StyledPaper>
                 </CSSTransition>

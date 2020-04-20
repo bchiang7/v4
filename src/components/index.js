@@ -15,6 +15,7 @@ import Jobs from './sections/jobs';
 import Featured from './sections/featured';
 import Projects from './sections/projects';
 import Papers from './sections/papers';
+import Presentations from './sections/presentations';
 import Contact from './sections/contact';
 
 export {
@@ -31,6 +32,7 @@ export {
   Jobs,
   Featured,
   Papers,
+  Presentations,
   Projects,
   Contact,
   Footer,

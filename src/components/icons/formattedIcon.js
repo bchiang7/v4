@@ -11,6 +11,7 @@ import {
   IconOrcid,
   IconFolder,
   IconPaper,
+  IconPresentation,
 } from '@components/icons';
 
 const FormattedIcon = ({ name }) => {
@@ -27,6 +28,8 @@ const FormattedIcon = ({ name }) => {
       return <IconFolder />;
     case 'Paper':
       return <IconPaper />;
+    case 'Presentation':
+      return <IconPresentation />;
     case 'Instagram':
       return <IconInstagram />;
     case 'Twitter':
