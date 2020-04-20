@@ -85,27 +85,27 @@ const StyledTable = styled.table`
 `;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+  const presentations = data.allMarkdownRemark.edges;
 
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
-  const revealProjects = useRef([]);
+  const revealPresentations = useRef([]);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealTable.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
+    revealPresentations.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
   }, []);
 
   return (
     <Layout location={location}>
       <Helmet>
-        <title>Archive | Sambit Panda</title>
+        <title>Presentations | Sambit Panda</title>
         <link rel="canonical" href="https://sampan.me/archive" />
       </Helmet>
 
       <StyledMainContainer>
         <header ref={revealTitle}>
-          <h1 className="big-title">Software</h1>
+          <h1 className="big-title">Presentations</h1>
           <p className="subtitle">A big list of things I’ve worked on</p>
         </header>
 
@@ -115,48 +115,32 @@ const ArchivePage = ({ location, data }) => {
               <tr>
                 <th>Year</th>
                 <th>Title</th>
-                <th className="hide-on-mobile">Company</th>
-                <th className="hide-on-mobile">Tech</th>
+                <th className="hide-on-mobile">Conference</th>
+                <th className="hide-on-mobile">Type</th>
                 <th>Link</th>
               </tr>
             </thead>
             <tbody>
-              {projects.length > 0 &&
-                projects.map(({ node }, i) => {
-                  const { date, github, external, title, tech, company} = node.frontmatter;
+              {presentations.length > 0 &&
+                presentations.map(({ node }, i) => {
+                  const { date, conference, external, title, type } = node.frontmatter;
                   return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                    <tr key={i} ref={el => (revealPresentations.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
 
-                      <td className="company hide-on-mobile">
-                        {company ? <span>{company}</span> : <span>—</span>}
+                      <td className="conference hide-on-mobile">
+                        {conference ? <span>{conference}</span> : <span>—</span>}
                       </td>
 
-                      <td className="tech hide-on-mobile">
-                        {tech.length > 0 &&
-                          tech.map((item, i) => (
-                            <span key={i}>
-                              {item}
-                              {''}
-                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
-                            </span>
-                          ))}
+                      <td className="type hide-on-mobile">
+                        {type ? <span>{type}</span> : <span>—</span>}
                       </td>
 
                       <td className="links">
                         <span>
-                          {github && (
-                            <a
-                              href={github}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
-                              <IconGitHub />
-                            </a>
-                          )}
-                          {external && (
+                          {external ? (
                             <a
                               href={external}
                               target="_blank"
@@ -164,6 +148,8 @@ const ArchivePage = ({ location, data }) => {
                               aria-label="External Link">
                               <IconExternal />
                             </a>
+                          ) : (
+                            <span aria-label="Empty">—</span>
                           )}
                         </span>
                       </td>
@@ -188,19 +174,19 @@ export const pageQuery = graphql`
   {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/projects/" }
-        frontmatter: { showInProjects: { ne: false } }
+        fileAbsolutePath: { regex: "/presentations/" }
+        frontmatter: { showInPresentations: { ne: false } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
-          frontmatter {date
+          frontmatter {
+            date
             title
-            tech
-            github
+            conference
             external
-            company
+            type
           }
           html
         }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGitHub, IconExternal, IconPaper } from '@components/icons';
+import { IconGitHub, IconExternal, IconPresentation } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -41,7 +41,7 @@ const StyledArchiveLink = styled(Link)`
 const StyledGrid = styled.div`
   margin-top: 50px;
 
-  .papers {
+  .presentations {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
@@ -49,7 +49,7 @@ const StyledGrid = styled.div`
     ${media.desktop`grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));`};
   }
 `;
-const StyledPaperInner = styled.div`
+const StyledPresentationInner = styled.div`
   ${mixins.boxShadow};
   ${mixins.flexBetween};
   flex-direction: column;
@@ -61,29 +61,29 @@ const StyledPaperInner = styled.div`
   transition: ${theme.transition};
   background-color: ${colors.lightNavy};
 `;
-const StyledPaper = styled.div`
+const StyledPresentation = styled.div`
   transition: ${theme.transition};
   cursor: default;
   &:hover,
   &:focus {
     outline: 0;
-    ${StyledPaperInner} {
+    ${StyledPresentationInner} {
       transform: translateY(-5px);
     }
   }
 `;
-const StyledPaperHeader = styled.div`
+const StyledPresentationHeader = styled.div`
   ${mixins.flexBetween};
   margin-bottom: 30px;
 `;
-const StyledJournal = styled.div`
+const StyledConference = styled.div`
   color: ${colors.green};
   svg {
     width: 40px;
     height: 40px;
   }
 `;
-const StyledPaperLinks = styled.div`
+const StyledPresentationLinks = styled.div`
   margin-right: -10px;
   color: ${colors.lightSlate};
 `;
@@ -96,35 +96,27 @@ const StyledIconLink = styled.a`
     height: 20px;
   }
 `;
-const StyledPaperName = styled.h5`
+const StyledPresentationName = styled.h5`
   margin: 0 0 10px;
   font-size: ${fontSizes.xxl};
   color: ${colors.lightestSlate};
 `;
-const StyledPaperDescription = styled.div`
+const StyledPresentationDescription = styled.div`
   font-size: 17px;
   color: ${colors.lightSlate};
   a {
     ${mixins.inlineLink};
   }
 `;
-const StyledTechList = styled.h5`
-  display: flex;
-  align-items: flex-end;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 20px 0 0 0;
-  list-style: none;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xs};
-  color: ${colors.slate};
-  line-height: 1.75;
-`;
 const StyledMoreButton = styled(Button)`
   margin: 100px auto 0;
 `;
-const StyledJournalName = styled.span`
+const StyledConferenceName = styled.span`
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xs};
+  color: ${colors.lightSlate};
+`;
+const StyledPresentationType = styled.span`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xs};
   color: ${colors.lightSlate};
@@ -136,56 +128,56 @@ const StyledDate = styled.span`
   color: ${colors.lightSlate};
 `;
 
-const Papers = ({ data }) => {
+const Presentations = ({ data }) => {
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
-  const revealPapers = useRef([]);
+  const revealPresentations = useRef([]);
 
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealArchiveLink.current, srConfig());
-    revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealPresentations.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
   const GRID_LIMIT = 3;
-  const papers = data.filter(({ node }) => node);
-  const firstSix = papers.slice(0, GRID_LIMIT);
-  const papersToShow = showMore ? papers : firstSix;
+  const presentations = data.filter(({ node }) => node);
+  const firstSix = presentations.slice(0, GRID_LIMIT);
+  const presentationsToShow = showMore ? presentations : firstSix;
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Papers</StyledTitle>
-      <StyledArchiveLink to="/papers" ref={revealArchiveLink}>
+      <StyledTitle ref={revealTitle}>Presentations</StyledTitle>
+      <StyledArchiveLink to="/presentations" ref={revealArchiveLink}>
         view the archive
       </StyledArchiveLink>
 
       <StyledGrid>
-        <TransitionGroup className="papers">
-          {papersToShow &&
-            papersToShow.map(({ node }, i) => {
+        <TransitionGroup className="presentations">
+          {presentationsToShow &&
+            presentationsToShow.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { external, title, journal, date } = frontmatter;
+              const { external, title, conference, date, type } = frontmatter;
               return (
                 <CSSTransition
                   key={i}
                   classNames="fadeup"
                   timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
                   exit={false}>
-                  <StyledPaper
+                  <StyledPresentation
                     key={i}
-                    ref={el => (revealPapers.current[i] = el)}
+                    ref={el => (revealPresentations.current[i] = el)}
                     tabIndex="0"
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                     }}>
-                    <StyledPaperInner>
+                    <StyledPresentationInner>
                       <header>
-                        <StyledPaperHeader>
-                          <StyledJournal>
-                            <IconPaper />
-                          </StyledJournal>
-                          <StyledPaperLinks>
+                        <StyledPresentationHeader>
+                          <StyledConference>
+                            <IconPresentation />
+                          </StyledConference>
+                          <StyledPresentationLinks>
                             {external && (
                               <StyledIconLink
                                 href={external}
@@ -195,17 +187,18 @@ const Papers = ({ data }) => {
                                 <IconExternal />
                               </StyledIconLink>
                             )}
-                          </StyledPaperLinks>
-                        </StyledPaperHeader>
-                        <StyledPaperName>{title}</StyledPaperName>
-                        <StyledPaperDescription dangerouslySetInnerHTML={{ __html: html }} />
+                          </StyledPresentationLinks>
+                        </StyledPresentationHeader>
+                        <StyledPresentationName>{title}</StyledPresentationName>
+                        <StyledPresentationDescription dangerouslySetInnerHTML={{ __html: html }} />
                       </header>
                       <footer>
-                        <StyledJournalName>{journal}</StyledJournalName>
+                        <StyledPresentationType>{type}</StyledPresentationType>
+                        <StyledConferenceName>{conference}</StyledConferenceName>
                         <StyledDate>{`${new Date(date).getFullYear()}`}</StyledDate>
                       </footer>
-                    </StyledPaperInner>
-                  </StyledPaper>
+                    </StyledPresentationInner>
+                  </StyledPresentation>
                 </CSSTransition>
               );
             })}
@@ -219,8 +212,8 @@ const Papers = ({ data }) => {
   );
 };
 
-Papers.propTypes = {
+Presentations.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Papers;
+export default Presentations;
