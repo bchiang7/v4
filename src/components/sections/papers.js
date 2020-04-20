@@ -148,7 +148,7 @@ const Papers = ({ data }) => {
     revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const GRID_LIMIT = 3;
+  const GRID_LIMIT = 6;
   const papers = data.filter(({ node }) => node);
   const firstSix = papers.slice(0, GRID_LIMIT);
   const papersToShow = showMore ? papers : firstSix;

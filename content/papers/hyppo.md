@@ -1,7 +1,6 @@
 ---
 date: '2020-03-01'
 title: 'hyppo: A Comprehensive Multivariate Hypothesis Testing Python Package'
-journal: 'arXiv'
 external: 'https://arxiv.org/abs/1907.02088'
 showInPapers: true
 ---

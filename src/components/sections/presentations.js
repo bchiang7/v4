@@ -108,6 +108,19 @@ const StyledPresentationDescription = styled.div`
     ${mixins.inlineLink};
   }
 `;
+const StyledTechList = styled.h5`
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.xs};
+  color: ${colors.slate};
+  line-height: 1.75;
+`;
 const StyledMoreButton = styled(Button)`
   margin: 100px auto 0;
 `;
@@ -140,7 +153,7 @@ const Presentations = ({ data }) => {
     revealPresentations.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const GRID_LIMIT = 3;
+  const GRID_LIMIT = 6;
   const presentations = data.filter(({ node }) => node);
   const firstSix = presentations.slice(0, GRID_LIMIT);
   const presentationsToShow = showMore ? presentations : firstSix;

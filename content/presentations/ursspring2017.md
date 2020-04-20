@@ -1,10 +1,10 @@
 ---
-date: '2017-08-02'
-title: 'Multiple Sources Contribute to Extracellular H2O2 Dynamics in the Striatum'
+date: '2017-04-12'
+title: 'Hydrogen peroxide specific sensors for in vivo measurements using chronically implanted carbon-fiber microelectrodes.'
 conference: 'NC State U.R.S.'
-external: 'https://undergradresearch.dasa.ncsu.edu/wp-content/uploads/sites/54/2015/10/2016-Abstract-book-FInal.pdf#page=41'
+external: 'https://undergradresearch.dasa.ncsu.edu/wp-content/uploads/sites/54/2017/02/2017-Revised-Abstract-Book.pdf#page=124'
 showInPresentations: true
 type: Poster
 ---
 
-**Sambit Panda**, Leslie Wilson, Leslie Sombers
+**Sambit Panda**, Leslie Sombers
