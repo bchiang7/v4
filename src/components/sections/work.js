@@ -51,16 +51,18 @@ const StyledTabButton = styled.button`
   width: 100%;
   min-width: auto;
   background-color: transparent;
-  height: ${theme.tabHeight}px;
-  padding: 0 15px;
+  height: 50px;
+  padding: 0 20px;
   transition: ${theme.transition};
   border-left: 0;
   text-align: center;
   white-space: nowrap;
-  font-size: ${fontSizes.xxl};
+  font-size: ${fontSizes.h3};
+  ${media.tablet`font-size: 24px;`};
+  font-weight: 600;
   color: ${props => (props.isActive ? colors.green : colors.lightGrey)};
-  border-bottom: 2px solid ${props => (props.isActive ? colors.green : colors.navy)};
-  ${media.tablet`padding: 0 15px 2px;`};
+  border-bottom: 3px solid ${props => (props.isActive ? colors.green : colors.navy)};
+  ${media.tablet`padding: 0 15px 2px; border-bottom: 2px solid ${props => (props.isActive ? colors.green : colors.navy)};`};
   ${media.thone`
     ${mixins.flexCenter};
     padding: 0 15px;
