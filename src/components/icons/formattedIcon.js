@@ -12,6 +12,8 @@ import {
   IconFolder,
   IconPaper,
   IconPresentation,
+  IconOral,
+  IconCode,
 } from '@components/icons';
 
 const FormattedIcon = ({ name }) => {
@@ -30,6 +32,10 @@ const FormattedIcon = ({ name }) => {
       return <IconPaper />;
     case 'Presentation':
       return <IconPresentation />;
+    case 'Oral':
+      return <IconOral />;
+    case 'Code':
+      return <IconCode />;
     case 'Instagram':
       return <IconInstagram />;
     case 'Twitter':

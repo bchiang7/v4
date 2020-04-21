@@ -1,5 +1,5 @@
 ---
-date: '2018-05-24'
+date: '2018-04-19'
 title: 'Hydrogen Peroxide, Dopamine, and Serotonin: Overlapping Chemical Systems Contribute to the Control of Dyskinetic Movements in the Rat During Chronic L-DOPA Treatment for Parkinson’s
 Disease.'
 conference: 'Honors Capstone'
@@ -10,4 +10,4 @@ type: Oral
 
 **Sambit Panda**, Leslie Wilson, Catie F Mason, Leslie Sombers
 
-**Won award for best capstone!**
+🏆 **Won award for best capstone!**
