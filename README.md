@@ -2,7 +2,7 @@
 
 # sampan.me
 
-My personal portfolio built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/). Modified from [bchiang7/v4](https://github.com/bchiang7/v4) whose website can be found here: https://brittanychiang.com.
+My personal portfolio built with [Gatsby](https://www.gatsbyjs.org/) and hosted with [Netlify](https://www.netlify.com/). Modified from [bchiang7/v4](https://github.com/bchiang7/v4) whose website can be found here: https://brittanychiang.com. Also uses [Code Icon](https://iconscout.com/icons/code) by [Unicons Font](https://iconscout.com/contributors/unicons) on [Iconscout](https://iconscout.com), [Font Awesome](https://fontawesome.com/start), and [Twemoji](https://twemoji.twitter.com/).
 
 ## 🛠 Installation & Set Up
 

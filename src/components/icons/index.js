@@ -9,6 +9,7 @@ import IconExternal from './external';
 import IconFolder from './folder';
 import IconPaper from './paper';
 import IconPresentation from './presentations';
+import IconOral from './oral';
 import IconLocation from './location';
 import IconStar from './star';
 import IconFork from './fork';
@@ -16,6 +17,7 @@ import IconZap from './zap';
 import FormattedIcon from './formattedIcon';
 import IconScholar from './scholar'
 import IconOrcid from './orcid'
+import IconCode from './code'
 
 export {
   IconLoader,
@@ -29,6 +31,8 @@ export {
   IconFolder,
   IconPaper,
   IconPresentation,
+  IconOral,
+  IconCode,
   IconLocation,
   IconStar,
   IconFork,

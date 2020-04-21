@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { IconGitHub, IconExternal, IconPresentation } from '@components/icons';
+import { IconGitHub, IconExternal, IconPresentation, IconOral } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const StyledContainer = styled(Section)`
+const StyledContainer = styled.div`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
@@ -147,11 +147,8 @@ const Presentations = ({ data }) => {
   const revealArchiveLink = useRef(null);
   const revealPresentations = useRef([]);
 
-  useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealArchiveLink.current, srConfig());
-    revealPresentations.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
+  const revealContainer = useRef(null);
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   const GRID_LIMIT = 6;
   const presentations = data.filter(({ node }) => node);
@@ -160,7 +157,6 @@ const Presentations = ({ data }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Presentations</StyledTitle>
       <StyledArchiveLink to="/presentations" ref={revealArchiveLink}>
         view the archive
       </StyledArchiveLink>
@@ -188,7 +184,7 @@ const Presentations = ({ data }) => {
                       <header>
                         <StyledPresentationHeader>
                           <StyledConference>
-                            <IconPresentation />
+                            {type == "Poster" ? <IconPresentation /> : <IconOral />}
                           </StyledConference>
                           <StyledPresentationLinks>
                             {external && (
@@ -206,7 +202,6 @@ const Presentations = ({ data }) => {
                         <StyledPresentationDescription dangerouslySetInnerHTML={{ __html: html }} />
                       </header>
                       <footer>
-                        <StyledPresentationType>{type}</StyledPresentationType>
                         <StyledConferenceName>{conference}</StyledConferenceName>
                         <StyledDate>{`${new Date(date).getFullYear()}`}</StyledDate>
                       </footer>

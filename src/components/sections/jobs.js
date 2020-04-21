@@ -67,7 +67,7 @@ const StyledTabButton = styled.button`
   height: ${theme.tabHeight}px;
   padding: 0 20px 2px;
   transition: ${theme.transition};
-  border-left: 2px solid ${colors.darkGrey};
+  border-left: 2px solid ${props => (props.isActive ? colors.green : colors.navy)};
   text-align: left;
   white-space: nowrap;
   font-family: ${fonts.SFMono};
@@ -217,7 +217,7 @@ const Jobs = ({ data }) => {
                 </li>
               );
             })}
-          <StyledHighlight activeTabId={activeTabId} />
+          {/* <StyledHighlight activeTabId={activeTabId} /> */}
         </StyledTabList>
 
         {data &&

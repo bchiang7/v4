@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section, Button } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
-const StyledContainer = styled(Section)`
+const StyledContainer = styled.div`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
@@ -142,11 +142,8 @@ const Papers = ({ data }) => {
   const revealArchiveLink = useRef(null);
   const revealPapers = useRef([]);
 
-  useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealArchiveLink.current, srConfig());
-    revealPapers.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
+  const revealContainer = useRef(null);
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   const GRID_LIMIT = 6;
   const papers = data.filter(({ node }) => node);
@@ -155,7 +152,6 @@ const Papers = ({ data }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Papers</StyledTitle>
       <StyledArchiveLink to="/papers" ref={revealArchiveLink}>
         view the archive
       </StyledArchiveLink>
