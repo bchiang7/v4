@@ -50,7 +50,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${colors.highlight};
+    background-color: ${colors.slate};
+    color: ${colors.lightestSlate};
   }
 
   #root {
@@ -161,7 +162,7 @@ const GlobalStyle = createGlobalStyle`
 
     & > code {
       background-color: ${colors.lightNavy};
-      color: ${colors.offWhite};
+      color: ${colors.white};
       font-size: ${fontSizes.sm};
       border-radius: ${theme.borderRadius};
       padding: 0.3em 0.5em;
@@ -203,7 +204,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${colors.darkGrey};
+    background-color: ${colors.lightestNavy};
     height: 1px;
     border-width: 0px;
     border-style: initial;
