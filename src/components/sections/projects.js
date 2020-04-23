@@ -201,9 +201,7 @@ const Projects = ({ data }) => {
                       </header>
                       <footer>
                         <StyledTechList>
-                          {tech.map((tech, i) => (
-                            <li key={i}>{tech}</li>
-                          ))}
+                          {tech && tech.map((tech, i) => <li key={i}>{tech}</li>)}
                         </StyledTechList>
                       </footer>
                     </StyledProjectInner>
