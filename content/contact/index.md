@@ -1,7 +1,7 @@
 ---
-title: 'Get In Touch'
+title: "Let's Connect"
 buttonText: 'Say Hello'
 showInProjects: false
 ---
 
-Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+Drop me a line to discuss opportunities, or if you want to ask something or maybe for chit chat. I'll try to respond as soon as I get free.
