@@ -110,7 +110,7 @@ const ArchivePage = ({ location, data }) => {
     <Layout location={location}>
       <Helmet>
         <title>Archive | Zain Zafar</title>
-        <link rel="canonical" href="https://www.zainzafar.net/archive" />
+        <link rel="canonical" href="http://zainzafar.net/archive" />
       </Helmet>
 
       <StyledMainContainer>

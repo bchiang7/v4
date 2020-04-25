@@ -1,4 +1,4 @@
-# [Zain Zafar - Portfolio](https://www.zainzafar.net/)
+# [Zain Zafar - Portfolio](https://zainzafar.net/)
 
 My personal portfolio. Forked from [Brittany Chiang v4](https://github.com/bchiang7/v4).
 
