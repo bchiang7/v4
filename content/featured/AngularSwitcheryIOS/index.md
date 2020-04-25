@@ -9,7 +9,7 @@ tech:
   - Toggle Switch
   - NPM
   -
-showInProjects: true
+showInProjects: false
 ---
 
 Toggle switch for Angular without any external JavaScript dependency. Number of customizations are available to suit your needs including colors, sizes, labels & positioning.

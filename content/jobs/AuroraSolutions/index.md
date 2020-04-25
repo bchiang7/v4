@@ -5,6 +5,7 @@ company: 'Aurora Solutions'
 location: 'Islamabad, PK'
 range: 'Nov 2015 - Aug 2019'
 url: 'https://aurorasolutions.io/'
+showInProjects: false
 ---
 
 - Worked on variety of different languages and frameworks

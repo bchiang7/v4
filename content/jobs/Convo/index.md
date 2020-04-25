@@ -5,6 +5,7 @@ company: 'CONVO'
 location: 'Islamabad, PK'
 range: 'Jun 2015 - Nov 2015'
 url: 'https://www.convo.com/'
+showInProjects: false
 ---
 
 - Contributed in development of CONVO’s website

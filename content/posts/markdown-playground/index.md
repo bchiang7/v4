@@ -6,6 +6,7 @@ draft: true
 slug: '/pensieve/markdown-playground'
 tags:
   - Testing
+showInProjects: false
 ---
 
 ![Image Alt](./image.jpg)

@@ -5,6 +5,7 @@ company: 'STOQO'
 location: 'Jakarta, ID (Remote)'
 range: 'Sep 2019 - Present'
 url: 'https://www.stoqo.com/'
+showInProjects: false
 ---
 
 - Responsible for improving process on Frontend

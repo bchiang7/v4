@@ -8,6 +8,7 @@ skills:
   - Vue
   - Angular
   - Flutter
+showInProjects: false
 ---
 
 Hello! I'm Zain, a software engineer based in Islamabad, PK.

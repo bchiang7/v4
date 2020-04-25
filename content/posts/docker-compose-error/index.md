@@ -7,6 +7,7 @@ slug: '/pensieve/docker-error'
 tags:
   - WordPress
   - Docker
+showInProjects: false
 ---
 
 ## Problem

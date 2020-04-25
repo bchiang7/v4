@@ -5,6 +5,7 @@ company: 'Microsoft'
 location: 'Islamabad, PK'
 range: 'Jun 2013 - May 2015'
 url: 'https://www.convo.com/'
+showInProjects: false
 ---
 
 - Working on leading Microsoft technologies
