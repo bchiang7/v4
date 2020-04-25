@@ -4,10 +4,10 @@ module.exports = {
     'Zain Zafar is a software engineer based in Islamabad, PK who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
   siteKeywords:
     'Zain Zafar,  zainzafar90, software engineer, front-end engineer, web developer, javascript, islamabad',
-  siteUrl: 'http://www.zainzafar.net',
+  siteUrl: 'http://zainzafar.net',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-116099784-2',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: 'HGU8VMKOx-x5FPvIoLFZATc7os9MDFRXNe3T2iBfmEQ',
   name: 'Zain Zafar',
   location: 'Islamabad, PK',
   email: 'zainzafar90.@gmail.com',
