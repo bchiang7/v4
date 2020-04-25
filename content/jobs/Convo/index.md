@@ -7,7 +7,9 @@ range: 'Jun 2015 - Nov 2015'
 url: 'https://www.convo.com/'
 ---
 
-- Contributed in development of CONVO’s website while making it responsive on
-multiple devices.
+- Contributed in development of CONVO’s website
 - Extended functionality of CONVO’s Signup using OAuth
 - Worked on emails (with multiple email client support)
+- Working knowlege of Bower & Grunt
+- Mobile first mind-set and responsive design
+
