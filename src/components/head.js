@@ -26,7 +26,7 @@ const Head = ({ metadata }) => (
       {metadata.title}
     </title>
     <link rel="shortcut icon" href={favicon} />
-    <link rel="canonical" href="http://zainzafar.net" />
+    <link rel="canonical" href="https://zainzafar.net" />
 
     <meta name="description" content={metadata.description} />
     <meta name="keywords" content={config.siteKeywords} />
