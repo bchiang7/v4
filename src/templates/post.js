@@ -1,3 +1,4 @@
+/**
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
@@ -42,7 +43,7 @@ const PostTemplate = ({ data, location }) => {
   return (
     <Layout location={location}>
       <Helmet>
-        <title>{title} | Brittany Chiang</title>
+        <title>{title} | Shiyan Boxer</title>
         <link rel="canonical" href="https://brittanychiang.com/pensieve" />
       </Helmet>
 
@@ -100,3 +101,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+*/

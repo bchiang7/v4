@@ -1,3 +1,4 @@
+/**
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
@@ -144,3 +145,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+*/
