@@ -1,11 +1,12 @@
 ---
-date: '2017-04-01'
-title: 'Studio Developer'
-company: 'Scout'
-location: 'Northeastern University'
-range: 'Jan - June 2017'
+date: '2019-04-01'
+title: 'Real Estate Data Intern'
+company: 'Canada Post'
+location: 'Ottawa, ON'
+range: 'May - Aug 2020'
 url: 'https://web.northeastern.edu/scout/'
 ---
 
-- Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern
-- Worked closely with designers and management team to develop, document, and manage the conference’s marketing website using Jekyll, Sass, and JavaScript
+- Worked with a team of three designers to build a marketing website and e-commerce platform for [blistabloc](https://blistabloc.com), an ambitious startup originating from Northeastern
+- Helped solidify a brand direction for blistabloc that spans both packaging and web
+- Interfaced with clients on a weekly basis, providing technological expertise

@@ -1,12 +1,13 @@
 ---
-date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
-location: 'Boston, MA'
-range: 'July - Dec 2015'
-url: 'https://us.mullenlowe.com/'
+date: '2020-04-02'
+title: 'Data Associate'
+company: 'Front Row Ventures'
+location: 'Toronto, ON'
+range: 'Since Apr 2020
+url: 'https://frontrow.ventures/'
 ---
 
-- Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery
-- Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness
-- Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more
+- Developed and shipped highly interactive web applications for Apple Music using Ember.js
+- Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs
+- Architected and implemented the front-end of Apple Music's embeddable web player widget, which lets users log in and listen to full songs in the browser
+- Contributed extensively to MusicKit.js, a JavaScript framework that allows developers to add an Apple Music player to their web apps
