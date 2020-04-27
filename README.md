@@ -13,7 +13,8 @@
     <img src="https://api.netlify.com/api/v1/badges/40d146f1-4b4a-4a8b-b9e5-64cd1c24e592/deploy-status" alt="Netlify Status" />
   </a>
 </p>
-  ## 🛠 Installation & Set Up
+
+## 🛠 Installation & Set Up
 
 1. Install the Gatsby CLI
 
@@ -52,11 +53,12 @@
    ```sh
    npm run serve
    ```
-  ## 🎨 Color Reference 
- # Font: Futura
+
+## 🎨 Color Reference 
+### Font: Futura
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
 | Black          | ![#000000](https://via.placeholder.com/10/000000?text=+) `#000000` |
 | White          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
-| Blue           | ![#0000ff](https://via.placeholder.com/10/#0000ff?text=+) `#0000ff` |
+| Blue           | ![#0000ff](https://via.placeholder.com/10/0000ff?text=+) `#0000ff` |
