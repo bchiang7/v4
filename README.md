@@ -4,6 +4,7 @@
 <h1 align="center">
   Shiyan Boxer
 </h1>
+<body>
 <p align="center">
   This is my personal website <a href="https://shiyanboxer.netlify.app/" target="_blank">shiyanboxer.netlify.app/</a>.
 </p>
@@ -14,12 +15,13 @@
 </p>
 <p align="center">
    <ul align="center">
-   <bold>Font:</bold> Futura
-   <bold>Colors:</bold>
-    <ul align="center">
-   <bold>Text:</bold> Black (#000000)  
-   <bold>Background:</bold> White (#ffffff)
-   <bold>Accent:</bold> Blue (#0000ff)
+     <b>Font:</b> Futura
+     <b>Colors:</b>
+     <ul align="center">
+       <b>Text:</b> Black (#000000)  
+       <b>Background:</b> White (#ffffff)
+       <b>Accent:</b> Blue (#0000ff)
      </ul>
       </ul>
  </p>
+</body>
