@@ -1,10 +1,10 @@
 ---
-date: '2020-04-02'
-title: 'Data Associate'
-company: 'Front Row Ventures'
-location: 'Toronto, ON'
-range: 'Since Apr 2020
-url: 'https://frontrow.ventures/'
+date: '2017-12-21'
+title: 'UI Engineer Co-op'
+company: 'Apple'
+location: 'Cupertino, CA'
+range: 'July - Dec 2017'
+url: 'https://www.apple.com/music/'
 ---
 
 - Developed and shipped highly interactive web applications for Apple Music using Ember.js

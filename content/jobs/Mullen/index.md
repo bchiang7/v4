@@ -1,10 +1,10 @@
 ---
-date: '2020-04-01'
-title: 'Software Developer'
-company: 'Canadian Revenue Agency'
-location: 'Ottawa, ON'
-range: 'Apr - Aug 2020'
-url: 'https://www.canada.ca/en/revenue-agency.html'
+date: '2015-12-21'
+title: 'Creative Technologist Co-op'
+company: 'MullenLowe'
+location: 'Boston, MA'
+range: 'July - Dec 2015'
+url: 'https://us.mullenlowe.com/'
 ---
 
 - Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery

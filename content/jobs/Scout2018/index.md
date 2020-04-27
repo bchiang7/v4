@@ -1,9 +1,9 @@
 ---
-date: '2019-04-01'
-title: 'Real Estate Data Intern'
-company: 'Canada Post'
-location: 'Ottawa, ON'
-range: 'May - Aug 2020'
+date: '2018-04-01'
+title: 'Studio Developer'
+company: 'Scout'
+location: 'Northeastern University'
+range: 'Jan - April 2018'
 url: 'https://web.northeastern.edu/scout/'
 ---
 
