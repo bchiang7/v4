@@ -1,9 +1,9 @@
 ---
-date: '2017-12-21'
-title: 'UI Engineer Co-op'
-company: 'Apple'
-location: 'Cupertino, CA'
-range: 'July - Dec 2017'
+date: '2019-06-01'
+title: 'Community Associate'
+company: 'Front Row Ventures'
+location: 'Toronto, ON'
+range: 'Jun 2019 - Apr 2020'
 url: 'https://www.apple.com/music/'
 ---
 

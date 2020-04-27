@@ -1,7 +1,7 @@
 ---
 date: '2016-12-21'
 title: 'Software Engineer Co-op'
-company: 'Starry'
+company: 'Studio 50-50'
 location: 'Boston, MA'
 range: 'July - Dec 2016'
 url: 'https://starry.com/'
