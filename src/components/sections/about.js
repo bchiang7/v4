@@ -1,3 +1,4 @@
+// UPDATED
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
@@ -23,6 +24,8 @@ const StyledContent = styled.div`
     ${mixins.inlineLink};
   }
 `;
+
+// --------------------Skills--------------------
 const SkillsContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, minmax(140px, 200px)); // number of skill columns 
@@ -47,6 +50,8 @@ const Skill = styled.li`
     line-height: 12px;
   }
 `;
+
+// --------------------Profile Pic--------------------
 const StyledPic = styled.div`
   position: relative;
   width: 40%;
@@ -67,6 +72,8 @@ const StyledAvatar = styled(Img)`
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
 `;
+
+// --------------------Profile Pic Hover Style--------------------
 const StyledAvatarLink = styled.a`
   ${mixins.boxShadow};
   width: 100%;
@@ -105,13 +112,14 @@ const StyledAvatarLink = styled.a`
     mix-blend-mode: screen;
   }
   &:after {
-    border: 2px solid ${colors.blue};
+    border: 2px solid ${colors.black};
     top: 20px;
     left: 20px;
     z-index: -1;
   }
 `;
 
+// --------------------About Format--------------------
 const About = ({ data }) => {
   const { frontmatter, html } = data[0].node;
   const { title, skills, avatar } = frontmatter;
