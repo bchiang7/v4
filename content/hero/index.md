@@ -1,4 +1,3 @@
-[//]: <> (Landing page content)
 ---
 title: 'Hi, my name is'
 name: 'Shiyan Boxer'
