@@ -4,9 +4,9 @@ const { colors, fontSizes, fonts } = theme;
 
 // main colors
 const prismColors = {
-  white: `#ffffff`,
-  black: `#000000`,
-  blue: `#0000ff`,
+  white: `#ffffff`, // background
+  black: `#000000`, // text
+  blue: `#0000ff`, // highlight
 };
 
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
