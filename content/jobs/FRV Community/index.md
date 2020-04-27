@@ -1,8 +1,8 @@
 ---
-date: '2016-12-21'
-title: 'Software Engineer Co-op'
-company: 'Starry'
-location: 'Boston, MA'
+date: '2019-06-01'
+title: 'Community Associate'
+company: 'Front Row Ventures'
+location: 'Toronto, ON'
 range: 'July - Dec 2016'
 url: 'https://starry.com/'
 ---
