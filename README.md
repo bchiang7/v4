@@ -54,7 +54,7 @@
    npm run serve
    ```
 
-## 🎨 Color Reference 
+## 🎨 Style
 ### Font: Futura
 
 | Color          | Hex                                                                |
