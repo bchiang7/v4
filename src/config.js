@@ -6,7 +6,7 @@ module.exports = {
     'Shiyan Boxer, software engineer, computer engineering, intern, developer, university of waterloo, queens university',
   siteUrl: 'https://shiyanboxer.netlify.app/',
   siteLanguage: 'en_US',
-  // googleAnalyticsID: 'UA-45666519-2',
+  googleAnalyticsID: 'UA-96616026-2',
   // googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
   name: 'Shiyan Boxer',
   location: 'Toronto, ON',
@@ -55,19 +55,19 @@ module.exports = {
   navLinks: [
     {
       name: 'About',
-      url: '/#about',
+      url: '/about',
     },
     {
       name: 'Experience',
-      url: '/#Experience',
+      url: '/Experience',
     },
     {
       name: 'Work',
-      url: '/#Work',
+      url: '/Work',
     },
     {
       name: 'Contact',
-      url: '/#contact',
+      url: '/contact',
     },
   ],
 
