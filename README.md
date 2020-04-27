@@ -62,3 +62,6 @@
 | Black          | ![#000000](https://via.placeholder.com/10/000000?text=+) `#000000` |
 | White          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
 | Blue           | ![#0000ff](https://via.placeholder.com/10/0000ff?text=+) `#0000ff` |
+
+# Template by
+https://brittanychiang.com/
