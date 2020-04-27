@@ -3,16 +3,17 @@ import theme from './theme';
 const { colors, fontSizes, fonts } = theme;
 
 const prismColors = {
-  bg: `#112340`,
-  lineHighlight: `#1d2d50`,
-  blue: `#5ccfe6`,
-  purple: `#c3a6ff`,
-  green: `#bae67e`,
-  yellow: `#ffd580`,
-  orange: `#ffae57`,
-  red: `#ef6b73`,
-  grey: `#a2aabc`,
-  comment: `#8695b799`,
+  white: `#ffffff`,
+  bg: `#000000`,
+  blue: `#0000ff`,
+  lineHighlight: `#0000ff`,
+  purple: `#ffffff`,
+  green: `#ffffff`,
+  yellow: `#ffffff`,
+  orange: `#ffffff`,
+  red: `#ffffff`,
+  grey: `#ffffff`,
+  comment: `#ffffff`,
 };
 
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
