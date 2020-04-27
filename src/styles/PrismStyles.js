@@ -3,16 +3,9 @@ import theme from './theme';
 const { colors, fontSizes, fonts } = theme;
 
 const prismColors = {
-  bg: `#112340`,
-  lineHighlight: `#1d2d50`,
-  blue: `#5ccfe6`,
-  purple: `#c3a6ff`,
-  green: `#bae67e`,
-  yellow: `#ffd580`,
-  orange: `#ffae57`,
-  red: `#ef6b73`,
-  grey: `#a2aabc`,
-  comment: `#8695b799`,
+  white: `#112340`,
+  black: `#1d2d50`,
+  blue: `#ff0000`,
 };
 
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
@@ -23,8 +16,8 @@ const PrismStyles = css`
   * and overflow that we removed from <pre>.
   */
   .gatsby-highlight {
-    background-color: ${prismColors.bg};
-    color: ${prismColors.variable};
+    background-color: ${prismColors.white};
+    color: ${prismColors.black};
     border-radius: ${theme.borderRadius};
     margin: 2em 0;
     padding: 1.25em;
@@ -69,8 +62,8 @@ const PrismStyles = css`
     padding: 1em 1.5em;
     font-family: ${fonts.SFMono};
     font-size: ${fontSizes.smish};
-    background-color: ${prismColors.bg};
-    color: ${prismColors.grey};
+    background-color: ${prismColors.white};
+    color: ${prismColors.black};
     border-top-left-radius: ${theme.borderRadius};
     border-top-right-radius: ${theme.borderRadius};
     border-bottom: 1px solid ${prismColors.lineHighlight};
@@ -85,8 +78,8 @@ const PrismStyles = css`
   /* Line highlighting */
   .gatsby-highlight-code-line {
     display: block;
-    background-color: ${prismColors.lineHighlight};
-    border-left: 2px solid ${colors.green};
+    background-color: ${prismColors.white};
+    border-left: 2px solid ${colors.black};
     padding-left: calc(1em + 2px);
     padding-right: 1em;
     margin-right: -1.35em;
@@ -95,8 +88,8 @@ const PrismStyles = css`
 
   /* Language badges */
   .gatsby-highlight pre[class*='language-']::before {
-    background: ${colors.lightestNavy};
-    color: ${colors.white};
+    background: ${colors.white};
+    color: ${colors.black};
     font-size: ${fontSizes.xs};
     font-family: ${fonts.SFMono};
     line-height: 1.5;
@@ -167,32 +160,32 @@ const PrismStyles = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: ${prismColors.comment};
+    color: ${prismColors.black};
   }
   .token.punctuation {
-    color: ${prismColors.grey};
+    color: ${prismColors.black};
   }
   .token.namespace,
   .token.deleted {
-    color: ${prismColors.red};
+    color: ${prismColors.black};
   }
   .token.function-name,
   .token.function,
   .token.class-name,
   .token.constant,
   .token.symbol {
-    color: ${prismColors.yellow};
+    color: ${prismColors.black};
   }
   .token.attr-name,
   .token.operator,
   .token.rule {
-    color: ${prismColors.orange};
+    color: ${prismColors.black};
   }
   .token.keyword,
   .token.boolean,
   .token.number,
   .token.property {
-    color: ${prismColors.purple};
+    color: ${prismColors.blacke};
   }
   .token.tag,
   .token.selector,
@@ -209,7 +202,7 @@ const PrismStyles = css`
   .token.regex,
   .token.variable,
   .token.inserted {
-    color: ${prismColors.green};
+    color: ${prismColors.black};
   }
   .token.important,
   .token.bold {
