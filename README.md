@@ -13,6 +13,7 @@
   </a>
 </p>
 <p align="center">
+   <ul>
   Font: Futura
   Colors:
    <ul>
@@ -20,4 +21,5 @@
   Background: White (#ffffff)
   Accent: Blue (#0000ff)
      </ul>
+      </ul>
  </p>
