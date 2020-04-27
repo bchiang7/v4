@@ -13,15 +13,50 @@
     <img src="https://api.netlify.com/api/v1/badges/40d146f1-4b4a-4a8b-b9e5-64cd1c24e592/deploy-status" alt="Netlify Status" />
   </a>
 </p>
-<p align="center">
-   <ul align="center">
-     <b>Font:</b> Futura
-     <b>Colors:</b>
-     <ul align="center">
-       <b>Text:</b> Black (#000000)  
-       <b>Background:</b> White (#ffffff)
-       <b>Accent:</b> Blue (#0000ff)
-     </ul>
-      </ul>
- </p>
-</body>
+  ## 🛠 Installation & Set Up
+
+1. Install the Gatsby CLI
+
+   ```sh
+   npm install -g gatsby-cli
+   ```
+
+2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
+
+   ```sh
+   nvm install
+   ```
+
+3. Install dependencies
+
+   ```sh
+   yarn
+   ```
+
+4. Start the development server
+
+   ```sh
+   npm start
+   ```
+
+## 🚀 Building and Running for Production
+
+1. Generate a full static production build
+
+   ```sh
+   npm run build
+   ```
+
+1. Preview the site as it will appear once deployed
+
+   ```sh
+   npm run serve
+   ```
+  ## 🎨 Color Reference 
+ # Font: Futura
+
+| Color          | Hex                                                                |
+| -------------- | ------------------------------------------------------------------ |
+| Black          | ![#000000](https://via.placeholder.com/10/000000?text=+) `#000000` |
+| White          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
+| Blue           | ![#0000ff](https://via.placeholder.com/10/#0000ff?text=+) `#0000ff` |
