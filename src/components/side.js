@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
   right: ${props => (props.orientation === 'left' ? 'auto' : '40px')};
   z-index: 10;
-  color: ${colors.lightSlate};
+  color: ${colors.black};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
 `;

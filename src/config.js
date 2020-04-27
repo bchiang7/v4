@@ -59,11 +59,11 @@ module.exports = {
     },
     {
       name: 'Experience',
-      url: '/#Experience',
+      url: '/#jobs',
     },
     {
-      name: 'Work',
-      url: '/#Work',
+      name: 'Projects',
+      url: '/#projects',
     },
     {
       name: 'Contact',
