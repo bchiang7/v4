@@ -5,10 +5,5 @@
   shiyanboxer.netlify.app/
 </h1>
 <p align="center">
-  The fourth iteration of <a href="https://shiyanboxer.netlify.app/" target="_blank">shiyanboxer.netlify.app/</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-</p>
-<p align="center">https://app.netlify.com/sites/shiyanboxer/deploys
-  <a href="" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
-  </a>
+  This is my personal website <a href="https://shiyanboxer.netlify.app/" target="_blank">shiyanboxer.netlify.app/</a>.
 </p>
