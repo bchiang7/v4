@@ -6,8 +6,8 @@ module.exports = {
     'Shiyan Boxer, software engineer, computer engineering, intern, developer, university of waterloo, queens university',
   siteUrl: 'https://shiyanboxer.netlify.app/',
   siteLanguage: 'en_US',
-  googleAnalyticsID: 'UA-45666519-2',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  // googleAnalyticsID: 'UA-45666519-2',
+  // googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
   name: 'Shiyan Boxer',
   location: 'Toronto, ON',
   email: 'shiyanboxer7@gmail.com',
@@ -33,6 +33,22 @@ module.exports = {
     {
       name: 'Twitter',
       url: 'https://twitter.com/shiyan_boxer',
+    },
+    {
+      name: 'VSCO',
+      url: 'https://vsco.co/shiyanboxer/gallery',
+    },
+    {
+      name: 'Behance',
+      url: 'https://www.behance.net/shiyanboxer',
+    },    
+    {
+      name: 'Medium',
+      url: 'https://medium.com/@shiyan.boxer',
+    },
+    {
+      name: 'Spotify',
+      url: 'https://open.spotify.com/user/shiyanboxer?si=sO5Ie0B5T4qNGMyngonkEg',
     },
   ],
 
