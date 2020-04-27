@@ -1,8 +1,8 @@
 ---
 title: 'Hi, my name is'
-name: 'Shiyan Boxer'
-subtitle: 'I'm a software engineering student.'
+name: 'Brittany Chiang'
+subtitle: 'I build things for the web.'
 buttonText: 'Get In Touch'
 ---
 
-I'm a software engineer based in Toronto, ON.
+I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
