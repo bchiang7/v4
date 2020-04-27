@@ -1,9 +1,9 @@
 ---
-date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
-location: 'Boston, MA'
-range: 'July - Dec 2015'
+date: '2020-04-01'
+title: 'Data Associate'
+company: 'Front Row Ventuers'
+location: 'Toronto, ON'
+range: 'Apr 2020 - Present'
 url: 'https://us.mullenlowe.com/'
 ---
 
