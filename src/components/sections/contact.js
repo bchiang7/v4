@@ -1,3 +1,6 @@
+// UPDATED
+// --------------------0.4 CONATACT--------------------
+
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import sr from '@utils/sr';
@@ -32,6 +35,7 @@ const StyledHeading = styled(Heading)`
     display: none;
   }
 `;
+
 const StyledTitle = styled.h4`
   margin: 0 0 20px;
   font-size: 60px;

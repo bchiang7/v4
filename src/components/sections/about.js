@@ -1,4 +1,5 @@
 // UPDATED
+// --------------------01. ABOUT--------------------
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
