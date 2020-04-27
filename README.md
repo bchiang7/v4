@@ -13,13 +13,13 @@
   </a>
 </p>
 <p align="center">
-   <ul>
-  Font: Futura
-  Colors:
-   <ul>
-  Text: Black (#000000)  
-  Background: White (#ffffff)
-  Accent: Blue (#0000ff)
+   <ul align="center">
+   <bold>Font:</bold> Futura
+   <bold>Colors:</bold>
+    <ul align="center">
+   <bold>Text:</bold> Black (#000000)  
+   <bold>Background:</bold> White (#ffffff)
+   <bold>Accent:</bold> Blue (#0000ff)
      </ul>
       </ul>
  </p>
