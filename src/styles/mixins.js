@@ -19,7 +19,7 @@ const mixins = {
   outline: css`
     outline: 1px solid black;
   `,
-
+// Linked text
   link: css`
     display: inline-block;
     text-decoration: none;
@@ -36,6 +36,7 @@ const mixins = {
     }
   `,
 
+// Linked text line 
   inlineLink: css`
     display: inline-block;
     text-decoration: none;
@@ -70,6 +71,7 @@ const mixins = {
     }
   `,
 
+// Get in touch button
   smallButton: css`
     color: ${colors.black};
     background-color: transparent;
@@ -93,6 +95,7 @@ const mixins = {
     }
   `,
 
+// Get in touch button
   bigButton: css`
     color: ${colors.black};
     background-color: transparent;
@@ -123,13 +126,14 @@ const mixins = {
     ${media.phablet`padding: 0 25px;`};
   `,
 
+// shadow under projects and profile pic when hovered
   boxShadow: css`
     box-shadow: 0 10px 30px -15px ${colors.black};
     transition: ${theme.transition};
 
     &:hover,
     &:focus {
-      box-shadow: 0 20px 30px -15px ${colors.blue};
+      box-shadow: 0 20px 30px -15px ${colors.black};
     }
   `,
 
@@ -146,7 +150,7 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${colors.black};
+        color: ${colors.blue};
       }
     }
   `,
