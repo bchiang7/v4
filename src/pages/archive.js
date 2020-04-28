@@ -32,7 +32,7 @@ const StyledTable = styled.table`
 
     &:hover,
     &:focus {
-      background-color: ${colors.white};
+      background-color: ${colors.lightNavy};
     }
   }
   th,
@@ -56,7 +56,7 @@ const StyledTable = styled.table`
     }
     &.title {
       padding-top: 15px;
-      color: ${colors.black};
+      color: ${colors.lightestSlate};
       font-size: ${fontSizes.xl};
       font-weight: 700;
     }

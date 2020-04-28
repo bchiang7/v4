@@ -12,7 +12,7 @@ const StyledMainContainer = styled(Main)`
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${colors.black};
+  color: ${colors.green};
   font-family: ${fonts.SFMono};
   font-size: 12vw;
   line-height: 1;

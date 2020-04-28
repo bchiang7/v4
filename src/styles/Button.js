@@ -1,5 +1,3 @@
-// Changes Show more button
-
 import styled from 'styled-components';
 import theme from './theme';
 const { colors, fontSizes, fonts } = theme;
@@ -17,15 +15,11 @@ const Button = styled.button`
   transition: ${theme.transition};
   padding: 1.25rem 1.75rem;
 
-  &:hover {
-    background-color: ${colors.black};
-    color: ${colors.white};
-    outline: none;
-  }
+  &:hover,
   &:focus,
   &:active {
-    background-color: ${colors.white};
-    color: ${colors.black};
+    background-color: ${colors.black};
+    color: ${colors.white};
     outline: none;
   }
   &:after {
