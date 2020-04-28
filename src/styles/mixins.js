@@ -150,7 +150,7 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${colors.blue};
+        color: ${colors.black};
       }
     }
   `,

@@ -1,3 +1,5 @@
+// Setting theme - does not change colors
+
 import { hex2rgba } from '@utils';
 
 const ACCENT = '#0000ff'; // blue
