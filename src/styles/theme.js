@@ -1,6 +1,6 @@
 import { hex2rgba } from '@utils';
 
-const ACCENT = '#000000'; // black
+const ACCENT = '#0000ff'; // blue
 const DARK_BG = '#ffffff'; // white
 const BG = '#ffffff'; // white
 

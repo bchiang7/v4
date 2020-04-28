@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/shiyanboxer/personal-website/master/src/images/logo.png" width="100" />
+  <img alt="Logo" src="https://github.com/shiyanboxer/Personal-Website/blob/master/src/images/logo.png" width="100" />
 </div>
 <h1 align="center">
   Shiyan Boxer
@@ -9,7 +9,7 @@
   This is my personal website <a href="https://shiyanboxer.netlify.app/" target="_blank">shiyanboxer.netlify.app/</a>.
 </p>
 <p align="center">
-  <a href="https://app.netlify.com/sites/shiyanboxer2/deploys" target="_blank">
+  <a href="https://app.netlify.com/sites/shiyanboxer/deploys" target="_blank">
     <img src="https://api.netlify.com/api/v1/badges/40d146f1-4b4a-4a8b-b9e5-64cd1c24e592/deploy-status" alt="Netlify Status" />
   </a>
 </p>
@@ -63,5 +63,5 @@
 | White          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
 | Blue           | ![#0000ff](https://via.placeholder.com/10/0000ff?text=+) `#0000ff` |
 
-## Template by
+## Courtesy of
 https://brittanychiang.com/

@@ -3,9 +3,9 @@ import theme from './theme';
 const { colors, fontSizes, fonts } = theme;
 
 const Button = styled.button`
-  color: ${colors.white};
+  color: ${colors.black};
   background-color: transparent;
-  border: 1px solid ${colors.white};
+  border: 1px solid ${colors.black};
   border-radius: ${theme.borderRadius};
   font-size: ${fontSizes.smish};
   font-family: ${fonts.SFMono};
@@ -19,7 +19,7 @@ const Button = styled.button`
   &:focus,
   &:active {
     background-color: ${colors.white};
-    color: ${colors.black};
+    color: ${colors.blue};
     outline: none;
   }
   &:after {

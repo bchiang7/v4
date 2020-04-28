@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: config.siteUrl,
     description: config.siteDescription,
   },
+// --------------------PLUGINS--------------------  
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -139,9 +140,10 @@ module.exports = {
       },
     },
     {
+      // https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: config.googleAnalyticsID,
+        trackingId: config.googleAnalyticsID, // check config.js in scr
       },
     },
   ],
