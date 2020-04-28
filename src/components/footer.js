@@ -15,7 +15,7 @@ const StyledContainer = styled.footer`
   min-height: 70px;
 `;
 const StyledSocial = styled.div`
-  color: ${colors.lightSlate};
+  color: ${colors.black};
   width: 100%;
   max-width: 270px;
   margin: 0 auto 10px;
@@ -41,7 +41,7 @@ const StyledMetadata = styled.div`
   line-height: 1;
 `;
 const StyledGitHubLink = styled.a`
-  color: ${colors.lightSlate};
+  color: ${colors.black};
   padding: 10px;
 `;
 const StyledGitHubInfo = styled.div`

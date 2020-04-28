@@ -1,16 +1,21 @@
 module.exports = {
   siteTitle: 'Shiyan Boxer | Software Engineer',
   siteDescription:
-    'Shiyan Boxer is a software engineer based in Toronto, ON enjoys building websites, applications, and everything in between.',
+    'Shiyan Boxer is a software engineer based in Toronto, ON.',
   siteKeywords:
-    'Shiyan Boxer, software engineer, computer engineering, intern, developer, university of waterloo, queens university',
+    'Shiyan Boxer, software engineer, computer engineering, intern, developer, university of waterloo, toronto, engineer, women in tech, queens university',
   siteUrl: 'https://shiyanboxer.netlify.app/',
   siteLanguage: 'en_US',
+
+ // --------------------GOOGLE ANALYTICS--------------------
   // googleAnalyticsID: 'UA-45666519-2',
   // googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+ 
   name: 'Shiyan Boxer',
   location: 'Toronto, ON',
   email: 'shiyanboxer7@gmail.com',
+
+  // --------------------SOCIAL MEDIA--------------------
   github: 'https://github.com/shiyanboxer',
   twitterHandle: '@shiyan_boxer',
   socialMedia: [
@@ -52,6 +57,7 @@ module.exports = {
     },
   ],
 
+// --------------------Navigaton URL Tags--------------------
   navLinks: [
     {
       name: 'About',
@@ -74,8 +80,8 @@ module.exports = {
   navHeight: 100,
 
   colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
+    white: '#fffff',
+    blue: '#0000ff',
     black: '#000000',
   },
 

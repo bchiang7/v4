@@ -23,7 +23,7 @@ const SkipToContent = styled.a`
   &:focus,
   &:active {
     outline: 0;
-    color: ${colors.black};
+    color: ${colors.blue};
     background-color: ${colors.white};
     border-radius: ${theme.borderRadius};
     padding: 18px 23px;
