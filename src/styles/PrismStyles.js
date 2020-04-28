@@ -3,9 +3,9 @@ import theme from './theme';
 const { colors, fontSizes, fonts } = theme;
 
 const prismColors = {
-  white: `#112340`,
-  black: `#1d2d50`,
-  blue: `#ff0000`,
+  white: `#ffffff`,
+  black: `#00000`,
+  blue: `#0000ff`,
 };
 
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs
@@ -160,7 +160,7 @@ const PrismStyles = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: ${prismColors.black};
+    color: ${prismColors.blue};
   }
   .token.punctuation {
     color: ${prismColors.black};
@@ -179,13 +179,13 @@ const PrismStyles = css`
   .token.attr-name,
   .token.operator,
   .token.rule {
-    color: ${prismColors.black};
+    color: ${prismColors.blue};
   }
   .token.keyword,
   .token.boolean,
   .token.number,
   .token.property {
-    color: ${prismColors.blacke};
+    color: ${prismColors.blue};
   }
   .token.tag,
   .token.selector,
@@ -202,7 +202,7 @@ const PrismStyles = css`
   .token.regex,
   .token.variable,
   .token.inserted {
-    color: ${prismColors.black};
+    color: ${prismColors.blue};
   }
   .token.important,
   .token.bold {
