@@ -64,7 +64,7 @@ const mixins = {
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: ${colors.black};
+      background-color: ${colors.blue};
       transition: ${theme.transition};
       opacity: 0.5;
     }
@@ -86,6 +86,7 @@ const mixins = {
     &:focus,
     &:active {
       background-color: ${colors.black};
+      color: ${colors.white};
     }
     &:after {
       display: none !important;
@@ -108,6 +109,7 @@ const mixins = {
     &:focus,
     &:active {
       background-color: ${colors.black};
+      color: ${colors.white}; 
     }
     &:after {
       display: none !important;
@@ -127,7 +129,7 @@ const mixins = {
 
     &:hover,
     &:focus {
-      box-shadow: 0 20px 30px -15px ${colors.black};
+      box-shadow: 0 20px 30px -15px ${colors.blue};
     }
   `,
 
