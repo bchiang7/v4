@@ -4,7 +4,7 @@ const { colors, fontSizes, fonts } = theme;
 
 const Button = styled.button`
   color: ${colors.black};
-  background-color: transparent;
+  background-color: ${colors.white};
   border: 1px solid ${colors.black};
   border-radius: ${theme.borderRadius};
   font-size: ${fontSizes.smish};
@@ -18,8 +18,8 @@ const Button = styled.button`
   &:hover,
   &:focus,
   &:active {
-    background-color: ${colors.white};
-    color: ${colors.blue};
+    background-color: ${colors.black};
+    color: ${colors.white};
     outline: none;
   }
   &:after {

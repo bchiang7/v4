@@ -1,3 +1,5 @@
+// important 
+
 import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import media from './media';
