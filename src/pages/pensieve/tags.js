@@ -15,15 +15,15 @@ const StyledTagsContainer = styled(Main)`
     margin-bottom: 50px;
   }
   ul {
-    color: ${colors.lightSlate};
+    color: ${colors.black};
     li {
       font-size: ${fontSizes.xxl};
 
       a {
         ${mixins.inlineLink};
-        color: ${colors.lightSlate};
+        color: ${colors.blue;
         .count {
-          color: ${colors.slate};
+          color: ${colors.black};
           font-family: ${fonts.SFMono};
           font-size: ${fontSizes.md};
         }
