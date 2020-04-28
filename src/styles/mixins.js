@@ -15,7 +15,7 @@ const mixins = {
     justify-content: space-between;
     align-items: center;
   `,
-// loader?
+
   outline: css`
     outline: 1px solid black;
   `,
@@ -84,14 +84,11 @@ const mixins = {
     text-decoration: none;
     cursor: pointer;
     transition: ${theme.transition};
-    &:hover {
-      background-color: ${colors.black};
-      color: ${colors.white};
-    },
+    &:hover,
     &:focus,
     &:active {
-      background-color: ${colors.white};
-      color: ${colors.black};
+      background-color: ${colors.black};
+      color: ${colors.white};
     }
     &:after {
       display: none !important;
