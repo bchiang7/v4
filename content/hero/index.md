@@ -1,8 +1,8 @@
 ---
 title: 'Hi, my name is'
-name: 'Brittany Chiang'
-subtitle: 'I build things for the web.'
+name: 'Helen Gezahegn'
+subtitle: 'I love building software.'
 buttonText: 'Get In Touch'
 ---
 
-I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
+I'm a senior student and full-stack software developer based in Edmonton, Alberta (Canada). I'm passionate about learning and currently have experience in designing and building web, mobile, and back-end database applications.

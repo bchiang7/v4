@@ -1,38 +1,33 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteTitle: 'Helen Gezahegn | Software Developer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
+    'Helen Gezahegn is a senior student and full-stack software developer based in Edmonton, Alberta (Canada). I\'m passionate about learning and currently have experience in designing and building web, mobile, and back-end database applications.',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
+    'Helen Gezahegn, Helen, Gezahegn, HelenGezahegn, HelenG123, software developer, front-end engineer, back-end engineer, web developer, javascript, react, university of alberta',
   siteUrl: 'https://brittanychiang.com',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-45666519-2',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
-  github: 'https://github.com/bchiang7',
-  twitterHandle: '@bchiang7',
+  name: 'Helen Gezahegn',
+  location: 'Edmonton, AB',
+  email: 'gezahegn@ualberta.ca',
+  github: 'https://github.com/HelenGezahegn',
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/HelenGezahegn',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/HelenGezahegn',
     },
     {
       name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://codepen.io/HelenGezahegn',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://www.instagram.com/helen.gezahegn',
     },
   ],
 
