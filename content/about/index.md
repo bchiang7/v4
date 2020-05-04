@@ -3,17 +3,17 @@ title: 'About Me'
 avatar: './me.jpg'
 skills:
   - JavaScript (ES6+)
-  - HTML & (S)CSS
   - React
-  - Vue
-  - Node.js
-  - WordPress
+  - HTML & (S)CSS
+  - Python
+  - Flutter
+  - Firebase
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA.
+Hello! I'm Helen, a senior and software developer based in Edmonton, AB (Canada).
 
-I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.
+I'm passionate about learning and solving real problems, especially when it has a social good aspect to it. I never limit myself to the projects that I take on and have delved into various front-end (web and mobile) and back-end (database) applications. My goal is to continue refine my technical skills so I can evolve into becoming the best developer I can be while providing quality, responsive, and fast software.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+I'm currently in my last year at the [University of Alberta](https://www.ualberta.ca/), and have just finished my year co-op at [Intuit](https://www.intuit.com/ca/) where I worked as a full-stack developer.
 
 Here are a few technologies I've been working with recently:
