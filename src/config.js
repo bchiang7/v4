@@ -1,9 +1,9 @@
 module.exports = {
   siteTitle: 'Sajal Goyal | Software Engineer',
   siteDescription:
-    'Sajal Goyal is a software engineer based in Boston, MA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
+    'Sajal Goyal is a Machine Learning Enthusiast, who specializes in Machine Learning Algorithms and Computer Vision.',
   siteKeywords:
-    'Sajal Goyal, Sajal, Goyal, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
+    'Sajal Goyal, Sajal, Goyal, software engineer,iit, iit kanpur, iitk, data science, machine learning, agra, coursera, auv, auviitk, sajal goyal iitk',
   //siteUrl: 'https://brittanychiang.com',
   //  siteUrl: 'http://auv-iitk.github.io'
   siteUrl: 'https://sajalgoyal113.github.io/',
@@ -11,30 +11,30 @@ module.exports = {
   //  googleAnalyticsID: 'UA-45666519-2',
   //  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
   name: 'Sajal Goyal',
-  location: 'Boston, MA',
+  location: 'Agra, India',
   email: 'sajalg@iitk.ac.in',
   github: 'https://github.com/sajalgoyal113',
-  twitterHandle: '@bchiang7',
+  twitterHandle: '@yashsharmaddgg',
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/sajalgoyal113',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/sajal-goyal-94854388',
     },
     {
       name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://codepen.io/',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
+      url: 'https://www.instagram.com/sajalgoyal_/?hl=en',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/home',
     },
   ],
 
