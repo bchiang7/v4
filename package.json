@@ -1,11 +1,11 @@
 {
-  "name": "v4",
+  "name": "sajalgoyal113.github.io",
   "description": "Personal Website V4",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Brittany Chiang <sajalg@iitk.ac.in>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/sajalgoyal113/sajalgoyal113.github.io"
   },
   "keywords": [
     "gatsby"
