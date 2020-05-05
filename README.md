@@ -5,7 +5,7 @@
   sajalgoyal113.github.io
 </h1>
 <p align="center">
-  The fourth iteration of <a href="https://cranky-kirch-17e24b.netlify.app/" target="_blank">sajalgoyal113.github.io</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+  The website - <a href="https://cranky-kirch-17e24b.netlify.app/" target="_blank">sajalgoyal113.github.io</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
 </p>
 
 Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
