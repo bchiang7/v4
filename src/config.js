@@ -1,15 +1,15 @@
 module.exports = {
   siteTitle: 'Sajal Goyal | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
+    'Sajal Goyal is a software engineer based in Boston, MA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  //  siteUrl: 'https://brittanychiang.com',
-  siteUrl: 'sajalgoyal113.github.io',
+    'Sajal Goyal, Sajal, Goyal, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
+  siteUrl: 'https://brittanychiang.com',
+  //  siteUrl: 'sajalgoyal113.github.io',
   siteLanguage: 'en_US',
   //  googleAnalyticsID: 'UA-45666519-2',
   //  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
-  name: 'Brittany Chiang',
+  name: 'Sajal Goyal',
   location: 'Boston, MA',
   email: 'sajalg@iitk.ac.in',
   github: 'https://github.com/sajalgoyal113',
