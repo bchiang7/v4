@@ -4,7 +4,7 @@ module.exports = {
     'Cem Berke Cebi is a software engineer based in Istanbul, TR who enjoys working with the things that related with technology. I develop different kind of websites, games and prediction models.',
   siteKeywords:
     'Cem Berke Cebi, Cem, Cebi, cemthecebi, software engineer, back-end engineer, web developer, java',
-  siteUrl: 'https://brittanychiang.com',
+  siteUrl: 'https://cemcebi.com',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-45666519-2',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
@@ -48,6 +48,10 @@ module.exports = {
     {
       name: 'Work',
       url: '/#projects',
+    },
+    {
+      name: 'Blog',
+      url: 'https://medium.com/cem-cebi',
     },
     {
       name: 'Contact',
