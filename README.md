@@ -57,4 +57,4 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
 
 
 
-This awesome website was designed by https://github.com/bchiang7
+*This awesome website was designed by (Brittany Chiang)[https://github.com/bchiang7]*
