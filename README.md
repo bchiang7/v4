@@ -1,7 +1,5 @@
 ### TL;DR
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
-
 ## 🛠 Installation & Set Up
 
 1. Install the Gatsby CLI
