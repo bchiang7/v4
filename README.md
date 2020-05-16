@@ -56,4 +56,5 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
 | Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
 
 
-This awesome website was designed by @bchiang7.
+
+This awesome website was designed by @bchiang7 .
