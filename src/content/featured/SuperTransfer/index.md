@@ -1,7 +1,7 @@
 ---
 date: '2019-10-01'
 title: 'Super-Transfer'
-cover: './logo.svg'
+cover: './logo.png'
 github: ''
 external: 'https://super-transfer.com/'
 tech:
