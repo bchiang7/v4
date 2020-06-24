@@ -8,4 +8,4 @@ push:
 	docker push registry.gitlab.com/tudor-pop/resume
 
 deploy:
-	ssh home "docker pull registry.gitlab.com/tudor-pop/resume && docker run -p 5000:5000  -dit --name resume registry.gitlab.com/tudor-pop/resume"
+	ssh home "docker pull registry.gitlab.com/tudor-pop/resume && docker rm -f resume && docker run -p 5000:5000  -dit --name resume registry.gitlab.com/tudor-pop/resume"
