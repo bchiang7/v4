@@ -195,7 +195,7 @@ const Jobs = ({ data }) => {
 
   return (
     <StyledContainer id="jobs" ref={revealContainer}>
-      <Heading>Where I&apos;ve Worked</Heading>
+      <Heading>Where I've Worked and What I Have Been Up To</Heading>
       <StyledTabs>
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyPressed(e)}>
           {data &&

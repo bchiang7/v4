@@ -109,14 +109,14 @@ const ArchivePage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet>
-        <title>Archive | Brittany Chiang</title>
+        <title>Archive | Jonathan Won</title>
         <link rel="canonical" href="https://brittanychiang.com/archive" />
       </Helmet>
 
       <StyledMainContainer>
         <header ref={revealTitle}>
           <h1 className="big-title">Archive</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <p className="subtitle">A list of things I’ve worked on</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>

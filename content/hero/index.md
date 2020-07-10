@@ -1,8 +1,8 @@
 ---
-title: 'Hi, my name is'
-name: 'Brittany Chiang'
-subtitle: 'I build things for the web.'
+title: 'Hello World,'
+name: 'Jonathan Won'
+subtitle: 'I build things for the web.👾🤖'
 buttonText: 'Get In Touch'
 ---
 
-I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
+I'm an aspiring software engineer based in San Francisco, CA specializing in building websites and applications with beautiful typefaces.
