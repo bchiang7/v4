@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '4'
 title: 'Nestjs-easyconfig'
 cover: 'nest.png'
 github: 'https://github.com/rubiin/nestjs-easyconfig'
