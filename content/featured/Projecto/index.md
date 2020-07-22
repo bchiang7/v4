@@ -6,6 +6,7 @@ github: 'https://github.com/rubiin/projecto'
 external: 'https://rubiin.github.io/projecto'
 tech:
   - Golang
+  - Shell
 showInProjects: true
 ---
 
