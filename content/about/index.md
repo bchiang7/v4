@@ -1,19 +1,19 @@
 ---
 title: 'About Me'
-avatar: './me.jpg'
+avatar: './me4.jpg'
 skills:
   - JavaScript (ES6+)
   - HTML & (S)CSS
+  - Java & Jakarta EE
+  - Spring
   - React
-  - Vue
-  - Node.js
-  - WordPress
+  - Angular
+  - Oracle PL/SQL
+  - PrimeNG
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA.
+Hello! I am Hamza, a software engineer, working currently on building electronic payment systems. I'm interested in learning about software technologies, and development tools. i am also passionate about furthering my knowledge in term of the functional business side behind the payment industry.
 
-I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.
-
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+Shortly after graduating from [National school of applied sciences of Al-Hoceima](https://ensah.ma/), I joined the engineering team at [Hightech Payment Systems](https://www.hps-worldwide.com/) where I work on the interesting HPS's PowerCARD version 3.5 solution implementation which by the way is among the Top 5 best solutions for electronic payments worldwide, more specifically i'm contributing on building and implementing the acquiring module defined as flexible and comprehensive merchant management platform.
 
 Here are a few technologies I've been working with recently:

@@ -1,8 +1,8 @@
 ---
-title: 'Hi, my name is'
-name: 'Brittany Chiang'
-subtitle: 'I build things for the web.'
-buttonText: 'Get In Touch'
+title: 'Hello world, my name is'
+name: 'Hamza AFFANI'
+subtitle: 'I am a software engineer.'
+contactText: 'Get In Touch'
 ---
 
-I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
+I'm a software engineer, specialized in building high-quality systems and applications with two years experience on the payment industry.
