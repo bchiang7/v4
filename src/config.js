@@ -1,69 +1,41 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
+  siteTitle: 'Hamza AFFANI | Software Engineer',
   siteDescription:
-    'Brittany Chiang is a software engineer based in Boston, MA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
+    'Hamza AFFANI is a software engineer based in Casablanca, who specializes in developing high-quality systems with two years experience on the payment industry',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+    'Hamza AFFANI, Hamza, Affani, haffani, software engineer, front-end engineer, Java developer, javascript, elaffani',
+  siteUrl: 'https://haffani.netlify.com/',
   siteLanguage: 'en_US',
-  googleAnalyticsID: 'UA-45666519-2',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
-  github: 'https://github.com/bchiang7',
-  twitterHandle: '@bchiang7',
+  name: 'AFFANI Hamza',
+  location: 'Casablanca, Morocco',
+  email: 'elaffani95@gmail.com',
+  github: 'https://github.com/haffani',
+  twitterHandle: '@haffani95',
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/haffani/',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://www.linkedin.com/in/hamza-affani/',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
+      url: 'https://www.instagram.com/haffani95/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
-    },
-  ],
-
-  navLinks: [
-    {
-      name: 'About',
-      url: '/#about',
-    },
-    {
-      name: 'Experience',
-      url: '/#jobs',
-    },
-    {
-      name: 'Work',
-      url: '/#projects',
-    },
-    {
-      name: 'Contact',
-      url: '/#contact',
+      url: 'https://twitter.com/haffani95',
     },
   ],
 
   navHeight: 100,
+  greenColor: '#64ffda',
+  navyColor: '#0a192f',
+  darkNavyColor: '#020c1b',
 
-  colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
-    darkNavy: '#020c1b',
-  },
-
-  srConfig: (delay = 200) => ({
+  srConfig: (delay = 100) => ({
     origin: 'bottom',
     distance: '20px',
     duration: 500,

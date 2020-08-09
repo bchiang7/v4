@@ -42,8 +42,8 @@ const PostTemplate = ({ data, location }) => {
   return (
     <Layout location={location}>
       <Helmet>
-        <title>{title} | Brittany Chiang</title>
-        <link rel="canonical" href="https://brittanychiang.com/pensieve" />
+        <title>{title} | Hamza AFFANI</title>
+        <link rel="canonical" href="https://haffani.netlify.com/publications/" />
       </Helmet>
 
       <StyledPostContainer>

@@ -1,8 +1,8 @@
 {
   "name": "v4",
   "description": "Personal Website V4",
-  "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "version": "2.0.0",
+  "author": "Brittany Chiang <brittany.chiang@gmail.com>;Hamza AFFANI <elaffani95@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/bchiang7/v4"
