@@ -6,7 +6,10 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
-import { IconLogo } from '@components/icons';
+/** Replace the logo
+ * import { IconLogo } from '@components/icons';
+ */
+import logo from '../images/logo.png';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
 const { colors, fontSizes, fonts, loaderDelay } = theme;
@@ -248,11 +251,11 @@ class Nav extends Component {
                 <StyledLogo tabindex="-1">
                   {isHome ? (
                     <a href="/" aria-label="home">
-                      <IconLogo />
+                      <img src={logo} alt="Logo" width="400" />
                     </a>
                   ) : (
                     <Link to="/" aria-label="home">
-                      <IconLogo />
+                      <img src={logo} alt="Logo" width="400" />
                     </Link>
                   )}
                 </StyledLogo>
