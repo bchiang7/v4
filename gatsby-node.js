@@ -81,6 +81,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /animejs/,
             use: loaders.null(),
           },
+          {
+            test: /react-view-pdf/,
+            use: loaders.null(),
+          },
         ],
       },
     });

@@ -30,10 +30,35 @@ module.exports = {
     },
   ],
 
+  navLinks: [
+    {
+      name: 'About',
+      url: '/#about',
+    },
+    {
+      name: 'Experience',
+      url: '/#jobs',
+    },
+    {
+      name: 'Work',
+      url: '/#projects',
+    },
+    {
+      name: 'Posts',
+      url: '/#posts',
+    },
+    {
+      name: 'Contact',
+      url: '/#contact',
+    },
+  ],
+
   navHeight: 100,
-  greenColor: '#64ffda',
-  navyColor: '#0a192f',
-  darkNavyColor: '#020c1b',
+  colors: {
+    green: '#64ffda',
+    navy: '#0a192f',
+    darkNavy: '#020c1b',
+  },
 
   srConfig: (delay = 100) => ({
     origin: 'bottom',
