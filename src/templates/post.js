@@ -5,24 +5,13 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { Main, theme } from '@styles';
-import { PDFViewer } from 'react-view-pdf';
-const { colors } = theme;
+import { Main, theme, mixins } from '@styles';
+const { colors, fontSizes } = theme;
 
-const StyledSmallPDF = styled.div`
-
-.jQCjme {
-  height: 640px !important;
-  pointer-events: all;
-`;
-
-const StyledBigPDF = styled.div`
-
-.jQCjme {
-  height: 900px !important;
-  width: 120% !important;
-  pointer-events: all;
-
+const StyledResumeButton = styled.a`
+  ${mixins.bigButton};
+  margin-left: 10px;
+  font-size: ${fontSizes.smish};
 `;
 
 const StyledPostContainer = styled(Main)`
@@ -53,24 +42,38 @@ const StyledPostContent = styled.div`
 `;
 
 const PostTemplate = ({ data, location }) => 
-//const {  html } = data.markdownRemark;
-//const { title, date, tags } = frontmatter;
-
+  //const {   html } = data.markdownRemark;
+  //const { title, date, tags } = frontmatter;
   (
     <Layout location={location}>
       <Helmet>
-        <title>{data.markdownRemark && data.markdownRemark.frontmatter.title} | Hamza AFFANI</title>
+        <title>
+          {data &&
+          data.markdownRemark &&
+          data.markdownRemark.frontmatter &&
+          data.markdownRemark.frontmatter.title
+            ? data.markdownRemark.frontmatter.title
+            : 'Title'}{' '}
+          | Hamza AFFANI
+        </title>
         <link rel="canonical" href="https://haffani.netlify.com/publications/" />
       </Helmet>
 
       <StyledPostContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
-          <Link to="/pensieve">All memories</Link>
+          <Link to="/publications/">All posts</Link>
         </span>
 
         <StyledPostHeader>
-          <h1 className="medium-title">{data.markdownRemark && data.markdownRemark.title}</h1>
+          <h1 className="medium-title">
+            {data &&
+            data.markdownRemark &&
+            data.markdownRemark.frontmatter &&
+            data.markdownRemark.frontmatter.title
+              ? data.markdownRemark.frontmatter.title
+              : 'Title'}
+          </h1>
           <p className="subtitle">
             <time>
               {new Date(
@@ -82,12 +85,13 @@ const PostTemplate = ({ data, location }) =>
               })}
             </time>
             <span>&nbsp;&mdash;&nbsp;</span>
+
             {data.markdownRemark &&
               data.markdownRemark.frontmatter &&
               data.markdownRemark.frontmatter.tags &&
               data.markdownRemark.frontmatter.tags.length > 0 &&
               data.markdownRemark.frontmatter.tags.map((tag, i) => (
-                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
+                <Link key={i} to={`/publications/tags/${kebabCase(tag)}/`} className="tag">
                   #{tag}
                 </Link>
               ))}
@@ -100,30 +104,18 @@ const PostTemplate = ({ data, location }) =>
         {data.markdownRemark &&
           data.markdownRemark.frontmatter &&
           data.markdownRemark.frontmatter.isDocumentExist &&
-          data.markdownRemark.frontmatter.img &&
-          (data.markdownRemark.frontmatter.img === 'rou7' ||
-          data.markdownRemark.frontmatter.img === 'docker' ? (
-              <StyledBigPDF>
-                <PDFViewer
-                  scale="80%"
-                  currentPage="5"
-                  url={require(`../documents/${data.markdownRemark.frontmatter.img}.pdf`)}
-                />
-              </StyledBigPDF>
-            ) : (
-              <StyledSmallPDF>
-                <PDFViewer
-                  scale="80%"
-                  currentPage="5"
-                  url={require(`../documents/${data.markdownRemark.frontmatter.img}.pdf`)}
-                />
-              </StyledSmallPDF>
-            ))}
+          data.markdownRemark.frontmatter.img && (
+          <StyledResumeButton
+            href={`/${data.markdownRemark.frontmatter.img}.pdf`}
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+              See the post
+          </StyledResumeButton>
+        )}
       </StyledPostContainer>
     </Layout>
   )
 ;
-
 export default PostTemplate;
 
 PostTemplate.propTypes = {

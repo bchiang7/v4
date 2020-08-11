@@ -57,7 +57,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/publications/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
@@ -83,6 +83,26 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           },
           {
             test: /react-view-pdf/,
+            use: loaders.null(),
+          },
+          {
+            test: /intersection-observer/,
+            use: loaders.null(),
+          },
+          {
+            test: /precise-ui/,
+            use: loaders.null(),
+          },
+          {
+            test: /pdfjs-dist/,
+            use: loaders.null(),
+          },
+          {
+            test: /use-debounce/,
+            use: loaders.null(),
+          },
+          {
+            test: /@types/,
             use: loaders.null(),
           },
         ],
