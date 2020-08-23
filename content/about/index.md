@@ -2,18 +2,17 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
-  - React
-  - Vue
-  - Node.js
-  - WordPress
+  - Java (SpringBoot)
+  - Python
+  - Angular
+  - AWS
+  - SQL
 ---
 
-Hello! I'm Brittany, a software engineer based in Boston, MA.
+Hello! I'm Dikshant Yadav, a software engineer based in Bangalore, India.
 
-I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.
+I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to provide solutions for challenging real-life problems.
 
-Shortly after graduating from [Northeastern University](https://www.ccis.northeastern.edu/), I joined the engineering team at [Upstatement](https://www.upstatement.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
+Shortly after graduating from [NITK](https://nitk.ac.in), I joined the engineering team at [Fidelity Investments](https://india.fidelity.com/) where I work on a wide variety of interesting and meaningful projects on a daily basis.
 
 Here are a few technologies I've been working with recently:

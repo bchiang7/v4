@@ -109,8 +109,8 @@ const ArchivePage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet>
-        <title>Archive | Brittany Chiang</title>
-        <link rel="canonical" href="https://brittanychiang.com/archive" />
+        <title>Archive | Dikshant Yadav</title>
+        <link rel="canonical" href="https://dikshantyadav19.github.io/archive" />
       </Helmet>
 
       <StyledMainContainer>
@@ -133,16 +133,7 @@ const ArchivePage = ({ location, data }) => {
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const {
-                    date,
-                    github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                  } = node.frontmatter;
+                  const { date, github, external, title, tech, company } = node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -184,24 +175,6 @@ const ArchivePage = ({ location, data }) => {
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
-                          {ios && (
-                            <a
-                              href={ios}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
-                              <FormattedIcon name="AppStore" />
-                            </a>
-                          )}
-                          {android && (
-                            <a
-                              href={android}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
-                              <FormattedIcon name="PlayStore" />
-                            </a>
-                          )}
                         </span>
                       </td>
                     </tr>
@@ -235,8 +208,6 @@ export const pageQuery = graphql`
             tech
             github
             external
-            ios
-            android
             company
           }
           html
