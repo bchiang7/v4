@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig, email } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   text-align: center;
@@ -16,17 +15,17 @@ const StyledContainer = styled(Section)`
 `;
 const StyledHeading = styled(Heading)`
   display: block;
-  color: ${colors.green};
-  font-size: ${fontSizes.md};
-  font-family: ${fonts.SFMono};
+  color: ${({ theme }) => theme.colors.green};
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
   font-weight: normal;
   margin-bottom: 20px;
   justify-content: center;
-  ${media.desktop`font-size: ${fontSizes.sm};`};
+  ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
   &:before {
     bottom: 0;
-    font-size: ${fontSizes.sm};
-    ${media.desktop`font-size: ${fontSizes.smish};`};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.smish};`};
   }
   &:after {
     display: none;

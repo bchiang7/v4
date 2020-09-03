@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { theme, media } from '@styles';
-const { colors, loaderDelay } = theme;
+const { loaderDelay } = theme;
 
 const StyledContainer = styled.div`
   width: 40px;
@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
   right: ${props => (props.orientation === 'left' ? 'auto' : '40px')};
   z-index: 10;
-  color: ${colors.lightSlate};
+  color: ${({ theme }) => theme.colors.lightSlate};
   ${media.desktop`right: 25px;`};
   ${media.tablet`display: none;`};
 `;

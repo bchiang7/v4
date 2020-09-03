@@ -4,8 +4,7 @@ import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig, github } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   position: relative;
@@ -35,15 +34,15 @@ const Skill = styled.li`
   position: relative;
   margin-bottom: 10px;
   padding-left: 20px;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
-  color: ${colors.slate};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
+  color: ${({ theme }) => theme.colors.slate};
   &:before {
     content: '▹';
     position: absolute;
     left: 0;
-    color: ${colors.green};
-    font-size: ${fontSizes.sm};
+    color: ${({ theme }) => theme.colors.green};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
     line-height: 12px;
   }
 `;
@@ -64,15 +63,15 @@ const StyledAvatar = styled(Img)`
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
-  border-radius: ${theme.borderRadius};
-  transition: ${theme.transition};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: ${({ theme }) => theme.transition};
 `;
 const StyledAvatarLink = styled.a`
   ${mixins.boxShadow};
   width: 100%;
   position: relative;
-  border-radius: ${theme.borderRadius};
-  background-color: ${colors.green};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  background-color: ${({ theme }) => theme.colors.green};
   margin-left: -20px;
   &:hover,
   &:focus {
@@ -93,19 +92,19 @@ const StyledAvatarLink = styled.a`
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: ${theme.borderRadius};
-    transition: ${theme.transition};
+    border-radius: ${({ theme }) => theme.borderRadius};
+    transition: ${({ theme }) => theme.transition};
   }
   &:before {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${colors.navy};
+    background-color: ${({ theme }) => theme.colors.navy};
     mix-blend-mode: screen;
   }
   &:after {
-    border: 2px solid ${colors.green};
+    border: 2px solid ${({ theme }) => theme.colors.green};
     top: 20px;
     left: 20px;
     z-index: -1;

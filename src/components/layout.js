@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
-const { colors, fontSizes, fonts } = theme;
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {
@@ -24,15 +23,15 @@ const SkipToContentLink = styled.a`
   &:active {
     outline: 0;
     color: ${({ theme }) => theme.colors.green};
-    background-color: ${colors.lightNavy};
-    border-radius: ${theme.borderRadius};
+    background-color: ${({ theme }) => theme.colors.lightNavy};
+    border-radius: ${({ theme }) => theme.borderRadius};
     padding: 18px 23px;
-    font-size: ${fontSizes.sm};
-    font-family: ${fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
-    transition: ${theme.transition};
+    transition: ${({ theme }) => theme.transition};
     top: 0;
     left: 0;
     width: auto;

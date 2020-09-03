@@ -5,8 +5,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -25,19 +24,19 @@ const StyledContent = styled.div`
   ${media.phablet`padding: 30px 25px 20px;`};
 `;
 const StyledLabel = styled.h4`
-  font-size: ${fontSizes.smish};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
   font-weight: normal;
-  color: ${colors.green};
-  font-family: ${fonts.SFMono};
+  color: ${({ theme }) => theme.colors.green};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
   margin-top: 10px;
   padding-top: 0;
 `;
 const StyledProjectName = styled.h5`
   font-size: 28px;
   margin: 0 0 20px;
-  color: ${colors.lightestSlate};
+  color: ${({ theme }) => theme.colors.lightestSlate};
   ${media.tablet`font-size: 24px;`};
-  ${media.thone`color: ${colors.white};`};
+  ${media.thone`color: ${({ theme }) => theme.colors.white};`};
   a {
     ${media.tablet`display: block;`};
   }
@@ -47,10 +46,10 @@ const StyledDescription = styled.div`
   position: relative;
   z-index: 2;
   padding: 25px;
-  background-color: ${colors.lightNavy};
-  color: ${colors.lightSlate};
-  font-size: ${fontSizes.lg};
-  border-radius: ${theme.borderRadius};
+  background-color: ${({ theme }) => theme.colors.lightNavy};
+  color: ${({ theme }) => theme.colors.lightSlate};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  border-radius: ${({ theme }) => theme.borderRadius};
   ${media.thone`
     background-color: transparent;
     padding: 20px 0;
@@ -76,17 +75,17 @@ const StyledTechList = styled.ul`
   list-style: none;
 
   li {
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.smish};
-    color: ${colors.slate};
-    margin-right: ${theme.margin};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.smish};
+    color: ${({ theme }) => theme.colors.slate};
+    margin-right: ${({ theme }) => theme.margin};
     margin-bottom: 7px;
     white-space: nowrap;
     &:last-of-type {
       margin-right: 0;
     }
     ${media.thone`
-      color: ${colors.lightestSlate};
+      color: ${({ theme }) => theme.colors.lightestSlate};
       margin-right: 10px;
     `};
   }
@@ -97,7 +96,7 @@ const StyledLinkWrapper = styled.div`
   position: relative;
   margin-top: 10px;
   margin-left: -10px;
-  color: ${colors.lightestSlate};
+  color: ${({ theme }) => theme.colors.lightestSlate};
   a {
     padding: 10px;
     svg {
@@ -110,7 +109,7 @@ const StyledFeaturedImg = styled(Img)`
   width: 100%;
   max-width: 100%;
   vertical-align: middle;
-  border-radius: ${theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius};
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1) brightness(90%);
@@ -127,9 +126,9 @@ const StyledImgContainer = styled.a`
   grid-row: 1 / -1;
   position: relative;
   z-index: 1;
-  background-color: ${colors.green};
-  border-radius: ${theme.radius + 1}px;
-  transition: ${theme.transition};
+  background-color: ${({ theme }) => theme.colors.green};
+  border-radius: ${({ theme }) => theme.radius + 1}px;
+  transition: ${({ theme }) => theme.transition};
   ${media.tablet`height: 100%;`};
   ${media.thone`
     grid-column: 1 / -1;
@@ -154,8 +153,8 @@ const StyledImgContainer = styled.a`
     right: 0;
     bottom: 0;
     z-index: 3;
-    transition: ${theme.transition};
-    background-color: ${colors.navy};
+    transition: ${({ theme }) => theme.transition};
+    background-color: ${({ theme }) => theme.colors.navy};
     mix-blend-mode: screen;
   }
 `;
@@ -184,7 +183,7 @@ const StyledProject = styled.div`
     ${StyledTechList} {
       justify-content: flex-end;
       li {
-        margin-left: ${theme.margin};
+        margin-left: ${({ theme }) => theme.margin};
         margin-right: 0;
       }
     }

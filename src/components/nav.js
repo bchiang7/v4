@@ -9,25 +9,27 @@ import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
-const { colors, fontSizes, fonts, loaderDelay } = theme;
+const { loaderDelay } = theme;
 
 const StyledContainer = styled.header`
   ${mixins.flexBetween};
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: ${colors.navy};
-  transition: ${theme.transition};
+  background-color: ${({ theme }) => theme.colors.navy};
+  transition: ${({ theme }) => theme.transition};
   z-index: 11;
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
   width: 100%;
-  height: ${props => (props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight)};
-  box-shadow: ${props =>
-    props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'};
+  height: ${({ theme, scrollDirection }) =>
+    scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight};
+  box-shadow: ${({ theme, scrollDirection }) =>
+    scrollDirection === 'up' ? `0 10px 30px -10px ${theme.colors.shadowNavy}` : 'none'};
   transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px')}
+    ${({ theme, scrollDirection }) =>
+    scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px'}
   );
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
@@ -36,8 +38,8 @@ const StyledNav = styled.nav`
   ${mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: ${colors.lightestSlate};
-  font-family: ${fonts.SFMono};
+  color: ${({ theme }) => theme.colors.lightestSlate};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
   counter-reset: item 0;
   z-index: 12;
 `;
@@ -45,18 +47,18 @@ const StyledLogo = styled.div`
   ${mixins.flexCenter};
   a {
     display: block;
-    color: ${colors.green};
+    color: ${({ theme }) => theme.colors.green};
     width: 42px;
     height: 42px;
     &:hover,
     &:focus {
       svg {
-        fill: ${colors.transGreen};
+        fill: ${({ theme }) => theme.colors.transGreen};
       }
     }
     svg {
       fill: none;
-      transition: ${theme.transition};
+      transition: ${({ theme }) => theme.transition};
       user-select: none;
     }
   }
@@ -80,15 +82,15 @@ const StyledHamburger = styled.div`
 const StyledHamburgerBox = styled.div`
   position: relative;
   display: inline-block;
-  width: ${theme.hamburgerWidth}px;
+  width: ${({ theme }) => theme.hamburgerWidth};
   height: 24px;
 `;
 const StyledHamburgerInner = styled.div`
-  background-color: ${colors.green};
+  background-color: ${({ theme }) => theme.colors.green};
   position: absolute;
-  width: ${theme.hamburgerWidth}px;
+  width: ${({ theme }) => theme.hamburgerWidth};
   height: 2px;
-  border-radius: ${theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius};
   top: 50%;
   left: 0;
   right: 0;
@@ -103,15 +105,15 @@ const StyledHamburgerInner = styled.div`
   &:after {
     content: '';
     display: block;
-    background-color: ${colors.green};
     position: absolute;
     left: auto;
     right: 0;
-    width: ${theme.hamburgerWidth}px;
+    width: ${({ theme }) => theme.hamburgerWidth};
     height: 2px;
     transition-timing-function: ease;
     transition-duration: 0.15s;
     transition-property: transform;
+    background-color: ${({ theme }) => theme.colors.green};
     border-radius: 4px;
   }
   &:before {
@@ -141,13 +143,13 @@ const StyledList = styled.ol`
 const StyledListItem = styled.li`
   margin: 0 10px;
   position: relative;
-  font-size: ${fontSizes.smish};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
   counter-increment: item 1;
   &:before {
     content: '0' counter(item) '.';
     text-align: right;
-    color: ${colors.green};
-    font-size: ${fontSizes.xs};
+    color: ${({ theme }) => theme.colors.green};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
   }
 `;
 const StyledListLink = styled(Link)`
@@ -156,7 +158,7 @@ const StyledListLink = styled(Link)`
 const StyledResumeButton = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
-  font-size: ${fontSizes.smish};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
 `;
 
 const DELTA = 5;

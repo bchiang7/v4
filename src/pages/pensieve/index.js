@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import { IconZap } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, media, Main } from '@styles';
 
 const StyledMainContainer = styled(Main)`
   & > header {
@@ -49,16 +48,16 @@ const StyledPostInner = styled.div`
   position: relative;
   padding: 2rem 1.75rem;
   height: 100%;
-  border-radius: ${theme.borderRadius};
-  transition: ${theme.transition};
-  background-color: ${colors.lightNavy};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: ${({ theme }) => theme.transition};
+  background-color: ${({ theme }) => theme.colors.lightNavy};
   header,
   a {
     width: 100%;
   }
 `;
 const StyledPost = styled.div`
-  transition: ${theme.transition};
+  transition: ${({ theme }) => theme.transition};
   cursor: default;
   &:hover,
   &:focus {
@@ -73,7 +72,7 @@ const StyledPostHeader = styled.div`
   margin-bottom: 30px;
 `;
 const StyledFolder = styled.div`
-  color: ${colors.green};
+  color: ${({ theme }) => theme.colors.green};
   svg {
     width: 40px;
     height: 40px;
@@ -81,18 +80,18 @@ const StyledFolder = styled.div`
 `;
 const StyledPostName = styled.h5`
   margin: 0 0 10px;
-  font-size: ${fontSizes.xxl};
-  color: ${colors.lightestSlate};
+  font-size: ${({ theme }) => theme.fontSizes.xxl};
+  color: ${({ theme }) => theme.colors.lightestSlate};
 `;
 const StyledPostDescription = styled.div`
   font-size: 17px;
-  color: ${colors.lightSlate};
+  color: ${({ theme }) => theme.colors.lightSlate};
 `;
 const StyledDate = styled.span`
   text-transform: uppercase;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xs};
-  color: ${colors.lightSlate};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  color: ${({ theme }) => theme.colors.lightSlate};
 `;
 const StyledTags = styled.ul`
   display: flex;
@@ -103,9 +102,9 @@ const StyledTags = styled.ul`
   list-style: none;
 
   li {
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.xs};
-    color: ${colors.green};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    color: ${({ theme }) => theme.colors.green};
     line-height: 1.75;
     margin-right: 15px;
     &:last-of-type {

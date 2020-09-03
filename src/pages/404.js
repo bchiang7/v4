@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts, navDelay } = theme;
+const { navDelay } = theme;
 
 const StyledMainContainer = styled(Main)`
   ${mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${colors.green};
-  font-family: ${fonts.SFMono};
+  color: ${({ theme }) => theme.colors.green};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: 12vw;
   line-height: 1;
   ${media.bigDesktop`font-size: 200px;`}

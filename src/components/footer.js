@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, media } from '@styles';
 
 const StyledContainer = styled.footer`
   ${mixins.flexCenter};
@@ -15,7 +14,7 @@ const StyledContainer = styled.footer`
   min-height: 70px;
 `;
 const StyledSocial = styled.div`
-  color: ${colors.lightSlate};
+  color: ${({ theme }) => theme.colors.lightSlate};
   width: 100%;
   max-width: 270px;
   margin: 0 auto 10px;
@@ -36,12 +35,12 @@ const StyledSocialLink = styled.a`
   }
 `;
 const StyledMetadata = styled.div`
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xs};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
   line-height: 1;
 `;
 const StyledGitHubLink = styled.a`
-  color: ${colors.lightSlate};
+  color: ${({ theme }) => theme.colors.lightSlate};
   padding: 10px;
 `;
 const StyledGitHubInfo = styled.div`

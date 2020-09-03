@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   position: relative;
@@ -64,35 +63,35 @@ const StyledTabButton = styled.button`
   align-items: center;
   width: 100%;
   background-color: transparent;
-  height: ${theme.tabHeight}px;
+  height: ${({ theme }) => theme.tabHeight}px;
   padding: 0 20px 2px;
-  transition: ${theme.transition};
-  border-left: 2px solid ${colors.lightestNavy};
+  transition: ${({ theme }) => theme.transition};
+  border-left: 2px solid ${({ theme }) => theme.colors.lightestNavy};
   text-align: left;
   white-space: nowrap;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
-  color: ${props => (props.isActive ? colors.green : colors.slate)};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
   ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
     ${mixins.flexCenter};
     padding: 0 15px;
     text-align: center;
     border-left: 0;
-    border-bottom: 2px solid ${colors.lightestNavy};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.lightestNavy};
     min-width: 120px;
   `};
   &:hover,
   &:focus {
-    background-color: ${colors.lightNavy};
+    background-color: ${({ theme }) => theme.colors.lightNavy};
   }
 `;
 const StyledHighlight = styled.span`
   display: block;
-  background: ${colors.green};
+  background: ${({ theme }) => theme.colors.green};
   width: 2px;
-  height: ${theme.tabHeight}px;
-  border-radius: ${theme.borderRadius};
+  height: ${({ theme }) => theme.tabHeight}px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   position: absolute;
   top: 0;
   left: 0;
@@ -100,16 +99,16 @@ const StyledHighlight = styled.span`
   transition-delay: 0.1s;
   z-index: 10;
   transform: translateY(
-    ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
+    ${({ theme, activeTabId }) => (activeTabId > 0 ? activeTabId * theme.tabHeight : 0)}px
   );
   ${media.thone`
     width: 100%;
-    max-width: ${theme.tabWidth}px;
+    max-width: ${({ theme }) => theme.tabWidth};
     height: 2px;
     top: auto;
     bottom: 0;
     transform: translateX(
-      ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
+      ${({ theme, activeTabId }) => (activeTabId > 0 ? activeTabId * theme.tabWidth : 0)}px
     );
     margin-left: 50px;
   `};
@@ -134,20 +133,20 @@ const StyledTabContent = styled.div`
   }
 `;
 const StyledJobTitle = styled.h4`
-  color: ${colors.lightestSlate};
-  font-size: ${fontSizes.xxl};
+  color: ${({ theme }) => theme.colors.lightestSlate};
+  font-size: ${({ theme }) => theme.fontSizes.xxl};
   font-weight: 500;
   margin-bottom: 5px;
 `;
 const StyledCompany = styled.span`
-  color: ${colors.green};
+  color: ${({ theme }) => theme.colors.green};
 `;
 const StyledJobDetails = styled.h5`
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
   font-weight: normal;
   letter-spacing: 0.05em;
-  color: ${colors.lightSlate};
+  color: ${({ theme }) => theme.colors.lightSlate};
   margin-bottom: 30px;
   svg {
     width: 15px;

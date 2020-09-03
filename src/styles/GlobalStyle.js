@@ -1,11 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import theme from './theme';
 import media from './media';
 import mixins from './mixins';
 import FontFaces from './fonts';
 import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
-const { colors, fontSizes, fonts } = theme;
 
 const GlobalStyle = createGlobalStyle`
   ${FontFaces};
@@ -28,12 +26,12 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${colors.navy};
-    color: ${colors.slate};
+    background-color: ${({ theme }) => theme.colors.navy};
+    color: ${({ theme }) => theme.colors.slate};
     line-height: 1.3;
-    font-family: ${fonts.Calibre};
-    font-size: ${fontSizes.xl};
-    ${media.phablet`font-size: ${fontSizes.lg};`}
+    font-family: ${({ theme }) => theme.fonts.Calibre};
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    ${media.phablet`font-size: ${({ theme }) => theme.fontSizes.lg};`}
 
     &.hidden {
       overflow: hidden;
@@ -42,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
       overflow: hidden;
       #root > #content > * {
         filter: blur(5px) brightness(0.7);
-        transition: ${theme.transition};
+        transition: ${({ theme }) => theme.transition};
         pointer-events: none;
         user-select: none;
       }
@@ -50,8 +48,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${colors.slate};
-    color: ${colors.lightestSlate};
+    background-color: ${({ theme }) => theme.colors.slate};
+    color: ${({ theme }) => theme.colors.lightestSlate};
   }
 
   #root {
@@ -68,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     font-weight: 600;
-    color: ${colors.lightestSlate};
+    color: ${({ theme }) => theme.colors.lightestSlate};
     margin: 0 0 10px 0;
   }
 
@@ -116,12 +114,12 @@ const GlobalStyle = createGlobalStyle`
     text-decoration-skip-ink: auto;
     color: inherit;
     position: relative;
-    transition: ${theme.transition};
+    transition: ${({ theme }) => theme.transition};
     cursor: pointer;
 
     &:hover,
     &:focus {
-      color: ${colors.green};
+      color: ${({ theme }) => theme.colors.green};
     }
   }
 
@@ -132,7 +130,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      outline-color: ${colors.lightblue};
+      outline-color: ${({ theme }) => theme.colors.lightblue};
     }
   }
 
@@ -161,10 +159,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     & > code {
-      background-color: ${colors.lightNavy};
-      color: ${colors.white};
-      font-size: ${fontSizes.sm};
-      border-radius: ${theme.borderRadius};
+      background-color: ${({ theme }) => theme.colors.lightNavy};
+      color: ${({ theme }) => theme.colors.white};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
+      border-radius: ${({ theme }) => theme.borderRadius};
       padding: 0.3em 0.5em;
     }
   }
@@ -174,7 +172,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       margin: 0;
       list-style: none;
-      font-size: ${fontSizes.lg};
+      font-size: ${({ theme }) => theme.fontSizes.lg};
       li {
         position: relative;
         padding-left: 30px;
@@ -183,14 +181,14 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: ${colors.green};
+          color: ${({ theme }) => theme.colors.green};
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: ${colors.green};
+    border-left-color: ${({ theme }) => theme.colors.green};
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -204,7 +202,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${colors.lightestNavy};
+    background-color: ${({ theme }) => theme.colors.lightestNavy};
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -214,30 +212,30 @@ const GlobalStyle = createGlobalStyle`
   }
 
   code {
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.md};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.md};
   }
 
   #logo {
-    color: ${colors.green};
+    color: ${({ theme }) => theme.colors.green};
   }
 
   .overline {
-    color: ${colors.green};
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.md};
+    color: ${({ theme }) => theme.colors.green};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.md};
     font-weight: normal;
   }
 
   .subtitle {
-    color: ${colors.green};
+    color: ${({ theme }) => theme.colors.green};
     margin: 0 0 20px 0;
-    font-size: ${fontSizes.md};
-    font-family: ${fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
     font-weight: normal;
     line-height: 1.5;
-    ${media.desktop`font-size: ${fontSizes.sm};`};
-    ${media.tablet`font-size: ${fontSizes.smish};`};
+    ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
+    ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.smish};`};
 
     a {
       ${mixins.inlineLink};
@@ -249,7 +247,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: ${colors.green};
+    color: ${({ theme }) => theme.colors.green};
 
     .arrow {
       display: block;
@@ -258,8 +256,8 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
       ${mixins.inlineLink};
-      font-family: ${fonts.SFMono};
-      font-size: ${fontSizes.sm};
+      font-family: ${({ theme }) => theme.fonts.SFMono};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
       font-weight: bold;
       line-height: 1.5;
       text-transform: uppercase;

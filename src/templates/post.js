@@ -5,8 +5,7 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { Main, theme } from '@styles';
-const { colors } = theme;
+import { Main } from '@styles';
 
 const StyledPostContainer = styled(Main)`
   max-width: 1000px;
@@ -31,7 +30,7 @@ const StyledPostContent = styled.div`
   p {
     margin: 1em 0;
     line-height: 1.5;
-    color: ${colors.lightSlate};
+    color: ${({ theme }) => theme.colors.lightSlate};
   }
 `;
 

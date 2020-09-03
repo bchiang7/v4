@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { email } from '@config';
 import { Side } from '@components';
 import styled from 'styled-components';
-import { theme } from '@styles';
-const { colors, fontSizes, fonts } = theme;
 
 const StyledLinkWrapper = styled.div`
   display: flex;
@@ -17,12 +15,12 @@ const StyledLinkWrapper = styled.div`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${colors.lightSlate};
+    background-color: ${({ theme }) => theme.colors.lightSlate};
   }
 `;
 const StyledEmailLink = styled.a`
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xs};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
   letter-spacing: 0.1em;
   writing-mode: vertical-rl;
   margin: 20px auto;

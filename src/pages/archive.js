@@ -7,8 +7,7 @@ import { srConfig } from '@config';
 import { Layout } from '@components';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts, fontSizes } = theme;
+import { mixins, media, Main } from '@styles';
 
 const StyledMainContainer = styled(Main)``;
 const StyledTableContainer = styled.div`
@@ -28,11 +27,11 @@ const StyledTable = styled.table`
   }
 
   tbody tr {
-    transition: ${theme.transition};
+    transition: ${({ theme }) => theme.transition};
 
     &:hover,
     &:focus {
-      background-color: ${colors.lightNavy};
+      background-color: ${({ theme }) => theme.colors.lightNavy};
     }
   }
   th,
@@ -51,23 +50,23 @@ const StyledTable = styled.table`
     &.year {
       width: 10%;
       ${media.tablet`
-        font-size: ${fontSizes.sm};
+        font-size: ${({ theme }) => theme.fontSizes.sm};
       `};
     }
     &.title {
       padding-top: 15px;
-      color: ${colors.lightestSlate};
-      font-size: ${fontSizes.xl};
+      color: ${({ theme }) => theme.colors.lightestSlate};
+      font-size: ${({ theme }) => theme.fontSizes.xl};
       font-weight: 700;
     }
     &.company {
       width: 15%;
       padding-top: 15px;
-      font-size: ${fontSizes.lg};
+      font-size: ${({ theme }) => theme.fontSizes.lg};
     }
     &.tech {
-      font-size: ${fontSizes.xs};
-      font-family: ${fonts.SFMono};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
+      font-family: ${({ theme }) => theme.fonts.SFMono};
       .separator {
         margin: 0 5px;
       }

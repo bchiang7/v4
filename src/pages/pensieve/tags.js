@@ -5,8 +5,7 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, mixins, Main } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { mixins, Main } from '@styles';
 
 const StyledTagsContainer = styled(Main)`
   max-width: 1000px;
@@ -15,17 +14,17 @@ const StyledTagsContainer = styled(Main)`
     margin-bottom: 50px;
   }
   ul {
-    color: ${colors.lightSlate};
+    color: ${({ theme }) => theme.colors.lightSlate};
     li {
-      font-size: ${fontSizes.xxl};
+      font-size: ${({ theme }) => theme.fontSizes.xxl};
 
       a {
         ${mixins.inlineLink};
-        color: ${colors.lightSlate};
+        color: ${({ theme }) => theme.colors.lightSlate};
         .count {
-          color: ${colors.slate};
-          font-family: ${fonts.SFMono};
-          font-size: ${fontSizes.md};
+          color: ${({ theme }) => theme.colors.slate};
+          font-family: ${({ theme }) => theme.fonts.SFMono};
+          font-size: ${({ theme }) => theme.fontSizes.md};
         }
       }
     }
