@@ -11,7 +11,9 @@ const StyledContainer = styled(Section)`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  ${media.tablet`padding-top: 150px;`};
+  ${media.tablet`
+    padding-top: 150px;
+  `};
   div {
     width: 100%;
   }
@@ -22,26 +24,46 @@ const StyledOverline = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-weight: 400;
-  ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
-  ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.smish};`};
+  ${media.desktop`
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+  `};
+  ${media.tablet`
+    font-size: ${({ theme }) => theme.fontSizes.smish};
+  `};
 `;
 const StyledTitle = styled.h2`
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
-  ${media.desktop`font-size: 70px;`};
-  ${media.tablet`font-size: 60px;`};
-  ${media.phablet`font-size: 50px;`};
-  ${media.phone`font-size: 40px;`};
+  ${media.desktop`
+    font-size: 70px;
+  `};
+  ${media.tablet`
+    font-size: 60px;
+  `};
+  ${media.phablet`
+    font-size: 50px;
+  `};
+  ${media.phone`
+    font-size: 40px;
+  `};
 `;
 const StyledSubtitle = styled.h3`
   font-size: 80px;
   line-height: 1.1;
   color: ${({ theme }) => theme.colors.slate};
-  ${media.desktop`font-size: 70px;`};
-  ${media.tablet`font-size: 60px;`};
-  ${media.phablet`font-size: 50px;`};
-  ${media.phone`font-size: 40px;`};
+  ${media.desktop`
+    font-size: 70px;
+  `};
+  ${media.tablet`
+    font-size: 60px;
+  `};
+  ${media.phablet`
+    font-size: 50px;
+  `};
+  ${media.phone`
+    font-size: 40px;
+  `};
 `;
 const StyledDescription = styled.div`
   margin-top: 25px;

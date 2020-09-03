@@ -30,7 +30,9 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     font-family: ${({ theme }) => theme.fonts.Calibre};
     font-size: ${({ theme }) => theme.fontSizes.xl};
-    ${media.phablet`font-size: ${({ theme }) => theme.fontSizes.lg};`}
+    ${media.phablet`
+      font-size: ${({ theme }) => theme.fontSizes.lg};
+    `}
 
     &.hidden {
       overflow: hidden;
@@ -74,18 +76,30 @@ const GlobalStyle = createGlobalStyle`
       font-size: 80px;
       line-height: 1.1;
       margin: 0;
-      ${media.desktop`font-size: 70px;`};
-      ${media.tablet`font-size: 60px;`};
-      ${media.phablet`font-size: 50px;`};
-      ${media.phone`font-size: 40px;`};
+      ${media.desktop`
+        font-size: 70px;
+      `};
+      ${media.tablet`
+        font-size: 60px;
+      `};
+      ${media.phablet`
+        font-size: 50px;
+      `};
+      ${media.phone`
+        font-size: 40px;
+      `};
     }
 
     &.medium-title {
       font-size: 60px;
       line-height: 1.1;
       margin: 0;
-      ${media.desktop`font-size: 50px;`};
-      ${media.tablet`font-size: 40px;`};
+      ${media.desktop`
+        font-size: 50px;
+      `};
+      ${media.tablet`
+        font-size: 40px;
+      `};
     }
   }
 
@@ -233,8 +247,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.SFMono};
     font-weight: 400;
     line-height: 1.5;
-    ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
-    ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.smish};`};
+    ${media.desktop`
+      font-size: ${({ theme }) => theme.fontSizes.sm};
+    `};
+    ${media.tablet`
+      font-size: ${({ theme }) => theme.fontSizes.smish};
+    `};
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};

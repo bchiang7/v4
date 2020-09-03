@@ -18,7 +18,9 @@ const StyledContainer = styled.div`
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   display: none;
-  ${media.tablet`display: block;`};
+  ${media.tablet`
+    display: block;
+  `};
 `;
 const Sidebar = styled.aside`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -32,9 +34,15 @@ const Sidebar = styled.aside`
   margin-left: auto;
   font-family: ${({ theme }) => theme.fonts.SFMono};
   box-shadow: -10px 0px 30px -15px ${({ theme }) => theme.colors.shadowNavy};
-  ${media.thone`padding: 25px;`};
-  ${media.phablet`width: 75vw;`};
-  ${media.tiny`padding: 10px;`};
+  ${media.thone`
+    padding: 25px;
+  `};
+  ${media.phablet`
+    width: 75vw;
+  `};
+  ${media.tiny`
+    padding: 10px;
+  `};
 `;
 const NavLinks = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -54,11 +62,15 @@ const NavListItem = styled.li`
   position: relative;
   font-size: ${({ theme }) => theme.fontSizes.lg};
   counter-increment: item 1;
+
   ${media.thone`
     margin: 0 auto 10px;
     font-size: ${({ theme }) => theme.fontSizes.md};
   `};
-  ${media.tiny`font-size: ${({ theme }) => theme.fontSizes.smish};`};
+  ${media.tiny`
+    font-size: ${({ theme }) => theme.fontSizes.smish};
+  `};
+
   &:before {
     display: block;
     content: '0' counter(item) '.';

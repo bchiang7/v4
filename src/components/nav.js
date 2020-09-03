@@ -31,8 +31,12 @@ const StyledContainer = styled.header`
     ${({ theme, scrollDirection }) =>
     scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px'}
   );
-  ${media.desktop`padding: 0 40px;`};
-  ${media.tablet`padding: 0 25px;`};
+  ${media.desktop`
+    padding: 0 40px;
+  `};
+  ${media.tablet`
+    padding: 0 25px;
+  `};
 `;
 const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -77,7 +81,9 @@ const StyledHamburger = styled.div`
   border: 0;
   background-color: transparent;
   display: none;
-  ${media.tablet`display: flex;`};
+  ${media.tablet`
+    display: flex;
+  `};
 `;
 const StyledHamburgerBox = styled.div`
   position: relative;
@@ -132,7 +138,9 @@ const StyledHamburgerInner = styled.div`
 const StyledLink = styled.div`
   display: flex;
   align-items: center;
-  ${media.tablet`display: none;`};
+  ${media.tablet`
+    display: none;
+  `};
 `;
 const StyledList = styled.ol`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -145,6 +153,7 @@ const StyledListItem = styled.li`
   position: relative;
   font-size: ${({ theme }) => theme.fontSizes.smish};
   counter-increment: item 1;
+
   &:before {
     content: '0' counter(item) '.';
     text-align: right;

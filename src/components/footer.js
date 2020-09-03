@@ -19,7 +19,9 @@ const StyledSocial = styled.div`
   max-width: 270px;
   margin: 0 auto 10px;
   display: none;
-  ${media.tablet`display: block;`};
+  ${media.tablet`
+    display: block;
+  `};
 `;
 const StyledSocialList = styled.ul`
   ${({ theme }) => theme.mixins.flexBetween};

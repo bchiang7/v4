@@ -16,14 +16,22 @@ const StyledTitle = styled.h1`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: 12vw;
   line-height: 1;
-  ${media.bigDesktop`font-size: 200px;`}
-  ${media.phablet`font-size: 120px;`};
+  ${media.bigDesktop`
+    font-size: 200px
+  ;`}
+  ${media.phablet`
+    font-size: 120px;
+  `};
 `;
 const StyledSubtitle = styled.h2`
   font-size: 3vw;
   font-weight: 400;
-  ${media.bigDesktop`font-size: 50px;`};
-  ${media.phablet`font-size: 30px;`};
+  ${media.bigDesktop`
+    font-size: 50px;
+  `};
+  ${media.phablet`
+    font-size: 30px;
+  `};
 `;
 const StyledHomeButton = styled(Link)`
   ${({ theme }) => theme.mixins.bigButton};

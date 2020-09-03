@@ -21,11 +21,16 @@ const StyledHeading = styled(Heading)`
   font-weight: 400;
   margin-bottom: 20px;
   justify-content: center;
-  ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
+  ${media.desktop`
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+  `};
+
   &:before {
     bottom: 0;
     font-size: ${({ theme }) => theme.fontSizes.sm};
-    ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.smish};`};
+    ${media.desktop`
+      font-size: ${({ theme }) => theme.fontSizes.smish};
+    `};
   }
   &:after {
     display: none;
@@ -34,8 +39,12 @@ const StyledHeading = styled(Heading)`
 const StyledTitle = styled.h4`
   margin: 0 0 20px;
   font-size: 60px;
-  ${media.desktop`font-size: 50px;`};
-  ${media.tablet`font-size: 40px;`};
+  ${media.desktop`
+    font-size: 50px;
+  `};
+  ${media.tablet`
+    font-size: 40px;
+  `};
 `;
 const StyledEmailLink = styled.a`
   ${({ theme }) => theme.mixins.bigButton};

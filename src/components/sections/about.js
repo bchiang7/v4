@@ -12,12 +12,19 @@ const StyledContainer = styled(Section)`
 const StyledFlexContainer = styled.div`
   ${({ theme }) => theme.mixins.flexBetween};
   align-items: flex-start;
-  ${media.tablet`display: block;`};
+
+  ${media.tablet`
+    display: block;
+  `};
 `;
 const StyledContent = styled.div`
   width: 60%;
   max-width: 480px;
-  ${media.tablet`width: 100%;`};
+
+  ${media.tablet`
+    width: 100%;
+  `};
+
   a {
     ${({ theme }) => theme.mixins.inlineLink};
   }
@@ -37,6 +44,7 @@ const Skill = styled.li`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: ${({ theme }) => theme.fontSizes.smish};
   color: ${({ theme }) => theme.colors.slate};
+
   &:before {
     content: '▹';
     position: absolute;
@@ -51,8 +59,14 @@ const StyledPic = styled.div`
   width: 40%;
   max-width: 300px;
   margin-left: 60px;
-  ${media.tablet`margin: 60px auto 0;`};
-  ${media.phablet`width: 70%;`};
+
+  ${media.tablet`
+    margin: 60px auto 0;
+  `};
+  ${media.phablet`
+    width: 70%;
+  `};
+
   a {
     &:focus {
       outline: 0;

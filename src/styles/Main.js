@@ -2,40 +2,33 @@ import styled from 'styled-components';
 import media from './media';
 
 const Main = styled.main`
-  ${({ theme }) => theme.mixins.sidePadding};
   margin: 0 auto;
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding: 200px 150px;
+
   ${media.desktop`
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding: 200px 100px;
   `};
   ${media.tablet`
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding: 150px 50px;
   `};
   ${media.phablet`
-    padding-top: 125px;
-    padding-bottom: 125px;
+    padding: 125px 25px;
   `};
 
   &.fillHeight {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 150px;
+
     ${media.desktop`
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0 100px;
     `};
     ${media.tablet`
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0 50px;
     `};
     ${media.phablet`
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0 25px;
     `};
   }
 `;

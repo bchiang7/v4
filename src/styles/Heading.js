@@ -9,7 +9,9 @@ const Heading = styled.h3`
   width: 100%;
   white-space: nowrap;
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  ${media.tablet`font-size: 24px;`};
+  ${media.tablet`
+    font-size: 24px;
+  `};
 
   &:before {
     counter-increment: section;
@@ -21,7 +23,9 @@ const Heading = styled.h3`
     font-size: ${({ theme }) => theme.fontSizes.xl};
     position: relative;
     bottom: 4px;
-    ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.lg};`};
+    ${media.tablet`
+      font-size: ${({ theme }) => theme.fontSizes.lg};
+    `};
   }
 
   &:after {
@@ -33,9 +37,15 @@ const Heading = styled.h3`
     position: relative;
     top: -5px;
     margin-left: 20px;
-    ${media.desktop`width: 200px`};
-    ${media.tablet`width: 100%;`};
-    ${media.thone`margin-left: 10px;`};
+    ${media.desktop`
+      width: 200px
+    `};
+    ${media.tablet`
+      width: 100%;
+    `};
+    ${media.thone`
+      margin-left: 10px;
+    `};
   }
 `;
 

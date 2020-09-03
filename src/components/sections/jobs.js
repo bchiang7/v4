@@ -72,7 +72,9 @@ const StyledTabButton = styled.button`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: ${({ theme }) => theme.fontSizes.smish};
   color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
-  ${media.tablet`padding: 0 15px 2px;`};
+  ${media.tablet`
+    padding: 0 15px 2px;
+  `};
   ${media.thone`
     ${({ theme }) => theme.mixins.flexCenter};
     padding: 0 15px;
@@ -122,8 +124,12 @@ const StyledTabContent = styled.div`
   height: auto;
   padding-top: 12px;
   padding-left: 30px;
-  ${media.tablet`padding-left: 20px;`};
-  ${media.thone`padding-left: 0;`};
+  ${media.tablet`
+    padding-left: 20px;
+  `};
+  ${media.thone`
+    padding-left: 0;
+  `};
 
   ul {
     ${({ theme }) => theme.mixins.fancyList};

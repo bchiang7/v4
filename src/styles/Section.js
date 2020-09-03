@@ -6,7 +6,9 @@ const Section = styled.section`
   padding: 150px 0;
   max-width: 1000px;
 
-  ${media.tablet`padding: 100px 0;`};
+  ${media.tablet`
+    padding: 100px 0;
+  `};
 `;
 
 export default Section;

@@ -16,7 +16,11 @@ const StyledContainer = styled(Section)`
 const StyledTitle = styled.h4`
   margin: 0 auto;
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  ${media.tablet`font-size: 24px;`};
+
+  ${media.tablet`
+    font-size: 24px;
+  `};
+
   a {
     display: block;
   }
@@ -39,7 +43,9 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    ${media.desktop`grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));`};
+    ${media.desktop`
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    `};
   }
 `;
 const StyledProjectInner = styled.div`

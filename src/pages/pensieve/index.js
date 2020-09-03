@@ -37,7 +37,9 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    ${media.desktop`grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));`};
+    ${media.desktop`
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    `};
   }
 `;
 const StyledPostInner = styled.div`
