@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 import media from './media';
 import mixins from './mixins';
-import FontFaces from './fonts';
+import Fonts from './fonts';
 import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
 
 const GlobalStyle = createGlobalStyle`
-  ${FontFaces};
+  ${Fonts};
 
   html {
     box-sizing: border-box;
@@ -224,7 +224,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.green};
     font-family: ${({ theme }) => theme.fonts.SFMono};
     font-size: ${({ theme }) => theme.fontSizes.md};
-    font-weight: normal;
+    font-weight: 400;
   }
 
   .subtitle {
@@ -232,7 +232,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 20px 0;
     font-size: ${({ theme }) => theme.fontSizes.md};
     font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-weight: normal;
+    font-weight: 400;
     line-height: 1.5;
     ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
     ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.smish};`};
@@ -258,7 +258,7 @@ const GlobalStyle = createGlobalStyle`
       ${mixins.inlineLink};
       font-family: ${({ theme }) => theme.fonts.SFMono};
       font-size: ${({ theme }) => theme.fontSizes.sm};
-      font-weight: bold;
+      font-weight: 600;
       line-height: 1.5;
       text-transform: uppercase;
       letter-spacing: 0.1em;

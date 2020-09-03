@@ -18,7 +18,7 @@ const StyledHeading = styled(Heading)`
   color: ${({ theme }) => theme.colors.green};
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-weight: normal;
+  font-weight: 400;
   margin-bottom: 20px;
   justify-content: center;
   ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};

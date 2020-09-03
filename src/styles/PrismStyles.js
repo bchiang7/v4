@@ -211,7 +211,7 @@ const PrismStyles = css`
   }
   .token.important,
   .token.bold {
-    font-weight: bold;
+    font-weight: 600;
   }
   .token.italic {
     font-style: italic;

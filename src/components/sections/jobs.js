@@ -144,7 +144,7 @@ const StyledCompany = styled.span`
 const StyledJobDetails = styled.h5`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: ${({ theme }) => theme.fontSizes.smish};
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.lightSlate};
   margin-bottom: 30px;

@@ -57,7 +57,7 @@ const StyledTable = styled.table`
       padding-top: 15px;
       color: ${({ theme }) => theme.colors.lightestSlate};
       font-size: ${({ theme }) => theme.fontSizes.xl};
-      font-weight: 700;
+      font-weight: 600;
     }
     &.company {
       width: 15%;

@@ -21,7 +21,7 @@ const StyledOverline = styled.h1`
   margin: 0 0 20px 3px;
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-weight: normal;
+  font-weight: 400;
   ${media.desktop`font-size: ${({ theme }) => theme.fontSizes.sm};`};
   ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.smish};`};
 `;
