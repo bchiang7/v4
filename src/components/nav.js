@@ -8,11 +8,11 @@ import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media } from '@styles';
+import { theme, media } from '@styles';
 const { loaderDelay } = theme;
 
 const StyledContainer = styled.header`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   position: fixed;
   top: 0;
   padding: 0px 50px;
@@ -35,7 +35,7 @@ const StyledContainer = styled.header`
   ${media.tablet`padding: 0 25px;`};
 `;
 const StyledNav = styled.nav`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
   color: ${({ theme }) => theme.colors.lightestSlate};
@@ -44,7 +44,7 @@ const StyledNav = styled.nav`
   z-index: 12;
 `;
 const StyledLogo = styled.div`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   a {
     display: block;
     color: ${({ theme }) => theme.colors.green};
@@ -64,7 +64,7 @@ const StyledLogo = styled.div`
   }
 `;
 const StyledHamburger = styled.div`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   overflow: visible;
   margin: 0 -12px 0 0;
   padding: 15px;
@@ -135,7 +135,7 @@ const StyledLink = styled.div`
   ${media.tablet`display: none;`};
 `;
 const StyledList = styled.ol`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   padding: 0;
   margin: 0;
   list-style: none;
@@ -156,7 +156,7 @@ const StyledListLink = styled(Link)`
   padding: 12px 10px;
 `;
 const StyledResumeButton = styled.a`
-  ${mixins.smallButton};
+  ${({ theme }) => theme.mixins.smallButton};
   margin-left: 10px;
   font-size: ${({ theme }) => theme.fontSizes.smish};
 `;

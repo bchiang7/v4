@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
 import styled from 'styled-components';
-import { theme, mixins, media, Section } from '@styles';
+import { theme, media, Section } from '@styles';
 const { navDelay, loaderDelay } = theme;
 
 const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
@@ -48,11 +48,11 @@ const StyledDescription = styled.div`
   width: 50%;
   max-width: 500px;
   a {
-    ${mixins.inlineLink};
+    ${({ theme }) => theme.mixins.inlineLink};
   }
 `;
 const StyledEmailLink = styled.a`
-  ${mixins.bigButton};
+  ${({ theme }) => theme.mixins.bigButton};
   margin-top: 50px;
 `;
 

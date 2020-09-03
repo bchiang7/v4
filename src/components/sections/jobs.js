@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
-import { mixins, media, Section, Heading } from '@styles';
+import { media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   position: relative;
@@ -58,7 +58,7 @@ const StyledTabList = styled.ul`
   }
 `;
 const StyledTabButton = styled.button`
-  ${mixins.link};
+  ${({ theme }) => theme.mixins.link};
   display: flex;
   align-items: center;
   width: 100%;
@@ -74,7 +74,7 @@ const StyledTabButton = styled.button`
   color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
   ${media.tablet`padding: 0 15px 2px;`};
   ${media.thone`
-    ${mixins.flexCenter};
+    ${({ theme }) => theme.mixins.flexCenter};
     padding: 0 15px;
     text-align: center;
     border-left: 0;
@@ -126,10 +126,10 @@ const StyledTabContent = styled.div`
   ${media.thone`padding-left: 0;`};
 
   ul {
-    ${mixins.fancyList};
+    ${({ theme }) => theme.mixins.fancyList};
   }
   a {
-    ${mixins.inlineLink};
+    ${({ theme }) => theme.mixins.inlineLink};
   }
 `;
 const StyledJobTitle = styled.h4`

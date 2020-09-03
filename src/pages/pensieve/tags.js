@@ -5,7 +5,7 @@ import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { mixins, Main } from '@styles';
+import { Main } from '@styles';
 
 const StyledTagsContainer = styled(Main)`
   max-width: 1000px;
@@ -19,7 +19,7 @@ const StyledTagsContainer = styled(Main)`
       font-size: ${({ theme }) => theme.fontSizes.xxl};
 
       a {
-        ${mixins.inlineLink};
+        ${({ theme }) => theme.mixins.inlineLink};
         color: ${({ theme }) => theme.colors.lightSlate};
         .count {
           color: ${({ theme }) => theme.colors.slate};

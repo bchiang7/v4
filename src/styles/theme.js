@@ -1,4 +1,5 @@
 import { hex2rgba } from '@utils';
+import mixins from './mixins';
 
 const ACCENT = '#64ffda';
 const DARK_BG = '#020c1b';
@@ -56,6 +57,8 @@ const theme = {
 
   navDelay: 1000,
   loaderDelay: 2000,
+
+  mixins,
 };
 
 export default theme;

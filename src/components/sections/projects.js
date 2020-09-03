@@ -6,10 +6,10 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { mixins, media, Section, Button } from '@styles';
+import { media, Section, Button } from '@styles';
 
 const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
 `;
@@ -22,7 +22,7 @@ const StyledTitle = styled.h4`
   }
 `;
 const StyledArchiveLink = styled(Link)`
-  ${mixins.inlineLink};
+  ${({ theme }) => theme.mixins.inlineLink};
   text-align: center;
   margin: 0 auto;
   font-family: ${({ theme }) => theme.fonts.SFMono};
@@ -43,8 +43,8 @@ const StyledGrid = styled.div`
   }
 `;
 const StyledProjectInner = styled.div`
-  ${mixins.boxShadow};
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.boxShadow};
+  ${({ theme }) => theme.mixins.flexBetween};
   flex-direction: column;
   align-items: flex-start;
   position: relative;
@@ -66,7 +66,7 @@ const StyledProject = styled.div`
   }
 `;
 const StyledProjectHeader = styled.div`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   margin-bottom: 30px;
 `;
 const StyledFolder = styled.div`
@@ -98,7 +98,7 @@ const StyledProjectDescription = styled.div`
   font-size: 17px;
   color: ${({ theme }) => theme.colors.lightSlate};
   a {
-    ${mixins.inlineLink};
+    ${({ theme }) => theme.mixins.inlineLink};
   }
 `;
 const StyledTechList = styled.ul`

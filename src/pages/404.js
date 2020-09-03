@@ -4,11 +4,11 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
+import { theme, media, Main } from '@styles';
 const { navDelay } = theme;
 
 const StyledMainContainer = styled(Main)`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
@@ -26,7 +26,7 @@ const StyledSubtitle = styled.h2`
   ${media.phablet`font-size: 30px;`};
 `;
 const StyledHomeButton = styled(Link)`
-  ${mixins.bigButton};
+  ${({ theme }) => theme.mixins.bigButton};
   margin-top: 40px;
 `;
 

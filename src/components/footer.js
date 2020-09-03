@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
-import { mixins, media } from '@styles';
+import { media } from '@styles';
 
 const StyledContainer = styled.footer`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   padding: 15px;
   text-align: center;
@@ -22,7 +22,7 @@ const StyledSocial = styled.div`
   ${media.tablet`display: block;`};
 `;
 const StyledSocialList = styled.ul`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   padding: 0;
   margin: 0;
   list-style: none;

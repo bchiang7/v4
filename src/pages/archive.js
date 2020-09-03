@@ -7,7 +7,7 @@ import { srConfig } from '@config';
 import { Layout } from '@components';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { mixins, media, Main } from '@styles';
+import { media, Main } from '@styles';
 
 const StyledMainContainer = styled(Main)``;
 const StyledTableContainer = styled.div`
@@ -79,7 +79,7 @@ const StyledTable = styled.table`
         display: flex;
         align-items: center;
         a {
-          ${mixins.flexCenter};
+          ${({ theme }) => theme.mixins.flexCenter};
         }
         a + a {
           margin-left: 10px;

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import { IconZap } from '@components/icons';
 import styled from 'styled-components';
-import { mixins, media, Main } from '@styles';
+import { media, Main } from '@styles';
 
 const StyledMainContainer = styled(Main)`
   & > header {
@@ -24,7 +24,7 @@ const StyledMainContainer = styled(Main)`
   }
 
   footer {
-    ${mixins.flexBetween};
+    ${({ theme }) => theme.mixins.flexBetween};
     margin-top: 20px;
     width: 100%;
   }
@@ -41,8 +41,8 @@ const StyledGrid = styled.div`
   }
 `;
 const StyledPostInner = styled.div`
-  ${mixins.boxShadow};
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.boxShadow};
+  ${({ theme }) => theme.mixins.flexBetween};
   flex-direction: column;
   align-items: flex-start;
   position: relative;
@@ -68,7 +68,7 @@ const StyledPost = styled.div`
   }
 `;
 const StyledPostHeader = styled.div`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   margin-bottom: 30px;
 `;
 const StyledFolder = styled.div`
@@ -111,7 +111,7 @@ const StyledTags = styled.ul`
       margin-right: 0;
     }
     a {
-      ${mixins.inlineLink};
+      ${({ theme }) => theme.mixins.inlineLink};
     }
   }
 `;

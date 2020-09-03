@@ -4,13 +4,13 @@ import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig, github } from '@config';
 import styled from 'styled-components';
-import { mixins, media, Section, Heading } from '@styles';
+import { media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   position: relative;
 `;
 const StyledFlexContainer = styled.div`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   align-items: flex-start;
   ${media.tablet`display: block;`};
 `;
@@ -19,7 +19,7 @@ const StyledContent = styled.div`
   max-width: 480px;
   ${media.tablet`width: 100%;`};
   a {
-    ${mixins.inlineLink};
+    ${({ theme }) => theme.mixins.inlineLink};
   }
 `;
 const SkillsContainer = styled.ul`
@@ -67,7 +67,7 @@ const StyledAvatar = styled(Img)`
   transition: ${({ theme }) => theme.transition};
 `;
 const StyledAvatarLink = styled.a`
-  ${mixins.boxShadow};
+  ${({ theme }) => theme.mixins.boxShadow};
   width: 100%;
   position: relative;
   border-radius: ${({ theme }) => theme.borderRadius};

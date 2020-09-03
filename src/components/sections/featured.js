@@ -5,10 +5,10 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { mixins, media, Section, Heading } from '@styles';
+import { media, Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
 `;
@@ -42,7 +42,7 @@ const StyledProjectName = styled.h5`
   }
 `;
 const StyledDescription = styled.div`
-  ${mixins.boxShadow};
+  ${({ theme }) => theme.mixins.boxShadow};
   position: relative;
   z-index: 2;
   padding: 25px;
@@ -62,7 +62,7 @@ const StyledDescription = styled.div`
     margin: 0;
   }
   a {
-    ${mixins.inlineLink};
+    ${({ theme }) => theme.mixins.inlineLink};
   }
 `;
 const StyledTechList = styled.ul`
@@ -121,7 +121,7 @@ const StyledFeaturedImg = styled(Img)`
   `};
 `;
 const StyledImgContainer = styled.a`
-  ${mixins.boxShadow};
+  ${({ theme }) => theme.mixins.boxShadow};
   grid-column: 6 / -1;
   grid-row: 1 / -1;
   position: relative;

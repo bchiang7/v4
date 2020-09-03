@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { navLinks } from '@config';
 import styled from 'styled-components';
-import { mixins, media } from '@styles';
+import { media } from '@styles';
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -21,7 +21,7 @@ const StyledContainer = styled.div`
   ${media.tablet`display: block;`};
 `;
 const Sidebar = styled.aside`
-  ${mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightNavy};
   padding: 50px;
@@ -37,7 +37,7 @@ const Sidebar = styled.aside`
   ${media.tiny`padding: 10px;`};
 `;
 const NavLinks = styled.nav`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   width: 100%;
   flex-direction: column;
   text-align: center;
@@ -68,12 +68,12 @@ const NavListItem = styled.li`
   }
 `;
 const NavLink = styled(Link)`
-  ${mixins.link};
+  ${({ theme }) => theme.mixins.link};
   padding: 3px 20px 20px;
   width: 100%;
 `;
 const ResumeLink = styled.a`
-  ${mixins.bigButton};
+  ${({ theme }) => theme.mixins.bigButton};
   padding: 18px 50px;
   margin: 10% auto 0;
   width: max-content;

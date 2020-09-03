@@ -14,10 +14,6 @@ const mixins = {
     align-items: center;
   `,
 
-  outline: css`
-    outline: 1px solid red;
-  `,
-
   link: css`
     display: inline-block;
     text-decoration: none;

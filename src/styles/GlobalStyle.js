@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import media from './media';
-import mixins from './mixins';
 import Fonts from './fonts';
+import media from './media';
 import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
 
@@ -155,7 +154,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 15px 0;
 
     & > a {
-      ${mixins.inlineLink};
+      ${({ theme }) => theme.mixins.inlineLink};
     }
 
     & > code {
@@ -238,7 +237,7 @@ const GlobalStyle = createGlobalStyle`
     ${media.tablet`font-size: ${({ theme }) => theme.fontSizes.smish};`};
 
     a {
-      ${mixins.inlineLink};
+      ${({ theme }) => theme.mixins.inlineLink};
       line-height: 1.5;
     }
   }
@@ -255,7 +254,7 @@ const GlobalStyle = createGlobalStyle`
       padding-top: 4px;
     }
     a {
-      ${mixins.inlineLink};
+      ${({ theme }) => theme.mixins.inlineLink};
       font-family: ${({ theme }) => theme.fonts.SFMono};
       font-size: ${({ theme }) => theme.fontSizes.sm};
       font-weight: 600;
