@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import media from './media';
 
 const Main = styled.main`
   margin: 0 auto;
@@ -8,28 +7,28 @@ const Main = styled.main`
   min-height: 100vh;
   padding: 200px 150px;
 
-  ${media.desktop`
+  @media (${({ theme }) => theme.bp.desktopS}) {
     padding: 200px 100px;
-  `};
-  ${media.tablet`
+  }
+  @media (${({ theme }) => theme.bp.tabletL}) {
     padding: 150px 50px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     padding: 125px 25px;
-  `};
+  }
 
   &.fillHeight {
     padding: 0 150px;
 
-    ${media.desktop`
+    @media (${({ theme }) => theme.bp.desktopS}) {
       padding: 0 100px;
-    `};
-    ${media.tablet`
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
       padding: 0 50px;
-    `};
-    ${media.phablet`
+    }
+    @media (${({ theme }) => theme.bp.mobileL}) {
       padding: 0 25px;
-    `};
+    }
   }
 `;
 

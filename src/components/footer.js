@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
-import { media } from '@styles';
 
 const StyledContainer = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -19,9 +18,9 @@ const StyledSocial = styled.div`
   max-width: 270px;
   margin: 0 auto 10px;
   display: none;
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     display: block;
-  `};
+  }
 `;
 const StyledSocialList = styled.ul`
   ${({ theme }) => theme.mixins.flexBetween};

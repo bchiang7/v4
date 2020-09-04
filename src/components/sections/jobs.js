@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
-import { media, Section, Heading } from '@styles';
+import { Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   position: relative;
@@ -13,9 +13,9 @@ const StyledTabs = styled.div`
   display: flex;
   align-items: flex-start;
   position: relative;
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     display: block;
-  `};
+  }
 `;
 const StyledTabList = styled.ul`
   display: block;
@@ -26,34 +26,34 @@ const StyledTabList = styled.ul`
   margin: 0;
   list-style: none;
 
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     display: flex;
     overflow-x: scroll;
     margin-bottom: 30px;
     width: calc(100% + 100px);
     margin-left: -50px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     width: calc(100% + 50px);
     margin-left: -25px;
-  `};
+  }
 
   li {
     &:first-of-type {
-      ${media.thone`
+      @media (${({ theme }) => theme.bp.tabletS}) {
         margin-left: 50px;
-      `};
-      ${media.phablet`
+      }
+      @media (${({ theme }) => theme.bp.mobileL}) {
         margin-left: 25px;
-      `};
+      }
     }
     &:last-of-type {
-      ${media.thone`
+      @media (${({ theme }) => theme.bp.tabletS}) {
         padding-right: 50px;
-      `};
-      ${media.phablet`
+      }
+      @media (${({ theme }) => theme.bp.mobileL}) {
         padding-right: 25px;
-      `};
+      }
     }
   }
 `;
@@ -72,17 +72,17 @@ const StyledTabButton = styled.button`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: ${({ theme }) => theme.fontSizes.smish};
   color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     padding: 0 15px 2px;
-  `};
-  ${media.thone`
+  }
+  @media (${({ theme }) => theme.bp.tabletS}) {
     ${({ theme }) => theme.mixins.flexCenter};
     padding: 0 15px;
     text-align: center;
     border-left: 0;
     border-bottom: 2px solid ${({ theme }) => theme.colors.lightestNavy};
     min-width: 120px;
-  `};
+  }
   &:hover,
   &:focus {
     background-color: ${({ theme }) => theme.colors.lightNavy};
@@ -103,7 +103,7 @@ const StyledHighlight = styled.span`
   transform: translateY(
     ${({ theme, activeTabId }) => (activeTabId > 0 ? activeTabId * theme.tabHeight : 0)}px
   );
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     width: 100%;
     max-width: ${({ theme }) => theme.tabWidth};
     height: 2px;
@@ -113,10 +113,10 @@ const StyledHighlight = styled.span`
       ${({ theme, activeTabId }) => (activeTabId > 0 ? activeTabId * theme.tabWidth : 0)}px
     );
     margin-left: 50px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     margin-left: 25px;
-  `};
+  }
 `;
 const StyledTabContent = styled.div`
   position: relative;
@@ -124,12 +124,12 @@ const StyledTabContent = styled.div`
   height: auto;
   padding-top: 12px;
   padding-left: 30px;
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     padding-left: 20px;
-  `};
-  ${media.thone`
+  }
+  @media (${({ theme }) => theme.bp.tabletS}) {
     padding-left: 0;
-  `};
+  }
 
   ul {
     ${({ theme }) => theme.mixins.fancyList};

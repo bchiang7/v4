@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { navLinks } from '@config';
 import styled from 'styled-components';
-import { media } from '@styles';
 
 const StyledContainer = styled.div`
   position: fixed;
@@ -18,9 +17,10 @@ const StyledContainer = styled.div`
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   display: none;
-  ${media.tablet`
+
+  @media (${({ theme }) => theme.bp.tabletL}) {
     display: block;
-  `};
+  }
 `;
 const Sidebar = styled.aside`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -34,15 +34,16 @@ const Sidebar = styled.aside`
   margin-left: auto;
   font-family: ${({ theme }) => theme.fonts.SFMono};
   box-shadow: -10px 0px 30px -15px ${({ theme }) => theme.colors.shadowNavy};
-  ${media.thone`
+
+  @media (${({ theme }) => theme.bp.tabletS}) {
     padding: 25px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     width: 75vw;
-  `};
-  ${media.tiny`
+  }
+  @media (${({ theme }) => theme.bp.mobileS}) {
     padding: 10px;
-  `};
+  }
 `;
 const NavLinks = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -63,13 +64,14 @@ const NavListItem = styled.li`
   font-size: ${({ theme }) => theme.fontSizes.lg};
   counter-increment: item 1;
 
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     margin: 0 auto 10px;
     font-size: ${({ theme }) => theme.fontSizes.md};
-  `};
-  ${media.tiny`
+  }
+
+  @media (${({ theme }) => theme.bp.mobileS}) {
     font-size: ${({ theme }) => theme.fontSizes.smish};
-  `};
+  }
 
   &:before {
     display: block;

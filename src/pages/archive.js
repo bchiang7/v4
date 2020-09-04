@@ -7,23 +7,23 @@ import { srConfig } from '@config';
 import { Layout } from '@components';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { media, Main } from '@styles';
+import { Main } from '@styles';
 
 const StyledMainContainer = styled(Main)``;
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     margin: 100px -10px;
-  `};
+  }
 `;
 const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
 
   .hide-on-mobile {
-    ${media.tablet`
+    @media (${({ theme }) => theme.bp.tabletL}) {
       display: none;
-    `};
+    }
   }
 
   tbody tr {
@@ -39,9 +39,9 @@ const StyledTable = styled.table`
     cursor: default;
     line-height: 1.5;
     padding: 10px 20px;
-    ${media.tablet`
+    @media (${({ theme }) => theme.bp.tabletL}) {
       padding: 10px;
-    `};
+    }
   }
   th {
     text-align: left;
@@ -49,9 +49,9 @@ const StyledTable = styled.table`
   td {
     &.year {
       width: 10%;
-      ${media.tablet`
+      @media (${({ theme }) => theme.bp.tabletL}) {
         font-size: ${({ theme }) => theme.fontSizes.sm};
-      `};
+      }
     }
     &.title {
       padding-top: 15px;

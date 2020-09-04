@@ -8,7 +8,7 @@ import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
-import { theme, media } from '@styles';
+import { theme } from '@styles';
 const { loaderDelay } = theme;
 
 const StyledContainer = styled.header`
@@ -31,12 +31,13 @@ const StyledContainer = styled.header`
     ${({ theme, scrollDirection }) =>
     scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px'}
   );
-  ${media.desktop`
+
+  @media (${({ theme }) => theme.bp.desktopS}) {
     padding: 0 40px;
-  `};
-  ${media.tablet`
+  }
+  @media (${({ theme }) => theme.bp.tabletL}) {
     padding: 0 25px;
-  `};
+  }
 `;
 const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -49,17 +50,20 @@ const StyledNav = styled.nav`
 `;
 const StyledLogo = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
+
   a {
     display: block;
     color: ${({ theme }) => theme.colors.green};
     width: 42px;
     height: 42px;
+
     &:hover,
     &:focus {
       svg {
         fill: ${({ theme }) => theme.colors.transGreen};
       }
     }
+
     svg {
       fill: none;
       transition: ${({ theme }) => theme.transition};
@@ -81,9 +85,10 @@ const StyledHamburger = styled.div`
   border: 0;
   background-color: transparent;
   display: none;
-  ${media.tablet`
+
+  @media (${({ theme }) => theme.bp.tabletL}) {
     display: flex;
-  `};
+  }
 `;
 const StyledHamburgerBox = styled.div`
   position: relative;
@@ -138,9 +143,9 @@ const StyledHamburgerInner = styled.div`
 const StyledLink = styled.div`
   display: flex;
   align-items: center;
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     display: none;
-  `};
+  }
 `;
 const StyledList = styled.ol`
   ${({ theme }) => theme.mixins.flexBetween};

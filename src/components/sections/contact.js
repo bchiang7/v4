@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig, email } from '@config';
 import styled from 'styled-components';
-import { media, Section, Heading } from '@styles';
+import { Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   text-align: center;
@@ -21,16 +21,16 @@ const StyledHeading = styled(Heading)`
   font-weight: 400;
   margin-bottom: 20px;
   justify-content: center;
-  ${media.desktop`
+  @media (${({ theme }) => theme.bp.desktopS}) {
     font-size: ${({ theme }) => theme.fontSizes.sm};
-  `};
+  }
 
   &:before {
     bottom: 0;
     font-size: ${({ theme }) => theme.fontSizes.sm};
-    ${media.desktop`
+    @media (${({ theme }) => theme.bp.desktopS}) {
       font-size: ${({ theme }) => theme.fontSizes.smish};
-    `};
+    }
   }
   &:after {
     display: none;
@@ -39,12 +39,12 @@ const StyledHeading = styled(Heading)`
 const StyledTitle = styled.h4`
   margin: 0 0 20px;
   font-size: 60px;
-  ${media.desktop`
+  @media (${({ theme }) => theme.bp.desktopS}) {
     font-size: 50px;
-  `};
-  ${media.tablet`
+  }
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: 40px;
-  `};
+  }
 `;
 const StyledEmailLink = styled.a`
   ${({ theme }) => theme.mixins.bigButton};

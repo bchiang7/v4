@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, media, Main } from '@styles';
+import { theme, Main } from '@styles';
 const { navDelay } = theme;
 
 const StyledMainContainer = styled(Main)`
@@ -16,22 +16,22 @@ const StyledTitle = styled.h1`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: 12vw;
   line-height: 1;
-  ${media.bigDesktop`
-    font-size: 200px
-  ;`}
-  ${media.phablet`
+  @media (${({ theme }) => theme.bp.desktopM}) {
+    font-size: 200px;
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     font-size: 120px;
-  `};
+  }
 `;
 const StyledSubtitle = styled.h2`
   font-size: 3vw;
   font-weight: 400;
-  ${media.bigDesktop`
+  @media (${({ theme }) => theme.bp.desktopM}) {
     font-size: 50px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     font-size: 30px;
-  `};
+  }
 `;
 const StyledHomeButton = styled(Link)`
   ${({ theme }) => theme.mixins.bigButton};

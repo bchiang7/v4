@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig, github } from '@config';
 import styled from 'styled-components';
-import { media, Section, Heading } from '@styles';
+import { Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   position: relative;
@@ -13,17 +13,17 @@ const StyledFlexContainer = styled.div`
   ${({ theme }) => theme.mixins.flexBetween};
   align-items: flex-start;
 
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     display: block;
-  `};
+  }
 `;
 const StyledContent = styled.div`
   width: 60%;
   max-width: 480px;
 
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     width: 100%;
-  `};
+  }
 
   a {
     ${({ theme }) => theme.mixins.inlineLink};
@@ -60,12 +60,12 @@ const StyledPic = styled.div`
   max-width: 300px;
   margin-left: 60px;
 
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     margin: 60px auto 0;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     width: 70%;
-  `};
+  }
 
   a {
     &:focus {

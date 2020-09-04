@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import Fonts from './fonts';
-import media from './media';
 import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
 
@@ -30,9 +29,9 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     font-family: ${({ theme }) => theme.fonts.Calibre};
     font-size: ${({ theme }) => theme.fontSizes.xl};
-    ${media.phablet`
+    @media (${({ theme }) => theme.bp.mobileL}) {
       font-size: ${({ theme }) => theme.fontSizes.lg};
-    `}
+    }
 
     &.hidden {
       overflow: hidden;
@@ -76,30 +75,30 @@ const GlobalStyle = createGlobalStyle`
       font-size: 80px;
       line-height: 1.1;
       margin: 0;
-      ${media.desktop`
+      @media (${({ theme }) => theme.bp.desktopS}) {
         font-size: 70px;
-      `};
-      ${media.tablet`
+      }
+      @media (${({ theme }) => theme.bp.tabletL}) {
         font-size: 60px;
-      `};
-      ${media.phablet`
+      }
+      @media (${({ theme }) => theme.bp.mobileL}) {
         font-size: 50px;
-      `};
-      ${media.phone`
+      }
+      @media (${({ theme }) => theme.bp.mobileM}) {
         font-size: 40px;
-      `};
+      }
     }
 
     &.medium-title {
       font-size: 60px;
       line-height: 1.1;
       margin: 0;
-      ${media.desktop`
+      @media (${({ theme }) => theme.bp.desktopS}) {
         font-size: 50px;
-      `};
-      ${media.tablet`
+      }
+      @media (${({ theme }) => theme.bp.tabletL}) {
         font-size: 40px;
-      `};
+      }
     }
   }
 
@@ -247,12 +246,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.SFMono};
     font-weight: 400;
     line-height: 1.5;
-    ${media.desktop`
+    @media (${({ theme }) => theme.bp.desktopS}) {
       font-size: ${({ theme }) => theme.fontSizes.sm};
-    `};
-    ${media.tablet`
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: ${({ theme }) => theme.fontSizes.smish};
-    `};
+    }
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};

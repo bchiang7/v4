@@ -5,7 +5,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { media, Section, Heading } from '@styles';
+import { Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -16,14 +16,14 @@ const StyledContent = styled.div`
   position: relative;
   grid-column: 1 / 7;
   grid-row: 1 / -1;
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     grid-column: 1 / -1;
     padding: 40px 40px 30px;
     z-index: 5;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     padding: 30px 25px 20px;
-  `};
+  }
 `;
 const StyledLabel = styled.h4`
   font-size: ${({ theme }) => theme.fontSizes.smish};
@@ -37,16 +37,16 @@ const StyledProjectName = styled.h5`
   font-size: 28px;
   margin: 0 0 20px;
   color: ${({ theme }) => theme.colors.lightestSlate};
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: 24px;
-  `};
-  ${media.thone`
+  }
+  @media (${({ theme }) => theme.bp.tabletS}) {
     color: ${({ theme }) => theme.colors.white};
-  `};
+  }
   a {
-    ${media.tablet`
+    @media (${({ theme }) => theme.bp.tabletL}) {
       display: block;
-    `};
+    }
   }
 `;
 const StyledDescription = styled.div`
@@ -58,14 +58,14 @@ const StyledDescription = styled.div`
   color: ${({ theme }) => theme.colors.lightSlate};
   font-size: ${({ theme }) => theme.fontSizes.lg};
   border-radius: ${({ theme }) => theme.borderRadius};
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     background-color: transparent;
     padding: 20px 0;
     box-shadow: none;
     &:hover {
       box-shadow: none;
     }
-  `};
+  }
   p {
     margin: 0;
   }
@@ -92,10 +92,10 @@ const StyledTechList = styled.ul`
     &:last-of-type {
       margin-right: 0;
     }
-    ${media.thone`
+    @media (${({ theme }) => theme.bp.tabletS}) {
       color: ${({ theme }) => theme.colors.lightestSlate};
       margin-right: 10px;
-    `};
+    }
   }
 `;
 const StyledLinkWrapper = styled.div`
@@ -121,12 +121,12 @@ const StyledFeaturedImg = styled(Img)`
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1) brightness(90%);
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     object-fit: cover;
     width: auto;
     height: 100%;
     filter: grayscale(100%) contrast(1) brightness(80%);
-  `};
+  }
 `;
 const StyledImgContainer = styled.a`
   ${({ theme }) => theme.mixins.boxShadow};
@@ -137,13 +137,13 @@ const StyledImgContainer = styled.a`
   background-color: ${({ theme }) => theme.colors.green};
   border-radius: ${({ theme }) => theme.radius + 1}px;
   transition: ${({ theme }) => theme.transition};
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     height: 100%;
-  `};
-  ${media.thone`
+  }
+  @media (${({ theme }) => theme.bp.tabletS}) {
     grid-column: 1 / -1;
     opacity: 0.25;
-  `};
+  }
   &:hover,
   &:focus {
     background: transparent;
@@ -174,9 +174,9 @@ const StyledProject = styled.div`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   margin-bottom: 100px;
-  ${media.thone`
+  @media (${({ theme }) => theme.bp.tabletS}) {
     margin-bottom: 70px;
-  `};
+  }
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -184,13 +184,13 @@ const StyledProject = styled.div`
     ${StyledContent} {
       grid-column: 7 / -1;
       text-align: right;
-      ${media.thone`
+      @media (${({ theme }) => theme.bp.tabletS}) {
         grid-column: 1 / -1;
         padding: 40px 40px 30px;
-      `};
-      ${media.phablet`
+      }
+      @media (${({ theme }) => theme.bp.mobileL}) {
         padding: 30px 25px 20px;
-      `};
+      }
     }
     ${StyledTechList} {
       justify-content: flex-end;
@@ -206,13 +206,13 @@ const StyledProject = styled.div`
     }
     ${StyledImgContainer} {
       grid-column: 1 / 8;
-      ${media.tablet`
+      @media (${({ theme }) => theme.bp.tabletL}) {
         height: 100%;
-      `};
-      ${media.thone`
+      }
+      @media (${({ theme }) => theme.bp.tabletS}) {
         grid-column: 1 / -1;
         opacity: 0.25;
-      `};
+      }
     }
   }
 `;

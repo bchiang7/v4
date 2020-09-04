@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import { IconZap } from '@components/icons';
 import styled from 'styled-components';
-import { media, Main } from '@styles';
+import { Main } from '@styles';
 
 const StyledMainContainer = styled(Main)`
   & > header {
@@ -37,9 +37,9 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    ${media.desktop`
+    @media (${({ theme }) => theme.bp.desktopS}) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    `};
+    }
   }
 `;
 const StyledPostInner = styled.div`

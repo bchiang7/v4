@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import media from './media';
 
 const Heading = styled.h3`
   position: relative;
@@ -9,9 +8,9 @@ const Heading = styled.h3`
   width: 100%;
   white-space: nowrap;
   font-size: ${({ theme }) => theme.fontSizes.h3};
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: 24px;
-  `};
+  }
 
   &:before {
     counter-increment: section;
@@ -23,9 +22,9 @@ const Heading = styled.h3`
     font-size: ${({ theme }) => theme.fontSizes.xl};
     position: relative;
     bottom: 4px;
-    ${media.tablet`
+    @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: ${({ theme }) => theme.fontSizes.lg};
-    `};
+    }
   }
 
   &:after {
@@ -37,15 +36,15 @@ const Heading = styled.h3`
     position: relative;
     top: -5px;
     margin-left: 20px;
-    ${media.desktop`
-      width: 200px
-    `};
-    ${media.tablet`
+    @media (${({ theme }) => theme.bp.desktopS}) {
+      width: 200px;
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
       width: 100%;
-    `};
-    ${media.thone`
+    }
+    @media (${({ theme }) => theme.bp.tabletS}) {
       margin-left: 10px;
-    `};
+    }
   }
 `;
 

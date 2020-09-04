@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
 import styled from 'styled-components';
-import { theme, media, Section } from '@styles';
+import { theme, Section } from '@styles';
 const { navDelay, loaderDelay } = theme;
 
 const StyledContainer = styled(Section)`
@@ -11,9 +11,9 @@ const StyledContainer = styled(Section)`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     padding-top: 150px;
-  `};
+  }
   div {
     width: 100%;
   }
@@ -24,46 +24,46 @@ const StyledOverline = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.md};
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-weight: 400;
-  ${media.desktop`
+  @media (${({ theme }) => theme.bp.desktopS}) {
     font-size: ${({ theme }) => theme.fontSizes.sm};
-  `};
-  ${media.tablet`
+  }
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: ${({ theme }) => theme.fontSizes.smish};
-  `};
+  }
 `;
 const StyledTitle = styled.h2`
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
-  ${media.desktop`
+  @media (${({ theme }) => theme.bp.desktopS}) {
     font-size: 70px;
-  `};
-  ${media.tablet`
+  }
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: 60px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     font-size: 50px;
-  `};
-  ${media.phone`
+  }
+  @media (${({ theme }) => theme.bp.mobileM}) {
     font-size: 40px;
-  `};
+  }
 `;
 const StyledSubtitle = styled.h3`
   font-size: 80px;
   line-height: 1.1;
   color: ${({ theme }) => theme.colors.slate};
-  ${media.desktop`
+  @media (${({ theme }) => theme.bp.desktopS}) {
     font-size: 70px;
-  `};
-  ${media.tablet`
+  }
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: 60px;
-  `};
-  ${media.phablet`
+  }
+  @media (${({ theme }) => theme.bp.mobileL}) {
     font-size: 50px;
-  `};
-  ${media.phone`
+  }
+  @media (${({ theme }) => theme.bp.mobileM}) {
     font-size: 40px;
-  `};
+  }
 `;
 const StyledDescription = styled.div`
   margin-top: 25px;

@@ -6,7 +6,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { media, Section, Button } from '@styles';
+import { Section, Button } from '@styles';
 
 const StyledContainer = styled(Section)`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -17,9 +17,9 @@ const StyledTitle = styled.h4`
   margin: 0 auto;
   font-size: ${({ theme }) => theme.fontSizes.h3};
 
-  ${media.tablet`
+  @media (${({ theme }) => theme.bp.tabletL}) {
     font-size: 24px;
-  `};
+  }
 
   a {
     display: block;
@@ -43,9 +43,10 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    ${media.desktop`
+
+    @media (${({ theme }) => theme.bp.desktopS}) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    `};
+    }
   }
 `;
 const StyledProjectInner = styled.div`
