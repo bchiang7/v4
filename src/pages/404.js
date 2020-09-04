@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
+import { navDelay } from '@utils';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, Main } from '@styles';
-const { navDelay } = theme;
+import { Main } from '@styles';
 
 const StyledMainContainer = styled(Main)`
   ${({ theme }) => theme.mixins.flexCenter};

@@ -3,13 +3,11 @@ import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { throttle } from '@utils';
+import { throttle, loaderDelay } from '@utils';
 import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
-import { theme } from '@styles';
-const { loaderDelay } = theme;
 
 const StyledContainer = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -131,13 +129,13 @@ const StyledHamburgerInner = styled.div`
     width: ${props => (props.menuOpen ? `100%` : `120%`)};
     top: ${props => (props.menuOpen ? `0` : `-10px`)};
     opacity: ${props => (props.menuOpen ? 0 : 1)};
-    transition: ${props => (props.menuOpen ? theme.hamBeforeActive : theme.hamBefore)};
+    transition: ${props => (props.menuOpen ? props.theme.hamBeforeActive : props.theme.hamBefore)};
   }
   &:after {
     width: ${props => (props.menuOpen ? `100%` : `80%`)};
     bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
     transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-    transition: ${props => (props.menuOpen ? theme.hamAfterActive : theme.hamAfter)};
+    transition: ${props => (props.menuOpen ? props.theme.hamAfterActive : props.theme.hamAfter)};
   }
 `;
 const StyledLink = styled.div`

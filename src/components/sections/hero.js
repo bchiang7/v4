@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '@config';
+import { navDelay, loaderDelay } from '@utils';
 import styled from 'styled-components';
-import { theme, Section } from '@styles';
-const { navDelay, loaderDelay } = theme;
+import { Section } from '@styles';
 
 const StyledContainer = styled(Section)`
   ${({ theme }) => theme.mixins.flexCenter};
