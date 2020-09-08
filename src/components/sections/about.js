@@ -7,60 +7,52 @@ import sr from '@utils/sr';
 import { Section, Heading } from '@styles';
 
 const StyledAboutSection = styled(Section)`
+  max-width: 900px;
+
   .inner {
-    ${({ theme }) => theme.mixins.flexBetween};
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-gap: 60px;
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       display: block;
     }
   }
 `;
-const StyledContent = styled.div`
-  width: 60%;
+const StyledText = styled.div`
+  ul.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    overflow: hidden;
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
-    width: 100%;
-  }
-`;
+    li {
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      font-family: ${({ theme }) => theme.fonts.SFMono};
+      font-size: ${({ theme }) => theme.fontSizes.smish};
+      color: ${({ theme }) => theme.colors.slate};
 
-const SkillsList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
-  overflow: hidden;
-  padding: 0;
-  margin: 20px 0 0 0;
-  list-style: none;
-
-  li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.smish};
-    color: ${({ theme }) => theme.colors.slate};
-
-    &:before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: ${({ theme }) => theme.colors.green};
-      font-size: ${({ theme }) => theme.fontSizes.sm};
-      line-height: 12px;
+      &:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: ${({ theme }) => theme.colors.green};
+        font-size: ${({ theme }) => theme.fontSizes.sm};
+        line-height: 12px;
+      }
     }
   }
 `;
-
 const StyledPic = styled.div`
   position: relative;
-  width: 40%;
   max-width: 300px;
-  margin-left: 60px;
 
   @media (${({ theme }) => theme.bp.tabletL}) {
     margin: 60px auto 0;
-  }
-  @media (${({ theme }) => theme.bp.mobileL}) {
     width: 70%;
   }
 
@@ -149,7 +141,7 @@ const About = () => {
       <Heading>About Me</Heading>
 
       <div className="inner">
-        <StyledContent>
+        <StyledText>
           <div>
             <p>Hello! I'm Brittany, a software engineer based in Boston, MA.</p>
 
@@ -169,8 +161,10 @@ const About = () => {
             <p>Here are a few technologies I've been working with recently:</p>
           </div>
 
-          <SkillsList>{skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}</SkillsList>
-        </StyledContent>
+          <ul className="skills-list">
+            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
+          </ul>
+        </StyledText>
 
         <StyledPic>
           <div className="wrapper">
