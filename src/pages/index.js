@@ -13,7 +13,7 @@ const IndexPage = ({ location, data }) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
       <Hero />
-      <About data={data.about.edges} />
+      <About />
       <Jobs data={data.jobs.edges} />
       <Featured data={data.featured.edges} />
       <Projects data={data.projects.edges} />
@@ -31,24 +31,6 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   {
-    about: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            avatar {
-              childImageSharp {
-                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-            skills
-          }
-          html
-        }
-      }
-    }
     jobs: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/jobs/" } }
       sort: { fields: [frontmatter___date], order: DESC }

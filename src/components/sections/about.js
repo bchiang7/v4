@@ -1,59 +1,56 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import sr from '@utils/sr';
-import { srConfig, github } from '@config';
 import styled from 'styled-components';
+import { srConfig } from '@config';
+import sr from '@utils/sr';
 import { Section, Heading } from '@styles';
 
-const StyledContainer = styled(Section)`
-  position: relative;
-`;
-const StyledFlexContainer = styled.div`
-  ${({ theme }) => theme.mixins.flexBetween};
-  align-items: flex-start;
+const StyledAboutSection = styled(Section)`
+  .inner {
+    ${({ theme }) => theme.mixins.flexBetween};
+    align-items: flex-start;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
-    display: block;
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      display: block;
+    }
   }
 `;
 const StyledContent = styled.div`
   width: 60%;
-  max-width: 480px;
 
   @media (${({ theme }) => theme.bp.tabletL}) {
     width: 100%;
   }
-
-  a {
-    ${({ theme }) => theme.mixins.inlineLink};
-  }
 `;
-const SkillsContainer = styled.ul`
+
+const SkillsList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
   overflow: hidden;
   padding: 0;
   margin: 20px 0 0 0;
   list-style: none;
-`;
-const Skill = styled.li`
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.smish};
-  color: ${({ theme }) => theme.colors.slate};
 
-  &:before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: ${({ theme }) => theme.colors.green};
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    line-height: 12px;
+  li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.smish};
+    color: ${({ theme }) => theme.colors.slate};
+
+    &:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: ${({ theme }) => theme.colors.green};
+      font-size: ${({ theme }) => theme.fontSizes.sm};
+      line-height: 12px;
+    }
   }
 `;
+
 const StyledPic = styled.div`
   position: relative;
   width: 40%;
@@ -67,96 +64,122 @@ const StyledPic = styled.div`
     width: 70%;
   }
 
-  a {
-    &:focus {
-      outline: 0;
-    }
-  }
-`;
-const StyledAvatar = styled(Img)`
-  position: relative;
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1);
-  border-radius: ${({ theme }) => theme.borderRadius};
-  transition: ${({ theme }) => theme.transition};
-`;
-const StyledAvatarLink = styled.a`
-  ${({ theme }) => theme.mixins.boxShadow};
-  width: 100%;
-  position: relative;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ theme }) => theme.colors.green};
-  margin-left: -20px;
-  &:hover,
-  &:focus {
-    background: transparent;
-    &:after {
-      top: 15px;
-      left: 15px;
-    }
-    ${StyledAvatar} {
-      filter: none;
-      mix-blend-mode: normal;
-    }
-  }
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
+  .wrapper {
+    ${({ theme }) => theme.mixins.boxShadow};
     width: 100%;
-    height: 100%;
+    position: relative;
+    display: block;
     border-radius: ${({ theme }) => theme.borderRadius};
-    transition: ${({ theme }) => theme.transition};
-  }
-  &:before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: ${({ theme }) => theme.colors.navy};
-    mix-blend-mode: screen;
-  }
-  &:after {
-    border: 2px solid ${({ theme }) => theme.colors.green};
-    top: 20px;
-    left: 20px;
-    z-index: -1;
+    background-color: ${({ theme }) => theme.colors.green};
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      outline: 0;
+
+      &:after {
+        top: 15px;
+        left: 15px;
+      }
+
+      .img {
+        filter: none;
+        mix-blend-mode: normal;
+      }
+    }
+
+    .img {
+      position: relative;
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1);
+      border-radius: ${({ theme }) => theme.borderRadius};
+      transition: ${({ theme }) => theme.transition};
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: ${({ theme }) => theme.borderRadius};
+      transition: ${({ theme }) => theme.transition};
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+      background-color: ${({ theme }) => theme.colors.navy};
+      mix-blend-mode: screen;
+    }
+
+    &:after {
+      border: 2px solid ${({ theme }) => theme.colors.green};
+      top: 20px;
+      left: 20px;
+      z-index: -1;
+    }
   }
 `;
 
-const About = ({ data }) => {
-  const { frontmatter, html } = data[0].node;
-  const { title, skills, avatar } = frontmatter;
+const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      avatar: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "me.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, traceSVG: { color: "#64ffda" }) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  `);
+
   const revealContainer = useRef(null);
 
   useEffect(() => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
+  const skills = ['JavaScript (ES6+)', 'HTML & (S)CSS', 'React', 'Vue', 'Node.js', 'WordPress'];
+
   return (
-    <StyledContainer id="about" ref={revealContainer}>
-      <Heading>{title}</Heading>
+    <StyledAboutSection id="about" ref={revealContainer}>
+      <Heading>About Me</Heading>
 
-      <StyledFlexContainer>
+      <div className="inner">
         <StyledContent>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-          <SkillsContainer>
-            {skills && skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
-          </SkillsContainer>
-        </StyledContent>
-        <StyledPic>
-          <StyledAvatarLink href={github}>
-            <StyledAvatar fluid={avatar.childImageSharp.fluid} alt="Avatar" />
-          </StyledAvatarLink>
-        </StyledPic>
-      </StyledFlexContainer>
-    </StyledContainer>
-  );
-};
+          <div>
+            <p>Hello! I'm Brittany, a software engineer based in Boston, MA.</p>
 
-About.propTypes = {
-  data: PropTypes.array.isRequired,
+            <p>
+              I enjoy creating things that live on the internet, whether that be websites,
+              applications, or anything in between. My goal is to always build products that provide
+              pixel-perfect, performant experiences.
+            </p>
+
+            <p>
+              Shortly after graduating from{' '}
+              <a href="https://www.ccis.northeastern.edu">Northeastern University</a>, I joined the
+              engineering team at <a href="https://www.upstatement.com">Upstatement</a> where I work
+              on a wide variety of interesting and meaningful projects on a daily basis.
+            </p>
+
+            <p>Here are a few technologies I've been working with recently:</p>
+          </div>
+
+          <SkillsList>{skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}</SkillsList>
+        </StyledContent>
+
+        <StyledPic>
+          <div className="wrapper">
+            <Img fluid={data.avatar.childImageSharp.fluid} alt="Avatar" className="img" />
+          </div>
+        </StyledPic>
+      </div>
+    </StyledAboutSection>
+  );
 };
 
 export default About;

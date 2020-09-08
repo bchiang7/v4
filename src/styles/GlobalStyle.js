@@ -133,6 +133,10 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       color: ${({ theme }) => theme.colors.green};
     }
+
+    &.inline-link {
+      ${({ theme }) => theme.mixins.inlineLink};
+    }
   }
 
   button {
