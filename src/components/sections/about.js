@@ -129,11 +129,15 @@ const About = ({ data }) => {
   const { frontmatter, html } = data[0].node;
   const { title, skills, avatar } = frontmatter;
   const revealContainer = useRef(null);
-  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+
+  useEffect(() => {
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
 
   return (
     <StyledContainer id="about" ref={revealContainer}>
       <Heading>{title}</Heading>
+
       <StyledFlexContainer>
         <StyledContent>
           <div dangerouslySetInnerHTML={{ __html: html }} />

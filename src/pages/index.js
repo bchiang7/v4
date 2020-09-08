@@ -12,7 +12,7 @@ const StyledMainContainer = styled(Main)`
 const IndexPage = ({ location, data }) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
-      <Hero data={data.hero.edges} />
+      <Hero />
       <About data={data.about.edges} />
       <Jobs data={data.jobs.edges} />
       <Featured data={data.featured.edges} />
@@ -31,19 +31,6 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   {
-    hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            name
-            subtitle
-            buttonText
-          }
-          html
-        }
-      }
-    }
     about: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" } }) {
       edges {
         node {
