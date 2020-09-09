@@ -8,6 +8,10 @@ const Section = styled.section`
   @media (${({ theme }) => theme.bp.tabletL}) {
     padding: 80px 0;
   }
+
+  @media (${({ theme }) => theme.bp.mobileL}) {
+    padding: 60px 0;
+  }
 `;
 
 export default Section;

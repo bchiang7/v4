@@ -82,18 +82,18 @@ const StyledFolder = styled.div`
 `;
 const StyledPostName = styled.h5`
   margin: 0 0 10px;
-  font-size: ${({ theme }) => theme.fontSizes.xxl};
   color: ${({ theme }) => theme.colors.lightestSlate};
+  font-size: ${({ theme }) => theme.fontSizes.xxl};
 `;
 const StyledPostDescription = styled.div`
-  font-size: 17px;
   color: ${({ theme }) => theme.colors.lightSlate};
+  font-size: 17px;
 `;
 const StyledDate = styled.span`
-  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.lightSlate};
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  color: ${({ theme }) => theme.colors.lightSlate};
+  text-transform: uppercase;
 `;
 const StyledTags = styled.ul`
   display: flex;
@@ -108,12 +108,9 @@ const StyledTags = styled.ul`
     font-size: ${({ theme }) => theme.fontSizes.xs};
     color: ${({ theme }) => theme.colors.green};
     line-height: 1.75;
-    margin-right: 15px;
-    &:last-of-type {
-      margin-right: 0;
-    }
-    a {
-      ${({ theme }) => theme.mixins.inlineLink};
+
+    &:not(:last-of-type) {
+      margin-right: 15px;
     }
   }
 `;
@@ -165,7 +162,11 @@ const PensievePage = ({ location, data }) => {
                         <StyledTags>
                           {tags.map((tag, i) => (
                             <li key={i}>
-                              <Link to={`/pensieve/tags/${kebabCase(tag)}/`}>#{tag}</Link>
+                              <Link
+                                to={`/pensieve/tags/${kebabCase(tag)}/`}
+                                className="inline-link">
+                                #{tag}
+                              </Link>
                             </li>
                           ))}
                         </StyledTags>

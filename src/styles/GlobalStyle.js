@@ -26,9 +26,10 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: ${({ theme }) => theme.colors.navy};
     color: ${({ theme }) => theme.colors.slate};
-    line-height: 1.3;
     font-family: ${({ theme }) => theme.fonts.Calibre};
     font-size: ${({ theme }) => theme.fontSizes.xl};
+    line-height: 1.3;
+
     @media (${({ theme }) => theme.bp.mobileL}) {
       font-size: ${({ theme }) => theme.fontSizes.lg};
     }
@@ -36,8 +37,10 @@ const GlobalStyle = createGlobalStyle`
     &.hidden {
       overflow: hidden;
     }
+
     &.blur {
       overflow: hidden;
+
       #root > #content > * {
         filter: blur(5px) brightness(0.7);
         transition: ${({ theme }) => theme.transition};
@@ -102,7 +105,9 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  img, svg, .gatsby-image-wrapper {
+  img,
+  svg,
+  .gatsby-image-wrapper {
     width: 100%;
     max-width: 100%;
     vertical-align: middle;
@@ -157,8 +162,6 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       outline: 0;
     }
-    &::placeholder {
-    }
     &:focus,
     &:active {
       &::placeholder {
@@ -170,7 +173,8 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin: 0 0 15px 0;
 
-    &:last-child {
+    &:last-child,
+    &:last-of-type {
       margin: 0;
     }
 
@@ -278,6 +282,7 @@ const GlobalStyle = createGlobalStyle`
       margin-right: 10px;
       padding-top: 4px;
     }
+
     a {
       ${({ theme }) => theme.mixins.inlineLink};
       font-family: ${({ theme }) => theme.fonts.SFMono};

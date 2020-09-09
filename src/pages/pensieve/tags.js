@@ -15,12 +15,13 @@ const StyledTagsContainer = styled(Main)`
   }
   ul {
     color: ${({ theme }) => theme.colors.lightSlate};
+
     li {
       font-size: ${({ theme }) => theme.fontSizes.xxl};
 
       a {
-        ${({ theme }) => theme.mixins.inlineLink};
         color: ${({ theme }) => theme.colors.lightSlate};
+
         .count {
           color: ${({ theme }) => theme.colors.slate};
           font-family: ${({ theme }) => theme.fonts.SFMono};
@@ -53,7 +54,7 @@ const TagsPage = ({
       <ul className="fancy-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`} className="inline-link">
               {tag.fieldValue} <span className="count">({tag.totalCount})</span>
             </Link>
           </li>
