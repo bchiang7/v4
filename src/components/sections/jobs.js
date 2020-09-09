@@ -56,38 +56,38 @@ const StyledTabList = styled.ul`
       }
     }
   }
+`;
 
-  button {
-    ${({ theme }) => theme.mixins.link};
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: ${({ theme }) => theme.tabHeight}px;
-    padding: 0 20px 2px;
-    border-left: 2px solid ${({ theme }) => theme.colors.lightestNavy};
-    background-color: transparent;
-    color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.smish};
-    text-align: left;
-    white-space: nowrap;
+const StyledTabButton = styled.button`
+  ${({ theme }) => theme.mixins.link};
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: ${({ theme }) => theme.tabHeight}px;
+  padding: 0 20px 2px;
+  border-left: 2px solid ${({ theme }) => theme.colors.lightestNavy};
+  background-color: transparent;
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
+  font-family: ${({ theme }) => theme.fonts.SFMono};
+  font-size: ${({ theme }) => theme.fontSizes.smish};
+  text-align: left;
+  white-space: nowrap;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
-      padding: 0 15px 2px;
-    }
-    @media (${({ theme }) => theme.bp.tabletS}) {
-      ${({ theme }) => theme.mixins.flexCenter};
-      padding: 0 15px;
-      border-left: 0;
-      border-bottom: 2px solid ${({ theme }) => theme.colors.lightestNavy};
-      min-width: 120px;
-      text-align: center;
-    }
+  @media (${({ theme }) => theme.bp.tabletL}) {
+    padding: 0 15px 2px;
+  }
+  @media (${({ theme }) => theme.bp.tabletS}) {
+    ${({ theme }) => theme.mixins.flexCenter};
+    padding: 0 15px;
+    border-left: 0;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.lightestNavy};
+    min-width: 120px;
+    text-align: center;
+  }
 
-    &:hover,
-    &:focus {
-      background-color: ${({ theme }) => theme.colors.lightNavy};
-    }
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.lightNavy};
   }
 `;
 
@@ -237,7 +237,7 @@ const Jobs = () => {
               const { company } = node.frontmatter;
               return (
                 <li key={i}>
-                  <button
+                  <StyledTabButton
                     isActive={activeTabId === i}
                     onClick={() => setActiveTabId(i)}
                     ref={el => (tabs.current[i] = el)}
@@ -247,7 +247,7 @@ const Jobs = () => {
                     aria-controls={`panel-${i}`}
                     tabIndex={activeTabId === i ? '0' : '-1'}>
                     <span>{company}</span>
-                  </button>
+                  </StyledTabButton>
                 </li>
               );
             })}
