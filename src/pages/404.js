@@ -50,7 +50,7 @@ const NotFoundPage = ({ location }) => {
     <Layout location={location}>
       <TransitionGroup component={null}>
         {isMounted && (
-          <CSSTransition timeout={500} classNames="fade">
+          <CSSTransition timeout={500} classNames="fadeup">
             <StyledMainContainer className="fillHeight">
               <StyledTitle>404</StyledTitle>
               <StyledSubtitle>Page Not Found</StyledSubtitle>
