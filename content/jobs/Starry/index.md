@@ -3,7 +3,7 @@ date: '2016-12-21'
 title: 'Software Engineer Co-op'
 company: 'Starry'
 location: 'Boston, MA'
-range: 'July - Dec 2016'
+range: 'July - December 2016'
 url: 'https://starry.com/'
 ---
 
