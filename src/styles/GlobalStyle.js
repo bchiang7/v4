@@ -17,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  ::selection {
+    background-color: ${({ theme }) => theme.colors.slate};
+    color: ${({ theme }) => theme.colors.lightestSlate};
+  }
+
   body {
     margin: 0;
     width: 100%;
@@ -41,18 +46,13 @@ const GlobalStyle = createGlobalStyle`
     &.blur {
       overflow: hidden;
 
-      #root > #content > * {
+      #content > * {
         filter: blur(5px) brightness(0.7);
         transition: ${({ theme }) => theme.transition};
         pointer-events: none;
         user-select: none;
       }
     }
-  }
-
-  ::selection {
-    background-color: ${({ theme }) => theme.colors.slate};
-    color: ${({ theme }) => theme.colors.lightestSlate};
   }
 
   #root {
@@ -78,6 +78,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 80px;
       line-height: 1.1;
       margin: 0;
+
       @media (${({ theme }) => theme.bp.desktopS}) {
         font-size: 70px;
       }
@@ -96,6 +97,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 60px;
       line-height: 1.1;
       margin: 0;
+
       @media (${({ theme }) => theme.bp.desktopS}) {
         font-size: 50px;
       }
