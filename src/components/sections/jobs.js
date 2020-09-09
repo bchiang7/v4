@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import { srConfig } from '@config';
+import sr from '@utils/sr';
 import { Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
@@ -159,7 +159,36 @@ const StyledJobDetails = styled.h5`
   }
 `;
 
-const Jobs = ({ data }) => {
+const KEYCODES = {
+  up: 'ArrowUp',
+  down: 'ArrowDown',
+};
+
+const Jobs = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      jobs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/jobs/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              company
+              location
+              range
+              url
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
+  const jobsData = data.jobs.edges;
+
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
@@ -185,26 +214,30 @@ const Jobs = ({ data }) => {
   // Only re-run the effect if tabFocus changes
   useEffect(() => focusTab(), [tabFocus]);
 
-  const onKeyPressed = e => {
-    if (e.keyCode === 38 || e.keyCode === 40) {
+  // Focus on tabs when using up & down arrow keys
+  const onKeyDown = e => {
+    if (e.key === KEYCODES.up || e.key === KEYCODES.down) {
       e.preventDefault();
-      if (e.keyCode === 40) {
-        // Move down
-        setTabFocus(tabFocus + 1);
-      } else if (e.keyCode === 38) {
-        // Move up
+
+      // Move up
+      if (e.key === KEYCODES.up) {
         setTabFocus(tabFocus - 1);
+      }
+      // Move down
+      if (e.key === KEYCODES.down) {
+        setTabFocus(tabFocus + 1);
       }
     }
   };
 
   return (
     <StyledContainer id="jobs" ref={revealContainer}>
-      <Heading>Where I&apos;ve Worked</Heading>
+      <Heading>Where I’ve Worked</Heading>
+
       <StyledTabs>
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyPressed(e)}>
-          {data &&
-            data.map(({ node }, i) => {
+        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={onKeyDown}>
+          {jobsData &&
+            jobsData.map(({ node }, i) => {
               const { company } = node.frontmatter;
               return (
                 <li key={i}>
@@ -225,8 +258,8 @@ const Jobs = ({ data }) => {
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
-        {data &&
-          data.map(({ node }, i) => {
+        {jobsData &&
+          jobsData.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { title, url, company, range } = frontmatter;
             return (
@@ -242,9 +275,7 @@ const Jobs = ({ data }) => {
                   <span>{title}</span>
                   <StyledCompany>
                     <span>&nbsp;@&nbsp;</span>
-                    <a href={url} target="_blank" rel="nofollow noopener noreferrer">
-                      {company}
-                    </a>
+                    <a href={url}>{company}</a>
                   </StyledCompany>
                 </StyledJobTitle>
                 <StyledJobDetails>
@@ -257,10 +288,6 @@ const Jobs = ({ data }) => {
       </StyledTabs>
     </StyledContainer>
   );
-};
-
-Jobs.propTypes = {
-  data: PropTypes.array.isRequired,
 };
 
 export default Jobs;

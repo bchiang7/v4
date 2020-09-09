@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import sr from '@utils/sr';
-import { srConfig } from '@config';
-import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
+import { srConfig } from '@config';
+import sr from '@utils/sr';
+import { FormattedIcon } from '@components/icons';
 import { Section, Button } from '@styles';
 
 const StyledContainer = styled(Section)`
@@ -132,7 +131,31 @@ const StyledMoreButton = styled(Button)`
   margin: 100px auto 0;
 `;
 
-const Projects = ({ data }) => {
+const Projects = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      projects: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/projects/" }
+          frontmatter: { showInProjects: { ne: false } }
+        }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              tech
+              github
+              external
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
@@ -145,7 +168,7 @@ const Projects = ({ data }) => {
   }, []);
 
   const GRID_LIMIT = 6;
-  const projects = data.filter(({ node }) => node);
+  const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
@@ -183,20 +206,12 @@ const Projects = ({ data }) => {
                           </StyledFolder>
                           <StyledProjectLinks>
                             {github && (
-                              <StyledIconLink
-                                href={github}
-                                target="_blank"
-                                rel="nofollow noopener noreferrer"
-                                aria-label="GitHub Link">
+                              <StyledIconLink href={github} aria-label="GitHub Link">
                                 <FormattedIcon name="GitHub" />
                               </StyledIconLink>
                             )}
                             {external && (
-                              <StyledIconLink
-                                href={external}
-                                target="_blank"
-                                rel="nofollow noopener noreferrer"
-                                aria-label="External Link">
+                              <StyledIconLink href={external} aria-label="External Link">
                                 <FormattedIcon name="External" />
                               </StyledIconLink>
                             )}
@@ -227,10 +242,6 @@ const Projects = ({ data }) => {
       </StyledMoreButton>
     </StyledContainer>
   );
-};
-
-Projects.propTypes = {
-  data: PropTypes.array.isRequired,
 };
 
 export default Projects;

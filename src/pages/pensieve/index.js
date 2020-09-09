@@ -132,10 +132,7 @@ const PensievePage = ({ location, data }) => {
         <header>
           <h1 className="big-title">Pensieve</h1>
           <p className="subtitle">
-            <a
-              href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve">
               a collection of memories
             </a>
           </p>

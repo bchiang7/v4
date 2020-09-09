@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
-import styled from 'styled-components';
 import { Section, Heading } from '@styles';
 
 const StyledContainer = styled(Section)`
@@ -217,8 +217,36 @@ const StyledProject = styled.div`
   }
 `;
 
-const Featured = ({ data }) => {
-  const featuredProjects = data.filter(({ node }) => node);
+const Featured = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      featured: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/featured/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              cover {
+                childImageSharp {
+                  fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
+              }
+              tech
+              github
+              external
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
+  const featuredProjects = data.featured.edges.filter(({ node }) => node);
 
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
@@ -229,7 +257,7 @@ const Featured = ({ data }) => {
 
   return (
     <StyledContainer id="projects">
-      <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
+      <Heading ref={revealTitle}>Some Things I’ve Built</Heading>
 
       <div>
         {featuredProjects &&
@@ -241,13 +269,10 @@ const Featured = ({ data }) => {
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <StyledContent>
                   <StyledLabel>Featured Project</StyledLabel>
+
                   <StyledProjectName>
                     {external ? (
-                      <a
-                        href={external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
+                      <a href={external} aria-label="External Link">
                         {title}
                       </a>
                     ) : (
@@ -255,6 +280,7 @@ const Featured = ({ data }) => {
                     )}
                   </StyledProjectName>
                   <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
+
                   {tech && (
                     <StyledTechList>
                       {tech.map((tech, i) => (
@@ -262,32 +288,22 @@ const Featured = ({ data }) => {
                       ))}
                     </StyledTechList>
                   )}
+
                   <StyledLinkWrapper>
                     {github && (
-                      <a
-                        href={github}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="GitHub Link">
+                      <a href={github} aria-label="GitHub Link">
                         <FormattedIcon name="GitHub" />
                       </a>
                     )}
                     {external && (
-                      <a
-                        href={external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
+                      <a href={external} aria-label="External Link">
                         <FormattedIcon name="External" />
                       </a>
                     )}
                   </StyledLinkWrapper>
                 </StyledContent>
 
-                <StyledImgContainer
-                  href={external ? external : github ? github : '#'}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer">
+                <StyledImgContainer href={external ? external : github ? github : '#'}>
                   <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
                 </StyledImgContainer>
               </StyledProject>
@@ -296,10 +312,6 @@ const Featured = ({ data }) => {
       </div>
     </StyledContainer>
   );
-};
-
-Featured.propTypes = {
-  data: PropTypes.array.isRequired,
 };
 
 export default Featured;

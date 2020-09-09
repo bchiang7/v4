@@ -47,7 +47,7 @@ const Social = ({ isHome }) => (
       {socialMedia &&
         socialMedia.map(({ url, name }, i) => (
           <li key={i}>
-            <a href={url} target="_blank" rel="nofollow noopener noreferrer" aria-label={name}>
+            <a href={url} aria-label={name}>
               <FormattedIcon name={name} />
             </a>
           </li>

@@ -169,38 +169,22 @@ const ArchivePage = ({ location, data }) => {
                       <td className="links">
                         <span>
                           {external && (
-                            <a
-                              href={external}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
+                            <a href={external} aria-label="External Link">
                               <FormattedIcon name="External" />
                             </a>
                           )}
                           {github && (
-                            <a
-                              href={github}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
+                            <a href={github} aria-label="GitHub Link">
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
                           {ios && (
-                            <a
-                              href={ios}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
+                            <a href={ios} aria-label="Apple App Store Link">
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
                           {android && (
-                            <a
-                              href={android}
-                              target="_blank"
-                              rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
+                            <a href={android} aria-label="Google Play Store Link">
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}

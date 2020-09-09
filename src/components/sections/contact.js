@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import sr from '@utils/sr';
 import { srConfig, email } from '@config';
+import sr from '@utils/sr';
 import styled from 'styled-components';
 import { Section, Heading } from '@styles';
 
@@ -51,29 +50,24 @@ const StyledEmailLink = styled.a`
   margin-top: 50px;
 `;
 
-const Contact = ({ data }) => {
-  const { frontmatter, html } = data[0].node;
-  const { title, buttonText } = frontmatter;
+const Contact = () => {
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
     <StyledContainer id="contact" ref={revealContainer}>
-      <StyledHeading>What&apos;s Next?</StyledHeading>
+      <StyledHeading>What’s Next?</StyledHeading>
 
-      <StyledTitle>{title}</StyledTitle>
+      <StyledTitle>Get In Touch</StyledTitle>
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <p>
+        Although I'm not currently looking for any new opportunities, my inbox is always open.
+        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+      </p>
 
-      <StyledEmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
-        {buttonText}
-      </StyledEmailLink>
+      <StyledEmailLink href={`mailto:${email}`}>Say Hello</StyledEmailLink>
     </StyledContainer>
   );
-};
-
-Contact.propTypes = {
-  data: PropTypes.array.isRequired,
 };
 
 export default Contact;
