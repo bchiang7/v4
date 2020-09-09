@@ -102,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  img {
+  img, svg, .gatsby-image-wrapper {
     width: 100%;
     max-width: 100%;
     vertical-align: middle;
@@ -169,6 +169,10 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     margin: 0 0 15px 0;
+
+    &:last-child {
+      margin: 0;
+    }
 
     & > a {
       ${({ theme }) => theme.mixins.inlineLink};

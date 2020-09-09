@@ -59,7 +59,7 @@ const theme = {
 
   tabHeight: 42,
   tabWidth: '120px',
-  radius: 3,
+  radius: 4,
 
   hamburgerWidth: '30px',
   hamBefore: `top 0.1s ease-in 0.25s, opacity 0.1s ease-in`,
