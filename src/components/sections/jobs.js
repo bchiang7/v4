@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
+import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { Section, Heading } from '@styles';
 
@@ -156,11 +157,6 @@ const StyledTabContent = styled.div`
   }
 `;
 
-const KEYCODES = {
-  up: 'ArrowUp',
-  down: 'ArrowDown',
-};
-
 const Jobs = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -213,14 +209,14 @@ const Jobs = () => {
 
   // Focus on tabs when using up & down arrow keys
   const onKeyDown = e => {
-    if (e.key === KEYCODES.up || e.key === KEYCODES.down) {
+    if (e.key === KEY_CODES.ARROW_UP || e.key === KEY_CODES.ARROW_DOWN) {
       e.preventDefault();
       // Move up
-      if (e.key === KEYCODES.up) {
+      if (e.key === KEY_CODES.ARROW_UP) {
         setTabFocus(tabFocus - 1);
       }
       // Move down
-      if (e.key === KEYCODES.down) {
+      if (e.key === KEY_CODES.ARROW_DOWN) {
         setTabFocus(tabFocus + 1);
       }
     }

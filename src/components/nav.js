@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled from 'styled-components';
-import { navLinks, navHeight } from '@config';
-import { throttle, loaderDelay } from '@utils';
+import styled, { css } from 'styled-components';
+import { navLinks } from '@config';
+import { loaderDelay } from '@utils';
+import { useScrollDirection } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 
@@ -20,14 +21,25 @@ const StyledHeader = styled.header`
   pointer-events: auto !important;
   user-select: auto !important;
   width: 100%;
-  height: ${({ theme, scrollDirection }) =>
-    scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight};
-  box-shadow: ${({ theme, scrollDirection }) =>
-    scrollDirection === 'up' ? `0 10px 30px -10px ${theme.colors.shadowNavy}` : 'none'};
-  transform: translateY(
-    ${({ theme, scrollDirection }) =>
-    scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px'}
-  );
+  height: ${({ theme }) => theme.navHeight};
+
+  ${props =>
+    props.scrollDirection === 'up' &&
+    !props.scrolledToTop &&
+    css`
+      box-shadow: 0 10px 30px -10px ${({ theme }) => theme.colors.shadowNavy};
+      height: ${({ theme }) => theme.navScrollHeight};
+      transform: translateY(0px);
+    `};
+
+  ${props =>
+    props.scrollDirection === 'down' &&
+    !props.scrolledToTop &&
+    css`
+      box-shadow: 0 10px 30px -10px ${({ theme }) => theme.colors.shadowNavy};
+      height: ${({ theme }) => theme.navScrollHeight};
+      transform: translateY(-${({ theme }) => theme.navScrollHeight});
+    `};
 
   @media (${({ theme }) => theme.bp.desktopS}) {
     padding: 0 40px;
@@ -111,43 +123,26 @@ const StyledLinks = styled.div`
   }
 `;
 
-const DELTA = 5;
-
 const Nav = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
-  const [scrollDirection, setScrollDirection] = useState('none');
-  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const scrollDirection = useScrollDirection('down');
+  const [scrolledToTop, setScrolledToTop] = useState(true);
 
   const handleScroll = () => {
-    const fromTop = window.scrollY;
-
-    // Make sure they scroll more than DELTA
-    if (!isMounted || Math.abs(lastScrollTop - fromTop) <= DELTA) {
-      return;
-    }
-
-    if (fromTop < DELTA) {
-      setScrollDirection('none');
-    } else if (fromTop > lastScrollTop && fromTop > navHeight) {
-      if (scrollDirection !== 'down') {
-        setScrollDirection('down');
-      }
-    } else if (fromTop + window.innerHeight < document.body.scrollHeight) {
-      if (scrollDirection !== 'up') {
-        setScrollDirection('up');
-      }
-    }
-
-    setLastScrollTop(fromTop);
+    setScrolledToTop(window.pageYOffset < 50);
   };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsMounted(true);
-      document.addEventListener('scroll', () => throttle(handleScroll()));
     }, 100);
 
-    return () => clearTimeout(timeout);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const timeout = isHome ? loaderDelay : 0;
@@ -155,7 +150,7 @@ const Nav = ({ isHome }) => {
   const fadeDownClass = isHome ? 'fadedown' : '';
 
   return (
-    <StyledHeader scrollDirection={scrollDirection}>
+    <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <StyledNav>
         <TransitionGroup component={null}>
           {isMounted && (

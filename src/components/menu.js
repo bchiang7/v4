@@ -3,7 +3,8 @@ import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { navLinks } from '@config';
-import { KEY_CODES, useOnClickOutside } from '@utils';
+import { KEY_CODES } from '@utils';
+import { useOnClickOutside } from '@hooks';
 
 const StyledMenu = styled.div`
   display: none;
@@ -72,14 +73,13 @@ const StyledHamburgerButton = styled.button`
       width: ${props => (props.menuOpen ? `100%` : `120%`)};
       top: ${props => (props.menuOpen ? `0` : `-10px`)};
       opacity: ${props => (props.menuOpen ? 0 : 1)};
-      transition: ${props =>
-    props.menuOpen ? props.theme.hamBeforeActive : props.theme.hamBefore};
+      transition: ${({ theme, menuOpen }) => (menuOpen ? theme.hamBeforeActive : theme.hamBefore)};
     }
     &:after {
       width: ${props => (props.menuOpen ? `100%` : `80%`)};
       bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
       transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-      transition: ${props => (props.menuOpen ? props.theme.hamAfterActive : props.theme.hamAfter)};
+      transition: ${({ theme, menuOpen }) => (menuOpen ? theme.hamAfterActive : theme.hamAfter)};
     }
   }
 `;
