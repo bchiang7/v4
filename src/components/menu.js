@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { navLinks } from '@config';
 import styled from 'styled-components';
+import { navLinks } from '@config';
 
 const StyledMenu = styled.div`
   position: fixed;
