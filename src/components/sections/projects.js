@@ -4,131 +4,132 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
-import { FormattedIcon } from '@components/icons';
+import { Icon } from '@components/icons';
 import { Section, Button } from '@styles';
 
-const StyledContainer = styled(Section)`
-  ${({ theme }) => theme.mixins.flexCenter};
+const StyledProjectsSection = styled(Section)`
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-`;
-const StyledTitle = styled.h4`
-  margin: 0 auto;
-  font-size: ${({ theme }) => theme.fontSizes.h3};
+  align-items: center;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
-    font-size: 24px;
+  h2 {
+    font-size: ${({ theme }) => theme.fontSizes.heading};
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: 24px;
+    }
   }
 
-  a {
-    display: block;
+  .archive-link {
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    &:after {
+      bottom: 0.1em;
+    }
   }
-`;
-const StyledArchiveLink = styled(Link)`
-  ${({ theme }) => theme.mixins.inlineLink};
-  text-align: center;
-  margin: 0 auto;
-  font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  &:after {
-    bottom: 0.1em;
-  }
-`;
-const StyledGrid = styled.div`
-  margin-top: 50px;
 
-  .projects {
+  .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
+    margin-top: 50px;
 
     @media (${({ theme }) => theme.bp.desktopS}) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }
+
+  .more-button {
+    margin: 80px auto 0;
+  }
 `;
-const StyledProjectInner = styled.div`
-  ${({ theme }) => theme.mixins.boxShadow};
-  ${({ theme }) => theme.mixins.flexBetween};
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  padding: 2rem 1.75rem;
-  height: 100%;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  transition: ${({ theme }) => theme.transition};
-  background-color: ${({ theme }) => theme.colors.lightNavy};
-`;
+
 const StyledProject = styled.div`
   transition: ${({ theme }) => theme.transition};
   cursor: default;
+
   &:hover,
   &:focus {
     outline: 0;
-    ${StyledProjectInner} {
+    .project-inner {
       transform: translateY(-5px);
     }
   }
-`;
-const StyledProjectHeader = styled.div`
-  ${({ theme }) => theme.mixins.flexBetween};
-  margin-bottom: 30px;
-`;
-const StyledFolder = styled.div`
-  color: ${({ theme }) => theme.colors.green};
-  svg {
-    width: 40px;
-    height: 40px;
-  }
-`;
-const StyledProjectLinks = styled.div`
-  margin-right: -10px;
-  color: ${({ theme }) => theme.colors.lightSlate};
-`;
-const StyledIconLink = styled.a`
-  position: relative;
-  top: -10px;
-  padding: 10px;
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-`;
-const StyledProjectName = styled.h5`
-  margin: 0 0 10px;
-  font-size: ${({ theme }) => theme.fontSizes.xxl};
-  color: ${({ theme }) => theme.colors.lightestSlate};
-`;
-const StyledProjectDescription = styled.div`
-  font-size: 17px;
-  color: ${({ theme }) => theme.colors.lightSlate};
-  a {
-    ${({ theme }) => theme.mixins.inlineLink};
-  }
-`;
-const StyledTechList = styled.ul`
-  display: flex;
-  align-items: flex-end;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 20px 0 0 0;
-  list-style: none;
 
-  li {
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.xs};
-    color: ${({ theme }) => theme.colors.slate};
-    line-height: 1.75;
-    margin-right: 15px;
-    &:last-of-type {
-      margin-right: 0;
+  .project-inner {
+    ${({ theme }) => theme.mixins.boxShadow};
+    ${({ theme }) => theme.mixins.flexBetween};
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 2rem 1.75rem;
+    height: 100%;
+    border-radius: ${({ theme }) => theme.borderRadius};
+    transition: ${({ theme }) => theme.transition};
+    background-color: ${({ theme }) => theme.colors.lightNavy};
+  }
+
+  .project-top {
+    ${({ theme }) => theme.mixins.flexBetween};
+    margin-bottom: 30px;
+
+    .folder {
+      color: ${({ theme }) => theme.colors.green};
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .project-links {
+      margin-right: -10px;
+      color: ${({ theme }) => theme.colors.lightSlate};
+
+      a {
+        padding: 5px 10px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
-`;
-const StyledMoreButton = styled(Button)`
-  margin: 100px auto 0;
+
+  .project-title {
+    margin: 0 0 10px;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    color: ${({ theme }) => theme.colors.lightestSlate};
+  }
+
+  .project-description {
+    font-size: 17px;
+    color: ${({ theme }) => theme.colors.lightSlate};
+    a {
+      ${({ theme }) => theme.mixins.inlineLink};
+    }
+  }
+
+  .project-tech-list {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+
+    li {
+      font-family: ${({ theme }) => theme.fonts.SFMono};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
+      color: ${({ theme }) => theme.colors.slate};
+      line-height: 1.75;
+
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
+    }
+  }
 `;
 
 const Projects = () => {
@@ -173,74 +174,80 @@ const Projects = () => {
   const projectsToShow = showMore ? projects : firstSix;
 
   return (
-    <StyledContainer>
-      <StyledTitle ref={revealTitle}>Other Noteworthy Projects</StyledTitle>
-      <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
+    <StyledProjectsSection>
+      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+
+      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive
-      </StyledArchiveLink>
+      </Link>
 
-      <StyledGrid>
-        <TransitionGroup className="projects">
-          {projectsToShow &&
-            projectsToShow.map(({ node }, i) => {
-              const { frontmatter, html } = node;
-              const { github, external, title, tech } = frontmatter;
-              return (
-                <CSSTransition
+      <TransitionGroup className="projects-grid">
+        {projectsToShow &&
+          projectsToShow.map(({ node }, i) => {
+            const { frontmatter, html } = node;
+            const { github, external, title, tech } = frontmatter;
+
+            return (
+              <CSSTransition
+                key={i}
+                classNames="fadeup"
+                timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                exit={false}>
+                <StyledProject
                   key={i}
-                  classNames="fadeup"
-                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}>
-                  <StyledProject
-                    key={i}
-                    ref={el => (revealProjects.current[i] = el)}
-                    tabIndex="0"
-                    style={{
-                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}>
-                    <StyledProjectInner>
-                      <header>
-                        <StyledProjectHeader>
-                          <StyledFolder>
-                            <FormattedIcon name="Folder" />
-                          </StyledFolder>
-                          <StyledProjectLinks>
-                            {github && (
-                              <StyledIconLink href={github} aria-label="GitHub Link">
-                                <FormattedIcon name="GitHub" />
-                              </StyledIconLink>
-                            )}
-                            {external && (
-                              <StyledIconLink href={external} aria-label="External Link">
-                                <FormattedIcon name="External" />
-                              </StyledIconLink>
-                            )}
-                          </StyledProjectLinks>
-                        </StyledProjectHeader>
-                        <StyledProjectName>{title}</StyledProjectName>
-                        <StyledProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
-                      </header>
-                      <footer>
-                        {tech && (
-                          <StyledTechList>
-                            {tech.map((tech, i) => (
-                              <li key={i}>{tech}</li>
-                            ))}
-                          </StyledTechList>
-                        )}
-                      </footer>
-                    </StyledProjectInner>
-                  </StyledProject>
-                </CSSTransition>
-              );
-            })}
-        </TransitionGroup>
-      </StyledGrid>
+                  ref={el => (revealProjects.current[i] = el)}
+                  tabIndex="0"
+                  style={{
+                    transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                  }}>
+                  <div className="project-inner">
+                    <header>
+                      <div className="project-top">
+                        <div className="folder">
+                          <Icon name="Folder" />
+                        </div>
+                        <div className="project-links">
+                          {github && (
+                            <a href={github} aria-label="GitHub Link">
+                              <Icon name="GitHub" />
+                            </a>
+                          )}
+                          {external && (
+                            <a href={external} aria-label="External Link">
+                              <Icon name="External" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
 
-      <StyledMoreButton onClick={() => setShowMore(!showMore)}>
+                      <h3 className="project-title">{title}</h3>
+
+                      <div
+                        className="project-description"
+                        dangerouslySetInnerHTML={{ __html: html }}
+                      />
+                    </header>
+
+                    <footer>
+                      {tech && (
+                        <ul className="project-tech-list">
+                          {tech.map((tech, i) => (
+                            <li key={i}>{tech}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </footer>
+                  </div>
+                </StyledProject>
+              </CSSTransition>
+            );
+          })}
+      </TransitionGroup>
+
+      <Button className="more-button" onClick={() => setShowMore(!showMore)}>
         Show {showMore ? 'Less' : 'More'}
-      </StyledMoreButton>
-    </StyledContainer>
+      </Button>
+    </StyledProjectsSection>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedIcon } from '@components/icons';
+import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 
@@ -96,7 +96,7 @@ const Footer = () => {
             socialMedia.map(({ name, url }, i) => (
               <li key={i}>
                 <a href={url} aria-label={name}>
-                  <FormattedIcon name={name} />
+                  <Icon name={name} />
                 </a>
               </li>
             ))}
@@ -110,11 +110,11 @@ const Footer = () => {
           {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">
               <span>
-                <FormattedIcon name="Star" />
+                <Icon name="Star" />
                 <span>{githubInfo.stars.toLocaleString()}</span>
               </span>
               <span>
-                <FormattedIcon name="Fork" />
+                <Icon name="Fork" />
                 <span>{githubInfo.forks.toLocaleString()}</span>
               </span>
             </div>

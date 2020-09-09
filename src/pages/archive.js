@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
-import { FormattedIcon } from '@components/icons';
+import { Icon } from '@components/icons';
 import { Main } from '@styles';
 
 const StyledTableContainer = styled.div`
@@ -170,22 +170,22 @@ const ArchivePage = ({ location, data }) => {
                         <span>
                           {external && (
                             <a href={external} aria-label="External Link">
-                              <FormattedIcon name="External" />
+                              <Icon name="External" />
                             </a>
                           )}
                           {github && (
                             <a href={github} aria-label="GitHub Link">
-                              <FormattedIcon name="GitHub" />
+                              <Icon name="GitHub" />
                             </a>
                           )}
                           {ios && (
                             <a href={ios} aria-label="Apple App Store Link">
-                              <FormattedIcon name="AppStore" />
+                              <Icon name="AppStore" />
                             </a>
                           )}
                           {android && (
                             <a href={android} aria-label="Google Play Store Link">
-                              <FormattedIcon name="PlayStore" />
+                              <Icon name="PlayStore" />
                             </a>
                           )}
                         </span>

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { FormattedIcon } from '@components/icons';
+import { Icon } from '@components/icons';
 import { Section, Heading } from '@styles';
 
 const StyledProject = styled.div`
@@ -12,13 +12,17 @@ const StyledProject = styled.div`
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
-  margin-bottom: 100px;
-  @media (${({ theme }) => theme.bp.tabletL}) {
-    margin-bottom: 70px;
-  }
 
-  &:last-of-type {
-    margin-bottom: 0;
+  &:not(:last-of-type) {
+    margin-bottom: 100px;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      margin-bottom: 70px;
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      margin-bottom: 30px;
+    }
   }
 
   &:nth-of-type(odd) {
@@ -201,6 +205,7 @@ const StyledProject = styled.div`
           filter: none;
         }
       }
+
       &:before {
         content: '';
         position: absolute;
@@ -298,12 +303,12 @@ const Featured = () => {
                   <div className="project-links">
                     {github && (
                       <a href={github} aria-label="GitHub Link">
-                        <FormattedIcon name="GitHub" />
+                        <Icon name="GitHub" />
                       </a>
                     )}
                     {external && (
                       <a href={external} aria-label="External Link">
-                        <FormattedIcon name="External" />
+                        <Icon name="External" />
                       </a>
                     )}
                   </div>

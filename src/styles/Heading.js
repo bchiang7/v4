@@ -6,7 +6,7 @@ const Heading = styled.h2`
   position: relative;
   margin: 10px 0 40px;
   width: 100%;
-  font-size: ${({ theme }) => theme.fontSizes.h3};
+  font-size: ${({ theme }) => theme.fontSizes.heading};
   white-space: nowrap;
 
   @media (${({ theme }) => theme.bp.tabletL}) {

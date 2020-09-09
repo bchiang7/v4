@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { socialMedia } from '@config';
 import { Side } from '@components';
-import { FormattedIcon } from '@components/icons';
+import { Icon } from '@components/icons';
 import styled from 'styled-components';
 
 const StyledSocialList = styled.ul`
@@ -50,7 +50,7 @@ const Social = ({ isHome }) => (
         socialMedia.map(({ url, name }, i) => (
           <li key={i}>
             <a href={url} aria-label={name}>
-              <FormattedIcon name={name} />
+              <Icon name={name} />
             </a>
           </li>
         ))}

@@ -34,7 +34,7 @@ const theme = {
     lg: '18px',
     xl: '20px',
     xxl: '22px',
-    h3: '32px',
+    heading: '32px',
   },
 
   bp: {
