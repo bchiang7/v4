@@ -11,8 +11,8 @@ const StyledAboutSection = styled(Section)`
 
   .inner {
     display: grid;
-    grid-template-columns: auto 300px;
-    grid-gap: 60px;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 50px;
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       display: block;
@@ -52,7 +52,7 @@ const StyledPic = styled.div`
   max-width: 300px;
 
   @media (${({ theme }) => theme.bp.tabletL}) {
-    margin: 60px auto 0;
+    margin: 50px auto 0;
     width: 70%;
   }
 

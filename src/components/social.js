@@ -5,7 +5,7 @@ import { Side } from '@components';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
 
-const StyledList = styled.ul`
+const StyledSocialList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,38 +22,37 @@ const StyledList = styled.ul`
     background-color: ${({ theme }) => theme.colors.lightSlate};
   }
 
-  li:last-of-type {
-    margin-bottom: 20px;
-  }
-`;
-const StyledLink = styled.a`
-  padding: 10px;
-  &:hover,
-  &:focus {
-    transform: translateY(-3px);
-  }
-  svg {
-    width: 18px;
-    height: 18px;
+  li {
+    padding: 10px;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+    }
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 
 const Social = ({ isHome }) => (
   <Side isHome={isHome} orientation="left">
-    <StyledList>
+    <StyledSocialList>
       {socialMedia &&
         socialMedia.map(({ url, name }, i) => (
           <li key={i}>
-            <StyledLink
-              href={url}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              aria-label={name}>
+            <a href={url} target="_blank" rel="nofollow noopener noreferrer" aria-label={name}>
               <FormattedIcon name={name} />
-            </StyledLink>
+            </a>
           </li>
         ))}
-    </StyledList>
+    </StyledSocialList>
   </Side>
 );
 

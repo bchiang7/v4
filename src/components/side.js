@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { loaderDelay } from '@utils';
 
-const StyledContainer = styled.div`
+const StyledSideElement = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -14,8 +14,10 @@ const StyledContainer = styled.div`
   color: ${({ theme }) => theme.colors.lightSlate};
 
   @media (${({ theme }) => theme.bp.desktopS}) {
-    right: 25px;
+    left: ${props => (props.orientation === 'left' ? '20px' : 'auto')};
+    right: ${props => (props.orientation === 'left' ? 'auto' : '20px')};
   }
+
   @media (${({ theme }) => theme.bp.tabletL}) {
     display: none;
   }
@@ -33,7 +35,7 @@ const Side = ({ children, isHome, orientation }) => {
   }, []);
 
   return (
-    <StyledContainer orientation={orientation}>
+    <StyledSideElement orientation={orientation}>
       <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? loaderDelay : 0}>
@@ -41,7 +43,7 @@ const Side = ({ children, isHome, orientation }) => {
           </CSSTransition>
         )}
       </TransitionGroup>
-    </StyledContainer>
+    </StyledSideElement>
   );
 };
 

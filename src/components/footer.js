@@ -4,7 +4,7 @@ import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 
-const StyledContainer = styled.footer`
+const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   padding: 15px;
@@ -12,51 +12,57 @@ const StyledContainer = styled.footer`
   height: auto;
   min-height: 70px;
 `;
-const StyledSocial = styled.div`
+const StyledSocialLinks = styled.div`
   color: ${({ theme }) => theme.colors.lightSlate};
   width: 100%;
   max-width: 270px;
   margin: 0 auto 10px;
   display: none;
+
   @media (${({ theme }) => theme.bp.tabletL}) {
     display: block;
   }
-`;
-const StyledSocialList = styled.ul`
-  ${({ theme }) => theme.mixins.flexBetween};
-  padding: 0;
-  margin: 0;
-  list-style: none;
-`;
-const StyledSocialLink = styled.a`
-  padding: 10px;
-  svg {
-    width: 20px;
-    height: 20px;
+
+  ul {
+    ${({ theme }) => theme.mixins.flexBetween};
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    a {
+      padding: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 `;
-const StyledMetadata = styled.div`
+
+const StyledCredit = styled.div`
   font-family: ${({ theme }) => theme.fonts.SFMono};
   font-size: ${({ theme }) => theme.fontSizes.xs};
   line-height: 1;
-`;
-const StyledGitHubLink = styled.a`
   color: ${({ theme }) => theme.colors.lightSlate};
-  padding: 10px;
-`;
-const StyledGitHubInfo = styled.div`
-  margin-top: 10px;
 
-  & > span {
-    display: inline-flex;
-    align-items: center;
-    margin: 0 7px;
+  a {
+    padding: 10px;
   }
-  svg {
-    display: inline-block;
-    height: 15px;
-    width: auto;
-    margin-right: 5px;
+
+  .github-stats {
+    margin-top: 10px;
+
+    & > span {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 7px;
+    }
+    svg {
+      display: inline-block;
+      width: auto;
+      height: 15px;
+      margin-right: 5px;
+    }
   }
 `;
 
@@ -83,32 +89,26 @@ const Footer = () => {
   }, []);
 
   return (
-    <StyledContainer>
-      <StyledSocial>
-        <StyledSocialList>
+    <StyledFooter>
+      <StyledSocialLinks>
+        <ul>
           {socialMedia &&
             socialMedia.map(({ name, url }, i) => (
               <li key={i}>
-                <StyledSocialLink
-                  href={url}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  aria-label={name}>
+                <a href={url} aria-label={name}>
                   <FormattedIcon name={name} />
-                </StyledSocialLink>
+                </a>
               </li>
             ))}
-        </StyledSocialList>
-      </StyledSocial>
-      <StyledMetadata tabindex="-1">
-        <StyledGitHubLink
-          href="https://github.com/bchiang7/v4"
-          target="_blank"
-          rel="nofollow noopener noreferrer">
+        </ul>
+      </StyledSocialLinks>
+
+      <StyledCredit tabindex="-1">
+        <a href="https://github.com/bchiang7/v4">
           <div>Designed &amp; Built by Brittany Chiang</div>
 
           {githubInfo.stars && githubInfo.forks && (
-            <StyledGitHubInfo>
+            <div className="github-stats">
               <span>
                 <FormattedIcon name="Star" />
                 <span>{githubInfo.stars.toLocaleString()}</span>
@@ -117,11 +117,11 @@ const Footer = () => {
                 <FormattedIcon name="Fork" />
                 <span>{githubInfo.forks.toLocaleString()}</span>
               </span>
-            </StyledGitHubInfo>
+            </div>
           )}
-        </StyledGitHubLink>
-      </StyledMetadata>
-    </StyledContainer>
+        </a>
+      </StyledCredit>
+    </StyledFooter>
   );
 };
 

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { email } from '@config';
 import { Side } from '@components';
-import styled from 'styled-components';
 
 const StyledLinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+
   &:after {
     content: '';
     display: block;
@@ -17,28 +18,30 @@ const StyledLinkWrapper = styled.div`
     margin: 0 auto;
     background-color: ${({ theme }) => theme.colors.lightSlate};
   }
-`;
-const StyledEmailLink = styled.a`
-  font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-  letter-spacing: 0.1em;
-  writing-mode: vertical-rl;
-  margin: 20px auto;
-  padding: 10px;
 
-  &:hover,
-  &:focus {
-    transform: translateY(-3px);
+  a {
+    margin: 20px auto;
+    padding: 10px;
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+    }
   }
 `;
 
 const Email = ({ isHome }) => (
   <Side isHome={isHome} orientation="right">
     <StyledLinkWrapper>
-      <StyledEmailLink href={`mailto:${email}`}>{email}</StyledEmailLink>
+      <a href={`mailto:${email}`}>{email}</a>
     </StyledLinkWrapper>
   </Side>
 );
+
 Email.propTypes = {
   isHome: PropTypes.bool,
 };
