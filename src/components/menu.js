@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { navLinks } from '@config';
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
+const StyledMenu = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -22,7 +22,8 @@ const StyledContainer = styled.div`
     display: block;
   }
 `;
-const Sidebar = styled.aside`
+
+const StyledSidebar = styled.aside`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.lightNavy};
@@ -44,60 +45,65 @@ const Sidebar = styled.aside`
   @media (${({ theme }) => theme.bp.mobileS}) {
     padding: 10px;
   }
-`;
-const NavLinks = styled.nav`
-  ${({ theme }) => theme.mixins.flexBetween};
-  width: 100%;
-  flex-direction: column;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.lightestSlate};
-`;
-const NavList = styled.ol`
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  width: 100%;
-`;
-const NavListItem = styled.li`
-  margin: 0 auto 20px;
-  position: relative;
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  counter-increment: item 1;
 
-  @media (${({ theme }) => theme.bp.tabletS}) {
-    margin: 0 auto 10px;
-    font-size: ${({ theme }) => theme.fontSizes.md};
+  nav {
+    ${({ theme }) => theme.mixins.flexBetween};
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    color: ${({ theme }) => theme.colors.lightestSlate};
   }
 
-  @media (${({ theme }) => theme.bp.mobileS}) {
-    font-size: ${({ theme }) => theme.fontSizes.smish};
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+
+    li {
+      margin: 0 auto 20px;
+      position: relative;
+      font-size: ${({ theme }) => theme.fontSizes.lg};
+      counter-increment: item 1;
+
+      @media (${({ theme }) => theme.bp.tabletS}) {
+        margin: 0 auto 10px;
+        font-size: ${({ theme }) => theme.fontSizes.md};
+      }
+
+      @media (${({ theme }) => theme.bp.mobileS}) {
+        font-size: ${({ theme }) => theme.fontSizes.smish};
+      }
+
+      &:before {
+        display: block;
+        content: '0' counter(item) '.';
+        color: ${({ theme }) => theme.colors.green};
+        font-size: ${({ theme }) => theme.fontSizes.sm};
+        margin-bottom: 5px;
+      }
+    }
+
+    a {
+      ${({ theme }) => theme.mixins.link};
+      padding: 3px 20px 20px;
+      width: 100%;
+    }
   }
 
-  &:before {
-    display: block;
-    content: '0' counter(item) '.';
-    color: ${({ theme }) => theme.colors.green};
-    font-size: ${({ theme }) => theme.fontSizes.sm};
-    margin-bottom: 5px;
+  .resume-link {
+    ${({ theme }) => theme.mixins.bigButton};
+    padding: 18px 50px;
+    margin: 10% auto 0;
+    width: max-content;
   }
-`;
-const NavLink = styled(Link)`
-  ${({ theme }) => theme.mixins.link};
-  padding: 3px 20px 20px;
-  width: 100%;
-`;
-const ResumeLink = styled.a`
-  ${({ theme }) => theme.mixins.bigButton};
-  padding: 18px 50px;
-  margin: 10% auto 0;
-  width: max-content;
 `;
 
 const Menu = ({ menuOpen, toggleMenu }) => {
   const handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
-    const isNotMenu = target.classList && target.classList[0].includes('StyledContainer');
+    const isNotMenu = target.classList && target.classList[0].includes('StyledMenu');
 
     if (isLink || isNotMenu) {
       toggleMenu();
@@ -105,25 +111,28 @@ const Menu = ({ menuOpen, toggleMenu }) => {
   };
 
   return (
-    <StyledContainer
+    <StyledMenu
       menuOpen={menuOpen}
       onClick={handleMenuClick}
       aria-hidden={!menuOpen}
       tabIndex={menuOpen ? 1 : -1}>
-      <Sidebar>
-        <NavLinks>
-          <NavList>
-            {navLinks &&
-              navLinks.map(({ url, name }, i) => (
-                <NavListItem key={i}>
-                  <NavLink to={url}>{name}</NavLink>
-                </NavListItem>
+      <StyledSidebar>
+        <nav>
+          {navLinks && (
+            <ol>
+              {navLinks.map(({ url, name }, i) => (
+                <li key={i}>
+                  <Link to={url}>{name}</Link>
+                </li>
               ))}
-          </NavList>
-          <ResumeLink href="/resume.pdf">Resume</ResumeLink>
-        </NavLinks>
-      </Sidebar>
-    </StyledContainer>
+            </ol>
+          )}
+          <a href="/resume.pdf" className="resume-link">
+            Resume
+          </a>
+        </nav>
+      </StyledSidebar>
+    </StyledMenu>
   );
 };
 

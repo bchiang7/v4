@@ -9,7 +9,7 @@ import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 
-const StyledContainer = styled.header`
+const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
   position: fixed;
   top: 0;
@@ -251,7 +251,7 @@ class Nav extends Component {
     const fadeDownClass = isHome ? 'fadedown' : '';
 
     return (
-      <StyledContainer scrollDirection={scrollDirection}>
+      <StyledHeader scrollDirection={scrollDirection}>
         <Helmet>
           <body className={menuOpen ? 'blur' : ''} />
         </Helmet>
@@ -316,7 +316,7 @@ class Nav extends Component {
         </StyledNav>
 
         <Menu menuOpen={menuOpen} toggleMenu={this.toggleMenu} />
-      </StyledContainer>
+      </StyledHeader>
     );
   }
 }
