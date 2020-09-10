@@ -3,12 +3,10 @@ import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
-import { Main, theme } from '@styles';
-const { colors } = theme;
+import { Layout } from '@components';
 
-const StyledPostContainer = styled(Main)`
+const StyledPostContainer = styled.main`
   max-width: 1000px;
 `;
 const StyledPostHeader = styled.header`
@@ -31,7 +29,7 @@ const StyledPostContent = styled.div`
   p {
     margin: 1em 0;
     line-height: 1.5;
-    color: ${colors.lightSlate};
+    color: ${({ theme }) => theme.colors.lightSlate};
   }
 `;
 

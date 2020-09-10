@@ -1,6 +1,4 @@
 import { css } from 'styled-components';
-import theme from './theme';
-const { colors, fontSizes, fonts } = theme;
 
 const prismColors = {
   bg: `#112340`,
@@ -25,19 +23,19 @@ const PrismStyles = css`
   .gatsby-highlight {
     background-color: ${prismColors.bg};
     color: ${prismColors.variable};
-    border-radius: ${theme.borderRadius};
+    border-radius: ${({ theme }) => theme.borderRadius};
     margin: 2em 0;
     padding: 1.25em;
     overflow: auto;
     position: relative;
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.md};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.md};
   }
 
   .gatsby-highlight code[class*='language-'],
   .gatsby-highlight pre[class*='language-'] {
     height: auto !important;
-    font-size: ${fontSizes.sm};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
     line-height: 1.5;
     white-space: pre;
     word-spacing: normal;
@@ -67,12 +65,12 @@ const PrismStyles = css`
   /* File names */
   .gatsby-code-title {
     padding: 1em 1.5em;
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.smish};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     background-color: ${prismColors.bg};
     color: ${prismColors.grey};
-    border-top-left-radius: ${theme.borderRadius};
-    border-top-right-radius: ${theme.borderRadius};
+    border-top-left-radius: ${({ theme }) => theme.borderRadius};
+    border-top-right-radius: ${({ theme }) => theme.borderRadius};
     border-bottom: 1px solid ${prismColors.lineHighlight};
 
     & + .gatsby-highlight {
@@ -86,7 +84,7 @@ const PrismStyles = css`
   .gatsby-highlight-code-line {
     display: block;
     background-color: ${prismColors.lineHighlight};
-    border-left: 2px solid ${colors.green};
+    border-left: 2px solid ${({ theme }) => theme.colors.green};
     padding-left: calc(1em + 2px);
     padding-right: 1em;
     margin-right: -1.35em;
@@ -95,10 +93,10 @@ const PrismStyles = css`
 
   /* Language badges */
   .gatsby-highlight pre[class*='language-']::before {
-    background: ${colors.lightestNavy};
-    color: ${colors.white};
-    font-size: ${fontSizes.xs};
-    font-family: ${fonts.SFMono};
+    background: ${({ theme }) => theme.colors.lightestNavy};
+    color: ${({ theme }) => theme.colors.white};
+    font-size: ${({ theme }) => theme.fontSizes.xxs};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
     line-height: 1.5;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -213,7 +211,7 @@ const PrismStyles = css`
   }
   .token.important,
   .token.bold {
-    font-weight: bold;
+    font-weight: 600;
   }
   .token.italic {
     font-style: italic;

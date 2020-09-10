@@ -3,29 +3,28 @@ import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, mixins, Main } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { Layout } from '@components';
 
-const StyledTagsContainer = styled(Main)`
+const StyledTagsContainer = styled.main`
   max-width: 1000px;
 
   h1 {
     margin-bottom: 50px;
   }
   ul {
-    color: ${colors.lightSlate};
+    color: ${({ theme }) => theme.colors.lightSlate};
+
     li {
-      font-size: ${fontSizes.xxl};
+      font-size: ${({ theme }) => theme.fontSizes.xxl};
 
       a {
-        ${mixins.inlineLink};
-        color: ${colors.lightSlate};
+        color: ${({ theme }) => theme.colors.lightSlate};
+
         .count {
-          color: ${colors.slate};
-          font-family: ${fonts.SFMono};
-          font-size: ${fontSizes.md};
+          color: ${({ theme }) => theme.colors.slate};
+          font-family: ${({ theme }) => theme.fonts.SFMono};
+          font-size: ${({ theme }) => theme.fontSizes.md};
         }
       }
     }
@@ -54,7 +53,7 @@ const TagsPage = ({
       <ul className="fancy-list">
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`} className="inline-link">
               {tag.fieldValue} <span className="count">({tag.totalCount})</span>
             </Link>
           </li>

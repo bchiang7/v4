@@ -1,211 +1,271 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
-import { FormattedIcon } from '@components/icons';
-import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '@styles';
-const { colors, fontSizes, fonts } = theme;
+import { Icon } from '@components/icons';
 
-const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
-`;
-const StyledContent = styled.div`
-  position: relative;
-  grid-column: 1 / 7;
-  grid-row: 1 / -1;
-  ${media.thone`
-    grid-column: 1 / -1;
-    padding: 40px 40px 30px;
-    z-index: 5;
-  `};
-  ${media.phablet`padding: 30px 25px 20px;`};
-`;
-const StyledLabel = styled.h4`
-  font-size: ${fontSizes.smish};
-  font-weight: normal;
-  color: ${colors.green};
-  font-family: ${fonts.SFMono};
-  margin-top: 10px;
-  padding-top: 0;
-`;
-const StyledProjectName = styled.h5`
-  font-size: 28px;
-  margin: 0 0 20px;
-  color: ${colors.lightestSlate};
-  ${media.tablet`font-size: 24px;`};
-  ${media.thone`color: ${colors.white};`};
-  a {
-    ${media.tablet`display: block;`};
-  }
-`;
-const StyledDescription = styled.div`
-  ${mixins.boxShadow};
-  position: relative;
-  z-index: 2;
-  padding: 25px;
-  background-color: ${colors.lightNavy};
-  color: ${colors.lightSlate};
-  font-size: ${fontSizes.lg};
-  border-radius: ${theme.borderRadius};
-  ${media.thone`
-    background-color: transparent;
-    padding: 20px 0;
-    box-shadow: none;
-    &:hover {
-      box-shadow: none;
-    }
-  `};
-  p {
-    margin: 0;
-  }
-  a {
-    ${mixins.inlineLink};
-  }
-`;
-const StyledTechList = styled.ul`
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 25px 0 10px;
-  list-style: none;
-
-  li {
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.smish};
-    color: ${colors.slate};
-    margin-right: ${theme.margin};
-    margin-bottom: 7px;
-    white-space: nowrap;
-    &:last-of-type {
-      margin-right: 0;
-    }
-    ${media.thone`
-      color: ${colors.lightestSlate};
-      margin-right: 10px;
-    `};
-  }
-`;
-const StyledLinkWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-top: 10px;
-  margin-left: -10px;
-  color: ${colors.lightestSlate};
-  a {
-    padding: 10px;
-    svg {
-      width: 22px;
-      height: 22px;
-    }
-  }
-`;
-const StyledFeaturedImg = styled(Img)`
-  width: 100%;
-  max-width: 100%;
-  vertical-align: middle;
-  border-radius: ${theme.borderRadius};
-  position: relative;
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1) brightness(90%);
-  ${media.tablet`
-    object-fit: cover;
-    width: auto;
-    height: 100%;
-    filter: grayscale(100%) contrast(1) brightness(80%);
-  `};
-`;
-const StyledImgContainer = styled.a`
-  ${mixins.boxShadow};
-  grid-column: 6 / -1;
-  grid-row: 1 / -1;
-  position: relative;
-  z-index: 1;
-  background-color: ${colors.green};
-  border-radius: ${theme.radius + 1}px;
-  transition: ${theme.transition};
-  ${media.tablet`height: 100%;`};
-  ${media.thone`
-    grid-column: 1 / -1;
-    opacity: 0.25;
-  `};
-  &:hover,
-  &:focus {
-    background: transparent;
-    &:before,
-    ${StyledFeaturedImg} {
-      background: transparent;
-      filter: none;
-    }
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-    transition: ${theme.transition};
-    background-color: ${colors.navy};
-    mix-blend-mode: screen;
-  }
-`;
 const StyledProject = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
-  margin-bottom: 100px;
-  ${media.thone`
-    margin-bottom: 70px;
-  `};
-  &:last-of-type {
-    margin-bottom: 0;
+
+  &:not(:last-of-type) {
+    margin-bottom: 100px;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      margin-bottom: 70px;
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      margin-bottom: 30px;
+    }
   }
+
   &:nth-of-type(odd) {
-    ${StyledContent} {
+    .project-content {
       grid-column: 7 / -1;
       text-align: right;
-      ${media.thone`
+
+      @media (${({ theme }) => theme.bp.desktopS}) {
+        grid-column: 5 / -1;
+      }
+      @media (${({ theme }) => theme.bp.tabletL}) {
         grid-column: 1 / -1;
         padding: 40px 40px 30px;
-      `};
-      ${media.phablet`padding: 30px 25px 20px;`};
-    }
-    ${StyledTechList} {
-      justify-content: flex-end;
-      li {
-        margin-left: ${theme.margin};
-        margin-right: 0;
+      }
+      @media (${({ theme }) => theme.bp.mobileL}) {
+        padding: 25px 25px 20px;
       }
     }
-    ${StyledLinkWrapper} {
+    .project-tech-list {
+      justify-content: flex-end;
+
+      li {
+        margin: 0 0 5px ${({ theme }) => theme.margin};
+
+        @media (${({ theme }) => theme.bp.tabletL}) {
+          margin: 0 0 5px 10px;
+        }
+      }
+    }
+    .project-links {
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -10px;
     }
-    ${StyledImgContainer} {
+    .project-image {
       grid-column: 1 / 8;
-      ${media.tablet`height: 100%;`};
-      ${media.thone`
+
+      @media (${({ theme }) => theme.bp.tabletL}) {
         grid-column: 1 / -1;
-        opacity: 0.25;
-      `};
+      }
+    }
+  }
+
+  .project-content {
+    position: relative;
+    grid-column: 1 / 7;
+    grid-row: 1 / -1;
+
+    @media (${({ theme }) => theme.bp.desktopS}) {
+      grid-column: 1 / 9;
+    }
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      grid-column: 1 / -1;
+      padding: 40px 40px 30px;
+      z-index: 5;
+    }
+
+    @media (${({ theme }) => theme.bp.mobileL}) {
+      padding: 30px 25px 20px;
+    }
+  }
+
+  .project-overline {
+    color: ${({ theme }) => theme.colors.green};
+    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    font-weight: 400;
+    margin: 10px 0 5px;
+    padding-top: 0;
+  }
+
+  .project-title {
+    font-size: 28px;
+    margin: 0 0 20px;
+    color: ${({ theme }) => theme.colors.lightestSlate};
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      font-size: 24px;
+    }
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      color: ${({ theme }) => theme.colors.white};
+    }
+  }
+
+  .project-description {
+    ${({ theme }) => theme.mixins.boxShadow};
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: ${({ theme }) => theme.borderRadius};
+    background-color: ${({ theme }) => theme.colors.lightNavy};
+    color: ${({ theme }) => theme.colors.lightSlate};
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      background-color: transparent;
+      padding: 20px 0;
+      box-shadow: none;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    a {
+      ${({ theme }) => theme.mixins.inlineLink};
+    }
+  }
+
+  .project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 25px 0 10px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 7px;
+      color: ${({ theme }) => theme.colors.lightSlate};
+      font-family: ${({ theme }) => theme.fonts.SFMono};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
+      white-space: nowrap;
+      margin: 0 ${({ theme }) => theme.margin} 5px 0;
+    }
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      margin: 15px 0 10px;
+
+      li {
+        color: ${({ theme }) => theme.colors.lightestSlate};
+        margin: 0 10px 5px 0;
+      }
+    }
+  }
+
+  .project-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: -10px;
+    color: ${({ theme }) => theme.colors.lightestSlate};
+    a {
+      padding: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .project-image {
+    ${({ theme }) => theme.mixins.boxShadow};
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 1;
+
+    @media (${({ theme }) => theme.bp.tabletL}) {
+      grid-column: 1 / -1;
+      height: 100%;
+      opacity: 0.25;
+    }
+
+    a {
+      width: 100%;
+      background-color: ${({ theme }) => theme.colors.green};
+      border-radius: ${({ theme }) => theme.borderRadius};
+      vertical-align: middle;
+
+      &:hover,
+      &:focus {
+        background: transparent;
+
+        &:before,
+        .img {
+          background: transparent;
+          filter: none;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+        transition: ${({ theme }) => theme.transition};
+        background-color: ${({ theme }) => theme.colors.navy};
+        mix-blend-mode: screen;
+      }
+    }
+
+    .img {
+      border-radius: ${({ theme }) => theme.borderRadius};
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1) brightness(90%);
+
+      @media (${({ theme }) => theme.bp.tabletL}) {
+        object-fit: cover;
+        width: auto;
+        height: 100%;
+        filter: grayscale(100%) contrast(1) brightness(80%);
+      }
     }
   }
 `;
 
-const Featured = ({ data }) => {
-  const featuredProjects = data.filter(({ node }) => node);
+const Featured = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      featured: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/featured/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              cover {
+                childImageSharp {
+                  fluid(maxWidth: 700, traceSVG: { color: "#64ffda" }) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
+              }
+              tech
+              github
+              external
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
+  const featuredProjects = data.featured.edges.filter(({ node }) => node);
 
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
@@ -215,8 +275,10 @@ const Featured = ({ data }) => {
   }, []);
 
   return (
-    <StyledContainer id="projects">
-      <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
+    <section id="projects">
+      <h2 className="heading" ref={revealTitle}>
+        Some Things I’ve Built
+      </h2>
 
       <div>
         {featuredProjects &&
@@ -226,67 +288,44 @@ const Featured = ({ data }) => {
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
-                <StyledContent>
-                  <StyledLabel>Featured Project</StyledLabel>
-                  <StyledProjectName>
-                    {external ? (
-                      <a
-                        href={external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
-                        {title}
-                      </a>
-                    ) : (
-                      title
-                    )}
-                  </StyledProjectName>
-                  <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
-                  {tech && (
-                    <StyledTechList>
+                <div className="project-content">
+                  <p className="project-overline">Featured Project</p>
+                  <h3 className="project-title">{title}</h3>
+                  <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+
+                  {tech.length && (
+                    <ul className="project-tech-list">
                       {tech.map((tech, i) => (
                         <li key={i}>{tech}</li>
                       ))}
-                    </StyledTechList>
+                    </ul>
                   )}
-                  <StyledLinkWrapper>
+
+                  <div className="project-links">
                     {github && (
-                      <a
-                        href={github}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="GitHub Link">
-                        <FormattedIcon name="GitHub" />
+                      <a href={github} aria-label="GitHub Link">
+                        <Icon name="GitHub" />
                       </a>
                     )}
                     {external && (
-                      <a
-                        href={external}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
-                        <FormattedIcon name="External" />
+                      <a href={external} aria-label="External Link">
+                        <Icon name="External" />
                       </a>
                     )}
-                  </StyledLinkWrapper>
-                </StyledContent>
+                  </div>
+                </div>
 
-                <StyledImgContainer
-                  href={external ? external : github ? github : '#'}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer">
-                  <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
-                </StyledImgContainer>
+                <div className="project-image">
+                  <a href={external ? external : github ? github : '#'}>
+                    <Img fluid={cover.childImageSharp.fluid} alt={title} className="img" />
+                  </a>
+                </div>
               </StyledProject>
             );
           })}
       </div>
-    </StyledContainer>
+    </section>
   );
-};
-
-Featured.propTypes = {
-  data: PropTypes.array.isRequired,
 };
 
 export default Featured;
