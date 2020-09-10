@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
-import { Section, Heading } from '@styles';
 
 const StyledProject = styled.div`
   display: grid;
@@ -276,8 +275,10 @@ const Featured = () => {
   }, []);
 
   return (
-    <Section id="projects">
-      <Heading ref={revealTitle}>Some Things I’ve Built</Heading>
+    <section id="projects">
+      <h2 className="heading" ref={revealTitle}>
+        Some Things I’ve Built
+      </h2>
 
       <div>
         {featuredProjects &&
@@ -323,7 +324,7 @@ const Featured = () => {
             );
           })}
       </div>
-    </Section>
+    </section>
   );
 };
 

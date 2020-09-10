@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import styled from 'styled-components';
-import { Section, Heading } from '@styles';
 
-const StyledContactSection = styled(Section)`
+const StyledContactSection = styled.section`
   text-align: center;
   max-width: 600px;
   margin: 0 auto 100px;
@@ -60,7 +59,7 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <Heading className="overline">What’s Next?</Heading>
+      <h2 className="heading overline">What’s Next?</h2>
 
       <h2 className="title">Get In Touch</h2>
 

@@ -6,9 +6,8 @@ import PropTypes from 'prop-types';
 import { Layout } from '@components';
 import { IconZap } from '@components/icons';
 import styled from 'styled-components';
-import { Main } from '@styles';
 
-const StyledMainContainer = styled(Main)`
+const StyledMainContainer = styled.main`
   & > header {
     text-align: center;
     margin-bottom: 100px;

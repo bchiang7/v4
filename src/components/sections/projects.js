@@ -5,9 +5,8 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
-import { Section, Button } from '@styles';
 
-const StyledProjectsSection = styled(Section)`
+const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +39,7 @@ const StyledProjectsSection = styled(Section)`
   }
 
   .more-button {
+    ${({ theme }) => theme.mixins.button};
     margin: 80px auto 0;
   }
 `;
@@ -243,9 +243,9 @@ const Projects = () => {
           })}
       </TransitionGroup>
 
-      <Button className="more-button" onClick={() => setShowMore(!showMore)}>
+      <button className="more-button" onClick={() => setShowMore(!showMore)}>
         Show {showMore ? 'Less' : 'More'}
-      </Button>
+      </button>
     </StyledProjectsSection>
   );
 };

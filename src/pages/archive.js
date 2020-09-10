@@ -7,7 +7,6 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
-import { Main } from '@styles';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -115,7 +114,7 @@ const ArchivePage = ({ location, data }) => {
         <link rel="canonical" href="https://brittanychiang.com/archive" />
       </Helmet>
 
-      <Main>
+      <main>
         <header ref={revealTitle}>
           <h1 className="big-title">Archive</h1>
           <p className="subtitle">A big list of things I’ve worked on</p>
@@ -196,7 +195,7 @@ const ArchivePage = ({ location, data }) => {
             </tbody>
           </table>
         </StyledTableContainer>
-      </Main>
+      </main>
     </Layout>
   );
 };

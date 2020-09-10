@@ -5,9 +5,8 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
-import { Section, Heading } from '@styles';
 
-const StyledJobsSection = styled(Section)`
+const StyledJobsSection = styled.section`
   max-width: 700px;
 
   .inner {
@@ -224,7 +223,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <Heading>Where I’ve Worked</Heading>
+      <h2 className="heading">Where I’ve Worked</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={onKeyDown}>

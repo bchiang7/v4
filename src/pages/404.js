@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
 import styled from 'styled-components';
-import { Main } from '@styles';
 
-const StyledMainContainer = styled(Main)`
+const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
 `;

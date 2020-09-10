@@ -4,9 +4,8 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
-import { Section, Heading } from '@styles';
 
-const StyledAboutSection = styled(Section)`
+const StyledAboutSection = styled.section`
   max-width: 900px;
 
   .inner {
@@ -137,7 +136,7 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <Heading>About Me</Heading>
+      <h2 className="heading">About Me</h2>
 
       <div className="inner">
         <StyledText>
