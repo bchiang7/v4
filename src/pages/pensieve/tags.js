@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
+import { Layout } from '@components';
 
 const StyledTagsContainer = styled.main`
   max-width: 1000px;

@@ -3,8 +3,8 @@ import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
+import { Layout } from '@components';
 
 const StyledPostContainer = styled.main`
   max-width: 1000px;

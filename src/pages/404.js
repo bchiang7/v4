@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
-import styled from 'styled-components';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};

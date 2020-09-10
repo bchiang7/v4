@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
-import styled from 'styled-components';
 
 const StyledContactSection = styled.section`
   text-align: center;
