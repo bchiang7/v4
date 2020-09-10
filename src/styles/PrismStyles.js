@@ -66,7 +66,7 @@ const PrismStyles = css`
   .gatsby-code-title {
     padding: 1em 1.5em;
     font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.smish};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     background-color: ${prismColors.bg};
     color: ${prismColors.grey};
     border-top-left-radius: ${({ theme }) => theme.borderRadius};
@@ -95,7 +95,7 @@ const PrismStyles = css`
   .gatsby-highlight pre[class*='language-']::before {
     background: ${({ theme }) => theme.colors.lightestNavy};
     color: ${({ theme }) => theme.colors.white};
-    font-size: ${({ theme }) => theme.fontSizes.xs};
+    font-size: ${({ theme }) => theme.fontSizes.xxs};
     font-family: ${({ theme }) => theme.fonts.SFMono};
     line-height: 1.5;
     letter-spacing: 0.1em;

@@ -99,7 +99,7 @@ const StyledLinks = styled.div`
     li {
       margin: 0 5px;
       position: relative;
-      font-size: ${({ theme }) => theme.fontSizes.smish};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
       counter-increment: item 1;
 
       a {
@@ -109,7 +109,7 @@ const StyledLinks = styled.div`
           content: '0' counter(item) '.';
           margin-right: 5px;
           color: ${({ theme }) => theme.colors.green};
-          font-size: ${({ theme }) => theme.fontSizes.xs};
+          font-size: ${({ theme }) => theme.fontSizes.xxs};
           text-align: right;
         }
       }
@@ -119,7 +119,7 @@ const StyledLinks = styled.div`
   .resume-button {
     ${({ theme }) => theme.mixins.smallButton};
     margin-left: 15px;
-    font-size: ${({ theme }) => theme.fontSizes.smish};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
   }
 `;
 

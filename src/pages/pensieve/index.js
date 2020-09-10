@@ -92,7 +92,7 @@ const StyledPostDescription = styled.div`
 const StyledDate = styled.span`
   color: ${({ theme }) => theme.colors.lightSlate};
   font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-size: ${({ theme }) => theme.fontSizes.xxs};
   text-transform: uppercase;
 `;
 const StyledTags = styled.ul`
@@ -105,7 +105,7 @@ const StyledTags = styled.ul`
 
   li {
     font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.xs};
+    font-size: ${({ theme }) => theme.fontSizes.xxs};
     color: ${({ theme }) => theme.colors.green};
     line-height: 1.75;
 

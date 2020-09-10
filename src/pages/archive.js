@@ -66,7 +66,7 @@ const StyledTableContainer = styled.div`
         font-size: ${({ theme }) => theme.fontSizes.lg};
       }
       &.tech {
-        font-size: ${({ theme }) => theme.fontSizes.xs};
+        font-size: ${({ theme }) => theme.fontSizes.xxs};
         font-family: ${({ theme }) => theme.fonts.SFMono};
         line-height: 1.5;
         .separator {

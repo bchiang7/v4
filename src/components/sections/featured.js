@@ -89,7 +89,7 @@ const StyledProject = styled.div`
   .project-overline {
     color: ${({ theme }) => theme.colors.green};
     font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.smish};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     font-weight: 400;
     margin: 10px 0 5px;
     padding-top: 0;
@@ -145,7 +145,7 @@ const StyledProject = styled.div`
       margin-bottom: 7px;
       color: ${({ theme }) => theme.colors.lightSlate};
       font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.smish};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
       white-space: nowrap;
       margin: 0 ${({ theme }) => theme.margin} 5px 0;
     }

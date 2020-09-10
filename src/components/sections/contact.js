@@ -29,7 +29,7 @@ const StyledContactSection = styled(Section)`
       bottom: 0;
       font-size: ${({ theme }) => theme.fontSizes.sm};
       @media (${({ theme }) => theme.bp.desktopS}) {
-        font-size: ${({ theme }) => theme.fontSizes.smish};
+        font-size: ${({ theme }) => theme.fontSizes.xs};
       }
     }
     &:after {

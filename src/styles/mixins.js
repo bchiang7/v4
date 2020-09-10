@@ -69,7 +69,7 @@ const mixins = {
     border: 1px solid ${({ theme }) => theme.colors.green};
     border-radius: ${({ theme }) => theme.borderRadius};
     padding: 0.75rem 1rem;
-    font-size: ${({ theme }) => theme.fontSizes.smish};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     font-family: ${({ theme }) => theme.fonts.SFMono};
     line-height: 1;
     text-decoration: none;

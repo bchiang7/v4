@@ -142,7 +142,7 @@ const StyledSidebar = styled.aside`
       }
 
       @media (${({ theme }) => theme.bp.mobileS}) {
-        font-size: ${({ theme }) => theme.fontSizes.smish};
+        font-size: ${({ theme }) => theme.fontSizes.xs};
       }
 
       &:before {

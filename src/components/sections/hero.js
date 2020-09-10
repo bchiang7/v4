@@ -12,7 +12,7 @@ const StyledHeroSection = styled(Section)`
   min-height: 100vh;
 
   h1 {
-    margin: 0 0 20px 4px;
+    margin: 0 0 30px 4px;
     color: ${({ theme }) => theme.colors.green};
     font-size: ${({ theme }) => theme.fontSizes.md};
     font-family: ${({ theme }) => theme.fonts.SFMono};

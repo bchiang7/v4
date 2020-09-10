@@ -121,8 +121,7 @@ const StyledProject = styled.div`
 
     li {
       font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.xs};
-      color: ${({ theme }) => theme.colors.slate};
+      font-size: ${({ theme }) => theme.fontSizes.xxs};
       line-height: 1.75;
 
       &:not(:last-of-type) {

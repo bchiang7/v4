@@ -33,8 +33,7 @@ const StyledText = styled.div`
       margin-bottom: 10px;
       padding-left: 20px;
       font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.smish};
-      color: ${({ theme }) => theme.colors.slate};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
 
       &:before {
         content: '▹';

@@ -70,7 +70,7 @@ const StyledTabButton = styled.button`
   background-color: transparent;
   color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
   font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.smish};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
   text-align: left;
   white-space: nowrap;
 
@@ -152,7 +152,7 @@ const StyledTabContent = styled.div`
   .range {
     color: ${({ theme }) => theme.colors.lightSlate};
     font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.smish};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     margin-bottom: 30px;
   }
 `;

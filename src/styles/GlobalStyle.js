@@ -268,7 +268,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${({ theme }) => theme.fontSizes.sm};
     }
     @media (${({ theme }) => theme.bp.tabletL}) {
-      font-size: ${({ theme }) => theme.fontSizes.smish};
+      font-size: ${({ theme }) => theme.fontSizes.xs};
     }
 
     a {

@@ -41,7 +41,7 @@ const StyledSocialLinks = styled.div`
 
 const StyledCredit = styled.div`
   font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
+  font-size: ${({ theme }) => theme.fontSizes.xxs};
   line-height: 1;
   color: ${({ theme }) => theme.colors.lightSlate};
 
