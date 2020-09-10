@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
@@ -47,16 +46,6 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
-  const data = useStaticQuery(graphql`
-    query LayoutQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
@@ -96,8 +85,6 @@ const Layout = ({ children, location }) => {
   return (
     <ThemeProvider theme={theme}>
       <div id="root">
-        <Head metadata={data.site.siteMetadata} />
-
         <GlobalStyle />
 
         <SkipToContentLink href="#content">Skip to Content</SkipToContentLink>

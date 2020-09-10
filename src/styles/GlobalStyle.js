@@ -118,46 +118,24 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
+    margin: 0 0 10px 0;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.lightestSlate};
-    margin: 0 0 10px 0;
+    line-height: 1;
   }
 
-  h1 {
-    &.big-title {
-      font-size: 80px;
-      line-height: 1.1;
-      margin: 0;
-
-      @media (${({ theme }) => theme.bp.desktopS}) {
-        font-size: 70px;
-      }
-      @media (${({ theme }) => theme.bp.tabletL}) {
-        font-size: 60px;
-      }
-      @media (${({ theme }) => theme.bp.mobileL}) {
-        font-size: 50px;
-      }
-      @media (${({ theme }) => theme.bp.mobileM}) {
-        font-size: 40px;
-      }
-    }
-
-    &.medium-title {
-      font-size: 60px;
-      line-height: 1.1;
-      margin: 0;
-
-      @media (${({ theme }) => theme.bp.desktopS}) {
-        font-size: 50px;
-      }
-      @media (${({ theme }) => theme.bp.tabletL}) {
-        font-size: 40px;
-      }
-    }
+  .big-heading {
+    margin: 0;
+    font-size: clamp(40px, 10vw, 80px);
+    line-height: 1;
   }
 
-  .heading {
+  .medium-heading {
+    margin: 0;
+    font-size: clamp(40px, 5vw, 60px);
+  }
+
+  .numbered-heading {
     display: flex;
     align-items: center;
     position: relative;

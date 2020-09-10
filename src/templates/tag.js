@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Layout } from '@components';
+import { Layout, Head } from '@components';
 
 const StyledTagsContainer = styled.main`
   max-width: 1000px;
@@ -50,6 +50,8 @@ const TagTemplate = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location}>
+      <Head title={`Tagged: #${tag}`} />
+
       <StyledTagsContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>

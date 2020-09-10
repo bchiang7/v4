@@ -1,11 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
-import { Layout } from '@components';
+import { Layout, Head } from '@components';
 import { Icon } from '@components/icons';
 
 const StyledTableContainer = styled.div`
@@ -109,14 +108,11 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet>
-        <title>Archive | Brittany Chiang</title>
-        <link rel="canonical" href="https://brittanychiang.com/archive" />
-      </Helmet>
+      <Head title="Archive" />
 
       <main>
         <header ref={revealTitle}>
-          <h1 className="big-title">Archive</h1>
+          <h1 className="big-heading">Archive</h1>
           <p className="subtitle">A big list of things I’ve worked on</p>
         </header>
 

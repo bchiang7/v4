@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Layout } from '@components';
+import { Layout, Head } from '@components';
 import { IconZap } from '@components/icons';
 
 const StyledMainContainer = styled.main`
@@ -119,14 +118,11 @@ const PensievePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet>
-        <title>Pensieve | Brittany Chiang</title>
-        <link rel="canonical" href="https://brittanychiang.com/pensieve" />
-      </Helmet>
+      <Head title="Pensieve" />
 
       <StyledMainContainer>
         <header>
-          <h1 className="big-title">Pensieve</h1>
+          <h1 className="big-heading">Pensieve</h1>
           <p className="subtitle">
             <a href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve">
               a collection of memories
