@@ -16,7 +16,7 @@ const Head = ({ title, description, image }) => {
           siteMetadata {
             defaultTitle: title
             defaultDescription: description
-            siteUrl: url
+            siteUrl
             defaultImage: image
             twitterUsername
           }
