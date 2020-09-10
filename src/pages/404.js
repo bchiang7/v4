@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navDelay } from '@utils';
-import { Layout } from '@components';
+import { Layout, Head } from '@components';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -47,6 +47,8 @@ const NotFoundPage = ({ location }) => {
 
   return (
     <Layout location={location}>
+      <Head title="Page Not Found" />
+
       <TransitionGroup component={null}>
         {isMounted && (
           <CSSTransition timeout={500} classNames="fadeup">

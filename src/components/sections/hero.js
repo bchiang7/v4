@@ -22,20 +22,6 @@ const StyledHeroSection = styled.section`
     }
   }
 
-  h2,
-  h3 {
-    margin: 0;
-    font-size: 80px;
-    line-height: 0.9;
-
-    @media (${({ theme }) => theme.bp.tabletL}) {
-      font-size: 60px;
-    }
-    @media (${({ theme }) => theme.bp.mobileL}) {
-      font-size: 40px;
-    }
-  }
-
   h3 {
     margin: 10px 0 0;
     color: ${({ theme }) => theme.colors.slate};
@@ -61,8 +47,8 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2>Brittany Chiang.</h2>;
-  const three = <h3>I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
+  const three = <h3 className="big-heading">I build things for the web.</h3>;
   const four = (
     <p>
       I'm a software engineer based in Boston, MA specializing in building (and occasionally
