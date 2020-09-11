@@ -6,6 +6,59 @@ import PrismStyles from './PrismStyles';
 const GlobalStyle = createGlobalStyle`
   ${Fonts};
 
+  :root {
+    --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #172a45;
+    --lightest-navy: #303C55;
+    --navy-shadow: rgba(2, 12, 27, 0.7);
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100, 255, 218, 0.07);
+
+    --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+    --fz-xxs: 12px;
+    --fz-xs: 13px;
+    --fz-sm: 14px;
+    --fz-md: 16px;
+    --fz-lg: 18px;
+    --fz-xl: 20px;
+    --fz-xxl: 22px;
+    --fz-heading: 32px;
+
+    --bp-mobile-s: 330px;
+    --bp-mobile-m: 400px;
+    --bp-mobile-l: 480px;
+    --bp-tablet-s: 600px;
+    --bp-tablet-l: 768px;
+    --bp-desktop-xs: 900px;
+    --bp-desktop-s: 1080px;
+    --bp-desktop-m: 1200px;
+    --bp-desktop-l: 1400px;
+
+    --border-radius: 4px;
+    --nav-height: 100px;
+    --nav-scroll-height: 70px;
+
+    --tab-height: 42px;
+    --tab-width: 120px;
+
+    --easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)';
+    --transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)';
+
+    --hamburger-width: 30px;
+
+    --ham-before: 'top 0.1s ease-in 0.25s, opacity 0.1s ease-in';
+    --ham-before-active: 'top 0.1s ease-out, opacity 0.1s ease-out 0.12s';
+    --ham-after: 'bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
+    --ham-after-active: 'bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s';
+  }
+
   html {
     box-sizing: border-box;
     width: 100%;
@@ -18,8 +71,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${({ theme }) => theme.colors.slate};
-    color: ${({ theme }) => theme.colors.lightestSlate};
+    background-color: var(--slate);
+    color: var(--lightest-slate);
   }
 
   body {
@@ -29,14 +82,14 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: ${({ theme }) => theme.colors.navy};
-    color: ${({ theme }) => theme.colors.slate};
-    font-family: ${({ theme }) => theme.fonts.Calibre};
-    font-size: ${({ theme }) => theme.fontSizes.xl};
+    background-color: var(--navy);
+    color: var(--slate);
+    font-family: var(--font-sans);
+    font-size: var(--fz-xl);
     line-height: 1.3;
 
     @media (${({ theme }) => theme.bp.mobileL}) {
-      font-size: ${({ theme }) => theme.fontSizes.lg};
+      font-size: var(--fz-lg);
     }
 
     &.hidden {
@@ -52,7 +105,7 @@ const GlobalStyle = createGlobalStyle`
 
       #content > * {
         filter: blur(5px) brightness(0.7);
-        transition: ${({ theme }) => theme.transition};
+        transition: var(--transition);
         pointer-events: none;
         user-select: none;
       }
@@ -120,7 +173,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.lightestSlate};
+    color: var(--lightest-slate);
     line-height: 1;
   }
 
@@ -141,7 +194,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
-    font-size: ${({ theme }) => theme.fontSizes.heading};
+    font-size: var(--fz-heading);
     white-space: nowrap;
 
     @media (${({ theme }) => theme.bp.tabletL}) {
@@ -154,13 +207,13 @@ const GlobalStyle = createGlobalStyle`
       counter-increment: section;
       content: '0' counter(section) '.';
       margin-right: 10px;
-      color: ${({ theme }) => theme.colors.green};
-      font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.xl};
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xl);
       font-weight: 400;
 
       @media (${({ theme }) => theme.bp.tabletL}) {
-        font-size: ${({ theme }) => theme.fontSizes.lg};
+        font-size: var(--fz-lg);
       }
     }
 
@@ -172,7 +225,7 @@ const GlobalStyle = createGlobalStyle`
       width: 300px;
       height: 1px;
       margin-left: 20px;
-      background-color: ${({ theme }) => theme.colors.lightestNavy};
+      background-color: var(--lightest-navy);
 
       @media (${({ theme }) => theme.bp.desktopS}) {
         width: 200px;
@@ -212,12 +265,12 @@ const GlobalStyle = createGlobalStyle`
     text-decoration-skip-ink: auto;
     color: inherit;
     position: relative;
-    transition: ${({ theme }) => theme.transition};
+    transition: var(--transition);
     cursor: pointer;
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.green};
+      color: var(--green);
     }
 
     &.inline-link {
@@ -229,11 +282,6 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: 0;
     border-radius: 0;
-
-    &:focus,
-    &:active {
-      outline-color: ${({ theme }) => theme.colors.lightblue};
-    }
   }
 
   input, textarea {
@@ -264,10 +312,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     & > code {
-      background-color: ${({ theme }) => theme.colors.lightNavy};
-      color: ${({ theme }) => theme.colors.white};
-      font-size: ${({ theme }) => theme.fontSizes.sm};
-      border-radius: ${({ theme }) => theme.borderRadius};
+      background-color: var(--light-navy);
+      color: var(--white);
+      font-size: var(--fz-sm);
+      border-radius: var(--border-radius);
       padding: 0.3em 0.5em;
     }
   }
@@ -277,7 +325,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       margin: 0;
       list-style: none;
-      font-size: ${({ theme }) => theme.fontSizes.lg};
+      font-size: var(--fz-lg);
       li {
         position: relative;
         padding-left: 30px;
@@ -286,14 +334,14 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: ${({ theme }) => theme.colors.green};
+          color: var(--green);
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: ${({ theme }) => theme.colors.green};
+    border-left-color: var(--green);
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -307,7 +355,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: ${({ theme }) => theme.colors.lightestNavy};
+    background-color: var(--lightest-navy);
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -317,33 +365,33 @@ const GlobalStyle = createGlobalStyle`
   }
 
   code {
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
   }
 
   #logo {
-    color: ${({ theme }) => theme.colors.green};
+    color: var(--green);
   }
 
   .overline {
-    color: ${({ theme }) => theme.colors.green};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.md};
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: ${({ theme }) => theme.colors.green};
+    color: var(--green);
     margin: 0 0 20px 0;
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
+    font-size: var(--fz-md);
+    font-family: var(--font-mono);
     font-weight: 400;
     line-height: 1.5;
     @media (${({ theme }) => theme.bp.desktopS}) {
-      font-size: ${({ theme }) => theme.fontSizes.sm};
+      font-size: var(--fz-sm);
     }
     @media (${({ theme }) => theme.bp.tabletL}) {
-      font-size: ${({ theme }) => theme.fontSizes.xs};
+      font-size: var(--fz-xs);
     }
 
     a {
@@ -356,7 +404,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: ${({ theme }) => theme.colors.green};
+    color: var(--green);
 
     .arrow {
       display: block;
@@ -366,8 +414,8 @@ const GlobalStyle = createGlobalStyle`
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
-      font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.sm};
+      font-family: var(--font-mono);
+      font-size: var(--fz-sm);
       font-weight: 600;
       line-height: 1.5;
       text-transform: uppercase;

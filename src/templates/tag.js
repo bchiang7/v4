@@ -18,7 +18,7 @@ const StyledTagsContainer = styled.main`
     margin-bottom: 50px;
 
     a {
-      font-size: ${({ theme }) => theme.fontSizes.lg};
+      font-size: var(--fz-lg);
       font-weight: 400;
     }
   }
@@ -30,12 +30,12 @@ const StyledTagsContainer = styled.main`
         font-size: inherit;
         margin: 0;
         a {
-          color: ${({ theme }) => theme.colors.lightSlate};
+          color: var(--light-slate);
         }
       }
       .subtitle {
-        color: ${({ theme }) => theme.colors.slate};
-        font-size: ${({ theme }) => theme.fontSizes.sm};
+        color: var(--slate);
+        font-size: var(--fz-sm);
 
         .tag {
           margin-right: 10px;

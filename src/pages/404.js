@@ -12,8 +12,8 @@ const StyledMainContainer = styled.main`
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.colors.green};
-  font-family: ${({ theme }) => theme.fonts.SFMono};
+  color: var(--green);
+  font-family: var(--font-mono);
   font-size: 12vw;
   line-height: 1;
   @media (${({ theme }) => theme.bp.desktopM}) {

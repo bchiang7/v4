@@ -26,11 +26,11 @@ const StyledTableContainer = styled.div`
     }
 
     tbody tr {
-      transition: ${({ theme }) => theme.transition};
+      transition: var(--transition);
 
       &:hover,
       &:focus {
-        background-color: ${({ theme }) => theme.colors.lightNavy};
+        background-color: var(--light-navy);
       }
     }
 
@@ -49,24 +49,24 @@ const StyledTableContainer = styled.div`
       &.year {
         width: 10%;
         @media (${({ theme }) => theme.bp.tabletL}) {
-          font-size: ${({ theme }) => theme.fontSizes.sm};
+          font-size: var(--fz-sm);
         }
       }
       &.title {
         padding-top: 15px;
-        color: ${({ theme }) => theme.colors.lightestSlate};
-        font-size: ${({ theme }) => theme.fontSizes.xl};
+        color: var(--lightest-slate);
+        font-size: var(--fz-xl);
         font-weight: 600;
         line-height: 1.25;
       }
       &.company {
         width: 15%;
         padding-top: 15px;
-        font-size: ${({ theme }) => theme.fontSizes.lg};
+        font-size: var(--fz-lg);
       }
       &.tech {
-        font-size: ${({ theme }) => theme.fontSizes.xxs};
-        font-family: ${({ theme }) => theme.fonts.SFMono};
+        font-size: var(--fz-xxs);
+        font-family: var(--font-mono);
         line-height: 1.5;
         .separator {
           margin: 0 5px;

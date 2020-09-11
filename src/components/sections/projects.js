@@ -12,15 +12,15 @@ const StyledProjectsSection = styled.section`
   align-items: center;
 
   h2 {
-    font-size: ${({ theme }) => theme.fontSizes.heading};
+    font-size: var(--fz-heading);
     @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: 24px;
     }
   }
 
   .archive-link {
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
     &:after {
       bottom: 0.1em;
     }
@@ -45,7 +45,7 @@ const StyledProjectsSection = styled.section`
 `;
 
 const StyledProject = styled.div`
-  transition: ${({ theme }) => theme.transition};
+  transition: var(--transition);
   cursor: default;
 
   &:hover,
@@ -64,9 +64,9 @@ const StyledProject = styled.div`
     position: relative;
     padding: 2rem 1.75rem;
     height: 100%;
-    border-radius: ${({ theme }) => theme.borderRadius};
-    transition: ${({ theme }) => theme.transition};
-    background-color: ${({ theme }) => theme.colors.lightNavy};
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    background-color: var(--light-navy);
   }
 
   .project-top {
@@ -74,7 +74,7 @@ const StyledProject = styled.div`
     margin-bottom: 30px;
 
     .folder {
-      color: ${({ theme }) => theme.colors.green};
+      color: var(--green);
       svg {
         width: 40px;
         height: 40px;
@@ -83,7 +83,7 @@ const StyledProject = styled.div`
 
     .project-links {
       margin-right: -10px;
-      color: ${({ theme }) => theme.colors.lightSlate};
+      color: var(--light-slate);
 
       a {
         padding: 5px 10px;
@@ -98,13 +98,13 @@ const StyledProject = styled.div`
 
   .project-title {
     margin: 0 0 10px;
-    font-size: ${({ theme }) => theme.fontSizes.xxl};
-    color: ${({ theme }) => theme.colors.lightestSlate};
+    font-size: var(--fz-xxl);
+    color: var(--lightest-slate);
   }
 
   .project-description {
     font-size: 17px;
-    color: ${({ theme }) => theme.colors.lightSlate};
+    color: var(--light-slate);
     a {
       ${({ theme }) => theme.mixins.inlineLink};
     }
@@ -120,8 +120,8 @@ const StyledProject = styled.div`
     list-style: none;
 
     li {
-      font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.xxs};
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
       line-height: 1.75;
 
       &:not(:last-of-type) {

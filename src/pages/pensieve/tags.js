@@ -13,18 +13,18 @@ const StyledTagsContainer = styled.main`
     margin-bottom: 50px;
   }
   ul {
-    color: ${({ theme }) => theme.colors.lightSlate};
+    color: var(--light-slate);
 
     li {
-      font-size: ${({ theme }) => theme.fontSizes.xxl};
+      font-size: var(--fz-xxl);
 
       a {
-        color: ${({ theme }) => theme.colors.lightSlate};
+        color: var(--light-slate);
 
         .count {
-          color: ${({ theme }) => theme.colors.slate};
-          font-family: ${({ theme }) => theme.fonts.SFMono};
-          font-size: ${({ theme }) => theme.fontSizes.md};
+          color: var(--slate);
+          font-family: var(--font-mono);
+          font-size: var(--fz-md);
         }
       }
     }

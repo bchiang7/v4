@@ -35,16 +35,16 @@ const StyledHamburgerButton = styled.button`
   .ham-box {
     position: relative;
     display: inline-block;
-    width: ${({ theme }) => theme.hamburgerWidth};
+    width: var(--hamburger-width);
     height: 24px;
   }
 
   .ham-box-inner {
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: var(--green);
     position: absolute;
-    width: ${({ theme }) => theme.hamburgerWidth};
+    width: var(--hamburger-width);
     height: 2px;
-    border-radius: ${({ theme }) => theme.borderRadius};
+    border-radius: var(--border-radius);
     top: 50%;
     right: 0;
     transition-duration: 0.22s;
@@ -61,25 +61,26 @@ const StyledHamburgerButton = styled.button`
       position: absolute;
       left: auto;
       right: 0;
-      width: ${({ theme }) => theme.hamburgerWidth};
+      width: var(--hamburger-width);
       height: 2px;
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
-      background-color: ${({ theme }) => theme.colors.green};
+      background-color: var(--green);
       border-radius: 4px;
     }
     &:before {
       width: ${props => (props.menuOpen ? `100%` : `120%`)};
       top: ${props => (props.menuOpen ? `0` : `-10px`)};
       opacity: ${props => (props.menuOpen ? 0 : 1)};
-      transition: ${({ theme, menuOpen }) => (menuOpen ? theme.hamBeforeActive : theme.hamBefore)};
+      transition: ${({ menuOpen }) =>
+    menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
     }
     &:after {
       width: ${props => (props.menuOpen ? `100%` : `80%`)};
       bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
       transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-      transition: ${({ theme, menuOpen }) => (menuOpen ? theme.hamAfterActive : theme.hamAfter)};
+      transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
     }
   }
 `;
@@ -96,11 +97,11 @@ const StyledSidebar = styled.aside`
     padding: 50px;
     width: 50vw;
     height: 100vh;
-    background-color: ${({ theme }) => theme.colors.lightNavy};
-    box-shadow: -10px 0px 30px -15px ${({ theme }) => theme.colors.shadowNavy};
+    background-color: var(--light-navy);
+    box-shadow: -10px 0px 30px -15px var(--navy-shadow);
     z-index: 9;
     outline: 0;
-    transition: ${({ theme }) => theme.transition};
+    transition: var(--transition);
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   }
@@ -120,8 +121,8 @@ const StyledSidebar = styled.aside`
     width: 100%;
     flex-direction: column;
     text-align: center;
-    color: ${({ theme }) => theme.colors.lightestSlate};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
+    color: var(--lightest-slate);
+    font-family: var(--font-mono);
   }
 
   ol {
@@ -133,23 +134,23 @@ const StyledSidebar = styled.aside`
     li {
       margin: 0 auto 20px;
       position: relative;
-      font-size: ${({ theme }) => theme.fontSizes.lg};
+      font-size: var(--fz-lg);
       counter-increment: item 1;
 
       @media (${({ theme }) => theme.bp.tabletS}) {
         margin: 0 auto 10px;
-        font-size: ${({ theme }) => theme.fontSizes.md};
+        font-size: var(--fz-md);
       }
 
       @media (${({ theme }) => theme.bp.mobileS}) {
-        font-size: ${({ theme }) => theme.fontSizes.xs};
+        font-size: var(--fz-xs);
       }
 
       &:before {
         display: block;
         content: '0' counter(item) '.';
-        color: ${({ theme }) => theme.colors.green};
-        font-size: ${({ theme }) => theme.fontSizes.sm};
+        color: var(--green);
+        font-size: var(--fz-sm);
         margin-bottom: 5px;
       }
     }

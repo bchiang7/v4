@@ -31,15 +31,15 @@ const StyledText = styled.div`
       position: relative;
       margin-bottom: 10px;
       padding-left: 20px;
-      font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.xs};
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
 
       &:before {
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${({ theme }) => theme.colors.green};
-        font-size: ${({ theme }) => theme.fontSizes.sm};
+        color: var(--green);
+        font-size: var(--fz-sm);
         line-height: 12px;
       }
     }
@@ -59,8 +59,8 @@ const StyledPic = styled.div`
     width: 100%;
     position: relative;
     display: block;
-    border-radius: ${({ theme }) => theme.borderRadius};
-    background-color: ${({ theme }) => theme.colors.green};
+    border-radius: var(--border-radius);
+    background-color: var(--green);
 
     &:hover,
     &:focus {
@@ -82,8 +82,8 @@ const StyledPic = styled.div`
       position: relative;
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
-      border-radius: ${({ theme }) => theme.borderRadius};
-      transition: ${({ theme }) => theme.transition};
+      border-radius: var(--border-radius);
+      transition: var(--transition);
     }
 
     &:before,
@@ -93,19 +93,19 @@ const StyledPic = styled.div`
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: ${({ theme }) => theme.borderRadius};
-      transition: ${({ theme }) => theme.transition};
+      border-radius: var(--border-radius);
+      transition: var(--transition);
     }
 
     &:before {
       top: 0;
       left: 0;
-      background-color: ${({ theme }) => theme.colors.navy};
+      background-color: var(--navy);
       mix-blend-mode: screen;
     }
 
     &:after {
-      border: 2px solid ${({ theme }) => theme.colors.green};
+      border: 2px solid var(--green);
       top: 20px;
       left: 20px;
       z-index: -1;

@@ -12,19 +12,19 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: ${({ theme }) => theme.colors.green};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
+    color: var(--green);
+    font-size: var(--fz-md);
+    font-family: var(--font-mono);
     font-weight: 400;
 
     @media (${({ theme }) => theme.bp.tabletL}) {
-      font-size: ${({ theme }) => theme.fontSizes.sm};
+      font-size: var(--fz-sm);
     }
   }
 
   h3 {
     margin: 10px 0 0;
-    color: ${({ theme }) => theme.colors.slate};
+    color: var(--slate);
   }
 
   p {

@@ -16,14 +16,14 @@ const StyledLinkWrapper = styled.div`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.colors.lightSlate};
+    background-color: var(--light-slate);
   }
 
   a {
     margin: 20px auto;
     padding: 10px;
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.xxs};
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
 

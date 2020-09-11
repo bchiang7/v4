@@ -44,7 +44,7 @@ const StyledProject = styled.div`
       justify-content: flex-end;
 
       li {
-        margin: 0 0 5px ${({ theme }) => theme.margin};
+        margin: 0 0 5px 20px;
 
         @media (${({ theme }) => theme.bp.tabletL}) {
           margin: 0 0 5px 10px;
@@ -86,9 +86,9 @@ const StyledProject = styled.div`
   }
 
   .project-overline {
-    color: ${({ theme }) => theme.colors.green};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.xs};
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
     font-weight: 400;
     margin: 10px 0 5px;
     padding-top: 0;
@@ -97,13 +97,13 @@ const StyledProject = styled.div`
   .project-title {
     font-size: 28px;
     margin: 0 0 20px;
-    color: ${({ theme }) => theme.colors.lightestSlate};
+    color: var(--lightest-slate);
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       font-size: 24px;
     }
     @media (${({ theme }) => theme.bp.tabletL}) {
-      color: ${({ theme }) => theme.colors.white};
+      color: var(--white);
     }
   }
 
@@ -112,10 +112,10 @@ const StyledProject = styled.div`
     position: relative;
     z-index: 2;
     padding: 25px;
-    border-radius: ${({ theme }) => theme.borderRadius};
-    background-color: ${({ theme }) => theme.colors.lightNavy};
-    color: ${({ theme }) => theme.colors.lightSlate};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--light-slate);
+    font-size: var(--fz-lg);
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       background-color: transparent;
@@ -142,18 +142,18 @@ const StyledProject = styled.div`
 
     li {
       margin-bottom: 7px;
-      color: ${({ theme }) => theme.colors.lightSlate};
-      font-family: ${({ theme }) => theme.fonts.SFMono};
-      font-size: ${({ theme }) => theme.fontSizes.xs};
+      color: var(--light-slate);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
       white-space: nowrap;
-      margin: 0 ${({ theme }) => theme.margin} 5px 0;
+      margin: 0 20px 5px 0;
     }
 
     @media (${({ theme }) => theme.bp.tabletL}) {
       margin: 15px 0 10px;
 
       li {
-        color: ${({ theme }) => theme.colors.lightestSlate};
+        color: var(--lightest-slate);
         margin: 0 10px 5px 0;
       }
     }
@@ -165,7 +165,7 @@ const StyledProject = styled.div`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color: ${({ theme }) => theme.colors.lightestSlate};
+    color: var(--lightest-slate);
     a {
       padding: 10px;
       svg {
@@ -190,8 +190,8 @@ const StyledProject = styled.div`
 
     a {
       width: 100%;
-      background-color: ${({ theme }) => theme.colors.green};
-      border-radius: ${({ theme }) => theme.borderRadius};
+      background-color: var(--green);
+      border-radius: var(--border-radius);
       vertical-align: middle;
 
       &:hover,
@@ -215,14 +215,14 @@ const StyledProject = styled.div`
         right: 0;
         bottom: 0;
         z-index: 3;
-        transition: ${({ theme }) => theme.transition};
-        background-color: ${({ theme }) => theme.colors.navy};
+        transition: var(--transition);
+        background-color: var(--navy);
         mix-blend-mode: screen;
       }
     }
 
     .img {
-      border-radius: ${({ theme }) => theme.borderRadius};
+      border-radius: var(--border-radius);
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(90%);
 

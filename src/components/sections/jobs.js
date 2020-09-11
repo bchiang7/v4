@@ -63,13 +63,13 @@ const StyledTabButton = styled.button`
   display: flex;
   align-items: center;
   width: 100%;
-  height: ${({ theme }) => theme.tabHeight}px;
+  height: var(--tab-height);
   padding: 0 20px 2px;
-  border-left: 2px solid ${({ theme }) => theme.colors.lightestNavy};
+  border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
-  color: ${({ theme, isActive }) => (isActive ? theme.colors.green : theme.colors.slate)};
-  font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
+  color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
   text-align: left;
   white-space: nowrap;
 
@@ -80,14 +80,14 @@ const StyledTabButton = styled.button`
     ${({ theme }) => theme.mixins.flexCenter};
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.lightestNavy};
+    border-bottom: 2px solid var(--lightest-navy);
     min-width: 120px;
     text-align: center;
   }
 
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colors.lightNavy};
+    background-color: var(--light-navy);
   }
 `;
 
@@ -96,25 +96,22 @@ const StyledHighlight = styled.div`
   top: 0;
   left: 0;
   width: 2px;
-  height: ${({ theme }) => theme.tabHeight}px;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  background: ${({ theme }) => theme.colors.green};
+  height: var(--tab-height);
+  border-radius: var(--border-radius);
+  background: var(--green);
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
   z-index: 10;
-  transform: translateY(
-    ${({ theme, activeTabId }) => (activeTabId > 0 ? activeTabId * theme.tabHeight : 0)}px
-  );
+  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
+
   @media (${({ theme }) => theme.bp.tabletS}) {
-    width: 100%;
-    max-width: ${({ theme }) => theme.tabWidth};
-    height: 2px;
     top: auto;
     bottom: 0;
-    transform: translateX(
-      ${({ theme, activeTabId }) => (activeTabId > 0 ? activeTabId * theme.tabWidth : 0)}px
-    );
+    width: 100%;
+    max-width: var(--tab-width);
+    height: 2px;
     margin-left: 50px;
+    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
   }
   @media (${({ theme }) => theme.bp.mobileL}) {
     margin-left: 25px;
@@ -139,19 +136,19 @@ const StyledTabContent = styled.div`
   }
 
   h3 {
-    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    font-size: var(--fz-xxl);
     font-weight: 500;
     margin-bottom: 5px;
 
     .company {
-      color: ${({ theme }) => theme.colors.green};
+      color: var(--green);
     }
   }
 
   .range {
-    color: ${({ theme }) => theme.colors.lightSlate};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.xs};
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
     margin-bottom: 30px;
   }
 `;

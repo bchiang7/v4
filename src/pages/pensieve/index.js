@@ -49,16 +49,16 @@ const StyledPostInner = styled.div`
   position: relative;
   padding: 2rem 1.75rem;
   height: 100%;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  transition: ${({ theme }) => theme.transition};
-  background-color: ${({ theme }) => theme.colors.lightNavy};
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background-color: var(--light-navy);
   header,
   a {
     width: 100%;
   }
 `;
 const StyledPost = styled.div`
-  transition: ${({ theme }) => theme.transition};
+  transition: var(--transition);
   cursor: default;
   &:hover,
   &:focus {
@@ -73,7 +73,7 @@ const StyledPostHeader = styled.div`
   margin-bottom: 30px;
 `;
 const StyledFolder = styled.div`
-  color: ${({ theme }) => theme.colors.green};
+  color: var(--green);
   svg {
     width: 40px;
     height: 40px;
@@ -81,17 +81,17 @@ const StyledFolder = styled.div`
 `;
 const StyledPostName = styled.h5`
   margin: 0 0 10px;
-  color: ${({ theme }) => theme.colors.lightestSlate};
-  font-size: ${({ theme }) => theme.fontSizes.xxl};
+  color: var(--lightest-slate);
+  font-size: var(--fz-xxl);
 `;
 const StyledPostDescription = styled.div`
-  color: ${({ theme }) => theme.colors.lightSlate};
+  color: var(--light-slate);
   font-size: 17px;
 `;
 const StyledDate = styled.span`
-  color: ${({ theme }) => theme.colors.lightSlate};
-  font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.xxs};
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
   text-transform: uppercase;
 `;
 const StyledTags = styled.ul`
@@ -103,9 +103,9 @@ const StyledTags = styled.ul`
   list-style: none;
 
   li {
-    font-family: ${({ theme }) => theme.fonts.SFMono};
-    font-size: ${({ theme }) => theme.fontSizes.xxs};
-    color: ${({ theme }) => theme.colors.green};
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    color: var(--green);
     line-height: 1.75;
 
     &:not(:last-of-type) {

@@ -11,7 +11,7 @@ const StyledSideElement = styled.div`
   left: ${props => (props.orientation === 'left' ? '40px' : 'auto')};
   right: ${props => (props.orientation === 'left' ? 'auto' : '40px')};
   z-index: 10;
-  color: ${({ theme }) => theme.colors.lightSlate};
+  color: var(--light-slate);
 
   @media (${({ theme }) => theme.bp.desktopS}) {
     left: ${props => (props.orientation === 'left' ? '20px' : 'auto')};

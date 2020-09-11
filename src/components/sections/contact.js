@@ -14,21 +14,21 @@ const StyledContactSection = styled.section`
 
   .overline {
     display: block;
-    color: ${({ theme }) => theme.colors.green};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    font-family: ${({ theme }) => theme.fonts.SFMono};
+    color: var(--green);
+    font-size: var(--fz-md);
+    font-family: var(--font-mono);
     font-weight: 400;
     margin-bottom: 20px;
     justify-content: center;
     @media (${({ theme }) => theme.bp.desktopS}) {
-      font-size: ${({ theme }) => theme.fontSizes.sm};
+      font-size: var(--fz-sm);
     }
 
     &:before {
       bottom: 0;
-      font-size: ${({ theme }) => theme.fontSizes.sm};
+      font-size: var(--fz-sm);
       @media (${({ theme }) => theme.bp.desktopS}) {
-        font-size: ${({ theme }) => theme.fontSizes.xs};
+        font-size: var(--fz-xs);
       }
     }
     &:after {

@@ -14,14 +14,14 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: ${({ theme }) => theme.colors.navy};
-  transition: ${({ theme }) => theme.transition};
+  background-color: var(--navy);
+  transition: var(--transition);
   z-index: 11;
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
   width: 100%;
-  height: ${({ theme }) => theme.navHeight};
+  height: var(--nav-height);
   backdrop-filter: blur(10px);
 
   ${props =>
@@ -29,8 +29,8 @@ const StyledHeader = styled.header`
     !props.scrolledToTop &&
     css`
       background-color: rgba(10, 25, 47, 0.85);
-      box-shadow: 0 10px 30px -10px ${({ theme }) => theme.colors.shadowNavy};
-      height: ${({ theme }) => theme.navScrollHeight};
+      box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      height: var(--nav-scroll-height);
       transform: translateY(0px);
     `};
 
@@ -38,9 +38,9 @@ const StyledHeader = styled.header`
     props.scrollDirection === 'down' &&
     !props.scrolledToTop &&
     css`
-      box-shadow: 0 10px 30px -10px ${({ theme }) => theme.colors.shadowNavy};
-      height: ${({ theme }) => theme.navScrollHeight};
-      transform: translateY(-${({ theme }) => theme.navScrollHeight});
+      box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      height: var(--nav-scroll-height);
+      transform: translateY(-var(--nav-scroll-height));
     `};
 
   @media (${({ theme }) => theme.bp.desktopS}) {
@@ -55,8 +55,8 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: ${({ theme }) => theme.colors.lightestSlate};
-  font-family: ${({ theme }) => theme.fonts.SFMono};
+  color: var(--lightest-slate);
+  font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
 
@@ -64,20 +64,20 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
 
     a {
-      color: ${({ theme }) => theme.colors.green};
+      color: var(--green);
       width: 42px;
       height: 42px;
 
       &:hover,
       &:focus {
         svg {
-          fill: ${({ theme }) => theme.colors.transGreen};
+          fill: var(--green-tint);
         }
       }
 
       svg {
         fill: none;
-        transition: ${({ theme }) => theme.transition};
+        transition: var(--transition);
         user-select: none;
       }
     }
@@ -101,7 +101,7 @@ const StyledLinks = styled.div`
     li {
       margin: 0 5px;
       position: relative;
-      font-size: ${({ theme }) => theme.fontSizes.xs};
+      font-size: var(--fz-xs);
       counter-increment: item 1;
 
       a {
@@ -110,8 +110,8 @@ const StyledLinks = styled.div`
         &:before {
           content: '0' counter(item) '.';
           margin-right: 5px;
-          color: ${({ theme }) => theme.colors.green};
-          font-size: ${({ theme }) => theme.fontSizes.xxs};
+          color: var(--green);
+          font-size: var(--fz-xxs);
           text-align: right;
         }
       }
@@ -121,7 +121,7 @@ const StyledLinks = styled.div`
   .resume-button {
     ${({ theme }) => theme.mixins.smallButton};
     margin-left: 15px;
-    font-size: ${({ theme }) => theme.fontSizes.xs};
+    font-size: var(--fz-xs);
   }
 `;
 

@@ -7,7 +7,7 @@ import { IconLoader } from '@components/icons';
 
 const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
-  background-color: ${({ theme }) => theme.colors.darkNavy};
+  background-color: var(--dark-navy);
   position: fixed;
   width: 100%;
   height: 100%;
@@ -20,7 +20,7 @@ const StyledLoader = styled.div`
   .logo-wrapper {
     width: max-content;
     max-width: 100px;
-    transition: ${({ theme }) => theme.transition};
+    transition: var(--transition);
     opacity: ${props => (props.isMounted ? 1 : 0)};
     svg {
       width: 100%;

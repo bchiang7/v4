@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   min-height: 70px;
 `;
 const StyledSocialLinks = styled.div`
-  color: ${({ theme }) => theme.colors.lightSlate};
+  color: var(--light-slate);
   width: 100%;
   max-width: 270px;
   margin: 0 auto 10px;
@@ -40,10 +40,10 @@ const StyledSocialLinks = styled.div`
 `;
 
 const StyledCredit = styled.div`
-  font-family: ${({ theme }) => theme.fonts.SFMono};
-  font-size: ${({ theme }) => theme.fontSizes.xxs};
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
   line-height: 1;
-  color: ${({ theme }) => theme.colors.lightSlate};
+  color: var(--light-slate);
 
   a {
     padding: 10px;
