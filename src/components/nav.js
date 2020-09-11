@@ -40,7 +40,7 @@ const StyledHeader = styled.header`
     css`
       box-shadow: 0 10px 30px -10px var(--navy-shadow);
       height: var(--nav-scroll-height);
-      transform: translateY(-var(--nav-scroll-height));
+      transform: translateY(calc(var(--nav-scroll-height) * -1));
     `};
 
   @media (max-width: 1080px) {
