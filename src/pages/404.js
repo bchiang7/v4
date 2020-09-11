@@ -1,32 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts, navDelay } = theme;
+import { navDelay } from '@utils';
+import { Layout } from '@components';
 
-const StyledMainContainer = styled(Main)`
-  ${mixins.flexCenter};
+const StyledMainContainer = styled.main`
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${colors.green};
-  font-family: ${fonts.SFMono};
-  font-size: 12vw;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
-  ${media.bigDesktop`font-size: 200px;`}
-  ${media.phablet`font-size: 120px;`};
 `;
 const StyledSubtitle = styled.h2`
-  font-size: 3vw;
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: 400;
-  ${media.bigDesktop`font-size: 50px;`};
-  ${media.phablet`font-size: 30px;`};
 `;
 const StyledHomeButton = styled(Link)`
-  ${mixins.bigButton};
+  ${({ theme }) => theme.mixins.bigButton};
   margin-top: 40px;
 `;
 
@@ -40,9 +36,11 @@ const NotFoundPage = ({ location }) => {
 
   return (
     <Layout location={location}>
+      <Helmet title="Page Not Found" />
+
       <TransitionGroup component={null}>
         {isMounted && (
-          <CSSTransition timeout={500} classNames="fade">
+          <CSSTransition timeout={500} classNames="fadeup">
             <StyledMainContainer className="fillHeight">
               <StyledTitle>404</StyledTitle>
               <StyledSubtitle>Page Not Found</StyledSubtitle>

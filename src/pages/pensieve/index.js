@@ -1,18 +1,16 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 import { Layout } from '@components';
 import { IconZap } from '@components/icons';
-import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fontSizes, fonts } = theme;
 
-const StyledMainContainer = styled(Main)`
+const StyledMainContainer = styled.main`
   & > header {
-    text-align: center;
     margin-bottom: 100px;
+    text-align: center;
 
     a {
       &:hover,
@@ -25,9 +23,9 @@ const StyledMainContainer = styled(Main)`
   }
 
   footer {
-    ${mixins.flexBetween};
-    margin-top: 20px;
+    ${({ theme }) => theme.mixins.flexBetween};
     width: 100%;
+    margin-top: 20px;
   }
 `;
 const StyledGrid = styled.div`
@@ -38,28 +36,33 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    ${media.desktop`grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));`};
+
+    @media (max-width: 1080px) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
   }
 `;
 const StyledPostInner = styled.div`
-  ${mixins.boxShadow};
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.boxShadow};
+  ${({ theme }) => theme.mixins.flexBetween};
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  padding: 2rem 1.75rem;
   height: 100%;
-  border-radius: ${theme.borderRadius};
-  transition: ${theme.transition};
-  background-color: ${colors.lightNavy};
+  padding: 2rem 1.75rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background-color: var(--light-navy);
+
   header,
   a {
     width: 100%;
   }
 `;
 const StyledPost = styled.div`
-  transition: ${theme.transition};
+  transition: var(--transition);
   cursor: default;
+
   &:hover,
   &:focus {
     outline: 0;
@@ -69,11 +72,11 @@ const StyledPost = styled.div`
   }
 `;
 const StyledPostHeader = styled.div`
-  ${mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexBetween};
   margin-bottom: 30px;
 `;
 const StyledFolder = styled.div`
-  color: ${colors.green};
+  color: var(--green);
   svg {
     width: 40px;
     height: 40px;
@@ -81,18 +84,18 @@ const StyledFolder = styled.div`
 `;
 const StyledPostName = styled.h5`
   margin: 0 0 10px;
-  font-size: ${fontSizes.xxl};
-  color: ${colors.lightestSlate};
+  color: var(--lightest-slate);
+  font-size: var(--fz-xxl);
 `;
 const StyledPostDescription = styled.div`
+  color: var(--light-slate);
   font-size: 17px;
-  color: ${colors.lightSlate};
 `;
 const StyledDate = styled.span`
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
   text-transform: uppercase;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xs};
-  color: ${colors.lightSlate};
 `;
 const StyledTags = styled.ul`
   display: flex;
@@ -103,16 +106,13 @@ const StyledTags = styled.ul`
   list-style: none;
 
   li {
-    font-family: ${fonts.SFMono};
-    font-size: ${fontSizes.xs};
-    color: ${colors.green};
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
     line-height: 1.75;
-    margin-right: 15px;
-    &:last-of-type {
-      margin-right: 0;
-    }
-    a {
-      ${mixins.inlineLink};
+
+    &:not(:last-of-type) {
+      margin-right: 15px;
     }
   }
 `;
@@ -122,19 +122,13 @@ const PensievePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Helmet>
-        <title>Pensieve | Brittany Chiang</title>
-        <link rel="canonical" href="https://brittanychiang.com/pensieve" />
-      </Helmet>
+      <Helmet title="Pensieve" />
 
       <StyledMainContainer>
         <header>
-          <h1 className="big-title">Pensieve</h1>
+          <h1 className="big-heading">Pensieve</h1>
           <p className="subtitle">
-            <a
-              href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve"
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve">
               a collection of memories
             </a>
           </p>
@@ -167,7 +161,11 @@ const PensievePage = ({ location, data }) => {
                         <StyledTags>
                           {tags.map((tag, i) => (
                             <li key={i}>
-                              <Link to={`/pensieve/tags/${kebabCase(tag)}/`}>#{tag}</Link>
+                              <Link
+                                to={`/pensieve/tags/${kebabCase(tag)}/`}
+                                className="inline-link">
+                                #{tag}
+                              </Link>
                             </li>
                           ))}
                         </StyledTags>

@@ -1,7 +1,28 @@
 import { css } from 'styled-components';
-import theme from './theme';
-import media from './media';
-const { colors, fontSizes, fonts } = theme;
+
+const button = css`
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  font-size: var(--fz-xs);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 1.25rem 1.75rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--green-tint);
+    outline: none;
+  }
+  &:after {
+    display: none !important;
+  }
+`;
 
 const mixins = {
   flexCenter: css`
@@ -16,22 +37,18 @@ const mixins = {
     align-items: center;
   `,
 
-  outline: css`
-    outline: 1px solid red;
-  `,
-
   link: css`
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
     color: inherit;
     position: relative;
-    transition: ${theme.transition};
+    transition: var(--transition);
     cursor: pointer;
     &:hover,
     &:active,
     &:focus {
-      color: ${colors.green};
+      color: var(--green);
       outline: 0;
     }
   `,
@@ -41,20 +58,20 @@ const mixins = {
     text-decoration: none;
     text-decoration-skip-ink: auto;
     position: relative;
-    transition: ${theme.transition};
+    transition: var(--transition);
     cursor: pointer;
-    color: ${colors.green};
+    color: var(--green);
     &:hover,
     &:focus,
     &:active {
-      color: ${colors.green};
+      color: var(--green);
       outline: 0;
       &:after {
         width: 100%;
       }
       & > * {
-        color: ${colors.green} !important;
-        transition: ${theme.transition};
+        color: var(--green) !important;
+        transition: var(--transition);
       }
     }
     &:after {
@@ -64,28 +81,30 @@ const mixins = {
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: ${colors.green};
-      transition: ${theme.transition};
+      background-color: var(--green);
+      transition: var(--transition);
       opacity: 0.5;
     }
   `,
 
+  button,
+
   smallButton: css`
-    color: ${colors.green};
+    color: var(--green);
     background-color: transparent;
-    border: 1px solid ${colors.green};
-    border-radius: ${theme.borderRadius};
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
     padding: 0.75rem 1rem;
-    font-size: ${fontSizes.smish};
-    font-family: ${fonts.SFMono};
+    font-size: var(--fz-xs);
+    font-family: var(--font-mono);
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
-    transition: ${theme.transition};
+    transition: var(--transition);
     &:hover,
     &:focus,
     &:active {
-      background-color: ${colors.transGreen};
+      background-color: var(--green-tint);
     }
     &:after {
       display: none !important;
@@ -93,41 +112,34 @@ const mixins = {
   `,
 
   bigButton: css`
-    color: ${colors.green};
+    color: var(--green);
     background-color: transparent;
-    border: 1px solid ${colors.green};
-    border-radius: ${theme.borderRadius};
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
     padding: 1.25rem 1.75rem;
-    font-size: ${fontSizes.sm};
-    font-family: ${fonts.SFMono};
+    font-size: var(--fz-sm);
+    font-family: var(--font-mono);
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
-    transition: ${theme.transition};
+    transition: var(--transition);
     &:hover,
     &:focus,
     &:active {
-      background-color: ${colors.transGreen};
+      background-color: var(--green-tint);
     }
     &:after {
       display: none !important;
     }
   `,
 
-  sidePadding: css`
-    padding: 0 150px;
-    ${media.desktop`padding: 0 100px;`};
-    ${media.tablet`padding: 0 50px;`};
-    ${media.phablet`padding: 0 25px;`};
-  `,
-
   boxShadow: css`
-    box-shadow: 0 10px 30px -15px ${colors.shadowNavy};
-    transition: ${theme.transition};
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
 
     &:hover,
     &:focus {
-      box-shadow: 0 20px 30px -15px ${colors.shadowNavy};
+      box-shadow: 0 20px 30px -15px var(--navy-shadow);
     }
   `,
 
@@ -135,7 +147,7 @@ const mixins = {
     padding: 0;
     margin: 0;
     list-style: none;
-    font-size: ${fontSizes.lg};
+    font-size: var(--fz-lg);
     li {
       position: relative;
       padding-left: 30px;
@@ -144,7 +156,7 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: ${colors.green};
+        color: var(--green);
       }
     }
   `,

@@ -2,24 +2,23 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { theme, mixins, Main } from '@styles';
-const { colors, fontSizes } = theme;
+import { Layout } from '@components';
 
-const StyledTagsContainer = styled(Main)`
+const StyledTagsContainer = styled.main`
   max-width: 1000px;
 
   a {
-    ${mixins.inlineLink};
+    ${({ theme }) => theme.mixins.inlineLink};
   }
 
   h1 {
-    ${mixins.flexBetween};
+    ${({ theme }) => theme.mixins.flexBetween};
     margin-bottom: 50px;
 
     a {
-      font-size: ${fontSizes.lg};
+      font-size: var(--fz-lg);
       font-weight: 400;
     }
   }
@@ -31,12 +30,12 @@ const StyledTagsContainer = styled(Main)`
         font-size: inherit;
         margin: 0;
         a {
-          color: ${colors.lightSlate};
+          color: var(--light-slate);
         }
       }
       .subtitle {
-        color: ${colors.slate};
-        font-size: ${fontSizes.sm};
+        color: var(--slate);
+        font-size: var(--fz-sm);
 
         .tag {
           margin-right: 10px;
@@ -52,6 +51,8 @@ const TagTemplate = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location}>
+      <Helmet title={`Tagged: #${tag}`} />
+
       <StyledTagsContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
