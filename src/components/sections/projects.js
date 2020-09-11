@@ -13,7 +13,7 @@ const StyledProjectsSection = styled.section`
 
   h2 {
     font-size: var(--fz-heading);
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       font-size: 24px;
     }
   }
@@ -33,7 +33,7 @@ const StyledProjectsSection = styled.section`
     position: relative;
     margin-top: 50px;
 
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }

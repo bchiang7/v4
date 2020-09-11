@@ -16,20 +16,20 @@ const StyledTitle = styled.h1`
   font-family: var(--font-mono);
   font-size: 12vw;
   line-height: 1;
-  @media (${({ theme }) => theme.bp.desktopM}) {
+  @media (max-width: 1200px) {
     font-size: 200px;
   }
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media (max-width: 480px) {
     font-size: 120px;
   }
 `;
 const StyledSubtitle = styled.h2`
   font-size: 3vw;
   font-weight: 400;
-  @media (${({ theme }) => theme.bp.desktopM}) {
+  @media (max-width: 1200px) {
     font-size: 50px;
   }
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media (max-width: 480px) {
     font-size: 30px;
   }
 `;

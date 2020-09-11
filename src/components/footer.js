@@ -19,7 +19,7 @@ const StyledSocialLinks = styled.div`
   margin: 0 auto 10px;
   display: none;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     display: block;
   }
 

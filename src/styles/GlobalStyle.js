@@ -31,16 +31,6 @@ const GlobalStyle = createGlobalStyle`
     --fz-xxl: 22px;
     --fz-heading: 32px;
 
-    --bp-mobile-s: 330px;
-    --bp-mobile-m: 400px;
-    --bp-mobile-l: 480px;
-    --bp-tablet-s: 600px;
-    --bp-tablet-l: 768px;
-    --bp-desktop-xs: 900px;
-    --bp-desktop-s: 1080px;
-    --bp-desktop-m: 1200px;
-    --bp-desktop-l: 1400px;
-
     --border-radius: 4px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
@@ -48,15 +38,15 @@ const GlobalStyle = createGlobalStyle`
     --tab-height: 42px;
     --tab-width: 120px;
 
-    --easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)';
-    --transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)';
+    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     --hamburger-width: 30px;
 
-    --ham-before: 'top 0.1s ease-in 0.25s, opacity 0.1s ease-in';
-    --ham-before-active: 'top 0.1s ease-out, opacity 0.1s ease-out 0.12s';
-    --ham-after: 'bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
-    --ham-after-active: 'bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s';
+    --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ham-after-active: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
   }
 
   html {
@@ -88,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fz-xl);
     line-height: 1.3;
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media (max-width: 480px) {
       font-size: var(--fz-lg);
     }
 
@@ -126,26 +116,26 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     padding: 200px 150px;
 
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       padding: 200px 100px;
     }
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       padding: 150px 50px;
     }
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media (max-width: 480px) {
       padding: 125px 25px;
     }
 
     &.fillHeight {
       padding: 0 150px;
 
-      @media (${({ theme }) => theme.bp.desktopS}) {
+      @media (max-width: 1080px) {
         padding: 0 100px;
       }
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         padding: 0 50px;
       }
-      @media (${({ theme }) => theme.bp.mobileL}) {
+      @media (max-width: 480px) {
         padding: 0 25px;
       }
     }
@@ -156,11 +146,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 100px 0;
     max-width: 1000px;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       padding: 80px 0;
     }
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media (max-width: 480px) {
       padding: 60px 0;
     }
   }
@@ -197,7 +187,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fz-heading);
     white-space: nowrap;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       font-size: 24px;
     }
 
@@ -212,7 +202,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: var(--fz-xl);
       font-weight: 400;
 
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         font-size: var(--fz-lg);
       }
     }
@@ -227,13 +217,13 @@ const GlobalStyle = createGlobalStyle`
       margin-left: 20px;
       background-color: var(--lightest-navy);
 
-      @media (${({ theme }) => theme.bp.desktopS}) {
+      @media (max-width: 1080px) {
         width: 200px;
       }
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         width: 100%;
       }
-      @media (${({ theme }) => theme.bp.tabletS}) {
+      @media (max-width: 600px) {
         margin-left: 10px;
       }
     }
@@ -387,10 +377,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-mono);
     font-weight: 400;
     line-height: 1.5;
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       font-size: var(--fz-sm);
     }
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       font-size: var(--fz-xs);
     }
 

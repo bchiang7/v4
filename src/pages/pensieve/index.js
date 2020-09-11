@@ -36,7 +36,7 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }

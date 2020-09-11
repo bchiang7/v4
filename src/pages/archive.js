@@ -11,7 +11,7 @@ import { Icon } from '@components/icons';
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     margin: 100px -10px;
   }
 
@@ -20,7 +20,7 @@ const StyledTableContainer = styled.div`
     border-collapse: collapse;
 
     .hide-on-mobile {
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         display: none;
       }
     }
@@ -40,7 +40,7 @@ const StyledTableContainer = styled.div`
       cursor: default;
       text-align: left;
 
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         padding: 10px;
       }
     }
@@ -48,7 +48,7 @@ const StyledTableContainer = styled.div`
     td {
       &.year {
         width: 10%;
-        @media (${({ theme }) => theme.bp.tabletL}) {
+        @media (max-width: 768px) {
           font-size: var(--fz-sm);
         }
       }

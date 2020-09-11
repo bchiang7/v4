@@ -9,7 +9,7 @@ import { useOnClickOutside } from '@hooks';
 const StyledMenu = styled.div`
   display: none;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
@@ -17,7 +17,7 @@ const StyledMenu = styled.div`
 const StyledHamburgerButton = styled.button`
   display: none;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.flexCenter};
     position: relative;
     z-index: 10;
@@ -88,7 +88,7 @@ const StyledHamburgerButton = styled.button`
 const StyledSidebar = styled.aside`
   display: none;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.flexCenter};
     position: fixed;
     top: 0;
@@ -106,13 +106,13 @@ const StyledSidebar = styled.aside`
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
   }
 
-  @media (${({ theme }) => theme.bp.tabletS}) {
+  @media (max-width: 600px) {
     padding: 25px;
   }
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media (max-width: 480px) {
     width: 75vw;
   }
-  @media (${({ theme }) => theme.bp.mobileS}) {
+  @media (max-width: 330px) {
     padding: 10px;
   }
 
@@ -137,12 +137,12 @@ const StyledSidebar = styled.aside`
       font-size: var(--fz-lg);
       counter-increment: item 1;
 
-      @media (${({ theme }) => theme.bp.tabletS}) {
+      @media (max-width: 600px) {
         margin: 0 auto 10px;
         font-size: var(--fz-md);
       }
 
-      @media (${({ theme }) => theme.bp.mobileS}) {
+      @media (max-width: 330px) {
         font-size: var(--fz-xs);
       }
 

@@ -8,7 +8,7 @@ const StyledContactSection = styled.section`
   max-width: 600px;
   margin: 0 auto 100px;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     margin: 0 auto 50px;
   }
 
@@ -20,14 +20,14 @@ const StyledContactSection = styled.section`
     font-weight: 400;
     margin-bottom: 20px;
     justify-content: center;
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       font-size: var(--fz-sm);
     }
 
     &:before {
       bottom: 0;
       font-size: var(--fz-sm);
-      @media (${({ theme }) => theme.bp.desktopS}) {
+      @media (max-width: 1080px) {
         font-size: var(--fz-xs);
       }
     }
@@ -39,10 +39,10 @@ const StyledContactSection = styled.section`
   .title {
     font-size: 60px;
 
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       font-size: 50px;
     }
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       font-size: 40px;
     }
   }

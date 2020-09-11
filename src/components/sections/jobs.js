@@ -12,7 +12,7 @@ const StyledJobsSection = styled.section`
   .inner {
     display: flex;
 
-    @media (${({ theme }) => theme.bp.tabletS}) {
+    @media (max-width: 600px) {
       display: block;
     }
   }
@@ -26,32 +26,32 @@ const StyledTabList = styled.ul`
   margin: 0;
   list-style: none;
 
-  @media (${({ theme }) => theme.bp.tabletS}) {
+  @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
     width: calc(100% + 100px);
     margin-left: -50px;
     margin-bottom: 30px;
   }
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media (max-width: 480px) {
     width: calc(100% + 50px);
     margin-left: -25px;
   }
 
   li {
     &:first-of-type {
-      @media (${({ theme }) => theme.bp.tabletS}) {
+      @media (max-width: 600px) {
         margin-left: 50px;
       }
-      @media (${({ theme }) => theme.bp.mobileL}) {
+      @media (max-width: 480px) {
         margin-left: 25px;
       }
     }
     &:last-of-type {
-      @media (${({ theme }) => theme.bp.tabletS}) {
+      @media (max-width: 600px) {
         padding-right: 50px;
       }
-      @media (${({ theme }) => theme.bp.mobileL}) {
+      @media (max-width: 480px) {
         padding-right: 25px;
       }
     }
@@ -73,10 +73,10 @@ const StyledTabButton = styled.button`
   text-align: left;
   white-space: nowrap;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     padding: 0 15px 2px;
   }
-  @media (${({ theme }) => theme.bp.tabletS}) {
+  @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
     padding: 0 15px;
     border-left: 0;
@@ -104,7 +104,7 @@ const StyledHighlight = styled.div`
   z-index: 10;
   transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
 
-  @media (${({ theme }) => theme.bp.tabletS}) {
+  @media (max-width: 600px) {
     top: auto;
     bottom: 0;
     width: 100%;
@@ -113,7 +113,7 @@ const StyledHighlight = styled.div`
     margin-left: 50px;
     transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
   }
-  @media (${({ theme }) => theme.bp.mobileL}) {
+  @media (max-width: 480px) {
     margin-left: 25px;
   }
 `;
@@ -124,10 +124,10 @@ const StyledTabContent = styled.div`
   padding-top: 10px;
   padding-left: 30px;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     padding-left: 20px;
   }
-  @media (${({ theme }) => theme.bp.tabletS}) {
+  @media (max-width: 600px) {
     padding-left: 0;
   }
 

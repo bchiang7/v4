@@ -15,11 +15,11 @@ const StyledProject = styled.div`
   &:not(:last-of-type) {
     margin-bottom: 100px;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       margin-bottom: 70px;
     }
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media (max-width: 480px) {
       margin-bottom: 30px;
     }
   }
@@ -29,14 +29,14 @@ const StyledProject = styled.div`
       grid-column: 7 / -1;
       text-align: right;
 
-      @media (${({ theme }) => theme.bp.desktopS}) {
+      @media (max-width: 1080px) {
         grid-column: 5 / -1;
       }
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         grid-column: 1 / -1;
         padding: 40px 40px 30px;
       }
-      @media (${({ theme }) => theme.bp.mobileL}) {
+      @media (max-width: 480px) {
         padding: 25px 25px 20px;
       }
     }
@@ -46,7 +46,7 @@ const StyledProject = styled.div`
       li {
         margin: 0 0 5px 20px;
 
-        @media (${({ theme }) => theme.bp.tabletL}) {
+        @media (max-width: 768px) {
           margin: 0 0 5px 10px;
         }
       }
@@ -59,7 +59,7 @@ const StyledProject = styled.div`
     .project-image {
       grid-column: 1 / 8;
 
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         grid-column: 1 / -1;
       }
     }
@@ -70,17 +70,17 @@ const StyledProject = styled.div`
     grid-column: 1 / 7;
     grid-row: 1 / -1;
 
-    @media (${({ theme }) => theme.bp.desktopS}) {
+    @media (max-width: 1080px) {
       grid-column: 1 / 9;
     }
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       grid-column: 1 / -1;
       padding: 40px 40px 30px;
       z-index: 5;
     }
 
-    @media (${({ theme }) => theme.bp.mobileL}) {
+    @media (max-width: 480px) {
       padding: 30px 25px 20px;
     }
   }
@@ -99,10 +99,10 @@ const StyledProject = styled.div`
     margin: 0 0 20px;
     color: var(--lightest-slate);
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       font-size: 24px;
     }
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       color: var(--white);
     }
   }
@@ -117,7 +117,7 @@ const StyledProject = styled.div`
     color: var(--light-slate);
     font-size: var(--fz-lg);
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       background-color: transparent;
       padding: 20px 0;
       box-shadow: none;
@@ -149,7 +149,7 @@ const StyledProject = styled.div`
       margin: 0 20px 5px 0;
     }
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       margin: 15px 0 10px;
 
       li {
@@ -182,7 +182,7 @@ const StyledProject = styled.div`
     position: relative;
     z-index: 1;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       grid-column: 1 / -1;
       height: 100%;
       opacity: 0.25;
@@ -226,7 +226,7 @@ const StyledProject = styled.div`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(90%);
 
-      @media (${({ theme }) => theme.bp.tabletL}) {
+      @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
         height: 100%;

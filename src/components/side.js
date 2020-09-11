@@ -13,12 +13,12 @@ const StyledSideElement = styled.div`
   z-index: 10;
   color: var(--light-slate);
 
-  @media (${({ theme }) => theme.bp.desktopS}) {
+  @media (max-width: 1080px) {
     left: ${props => (props.orientation === 'left' ? '20px' : 'auto')};
     right: ${props => (props.orientation === 'left' ? 'auto' : '20px')};
   }
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

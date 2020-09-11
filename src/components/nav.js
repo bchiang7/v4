@@ -43,10 +43,10 @@ const StyledHeader = styled.header`
       transform: translateY(-var(--nav-scroll-height));
     `};
 
-  @media (${({ theme }) => theme.bp.desktopS}) {
+  @media (max-width: 1080px) {
     padding: 0 40px;
   }
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     padding: 0 25px;
   }
 `;
@@ -88,7 +88,7 @@ const StyledLinks = styled.div`
   display: flex;
   align-items: center;
 
-  @media (${({ theme }) => theme.bp.tabletL}) {
+  @media (max-width: 768px) {
     display: none;
   }
 

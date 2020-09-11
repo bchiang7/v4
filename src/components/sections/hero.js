@@ -17,7 +17,7 @@ const StyledHeroSection = styled.section`
     font-family: var(--font-mono);
     font-weight: 400;
 
-    @media (${({ theme }) => theme.bp.tabletL}) {
+    @media (max-width: 768px) {
       font-size: var(--fz-sm);
     }
   }
