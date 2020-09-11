@@ -9,10 +9,10 @@ import { Layout } from '@components';
 import { Icon } from '@components/icons';
 
 const StyledTableContainer = styled.div`
-  margin-top: 100px;
+  margin: 100px -20px;
 
   @media (max-width: 768px) {
-    margin-top: 50px;
+    margin: 50px -10px;
   }
 
   table {
@@ -34,10 +34,22 @@ const StyledTableContainer = styled.div`
 
     th,
     td {
+      padding: 10px;
       text-align: left;
 
-      &:not(:last-child) {
-        padding: 10px 10px 10px 0;
+      &:first-child {
+        padding-left: 20px;
+
+        @media (max-width: 768px) {
+          padding-left: 10px;
+        }
+      }
+      &:last-child {
+        padding-right: 20px;
+
+        @media (max-width: 768px) {
+          padding-right: 10px;
+        }
       }
 
       svg {
@@ -46,11 +58,25 @@ const StyledTableContainer = styled.div`
       }
     }
 
+    tr {
+      cursor: default;
+
+      td:first-child {
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+      }
+      td:last-child {
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+    }
+
     td {
       &.year {
         padding-right: 20px;
 
         @media (max-width: 768px) {
+          padding-right: 10px;
           font-size: var(--fz-sm);
         }
       }
@@ -82,7 +108,7 @@ const StyledTableContainer = styled.div`
       }
 
       &.links {
-        min-width: 80px;
+        min-width: 100px;
 
         div {
           display: flex;
