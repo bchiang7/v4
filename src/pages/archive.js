@@ -9,10 +9,10 @@ import { Layout } from '@components';
 import { Icon } from '@components/icons';
 
 const StyledTableContainer = styled.div`
-  margin: 100px -20px;
+  margin-top: 100px;
 
   @media (max-width: 768px) {
-    margin: 100px -10px;
+    margin-top: 50px;
   }
 
   table {
@@ -26,8 +26,6 @@ const StyledTableContainer = styled.div`
     }
 
     tbody tr {
-      transition: var(--transition);
-
       &:hover,
       &:focus {
         background-color: var(--light-navy);
@@ -36,34 +34,41 @@ const StyledTableContainer = styled.div`
 
     th,
     td {
-      padding: 10px 20px;
-      cursor: default;
       text-align: left;
 
-      @media (max-width: 768px) {
-        padding: 10px;
+      &:not(:last-child) {
+        padding: 10px 10px 10px 0;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
       }
     }
 
     td {
       &.year {
-        width: 10%;
+        padding-right: 20px;
+
         @media (max-width: 768px) {
           font-size: var(--fz-sm);
         }
       }
+
       &.title {
         padding-top: 15px;
+        padding-right: 20px;
         color: var(--lightest-slate);
         font-size: var(--fz-xl);
         font-weight: 600;
         line-height: 1.25;
       }
+
       &.company {
-        width: 15%;
-        padding-top: 15px;
         font-size: var(--fz-lg);
+        white-space: nowrap;
       }
+
       &.tech {
         font-size: var(--fz-xxs);
         font-family: var(--font-mono);
@@ -75,19 +80,21 @@ const StyledTableContainer = styled.div`
           display: inline-block;
         }
       }
+
       &.links {
-        span {
+        min-width: 80px;
+
+        div {
           display: flex;
           align-items: center;
+
           a {
             ${({ theme }) => theme.mixins.flexCenter};
+            flex-shrink: 0;
           }
+
           a + a {
             margin-left: 10px;
-          }
-          svg {
-            width: 20px;
-            height: 20px;
           }
         }
       }
@@ -163,7 +170,7 @@ const ArchivePage = ({ location, data }) => {
                       </td>
 
                       <td className="links">
-                        <span>
+                        <div>
                           {external && (
                             <a href={external} aria-label="External Link">
                               <Icon name="External" />
@@ -184,7 +191,7 @@ const ArchivePage = ({ location, data }) => {
                               <Icon name="PlayStore" />
                             </a>
                           )}
-                        </span>
+                        </div>
                       </td>
                     </tr>
                   );
