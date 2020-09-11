@@ -86,22 +86,21 @@ const StyledProject = styled.div`
   }
 
   .project-overline {
+    margin: 10px 0;
     color: var(--green);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     font-weight: 400;
-    margin: 10px 0 5px;
-    padding-top: 0;
   }
 
   .project-title {
-    font-size: 28px;
-    margin: 0 0 20px;
     color: var(--lightest-slate);
+    font-size: clamp(24px, 5vw, 28px);
 
-    @media (max-width: 768px) {
-      font-size: 24px;
+    @media (min-width: 768px) {
+      margin: 0 0 20px;
     }
+
     @media (max-width: 768px) {
       color: var(--white);
     }
@@ -121,6 +120,7 @@ const StyledProject = styled.div`
       background-color: transparent;
       padding: 20px 0;
       box-shadow: none;
+
       &:hover {
         box-shadow: none;
       }
@@ -141,16 +141,15 @@ const StyledProject = styled.div`
     list-style: none;
 
     li {
-      margin-bottom: 7px;
+      margin: 0 20px 5px 0;
       color: var(--light-slate);
       font-family: var(--font-mono);
       font-size: var(--fz-xs);
       white-space: nowrap;
-      margin: 0 20px 5px 0;
     }
 
     @media (max-width: 768px) {
-      margin: 15px 0 10px;
+      margin: 10px 0;
 
       li {
         color: var(--lightest-slate);

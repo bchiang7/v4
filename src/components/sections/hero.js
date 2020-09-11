@@ -13,18 +13,19 @@ const StyledHeroSection = styled.section`
   h1 {
     margin: 0 0 30px 4px;
     color: var(--green);
-    font-size: var(--fz-md);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-family: var(--font-mono);
     font-weight: 400;
 
-    @media (max-width: 768px) {
-      font-size: var(--fz-sm);
+    @media (max-width: 480px) {
+      margin: 0 0 20px 2px;
     }
   }
 
   h3 {
-    margin: 10px 0 0;
+    margin-top: 10px;
     color: var(--slate);
+    line-height: 0.9;
   }
 
   p {

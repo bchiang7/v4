@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --lightest-slate: #ccd6f6;
     --white: #e6f1ff;
     --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.07);
+    --green-tint: rgba(100, 255, 218, 0.1);
 
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
@@ -164,13 +164,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 10px 0;
     font-weight: 600;
     color: var(--lightest-slate);
-    line-height: 1;
+    line-height: 1.1;
   }
 
   .big-heading {
     margin: 0;
     font-size: clamp(40px, 8vw, 80px);
-    line-height: 1;
   }
 
   .medium-heading {

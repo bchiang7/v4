@@ -14,24 +14,12 @@ const StyledMainContainer = styled.main`
 const StyledTitle = styled.h1`
   color: var(--green);
   font-family: var(--font-mono);
-  font-size: 12vw;
+  font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
-  @media (max-width: 1200px) {
-    font-size: 200px;
-  }
-  @media (max-width: 480px) {
-    font-size: 120px;
-  }
 `;
 const StyledSubtitle = styled.h2`
-  font-size: 3vw;
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: 400;
-  @media (max-width: 1200px) {
-    font-size: 50px;
-  }
-  @media (max-width: 480px) {
-    font-size: 30px;
-  }
 `;
 const StyledHomeButton = styled(Link)`
   ${({ theme }) => theme.mixins.bigButton};

@@ -19,32 +19,19 @@ const StyledContactSection = styled.section`
     font-family: var(--font-mono);
     font-weight: 400;
     margin-bottom: 20px;
-    justify-content: center;
-    @media (max-width: 1080px) {
-      font-size: var(--fz-sm);
-    }
 
     &:before {
       bottom: 0;
       font-size: var(--fz-sm);
-      @media (max-width: 1080px) {
-        font-size: var(--fz-xs);
-      }
     }
+
     &:after {
       display: none;
     }
   }
 
   .title {
-    font-size: 60px;
-
-    @media (max-width: 1080px) {
-      font-size: 50px;
-    }
-    @media (max-width: 768px) {
-      font-size: 40px;
-    }
+    font-size: clamp(40px, 5vw, 60px);
   }
 
   .email-link {

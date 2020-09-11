@@ -12,10 +12,7 @@ const StyledProjectsSection = styled.section`
   align-items: center;
 
   h2 {
-    font-size: var(--fz-heading);
-    @media (max-width: 768px) {
-      font-size: 24px;
-    }
+    font-size: clamp(24px, 5vw, var(--fz-heading));
   }
 
   .archive-link {
@@ -98,13 +95,14 @@ const StyledProject = styled.div`
 
   .project-title {
     margin: 0 0 10px;
-    font-size: var(--fz-xxl);
     color: var(--lightest-slate);
+    font-size: var(--fz-xxl);
   }
 
   .project-description {
-    font-size: 17px;
     color: var(--light-slate);
+    font-size: 17px;
+
     a {
       ${({ theme }) => theme.mixins.inlineLink};
     }

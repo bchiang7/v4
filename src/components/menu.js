@@ -94,8 +94,8 @@ const StyledSidebar = styled.aside`
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 50px;
-    width: 50vw;
+    padding: 50px 10px;
+    width: min(75vw, 400px);
     height: 100vh;
     background-color: var(--light-navy);
     box-shadow: -10px 0px 30px -15px var(--navy-shadow);
@@ -104,16 +104,6 @@ const StyledSidebar = styled.aside`
     transition: var(--transition);
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
-  }
-
-  @media (max-width: 600px) {
-    padding: 25px;
-  }
-  @media (max-width: 480px) {
-    width: 75vw;
-  }
-  @media (max-width: 330px) {
-    padding: 10px;
   }
 
   nav {
@@ -132,18 +122,13 @@ const StyledSidebar = styled.aside`
     width: 100%;
 
     li {
-      margin: 0 auto 20px;
       position: relative;
-      font-size: var(--fz-lg);
+      margin: 0 auto 20px;
       counter-increment: item 1;
+      font-size: clamp(var(--fz-xs), 3vw, var(--fz-lg));
 
       @media (max-width: 600px) {
         margin: 0 auto 10px;
-        font-size: var(--fz-md);
-      }
-
-      @media (max-width: 330px) {
-        font-size: var(--fz-xs);
       }
 
       &:before {

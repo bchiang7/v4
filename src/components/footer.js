@@ -13,14 +13,14 @@ const StyledFooter = styled.footer`
   min-height: 70px;
 `;
 const StyledSocialLinks = styled.div`
-  color: var(--light-slate);
-  width: 100%;
-  max-width: 270px;
-  margin: 0 auto 10px;
   display: none;
 
   @media (max-width: 768px) {
     display: block;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto 10px;
+    color: var(--light-slate);
   }
 
   ul {
