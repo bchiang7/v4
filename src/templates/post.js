@@ -38,7 +38,7 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <Head title={title} />
+      {/* <Head title={title} /> */}
 
       <StyledPostContainer>
         <span className="breadcrumb">

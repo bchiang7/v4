@@ -37,7 +37,7 @@ const TagsPage = ({
   location,
 }) => (
   <Layout location={location}>
-    <Head title="Tags" />
+    {/* <Head title="Tags" /> */}
 
     <StyledTagsContainer>
       <span className="breadcrumb">

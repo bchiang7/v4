@@ -47,7 +47,7 @@ const NotFoundPage = ({ location }) => {
 
   return (
     <Layout location={location}>
-      <Head title="Page Not Found" />
+      {/* <Head title="Page Not Found" /> */}
 
       <TransitionGroup component={null}>
         {isMounted && (

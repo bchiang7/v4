@@ -108,7 +108,7 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Head title="Archive" />
+      {/* <Head title="Archive" /> */}
 
       <main>
         <header ref={revealTitle}>

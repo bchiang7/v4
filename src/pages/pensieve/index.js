@@ -118,7 +118,7 @@ const PensievePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Head title="Pensieve" />
+      {/* <Head title="Pensieve" /> */}
 
       <StyledMainContainer>
         <header>

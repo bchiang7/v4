@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
@@ -83,28 +83,32 @@ const Layout = ({ children, location }) => {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
+      <Head />
+
       <div id="root">
-        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
 
-        <SkipToContentLink href="#content">Skip to Content</SkipToContentLink>
+          <SkipToContentLink href="#content">Skip to Content</SkipToContentLink>
 
-        {isLoading && isHome ? (
-          <Loader finishLoading={() => setIsLoading(false)} />
-        ) : (
-          <StyledContent>
-            <Nav isHome={isHome} />
-            <Social isHome={isHome} />
-            <Email isHome={isHome} />
+          {isLoading && isHome ? (
+            <Loader finishLoading={() => setIsLoading(false)} />
+          ) : (
+            <StyledContent>
+              <Nav isHome={isHome} />
+              <Social isHome={isHome} />
+              <Email isHome={isHome} />
 
-            <div id="content">
-              {children}
-              <Footer />
-            </div>
-          </StyledContent>
-        )}
+              <div id="content">
+                {children}
+                <Footer />
+              </div>
+            </StyledContent>
+          )}
+        </ThemeProvider>
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 
