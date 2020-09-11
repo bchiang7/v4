@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
-import { Layout, Head } from '@components';
+import { Layout } from '@components';
 import { Icon } from '@components/icons';
 
 const StyledTableContainer = styled.div`
@@ -108,7 +109,7 @@ const ArchivePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      {/* <Head title="Archive" /> */}
+      <Helmet title="Archive" />
 
       <main>
         <header ref={revealTitle}>

@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Layout, Head } from '@components';
+import { Layout } from '@components';
 
 const StyledPostContainer = styled.main`
   max-width: 1000px;
@@ -38,7 +39,7 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      {/* <Head title={title} /> */}
+      <Helmet title={title} />
 
       <StyledPostContainer>
         <span className="breadcrumb">

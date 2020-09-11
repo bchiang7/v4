@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Layout, Head } from '@components';
+import { Layout } from '@components';
 import { IconZap } from '@components/icons';
 
 const StyledMainContainer = styled.main`
@@ -118,7 +119,7 @@ const PensievePage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      {/* <Head title="Pensieve" /> */}
+      <Helmet title="Pensieve" />
 
       <StyledMainContainer>
         <header>

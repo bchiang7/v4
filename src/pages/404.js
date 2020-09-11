@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navDelay } from '@utils';
-import { Layout, Head } from '@components';
+import { Layout } from '@components';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -47,7 +48,7 @@ const NotFoundPage = ({ location }) => {
 
   return (
     <Layout location={location}>
-      {/* <Head title="Page Not Found" /> */}
+      <Helmet title="Page Not Found" />
 
       <TransitionGroup component={null}>
         {isMounted && (
