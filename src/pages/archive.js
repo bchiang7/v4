@@ -137,7 +137,7 @@ const ArchivePage = ({ location, data }) => {
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealTable.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
+    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10, 0.05)));
   }, []);
 
   return (
