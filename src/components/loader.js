@@ -7,14 +7,14 @@ import { IconLoader } from '@components/icons';
 
 const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
-  background-color: var(--dark-navy);
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-navy);
   z-index: 99;
 
   .logo-wrapper {
@@ -23,9 +23,9 @@ const StyledLoader = styled.div`
     transition: var(--transition);
     opacity: ${props => (props.isMounted ? 1 : 0)};
     svg {
+      display: block;
       width: 100%;
       height: 100%;
-      display: block;
       margin: 0 auto;
       fill: none;
       user-select: none;

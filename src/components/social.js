@@ -9,8 +9,8 @@ const StyledSocialList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style: none;
 
   &:after {

@@ -42,8 +42,8 @@ const StyledProjectsSection = styled.section`
 `;
 
 const StyledProject = styled.div`
-  transition: var(--transition);
   cursor: default;
+  transition: var(--transition);
 
   &:hover,
   &:focus {
@@ -59,11 +59,11 @@ const StyledProject = styled.div`
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    padding: 2rem 1.75rem;
     height: 100%;
+    padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    transition: var(--transition);
     background-color: var(--light-navy);
+    transition: var(--transition);
   }
 
   .project-top {

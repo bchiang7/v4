@@ -7,11 +7,12 @@ import { socialMedia } from '@config';
 const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
-  padding: 15px;
-  text-align: center;
   height: auto;
   min-height: 70px;
+  padding: 15px;
+  text-align: center;
 `;
+
 const StyledSocialLinks = styled.div`
   display: none;
 
@@ -40,10 +41,10 @@ const StyledSocialLinks = styled.div`
 `;
 
 const StyledCredit = styled.div`
+  color: var(--light-slate);
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
   line-height: 1;
-  color: var(--light-slate);
 
   a {
     padding: 10px;

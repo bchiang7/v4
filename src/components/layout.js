@@ -20,22 +20,22 @@ const SkipToContentLink = styled.a`
   z-index: -99;
   &:focus,
   &:active {
-    outline: 0;
-    color: var(--green);
-    background-color: var(--light-navy);
-    border-radius: var(--border-radius);
-    padding: 18px 23px;
-    font-size: var(--fz-sm);
-    font-family: var(--font-mono);
-    line-height: 1;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition);
     top: 0;
     left: 0;
     width: auto;
     height: auto;
+    padding: 18px 23px;
+    outline: 0;
+    border-radius: var(--border-radius);
+    background-color: var(--light-navy);
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
     overflow: auto;
+    transition: var(--transition);
     z-index: 99;
   }
 `;

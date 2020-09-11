@@ -117,8 +117,8 @@ const StyledProject = styled.div`
     font-size: var(--fz-lg);
 
     @media (max-width: 768px) {
-      background-color: transparent;
       padding: 20px 0;
+      background-color: transparent;
       box-shadow: none;
 
       &:hover {
@@ -152,8 +152,8 @@ const StyledProject = styled.div`
       margin: 10px 0;
 
       li {
-        color: var(--lightest-slate);
         margin: 0 10px 5px 0;
+        color: var(--lightest-slate);
       }
     }
   }

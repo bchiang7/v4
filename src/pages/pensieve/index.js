@@ -9,8 +9,8 @@ import { IconZap } from '@components/icons';
 
 const StyledMainContainer = styled.main`
   & > header {
-    text-align: center;
     margin-bottom: 100px;
+    text-align: center;
 
     a {
       &:hover,
@@ -24,8 +24,8 @@ const StyledMainContainer = styled.main`
 
   footer {
     ${({ theme }) => theme.mixins.flexBetween};
-    margin-top: 20px;
     width: 100%;
+    margin-top: 20px;
   }
 `;
 const StyledGrid = styled.div`
@@ -36,6 +36,7 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
+
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
@@ -47,11 +48,12 @@ const StyledPostInner = styled.div`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  padding: 2rem 1.75rem;
   height: 100%;
+  padding: 2rem 1.75rem;
   border-radius: var(--border-radius);
   transition: var(--transition);
   background-color: var(--light-navy);
+
   header,
   a {
     width: 100%;
@@ -60,6 +62,7 @@ const StyledPostInner = styled.div`
 const StyledPost = styled.div`
   transition: var(--transition);
   cursor: default;
+
   &:hover,
   &:focus {
     outline: 0;
@@ -103,9 +106,9 @@ const StyledTags = styled.ul`
   list-style: none;
 
   li {
+    color: var(--green);
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
-    color: var(--green);
     line-height: 1.75;
 
     &:not(:last-of-type) {

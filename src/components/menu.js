@@ -21,11 +21,11 @@ const StyledHamburgerButton = styled.button`
     ${({ theme }) => theme.mixins.flexCenter};
     position: relative;
     z-index: 10;
-    padding: 15px;
     margin-right: -15px;
+    padding: 15px;
     border: 0;
-    color: inherit;
     background-color: transparent;
+    color: inherit;
     text-transform: none;
     transition-timing-function: linear;
     transition-duration: 0.15s;
@@ -33,20 +33,20 @@ const StyledHamburgerButton = styled.button`
   }
 
   .ham-box {
-    position: relative;
     display: inline-block;
+    position: relative;
     width: var(--hamburger-width);
     height: 24px;
   }
 
   .ham-box-inner {
-    background-color: var(--green);
     position: absolute;
+    top: 50%;
+    right: 0;
     width: var(--hamburger-width);
     height: 2px;
     border-radius: var(--border-radius);
-    top: 50%;
-    right: 0;
+    background-color: var(--green);
     transition-duration: 0.22s;
     transition-property: transform;
     transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
@@ -63,11 +63,11 @@ const StyledHamburgerButton = styled.button`
       right: 0;
       width: var(--hamburger-width);
       height: 2px;
+      border-radius: 4px;
+      background-color: var(--green);
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
-      background-color: var(--green);
-      border-radius: 4px;
     }
     &:before {
       width: ${props => (props.menuOpen ? `100%` : `120%`)};
@@ -97,22 +97,22 @@ const StyledSidebar = styled.aside`
     padding: 50px 10px;
     width: min(75vw, 400px);
     height: 100vh;
+    outline: 0;
     background-color: var(--light-navy);
     box-shadow: -10px 0px 30px -15px var(--navy-shadow);
     z-index: 9;
-    outline: 0;
-    transition: var(--transition);
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
+    transition: var(--transition);
   }
 
   nav {
     ${({ theme }) => theme.mixins.flexBetween};
     width: 100%;
     flex-direction: column;
-    text-align: center;
     color: var(--lightest-slate);
     font-family: var(--font-mono);
+    text-align: center;
   }
 
   ol {
@@ -132,18 +132,18 @@ const StyledSidebar = styled.aside`
       }
 
       &:before {
-        display: block;
         content: '0' counter(item) '.';
+        display: block;
+        margin-bottom: 5px;
         color: var(--green);
         font-size: var(--fz-sm);
-        margin-bottom: 5px;
       }
     }
 
     a {
       ${({ theme }) => theme.mixins.link};
-      padding: 3px 20px 20px;
       width: 100%;
+      padding: 3px 20px 20px;
     }
   }
 

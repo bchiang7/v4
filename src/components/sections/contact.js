@@ -4,9 +4,9 @@ import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 
 const StyledContactSection = styled.section`
-  text-align: center;
   max-width: 600px;
   margin: 0 auto 100px;
+  text-align: center;
 
   @media (max-width: 768px) {
     margin: 0 auto 50px;
@@ -14,11 +14,11 @@ const StyledContactSection = styled.section`
 
   .overline {
     display: block;
-    color: var(--green);
-    font-size: var(--fz-md);
-    font-family: var(--font-mono);
-    font-weight: 400;
     margin-bottom: 20px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+    font-weight: 400;
 
     &:before {
       bottom: 0;

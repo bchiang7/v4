@@ -20,8 +20,8 @@ const StyledJobsSection = styled.section`
 
 const StyledTabList = styled.ul`
   position: relative;
-  width: max-content;
   z-index: 3;
+  width: max-content;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -78,10 +78,10 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
+    min-width: 120px;
     padding: 0 15px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
-    min-width: 120px;
     text-align: center;
   }
 
@@ -95,14 +95,14 @@ const StyledHighlight = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 2px;
   height: var(--tab-height);
   border-radius: var(--border-radius);
   background: var(--green);
+  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
-  z-index: 10;
-  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
 
   @media (max-width: 600px) {
     top: auto;
@@ -136,9 +136,9 @@ const StyledTabContent = styled.div`
   }
 
   h3 {
+    margin-bottom: 5px;
     font-size: var(--fz-xxl);
     font-weight: 500;
-    margin-bottom: 5px;
 
     .company {
       color: var(--green);
@@ -146,10 +146,10 @@ const StyledTabContent = styled.div`
   }
 
   .range {
+    margin-bottom: 30px;
     color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
-    margin-bottom: 30px;
   }
 `;
 

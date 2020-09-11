@@ -13,34 +13,34 @@ const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
   position: fixed;
   top: 0;
-  padding: 0px 50px;
-  background-color: var(--navy);
-  transition: var(--transition);
   z-index: 11;
+  padding: 0px 50px;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--navy);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
-  width: 100%;
-  height: var(--nav-height);
   backdrop-filter: blur(10px);
+  transition: var(--transition);
 
   ${props =>
     props.scrollDirection === 'up' &&
     !props.scrolledToTop &&
     css`
-      background-color: rgba(10, 25, 47, 0.85);
-      box-shadow: 0 10px 30px -10px var(--navy-shadow);
       height: var(--nav-scroll-height);
       transform: translateY(0px);
+      background-color: rgba(10, 25, 47, 0.85);
+      box-shadow: 0 10px 30px -10px var(--navy-shadow);
     `};
 
   ${props =>
     props.scrollDirection === 'down' &&
     !props.scrolledToTop &&
     css`
-      box-shadow: 0 10px 30px -10px var(--navy-shadow);
       height: var(--nav-scroll-height);
       transform: translateY(calc(var(--nav-scroll-height) * -1));
+      box-shadow: 0 10px 30px -10px var(--navy-shadow);
     `};
 
   @media (max-width: 1080px) {
@@ -101,8 +101,8 @@ const StyledLinks = styled.div`
     li {
       margin: 0 5px;
       position: relative;
-      font-size: var(--fz-xs);
       counter-increment: item 1;
+      font-size: var(--fz-xs);
 
       a {
         padding: 10px;

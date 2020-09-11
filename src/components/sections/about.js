@@ -22,9 +22,9 @@ const StyledText = styled.div`
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
-    overflow: hidden;
     padding: 0;
     margin: 20px 0 0 0;
+    overflow: hidden;
     list-style: none;
 
     li {
@@ -56,9 +56,9 @@ const StyledPic = styled.div`
 
   .wrapper {
     ${({ theme }) => theme.mixins.boxShadow};
-    width: 100%;
-    position: relative;
     display: block;
+    position: relative;
+    width: 100%;
     border-radius: var(--border-radius);
     background-color: var(--green);
 
@@ -80,9 +80,9 @@ const StyledPic = styled.div`
 
     .img {
       position: relative;
+      border-radius: var(--border-radius);
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
-      border-radius: var(--border-radius);
       transition: var(--transition);
     }
 
