@@ -1,0 +1,15 @@
+{
+  "componentChunkName": "component---src-pages-pensieve-tags-js",
+  "path": "/pensieve/tags/",
+  "result": {
+    "data": {
+      "allMarkdownRemark": {
+        "group": [
+          { "fieldValue": "Docker", "totalCount": 1 },
+          { "fieldValue": "WordPress", "totalCount": 2 }
+        ]
+      }
+    },
+    "pageContext": {}
+  }
+}
