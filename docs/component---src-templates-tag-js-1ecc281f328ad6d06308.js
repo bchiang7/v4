@@ -1,46 +1,46 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
   [10],
   {
-    ccoC: function (e, t, a) {
+    ccoC: function(e, t, a) {
       'use strict';
       a.r(t),
-        a.d(t, 'pageQuery', function () {
-          return g;
-        });
-      var n = a('q1tI'),
-        l = a.n(n),
-        r = a('Wbzz'),
-        i = a('N1om'),
-        m = a.n(i),
-        c = a('qhky'),
-        o = a('vOnD'),
-        s = a('Kvkj'),
-        u = o.d.main.withConfig({
-          displayName: 'tag__StyledTagsContainer',
-          componentId: 'sc-1b47em6-0',
-        })(
-          [
-            'max-width:1000px;a{',
-            ';}h1{',
-            ';margin-bottom:50px;a{font-size:var(--fz-lg);font-weight:400;}}ul{li{font-size:24px;h2{font-size:inherit;margin:0;a{color:var(--light-slate);}}.subtitle{color:var(--slate);font-size:var(--fz-sm);.tag{margin-right:10px;}}}}',
-          ],
-          function (e) {
-            return e.theme.mixins.inlineLink;
-          },
-          function (e) {
-            return e.theme.mixins.flexBetween;
-          },
-        );
-      t.default = function (e) {
-        var t = e.pageContext,
-          a = e.data,
-          n = e.location,
-          i = t.tag,
-          o = a.allMarkdownRemark.edges;
+      a.d(t, 'pageQuery', function() {
+        return g;
+      });
+      const n = a('q1tI');
+      const l = a.n(n);
+      const r = a('Wbzz');
+      const i = a('N1om');
+      const m = a.n(i);
+      const c = a('qhky');
+      const o = a('vOnD');
+      const s = a('Kvkj');
+      const u = o.d.main.withConfig({
+        displayName: 'tag__StyledTagsContainer',
+        componentId: 'sc-1b47em6-0',
+      })(
+        [
+          'max-width:1000px;a{',
+          ';}h1{',
+          ';margin-bottom:50px;a{font-size:var(--fz-lg);font-weight:400;}}ul{li{font-size:24px;h2{font-size:inherit;margin:0;a{color:var(--light-slate);}}.subtitle{color:var(--slate);font-size:var(--fz-sm);.tag{margin-right:10px;}}}}',
+        ],
+        function(e) {
+          return e.theme.mixins.inlineLink;
+        },
+        function(e) {
+          return e.theme.mixins.flexBetween;
+        },
+      );
+      t.default = function(e) {
+        const t = e.pageContext;
+        const a = e.data;
+        const n = e.location;
+        const i = t.tag;
+        const o = a.allMarkdownRemark.edges;
         return l.a.createElement(
           s.i,
           { location: n },
-          l.a.createElement(c.a, { title: 'Tagged: #' + i }),
+          l.a.createElement(c.a, { title: `Tagged: #${  i}` }),
           l.a.createElement(
             u,
             null,
@@ -63,12 +63,12 @@
             l.a.createElement(
               'ul',
               { className: 'fancy-list' },
-              o.map(function (e) {
-                var t = e.node.frontmatter,
-                  a = t.title,
-                  n = t.slug,
-                  i = t.date,
-                  c = t.tags;
+              o.map(function(e) {
+                const t = e.node.frontmatter;
+                const a = t.title;
+                const n = t.slug;
+                const i = t.date;
+                const c = t.tags;
                 return l.a.createElement(
                   'li',
                   { key: n },
@@ -88,10 +88,10 @@
                     l.a.createElement('span', null, ' — '),
                     c &&
                       c.length > 0 &&
-                      c.map(function (e, t) {
+                      c.map(function(e, t) {
                         return l.a.createElement(
                           r.Link,
-                          { key: t, to: '/pensieve/tags/' + m()(e) + '/', className: 'tag' },
+                          { key: t, to: `/pensieve/tags/${  m()(e)  }/`, className: 'tag' },
                           '#',
                           e,
                         );

@@ -19,11 +19,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,css,json,md}": [
       "prettier --write"
