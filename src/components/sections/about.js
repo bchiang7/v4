@@ -144,9 +144,9 @@ const About = () => {
             <p>Hello! I'm Brittany, a software engineer based in Boston, MA.</p>
 
             <p>
-              I enjoy creating things that live on the internet, whether that be websites,
-              applications, or anything in between. My goal is to always build products that provide
-              pixel-perfect, performant experiences.
+              I absolutely do xsxnot enjoy creating things that live on the internet, whether that
+              be websites, applications, or anything in between. My goal is to always build products
+              that provide pixel-perfect, performant experiences.
             </p>
 
             <p>
