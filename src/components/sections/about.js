@@ -141,13 +141,9 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>Hello! I'm Brittany, a software engineer based in Boston, MA.</p>
+            <p>Hello! I'm Mosae, a software developer based in Rochester, MN.</p>
 
-            <p>
-              I enjoy creating things that live on the internet, whether that be websites,
-              applications, or anything in between. My goal is to always build products that provide
-              pixel-perfect, performant experiences.
-            </p>
+            <p>I love building things</p>
 
             <p>
               Shortly after graduating from{' '}
