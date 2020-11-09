@@ -48,17 +48,16 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Mosae Litsoane.</h2>;
+  const two = <h2 className="big-heading">Mosae S Litsoane.</h2>;
   const three = <h3 className="big-heading">A Web Developer.</h3>;
   const four = (
     <p>
-      I'm a software engineer based in Boston, MA specializing in building (and occasionally
-      designing) exceptional websites, applications, and everything in between.
+      I'm a software developer based in Rochester, MN. I enjoy bringing websites and problem solving
     </p>
   );
   const five = (
     <a href={`mailto:${email}`} className="email-link">
-      Get In Touch
+      Let's Talk
     </a>
   );
 
