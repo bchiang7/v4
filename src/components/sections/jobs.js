@@ -8,7 +8,7 @@ const { colors, fontSizes, fonts } = theme;
 
 const StyledContainer = styled(Section)`
   position: relative;
-  max-width: 700px;
+  // max-width: 700px;
 `;
 const StyledTabs = styled.div`
   display: flex;
@@ -80,7 +80,7 @@ const StyledTabButton = styled.button`
     text-align: center;
     border-left: 0;
     border-bottom: 2px solid ${colors.darkGrey};
-    min-width: 120px;
+    min-width: auto;
   `};
   &:hover,
   &:focus {

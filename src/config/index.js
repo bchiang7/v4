@@ -15,10 +15,6 @@ module.exports = {
   twitterHandle: '@sampan501',
   socialMedia: [
     {
-      name: 'Twitter',
-      url: 'https://twitter.com/sampan501',
-    },
-    {
       name: 'GitHub',
       url: 'https://github.com/sampan501',
     },
