@@ -8,9 +8,10 @@ import { Projects, Papers, Presentations } from '@components';
 const { colors, fontSizes, fonts } = theme;
 
 const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
+  // ${mixins.flexCenter};
+  // flex-direction: column;
+  // align-items: flex-start;
+  position: relative;
 `;
 const StyledTabs = styled.div`
   display: block;
@@ -21,7 +22,7 @@ const StyledTabs = styled.div`
   `};
 `;
 const StyledTabList = styled.ul`
- ${mixins.flexCenter};
+  ${mixins.flexCenter};
   display: flex;
   position: relative;
   width: 100%;
@@ -43,6 +44,25 @@ const StyledTabList = styled.ul`
     width: calc(100% + 50px);
     margin-left: -25px;
   `};
+  }
+
+  li {
+    &:first-of-type {
+      ${media.thone`
+        margin-left: 50px;
+      `};
+      ${media.phablet`
+        margin-left: 25px;
+      `};
+    }
+    &:last-of-type {
+      ${media.thone`
+        padding-right: 50px;
+      `};
+      ${media.phablet`
+        padding-right: 25px;
+      `};
+    }
   }
 `;
 const StyledTabButton = styled.button`
