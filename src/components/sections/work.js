@@ -85,7 +85,7 @@ const StyledTabButton = styled.button`
   ${media.tablet`padding: 0 15px 2px; border-bottom: 2px solid ${props => (props.isActive ? colors.green : colors.navy)};`};
   ${media.thone`
     ${mixins.flexCenter};
-    padding: 0 15px;
+    padding: 0 10px;
     text-align: center;
     border-left: 0;
     min-width: auto;
@@ -132,7 +132,7 @@ const StyledTabContent = styled.div`
   position: relative;
   padding-top: 0px;
   padding-left: 0px;
-  ${media.tablet`padding-left: 20px;`};
+  ${media.tablet`padding-left: 0px;`};
   ${media.thone`padding-left: 0;`};
 
   ul {
