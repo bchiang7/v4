@@ -1,38 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
-import { IconLoader } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins } from '@styles';
-const { colors } = theme;
+import { IconLoader } from '@components/icons';
 
-const StyledContainer = styled.div`
-  ${mixins.flexCenter};
-  background-color: ${colors.darkNavy};
+const StyledLoader = styled.div`
+  ${({ theme }) => theme.mixins.flexCenter};
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-navy);
   z-index: 99;
-`;
-const StyledLogo = styled.div`
-  width: max-content;
-  max-width: 100px;
-  transition: ${theme.transition};
-  opacity: ${props => (props.isMounted ? 1 : 0)};
-  svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-    fill: none;
-    user-select: none;
-    #B {
-      opacity: 0;
+
+  .logo-wrapper {
+    width: max-content;
+    max-width: 100px;
+    transition: var(--transition);
+    opacity: ${props => (props.isMounted ? 1 : 0)};
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      fill: none;
+      user-select: none;
+      #B {
+        opacity: 0;
+      }
     }
   }
 `;
@@ -83,13 +82,13 @@ const Loader = ({ finishLoading }) => {
   }, []);
 
   return (
-    <StyledContainer className="loader">
+    <StyledLoader className="loader" isMounted={isMounted}>
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
-      <StyledLogo isMounted={isMounted}>
+      <div className="logo-wrapper">
         <IconLoader />
-      </StyledLogo>
-    </StyledContainer>
+      </div>
+    </StyledLoader>
   );
 };
 
