@@ -70,7 +70,7 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
 1. Preview the site as it will appear once deployed
 
    ```sh
-   npm run serve
+   npm run server
    ```
 
 ## 🎨 Color Reference
