@@ -165,8 +165,19 @@ const StyledProject = styled.div`
     margin-top: 10px;
     margin-left: -10px;
     color: var(--lightest-slate);
+
     a {
+      ${({ theme }) => theme.mixins.flexCenter};
       padding: 10px;
+
+      &.external {
+        svg {
+          width: 22px;
+          height: 22px;
+          margin-top: -4px;
+        }
+      }
+
       svg {
         width: 20px;
         height: 20px;
@@ -307,7 +318,7 @@ const Featured = () => {
                       </a>
                     )}
                     {external && (
-                      <a href={external} aria-label="External Link">
+                      <a href={external} aria-label="External Link" className="external">
                         <Icon name="External" />
                       </a>
                     )}
