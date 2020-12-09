@@ -44,7 +44,7 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
 2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
 
    ```sh
-   nvm install
+   npm install
    ```
 
 3. Install dependencies
