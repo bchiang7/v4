@@ -36,8 +36,8 @@ const StyledSocialList = styled.ul`
       }
 
       svg {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
       }
     }
   }

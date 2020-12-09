@@ -68,7 +68,7 @@ const StyledProject = styled.div`
 
   .project-top {
     ${({ theme }) => theme.mixins.flexBetween};
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 
     .folder {
       color: var(--green);
@@ -79,11 +79,22 @@ const StyledProject = styled.div`
     }
 
     .project-links {
+      display: flex;
+      align-items: center;
       margin-right: -10px;
       color: var(--light-slate);
 
       a {
-        padding: 5px 10px;
+        ${({ theme }) => theme.mixins.flexCenter};
+        padding: 5px 7px;
+
+        &.external {
+          svg {
+            width: 22px;
+            height: 22px;
+            margin-top: -4px;
+          }
+        }
 
         svg {
           width: 20px;
@@ -210,7 +221,7 @@ const Projects = () => {
                             </a>
                           )}
                           {external && (
-                            <a href={external} aria-label="External Link">
+                            <a href={external} aria-label="External Link" className="external">
                               <Icon name="External" />
                             </a>
                           )}

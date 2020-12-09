@@ -60,9 +60,9 @@ const StyledCredit = styled.div`
     }
     svg {
       display: inline-block;
-      width: auto;
-      height: 15px;
       margin-right: 5px;
+      width: 14px;
+      height: 14px;
     }
   }
 `;
