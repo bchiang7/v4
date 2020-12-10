@@ -23,13 +23,13 @@ const StyledSocialList = styled.ul`
   }
 
   li {
-    padding: 10px;
-
     &:last-of-type {
       margin-bottom: 20px;
     }
 
     a {
+      padding: 10px;
+
       &:hover,
       &:focus {
         transform: translateY(-3px);
