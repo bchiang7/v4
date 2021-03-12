@@ -18,7 +18,7 @@ const StyledJobsSection = styled.section`
   }
 `;
 
-const StyledTabList = styled.ul`
+const StyledTabList = styled.div`
   position: relative;
   z-index: 3;
   width: max-content;
@@ -206,15 +206,21 @@ const Jobs = () => {
 
   // Focus on tabs when using up & down arrow keys
   const onKeyDown = e => {
-    if (e.key === KEY_CODES.ARROW_UP || e.key === KEY_CODES.ARROW_DOWN) {
-      e.preventDefault();
-      // Move up
-      if (e.key === KEY_CODES.ARROW_UP) {
+    switch (e.key) {
+      case KEY_CODES.ARROW_UP: {
+        e.preventDefault();
         setTabFocus(tabFocus - 1);
+        break;
       }
-      // Move down
-      if (e.key === KEY_CODES.ARROW_DOWN) {
+
+      case KEY_CODES.ARROW_DOWN: {
+        e.preventDefault();
         setTabFocus(tabFocus + 1);
+        break;
+      }
+
+      default: {
+        break;
       }
     }
   };
@@ -224,24 +230,23 @@ const Jobs = () => {
       <h2 className="numbered-heading">Where I’ve Worked</h2>
 
       <div className="inner">
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={onKeyDown}>
+        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { company } = node.frontmatter;
               return (
-                <li key={i}>
-                  <StyledTabButton
-                    isActive={activeTabId === i}
-                    onClick={() => setActiveTabId(i)}
-                    ref={el => (tabs.current[i] = el)}
-                    id={`tab-${i}`}
-                    role="tab"
-                    aria-selected={activeTabId === i ? true : false}
-                    aria-controls={`panel-${i}`}
-                    tabIndex={activeTabId === i ? '0' : '-1'}>
-                    <span>{company}</span>
-                  </StyledTabButton>
-                </li>
+                <StyledTabButton
+                  key={i}
+                  isActive={activeTabId === i}
+                  onClick={() => setActiveTabId(i)}
+                  ref={el => (tabs.current[i] = el)}
+                  id={`tab-${i}`}
+                  role="tab"
+                  tabIndex={activeTabId === i ? '0' : '-1'}
+                  aria-selected={activeTabId === i ? true : false}
+                  aria-controls={`panel-${i}`}>
+                  <span>{company}</span>
+                </StyledTabButton>
               );
             })}
           <StyledHighlight activeTabId={activeTabId} />
