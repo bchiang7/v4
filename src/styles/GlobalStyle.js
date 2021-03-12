@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--slate);
+    background-color: var(--lightest-navy);
     color: var(--lightest-slate);
   }
 

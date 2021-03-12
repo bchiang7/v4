@@ -118,27 +118,28 @@ const StyledHighlight = styled.div`
   }
 `;
 
-const StyledTabContent = styled.div`
+const StyledTabPanels = styled.div`
+  margin-left: 20px;
+
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
+`;
+
+const StyledTabPanel = styled.div`
   width: 100%;
   height: auto;
-  padding-top: 10px;
-  padding-left: 30px;
-
-  @media (max-width: 768px) {
-    padding-left: 20px;
-  }
-  @media (max-width: 600px) {
-    padding-left: 0;
-  }
+  padding: 10px 5px;
 
   ul {
     ${({ theme }) => theme.mixins.fancyList};
   }
 
   h3 {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-size: var(--fz-xxl);
     font-weight: 500;
+    line-height: 1.3;
 
     .company {
       color: var(--green);
@@ -146,7 +147,7 @@ const StyledTabContent = styled.div`
   }
 
   .range {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
@@ -246,37 +247,39 @@ const Jobs = () => {
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
-        {jobsData &&
-          jobsData.map(({ node }, i) => {
-            const { frontmatter, html } = node;
-            const { title, url, company, range } = frontmatter;
+        <StyledTabPanels>
+          {jobsData &&
+            jobsData.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { title, url, company, range } = frontmatter;
 
-            return (
-              <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
-                <StyledTabContent
-                  id={`panel-${i}`}
-                  role="tabpanel"
-                  tabIndex={activeTabId === i ? '0' : '-1'}
-                  aria-labelledby={`tab-${i}`}
-                  aria-hidden={activeTabId !== i}
-                  hidden={activeTabId !== i}>
-                  <h3>
-                    <span>{title}</span>
-                    <span className="company">
-                      &nbsp;@&nbsp;
-                      <a href={url} className="inline-link">
-                        {company}
-                      </a>
-                    </span>
-                  </h3>
+              return (
+                <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
+                  <StyledTabPanel
+                    id={`panel-${i}`}
+                    role="tabpanel"
+                    tabIndex={activeTabId === i ? '0' : '-1'}
+                    aria-labelledby={`tab-${i}`}
+                    aria-hidden={activeTabId !== i}
+                    hidden={activeTabId !== i}>
+                    <h3>
+                      <span>{title}</span>
+                      <span className="company">
+                        &nbsp;@&nbsp;
+                        <a href={url} className="inline-link">
+                          {company}
+                        </a>
+                      </span>
+                    </h3>
 
-                  <p className="range">{range}</p>
+                    <p className="range">{range}</p>
 
-                  <div dangerouslySetInnerHTML={{ __html: html }} />
-                </StyledTabContent>
-              </CSSTransition>
-            );
-          })}
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                  </StyledTabPanel>
+                </CSSTransition>
+              );
+            })}
+        </StyledTabPanels>
       </div>
     </StyledJobsSection>
   );
