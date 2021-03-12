@@ -65,6 +65,11 @@ const GlobalStyle = createGlobalStyle`
     color: var(--lightest-slate);
   }
 
+  :focus {
+    outline: 2px dashed var(--green);
+    outline-offset: 3px;
+  }
+
   body {
     margin: 0;
     width: 100%;

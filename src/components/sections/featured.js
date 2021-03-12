@@ -6,7 +6,17 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
 
-const StyledProject = styled.div`
+const StyledProjectsGrid = styled.ul`
+  ${({ theme }) => theme.mixins.resetList};
+
+  a {
+    position: relative;
+    z-index: 1;
+  }
+`;
+
+const StyledProject = styled.li`
+  position: relative;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
@@ -75,6 +85,10 @@ const StyledProject = styled.div`
     }
 
     @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
       grid-column: 1 / -1;
       padding: 40px 40px 30px;
       z-index: 5;
@@ -103,6 +117,21 @@ const StyledProject = styled.div`
 
     @media (max-width: 768px) {
       color: var(--white);
+
+      a {
+        position: static;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+      }
     }
   }
 
@@ -207,6 +236,7 @@ const StyledProject = styled.div`
       &:hover,
       &:focus {
         background: transparent;
+        outline: 0;
 
         &:before,
         .img {
@@ -290,7 +320,7 @@ const Featured = () => {
         Some Things I’ve Built
       </h2>
 
-      <div>
+      <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
@@ -299,29 +329,38 @@ const Featured = () => {
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
-                  <p className="project-overline">Featured Project</p>
-                  <h3 className="project-title">{title}</h3>
-                  <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+                  <div>
+                    <p className="project-overline">Featured Project</p>
 
-                  {tech.length && (
-                    <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
-                    </ul>
-                  )}
+                    <h3 className="project-title">
+                      <a href={external}>{title}</a>
+                    </h3>
 
-                  <div className="project-links">
-                    {github && (
-                      <a href={github} aria-label="GitHub Link">
-                        <Icon name="GitHub" />
-                      </a>
+                    <div
+                      className="project-description"
+                      dangerouslySetInnerHTML={{ __html: html }}
+                    />
+
+                    {tech.length && (
+                      <ul className="project-tech-list">
+                        {tech.map((tech, i) => (
+                          <li key={i}>{tech}</li>
+                        ))}
+                      </ul>
                     )}
-                    {external && (
-                      <a href={external} aria-label="External Link" className="external">
-                        <Icon name="External" />
-                      </a>
-                    )}
+
+                    <div className="project-links">
+                      {github && (
+                        <a href={github} aria-label="GitHub Link">
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a href={external} aria-label="External Link" className="external">
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -333,7 +372,7 @@ const Featured = () => {
               </StyledProject>
             );
           })}
-      </div>
+      </StyledProjectsGrid>
     </section>
   );
 };

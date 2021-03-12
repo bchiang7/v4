@@ -105,6 +105,7 @@ const mixins = {
     &:focus,
     &:active {
       background-color: var(--green-tint);
+      outline: none;
     }
     &:after {
       display: none !important;
@@ -127,6 +128,7 @@ const mixins = {
     &:focus,
     &:active {
       background-color: var(--green-tint);
+      outline: none;
     }
     &:after {
       display: none !important;
@@ -159,6 +161,12 @@ const mixins = {
         color: var(--green);
       }
     }
+  `,
+
+  resetList: css`
+    list-style: none;
+    padding: 0;
+    margin: 0;
   `,
 };
 
