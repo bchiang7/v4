@@ -16,7 +16,6 @@ const StyledProjectsSection = styled.section`
   }
 
   .archive-link {
-    font-family: var(--font-mono);
     font-size: var(--fz-sm);
     &:after {
       bottom: 0.1em;
@@ -37,7 +36,7 @@ const StyledProjectsSection = styled.section`
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
-    margin: 80px auto 0;
+    margin: 40px auto 0;
   }
 `;
 
@@ -61,8 +60,8 @@ const StyledProject = styled.div`
     position: relative;
     height: 100%;
     padding: 2rem 1.75rem;
-    border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: var(--red);
+    -webkit-filter: grayscale(15%);
     transition: var(--transition);
   }
 
@@ -71,7 +70,7 @@ const StyledProject = styled.div`
     margin-bottom: 35px;
 
     .folder {
-      color: var(--green);
+      color: black;
       svg {
         width: 40px;
         height: 40px;
@@ -82,11 +81,12 @@ const StyledProject = styled.div`
       display: flex;
       align-items: center;
       margin-right: -10px;
-      color: var(--light-slate);
+      color: black;
 
       a {
         ${({ theme }) => theme.mixins.flexCenter};
         padding: 5px 7px;
+        color: white;
 
         &.external {
           svg {
@@ -106,12 +106,12 @@ const StyledProject = styled.div`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: black;
     font-size: var(--fz-xxl);
   }
 
   .project-description {
-    color: var(--light-slate);
+    color: black;
     font-size: 17px;
 
     a {
@@ -129,7 +129,7 @@ const StyledProject = styled.div`
     list-style: none;
 
     li {
-      font-family: var(--font-mono);
+      font-style: oblique;
       font-size: var(--fz-xxs);
       line-height: 1.75;
 

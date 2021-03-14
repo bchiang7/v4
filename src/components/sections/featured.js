@@ -87,14 +87,13 @@ const StyledProject = styled.div`
 
   .project-overline {
     margin: 10px 0;
-    color: var(--green);
-    font-family: var(--font-mono);
+    color: var(--red);
     font-size: var(--fz-xs);
     font-weight: 400;
   }
 
   .project-title {
-    color: var(--lightest-slate);
+    color: black;
     font-size: clamp(24px, 5vw, 28px);
 
     @media (min-width: 768px) {
@@ -112,8 +111,8 @@ const StyledProject = styled.div`
     z-index: 2;
     padding: 25px;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
-    color: var(--light-slate);
+    background-color: white;
+    color: black;
     font-size: var(--fz-lg);
 
     @media (max-width: 768px) {
@@ -142,8 +141,7 @@ const StyledProject = styled.div`
 
     li {
       margin: 0 20px 5px 0;
-      color: var(--light-slate);
-      font-family: var(--font-mono);
+      color: white;
       font-size: var(--fz-xs);
       white-space: nowrap;
     }
@@ -153,7 +151,7 @@ const StyledProject = styled.div`
 
       li {
         margin: 0 10px 5px 0;
-        color: var(--lightest-slate);
+        color: white;
       }
     }
   }
@@ -164,7 +162,7 @@ const StyledProject = styled.div`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color: var(--lightest-slate);
+    color: black;
 
     a {
       ${({ theme }) => theme.mixins.flexCenter};
@@ -200,7 +198,7 @@ const StyledProject = styled.div`
 
     a {
       width: 100%;
-      background-color: var(--green);
+      background-color: none;
       border-radius: var(--border-radius);
       vertical-align: middle;
 
@@ -226,8 +224,8 @@ const StyledProject = styled.div`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
-        mix-blend-mode: screen;
+        background-color: none;
+        mix-blend-mode: none;
       }
     }
 

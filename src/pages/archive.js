@@ -28,7 +28,7 @@ const StyledTableContainer = styled.div`
     tbody tr {
       &:hover,
       &:focus {
-        background-color: var(--light-navy);
+        background-color: rgb(255, 250, 240, 0.4);
       }
     }
 
@@ -84,7 +84,7 @@ const StyledTableContainer = styled.div`
       &.title {
         padding-top: 15px;
         padding-right: 20px;
-        color: var(--lightest-slate);
+        color: var(--red);
         font-size: var(--fz-xl);
         font-weight: 600;
         line-height: 1.25;
@@ -97,7 +97,7 @@ const StyledTableContainer = styled.div`
 
       &.tech {
         font-size: var(--fz-xxs);
-        font-family: var(--font-mono);
+        font-style: oblique;
         line-height: 1.5;
         .separator {
           margin: 0 5px;

@@ -28,8 +28,8 @@ const SkipToContentLink = styled.a`
     outline: 0;
     border-radius: var(--border-radius);
     background-color: var(--light-navy);
-    color: var(--green);
-    font-family: var(--font-mono);
+    color: var(--slate);
+    font-family: Times New Roman;
     font-size: var(--fz-sm);
     line-height: 1;
     text-decoration: none;
@@ -87,6 +87,9 @@ const Layout = ({ children, location }) => {
       <Head />
 
       <div id="root">
+        <div className="progress">
+          <div className="bar"></div>
+        </div>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
 
@@ -116,5 +119,16 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
 };
+const doc = document.documentElement || document.body;
+let max = 0;
+let current = 0;
 
+function updateScrollProgress() {
+  max = doc.scrollHeight - window.innerHeight;
+  current = doc.scrollTop / max;
+  doc.style.setProperty('--progress', current);
+}
+
+document.addEventListener('scroll', updateScrollProgress);
+document.addEventListener('resize', updateScrollProgress);
 export default Layout;

@@ -31,16 +31,15 @@ const StyledText = styled.div`
       position: relative;
       margin-bottom: 10px;
       padding-left: 20px;
-      font-family: var(--font-mono);
+      font-family: Times New Roman;
       font-size: var(--fz-xs);
 
       &:before {
-        content: '▹';
+        content: '▸';
         position: absolute;
         left: 0;
-        color: var(--green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
+        color: var(--red);
+        font-size: var(--fz-xs);
       }
     }
   }
@@ -60,7 +59,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
+    background-color: transparent;
 
     &:hover,
     &:focus {
@@ -68,8 +67,8 @@ const StyledPic = styled.div`
       outline: 0;
 
       &:after {
-        top: 15px;
-        left: 15px;
+        top: 20px;
+        left: 20px;
       }
 
       .img {
@@ -81,7 +80,7 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
+      mix-blend-mode: none;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
@@ -93,19 +92,20 @@ const StyledPic = styled.div`
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: var(--border-radius);
+      border-radius: none;
       transition: var(--transition);
     }
 
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
+      background-color: transparent;
+      mix-blend-mode: none;
     }
 
     &:after {
-      border: 2px solid var(--green);
+      border: 2px solid;
+      border-color: var(--red);
       top: 20px;
       left: 20px;
       z-index: -1;
@@ -118,7 +118,7 @@ const About = () => {
     query {
       avatar: file(sourceInstanceName: { eq: "images" }, relativePath: { eq: "me.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 500, traceSVG: { color: "#64ffda" }) {
+          fluid(maxWidth: 500, traceSVG: { color: "#989898" }) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
@@ -132,7 +132,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'HTML & (S)CSS', 'React', 'Vue', 'Node.js', 'WordPress'];
+  const skills = ['Adobe Creative Suite', 'HTML & CSS', 'Shopify'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -141,20 +141,9 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>Hello! I'm Brittany, a software engineer based in Boston, MA.</p>
+            <p>Hello! I'm Celine. Based in New York, NY.</p>
 
-            <p>
-              I enjoy creating things that live on the internet, whether that be websites,
-              applications, or anything in between. My goal is to always build products that provide
-              pixel-perfect, performant experiences.
-            </p>
-
-            <p>
-              Shortly after graduating from{' '}
-              <a href="https://www.ccis.northeastern.edu">Northeastern University</a>, I joined the
-              engineering team at <a href="https://www.upstatement.com">Upstatement</a> where I work
-              on a wide variety of interesting and meaningful projects on a daily basis.
-            </p>
+            <p></p>
 
             <p>Here are a few technologies I've been working with recently:</p>
           </div>

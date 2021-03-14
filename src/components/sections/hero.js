@@ -11,9 +11,9 @@ const StyledHeroSection = styled.section`
   min-height: 100vh;
 
   h1 {
-    margin: 0 0 30px 4px;
-    color: var(--green);
-    font-family: var(--font-mono);
+    margin: 0 0 10px 0px;
+    color: black;
+    font-family: Times New Roman;
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
 
@@ -23,19 +23,24 @@ const StyledHeroSection = styled.section`
   }
 
   h3 {
-    margin-top: 10px;
-    color: var(--slate);
-    line-height: 0.9;
+    margin-bottom: 5px;
+    color: black;
+    letter-spacing: -2px;
+    font-family: Times New Roman;
+    font-weight: 300;
   }
 
   p {
-    margin: 20px 0 0;
-    max-width: 500px;
+    margin: 0px 0 0;
+    max-width: 430px;
+    color: black;
+    font-family: Times New Roman;
+    font-weight: 100;
   }
 
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
+    margin-top: 25px;
   }
 `;
 
@@ -48,12 +53,12 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Celine F. Nicolas.</h2>;
+  const three = <h3 className="big-heading">I like to solve problems.</h3>;
   const four = (
     <p>
-      I'm a software engineer based in Boston, MA specializing in building (and occasionally
-      designing) exceptional websites, applications, and everything in between.
+      I'm a science enthusiast and serial tinkerer navigating life as if it were a pas de deux.
+      based in New York, NY.
     </p>
   );
   const five = (

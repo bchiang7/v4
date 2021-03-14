@@ -1,0 +1,83 @@
+2021-02-20
+logo.js
+    -changed svg for B to C
+        <path d="M45.691667,45.15 C48.591667,46.1 50.691667,48.95 50.691667,52.2 C50.691667,57.95 46.691667,61 40.291667,61 L28.541667,61 L28.541667,30.3 L39.291667,30.3 C45.691667,30.3 49.691667,33.15 49.691667,38.65 C49.691667,41.95 47.941667,44.35 45.691667,45.15 Z M33.591667,43.2 L39.241667,43.2 C42.791667,43.2 44.691667,41.85 44.691667,38.95 C44.691667,36.05 42.791667,34.8 39.241667,34.8 L33.591667,34.8 L33.591667,43.2 Z M33.591667,47.5 L33.591667,56.5 L40.191667,56.5 C43.691667,56.5 45.591667,54.75 45.591667,52 C45.591667,49.2 43.691667,47.5 40.191667,47.5 L33.591667,47.5 Z" fill="currentColor"></path>
+    -adjust view box
+        0 0 84 96
+    -polygon points
+loader.js
+    -polygon to square (line 18)
+                  L 11, 27
+                  L 11, 72
+                  L 50, 95
+                  L 89, 73
+                  L 89, 28 z"
+about.js
+    -line 144, brittany to celine
+    -96 change img outline to sharp cornders      border-radius: var(--border-radius); to none
+hero.js
+    -line 50-56
+        Brittany Chiang
+        I build things for the web.
+        I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
+    -line 16 changed font for h1 
+        font-family: var(--font-mono);
+gatsby-config.js
+    -   line 5-10
+            title: 'Brittany Chiang',
+            description:
+            'Brittany Chiang is a software engineer specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.',
+            siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+            image: '/og.png', // Path to your image you placed in the 'static' folder
+            twitterUsername: '@bchiang7',
+    -line 22-28
+        name: 'BrittanyChiang',
+        short_name: 'BrittanyChiang',
+        start_url: '/',
+        background_color: config.colors.darkNavy,
+        theme_color: config.colors.navy,
+        display: 'minimal-ui',
+        icon: 'src/images/logo.png',
+config.js
+    -entered my contact
+layout.js
+    -
+GlobalStyle.js 
+    -change font of h1 line 159
+    -change font of h2 line 159
+          h2 {font-family: Times New Roman;}
+    -body line 77
+            font-family: var(--font-sans);
+    -357 change small arrow in jobs table           content: '▹';
+nav.js
+    -change backgorund to white
+mixins.js
+    -big button (get in touch button
+        border-radius: var(--border-radius);
+    -line 154 change jobs arrow to solid         content: '▹▸';
+nav.js
+    -props up and down
+                background-color: rgba(10, 25, 47, 0.85);    
+              box-shadow: 0 10px 30px -10px var(--navy-shadow);
+                    box-shadow: 0 10px 30px -10px var(--navy-shadow);
+loader.js
+    -stroke="currentColor"
+    -strokeWidth="5"
+    -strokeLinecap="round" to butt
+    -strokeLinejoin="round" to butt
+about.js chanrged my picture hover color to clear 108
+    after 
+      border: 2px solid #de5285;
+    103       background-color: var(--navy); to transparent
+    line 84       mix-blend-mode: multiply; to none to put box behind my picture
+    line 96 border-radius: var(--border-radius); to none to make sharp corners
+    line 38 change icons to solid         content: '▹▸';
+jobs.js
+    -line 51 change date range font     font-family: var(--font-mono);
+    -line 102 to change job icon left border and 70 to channge font color
+
+contact.js
+    -line 49 made what's next subsection header title match 1,2,3
+          <h2 className="numbered-heading overline">What’s Next?</h2> [remove overline]
+    
+

@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     --white: #e6f1ff;
     --green: #64ffda;
     --green-tint: rgba(100, 255, 218, 0.1);
+    --pink: #de5285;
+    --red: #f93700;
 
     --font-sans: 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
@@ -47,6 +49,13 @@ const GlobalStyle = createGlobalStyle`
     --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
     --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     --ham-after-active: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+
+    --progress: 0;
+    --track: #ccc;
+    --thumb: #f93700;
+    --height: 150vh;
+    --radius: 5;
+    --width: 10;
   }
 
   html {
@@ -61,22 +70,39 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--slate);
-    color: var(--lightest-slate);
+    background-color: black;
+    color: black;
   }
+  .progress {
+    background-color: none;
+    height: var(--height);
+    overflow: hidden;
+    padding: calc(1px * var(--inset));
+    width: calc(1px * var(--width));
+    position:fixed;
+  }
+  .bar {
+    background-color: var(--thumb);
+    height: 100%;
+    transform-origin: 0 0;
+    transform: scaleY(var(--progress));
+    width: 100%;
+  }  
 
   body {
+
     margin: 0;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--navy);
-    color: var(--slate);
-    font-family: var(--font-sans);
+    background-color: #dbd5c9;
+    color: black;
+    font-family: Times New Roman;
     font-size: var(--fz-xl);
     line-height: 1.3;
+
 
     @media (max-width: 480px) {
       font-size: var(--fz-lg);
@@ -99,6 +125,7 @@ const GlobalStyle = createGlobalStyle`
         pointer-events: none;
         user-select: none;
       }
+
     }
   }
 
@@ -108,6 +135,7 @@ const GlobalStyle = createGlobalStyle`
     grid-template-rows: 1fr auto;
     grid-template-columns: 100%;
   }
+
 
   main {
     margin: 0 auto;
@@ -143,7 +171,7 @@ const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 50px 0;
     max-width: 1000px;
 
     @media (max-width: 768px) {
@@ -156,14 +184,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1,
-  h2,
+  h2 {
+    font-family: Times New Roman;
+    font-style: oblique;
+    color: black;
+  }
   h3,
   h4,
   h5,
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--lightest-slate);
+    color: black;
     line-height: 1.1;
   }
 
@@ -192,8 +224,8 @@ const GlobalStyle = createGlobalStyle`
       counter-increment: section;
       content: '0' counter(section) '.';
       margin-right: 10px;
-      color: var(--green);
-      font-family: var(--font-mono);
+      color: black;
+      font-family: Times New Roman;
       font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
       font-weight: 400;
 
@@ -260,7 +292,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: var(--green);
+      color: black;
     }
 
     &.inline-link {
@@ -291,7 +323,8 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     margin: 0 0 15px 0;
-
+    font-family: Times New Roman;
+g
     &:last-child,
     &:last-of-type {
       margin: 0;
@@ -321,17 +354,17 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 30px;
         margin-bottom: 10px;
         &:before {
-          content: '▹';
+          content: '▸';
           position: absolute;
           left: 0;
-          color: var(--green);
+          color: black;
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: var(--green);
+    border-left-color: black;
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -355,26 +388,26 @@ const GlobalStyle = createGlobalStyle`
   }
 
   code {
-    font-family: var(--font-mono);
+    font-family:  Times New Roman;
     font-size: var(--fz-md);
   }
 
   #logo {
-    color: var(--green);
+    color: black;
   }
 
   .overline {
-    color: var(--green);
-    font-family: var(--font-mono);
+    color: black;
+    font-family:  Times New Roman;
     font-size: var(--fz-md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: var(--green);
+    color: black;
     margin: 0 0 20px 0;
     font-size: var(--fz-md);
-    font-family: var(--font-mono);
+    font-family:  Times New Roman;
     font-weight: 400;
     line-height: 1.5;
     @media (max-width: 1080px) {
@@ -394,7 +427,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: var(--green);
+    color: black;
 
     .arrow {
       display: block;
@@ -404,7 +437,7 @@ const GlobalStyle = createGlobalStyle`
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
-      font-family: var(--font-mono);
+      font-family: times new roman;
       font-size: var(--fz-sm);
       font-weight: 600;
       line-height: 1.5;

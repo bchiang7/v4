@@ -76,7 +76,7 @@ const StyledPostHeader = styled.div`
   margin-bottom: 30px;
 `;
 const StyledFolder = styled.div`
-  color: var(--green);
+  color: black;
   svg {
     width: 40px;
     height: 40px;
@@ -106,8 +106,8 @@ const StyledTags = styled.ul`
   list-style: none;
 
   li {
-    color: var(--green);
-    font-family: var(--font-mono);
+    color: #f93700;
+    font-family: Times New Roman;
     font-size: var(--fz-xxs);
     line-height: 1.75;
 

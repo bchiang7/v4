@@ -1,22 +1,22 @@
 import { css } from 'styled-components';
 
 const button = css`
-  color: var(--green);
+  color: black;
   background-color: transparent;
-  border: 1px solid var(--green);
-  border-radius: var(--border-radius);
-  font-size: var(--fz-xs);
-  font-family: var(--font-mono);
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0.8rem 1rem;
+  font-size: var(--fz-sm);
+  font-family: Times New Roman;
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
   transition: var(--transition);
-  padding: 1.25rem 1.75rem;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--green-tint);
+    background-color: var(--red);
     outline: none;
   }
   &:after {
@@ -48,7 +48,7 @@ const mixins = {
     &:hover,
     &:active,
     &:focus {
-      color: var(--green);
+      color: black);
       outline: 0;
     }
   `,
@@ -60,17 +60,17 @@ const mixins = {
     position: relative;
     transition: var(--transition);
     cursor: pointer;
-    color: var(--green);
+    color: black;
     &:hover,
     &:focus,
     &:active {
-      color: var(--green);
+      color: black;
       outline: 0;
       &:after {
         width: 100%;
       }
       & > * {
-        color: var(--green) !important;
+        color: black !important;
         transition: var(--transition);
       }
     }
@@ -81,7 +81,7 @@ const mixins = {
       height: 1px;
       position: relative;
       bottom: 0.37em;
-      background-color: var(--green);
+      background-color: black;
       transition: var(--transition);
       opacity: 0.5;
     }
@@ -90,13 +90,12 @@ const mixins = {
   button,
 
   smallButton: css`
-    color: var(--green);
+    color: black;
     background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: var(--border-radius);
-    padding: 0.75rem 1rem;
+    border: 1px solid black;
+    padding: 0.5rem 0.7rem;
     font-size: var(--fz-xs);
-    font-family: var(--font-mono);
+    font-family: Times New Roman;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -104,7 +103,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--green-tint);
+      background-color: var(--red);
     }
     &:after {
       display: none !important;
@@ -112,13 +111,12 @@ const mixins = {
   `,
 
   bigButton: css`
-    color: var(--green);
+    color: black;
     background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: var(--border-radius);
-    padding: 1.25rem 1.75rem;
+    border: 1px solid black;
+    padding: 0.8rem 1rem;
     font-size: var(--fz-sm);
-    font-family: var(--font-mono);
+    font-family: times new roman;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -126,7 +124,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--green-tint);
+      background-color: var(--red);
     }
     &:after {
       display: none !important;
@@ -153,10 +151,10 @@ const mixins = {
       padding-left: 30px;
       margin-bottom: 10px;
       &:before {
-        content: '▹';
+        content: '▸';
         position: absolute;
         left: 0;
-        color: var(--green);
+        color: var(--red);
       }
     }
   `,
