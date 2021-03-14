@@ -89,6 +89,11 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }  
 
+  :focus {
+    outline: 2px dashed var(--green);
+    outline-offset: 3px;
+  }
+
   body {
 
     margin: 0;
