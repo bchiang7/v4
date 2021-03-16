@@ -3,7 +3,7 @@ import theme from './theme';
 import media from './media';
 import mixins from './mixins';
 import FontFaces from './fonts';
-import TransitionStyles from './Transitifont-size: var(--fz-heading);onStyles';
+import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
 const { colors, fontSizes, fonts } = theme;
 
