@@ -28,11 +28,11 @@ module.exports = {
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/rublln/',
+      url: 'https://www.instagram.com/rubiin.__/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/rubiin',
+      url: 'https://twitter.com/RubinCodes',
     },
   ],
 
