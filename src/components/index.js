@@ -7,7 +7,7 @@ import Menu from './menu';
 import Side from './side';
 import Social from './social';
 import Email from './email';
-import ShareButtons from './share'
+import ShareButtons from './share';
 import Footer from './footer';
 // Sections
 import Hero from './sections/hero';

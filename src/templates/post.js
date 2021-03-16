@@ -2,10 +2,9 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
 import { Main, theme } from '@styles';
-import {ShareButtons} from '@components';
+import { ShareButtons, Layout } from '@components';
 const { colors } = theme;
 
 const StyledPostContainer = styled(Main)`
@@ -39,8 +38,6 @@ const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
 
-  
-
   return (
     <Layout location={location}>
       <StyledPostContainer>
@@ -51,7 +48,6 @@ const PostTemplate = ({ data, location }) => {
         <StyledPostHeader>
           <h1 className="medium-title">{title}</h1>
           <p className="subtitle">
-           
             <time>
               {new Date(date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -69,7 +65,7 @@ const PostTemplate = ({ data, location }) => {
               ))}
           </p>
         </StyledPostHeader>
-       
+
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
         <ShareButtons />
       </StyledPostContainer>

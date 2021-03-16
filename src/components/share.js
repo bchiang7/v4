@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -9,8 +9,8 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
   RedditShareButton,
-  RedditIcon
-} from 'react-share'
+  RedditIcon,
+} from 'react-share';
 export const ShareButtons = ({ twitterHandle, url, title, tags }) => (
   <div>
     <FacebookShareButton url={url}>
@@ -33,6 +33,6 @@ export const ShareButtons = ({ twitterHandle, url, title, tags }) => (
       <WhatsappIcon />
     </WhatsappShareButton>
   </div>
-)
+);
 
-export default ShareButtons
+export default ShareButtons;
