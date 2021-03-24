@@ -30,11 +30,13 @@ const StyledTabList = styled.div`
     display: flex;
     overflow-x: auto;
     width: calc(100% + 100px);
+    padding-left: 50px;
     margin-left: -50px;
     margin-bottom: 30px;
   }
   @media (max-width: 480px) {
     width: calc(100% + 50px);
+    padding-left: 25px;
     margin-left: -25px;
   }
 
