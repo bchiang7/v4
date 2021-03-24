@@ -22,6 +22,10 @@ const StyledProject = styled.li`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
 
+  @media (max-width: 768px) {
+    ${({ theme }) => theme.mixins.boxShadow};
+  }
+
   &:not(:last-of-type) {
     margin-bottom: 100px;
 
@@ -45,6 +49,7 @@ const StyledProject = styled.li`
       @media (max-width: 768px) {
         grid-column: 1 / -1;
         padding: 40px 40px 30px;
+        text-align: left;
       }
       @media (max-width: 480px) {
         padding: 25px 25px 20px;
@@ -53,11 +58,15 @@ const StyledProject = styled.li`
     .project-tech-list {
       justify-content: flex-end;
 
+      @media (max-width: 768px) {
+        justify-content: flex-start;
+      }
+
       li {
         margin: 0 0 5px 20px;
 
         @media (max-width: 768px) {
-          margin: 0 0 5px 10px;
+          margin: 0 10px 5px 0;
         }
       }
     }
@@ -65,6 +74,12 @@ const StyledProject = styled.li`
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -10px;
+
+      @media (max-width: 768px) {
+        justify-content: flex-start;
+        margin-left: -10px;
+        margin-right: 0;
+      }
     }
     .project-image {
       grid-column: 1 / 8;
@@ -229,6 +244,7 @@ const StyledProject = styled.li`
 
     a {
       width: 100%;
+      height: 100%;
       background-color: var(--green);
       border-radius: var(--border-radius);
       vertical-align: middle;
