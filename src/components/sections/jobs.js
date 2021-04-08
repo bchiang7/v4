@@ -15,6 +15,11 @@ const StyledJobsSection = styled.section`
     @media (max-width: 600px) {
       display: block;
     }
+
+    // Prevent container from jumping
+    @media (min-width: 700px) {
+      min-height: 340px;
+    }
   }
 `;
 
@@ -121,6 +126,8 @@ const StyledHighlight = styled.div`
 `;
 
 const StyledTabPanels = styled.div`
+  position: relative;
+  width: 100%;
   margin-left: 20px;
 
   @media (max-width: 600px) {
