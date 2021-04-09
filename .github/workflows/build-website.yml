@@ -1,0 +1,18 @@
+name: 'build-website' # Name of your workflow
+
+on:
+  push:
+    branches:
+      - master # The trigger of the this workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Action uses Docker so only Linux is supported
+    steps:
+      - uses: actions/checkout@v1 # Checkout your triggered branch
+      - uses: xmflsct/action-publish-gatsby@v1 # Uses this action to run further steps
+        with:
+          publishBranch: 'gh-pages'
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          name: 'thewillyhuman' # Not required, default to action's maintainer
+          email: 'thewilly.work@gmail.com' # Not required, default to action's maintainer
