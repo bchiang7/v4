@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     --light-navy: #112240;
     --lightest-navy: #233554;
     --navy-shadow: rgba(2, 12, 27, 0.7);
+    --dark-slate: #495670;
     --slate: #8892b0;
     --light-slate: #a8b2d1;
     --lightest-slate: #ccd6f6;
@@ -68,6 +69,23 @@ const GlobalStyle = createGlobalStyle`
   :focus {
     outline: 2px dashed var(--green);
     outline-offset: 3px;
+  }
+
+  /* Scrollbar Styles */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark-slate) var(--navy);
+  }
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--navy);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--dark-slate);
+    border: 3px solid var(--navy);
+    border-radius: 10px;
   }
 
   body {
