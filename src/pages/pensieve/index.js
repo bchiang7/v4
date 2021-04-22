@@ -28,7 +28,8 @@ const StyledMainContainer = styled.main`
     margin-top: 20px;
   }
 `;
-const StyledGrid = styled.div`
+const StyledGrid = styled.ul`
+  ${({ theme }) => theme.mixins.resetList};
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
@@ -39,15 +40,14 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 `;
-const StyledPost = styled.div`
+const StyledPost = styled.li`
   transition: var(--transition);
   cursor: default;
 
   &:hover,
-  &:focus {
-    outline: 0;
+  &:focus-within {
     .post__inner {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
     }
   }
 
@@ -165,7 +165,7 @@ const PensievePage = ({ location, data }) => {
               const formattedDate = new Date(date).toLocaleDateString();
 
               return (
-                <StyledPost key={i} tabIndex="0">
+                <StyledPost key={i}>
                   <div className="post__inner">
                     <header>
                       <div className="post__icon">

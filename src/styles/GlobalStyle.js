@@ -384,8 +384,6 @@ const GlobalStyle = createGlobalStyle`
 
   .skip-to-content {
     ${({ theme }) => theme.mixins.button};
-    background-color: var(--green);
-    color: var(--navy);
     position: absolute;
     top: auto;
     left: -999px;
@@ -396,6 +394,8 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
+      background-color: var(--green);
+      color: var(--navy);
       top: 0;
       left: 0;
       width: auto;

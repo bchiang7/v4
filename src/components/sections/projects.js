@@ -34,11 +34,6 @@ const StyledProjectsSection = styled.section`
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
-
-    a {
-      position: relative;
-      z-index: 1;
-    }
   }
 
   .more-button {
@@ -57,6 +52,11 @@ const StyledProject = styled.li`
     .project-inner {
       transform: translateY(-7px);
     }
+  }
+
+  a {
+    position: relative;
+    z-index: 1;
   }
 
   .project-inner {
