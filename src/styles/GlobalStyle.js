@@ -279,7 +279,6 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     position: relative;
     transition: var(--transition);
-    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -288,6 +287,10 @@ const GlobalStyle = createGlobalStyle`
 
     &.inline-link {
       ${({ theme }) => theme.mixins.inlineLink};
+    }
+
+    &[target='_blank'] {
+      cursor: ne-resize;
     }
   }
 

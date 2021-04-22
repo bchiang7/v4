@@ -44,7 +44,6 @@ const mixins = {
     color: inherit;
     position: relative;
     transition: var(--transition);
-    cursor: pointer;
     &:hover,
     &:active,
     &:focus {
@@ -59,7 +58,6 @@ const mixins = {
     text-decoration-skip-ink: auto;
     position: relative;
     transition: var(--transition);
-    cursor: pointer;
     color: var(--green);
     &:hover,
     &:focus,

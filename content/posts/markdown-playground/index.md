@@ -1,9 +1,9 @@
 ---
 title: Markdown Test File
 description: abc234
-date: '2019-12-07'
+date: 2019-12-07
 draft: true
-slug: '/pensieve/markdown-playground'
+slug: /pensieve/markdown-playground
 tags:
   - Testing
 ---
@@ -260,9 +260,9 @@ you can write text [with links](http://example.com) inline or [link references][
 - Green
 - Blue
 
-* Red
-* Green
-* Blue
+- Red
+- Green
+- Blue
 
 - Red
 - Green
