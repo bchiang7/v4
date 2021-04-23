@@ -322,12 +322,12 @@ const Featured = () => {
   `);
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node);
-
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   useEffect(() => {
-    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (reducedMotionQuery.matches) {
+    if (reduceMotion) {
       return;
     }
 

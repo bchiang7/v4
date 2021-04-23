@@ -191,11 +191,11 @@ const Jobs = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
-
   const revealContainer = useRef(null);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   useEffect(() => {
-    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (reducedMotionQuery.matches) {
+    if (reduceMotion) {
       return;
     }
 

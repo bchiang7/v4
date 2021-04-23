@@ -25,9 +25,10 @@ const StyledSideElement = styled.div`
 
 const Side = ({ children, isHome, orientation }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
-    if (!isHome) {
+    if (!isHome || reduceMotion) {
       return;
     }
     const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
@@ -36,13 +37,17 @@ const Side = ({ children, isHome, orientation }) => {
 
   return (
     <StyledSideElement orientation={orientation}>
-      <TransitionGroup component={null}>
-        {isMounted && (
-          <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? loaderDelay : 0}>
-            {children}
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+      {reduceMotion ? (
+        <>{children}</>
+      ) : (
+        <TransitionGroup component={null}>
+          {isMounted && (
+            <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? loaderDelay : 0}>
+              {children}
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+      )}
     </StyledSideElement>
   );
 };

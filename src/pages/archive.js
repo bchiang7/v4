@@ -133,8 +133,13 @@ const ArchivePage = ({ location, data }) => {
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
+    if (reduceMotion) {
+      return;
+    }
+
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealTable.current, srConfig(200, 0));
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));

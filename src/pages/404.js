@@ -28,27 +28,40 @@ const StyledHomeButton = styled(Link)`
 
 const NotFoundPage = ({ location }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
+    if (reduceMotion) {
+      return;
+    }
+
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
+
+  const content = (
+    <StyledMainContainer className="fillHeight">
+      <StyledTitle>404</StyledTitle>
+      <StyledSubtitle>Page Not Found</StyledSubtitle>
+      <StyledHomeButton to="/">Go Home</StyledHomeButton>
+    </StyledMainContainer>
+  );
 
   return (
     <Layout location={location}>
       <Helmet title="Page Not Found" />
 
-      <TransitionGroup component={null}>
-        {isMounted && (
-          <CSSTransition timeout={500} classNames="fadeup">
-            <StyledMainContainer className="fillHeight">
-              <StyledTitle>404</StyledTitle>
-              <StyledSubtitle>Page Not Found</StyledSubtitle>
-              <StyledHomeButton to="/">Go Home</StyledHomeButton>
-            </StyledMainContainer>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+      {reduceMotion ? (
+        <>{content}</>
+      ) : (
+        <TransitionGroup component={null}>
+          {isMounted && (
+            <CSSTransition timeout={500} classNames="fadeup">
+              {content}
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+      )}
     </Layout>
   );
 };

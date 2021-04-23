@@ -127,10 +127,10 @@ const About = () => {
   `);
 
   const revealContainer = useRef(null);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
-    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (reducedMotionQuery.matches) {
+    if (reduceMotion) {
       return;
     }
 
