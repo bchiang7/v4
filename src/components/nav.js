@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
-import { useScrollDirection } from '@hooks';
+import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 
@@ -131,14 +131,14 @@ const Nav = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
   };
 
   useEffect(() => {
-    if (reduceMotion) {
+    if (prefersReducedMotion) {
       return;
     }
 
@@ -181,7 +181,7 @@ const Nav = ({ isHome }) => {
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <StyledNav>
-        {reduceMotion ? (
+        {prefersReducedMotion ? (
           <>
             {Logo}
 

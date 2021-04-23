@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -42,10 +43,10 @@ const StyledContactSection = styled.section`
 
 const Contact = () => {
   const revealContainer = useRef(null);
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion) {
+    if (prefersReducedMotion) {
       return;
     }
 

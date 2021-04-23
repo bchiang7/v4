@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -28,10 +29,10 @@ const StyledHomeButton = styled(Link)`
 
 const NotFoundPage = ({ location }) => {
   const [isMounted, setIsMounted] = useState(false);
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion) {
+    if (prefersReducedMotion) {
       return;
     }
 
@@ -51,7 +52,7 @@ const NotFoundPage = ({ location }) => {
     <Layout location={location}>
       <Helmet title="Page Not Found" />
 
-      {reduceMotion ? (
+      {prefersReducedMotion ? (
         <>{content}</>
       ) : (
         <TransitionGroup component={null}>

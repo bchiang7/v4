@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;
@@ -192,10 +193,10 @@ const Jobs = () => {
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
   const revealContainer = useRef(null);
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion) {
+    if (prefersReducedMotion) {
       return;
     }
 

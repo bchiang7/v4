@@ -7,6 +7,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -133,10 +134,10 @@ const ArchivePage = ({ location, data }) => {
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (reduceMotion) {
+    if (prefersReducedMotion) {
       return;
     }
 
