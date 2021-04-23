@@ -17,37 +17,39 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: var(--navy);
+  background-color: rgba(10, 25, 47, 0.85);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
   backdrop-filter: blur(10px);
   transition: var(--transition);
 
-  ${props =>
-    props.scrollDirection === 'up' &&
-    !props.scrolledToTop &&
-    css`
-      height: var(--nav-scroll-height);
-      transform: translateY(0px);
-      background-color: rgba(10, 25, 47, 0.85);
-      box-shadow: 0 10px 30px -10px var(--navy-shadow);
-    `};
-
-  ${props =>
-    props.scrollDirection === 'down' &&
-    !props.scrolledToTop &&
-    css`
-      height: var(--nav-scroll-height);
-      transform: translateY(calc(var(--nav-scroll-height) * -1));
-      box-shadow: 0 10px 30px -10px var(--navy-shadow);
-    `};
-
   @media (max-width: 1080px) {
     padding: 0 40px;
   }
   @media (max-width: 768px) {
     padding: 0 25px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    ${props =>
+    props.scrollDirection === 'up' &&
+      !props.scrolledToTop &&
+      css`
+        height: var(--nav-scroll-height);
+        transform: translateY(0px);
+        background-color: rgba(10, 25, 47, 0.85);
+        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      `};
+
+    ${props =>
+    props.scrollDirection === 'down' &&
+      !props.scrolledToTop &&
+      css`
+        height: var(--nav-scroll-height);
+        transform: translateY(calc(var(--nav-scroll-height) * -1));
+        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+      `};
   }
 `;
 
@@ -138,6 +140,11 @@ const Nav = ({ isHome }) => {
     const timeout = setTimeout(() => {
       setIsMounted(true);
     }, 100);
+
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotionQuery.matches) {
+      return;
+    }
 
     window.addEventListener('scroll', handleScroll);
 

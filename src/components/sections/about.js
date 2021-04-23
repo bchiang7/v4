@@ -129,6 +129,11 @@ const About = () => {
   const revealContainer = useRef(null);
 
   useEffect(() => {
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotionQuery.matches) {
+      return;
+    }
+
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 

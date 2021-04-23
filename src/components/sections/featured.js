@@ -326,6 +326,11 @@ const Featured = () => {
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   useEffect(() => {
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotionQuery.matches) {
+      return;
+    }
+
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);

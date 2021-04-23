@@ -193,7 +193,14 @@ const Jobs = () => {
   const tabs = useRef([]);
 
   const revealContainer = useRef(null);
-  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+  useEffect(() => {
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotionQuery.matches) {
+      return;
+    }
+
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
 
   const focusTab = () => {
     if (tabs.current[tabFocus]) {

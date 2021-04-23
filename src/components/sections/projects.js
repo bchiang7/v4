@@ -190,8 +190,13 @@ const Projects = () => {
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   useEffect(() => {
+    if (reducedMotionQuery.matches) {
+      return;
+    }
+
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));

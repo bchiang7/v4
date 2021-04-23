@@ -42,7 +42,14 @@ const StyledContactSection = styled.section`
 
 const Contact = () => {
   const revealContainer = useRef(null);
-  useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+  useEffect(() => {
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotionQuery.matches) {
+      return;
+    }
+
+    sr.reveal(revealContainer.current, srConfig());
+  }, []);
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
