@@ -44,10 +44,12 @@ const StyledPost = styled.li`
   transition: var(--transition);
   cursor: default;
 
-  &:hover,
-  &:focus-within {
-    .post__inner {
-      transform: translateY(-7px);
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus-within {
+      .post__inner {
+        transform: translateY(-7px);
+      }
     }
   }
 

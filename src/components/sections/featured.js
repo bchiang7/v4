@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
+import { usePrefersReducedMotion } from '@hooks';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
@@ -322,10 +323,15 @@ const Featured = () => {
   `);
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node);
-
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
