@@ -138,7 +138,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'React', 'Eleventy', 'Vue', 'Node.js', 'WordPress'];
+  const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'Ruby', 'Express', 'JQuery'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -152,16 +152,17 @@ const About = () => {
               solutions for real-world problems. My interest in web development started back in 2015
               when I started to collect sneakers and discovered software that helped me build my
               collection. During this time (and before I had any formal training on Web
-              Developement), I became familiar with cookies, API's, and proxies.
+              Developement), I became familiar with the use of cookies, API's, and proxies. Inspired
+              by the developers who created the software I had so much respect for, I decided to
+              look further into pursuing a career in software development.
             </p>
 
             <p>
               Fast-forward to today, I've had the privilege of working at{' '}
               <a href="https://geekymarketing.com/">a digital marketing agency</a>,{' '}
-              <a href="https://www.bredofficial.ca/">a start-up</a>,{' '}
-              <a href="https://www.jimpattisonlease.com/">and a large corporation</a>, My past
-              experience focuses on UI/UX while as of lately, the few technologies I have been
-              working with include:
+              <a href="https://www.bredofficial.ca/"> a start-up</a>,{' '}
+              <a href="https://www.jimpattisonlease.com/"> and a large corporation</a>. While my
+              past experience focused on UI/UX, lately I have been working with:
             </p>
           </div>
 
