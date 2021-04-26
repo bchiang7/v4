@@ -1,12 +1,11 @@
 ---
-date: '2018-04-01'
-title: 'Studio Developer'
-company: 'Scout'
-location: 'Northeastern University'
-range: 'January - April 2018'
-url: 'https://web.northeastern.edu/scout/'
+date: '2017-11-01'
+title: 'Marketing Coordinator / Project Manager'
+company: 'BRED Market Ltd.'
+location: 'Burnaby, BC'
+range: 'November 2017 - September 2019'
+url: 'https://www.bredofficial.ca/'
 ---
 
-- Worked with a team of three designers to build a marketing website and e-commerce platform for [blistabloc](https://blistabloc.com), an ambitious startup originating from Northeastern
-- Helped solidify a brand direction for blistabloc that spans both packaging and web
-- Interfaced with clients on a weekly basis, providing technological expertise
+- UI/UX Web Design – Creation of web and mobile application wireframe designs using Adobe XD and InVision.
+- Collaborated with a team of developers to implement new features, designs, debugging, security improvements and performance optimization.

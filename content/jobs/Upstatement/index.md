@@ -1,12 +1,11 @@
 ---
-date: '2018-05-14'
-title: 'Engineer'
-company: 'Upstatement'
-location: 'Boston, MA'
-range: 'May 2018 - Present'
-url: 'https://www.upstatement.com/'
+date: '2019-09-10'
+title: 'Marketing Coordinator'
+company: 'Jim Pattison Lease'
+location: 'Burnaby, BC'
+range: 'Sep 2019 - Mar 2020'
+url: 'https://www.jimpattisonlease.com/'
 ---
 
-- Write modern, performant, maintainable code for a diverse array of client and internal projects
-- Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify
-- Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis
+- Managed collateral projects as defined by the Sales Departments: content collection, production and printing/distribution.
+- Graphic designing for ad placement, website, and sales materials.
