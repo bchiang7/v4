@@ -160,9 +160,12 @@ const About = () => {
             <p>
               Fast-forward to today, I've had the privilege of working at{' '}
               <a href="https://geekymarketing.com/">a digital marketing agency</a>,{' '}
-              <a href="https://www.bredofficial.ca/"> a start-up</a>,{' '}
-              <a href="https://www.jimpattisonlease.com/"> and a large corporation</a>. While my
-              past experience focused on UI/UX, lately I have been working with:
+              <a href="https://www.bredofficial.ca/"> a start-up company</a>, and a
+              <a href="https://www.jimpattisonlease.com/">
+                {' '}
+                large corporation leading in fleet-services
+              </a>
+              . While my past experience focused on UI/UX, lately I have been working with:
             </p>
           </div>
 
