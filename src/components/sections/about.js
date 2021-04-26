@@ -151,18 +151,17 @@ const About = () => {
               Hello! My name is Kevin and I enjoy creating applications that provide simple
               solutions for real-world problems. My interest in web development started back in 2015
               when I started to collect sneakers and discovered software that helped me build my
-              collection. During this time, I became familiar with cookies, API's, and proxies
-              before I had any of my formal training of Web Development.
+              collection. During this time (and before I had any formal training on Web
+              Developement), I became familiar with cookies, API's, and proxies.
             </p>
 
             <p>
               Fast-forward to today, I've had the privilege of working at{' '}
               <a href="https://geekymarketing.com/">a digital marketing agency</a>,{' '}
               <a href="https://www.bredofficial.ca/">a start-up</a>,{' '}
-              <a href="https://www.jimpattisonlease.com/">and a large corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              past experience focuses on UI/UX while as of lately, these are the few technologies I
-              have been working with:
+              <a href="https://www.jimpattisonlease.com/">and a large corporation</a>, My past
+              experience focuses on UI/UX while as of lately, the few technologies I have been
+              working with include:
             </p>
           </div>
 
