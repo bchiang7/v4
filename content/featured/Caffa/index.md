@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '3'
 title: 'Caffa'
 cover: './04-coffee.png'
 github: 'https://github.com/dattphan15/caffa'
@@ -11,4 +11,4 @@ tech:
 showInProjects: true
 ---
 
-Caffa is a community-driven platform for coffee lovers all around the world. Search your favourite Coffee through our image search to learn more details about the coffee itself, what others are saying about it and where you can find it at your local shops!
+Caffa is a community-driven platform for coffee lovers integrated with Google Vision and Yelp API.
