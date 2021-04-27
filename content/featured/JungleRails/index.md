@@ -3,10 +3,12 @@ date: '1'
 title: 'Jungle Rails'
 cover: './01-jungle-home.png'
 github: 'https://github.com/dattphan15/jungle-rails'
-external: 'https://caffa.herokuapp.com/'
+# external: 'https://caffa.herokuapp.com/'
 tech:
+  - HTML
+  - SCSS
   - Ruby on Rails
-  - Postgres
+  - Active Record
 showInProjects: true
 ---
 
