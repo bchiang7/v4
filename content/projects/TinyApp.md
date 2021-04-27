@@ -11,4 +11,4 @@ company: 'Lighthouse Labs'
 showInProjects: true
 ---
 
-A fullstack web application built with Node and Express that allows users to shorten long URLs.
+A fullstack web application built with Node and Express that allows users to shorten long URLs..

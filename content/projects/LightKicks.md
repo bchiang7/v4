@@ -11,4 +11,4 @@ company: 'Lighthouse Labs'
 showInProjects: true
 ---
 
-An online Footwear Store created by myself, Neil Oribello, and Elodie Boucher as part of the Lighthouse Labs midterm project. This application uses Express, Javascript, styled with SASS.
+An online Footwear Store created by Kevin Phan, Neil Oribello, and Elodie Boucher as part of the Lighthouse Labs midterm project. This application uses Express, Javascript, styled with SASS.
