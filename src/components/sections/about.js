@@ -150,11 +150,10 @@ const About = () => {
             <p>
               Hello! My name is Kevin and I enjoy creating applications that provide simple
               solutions for real-world problems. My interest in web development started back in 2015
-              when I started to collect sneakers and discovered software that helped me build my
-              collection. During this time (and before I had any formal training on Web
-              Developement), I became familiar with the use of cookies, API's, and proxies. Inspired
-              by the developers who created the software I had so much respect for, I decided to
-              look further into pursuing a career in software development.
+              when I picked up a new hobby of collecting sneakers and discovered bots and custom
+              scripts along the way. Inspired by the young developers that created an
+              industry-leading piece of software, I was motivated to pursue a career in software
+              development and embark on a new journey.
             </p>
 
             <p>
