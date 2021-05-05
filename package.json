@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@upstatement/eslint-config": "0.4.3",
-    "@upstatement/prettier-config": "^0.3.0",
+    "@upstatement/prettier-config": "^1.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
@@ -71,6 +71,6 @@
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.1.2",
-    "prettier": "^2.0.4"
+    "prettier": "^2.2.1"
   }
 }
