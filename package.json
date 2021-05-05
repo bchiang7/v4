@@ -11,6 +11,7 @@
     "gatsby"
   ],
   "license": "MIT",
+  "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -63,8 +64,10 @@
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-react": "^7.13.13",
     "@upstatement/eslint-config": "^1.0.0",
     "@upstatement/prettier-config": "^1.0.0",
+    "babel-preset-gatsby": "^1.4.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
