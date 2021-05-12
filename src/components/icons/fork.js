@@ -9,6 +9,7 @@ const IconFork = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
     className="feather feather-git-branch">
+    <title>Git Fork</title>
     <line x1="6" y1="3" x2="6" y2="15"></line>
     <circle cx="18" cy="6" r="3"></circle>
     <circle cx="6" cy="18" r="3"></circle>
