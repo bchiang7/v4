@@ -5,10 +5,11 @@ cover: './logo.png'
 github: ''
 external: 'https://super-transfer.com/'
 tech:
-  - WebTorrent
-  - Spring
-  - REST
-  - Docker
+  - WebRTC
+  - Spring boot
+  - Hibernate
+  - Kubernetes
+  - Stripe
   - AWS
 
 show: 'true'
