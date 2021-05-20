@@ -1,12 +1,12 @@
 ---
-date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
-location: 'Boston, MA'
-range: 'July - December 2015'
-url: 'https://us.mullenlowe.com/'
+date: '20-05-2020'
+title: 'Our Vision for'
+company: 'Q2'
+location: 'Ireland'
+range: 'May 2020 - Present'
+url: 'https://www.popcoin.com/'
 ---
 
-- Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery
-- Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness
-- Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more
+- Presale and Establishment of PopCoin
+- Marketing push and furthering partnerships to ensure successfully establishment of PopCoin
+- Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a timely basis regarding updates
