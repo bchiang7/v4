@@ -1,76 +1,80 @@
 {
-  "name": "website",
-  "description": "Personal Website",
+  "name": "v4",
+  "description": "Personal Website V4",
   "version": "1.0.0",
-  "author": "Sambit Panda <spanda3@jhu.edu>",
+  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sampan501/sampan501.github.io"
+    "url": "https://github.com/bchiang7/v4"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
+  "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "dependencies": {
     "animejs": "^3.1.0",
-    "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.18.7",
-    "gatsby-image": "^2.2.34",
-    "gatsby-plugin-google-analytics": "^2.1.29",
-    "gatsby-plugin-manifest": "^2.2.31",
-    "gatsby-plugin-netlify": "^2.1.27",
-    "gatsby-plugin-offline": "^3.0.27",
-    "gatsby-plugin-react-helmet": "^3.1.16",
-    "gatsby-plugin-robots-txt": "^1.5.0",
-    "gatsby-plugin-sharp": "^2.3.5",
-    "gatsby-plugin-sitemap": "^2.2.22",
-    "gatsby-plugin-styled-components": "^3.1.14",
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^3.4.1",
+    "gatsby-plugin-google-analytics": "^3.4.0",
+    "gatsby-plugin-image": "^1.4.0",
+    "gatsby-plugin-manifest": "^3.4.0",
+    "gatsby-plugin-netlify": "^3.4.0",
+    "gatsby-plugin-offline": "^4.4.0",
+    "gatsby-plugin-react-helmet": "^4.4.0",
+    "gatsby-plugin-robots-txt": "^1.5.6",
+    "gatsby-plugin-sharp": "^3.4.1",
+    "gatsby-plugin-sitemap": "^4.0.0",
+    "gatsby-plugin-styled-components": "^4.4.0",
     "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^3.1.35",
-    "gatsby-remark-prismjs": "^3.3.25",
-    "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-remark": "^2.6.39",
-    "gatsby-transformer-sharp": "^2.3.7",
-    "lodash": "^4.17.15",
+    "gatsby-remark-images": "^5.1.0",
+    "gatsby-remark-prismjs": "^5.1.0",
+    "gatsby-source-filesystem": "^3.4.0",
+    "gatsby-transformer-remark": "^4.1.0",
+    "gatsby-transformer-sharp": "^3.4.0",
+    "lodash": "^4.17.19",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
     "smooth-scroll": "^16.1.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "@upstatement/eslint-config": "0.4.3",
-    "@upstatement/prettier-config": "^0.3.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.17.0",
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-react": "^7.13.13",
+    "@upstatement/eslint-config": "^1.0.0",
+    "@upstatement/prettier-config": "^1.0.0",
+    "babel-preset-gatsby": "^1.4.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
     "gatsby-remark-code-titles": "^1.1.0",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1"
+    "husky": "^6.0.0",
+    "lint-staged": "^10.1.2",
+    "prettier": "^2.2.1"
   }
 }

@@ -1,56 +1,68 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { Layout } from '@components';
 import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
-const { colors, fonts } = theme;
+import { navDelay } from '@utils';
+import { Layout } from '@components';
+import { usePrefersReducedMotion } from '@hooks';
 
-const StyledMainContainer = styled(Main)`
-  ${mixins.flexCenter};
+const StyledMainContainer = styled.main`
+  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: ${colors.green};
-  font-family: ${fonts.SFMono};
-  font-size: 12vw;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
-  ${media.bigDesktop`font-size: 200px;`}
-  ${media.phablet`font-size: 120px;`};
 `;
 const StyledSubtitle = styled.h2`
-  font-size: 3vw;
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: 400;
-  ${media.bigDesktop`font-size: 50px;`};
-  ${media.phablet`font-size: 30px;`};
 `;
 const StyledHomeButton = styled(Link)`
-  ${mixins.bigButton};
+  ${({ theme }) => theme.mixins.bigButton};
   margin-top: 40px;
 `;
 
 const NotFoundPage = ({ location }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000);
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
+  const content = (
+    <StyledMainContainer className="fillHeight">
+      <StyledTitle>404</StyledTitle>
+      <StyledSubtitle>Page Not Found</StyledSubtitle>
+      <StyledHomeButton to="/">Go Home</StyledHomeButton>
+    </StyledMainContainer>
+  );
+
   return (
     <Layout location={location}>
-      <TransitionGroup component={null}>
-        {isMounted && (
-          <CSSTransition timeout={500} classNames="fade">
-            <StyledMainContainer className="fillHeight">
-              <StyledTitle>404</StyledTitle>
-              <StyledSubtitle>Page Not Found</StyledSubtitle>
-              <StyledHomeButton to="/">Go Home</StyledHomeButton>
-            </StyledMainContainer>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
+      <Helmet title="Page Not Found" />
+
+      {prefersReducedMotion ? (
+        <>{content}</>
+      ) : (
+        <TransitionGroup component={null}>
+          {isMounted && (
+            <CSSTransition timeout={500} classNames="fadeup">
+              {content}
+            </CSSTransition>
+          )}
+        </TransitionGroup>
+      )}
     </Layout>
   );
 };

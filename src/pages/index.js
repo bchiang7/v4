@@ -1,175 +1,27 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Layout, Hero, About, Jobs, Featured, Projects, Papers, Presentations, Contact, Work } from '@components';
 import styled from 'styled-components';
-import { Main } from '@styles';
+import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 
-const StyledMainContainer = styled(Main)`
+const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
-const IndexPage = ({ location, data }) => (
+const IndexPage = ({ location }) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
-      <Hero data={data.hero.edges} />
-      <About data={data.about.edges} />
-      <Jobs data={data.jobs.edges} />
-      <Featured data={data.featured.edges} />
-      <Work data={data} />
-      <Contact data={data.contact.edges} />
+      <Hero />
+      <About />
+      <Jobs />
+      <Featured />
+      <Projects />
+      <Contact />
     </StyledMainContainer>
   </Layout>
 );
 
 IndexPage.propTypes = {
   location: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
 };
 
 export default IndexPage;
-
-export const pageQuery = graphql`
-  {
-    hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            name
-            subtitle
-            contactText
-          }
-          html
-        }
-      }
-    }
-    about: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            avatar {
-              childImageSharp {
-                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-            skills
-          }
-          html
-        }
-      }
-    }
-    jobs: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/jobs/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            company
-            location
-            range
-            url
-          }
-          html
-        }
-      }
-    }
-    featured: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/featured/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-            tech
-            github
-            external
-          }
-          html
-        }
-      }
-    }
-    projects: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/projects/" }
-        frontmatter: { showInProjects: { ne: false } }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            company
-            date
-            github
-            external
-          }
-          html
-        }
-      }
-    }
-    papers: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/papers/" }
-        frontmatter: { showInPapers: { ne: false } }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            journal
-            external
-            date
-          }
-          html
-        }
-      }
-    }
-    presentations: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/presentations/" }
-        frontmatter: { showInPresentations: { ne: false } }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            conference
-            external
-            date
-            type
-          }
-          html
-        }
-      }
-    }
-    contact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/contact/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-          html
-        }
-      }
-    }
-  }
-`;
