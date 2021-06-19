@@ -32,6 +32,16 @@ const StyledTabList = styled.div`
   margin: 0;
   list-style: none;
 
+  /* hide scrollbar but allow scrolling */
+  // https://blog.hubspot.com/website/hide-scrollbar-css
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
