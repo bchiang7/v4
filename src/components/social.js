@@ -49,7 +49,7 @@ const Social = ({ isHome }) => (
       {socialMedia &&
         socialMedia.map(({ url, name }, i) => (
           <li key={i}>
-            <a href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
+            <a href={url} aria-label={name} target="_blank" rel="noreferrer">
               <Icon name={name} />
             </a>
           </li>

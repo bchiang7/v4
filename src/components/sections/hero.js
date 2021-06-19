@@ -65,8 +65,10 @@ const Hero = () => {
     <p>
       I'm a Boston-based software engineer who specializes in building (and occasionally designing)
       exceptional digital experiences. Currently, I'm an engineer at{' '}
-      <a href="https://upstatement.com/">Upstatement</a> focused on building accessible,
-      human-centered products.
+      <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
+        Upstatement
+      </a>{' '}
+      focused on building accessible, human-centered products.
     </p>
   );
   const five = (
