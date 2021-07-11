@@ -246,10 +246,6 @@ const GlobalStyle = createGlobalStyle`
     &.inline-link {
       ${({ theme }) => theme.mixins.inlineLink};
     }
-
-    &[target='_blank'] {
-      cursor: ne-resize;
-    }
   }
 
   button {
