@@ -14,4 +14,4 @@ tech:
 
 A revamped version of my original Spotify Profile project.
 
-✨ Learn how to build this app from the ground up with the [in-depth course I created with newline](https://www.newline.co/courses/build-a-spotify-connected-app/welcome). Unlike YouTube tutorials that only explain a few concepts and leave you with half-baked GitHub repos, this course will teach you everything you need to know about how to implement **Spotify's OAuth flow**, how to use **local storage** to store user data, how to fetch data from the Spotify API in a React app with **async/await**, and how to **deploy it to the internet** with Heroku. ✨
+✨ Learn how to build this app from the ground up with the [in-depth course I created with newline](https://www.newline.co/courses/build-a-spotify-connected-app/welcome). We cover how to implement **Spotify's OAuth flow** with JavaScript, how to interact with the Spotify API with **axios**, **React hooks**, and **async/await**, how to build a professional, responsive UI with **Styled Components**, how to deploy an app with a React front-end and Express back-end with **Heroku**, and more. ✨

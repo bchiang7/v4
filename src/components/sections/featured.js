@@ -297,7 +297,7 @@ const StyledProject = styled.li`
         object-fit: cover;
         width: auto;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(80%);
+        filter: grayscale(100%) contrast(1) brightness(50%);
       }
     }
   }
@@ -384,7 +384,7 @@ const Featured = () => {
                     <div className="project-links">
                       {cta && (
                         <a href={cta} aria-label="Course Link" className="cta">
-                          Check It Out
+                          Learn More
                         </a>
                       )}
                       {github && (
