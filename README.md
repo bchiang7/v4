@@ -73,9 +73,9 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
    npm run serve
    ```
 
-1. Start with pm2
+1. Start with pm2. Make sure you have pm2 installed. [How to install pm2](https://medium.com/idomongodb/how-to-npm-run-start-at-the-background-%EF%B8%8F-64ddda7c1f1)
 
-   ```
+   ```sh
    pm2 --name SOME_NAME start npm -- run serve
    ```
 
