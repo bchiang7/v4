@@ -73,6 +73,12 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
    npm run serve
    ```
 
+1. Start with pm2
+
+   ```
+   pm2 --name SOME_NAME start npm -- run serve
+   ```
+
 ## 🎨 Color Reference
 
 | Color          | Hex                                                                |
