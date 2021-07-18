@@ -3,7 +3,7 @@ date: '4'
 title: 'Nestjs-easyconfig'
 cover: 'nest.png'
 github: 'https://github.com/rubiin/nestjs-easyconfig'
-external: 'https://rubiin.github.io/nestjs-easyconfig'
+external: 'https://rubiin.vercel.app/nestjs-easyconfig'
 tech:
   - Nest.js
   - dotenv

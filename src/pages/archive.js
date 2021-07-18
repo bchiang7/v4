@@ -100,7 +100,7 @@ const ArchivePage = ({ location, data }) => {
     <Layout location={location}>
       <Helmet>
         <title>Archive | Rubin Bhandari</title>
-        <link rel="canonical" href="https://rubiin.github.io/archive" />
+        <link rel="canonical" href="https://rubiin.vercel.app/archive" />
       </Helmet>
 
       <StyledMainContainer>

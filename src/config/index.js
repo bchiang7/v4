@@ -4,7 +4,7 @@ module.exports = {
     'A Full Stack Developer who specializes in JavaScript Technologies across the whole stack (Node.js, Express, NestJs, Vue). Experience building complete web applications with backend API Systems.',
   siteKeywords:
     'Rubin Bhandari, Rubiin, Bhandari, rubiin, software engineer, backend-end engineer, web developer, nodejs ,web developer, javascript, asian',
-  siteUrl: 'https://rubiin.github.io',
+  siteUrl: 'https://rubiin.vercel.app',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-122359186-1 ',
   googleVerification: 'J8EFrhN9mfY_8dySyMAB6_5oZ2GwNAM6nENof-RDWm4',
