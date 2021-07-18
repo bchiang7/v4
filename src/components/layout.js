@@ -54,7 +54,7 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      <Head />
+      {/* <Head /> */}
 
       <div id="root">
         <ThemeProvider theme={theme}>
