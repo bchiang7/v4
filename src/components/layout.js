@@ -17,8 +17,9 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
-  const isHome = location.pathname === '/';
-  const [isLoading, setIsLoading] = useState(isHome);
+  console.log('hi');
+  // const isHome = location.pathname === '/';
+  // const [isLoading, setIsLoading] = useState(isHome);
 
   // // Sets target="_blank" rel="noopener noreferrer" on external links
   // const handleExternalLinks = () => {
@@ -56,19 +57,19 @@ const Layout = ({ children, location }) => {
     <>
       {/* <Head /> */}
 
-      <div id="root">
-        {/* <ThemeProvider theme={theme}>
+      {/* <div id="root"> */}
+      {/* <ThemeProvider theme={theme}>
           <GlobalStyle />
 
           <a className="skip-to-content" href="#content">
             Skip to Content
           </a> */}
 
-        {/* {isLoading && isHome ? (
+      {/* {isLoading && isHome ? (
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : ( */}
-        {/* <StyledContent> */}
-        {/* <Nav isHome={isHome} />
+      {/* <StyledContent> */}
+      {/* <Nav isHome={isHome} />
             <Social isHome={isHome} />
             <Email isHome={isHome} />
 
@@ -76,11 +77,11 @@ const Layout = ({ children, location }) => {
               {children}
               <Footer />
             </div> */}
-        <h1>Content</h1>
-        {/* </StyledContent> */}
-        {/* )} */}
-        {/* </ThemeProvider> */}
-      </div>
+      <h1>Content</h1>
+      {/* </StyledContent> */}
+      {/* )} */}
+      {/* </ThemeProvider> */}
+      {/* </div> */}
     </>
   );
 };
