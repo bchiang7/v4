@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Web Applications', 'SQL', 'Cybersecurity', 'C#', 'PowerShell', 'WordPress'];
+  const skills = ['Significant experience managing AD, DNS, WSUS and other roles, Microsoft 365, Exchange, Antivirus Management (Gravity Zone), Azure, AWS, GCP, Splunk, Nessus','Scripting knowledge (bash, PowerShell, Python)' ,'Virtualization technologies: Hyper V, VMware, Proxmox' , 'Web Applications', 'SQL', 'Cybersecurity', 'C#', 'WordPress'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
