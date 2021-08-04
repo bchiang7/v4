@@ -154,6 +154,7 @@ module.exports = {
       options: {
         trackingId: 'G-BDHHGZC264',
         head: true,
+        anonymize: true,
       },
     },
   ],
