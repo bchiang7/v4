@@ -2184,10 +2184,10 @@
     "@typescript-eslint/types" "4.22.1"
     eslint-visitor-keys "^2.0.0"
 
-"@upstatement/eslint-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@upstatement/eslint-config/-/eslint-config-1.0.0.tgz#6e8ce5353a17ce245cf30fdf84f6b42195a01fd0"
-  integrity sha512-mKgfTqL5MO7Nry+JATCM6/1JMwC2mqSeCFubKq7JzRu3DLxQhg9HuUf3kOltxoS9n0HKv8o8hKmGEewrG3008g==
+"@upstatement/eslint-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@upstatement/eslint-config/-/eslint-config-1.0.1.tgz#e650f5807a02f89d07b558b1d3dc951fb871b37e"
+  integrity sha512-aJe5n2+IzNwppYVmsgKs1YpZE5ewrUY2YxN706Xpq8y8kPORsOqfDzy0KsunET8JnLJ/mCZqJOCzUN4+jmGtwQ==
 
 "@upstatement/prettier-config@^1.0.0":
   version "1.0.0"
