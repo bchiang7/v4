@@ -16,4 +16,4 @@ url: 'https://bitdefender.com/'
 - Documentation of actions taken for audit, regulatory and legal purposes within approved event tracking system;
 - Provide Antivirus & Malware protection application administration and management;
 - Write security assessment reports;
-- Actively contribute to all ongoing and new internal projects.
+
