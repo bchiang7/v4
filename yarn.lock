@@ -6372,10 +6372,10 @@ gatsby-plugin-manifest@^3.11.0:
     semver "^7.3.5"
     sharp "^0.28.3"
 
-gatsby-plugin-netlify@^3.10.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-3.10.0.tgz#923aa1814245bf595b4ed65fe7255662486ce8cc"
-  integrity sha512-7SEBCfjglHImn9xqTyRZRme60lhbwY7SWioLMqhExxzHF1/UxT9fD/qg0kAqs6nEoJ3YZZAEAnHzUf157nTLCA==
+gatsby-plugin-netlify@^3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-3.11.0.tgz#ef8aa03e8c0ae3041654de0b8f967f33695273a2"
+  integrity sha512-IDVskV6jEBEnmSlyzXwZgBzMbLNLFvJAtXDUggMuBqu+VqFQOpCUn0rjEY5/qWOK5PINq2ldH61BQuqtUE+4vg==
   dependencies:
     "@babel/runtime" "^7.14.6"
     fs-extra "^8.1.0"
