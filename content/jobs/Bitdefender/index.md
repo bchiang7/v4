@@ -1,5 +1,5 @@
 ---
-date: '2019-09-01'
+date: '2019-09-16'
 title: 'Information Security Engineer'
 company: 'Bitdefender'
 location: 'Bucharest'
