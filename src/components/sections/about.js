@@ -49,6 +49,7 @@ const StyledText = styled.div`
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
+  border-radius: 50%;
 
   @media (max-width: 768px) {
     margin: 50px auto 0;

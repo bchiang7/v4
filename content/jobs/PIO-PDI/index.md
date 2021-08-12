@@ -1,6 +1,6 @@
 ---
 date: '2014-05'
-title: 'Software Engineer Co-op'
+title: 'News Write/Researcher'
 company: 'Provincial Information'
 location: 'San Jose, Dinagat Islands'
 range: 'May 2014 - March 2015'
