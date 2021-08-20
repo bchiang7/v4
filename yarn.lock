@@ -6310,12 +6310,12 @@ gatsby-plugin-sitemap@^4.7.0:
     minimatch "^3.0.4"
     sitemap "^7.0.0"
 
-gatsby-plugin-styled-components@^4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-4.11.0.tgz#ec06ffe0b1a0f091ed574fef57c7f8115f99b752"
-  integrity sha512-Y99KgpWfdigNWT1nTr/GQLqMsEFsmKcbJYf79ZgIMyRZgYS6LsB3p7hRVRwGpMNuKwiefJweFMtdeYt7l+wgVg==
+gatsby-plugin-styled-components@^4.12.0:
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-4.12.0.tgz#b41fa66d47b5deac1bbc7d7fd75a0cc679f22b0a"
+  integrity sha512-kGY/Qqnoizz0vA0GsZ75121ZWpqn3kfoo1+QU06X0JbYEp5RGku1uq9YjU+QWN/rK+DzTZJlTrQZeqERrbuMHQ==
   dependencies:
-    "@babel/runtime" "^7.14.6"
+    "@babel/runtime" "^7.14.8"
 
 gatsby-plugin-typescript@^3.11.0:
   version "3.11.0"
