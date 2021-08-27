@@ -176,7 +176,7 @@ const StyledProject = styled.li`
     }
 
     strong {
-      color: var(--pink);
+      color: var(--white);
       font-weight: normal;
     }
   }

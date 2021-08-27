@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { email } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+// import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -72,21 +72,15 @@ const Hero = () => {
         </a>
         .
       </p>
-      <p>
-        Check out my new course,{' '}
-        <a
-          href="https://www.newline.co/courses/build-a-spotify-connected-app/welcome"
-          target="_blank"
-          rel="noreferrer">
-          Build a Spotify Connected App
-        </a>
-        !
-      </p>
     </>
   );
   const five = (
-    <a href={`mailto:${email}`} className="email-link">
-      Get In Touch
+    <a
+      className="email-link"
+      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      target="_blank"
+      rel="noreferrer">
+      Check out my course!
     </a>
   );
 
