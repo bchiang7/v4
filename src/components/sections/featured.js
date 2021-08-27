@@ -174,6 +174,11 @@ const StyledProject = styled.li`
     a {
       ${({ theme }) => theme.mixins.inlineLink};
     }
+
+    strong {
+      color: var(--white);
+      font-weight: normal;
+    }
   }
 
   .project-tech-list {
@@ -227,6 +232,11 @@ const StyledProject = styled.li`
         width: 20px;
         height: 20px;
       }
+    }
+
+    .cta {
+      ${({ theme }) => theme.mixins.smallButton};
+      margin: 10px;
     }
   }
 
@@ -287,7 +297,7 @@ const StyledProject = styled.li`
         object-fit: cover;
         width: auto;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(80%);
+        filter: grayscale(100%) contrast(1) brightness(50%);
       }
     }
   }
@@ -298,7 +308,7 @@ const Featured = () => {
     {
       featured: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/featured/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { fields: [frontmatter___date], order: ASC }
       ) {
         edges {
           node {
@@ -312,6 +322,7 @@ const Featured = () => {
               tech
               github
               external
+              cta
             }
             html
           }
@@ -344,7 +355,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover } = frontmatter;
+            const { external, title, tech, github, cover, cta } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -371,12 +382,17 @@ const Featured = () => {
                     )}
 
                     <div className="project-links">
+                      {cta && (
+                        <a href={cta} aria-label="Course Link" className="cta">
+                          Learn More
+                        </a>
+                      )}
                       {github && (
                         <a href={github} aria-label="GitHub Link">
                           <Icon name="GitHub" />
                         </a>
                       )}
-                      {external && (
+                      {external && !cta && (
                         <a href={external} aria-label="External Link" className="external">
                           <Icon name="External" />
                         </a>
