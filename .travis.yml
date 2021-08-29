@@ -8,4 +8,4 @@ deploy:
   script: cd docs/ && yarn install && yarn run deploy
   skip_cleanup: true
   on:
-    branch: master
+    branch: main
