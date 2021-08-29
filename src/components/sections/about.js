@@ -126,7 +126,21 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'React', 'Eleventy', 'Vue', 'Node.js', 'WordPress'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'Node.js',
+    'MySQL',
+    'MongoDB',
+    'AWS',
+    'Go',
+    'Redis',
+    'Kafka',
+    'Docker',
+    'MQTT',
+    'Serverless Architecture',
+    'Microservices',
+    'Blockchain',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,25 +149,31 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
+            <p>Hello! My name is Ayush and I enjoy building systems for scale.</p>
+
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              I love building for performance and scale, and I am always open to learn new
+              things(matter of fact, I enjoy that immensely!).
+              <br />
+              But more than that, I aim to build user-centric software with an obsession on
+              performance, which has an quality of life impact on the daily lives of the users of my
+              software.
             </p>
 
             <p>
-              Fast-forward to today, and I've had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              The main pillars and ideology I follow behind the software I build are: usability,
+              scalability, performance, reliablity and maintainablity.
             </p>
 
-            <p>Here are a few technologies I've been working with recently:</p>
+            <p>
+              Fast-forward to today, and I've had the privilege of working at a few startups like{' '}
+              <a href="#jobs">Seraro Solutions</a> and <a href="#jobs">Blocknomic Technologies</a>,{' '}
+              <a href="https://mf.paisabazaar.com/">a fintech corporation</a>, and currently,{' '}
+              <a href="https://postman.com/">one of the most popular API collaboration platforms</a>
+              .
+            </p>
+
+            <p>Here are a non-exhaustive list of technologies I've worked with:</p>
           </div>
 
           <ul className="skills-list">
