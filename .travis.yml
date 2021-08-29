@@ -11,7 +11,7 @@ script:
   - find . -mindepth 1 -maxdepth 1 -not -name public -not -name .git -exec rm -rf '{}' \;
   - find public -mindepth 1 -maxdepth 1 -exec mv '{}' . \;
   - rm -rf public
-  - ls
+  - echo "ayushgupta.me" > CNAME
 
 deploy:
   provider: pages
