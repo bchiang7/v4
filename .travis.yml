@@ -1,11 +1,22 @@
 language: node_js
-before_script:
-  - npm install -g gatsby
+
 node_js:
   - "14.16.0"
+
+script:
+  - echo $PWD
+  - rm -rf public
+  - rm -rf .cache
+  - yarn build
+  - find . -mindepth 1 -maxdepth 1 -not -name public -not -name .git -exec rm -rf '{}' \;
+  - find public -mindepth 1 -maxdepth 1 -exec mv '{}' . \;
+  - rm -rf public
+  - ls
+
 deploy:
-  provider: script
-  script: cd docs/ && yarn install && yarn run deploy
+  provider: pages
   skip_cleanup: true
+  github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: false
   on:
     branch: main
