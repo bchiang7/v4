@@ -1,0 +1,11 @@
+language: node_js
+before_script:
+  - npm install -g gatsby
+node_js:
+  - "14.16.0"
+deploy:
+  provider: script
+  script: cd docs/ && yarn install && yarn run deploy
+  skip_cleanup: true
+  on:
+    branch: master
