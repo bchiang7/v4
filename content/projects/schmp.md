@@ -1,6 +1,7 @@
 ---
 date: '2020-04-14'
 title: 'schmp'
+description: '`schmp` is an open source schema comparison tool, which allows you to compare schemas of data in JSON, YAML and TOML format.'
 github: 'https://github.com/AyushG3112/schmp'
 external: 'https://pkg.go.dev/github.com/ayushg3112/schmp'
 tech:

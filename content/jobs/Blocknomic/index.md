@@ -5,6 +5,8 @@ company: 'Blocknomic Technologies Ltd'
 location: 'Gurgaon, India'
 range: 'January 2018 - December 2018'
 url: ''
+draft: false
+cover: ''
 ---
 
 Tech Stack: Go, Node.js, MySQL, Blockchain, Kafka, Redis, Vue.js
