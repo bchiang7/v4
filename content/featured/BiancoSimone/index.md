@@ -1,7 +1,7 @@
 ---
 date: '2'
 title: 'BiancoSimone'
-cover: './biancosimone.png'
+cover: './bs.png'
 external: 'https://biancosimone.ro/'
 tech:
   - Wordpress
