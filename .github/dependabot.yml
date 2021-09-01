@@ -9,4 +9,9 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "monthly"
-    open-pull-requests-limit: 10
+
+labels:
+  - "npm"
+  - "dependencies"
+
+open-pull-requests-limit: 10
