@@ -38,7 +38,7 @@
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.12.0",
     "gatsby-plugin-netlify": "^3.11.0",
-    "gatsby-plugin-offline": "^4.11.0",
+    "gatsby-plugin-offline": "^4.13.0",
     "gatsby-plugin-react-helmet": "^4.13.0",
     "gatsby-plugin-robots-txt": "^1.6.9",
     "gatsby-plugin-sharp": "^3.13.0",
