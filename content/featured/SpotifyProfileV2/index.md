@@ -1,17 +1,16 @@
 ---
 date: '3'
-title: 'Spotify Profile v2'
-cover: './demo.png'
-external: 'https://spotify-profile-v2.herokuapp.com/'
+title: 'Build a Spotify Connected App'
+cover: './course-card.png'
+external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
 cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
 tech:
   - React
-  - Styled Components
   - Express
   - Spotify API
-  - Heroku
+  - Styled Components
 ---
 
-A revamped version of my original Spotify Profile project.
+Having struggled with understanding how to the Spotify OAuth flow works, I made the course I wish I could have had.
 
-✨ Learn how to build this app from the ground up with my new course, [Build a Spotify Connected App](https://www.newline.co/courses/build-a-spotify-connected-app). We cover how to implement **Spotify's OAuth flow** with Express.js, how to interact with the Spotify API with **React hooks** and **async/await**, how to build a professional, responsive UI with **Styled Components**, how to deploy an app with a React front-end and Node back-end with **Heroku**, and more. ✨
+Unlike tutorials that only cover a few concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing Spotify's OAuth flow and fetching API data in a React app. By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.
