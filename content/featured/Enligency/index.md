@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '2'
 title: 'Enligency'
 cover: './enligency.png'
 external: 'https://enligency.eu'
@@ -9,4 +9,4 @@ tech:
 showInProjects: true
 ---
 
-Enligency website ()
+Enligency website
