@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '1'
 title: 'BiancoSimone'
 cover: './bs.png'
 external: 'https://biancosimone.ro/'
