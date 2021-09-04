@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/AyushG3112/AyushG3112.github.io.svg?branch=main)](https://app.travis-ci.com/AyushG3112/AyushG3112.github.io)
+
 My Personal Portfolio Website.
 
 Hosted on https://ayushgupta.me/ and served via Github Pages, built using Travis CI(check out `gh-pages` branch for the built code!).
