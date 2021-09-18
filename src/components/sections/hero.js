@@ -64,7 +64,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software professional with 2+ years of experience as a software analyst.Currently,
+        I’m a software professional with 2+ years of experience as a software analyst. Currently,
         working on side projects and actively seeking opportunities in software development.
       </p>
     </>

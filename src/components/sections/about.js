@@ -136,20 +136,23 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Vinay and I enjoy building backend APIs for the web and very curious
-              in exploring optimized solutions for the given business problems with time &amp; space
+              Hello! My name is Vinay and I enjoy building backend APIs for web and very curious in
+              exploring optimized solutions for the given business problems with time &amp; space
               complexity in mind without compromising data integrity or security in the application.
             </p>
 
             <p>
               Talking about my professional career, I have worked as a software support analyst for
-              the last 2+ years. During this time I had the opportunity to work with both the
-              end-user &amp; software engineering teams, which thought me a lot about product
-              development and a great love for software, So I quit my job in June 2021 and decided
-              to take the next steps in my career as software developer/engineer.
+              the past 2&#43; years. During this time I had the opportunity to work with both the
+              clients &amp; software engineering teams, which helped me in understanding challenges
+              involved in software development and also, a great love for software, So I quit my job
+              in June 2021 and decided to take the next steps in my career as software
+              developer/engineer.
             </p>
 
-            <p>Finally, about my education, I hold a bachelors degree in Computer Science.</p>
+            <p>
+              Finally, about my education, I hold a bachelors degree in <b>Computer Science</b>.
+            </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
