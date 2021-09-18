@@ -126,7 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['Python3', 'Linux', 'MySQL', 'WebAPIs', 'Django', 'Heroku'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,31 +136,20 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Vinay and I enjoy building backend APIs for the web and very curious
+              in exploring optimized solutions for the given business problems with time &amp; space
+              complexity in mind without compromising data integrity or security in the application.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              Talking about my professional career, I have worked as a software support analyst for
+              the last 2+ years. During this time I had the opportunity to work with both the
+              end-user &amp; software engineering teams, which thought me a lot about product
+              development and a great love for software, So I quit my job in June 2021 and decided
+              to take the next steps in my career as software developer/engineer.
             </p>
 
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p>
+            <p>Finally, about my education, I hold a bachelors degree in Computer Science.</p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
