@@ -18,6 +18,10 @@ module.exports = {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/bibart-razvan',
     },
+    {
+      name: 'Codepen',
+      url: 'https://www.facebook.com/bibart.razvan/',
+    },
   ],
 
   navLinks: [
