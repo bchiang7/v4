@@ -63,7 +63,7 @@ const StyledPic = styled.div`
     border-radius: var(--border-radius);
     background-color: var(--white);
 
-    &:hover,
+    /*&:hover,
     &:focus {
       background: transparent;
       outline: 0;
@@ -77,7 +77,7 @@ const StyledPic = styled.div`
         filter: none;
         mix-blend-mode: normal;
       }
-    }
+    }*/
 
     .img {
       position: relative;
