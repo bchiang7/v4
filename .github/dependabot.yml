@@ -8,7 +8,10 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: "daily"
+allowed_updates:
+  - match:
+     update_type: "security"
 
 labels:
   - "npm"
