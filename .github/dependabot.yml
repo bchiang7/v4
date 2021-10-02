@@ -9,9 +9,6 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-allowed_updates:
-  - match:
-     update_type: "security"
 
 labels:
   - "npm"
