@@ -7,7 +7,7 @@ range: 'August 2018 - December 2018'
 url: 'https://www.touchlogic.com/'
 ---
 
-- Centralizing administrative tasks by improving scalability and workloads in servers through Virtualisation
-- Successfully configured networks, servers, storage and managed resources on VMs and physical hardware using Hyper-V technology
-- Maintained high availability in serves. Administered and automated infrastructure through Bash/Shell
-- Understood importance of Documentation and Communication in SDLC process and disciplines followed in Agile Environment
+- Successfully conﬁgured networks, servers, storage and managed resources on VMs and physical hardware using Hyper-V technology
+- Troubleshot and maintained networking devices,servers and infrastructure across enterprise. Documented all server and network problems and other unusual events in detail
+- Reviewed network settings and applied recent updates, which improved overall security measure
+- Understood importance of documentation, team communication and disciplines followed in SDLC process

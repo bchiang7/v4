@@ -7,7 +7,8 @@ range: 'January 2019 - June 2021'
 url: 'https://www.transflo.com/'
 ---
 
-- Provided product support, information and assistance to IT administrators via web, email and phone
-- Designed workflow automation solutions for Mircodea customer's using python and assisted team in researching solutions and troubleshooting product issues
-- Maintained customer server's on both cloud &amp; on-premise by performing security checks, installing latest updates, review server physical state and backups, reducing server downtime
-- Assisted business owners in identifying & cataloguing the required data from SQL Server databases and managed database storage,backups & recovery
+- Designed and Implemented document management &amp; workﬂow automation solutions for customers using Python3 along with internal automation tools
+- Developed tools &amp; scripts for clients, which resulted in faster invoice processing up to +20% increase in payment processing, and reduced server downtime to &lt;30min
+- Assisted business owners in querying &amp; cataloging required data from SQL Server databases and managed database storage, backups &amp; recovery
+- Worked with software development team on reported errors and bugs on newly released software and assisted in deployment of release ﬁxes
+- Maintained servers and systems on both cloud &amp; on-premise to keep networks fully operational during peak periods
