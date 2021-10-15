@@ -127,15 +127,19 @@ const About = () => {
   }, []);
 
   const skills = [
+    'Java',
     'JavaScript (ES6+)',
     'Node.js',
+    'Go',
+    'Ruby',
     'MySQL',
+    'PostgreSQL',
     'MongoDB',
     'AWS',
-    'Go',
     'Redis',
     'Kafka',
     'Docker',
+    'Kubernetes',
     'MQTT',
     'Serverless Architecture',
     'Microservices',
@@ -168,9 +172,9 @@ const About = () => {
             <p>
               Fast-forward to today, and I've had the privilege of working at a few startups like{' '}
               <a href="#jobs">Seraro Solutions</a> and <a href="#jobs">Blocknomic Technologies</a>,{' '}
-              <a href="https://mf.paisabazaar.com/">a fintech corporation</a>, and currently,{' '}
+              <a href="https://mf.paisabazaar.com/">a fintech corporation</a>,{' '}
               <a href="https://postman.com/">one of the most popular API collaboration platforms</a>
-              .
+              , and currently, <a href="https://gojek.io/">one of the biggest super apps ever</a>.
             </p>
 
             <p>Here is a non-exhaustive list of technologies I've worked with:</p>

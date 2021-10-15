@@ -64,9 +64,9 @@ const Hero = () => {
   const four = (
     <p>
       I'm a backend engineer specializing in building performant and scalable backend services.
-      Currently, I'm focused on building backend to enable API collaboration workflows at{' '}
-      <a href="https://postman.com/" target="_blank" rel="noreferrer">
-        Postman
+      Currently, I'm focused on building backend to enable the payments ecosystem at{' '}
+      <a href="https://gojek.io/" target="_blank" rel="noreferrer">
+        Gojek
       </a>
       .
     </p>
