@@ -15,5 +15,5 @@ tech:
 
 A web app for visualizing project stats from Github &amp; Gitlab data. User can search any open source project
 details such as comunity support,stars,forks,issues,new releases etc., on a single dashboard.
-This is a collaboration project started recently, first release expected by end of this month. Click on GitHub
+This is a collaboration project started recently, first release expected very soon. Click on GitHub
 icon to see the source code.

@@ -126,7 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python3', 'Linux', 'MySQL', 'WebAPIs', 'Django', 'Heroku', 'Flask'];
+  const skills = ['Python3', 'Linux', 'MySQL', 'WebAPIs', 'Django', 'Heroku', 'Flask', 'AL and DS'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -138,7 +138,7 @@ const About = () => {
             <p>
               Hello! My name is Vinay and I enjoy building backend APIs for web and very curious in
               exploring optimized solutions for a given business problem with time &amp; space
-              complexity in mind without compromising data integrity or security in the application.
+              complexity in mind without compromising data integrity or security in a application.
             </p>
 
             <p>
