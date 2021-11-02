@@ -126,7 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python3', 'Linux', 'MySQL', 'WebAPIs', 'Django', 'Heroku'];
+  const skills = ['Python3', 'Linux', 'MySQL', 'WebAPIs', 'Django', 'Heroku', 'Flask'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -137,7 +137,7 @@ const About = () => {
           <div>
             <p>
               Hello! My name is Vinay and I enjoy building backend APIs for web and very curious in
-              exploring optimized solutions for the given business problems with time &amp; space
+              exploring optimized solutions for a given business problem with time &amp; space
               complexity in mind without compromising data integrity or security in the application.
             </p>
 
@@ -145,9 +145,7 @@ const About = () => {
               Talking about my professional career, I have worked as a software support analyst for
               the past 2&#43; years. During this time I had the opportunity to work with both the
               clients &amp; software engineering teams, which helped me in understanding challenges
-              involved in software development and also, a great love for software, So I quit my job
-              in June 2021 and decided to take the next steps in my career as software
-              developer/engineer.
+              involved in software development.
             </p>
 
             <p>

@@ -1,9 +1,9 @@
 ---
 date: '2018-08-01'
-title: 'Network Specialist - Intern'
+title: 'Network Specialist Intern'
 company: 'Touchlogic'
 location: 'Toronto, ON, Canada'
-range: 'August 2018 - December 2018'
+range: 'August 2018 - November 2018'
 url: 'https://www.touchlogic.com/'
 ---
 
