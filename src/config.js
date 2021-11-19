@@ -1,14 +1,14 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'xavierelon93@gmail.com',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/xavierelon',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
+      url: 'https://www.instagram.com/xavierelon',
     },
     {
       name: 'Twitter',
