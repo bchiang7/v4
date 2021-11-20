@@ -1,5 +1,4 @@
-[xavierelon.com](https://xavierelon.com)
-.<!--
+
 ## 🚨 Forking this repo (please read!)
 
 Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
@@ -10,8 +9,8 @@ Please also note that I did not build this site with the intention of it being a
 
 ### TL;DR
 
-Yes, you can fork this repo. Please give me proper credit by linking back to . Thanks!
--->
+Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
+
 ## 🛠 Installation & Set Up
 
 1. Install the Gatsby CLI
