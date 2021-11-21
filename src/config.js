@@ -12,15 +12,15 @@ module.exports = {
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/elon_xavier',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/xavierelon',
     },
     {
       name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://codepen.io',
     },
   ],
 
