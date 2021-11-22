@@ -4,12 +4,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
-// https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
-if (typeof window !== 'undefined') {
-  // eslint-disable-next-line global-require
-  require('smooth-scroll')('a[href*="#"]');
-}
-
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;

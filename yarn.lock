@@ -12281,11 +12281,6 @@ slugify@^1.4.4:
   resolved "https://registry.npmjs.org/slugify/-/slugify-1.5.1.tgz#ef268872982a3a3b18f213ddee8cd1a28ac7a130"
   integrity sha512-54gP60qIkxaUCFXORn/u+tNPqdTsqvqonB2nxjQV52wWTCuJJ4kbfU7URkpn8646Lr2T3CSh8ecDzzBK/dD9jA==
 
-smooth-scroll@^16.1.0:
-  version "16.1.3"
-  resolved "https://registry.npmjs.org/smooth-scroll/-/smooth-scroll-16.1.3.tgz#c5b68194b4186173f9f61065103ae4e26ce36885"
-  integrity sha512-ca9U+neJS/cbdScTBuUTCZvUWNF2EuMCk7oAx3ImdeRK5FPm+xRo9XsVHIkeEVkn7MBRx+ufVEhyveM4ZhaTGA==
-
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.npmjs.org/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
