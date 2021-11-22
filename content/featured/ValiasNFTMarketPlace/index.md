@@ -1,6 +1,6 @@
 ---
 date: '1'
-title: 'Valias NFT Marketplace (Flow Blockchain)'
+title: 'Valias NFT Marketplace'
 cover: './demo.png'
 github: 'https://github.com/CameronHixenbaugh/The-Vault-Partial'
 external: ''
