@@ -3376,9 +3376,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001196, caniuse-lite@^1.0.30001219:
-  version "1.0.30001222"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001222.tgz#2789b8487282cbbe1700924f53951303d28086a9"
-  integrity sha512-rPmwUK0YMjfMlZVmH6nVB5U3YJ5Wnx3vmT5lnRO3nIKO8bJ+TRWMbGuuiSugDJqESy/lz+1hSrlQEagCtoOAWQ==
+  version "1.0.30001282"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001282.tgz"
+  integrity sha512-YhF/hG6nqBEllymSIjLtR2iWDDnChvhnVJqp+vloyt2tEHFG1yBR+ac2B/rOw0qOK0m0lEXU2dv4E/sMk5P9Kg==
 
 caw@^2.0.0, caw@^2.0.1:
   version "2.0.1"
