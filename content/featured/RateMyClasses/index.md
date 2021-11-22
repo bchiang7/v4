@@ -1,7 +1,7 @@
 ---
 date: '2'
 title: 'RateMyClasses'
-cover: './ratemyclasses.png'
+cover: './demo.png'
 github: 'https://github.com/xavierelon1/rate_my_classes'
 external: 'http://ratemyclasses.io'
 tech:
