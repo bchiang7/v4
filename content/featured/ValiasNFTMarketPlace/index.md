@@ -3,7 +3,7 @@ date: '1'
 title: 'Valias NFT Marketplace'
 cover: './demo.png'
 github: 'https://github.com/CameronHixenbaugh/The-Vault-Partial'
-external: ''
+external: 'http://vaultv2.herokuapp.com/#/'
 tech:
   - React
   - Express

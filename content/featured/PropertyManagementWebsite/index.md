@@ -1,16 +1,15 @@
 ---
 date: '3'
-title: 'Build a Spotify Connected App'
-cover: './course-card.png'
-external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
-cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+title: 'Property Management Website'
+cover: './demo.png'
+github: 'https://github.com/xavierh93/xavierh93.github.io'
+external: 'N/A'
 tech:
-  - React
-  - Express
-  - Spotify API
-  - Styled Components
+  - Node.js
+  - Python Flask
+  - HTML/CSS
+  - Javascript
+show: 'true'
 ---
 
-Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had.
-
-Unlike tutorials that only cover a few concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing Spotify's OAuth flow and fetching API data in a React app. By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.
+Implemented HTML/CSS, Javascript, MySQL and Node.js to create a website using the Python Flask framework that connects to a database and mimics property management website. Unfortunately I had to take the site down due to Heroku charging me large amounts of money to host on their database.
