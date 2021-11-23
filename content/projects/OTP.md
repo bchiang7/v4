@@ -1,7 +1,7 @@
 ---
 date: '2018-11-01'
 title: 'One Time Pad'
-cover: ''
+image: ''
 github: 'https://github.com/xavierh93/otp'
 external: ''
 tech:

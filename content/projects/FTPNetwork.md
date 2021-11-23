@@ -1,7 +1,7 @@
 ---
 date: '2018-12-29'
 title: 'FTP Network'
-cover: ''
+image: ''
 github: 'https://github.com/xavierh93/ftp-client'
 tech:
   - C
