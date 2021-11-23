@@ -64,13 +64,13 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
+        I’m a full-stack software engineer specializing in React and Java working at{' '}
+        <a href="https://deloitte.com/" target="_blank" rel="noreferrer">
+          Deloitte
+        </a>{' '}
+        . I am currently working on an NFT Marketplace built on the Flow blockchain. I am currently
+        looking for work in the blockchain sector. focused on building accessible, human-centered
+        products .
       </p>
     </>
   );
