@@ -11,7 +11,7 @@ tech:
   - Express
   - Auth0
   - Postman
-showInProjects: 'true'
+showInProjects: true
 ---
 
 Routed the back-end for Rockets & astronauts for a full REST API. Created a front-end that allowed for user sign-up and login via Auth0. The back-end is only accessable through Postman. The Postman Collection and Environment files have been provided in the repository.

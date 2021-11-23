@@ -7,7 +7,7 @@ external: ''
 tech:
   - Assembly Languagae
   - MASM
-showInProjects: 'true'
+showInProjects: true
 ---
 
 A project written in Assebly on the x86 architecture that calculates composite number in a range supplied by the user.

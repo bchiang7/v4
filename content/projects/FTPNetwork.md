@@ -7,7 +7,7 @@ tech:
   - C
   - Python
   - Networking
-showInProjects: 'true'
+showInProjects: true
 ---
 
 A client-server program that implements FTP. Client can request a directory list or files from the server. Client was written in Python and server was written in C

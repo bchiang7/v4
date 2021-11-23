@@ -8,7 +8,7 @@ tech:
   - C
   - Python
   - Networking
-showInProjects: 'true'
+showInProjects: true
 ---
 
 TCP chat client program that allows a client and server to exchange messages. The server was written in Python and the client was written in C.
