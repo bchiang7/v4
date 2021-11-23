@@ -1,14 +1,12 @@
 ---
-date: '2018-05-01'
-title: 'blistabloc'
-github: ''
-external: 'https://blistabloc.com/'
+date: '2017-08-11'
+title: 'Cube the Movie'
+image: ''
+github: 'https://github.com/xavierh93/cube-the-movie'
+external: ''
 tech:
-  - WordPress
-  - Timber
-  - WooCommerce
-company: 'Scout'
-showInProjects: false
+  - C++
+showInProjects: 'true'
 ---
 
-Custom WordPress theme and e-commerce site built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.
+A text based game based off of the movie Cube. Implements data structures, polymorphism, pointers, iheritance, objects, memory management and more.

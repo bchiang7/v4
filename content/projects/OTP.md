@@ -1,14 +1,12 @@
 ---
-date: '2017-03-01'
-title: 'Crowd DJ'
-github: 'https://github.com/crowddj/crowddj-react'
+date: '2018-11-01'
+title: 'One Time Pad'
+cover: ''
+github: 'https://github.com/xavierh93/otp'
 external: ''
 tech:
-  - React
-  - Firebase
-  - Spotify API
-company: HackBeanpot 2017
-showInProjects: false
+  - C
+showInProjects: 'true'
 ---
 
-Web app that allows people to crowdsource a party's music queue. Allows people to request songs, upvote songs, rate songs, etc. so the DJ can see how the crowd is feeling and queue songs accordingly. Won Best UI/UX Design at Hackbeanpot 2017.
+Five small programs that encrypt and decrypt information using a one-time pad-like system.

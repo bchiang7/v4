@@ -1,13 +1,12 @@
 ---
-date: '2018-10-01'
-title: 'Flagship Pioneering'
-github: ''
-external: 'https://www.flagshippioneering.com/'
+date: '2017-12-01'
+title: 'Small Shell'
+image: ''
+github: 'https://github.com/xavierh93/small-shell'
+external: ''
 tech:
-  - Craft CMS
-  - Chart.js
-company: 'Upstatement'
-showInProjects: false
+  - C
+showInProjects: 'true'
 ---
 
-A marketing site for an ambitious life sciences venture capital company.
+A shell interface written in C that accepts 3 commands: cd, status, and exit. Makes use of child processes and forks. All the other commands are execvp'd.

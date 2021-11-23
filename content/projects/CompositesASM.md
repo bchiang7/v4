@@ -1,14 +1,13 @@
 ---
-date: '2017-12-01'
-title: 'Apple Music Embeddable Web Player Widget'
-github: ''
-external: 'https://tools.applemusic.com/en-us'
+date: '2018-04-20'
+title: 'Assembly Language Composites Program'
+image: ''
+github: 'https://github.com/xavierh93/Program4/blob/master/composites.asm'
+external: ''
 tech:
-  - MusicKit.js
-  - JS
-  - SCSS
-company: 'Apple'
-showInProjects: true
+  - Assembly Languagae
+  - MASM
+showInProjects: 'true'
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+A project written in Assebly on the x86 architecture that calculates composite number in a range supplied by the user.

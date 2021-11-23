@@ -2,7 +2,7 @@
 date: '3'
 title: 'Property Management Website'
 cover: './demo.png'
-github: 'https://github.com/xavierh93/xavierh93.github.io'
+github: 'https://github.com/xavierelon/xavierh93.github.io'
 external: 'N/A'
 tech:
   - Node.js

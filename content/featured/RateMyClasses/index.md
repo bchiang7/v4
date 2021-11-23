@@ -2,7 +2,7 @@
 date: '2'
 title: 'RateMyClasses'
 cover: './demo.png'
-github: 'https://github.com/xavierelon1/rate_my_classes'
+github: 'https://github.com/xavierelon/rate_my_classes'
 external: 'http://ratemyclasses.io'
 tech:
   - MongoDB

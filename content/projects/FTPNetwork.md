@@ -1,15 +1,13 @@
 ---
-date: '2016-04-01'
-title: 'CourseSource'
-github: 'https://github.com/bchiang7/WebDevSpring2016/tree/master/public/project'
-external: ''
+date: '2018-12-29'
+title: 'FTP Network'
+cover: ''
+github: 'https://github.com/xavierh93/ftp-client'
 tech:
-  - Angular
-  - Node
-  - Express
-  - MongoDB
-company: 'Northeastern'
-showInProjects: false
+  - C
+  - Python
+  - Networking
+showInProjects: 'true'
 ---
 
-Web application built on the MEAN (MongoDB, Express, Angular, Node) stack with the intention of providing Northeastern students a better experience browsing the courses offered at Northeastern.
+A client-server program that implements FTP. Client can request a directory list or files from the server. Client was written in Python and server was written in C

@@ -1,14 +1,17 @@
 ---
-date: '2018-12-01'
-title: 'Devoted Health'
-github: ''
-external: 'https://www.devoted.com/'
+date: '2020-01-03'
+title: 'Rockets & Astronauts REST API with Auth0 Front-end'
+image: ''
+github: 'https://github.com/XavierElon1/rockets_api_oauth'
+external: ''
 tech:
-  - Gatsby
-  - TypeScript
-  - Algolia
-company: 'Upstatement'
-showInProjects: false
+  - Javascript
+  - Node
+  - HTML/CSS
+  - Express
+  - Auth0
+  - Postman
+showInProjects: 'true'
 ---
 
-A site for a revolutionary healthcare company, including an Algolia instant search integration
+Routed the back-end for Rockets & astronauts for a full REST API. Created a front-end that allowed for user sign-up and login via Auth0. The back-end is only accessable through Postman. The Postman Collection and Environment files have been provided in the repository.
