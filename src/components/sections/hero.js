@@ -69,8 +69,8 @@ const Hero = () => {
           Deloitte
         </a>{' '}
         . I am currently working on an NFT Marketplace built on the Flow blockchain. I am currently
-        looking for work in the blockchain sector. focused on building accessible, human-centered
-        products .
+        looking for work in the blockchain sector, startups preferred but open to other
+        opportunities as well.
       </p>
     </>
   );
