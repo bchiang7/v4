@@ -68,9 +68,9 @@ const Hero = () => {
         <a href="https://deloitte.com/" target="_blank" rel="noreferrer">
           Deloitte
         </a>{' '}
-        . I am currently working on an NFT Marketplace built on the Flow blockchain. I am currently
-        looking for work in the blockchain sector, startups preferred but open to other
-        opportunities as well.
+        . I have 2+ years of professional experience! I am currently working on an NFT Marketplace
+        built on the Flow blockchain. I am currently looking for work in the blockchain sector,
+        startups preferred but open to other opportunities as well.
       </p>
     </>
   );
