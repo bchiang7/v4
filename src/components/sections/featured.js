@@ -348,7 +348,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Projects that I've worked on
       </h2>
 
       <StyledProjectsGrid>
@@ -403,7 +403,7 @@ const Featured = () => {
 
                 <div className="project-image">
                   <a href={external ? external : github ? github : '#'}>
-                    <GatsbyImage image={image} alt={title} className="img" />
+                    <GatsbyImage image={image} alt={title} />
                   </a>
                 </div>
               </StyledProject>

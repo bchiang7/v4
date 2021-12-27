@@ -8,7 +8,7 @@ tech:
   - WordPress
   - PHP
 company: 'Upstatement'
-showInProjects: true
+showInProjects: false
 ---
 
 Building a custom multisite compatible WordPress plugin to build global search with Algolia

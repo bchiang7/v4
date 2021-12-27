@@ -9,7 +9,7 @@ tech:
   - Firebase
   - Vue
 company: 'Upstatement'
-showInProjects: true
+showInProjects: false
 ---
 
 Find out how we built a custom headless CMS with Node, Express, and Firebase for a project at Upstatement
