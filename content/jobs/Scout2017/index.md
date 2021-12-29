@@ -1,11 +1,18 @@
 ---
-date: '2017-04-01'
-title: 'Studio Developer'
-company: 'Scout'
-location: 'Northeastern University'
-range: 'January - June 2017'
-url: 'https://web.northeastern.edu/scout/'
+date: '2021-01-10'
+title: 'E-commerce Administrator'
+company: 'Pitchkart Qatar'
+location: 'Vadakara, India'
+range: 'December 2020 - June 2021'
+url: 'https://play.google.com/store/apps/details?id=qa.pitchkart.market&hl=en_IN&gl=US'
 ---
 
-- Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern
-- Worked closely with designers and management team to develop, document, and manage the conference’s marketing website using Jekyll, Sass, and JavaScript
+- QR:14250+ Pre sale Educational Prayer Mat Through Only Facebook/Instagram Campaigns
+- Project Management - Developement Of Application & Websites
+- Worked On UI/UX Development Co-ordination Of Pitchkart Shopping Portal
+- Completed Competetive Analysis E-Commerce Sector In Qatar
+- Order Managment, Product Adding, Social Media Management  
+- Domain & hosting Mangament - Amazon Web Service
+- Android & IOS Application Management
+- Google Analytics
+- Google For Retail - Merchant Center For Product Selling
