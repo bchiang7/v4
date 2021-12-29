@@ -1,12 +1,12 @@
 ---
-date: '2016-12-21'
-title: 'Software Engineer Co-op'
-company: 'Starry'
-location: 'Boston, MA'
-range: 'July - December 2016'
-url: 'https://starry.com/'
+date: '2020-10-10'
+title: 'Branding & Digital Marketing '
+company: 'GTC SmartShop'
+location: 'Vadakara,India'
+range: 'November 2020 - December 2020'
+url: 'https://play.google.com/store/apps/details?id=com.scalino.gtct'
 ---
 
-- Engineered and maintained major features of Starry's customer-facing web app using ES6, Handlebars, Backbone, Marionette and CSS
-- Proposed and implemented scalable solutions to issues identified with cloud services and applications responsible for communicating with Starry Station
-- Interfaced with user experience designers and other developers to ensure thoughtful and coherent user experiences across Starry’s iOS and Android mobile apps
+- Social media Presence & Whatsapp Marketing in local Area
+- Customer Relationship Development & Delivering Best Shopping Experience
+- GTC Brand Awareness Campaign

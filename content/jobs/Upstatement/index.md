@@ -1,12 +1,12 @@
 ---
-date: '2018-05-14'
-title: 'Engineer'
-company: 'Upstatement'
-location: 'Boston, MA'
-range: 'May 2018 - Present'
-url: 'https://www.upstatement.com/'
+date: '2020-07-07'
+title: 'Co-Founder'
+company: 'DotCo Digital'
+location: 'Calicut,India'
+range: 'July 2020 - Feb 2021'
+url: 'https://www.instagram.com/dotco_digital/'
 ---
 
-- Write modern, performant, maintainable code for a diverse array of client and internal projects
-- Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify
-- Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis
+- Starts When Intership At Kozhikoe UL Cyber Park On Web Development
+- First Project Kreams Cafe Bahrain
+- 7+ Project Completed.
