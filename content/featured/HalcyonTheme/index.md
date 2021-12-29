@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'V-Pack Website'
-cover: './vpack.gif'
+cover: './vpackdemo.png'
 github: 'https://github.com/bchiang7/halcyon-site'
 external: 'https://halcyon-theme.netlify.com/'
 tech:
