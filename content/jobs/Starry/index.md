@@ -1,12 +1,11 @@
 ---
-date: '2020-10-10'
-title: 'Branding & Digital Marketing '
-company: 'GTC SmartShop'
-location: 'Vadakara,India'
-range: 'November 2020 - December 2020'
-url: 'https://play.google.com/store/apps/details?id=com.scalino.gtct'
+date: '2021-12-10'
+title: 'Brand Developer '
+company: 'Vibgyor International WLL'
+location: 'Doha, Qatar'
+range: 'November 2021 - Present'
+url: 'http://vpackworld.com/'
 ---
 
-- Social media Presence & Whatsapp Marketing in Local Area
-- Customer Relationship Development & Delivering Best Shopping Experience
-- GTC Brand Awareness Campaign
+- V-Pack Website Developement
+- Package Designing Coordinator
