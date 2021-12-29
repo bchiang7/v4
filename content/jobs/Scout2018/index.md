@@ -1,12 +1,11 @@
 ---
-date: '2018-04-01'
-title: 'Studio Developer'
-company: 'Scout'
-location: 'Northeastern University'
-range: 'January - April 2018'
-url: 'https://web.northeastern.edu/scout/'
+date: '2020-12-01'
+title: 'Co-Founder'
+company: 'Fatheera Hut'
+location: 'Mangalad,India'
+range: 'December 2020 - April 2021'
+url: 'https://www.instagram.com/fatheera_hut/'
 ---
 
-- Worked with a team of three designers to build a marketing website and e-commerce platform for [blistabloc](https://blistabloc.com), an ambitious startup originating from Northeastern
-- Helped solidify a brand direction for blistabloc that spans both packaging and web
-- Interfaced with clients on a weekly basis, providing technological expertise
+- Cloud kitchen Business Model Takeaway Counter Starts In Very Rural Area
+- Delivered 600+ Tasty Burger,450+ Wraps,300+ Juices In One Month
