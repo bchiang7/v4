@@ -1,14 +1,13 @@
 ---
 date: '2020-03-27'
-title: 'Integrating Algolia Search with WordPress Multisite'
+title: 'Kreams Cafe - Instagram Marketing'
 github: ''
-external: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c'
+external: 'https://www.behance.net/gallery/134085793/Kreams-Cafe-Instagram'
 tech:
-  - Algolia
-  - WordPress
-  - PHP
-company: 'Upstatement'
+  - Social Media Marketing
+  
+company: 'Kreams cafe'
 showInProjects: true
 ---
 
-Building a custom multisite compatible WordPress plugin to build global search with Algolia
+Targeted Audience in instagram - Build Social Media Presence. 
