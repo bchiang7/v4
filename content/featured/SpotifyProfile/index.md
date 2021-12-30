@@ -1,15 +1,14 @@
 ---
 date: '2'
-title: 'Spotify Profile'
-cover: './demo.png'
-github: 'https://github.com/bchiang7/spotify-profile'
-external: 'https://spotify-profile.herokuapp.com/'
+title: 'Kreamscafe Website'
+cover: './kcb.png'
+external: 'https://kreamscafebh.com/index.html'
 tech:
-  - React
-  - Styled Components
-  - Express
-  - Spotify API
-  - Heroku
+  - Branding
+  - Booking Table
+  - Ordering Whatsapp/Talabat
+  - Menu
+  
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+A website for visualizing Kreams Cafe Bahrain, Offers, Menu, Ordering, Booking Table Features Enabled.

@@ -2,14 +2,13 @@
 date: '1'
 title: 'V-Pack Website'
 cover: './vpackdemo.png'
-github: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
+external: 'https://niyaskmgd.github.io/V-pack/'
 tech:
-  - VS Code
-  - Sublime Text
-  - Atom
-  - iTerm2
-  - Hyper
+  - Branding
+  - Product Catlog
+  - History V-Pack
+  - Shopping
+  
 ---
 
-A Brand Website,Product Catlogs And Information All About V-Pack Products  [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+A Brand Website,Product Catlogs And Information All About V-Pack Products, Company.  
