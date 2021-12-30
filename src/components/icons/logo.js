@@ -3,7 +3,7 @@ import React from 'react';
 const IconLogo = () => (
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet">
 
-<g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+<g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#FFFFFF" stroke="none">
 <path d="M270 871 l-225 -128 0 -243 0 -243 225 -128 c124 -71 228 -129 231
 -129 4 0 107 58 230 128 l224 128 0 244 0 244 -224 128 c-123 70 -226 128
 -230 128 -3 0 -107 -58 -231 -129z m170 -232 c0 -17 123 -228 133 -229 5 0 7
