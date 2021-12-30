@@ -68,7 +68,7 @@ const StyledPost = styled.li`
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
     transition: var(--transition);
-    background-color: var(--light-navy);
+    background-color: var(--light-bg-color);
 
     header,
     a {
@@ -78,7 +78,7 @@ const StyledPost = styled.li`
 
   .post__icon {
     ${({ theme }) => theme.mixins.flexBetween};
-    color: var(--green);
+    color: var(--primary-color);
     margin-bottom: 30px;
     margin-left: -5px;
 
@@ -90,7 +90,7 @@ const StyledPost = styled.li`
 
   .post__title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: var(--lightest-text-color);
     font-size: var(--fz-xxl);
 
     a {
@@ -110,12 +110,12 @@ const StyledPost = styled.li`
   }
 
   .post__desc {
-    color: var(--light-slate);
+    color: var(--light-text-color);
     font-size: 17px;
   }
 
   .post__date {
-    color: var(--light-slate);
+    color: var(--light-text-color);
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
     text-transform: uppercase;
@@ -130,7 +130,7 @@ const StyledPost = styled.li`
     list-style: none;
 
     li {
-      color: var(--green);
+      color: var(--primary-color);
       font-family: var(--font-mono);
       font-size: var(--fz-xxs);
       line-height: 1.75;

@@ -6,8 +6,6 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledAboutSection = styled.section`
-  max-width: 900px;
-
   .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -20,35 +18,39 @@ const StyledAboutSection = styled.section`
 `;
 const StyledText = styled.div`
   ul.skills-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    grid-gap: 0 10px;
-    padding: 0;
-    margin: 20px 0 0 0;
-    overflow: hidden;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
     list-style: none;
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+    flex-wrap: wrap;
 
     li {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
       position: relative;
-      margin-bottom: 10px;
-      padding-left: 20px;
-      font-family: var(--font-mono);
-      font-size: var(--fz-xs);
+      border-radius: 0.75rem;
+      border: thin solid var(--outline-light);
+      padding: 10px 15px 10px 15px;
+      margin: 0.5rem;
 
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
+      .skill-img {
+        width: 25px;
+        margin-right: 25px;
+      }
+      .skill-name {
+        margin-top: auto;
       }
     }
   }
 `;
 const StyledPic = styled.div`
   position: relative;
-  max-width: 300px;
+  max-width: 500px;
 
   @media (max-width: 768px) {
     margin: 50px auto 0;
@@ -61,11 +63,9 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
 
     &:hover,
     &:focus {
-      background: transparent;
       outline: 0;
 
       &:after {
@@ -82,8 +82,6 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -101,12 +99,11 @@ const StyledPic = styled.div`
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--navy);
       mix-blend-mode: screen;
     }
 
     &:after {
-      border: 2px solid var(--green);
+      border: 2px solid var(--primary-color);
       top: 20px;
       left: 20px;
       z-index: -1;
@@ -126,8 +123,6 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
-
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
@@ -135,39 +130,125 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
+            <p>Hi there!</p>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              I'm Benjamin Kostiuk, a Computer Science student at McMaster University in my third
+              year. Most of my experience is in full-stack web development with personal pursuits in
+              mobile development, DevOps and information security. I'm always experimenting and
+              trying to build cool projects.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
-            </p>
-
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
+              Throughout university, I've had the opportunity to intern with{' '}
+              <a href="https://www.rbcroyalbank.com/personal.html" target="_blank" rel="noreferrer">
+                banks
+              </a>
+              ,
+              <a href="https://www.peelregion.ca/" target="_blank" rel="noreferrer">
+                my local branch of government
               </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              and an intelligent search{' '}
+              <a href="https://www.coveo.com/en" target="_blank" rel="noreferrer">
+                unicorn company
+              </a>
+              . Some of my favorite projects I've built (an am still working on) include{' '}
+              <a href="https://benkostiuk.com/particle-divide/" target="_blank" rel="noreferrer">
+                a little game playing with particles
+              </a>
+              , my{' '}
+              <a
+                href="https://github.com/benjaminkostiuk/benjaminkostiuk"
+                target="_blank"
+                rel="noreferrer">
+                automatically updating github README
+              </a>{' '}
+              and a{' '}
+              <a href="https://github.com/puffproject" target="_blank" rel="noreferrer">
+                platform for students
+              </a>{' '}
+              to collaborate when writing unit tests for projects.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
-          </div>
+            <p>
+              Next summer I’ll be interning with{' '}
+              <a href="https://www.affirm.ca/" target="_blank" rel="noreferrer">
+                Affirm
+              </a>
+              , but I will be looking for full time positions once I graduate in April 2023.
+            </p>
 
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
+            <p>Here are a few of the technologies I use to build projects:</p>
+          </div>
+          <div className="skills-wrapper">
+            <ul className="skills-list">
+              <li>
+                <div className="skill-img">
+                  <StaticImage
+                    src={`../../images/skills/JavaScript.svg`}
+                    quality={95}
+                    formats={['AUTO', 'WEBP', 'AVIF']}
+                    alt="JavaScript"
+                  />
+                </div>
+                <p className="skill-name">JavaScript</p>
+              </li>
+              <li>
+                <div className="skill-img">
+                  <StaticImage
+                    src={`../../images/skills/MySQL.svg`}
+                    quality={95}
+                    formats={['AUTO', 'WEBP', 'AVIF']}
+                    alt="JavaScript"
+                  />
+                </div>
+                <p className="skill-name">MySQL</p>
+              </li>
+              <li>
+                <div className="skill-img">
+                  <StaticImage
+                    src={`../../images/skills/Java.svg`}
+                    quality={95}
+                    formats={['AUTO', 'WEBP', 'AVIF']}
+                    alt="JavaScript"
+                  />
+                </div>
+                <p className="skill-name">Java</p>
+              </li>
+              <li>
+                <div className="skill-img">
+                  <StaticImage
+                    src={`../../images/skills/Python.svg`}
+                    quality={95}
+                    formats={['AUTO', 'WEBP', 'AVIF']}
+                    alt="JavaScript"
+                  />
+                </div>
+                <p className="skill-name">Python</p>
+              </li>
+              <li>
+                <div className="skill-img">
+                  <StaticImage
+                    src={`../../images/skills/Azure.svg`}
+                    quality={95}
+                    formats={['AUTO', 'WEBP', 'AVIF']}
+                    alt="JavaScript"
+                  />
+                </div>
+                <p className="skill-name">Azure</p>
+              </li>
+              <li>
+                <div className="skill-img">
+                  <StaticImage
+                    src={`../../images/skills/Docker.svg`}
+                    quality={95}
+                    formats={['AUTO', 'WEBP', 'AVIF']}
+                    alt="JavaScript"
+                  />
+                </div>
+                <p className="skill-name">Docker</p>
+              </li>
+            </ul>
+          </div>
         </StyledText>
 
         <StyledPic>

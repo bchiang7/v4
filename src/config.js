@@ -1,27 +1,39 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'benkostiuk1@gmail.com',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://github.com/benjaminkostiuk',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/benjaminkostiuk',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      name: 'Gmail',
+      url: 'mailto:benkostiuk1@gmail.com',
     },
+    // {
+    //   name: 'Instagram',
+    //   url: 'INSTA_URL',
+    // },
+    // {
+    //   name: 'Twitter',
+    //   url: 'TWITTER_URL',
+    // },
+    {
+      name: 'Medium',
+      url: 'https://medium.com/@benkostiuk',
+    },
+    {
+      name: 'Devpost',
+      url: 'https://devpost.com/benjaminkostiuk',
+    },
+    // {
+    //   name: 'Codepen',
+    //   url: 'CODEPEN_URL',
+    // },
   ],
 
   navLinks: [
@@ -34,12 +46,16 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Projects',
       url: '/#projects',
     },
     {
       name: 'Contact',
       url: '/#contact',
+    },
+    {
+      name: 'Resources',
+      url: '/resources',
     },
   ],
 

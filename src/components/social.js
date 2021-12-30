@@ -19,12 +19,12 @@ const StyledSocialList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: var(--light-slate);
+    background-color: var(--light-text-color);
   }
 
   li {
     &:last-of-type {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     a {

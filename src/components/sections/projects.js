@@ -71,7 +71,7 @@ const StyledProject = styled.li`
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: var(--light-bg-color);
     transition: var(--transition);
   }
 
@@ -80,7 +80,7 @@ const StyledProject = styled.li`
     margin-bottom: 35px;
 
     .folder {
-      color: var(--green);
+      color: var(--primary-color);
       svg {
         width: 40px;
         height: 40px;
@@ -91,7 +91,7 @@ const StyledProject = styled.li`
       display: flex;
       align-items: center;
       margin-right: -10px;
-      color: var(--light-slate);
+      color: var(--light-text-color);
 
       a {
         ${({ theme }) => theme.mixins.flexCenter};
@@ -115,7 +115,7 @@ const StyledProject = styled.li`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: var(--lightest-text-color);
     font-size: var(--fz-xxl);
 
     a {
@@ -135,7 +135,7 @@ const StyledProject = styled.li`
   }
 
   .project-description {
-    color: var(--light-slate);
+    color: var(--light-text-color);
     font-size: 17px;
 
     a {

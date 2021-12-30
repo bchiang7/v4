@@ -8,8 +8,6 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
-
   .inner {
     display: flex;
 
@@ -19,7 +17,7 @@ const StyledJobsSection = styled.section`
 
     // Prevent container from jumping
     @media (min-width: 700px) {
-      min-height: 340px;
+      min-height: 320px;
     }
   }
 `;
@@ -73,11 +71,10 @@ const StyledTabButton = styled.button`
   width: 100%;
   height: var(--tab-height);
   padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
+  border-left: 2px solid var(--lightest-bg-color);
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
-  font-family: var(--font-mono);
-  font-size: var(--fz-xs);
+  color: ${({ isActive }) => (isActive ? 'var(--primary-color)' : 'var(--text-color)')};
+  font-size: var(--fz-md);
   text-align: left;
   white-space: nowrap;
 
@@ -89,13 +86,13 @@ const StyledTabButton = styled.button`
     min-width: 120px;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-bottom: 2px solid var(--lightest-bg-color);
     text-align: center;
   }
 
   &:hover,
   &:focus {
-    background-color: var(--light-navy);
+    background-color: var(--light-bg-color);
   }
 `;
 
@@ -107,7 +104,7 @@ const StyledHighlight = styled.div`
   width: 2px;
   height: var(--tab-height);
   border-radius: var(--border-radius);
-  background: var(--green);
+  background: var(--primary-color);
   transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
@@ -129,7 +126,7 @@ const StyledHighlight = styled.div`
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
-  margin-left: 20px;
+  margin-left: 40px;
 
   @media (max-width: 600px) {
     margin-left: 0;
@@ -137,7 +134,7 @@ const StyledTabPanels = styled.div`
 `;
 
 const StyledTabPanel = styled.div`
-  width: 100%;
+  width: 95%;
   height: auto;
   padding: 10px 5px;
 
@@ -152,15 +149,14 @@ const StyledTabPanel = styled.div`
     line-height: 1.3;
 
     .company {
-      color: var(--green);
+      color: var(--primary-color);
     }
   }
 
   .range {
     margin-bottom: 25px;
-    color: var(--light-slate);
-    font-family: var(--font-mono);
-    font-size: var(--fz-xs);
+    color: var(--light-text-color);
+    font-size: var(--fz-lg);
   }
 `;
 
@@ -244,7 +240,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Experience</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>

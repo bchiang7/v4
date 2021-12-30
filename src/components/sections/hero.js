@@ -3,7 +3,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
-// import { email } from '@config';
+import { Icon } from '@components/icons';
+import { socialMedia } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -18,10 +19,16 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--green);
+    padding 15px 18px 15px 20px;
+    color: var(--primary-color);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
+    border-radius: 20px 20px 20px 0px;
+    border-width: thin;
+    border-style: solid;
+    border-color: var(--primary-color);
+    transition: var(--transition);
 
     @media (max-width: 480px) {
       margin: 0 0 20px 2px;
@@ -29,19 +36,46 @@ const StyledHeroSection = styled.section`
   }
 
   h3 {
-    margin-top: 10px;
-    color: var(--slate);
+    margin-top: -5px;
+    color: var(--text-color);
     line-height: 0.9;
+    font-size: clamp(50px, 9vw, 90px);
   }
 
   p {
     margin: 20px 0 0;
-    max-width: 540px;
+    max-width: 85%;
   }
 
-  .email-link {
+  .resume-link {
     ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
+    margin-top: 30px;
+  }
+`;
+
+const StyledSocialLinks = styled.div`
+  display: block;
+  width: 100%;
+  margin: 0 auto -5px;
+  color: var(--light-text-color);
+
+  ul {
+    ${({ theme }) => theme.mixins.flexBetween};
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    a {
+      padding: 15px;
+      &:hover,
+      &:focus {
+        transform: translateY(-3px);
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 `;
 
@@ -58,33 +92,54 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
-  const four = (
+  const greeting = <h1>Hey, I'm</h1>;
+  const name = <h2 className="big-heading name-heading">Ben Kostiuk</h2>;
+  const brief = <h3 className="big-heading">Software Developer</h3>;
+  const socials = (
+    <StyledSocialLinks>
+      <ul>
+        {socialMedia &&
+          socialMedia.map(({ name, url }, i) => (
+            <li key={i}>
+              <a href={url} aria-label={name}>
+                <Icon name={name} />
+              </a>
+            </li>
+          ))}
+      </ul>
+    </StyledSocialLinks>
+  );
+  const description = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        I’m a Computer Science student at{' '}
+        <a href="https://www.mcmaster.ca/" target="_blank" rel="noreferrer">
+          McMaster University
         </a>
-        .
+        , with experience in web and application development. I've previously interned at{' '}
+        <a href="https://www.rbcroyalbank.com/personal.html" target="_blank" rel="noreferrer">
+          RBC
+        </a>{' '}
+        and{' '}
+        <a href="https://www.coveo.com/en" target="_blank" rel="noreferrer">
+          Coveo
+        </a>{' '}
+        supporting the development of large-scale data-intensive applications responsible for core
+        business functionality. This summer I'm interning at{' '}
+        <a href="https://www.affirm.ca/" target="_blank" rel="noreferrer">
+          Affirm
+        </a>
+        !
       </p>
     </>
   );
-  const five = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer">
-      Check out my course!
+  const button = (
+    <a className="resume-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+      View Resume
     </a>
   );
 
-  const items = [one, two, three, four, five];
+  const items = [greeting, name, brief, socials, description, button];
 
   return (
     <StyledHeroSection>

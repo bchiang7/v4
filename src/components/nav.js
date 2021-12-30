@@ -7,7 +7,8 @@ import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
-import { IconLogo } from '@components/icons';
+import { IconLogo, IconDark, IconLight } from '@components/icons';
+import { Colors } from '@styles';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -17,7 +18,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--bg-color);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -38,8 +39,8 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        background-color: var(--bg-color);
+        box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
       `};
 
     ${props =>
@@ -48,7 +49,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
       `};
   }
 `;
@@ -57,8 +58,7 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--lightest-slate);
-  font-family: var(--font-mono);
+  color: var(--lightest-text-color);
   counter-reset: item 0;
   z-index: 12;
 
@@ -66,19 +66,37 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
 
     a {
-      color: var(--green);
-      width: 42px;
-      height: 42px;
-
-      &:hover,
-      &:focus {
-        svg {
-          fill: var(--green-tint);
-        }
-      }
+      color: var(--primary-color);
+      width: 30px;
+      height: 30px;
 
       svg {
         fill: none;
+        transition: var(--transition);
+        user-select: none;
+      }
+    }
+  }
+
+  .theme-switch {
+    button {
+      background: none;
+      border: none;
+      padding: 0 !important;
+      border-radius: 9999px;
+      cursor: pointer;
+      color: var(--primary-color);
+      width: 48px;
+      height: 48px;
+
+      &:hover {
+        background-color: var(--highlight-tint);
+      }
+
+      svg {
+        width: 32px;
+        height: 32px;
+        fill: var(--primary-color);
         transition: var(--transition);
         user-select: none;
       }
@@ -104,26 +122,13 @@ const StyledLinks = styled.div`
       margin: 0 5px;
       position: relative;
       counter-increment: item 1;
-      font-size: var(--fz-xs);
+      font-size: var(--fz-lg);
 
       a {
         padding: 10px;
-
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
-          color: var(--green);
-          font-size: var(--fz-xxs);
-          text-align: right;
-        }
       }
     }
   }
-
-  .resume-button {
-    ${({ theme }) => theme.mixins.smallButton};
-    margin-left: 15px;
-    font-size: var(--fz-xs);
   }
 `;
 
@@ -132,9 +137,19 @@ const Nav = ({ isHome }) => {
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [IsDarkMode, setIsDarkMode] = useState(false);
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
+  };
+
+  const toggleTheme = () => {
+    const mode = IsDarkMode ? 'light' : 'dark';
+    const root = window.document.documentElement;
+    for (const prop in Colors[mode]) {
+      root.style.setProperty(prop, Colors[mode][prop]);
+    }
+    setIsDarkMode(!IsDarkMode);
   };
 
   useEffect(() => {
@@ -172,10 +187,15 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
-  const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
-    </a>
+  const ThemeSwitch = (
+    <div className="theme-switch">
+      <button
+        onClick={() => {
+          toggleTheme();
+        }}>
+        {IsDarkMode ? <IconLight /> : <IconDark />}
+      </button>
+    </div>
   );
 
   return (
@@ -194,8 +214,9 @@ const Nav = ({ isHome }) => {
                     </li>
                   ))}
               </ol>
-              <div>{ResumeLink}</div>
             </StyledLinks>
+
+            {ThemeSwitch}
 
             <Menu />
           </>
@@ -223,17 +244,15 @@ const Nav = ({ isHome }) => {
                     ))}
                 </TransitionGroup>
               </ol>
-
-              <TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                      {ResumeLink}
-                    </div>
-                  </CSSTransition>
-                )}
-              </TransitionGroup>
             </StyledLinks>
+
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition classNames={fadeClass} timeout={timeout}>
+                  <>{ThemeSwitch}</>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
 
             <TransitionGroup component={null}>
               {isMounted && (
