@@ -136,27 +136,27 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Muhammad Niyas and I enjoy creating things that live on the internet. My
-              interest in Branding, Social Meadia Marketing, Paid Campaigns, Static Web Development, Technology Enabling In Business Opration. started back in 2019 when I decided to try developing study materials for BCA Calicut University
-              — turns out to develop websites. taught me a lot
-              about Facebook Ads, Google Ads, Digital In Marketing.
+              Hello! My Name is Muhammad Niyas and I Enjoy Creating Things That Live On The Internet. My
+              Interest In Branding, Social Media Marketing, Paid Campaigns, Static Web Development, Technology Enabling In Business Operation. Started Back In 2019 When I Decided To Try Developing Study Materials For BCA Calicut University
+              — Turns Out To Develop Websites. Taught Me A Lot
+              About Facebook Ads, Google Ads, Digital In Marketing.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://www.instagram.com/stylatex_toys/">an Toys & Event Decoration In Qatar</a>,{' '}
-              <a href="http://vpackworld.com/">an Disposible & Plastic Products In Qatar</a>,{' '}
-              <a href="https://www.facebook.com/Fenila-Detergent-powder-1655511087878007">an Cleaning Product Manufacturer In Kozhikode</a>,{' '}
-              <a href="https://kreamscafebh.com/">an Burger Cafe In Bahrain</a>,{' '}
-              <a href="https://www.instagram.com/broastclub_">a Fried Chicken Cafe In Calicut</a>,{' '}
-              <a href="https://www.instagram.com/futurelookoptics/">a Optical Shop In Dubai</a>, and{' '}
-              <a href="https://www.instagram.com/_ideal_home__/">a Toys & Games Shop In Qatar</a>. My
-              main focus these days is Digital Marketing, Branding, Business Development,inclusive products and digital
-              experiences at <a href="https://www.instagram.com/pitchkart.qa/">an E-Commerce In Qatar</a>.
+              Fast-forward To Today, And I’ve Had The Privilege Of Working At{' '}
+              <a href="https://www.instagram.com/stylatex_toys/">A Toys & Event Decoration In Qatar</a>,{' '}
+              <a href="http://vpackworld.com/">A Disposable & Plastic Products In Qatar</a>,{' '}
+              <a href="https://www.facebook.com/Fenila-Detergent-powder-1655511087878007">A Cleaning Product Manufacturer In Kozhikode</a>,{' '}
+              <a href="https://kreamscafebh.com/">A Burger Cafe In Bahrain</a>,{' '}
+              <a href="https://www.instagram.com/broastclub_">A Fried Chicken Cafe In Calicut</a>,{' '}
+              <a href="https://www.instagram.com/futurelookoptics/">A Optical Shop In Dubai</a>, and{' '}
+              <a href="https://www.instagram.com/_ideal_home__/">A Toys & Games Shop In Qatar</a>. My
+              Main Focus These Days is Digital Marketing, Branding, Business Development,Inclusive Products And Digital
+              Experiences At <a href="https://www.instagram.com/pitchkart.qa/">An E-Commerce In Qatar</a>.
             </p>
 
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here Are A Few Technologies I’ve Been Working With Recently:</p>
           </div>
 
           <ul className="skills-list">
