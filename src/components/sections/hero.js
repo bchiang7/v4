@@ -64,8 +64,8 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a Digital Marketing Guy specializing in E-Commerce Domain. Facebook Ads, Google Ads, Google Analytics
-        these are very good in my domain. Currently, I’m focused on selling products through digital medias.
+        I’m a Digital Marketing Guy Specializing in E-Commerce Domain. Facebook Ads, Google Ads, Google Analytics
+        These Are Very Good In My Domain. Currently, I’m Focused On Selling Products Through Digital Medias.
            
       </p>
     </>
