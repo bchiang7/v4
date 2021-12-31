@@ -8,11 +8,11 @@ url: 'https://play.google.com/store/apps/details?id=qa.pitchkart.market&hl=en_IN
 ---
 
 - QR:14250+ Pre sale Educational Prayer Mat Through Only Facebook/Instagram Campaigns
-- Project Management - Developement Of Application & Websites
+- Project Management - Development Of Application & Websites
 - Worked On UI/UX Development Co-ordination Of Pitchkart Shopping Portal
-- Completed Competetive Analysis E-Commerce Sector In Qatar
-- Order Managment, Product Adding, Social Media Management  
-- Domain & hosting Mangament - Amazon Web Service
+- Completed Competitive Analysis E-Commerce Sector In Qatar
+- Order Management, Product Adding, Social Media Management  
+- Domain & hosting Management - Amazon Web Service
 - Android & IOS Application Management
 - Google Analytics
 - Google For Retail - Merchant Center For Product Selling

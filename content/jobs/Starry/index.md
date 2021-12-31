@@ -8,5 +8,5 @@ url: 'http://vpackworld.com/'
 ---
 
 - Vibgyor International WLL
-- V-Pack Website Developement
+- V-Pack Website Development
 - Package Designing Coordinator

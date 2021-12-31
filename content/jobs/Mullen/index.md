@@ -10,5 +10,5 @@ url: 'http://fenilaworld.com/'
 - Pitchkart India PVT LTD
 - Washing Powder & Cleaning Product Manufacturing Company
 - Branding & Package designing Co-ordination
-- Worked On Business Oprations
+- Worked On Business Operations
 - GST Filing
