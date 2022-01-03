@@ -1,15 +1,13 @@
 ---
-date: '2019-11-12'
-title: 'Building a Headless Mobile App CMS From Scratch'
+date: '2020-12-01'
+title: 'FAtheera Hut'
 github: ''
-external: 'https://medium.com/stories-from-upstatement/building-a-headless-mobile-app-cms-from-scratch-bab2d17744d9'
+external: 'https://instagram.com/fatheera_hut?utm_medium=copy_link'
 tech:
-  - Node
-  - Express
-  - Firebase
-  - Vue
-company: 'Upstatement'
+  - Social Media Marketing
+  - Logo
+company: 'Fatheera Hut'
 showInProjects: true
 ---
 
-Find out how we built a custom headless CMS with Node, Express, and Firebase for a project at Upstatement
+Cloud Kitchen Business Model Started In Mangalad A Burger & Juice Takeaway/Delivery Point Shop. 

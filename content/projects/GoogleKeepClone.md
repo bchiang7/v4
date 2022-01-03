@@ -1,12 +1,12 @@
 ---
-date: '2018-12-29'
-title: 'Google Keep Clone'
-github: 'https://github.com/bchiang7/google-keep-vue-firebase'
-external: 'https://keep-vue.netlify.com/'
+date: '2021-07-01'
+title: 'Stylatex Toys'
+github: 'http://stylatextoys.com/'
+external: 'https://instagram.com/stylatex_toys?utm_medium=copy_link'
 tech:
-  - Vue
-  - Firebase
+  - Social Media Marketing
+
 showInProjects: true
 ---
 
-A simple Google Keep clone built with Vue and Firebase.
+Toys & Part Decoration Items Deliver In Qatar.
