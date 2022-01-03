@@ -11,4 +11,4 @@ company: 'Broast Club'
 showInProjects: true
 ---
 
-Broast Club Is Fried Chicken, Burger Shop In Nadapuram Town.Help Build Social Media Presence For Broast Club, Worked Social Media Post Design, Menu Redesign,Paid Campaigns,New Year Giveaway, Company Registration.
+Help Build Social Media Presence For Broast Club, Worked Social Media Post Design, Menu Redesign,Paid Campaigns,New Year Giveaway, Company Registration.

@@ -1,12 +1,12 @@
 ---
-date: '2016-01-01'
-title: 'Fontipsums'
-github: 'https://github.com/bchiang7/fontipsums/'
-external: 'http://bchiang7.github.io/fontipsums/'
+date: '2020-10-01'
+title: 'Ideal Home Trading'
+github: ''
+external: 'https://instagram.com/_ideal_home__?utm_medium=copy_link'
 tech:
-  - HTML
-  - SCSS
+  - Logo
+  - Social Media Management
 showInProjects: true
 ---
 
-Simple website to display some of my favorite font pairings combined with some fun lorem ipsum variations found on the web.
+Social Media Markeing For Toys Shop In Qatar.
