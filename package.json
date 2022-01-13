@@ -52,14 +52,14 @@
     "gatsby-transformer-sharp": "^3.14.0",
     "lodash": "^4.17.19",
     "prismjs": "^1.25.0",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.2",
     "scrollreveal": "^4.0.5",
     "smooth-scroll": "^16.1.0",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
@@ -74,7 +74,7 @@
     "eslint-plugin-react": "^7.25.1",
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.4.1"
   }
 }
