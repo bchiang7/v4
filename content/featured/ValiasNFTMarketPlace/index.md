@@ -14,4 +14,4 @@ tech:
   - Heroku
 ---
 
-A web 3.0 application built on the Flow blockchain. Valias is a NFT marketplace where you can create, buy, and sell NFTs. I am currently working on this project with two of my friends. I joined about halfway through development but have contributing consistently. React was used for the front end, express for backend, Cadence for the smart contracts, and IPFS, Pinata and Postgres for database. The site is hosted on Heroku.
+A web 3.0 application built on the Flow blockchain. Valias is a NFT marketplace where you can create, buy, and sell NFTs. I joined my two friends who started this project about halfway through development. I no longer actively contribute due to time constraints and shifting my focus to other personal projects. React was used for the front end, express forn the backend, Cadence for the smart contracts, and IPFS, Pinata and Postgres for database. The site is hosted on Heroku.
