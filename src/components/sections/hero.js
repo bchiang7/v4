@@ -65,11 +65,10 @@ const Hero = () => {
     <>
       <p>
         I'm a Security Researcher and Penetration Tester specializing in breaking the security of 
-        websites, Android and iOS applications, internal and external networks, and cloud environments.
-        I'm currently working at {' '} as a Lead Security Researcher on Solidity, Smart Contracts, and Security on Blockchain. 
-        <a href="https://credshields.com/" target="_blank" rel="noreferrer">
-          CredShields
-        </a>
+        websites, Android/iOS applications, networks, and cloud environments.
+        I'm currently working at <a href="https://credshields.com/" target="_blank" rel="noreferrer"> CredShields </a>as a Lead Security Researcher on Solidity, Smart Contracts, and Security on Blockchain. 
+        and leading the Pentest Teams at Cobalt and HackerOne.
+        
       </p>
     </>
   );
