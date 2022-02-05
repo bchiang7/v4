@@ -1,11 +1,10 @@
 ---
-date: '2017-04-01'
-title: 'Studio Developer'
-company: 'Scout'
-location: 'Northeastern University'
-range: 'January - June 2017'
-url: 'https://web.northeastern.edu/scout/'
+date: '2019-06-01'
+title: 'Cyber Security Consultant'
+company: 'Bitaces Labs'
+location: 'India'
+range: 'June 2019 - December 2021'
+url: 'https://bitaces.com/'
 ---
 
-- Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern
-- Worked closely with designers and management team to develop, document, and manage the conference’s marketing website using Jekyll, Sass, and JavaScript
+- Security Testing, Audits, and Code Reviews on Web Applications, Mobile Applications, Network Infrastructure and Cloud Environments

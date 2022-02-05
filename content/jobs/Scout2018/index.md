@@ -1,12 +1,10 @@
 ---
-date: '2018-04-01'
-title: 'Studio Developer'
-company: 'Scout'
-location: 'Northeastern University'
-range: 'January - April 2018'
-url: 'https://web.northeastern.edu/scout/'
+date: '2020-01-01'
+title: 'Pentest Team Lead'
+company: 'HackerOne'
+location: ''
+range: 'January 2020 - Present'
+url: 'https://hackerone.com/z0mb13'
 ---
 
-- Worked with a team of three designers to build a marketing website and e-commerce platform for [blistabloc](https://blistabloc.com), an ambitious startup originating from Northeastern
-- Helped solidify a brand direction for blistabloc that spans both packaging and web
-- Interfaced with clients on a weekly basis, providing technological expertise
+- Managing and leading the Pentest team, working on testing projects involving Web Applications, Mobile Applications, Networks, and Cloud Environments
