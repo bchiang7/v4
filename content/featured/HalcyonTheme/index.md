@@ -1,15 +1,16 @@
 ---
 date: '1'
-title: 'Halcyon Theme'
-cover: './halcyon.png'
-github: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
+title: 'PacRecon'
+cover: './pacrecon.png'
+github: 'https://github.com/az0mb13'
+external: 'https://blog.dixitaditya.com/'
 tech:
-  - VS Code
-  - Sublime Text
-  - Atom
-  - iTerm2
-  - Hyper
+  - Go
+  - MongoDB
+  - Bash
+  - Discord
+  - Nuclei
 ---
 
-A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+A Security Recon Suite developed in Go and MongoDB with features such as Subdomain Enumeration, JavaScript File analysis, Parameter Enumeration with automated tests
+for XSS, Project Nuclei Integration, Endpoint Brute-force, Port Scanning, and Subdomain Monitoring with a Discord Bot for easy management and alerts. 
