@@ -301,7 +301,7 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => location.href="https://blog.dixitaditya.com/"}>
+      <button className="more-button" onClick={() => window.open("https://blog.dixitaditya.com/", "_blank")}>
         View All Posts
       </button>
     </StyledProjectsSection>
