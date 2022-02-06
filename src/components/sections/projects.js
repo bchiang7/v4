@@ -301,8 +301,8 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
+      <button className="more-button" href="https://blog.dixitaditya.com" target="_blank" rel="noreferrer">
+        View All Posts
       </button>
     </StyledProjectsSection>
   );
