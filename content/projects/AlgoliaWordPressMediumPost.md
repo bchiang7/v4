@@ -1,14 +1,15 @@
 ---
 date: '2020-03-27'
-title: 'Integrating Algolia Search with WordPress Multisite'
-github: ''
-external: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c'
+title: 'Exploiting OAuth: Journey to Account Takeover'
+external: 'https://blog.dixitaditya.com/oauth-account-takeover'
 tech:
-  - Algolia
-  - WordPress
-  - PHP
-company: 'Upstatement'
+  - OAuth 2.0
+  - XSS
+  - CSP Bypass
+  - CSRF
+company: 'Blog'
 showInProjects: true
 ---
 
-Building a custom multisite compatible WordPress plugin to build global search with Algolia
+This is a write-up of a chain of vulnerabilities (OAuth Misconfiguration, CSRF, XSS, and Weak CSP) that allowed me to take over a user account using a single interaction.
+
