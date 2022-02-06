@@ -301,7 +301,7 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" href="https://blog.dixitaditya.com" target="_blank" rel="noreferrer">
+      <button className="more-button" onClick={() => location.href="https://blog.dixitaditya.com/"}>
         View All Posts
       </button>
     </StyledProjectsSection>
