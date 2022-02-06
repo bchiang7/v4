@@ -1,15 +1,15 @@
 ---
 date: '2019-11-12'
-title: 'Building a Headless Mobile App CMS From Scratch'
+title: 'Hacking a Chrome Extension for Fun and Profit'
 github: ''
-external: 'https://medium.com/stories-from-upstatement/building-a-headless-mobile-app-cms-from-scratch-bab2d17744d9'
+external: 'https://blog.dixitaditya.com/hacking-a-chrome-extension'
 tech:
-  - Node
-  - Express
-  - Firebase
-  - Vue
-company: 'Upstatement'
+  - Chrome Extension
+  - Reversing
+  - JavaScript
+  - Premium Bypass
+company: ''
 showInProjects: true
 ---
 
-Find out how we built a custom headless CMS with Node, Express, and Firebase for a project at Upstatement
+A tutorial and writeup on how I exploited a Google Chrome extension to bypass the premium protection.

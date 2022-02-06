@@ -1,14 +1,13 @@
 ---
 date: '2020-01-10'
-title: 'Time to Have More Fun'
-github: 'https://github.com/bchiang7/time-to-have-more-fun'
-external: 'https://time-to-have-more-fun.now.sh/'
+title: 'A deep dive into Task Hijacking in Android'
+external: 'https://blog.dixitaditya.com/task-hijacking'
 tech:
-  - Next.js
-  - Tailwind CSS
-  - Firebase
+  - Android
+  - Task Hijacking
+  - Research
 company: ''
 showInProjects: true
 ---
 
-A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS
+An extensive research on Task Hijacking in Android showing how the vulnerability is introduced and the PoC to exploit it. 
