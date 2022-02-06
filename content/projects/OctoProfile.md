@@ -1,13 +1,14 @@
 ---
 date: '2019-07-15'
-title: 'OctoProfile'
-github: 'https://github.com/bchiang7/octoprofile'
-external: 'https://octoprofile.now.sh'
+title: 'One-click SSL-Pinning Bypass Setup'
+github: ''
+external: 'https://blog.dixitaditya.com/one-click-ssl-pinning-bypass-setup'
 tech:
-  - Next.js
-  - Chart.js
-  - GitHub API
+  - Frida
+  - Android
+  - Genymotion
+  - Bash
 showInProjects: true
 ---
 
-A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.
+An automation to set up the environment for Android application pentesting using Frida to bypass the SSL Pinning by using the Android Debug Bridge
