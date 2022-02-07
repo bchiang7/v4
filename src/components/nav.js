@@ -67,8 +67,8 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--green);
-      width: 42px;
-      height: 42px;
+      width: 60px;
+      height: auto;
 
       &:hover,
       &:focus {
@@ -174,7 +174,7 @@ const Nav = ({ isHome }) => {
 
   const ResumeLink = (
     <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
+      Xem CV
     </a>
   );
 

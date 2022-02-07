@@ -264,10 +264,10 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+      <h2 ref={revealTitle}>Bài viết</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
+        Xem danh sách
       </Link>
 
       <ul className="projects-grid">
@@ -302,7 +302,7 @@ const Projects = () => {
       </ul>
 
       <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
+        {showMore ? 'Thu gọn' : 'Xem thêm'}
       </button>
     </StyledProjectsSection>
   );

@@ -1,5 +1,5 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'nguyenbv1994@gmail.com',
 
   socialMedia: [
     {
@@ -26,19 +26,19 @@ module.exports = {
 
   navLinks: [
     {
-      name: 'About',
+      name: 'Giới thiệu',
       url: '/#about',
     },
     {
-      name: 'Experience',
+      name: 'Kinh Nghiệm',
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Công việc',
       url: '/#projects',
     },
     {
-      name: 'Contact',
+      name: 'Liên hệ',
       url: '/#contact',
     },
   ],

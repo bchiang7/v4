@@ -46,7 +46,7 @@ const Loader = ({ finishLoading }) => {
 
     loader
       .add({
-        targets: '#logo path',
+        targets: '#logo #A',
         delay: 300,
         duration: 1500,
         easing: 'easeInOutQuart',

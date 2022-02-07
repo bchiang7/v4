@@ -348,7 +348,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Dự án cá nhân
       </h2>
 
       <StyledProjectsGrid>
@@ -384,7 +384,7 @@ const Featured = () => {
                     <div className="project-links">
                       {cta && (
                         <a href={cta} aria-label="Course Link" className="cta">
-                          Learn More
+                          Tìm hiểu thêm
                         </a>
                       )}
                       {github && (
