@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ddns-route53:
+    image: crazymax/ddns-route53:latest
+    restart: always
+    volumes:
+      - './ddns-route53.yml:/ddns-route53.yml:ro'
+    environment:
+      - 'TZ=Europe/Bucharest'
+      - 'SCHEDULE=*/5 * * * *'
+      - 'LOG_LEVEL=info'
+      - 'LOG_JSON=false'
+
+  tudor-pop:
+    image: registry.gitlab.com/tudor-pop/resume
+    container_name: tudor-pop.com
+    restart: always
+    ports:
+      - '5000:5000'

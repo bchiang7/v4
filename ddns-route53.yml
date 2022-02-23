@@ -1,0 +1,13 @@
+credentials:
+  accessKeyID: ${AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_ACCESS_KEY}
+
+route53:
+  hostedZoneID: 'Z0332035DD91D1SX61XL'
+  recordsSet:
+    - name: 'storj.tudor-pop.com.'
+      type: 'A'
+      ttl: 300
+    - name: 'tudor-pop.com.'
+      type: 'A'
+      ttl: 300
