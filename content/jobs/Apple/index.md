@@ -1,1 +1,0 @@
-company: 'Apple'
