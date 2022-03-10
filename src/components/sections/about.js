@@ -137,29 +137,19 @@ const About = () => {
           <div>
             <p>
               Hello! My name is Tayfun and I enjoy creating things. My interest in programming
-              started back in 2018 when I decided to try automating reading our ''Vertretungsplan''
-              at school — turns out hacking together a custom reblog button taught me a lot about
-              Python and programming in general!
+              started back in 2018 when I was in school. I decided that I want to get notified if
+              there were changes in our substitions schedules (Vertretungungsplan). So I began
+              teaching myself Python and hooking that script on a Raspberry Pi. It did'nt last long
+              until my classmates wanted to take advantage of the program too. It became very
+              popular at school. In the end there were approximately 150 registered users. I was
+              constantly adding new features to the program and had a lot of fun. — turns out
+              scraping our schedule at school taught me a lot about Python, managing a server and
+              programming in general!
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
-            </p>
-
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              Fast-forward to today, and I’ve had the privilege of studying IT-Security at
+              Ruhr-Universität Bochum.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
