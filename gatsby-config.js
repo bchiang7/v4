@@ -6,7 +6,6 @@ module.exports = {
     description: 'Tayfun Ceylan is an IT student specializing in cryptography.',
     siteUrl: 'https://tydn.de', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
