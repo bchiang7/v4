@@ -12,7 +12,7 @@ url: 'https://www.opel.de/'
 - <b>driving an EZS 350 (Schlepper)</b> - collecting items in cages attached to the vehicle
 - <b>Nachschübe intern</b> - changing location of items internally
 - <b>Nachschübe extern</b> - changing location of items to an external area
-- <b>Greifen</b> - picking items for delivery to costumer
+- <b>Greifen</b> - picking items for costumer delivery
 - <b>Konsolidierung</b>
 - <b>Umlagern</b>
 - <b>Einlagern</b>
