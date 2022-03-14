@@ -136,7 +136,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Tayfun and I enjoy creating things. My interest in programming
+              Helloo! My name is Tayfun and I enjoy creating things. My interest in programming
               started back in 2018 when I was in school. I decided that I want to get notified if
               there were changes on our substition schedules (Vertretungungsplan). So I began
               teaching myself Python and hooking that script on a Raspberry Pi. It did'nt last long
