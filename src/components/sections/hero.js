@@ -65,7 +65,7 @@ const Hero = () => {
     <>
       <p>
         I’m an IT student specializing in cryptography. I do my own programming projects in my free
-        time..sdfa
+        time.
       </p>
     </>
   );
