@@ -9,10 +9,10 @@ url: 'https://www.opel.de/'
 
 - I was working full time for a month and the rest in part time
 - I was involved in a lot of different tasks for both Teileeingang and Teileausgang
-- <b>driving an EZS 350 (Schlepper)</b> - collecting items in cages attached to the vehicle
-- <b>Nachschübe intern</b> - changing location of items internally
-- <b>Nachschübe extern</b> - changing location of items to an external area
-- <b>Greifen</b> - picking items for costumer delivery
-- <b>Konsolidierung</b>
-- <b>Umlagern</b>
-- <b>Einlagern</b>
+- **driving an EZS 350 (Schlepper)** - collecting items in cages attached to the vehicle
+- **Nachschübe intern** - changing location of items internally
+- **Nachschübe extern** - changing location of items to an external area
+- **Greifen** - picking items for costumer delivery
+- **Konsolidierung** - preparing cages for shipment
+- **Umlagern** - manually changing location of items
+- **Einlagern** - store items on a transport trolley coming in from truck
