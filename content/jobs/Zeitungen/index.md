@@ -7,7 +7,7 @@ range: '2013 - 2017'
 url: 'https://msd-direktverteilung.de/'
 ---
 
-- when I turned 13 I have decided to earn some extra money for myself
-- first I was working at zusteller-online.de delivering magazines like TV-Movie or Bravo on my bike
-- later I changed the employer to M.S.D., now delivering newspapers instead of magazines
+- when I turned 13 I decided to earn some extra money for myself
+- at first I was working for zusteller-online.de delivering magazines like TV-Movie or Bravo on my bike
+- later on I saw that I had better opportunities at M.S.D. to develop myself, so i applied to M.S.D.
 - being outside, enjoying fresh air and hearing music was refreshing

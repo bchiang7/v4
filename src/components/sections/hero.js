@@ -64,8 +64,8 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m an IT student specializing in cryptography. I do my own programming projects in my free
-        time.
+        I’m an IT student specializing in cryptography. In my free
+        time I like tinker with programming projects .
       </p>
     </>
   );

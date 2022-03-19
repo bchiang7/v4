@@ -139,10 +139,10 @@ const About = () => {
               Helloo! My name is Tayfun and I enjoy creating things. My interest in programming
               started back in 2018 when I was in school. I decided that I want to get notified if
               there were changes on our substition schedules (Vertretungungsplan). So I began
-              teaching myself Python and hooking that script on a Raspberry Pi. It did'nt last long
-              until my classmates wanted to take advantage of the program too. It became very
+              teaching myself Python and hooking that script on a Raspberry Pi. It didn't last long
+              until my classmates wanted to take advantage of the program as well. It became very
               popular at school. In the end there were approximately 150 registered users. I was
-              constantly adding new features to the program and had a lot of fun. — turns out
+              constantly adding new features to the program and had a lot of fun. — turns out web
               scraping our schedule at school taught me a lot about Python, managing a server and
               programming in general!
             </p>

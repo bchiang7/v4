@@ -15,4 +15,4 @@ url: 'https://www.opel.de/'
 - **Greifen** - picking items for costumer delivery
 - **Konsolidierung** - preparing cages for shipment
 - **Umlagern** - manually changing location of items
-- **Einlagern** - store items on a transport trolley coming in from truck
+- **Einlagern** - store items on a transport trolley coming in from a truck
