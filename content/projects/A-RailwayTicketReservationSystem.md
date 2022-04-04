@@ -3,12 +3,13 @@ date: '2020-06'
 title: 'Railway Ticket Reservation System'
 github: 'https://github.com/Gnanod/VehicleServiceCenter'
 tech:
-  - Java
+  - React Native
+  - Spring Boot
   - MySQL
-  - JavaSwing
-  - Hibernate
+  - AWS
+  - Google Maps
 company: 'SLIIT'
 showInProjects: true
 ---
 
-This Project is a Java based train ticket and seat reservation system .This project allows to book seats in a few easy steps also can manage train schedules
+Mobile-based train ticket and seat reservation system .This project allows manage train tickets. Users can register into the application and use public transportation by scanning the generated QR code

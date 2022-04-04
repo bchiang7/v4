@@ -165,8 +165,8 @@ const About = () => {
                 Sri Lanka Institute of Information Technology,
               </a>{' '}
               with BSc (Hons) (First Class) in Information Technology specializing in Software
-              Engineering. My main focus these days is building accessible, inclusive products and
-              software solutions.
+              Engineering. My main focus these days is to be an outstanding researcher and a
+              lecturer dedicated to developing and teaching technologies for social well-being.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

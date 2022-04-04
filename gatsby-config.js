@@ -5,8 +5,8 @@ module.exports = {
     title: 'Samitha Vidhanaarachchi',
     description:
       'Samitha Vidhanaarachchi is a software engineer who specializes in building software solutions.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+    siteUrl: 'https://samithavidhanaarachchi.com', // No trailing slash allowed!
+    image: '/samitha.jpg', // Path to your image you placed in the 'static' folder
     twitterUsername: '@samitha_96',
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'src/images/logo.png',
+        icon: 'src/images/logoSamitha.png',
       },
     },
     `gatsby-plugin-offline`,

@@ -60,26 +60,23 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Samitha Vidhanaarachchi.</h2>;
-  const three = <h3 className="big-heading">I build things for web & mobile.</h3>;
+  const three = (
+    <h3 className="medium-heading">Dedicated to be an outstanding researcher and a lecturer.</h3>
+  );
   const four = (
     <>
       <p>
-        I’m a{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          software engineer{' '}
+        I’m an{' '}
+        <a href="https://www.sliit.lk/" target="_blank" rel="noreferrer">
+          Academic Instructor{' '}
         </a>{' '}
-        specialized in building exceptional digital experiences. Currently, I’m focused on building
-        accessible, human-centered products.
+        specialized in software engineering dedicated to teaching and researching in the domain of
+        Human Computer Interaction.
       </p>
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a className="email-link" href="/resume.pdf" target="_blank" rel="noreferrer">
       Download Resume
     </a>
   );
