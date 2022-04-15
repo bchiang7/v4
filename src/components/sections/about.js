@@ -138,6 +138,7 @@ const About = () => {
     'AWS',
     'Redis',
     'Kafka',
+    'RabbitMQ',
     'Docker',
     'Kubernetes',
     'MQTT',
