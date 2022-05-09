@@ -1,27 +1,31 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'bikalpacodes@gmail.com',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/theoctober19th',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      name: 'StackOverflow',
+      url: 'https://stackoverflow.com/users/7327036/theoctober19th',
     },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/bchiang7',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/theoctober19th',
     },
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/theoctober19th',
+    },
+    // {
+    //   name: 'Codepen',
+    //   url: 'https://codepen.io/bchiang7',
+    // },
   ],
 
   navLinks: [
