@@ -1,11 +1,15 @@
 build:
-	docker build -t registry.gitlab.com/tudor-pop/resume .
+	docker build -t ghcr.io/tudor-pop/v4 .
+
+login:
+	export CR_PAT=
+	echo $CR_PAT | docker login ghcr.io -u tudor-pop --password-stdin
 
 run:
 	docker-compose up
 
 push:
-	docker-compose push tudor-pop
+	docker push ghcr.io/tudor-pop/v4
 
 deploy: build push
-	ssh home "docker pull registry.gitlab.com/tudor-pop/resume && docker rm -f resume && docker run -p 5000:5000  -dit --name resume registry.gitlab.com/tudor-pop/resume"
+	ssh home "docker pull ghcr.io/tudor-pop/v4 && docker rm -f resume && docker run -p 5000:5000  -dit --name resume ghcr.io/tudor-pop/v4"
