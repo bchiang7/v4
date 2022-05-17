@@ -9,7 +9,7 @@ run:
 	docker run -p 5000:5000  -dit --name v4 ghcr.io/tudor-pop/v4
 
 push:
-	docker push ghcr.io/tudor-pop/v4
+	docker push ghcr.io/tudor-pop/v4:latest
 
 pull:
 	docker pull ghcr.io/tudor-pop/v4
