@@ -13,7 +13,7 @@ services:
       - 'LOG_JSON=false'
 
   tudor-pop:
-    image: registry.gitlab.com/tudor-pop/resume
+    image: ghcr.io/tudor-pop/v4
     container_name: tudor-pop.com
     restart: always
     ports:
