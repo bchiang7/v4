@@ -2,6 +2,8 @@ FROM node:12.13 as build
 
 WORKDIR /app
 
+RUN apt install nasm
+
 COPY ./package.json ./
 RUN npm install
 
