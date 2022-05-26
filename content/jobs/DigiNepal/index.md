@@ -3,7 +3,7 @@ date: '2021-03-01'
 title: 'Java Development Intern'
 company: 'Digi Nepal'
 location: 'Lalitpur'
-range: 'January 2019 - March 2020'
+range: 'January 2019 - March 2019'
 url: 'https://diginepal.com.np/'
 ---
 
