@@ -7,6 +7,8 @@ import PrismStyles from './PrismStyles';
 const GlobalStyle = createGlobalStyle`
   ${fonts};
   ${variables};
+  @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700;800;900&family=YouTube+Sans:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 
   html {
     box-sizing: border-box;
@@ -18,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
   *:before,
   *:after {
     box-sizing: inherit;
+    
+font-family: 'Google Sans';
   }
 
   ::selection {
