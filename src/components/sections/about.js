@@ -144,29 +144,21 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! I'm Xavier Elon, a Computer Science graduate from Oregon State University based
-              in Orlando, FL who has a passion for technology, blockchain/crypto and spcace. I am
-              currently working for Deloitte under a long-term contract with the IRS as a Full-Stack
-              Software Engineer.
+              Hello! I am Xavier Elon, a full-stack software engineer based in Orlando, FL who has a
+              passion for technology, blockchain and spcace. I am currently working for Deloitte
+              under a long-term contract with the IRS as a Full-Stack Software Engineer helping
+              develop a web application.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
+              I’ve had the privilege of working at{' '}
               <a href="https://deloitte.com/">a consulting firm</a>,{' '}
               <a href="https://asurance.com/">a tech insurance company</a>,{' '}
               <a href="https://www.getaboard.org/">a non-profit based in Orlando</a>, and{' '}
-              <a href="https://ole.org/">an internal non-profit company</a>. My main focus these
-              days is learning blockchain technology and building Web3.0 decentralized applications.
+              <a href="https://ole.org/">an internal non-profit company</a>. My main focus now is
+              sharpening my Java and React skills as well as working on a social media
+              <a href="https://github.com/SkyV0/just-b3vts"> website </a> with a couple of friends.
             </p>
-
-            {/* <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p> */}
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>

@@ -15,4 +15,4 @@ show: 'true'
 ---
 
 A full-stack MERN application. I led and managed a team of 3 other engineers to create a full-stack MERN app for university students to rate and review their university classes.
-Fully deployed with AWS using Route 53, load balancers, EC2s, VPC. I created about 50% of the routes for the back-end using Node.js and Express and created the models and setup the MongoDB database. I also helped develope about 15% of the front-end using React and connected it to the backend. I unfortunately recently had to shut down the site due to incurring large month costs on AWS to keep it live.
+Fully deployed with AWS using Route 53, load balancers, EC2s, VPC. I created about 50% of the routes for the back-end using Node.js and Express and created the models and setup the MongoDB database. I also helped develope about 15% of the front-end using React and connected it to the backend. I unfortunately recently had to shut down the site due to incurring large monthly costs on AWS to keep it live.
