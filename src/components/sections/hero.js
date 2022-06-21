@@ -68,8 +68,8 @@ const Hero = () => {
         <a href="https://deloitte.com/" target="_blank" rel="noreferrer">
           Deloitte
         </a>{' '}
-        . I have 2 years of professional experience and am currently seeking a job in the tech
-        sector as I want to be on the forefront of technology.
+        . I have 2 years of professional experience. I am currently seeking to work in the forefront
+        technology.
       </p>
     </>
   );
