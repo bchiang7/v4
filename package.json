@@ -20,7 +20,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
@@ -50,6 +51,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.19",
     "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
