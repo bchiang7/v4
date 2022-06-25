@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "animejs": "^3.1.0",
-    "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-styled-components": "^1.13.3",
     "gatsby": "^3.4.1",
     "gatsby-plugin-google-analytics": "^3.4.0",
     "gatsby-plugin-image": "^1.4.0",
@@ -44,7 +44,7 @@
     "gatsby-plugin-robots-txt": "^1.5.6",
     "gatsby-plugin-sharp": "^3.4.1",
     "gatsby-plugin-sitemap": "^4.0.0",
-    "gatsby-plugin-styled-components": "^4.4.0",
+    "gatsby-plugin-styled-components": "^4.14.0",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^5.1.0",
     "gatsby-remark-prismjs": "^5.1.0",
@@ -60,7 +60,7 @@
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",

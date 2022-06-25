@@ -175,7 +175,6 @@ const ArchivePage = ({ location, data }) => {
                     github,
                     external,
                     title,
-                    tech,
                     company,
                   } = node.frontmatter;
                   return (
@@ -189,14 +188,14 @@ const ArchivePage = ({ location, data }) => {
                       </td>
 
                       <td className="tech hide-on-mobile">
-                        {tech.length > 0 &&
+                        {/* {tech.length > 0 &&
                           tech.map((item, i) => (
                             <span key={i}>
                               {item}
                               {''}
                               {i !== tech.length - 1 && <span className="separator">&middot;</span>}
                             </span>
-                          ))}
+                          ))} */}
                       </td>
 
                       <td className="links">
