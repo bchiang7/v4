@@ -5,10 +5,10 @@ module.exports = {
   siteMetadata: {
     title: 'Vedant Jain',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+      'Vedant Jain is an undergrad student. He is enthusiast about open source, software engineering and hackathons. He recently got selected for GSoC 22 with CircuitVerse and GSoD 22 with plaisadoes foundation.',
+    siteUrl: 'https://vedant-jain03.github.io/portfolio/', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '@vedantj_03',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
