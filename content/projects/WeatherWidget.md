@@ -1,13 +1,11 @@
 ---
-date: '2016-11-16'
-title: 'Weather Widget'
-github: 'https://github.com/bchiang7/DemoWebApp'
-external: 'http://quiet-dusk-89245.herokuapp.com/'
+date: '2022-12-16'
+title: 'Certificate Generator'
+github: 'https://github.com/vedant-jain03/certificate-generator'
+external: 'https://vedant-jain03.github.io/certificate-generator/'
 tech:
-  - Node
-  - Express
-  - EJS
-showInProjects: false
+  - React
+showInProjects: true
 ---
 
-Simple weather app made with Node.js, Express, and Heroku. Utilized the OpenWeatherMap API and Google Maps API.
+This is Certificate Generator which you can use to make e-certificate and download as a pdf and then you can distribute the certificates to the students.

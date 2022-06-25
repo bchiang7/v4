@@ -1,15 +1,11 @@
 ---
-date: '2016-04-01'
-title: 'CourseSource'
-github: 'https://github.com/bchiang7/WebDevSpring2016/tree/master/public/project'
-external: ''
+date: '2022-04-01'
+title: 'Github Repository Readme Generator'
+github: 'https://github.com/vedant-jain03/Repo-Readme-Md-Generator'
+external: 'https://vedant-jain03.github.io/Repo-Readme-Md-Generator/'
 tech:
-  - Angular
-  - Node
-  - Express
-  - MongoDB
-company: 'Northeastern'
-showInProjects: false
+  - React
+showInProjects: true
 ---
 
-Web application built on the MEAN (MongoDB, Express, Angular, Node) stack with the intention of providing Northeastern students a better experience browsing the courses offered at Northeastern.
+This is Github Repository Readme Generator, Made using React. The Readme final Code is below , you just have to copy and paste to your readme file. If you like the project Kindly Star the Project

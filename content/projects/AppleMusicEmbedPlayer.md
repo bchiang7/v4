@@ -1,14 +1,13 @@
 ---
-date: '2017-12-01'
-title: 'Apple Music Embeddable Web Player Widget'
-github: ''
-external: 'https://tools.applemusic.com/en-us'
+date: '2022-12-01'
+title: 'Github Profile Readme Generator'
+github: 'https://github.com/vedant-jain03/Github-Profile-Readme-Generator'
+external: 'https://vedant-jain03.github.io/Github-Profile-Readme-Generator'
 tech:
-  - MusicKit.js
-  - JS
-  - SCSS
-company: 'Apple'
+  - React
+  - CSS
+company: ''
 showInProjects: true
 ---
 
-Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in the browser leveraging [MusicKit.js](https://developer.apple.com/documentation/musickitjs). Read more about this project on [9to5Mac](https://9to5mac.com/2018/06/03/apple-music-embeddable-web-player-listen-browser/).
+This is Github Profile Readme Generator, Made using React. You can fill the input field as you want, you can select add-on feature you want to see in your profile. The Readme final Code is below , you just have to copy and paste to your readme file. If you like the project Kindly Star the Project

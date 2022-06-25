@@ -383,6 +383,9 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  #main_logo_image {
+    border-radius : 50%;
+  }
   #logo {
     color: var(--green);
   }

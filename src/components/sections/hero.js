@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import { Link } from 'gatsby';
 // import { email } from '@config';
 
 const StyledHeroSection = styled.section`
@@ -43,6 +44,9 @@ const StyledHeroSection = styled.section`
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
+  .big-heading-two {
+    font-size: 2.5rem;
+  }
 `;
 
 const Hero = () => {
@@ -59,29 +63,23 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Vedant Jain.</h2>;
+  const three = <h3 className="big-heading big-heading-two">Open Source Enthusiast and Software Developer.</h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
+        I'm working as Developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization and as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization.
       </p>
     </>
   );
   const five = (
-    <a
+    <Link
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      to="/blog"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
-    </a>
+      Check out my blogs!
+    </Link>
   );
 
   const items = [one, two, three, four, five];
