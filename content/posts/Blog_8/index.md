@@ -62,7 +62,7 @@ and to retrieve certain values I use something like this:
 
 So that was all about this week's work. I learned a lot and concluded that
 
-> anything can be using javascript. Javascript OP!!!
+> anything can be done using javascript. Javascript OP!!!
 
 ### Next Week Plan
 
