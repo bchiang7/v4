@@ -34,10 +34,13 @@ This week I did the following:
 - Added feature to choose different built-in themes for embed circuit.
   It looks like this:
   ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yi35g1gdujqzxbdkomo9.png)
+
   > Advance Option
-  > ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qeqsamwbpuipnuxdnhs.png)
-  > So, how it is working?
-  > CircuitVerse awesome contributors have made `embed.js` and `embedListener.js` files for tackling with the `embed` feature. So I have made some input fields with default values in component views which are connected to data-controller=projects and in `projects_controller` I have to write code to get the value from those input fields and after the user hits that `Publish` button, the function in controller takes the values from each input and save it to the variable and finally made a `URL` variable along with `query parameters` passed to fetch the values in `embed.js`. The URL looks like this:
+
+  ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qeqsamwbpuipnuxdnhs.png)
+
+  So, how it is working?
+  CircuitVerse awesome contributors have made `embed.js` and `embedListener.js` files for tackling with the `embed` feature. So I have made some input fields with default values in component views which are connected to data-controller=projects and in `projects_controller` I have to write code to get the value from those input fields and after the user hits that `Publish` button, the function in controller takes the values from each input and save it to the variable and finally made a `URL` variable along with `query parameters` passed to fetch the values in `embed.js`. The URL looks like this:
 
 ```
 const url = `${document.querySelector('#url').value}?theme=${theme}&display_title=${displayTitle}&clock_time=${clockTimeEnable}&fullscreen=${fullscreen}&zoom_in_out=${zoomInOut}`;
