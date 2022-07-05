@@ -13,7 +13,7 @@ As a part of the GoPay Plus team, I was responsible to building and optimizing w
 
 - Onboarded, mentored and led multiple new hires in the team.
 - Created KT videos on different topics to help onboard new people to the tech stack and the product, allowing asynchronous onboarding. Post that, held synchronous discussions to clarify any doubts and questions, and get feelback regarding the onboarding.
-- Onboarded multiple vendors for end-user Identity Verification with automatic vendor switching to increase signup rates as well as smoother user onboarding.
+- Onboarded multiple vendors for end-user Identity Verification with automatic vendor switching to  reduce customer acquisition costs, saving upwards of a current estimated **4 million USD YoY**.
 - Developed a system to identify computer extracted selfies to prevent fraud, leading to an **improvement in fraud detection rated by 3%**.
 - Integrated with Business Intelligence and other external workflows using Kafka Pipelines, setting up DLQ/DQ with automated pagers to handle any failures.
 - Currently leading an initiative to build an asynchronous state machine to manage application states and workflow through our system. In regards to the same:
