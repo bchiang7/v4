@@ -1,7 +1,7 @@
 ---
 title: GSoC 2022 CircuitVerse | Week 4 Report
 description: My 4th week report for the Platform Improvement project with CircuitVerse in GSoC 22.
-date: 2022-07-02
+date: 2022-07-10
 draft: false
 slug: /blog/gsoc_week_4_report
 tags:
