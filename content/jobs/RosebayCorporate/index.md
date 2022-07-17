@@ -3,7 +3,7 @@ date: '2018-02-24'
 title: 'Fullstack JS Developer'
 company: 'Rosebay Group'
 location: 'Kathmandu, Nepal'
-range: 'Feb - Current'
+range: 'Feb - 2021'
 url: 'https://rosebaycorporate.com/'
 ---
 

@@ -10,6 +10,7 @@ skills:
   - Python
   - PostgreSql & MongoDB
   - Git
+  - AWS
   - Docker
   - Node.js
   - Express / Nestjs
