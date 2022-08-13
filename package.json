@@ -71,7 +71,7 @@
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react": "^7.30.1",
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.1.7",
