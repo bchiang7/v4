@@ -1,58 +1,54 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'ccleandroc@gmail.com',
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/leandcesar',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://www.instagram.com/leandcesar',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/leandcesar',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      name: 'Twitter',
+      url: 'https://twitter.com/leandcesar',
     },
   ],
 
   navLinks: [
     {
-      name: 'About',
+      name: 'Bio',
       url: '/#about',
     },
     {
-      name: 'Experience',
+      name: 'Experiências',
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Projetos',
       url: '/#projects',
     },
     {
-      name: 'Contact',
+      name: 'Contato',
       url: '/#contact',
     },
   ],
 
   colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
-    darkNavy: '#020c1b',
+    purple: '#bc6bff',
+    navy: '#2e2e2e',
+    darkNavy: '#1c1c1c',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({
     origin: 'bottom',
     distance: '20px',
-    duration: 500,
+    duration: 250,
     delay,
     rotate: { x: 0, y: 0, z: 0 },
     opacity: 0,

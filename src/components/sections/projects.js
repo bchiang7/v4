@@ -71,7 +71,7 @@ const StyledProject = styled.li`
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: var(--dark-navy);
     transition: var(--transition);
     overflow: auto;
   }
@@ -81,7 +81,7 @@ const StyledProject = styled.li`
     margin-bottom: 35px;
 
     .folder {
-      color: var(--green);
+      color: var(--purple);
       svg {
         width: 40px;
         height: 40px;
@@ -231,7 +231,7 @@ const Projects = () => {
               {external && (
                 <a
                   href={external}
-                  aria-label="External Link"
+                  aria-label="Link externo"
                   className="external"
                   target="_blank"
                   rel="noreferrer">
@@ -265,10 +265,10 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+      <h2 ref={revealTitle}>Mais projetos</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
+        veja a lista completa
       </Link>
 
       <ul className="projects-grid">
@@ -303,7 +303,7 @@ const Projects = () => {
       </ul>
 
       <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
+        Mostrar {showMore ? 'menos' : 'mais'}
       </button>
     </StyledProjectsSection>
   );

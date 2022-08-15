@@ -117,7 +117,7 @@ const StyledProject = styled.li`
 
   .project-overline {
     margin: 10px 0;
-    color: var(--green);
+    color: var(--purple);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     font-weight: 400;
@@ -157,7 +157,7 @@ const StyledProject = styled.li`
     z-index: 2;
     padding: 25px;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: var(--dark-navy);
     color: var(--light-slate);
     font-size: var(--fz-lg);
 
@@ -256,7 +256,7 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--green);
+      background-color: var(--purple);
       border-radius: var(--border-radius);
       vertical-align: middle;
 
@@ -348,7 +348,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Projetos que desenvolvi
       </h2>
 
       <StyledProjectsGrid>
@@ -383,17 +383,17 @@ const Featured = () => {
 
                     <div className="project-links">
                       {cta && (
-                        <a href={cta} aria-label="Course Link" className="cta">
+                        <a href={cta} aria-label="Link do curso" className="cta">
                           Learn More
                         </a>
                       )}
                       {github && (
-                        <a href={github} aria-label="GitHub Link">
+                        <a href={github} aria-label="Link do GitHub">
                           <Icon name="GitHub" />
                         </a>
                       )}
                       {external && !cta && (
-                        <a href={external} aria-label="External Link" className="external">
+                        <a href={external} aria-label="Link externo" className="external">
                           <Icon name="External" />
                         </a>
                       )}

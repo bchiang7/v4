@@ -13,7 +13,7 @@ const StyledMainContainer = styled.main`
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: var(--green);
+  color: var(--purple);
   font-family: var(--font-mono);
   font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
@@ -43,8 +43,8 @@ const NotFoundPage = ({ location }) => {
   const content = (
     <StyledMainContainer className="fillHeight">
       <StyledTitle>404</StyledTitle>
-      <StyledSubtitle>Page Not Found</StyledSubtitle>
-      <StyledHomeButton to="/">Go Home</StyledHomeButton>
+      <StyledSubtitle>Página não encontrada</StyledSubtitle>
+      <StyledHomeButton to="/">Voltar</StyledHomeButton>
     </StyledMainContainer>
   );
 
