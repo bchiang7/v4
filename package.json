@@ -57,6 +57,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.3.0",
+    "react-twitter-embed": "^4.0.4",
     "scrollreveal": "^4.0.5",
     "styled-components": "^5.3.0"
   },
