@@ -64,12 +64,13 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a full-stack software engineer specializing in React and Java working at{' '}
+        I’m a full-stack software engineer specializing in React, Typescript, Java and Spring Boot
+        working at{' '}
         <a href="https://deloitte.com/" target="_blank" rel="noreferrer">
           Deloitte
         </a>{' '}
-        . I have 2 years of professional experience. I am currently seeking to work in the forefront
-        technology.
+        . I have 2.5 years of professional experience. I am currently seeking to work in the
+        forefront of technology or aerospace.
       </p>
     </>
   );

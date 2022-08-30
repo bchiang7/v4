@@ -126,15 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = [
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'React',
-    'Solidity',
-    'Node.js',
-    'Java',
-    'SpringBoot',
-  ];
+  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'Java', 'SpringBoot'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -145,9 +137,9 @@ const About = () => {
           <div>
             <p>
               Hello! I am Xavier Elon, a full-stack software engineer based in Orlando, FL who has a
-              passion for technology, blockchain and spcace. I am currently working for Deloitte
-              under a long-term contract with the IRS as a Full-Stack Software Engineer helping
-              develop a web application.
+              passion for technology, blockchain and space. I am currently working for Deloitte for
+              NETCCN (DOD) working on a React Native application for medical professionals, a full
+              REST API and a WickrBot. M
             </p>
 
             <p>

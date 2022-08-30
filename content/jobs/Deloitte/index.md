@@ -7,6 +7,7 @@ range: 'April 2021 - Present'
 url: 'https://www2.deloitte.com/us/en.html'
 ---
 
+- Fullstack engineer for NETCCN (DOD). Main technology used is Typescript, React Native, React, Java Springboot, MongoDB, AWS (Codepipeline, Codebuild, CodeDeploy) and Docker. I built and maintain a React Native app that allows military professional to upload patient data in an offline setting and then resync using a middleware REST API I developed to resync with the main MongoDB. I also help develop new features for a Wickr bot which does the same thing as the application except in an offline setting. I built from the ground up all of our pipelines which automatically test, build and deploy all of our repositories.
 - Front-End Engineer for Ohio State gov. Built an Ohio.gov website, specifically the admin dashboard section, using React, Form.io, and a web content manager. The website had fully functional CRUD capabilities with a beautiful front-end.
 - Long-term contract working for the IRS as a full-stack engineer. Helped develop the TaxPro application using Java Spring Boot for backend, React/Typescript for the front-end and Jest and RTL for testing.
 - Blockchain Guild Apprentice: Participate in blockchain initiatives to to learn and develop skills relating to blockchain.
