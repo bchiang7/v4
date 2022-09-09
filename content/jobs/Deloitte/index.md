@@ -3,7 +3,7 @@ date: '2021-12-04'
 title: 'Full-Stack Software Engineer'
 company: 'Deloitte'
 location: 'Orlando, FL'
-range: 'April 2021 - Present'
+range: 'August 2020 - Present'
 url: 'https://www2.deloitte.com/us/en.html'
 ---
 
