@@ -134,7 +134,8 @@ const PensievePage = ({ location, data }) => {
             <a
               href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               a collection of memories
             </a>
           </p>

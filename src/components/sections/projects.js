@@ -161,14 +161,16 @@ const Projects = ({ data }) => {
                   key={i}
                   classNames="fadeup"
                   timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}>
+                  exit={false}
+                >
                   <StyledProject
                     key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     tabIndex="0"
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}>
+                    }}
+                  >
                     <StyledProjectInner>
                       <header>
                         <StyledProjectHeader>
@@ -181,7 +183,8 @@ const Projects = ({ data }) => {
                                 href={github}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
-                                aria-label="GitHub Link">
+                                aria-label="GitHub Link"
+                              >
                                 <IconGitHub />
                               </StyledIconLink>
                             )}
@@ -190,7 +193,8 @@ const Projects = ({ data }) => {
                                 href={external}
                                 target="_blank"
                                 rel="nofollow noopener noreferrer"
-                                aria-label="External Link">
+                                aria-label="External Link"
+                              >
                                 <IconExternal />
                               </StyledIconLink>
                             )}
