@@ -5,4 +5,4 @@ subtitle: 'I turn caffeine to code.'
 contactText: 'Get In Touch'
 ---
 
-Rubin Bhandari is a software engineer based in Kathmandu, Nepal working on Rosebay Group , passionate about open source and learning new stuffs.
+Rubin Bhandari is a software engineer based in Kathmandu, Nepal working on Takeo.ai , passionate about open source and learning new stuffs.
