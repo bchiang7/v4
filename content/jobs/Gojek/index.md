@@ -16,7 +16,7 @@ Owned multiple services across the platform, and was the PIC for them.
 - Analysed business OKRs and priorities and designed, created, and presented RFCs for the same.
     - Broke business requirements to technical requirements. Identified system components needed to implement the same.
     - Created high-level designs and user workflows to enable the business requirements.
-    - Presented this to internal and external stakeholders, and refined this on the basis of feedback to read a final executable stage.
+    - Presented this to internal and external stakeholders, and refined this on the basis of feedback to reach a final executable stage.
     - Led the execution of a few core components of the system.
 - Onboarded multiple vendors for end-user Identity Verification with automatic vendor switching to  reduce customer acquisition costs, saving upwards of a current estimated **4 million USD YoY**.
 - Developed a system to identify computer extracted selfies to prevent fraud, leading to an **improvement in fraud detection rated by 3%**.
