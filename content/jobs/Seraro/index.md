@@ -13,4 +13,4 @@ Worked on developing Traquer. This application’s aim is to provide real-time v
 
 - Developed Serverless APIs for consumption by our web and mobile clients.
 - Participated in developing a system for real time processing of data packets sent by our mobile clients. Integrated with MQTT, AWS Kinesis and AWS Lambda for the same. 
-- Implemented push notifications to apps using multiple vendors with automatic vendor switching in case of failures.
+
