@@ -7,12 +7,9 @@ range: 'December 2018 - August 2020'
 url: 'https://mf.paisabazaar.com'
 ---
 
-Tech Stack: Node.js, AWS, Docker, Redis, MySQL, MongoDB, Kafka
-
 Worked on developing the Paisabazaar Mutual Fund Investment Platform. This platform’s aim is to allow users to seamlessly invest into various mutual funds, both unassisted, and with the help of an agent, and manage their investments.
  
-- Helped drive the product from conception to production while **helping build the architecture from scratch**, including making key High-Level and Low-Level decisions.
-- Developed microservice-based modules and APIs for consumption by our clients.
-- Integrated with Kafka to facilitate event driven asynchronous communication between different services across the organisation.
-- Implemented Audit Trail to keep track of the actions done by the user.
-- Led the development of a system for migrating an active user base of **over 100,000 users** from old platform to the new platform while maintaining data consistency and integrity and minimal user disruption.
+- Drove the ground-up rework of the new mutual funds platform from conception to production while helping build the architecture from scratch, including making key High-Level and Low-Level decisions.
+- Collaborated with different stakeholders and teams including Product, Business and Operations to understand the current bottlenecks in the process and top user complaints.
+- Created plans to automate previously manual tasks and optimized major problematic workflows based on feedback and requirements collected from stakeholders.
+- Led the migration of an active user base of over 200,000 active users, creating action and rollback, and fallback plans.
