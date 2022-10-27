@@ -125,7 +125,18 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Node.js',
+    'Solidity',
+    'Redux Toolkit',
+    'Gatsby',
+    'Tailwind',
+    'Material UI',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -137,10 +148,12 @@ const About = () => {
             <p>
               I'm a full-stack JavaScript software engineer that enjoys building and scaling both
               server and client-side applications using test-driven development processes, often
-              working remotely in distributed Agile software development teams. I focus primarily on
-              delivering clean code that is easy to scale and maintain. Effective communication is
-              an essential tool l use for setting clear expectations with my clients. You will find
-              in me an accountable, solid partner for your business.
+              working remotely in distributed Agile software development teams.
+            </p>
+            <p>
+              I focus primarily on delivering clean code that is easy to scale and maintain.
+              Effective communication is an essential tool l use for setting clear expectations with
+              my clients. You will find in me an accountable, solid partner for your business.
             </p>
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
@@ -154,7 +167,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.jpeg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
