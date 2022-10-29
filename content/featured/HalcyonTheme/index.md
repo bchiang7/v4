@@ -7,9 +7,9 @@ external: 'https://mymovieempire.netlify.app/'
 tech:
   - React
   - Material UI
-  - Allan AI
+  - Alan AI
   - TMDB API
   - Netlify
 ---
 
-A movie app that allows you browse movies by movie categories and genres, add movies to favorites, wishlist movies, voice command powered by Allan AI, with light and dark theme.
+A movie app that allows you browse movies by movie categories and genres, add movies to favorites, wishlist movies, voice command powered by Alan AI, with light and dark theme.
