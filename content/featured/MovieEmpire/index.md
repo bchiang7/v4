@@ -12,4 +12,4 @@ tech:
   - Netlify
 ---
 
-A movie app that allows you browse movies by movie categories and genres, add movies to favorites, wishlist movies, voice command powered by Alan AI, with light and dark theme.
+A movie app that allows you browse movies by categories and genres, add movies to favorites, wishlist movies, voice command powered by Alan AI, with light and dark theme.
