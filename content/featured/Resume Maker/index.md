@@ -1,6 +1,6 @@
 ---
 date: '3'
-title: 'Hash/Hub'
+title: 'Resume Maker'
 cover: './demo.png'
 github: 'https://github.com/vedant-jain03/Resume-Maker'
 external: 'https://vedant-jain03.github.io/Resume-Maker/'
