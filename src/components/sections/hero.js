@@ -68,7 +68,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm working as Developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization and as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization.
+        I have worked as Student Developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization and as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization.
       </p>
     </>
   );

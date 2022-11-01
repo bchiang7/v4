@@ -3,7 +3,7 @@ date: '2022-12-21'
 title: 'Developer'
 company: 'Google Summer of Code'
 location: 'Remote'
-range: 'May 2022 - Present'
+range: 'May 2022 - Oct 2022'
 url: 'https://summerofcode.withgoogle.com/'
 showInProjects: false
 ---

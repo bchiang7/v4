@@ -2,8 +2,8 @@
 date: '1'
 title: 'Go With Flow'
 cover: './demo.png'
-github: 'https://github.com/vedant-jain03/HashHub'
-external: 'https://vedant-jain03.github.io/HashHub/#/'
+github: 'https://github.com/vedant-jain03/Go-with-flow'
+external: 'https://vedant-jain03.github.io/Go-with-flow/'
 tech:
   - React
   - Node.js
@@ -12,5 +12,4 @@ tech:
   - Axios
 ---
 
-Hash/Hub is a web platform where users can use different online tools such as resume maker, certificate generator,
-etc. Users can also publish blogs in a Markdown file fashion.
+Go with Flow is a platform that allows users to make Algorithm’s flowchart online using Simulator. The users can create many projects and can download them in form of images.

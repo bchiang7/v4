@@ -2,8 +2,8 @@
 date: '3'
 title: 'Hash/Hub'
 cover: './demo.png'
-github: 'https://github.com/vedant-jain03/HashHub'
-external: 'https://vedant-jain03.github.io/HashHub/#/'
+github: 'https://github.com/vedant-jain03/Resume-Maker'
+external: 'https://vedant-jain03.github.io/Resume-Maker/'
 tech:
   - React
   - Node.js
@@ -12,5 +12,4 @@ tech:
   - Axios
 ---
 
-Hash/Hub is a web platform where users can use different online tools such as resume maker, certificate generator,
-etc. Users can also publish blogs in a Markdown file fashion.
+Resume Maker is tool where you can generate your resume for free. It has functionality like dynamic preview, color themes, responsive ,etc.

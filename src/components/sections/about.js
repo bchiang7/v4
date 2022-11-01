@@ -141,7 +141,7 @@ const About = () => {
             </p>
 
             <p className='about_para'>
-              I am Enthusiastic about Open Source, Full-stack Development, Software Development and Hackathons. Currently I am working as developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization and as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization.
+              I am Enthusiastic about Open Source, Full-stack Development, Software Development and Hackathons. Currently I am working as developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization, as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization. I am past-MLH prep fellow.
             </p>
 
             <p className='about_para'>
