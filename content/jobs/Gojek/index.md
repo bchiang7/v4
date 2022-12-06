@@ -3,7 +3,7 @@ date: '2021-09-27'
 title: 'Software Backend Engineer'
 company: 'Gojek'
 location: 'Bangalore, India'
-range: 'September 2021 - Present'
+range: 'September 2021 - November 2022'
 url: 'https://www.gojek.io/'
 ---
 
