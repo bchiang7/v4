@@ -9,6 +9,7 @@ const StyledHeroSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  height: 100vh;
   padding: 0;
 
   @media (max-width: 480px) and (min-height: 700px) {
@@ -16,7 +17,7 @@ const StyledHeroSection = styled.section`
   }
 
   @media (max-height: 650px) {
-    min-height: auto;
+    height: auto;
     padding-top: calc(var(--nav-height) + 30px);
   }
 
