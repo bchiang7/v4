@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['Facebook Ads', 'Google Ads', 'Shopify', 'AWS', 'Google Analytics', 'HTML&CSS'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +135,27 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My Name is Muhammad Niyas and I Enjoy Creating Things That Live On The Internet. My
+              Interest In Branding, Social Media Marketing, Paid Campaigns, Static Web Development, Technology Enabling In Business Operation. Started Back In 2019 When I Decided To Try Developing Study Materials For BCA Calicut University
+              — Turns Out To Develop Websites. Taught Me A Lot
+              About Facebook Ads, Google Ads, Digital In Marketing.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              Fast-forward To Today, And I’ve Had The Privilege Of Working At{' '}
+              <a href="https://www.instagram.com/stylatex_toys/">A Toys & Event Decoration In Qatar</a>,{' '}
+              <a href="http://vpackworld.com/">A Disposable & Plastic Products In Qatar</a>,{' '}
+              <a href="https://www.facebook.com/Fenila-Detergent-powder-1655511087878007">A Cleaning Product Manufacturer In Kozhikode</a>,{' '}
+              <a href="https://kreamscafebh.com/">A Burger Cafe In Bahrain</a>,{' '}
+              <a href="https://www.instagram.com/broastclub_">A Fried Chicken Cafe In Calicut</a>,{' '}
+              <a href="https://www.instagram.com/futurelookoptics/">A Optical Shop In Dubai</a>, and{' '}
+              <a href="https://www.instagram.com/_ideal_home__/">A Toys & Games Shop In Qatar</a>. My
+              Main Focus These Days is Digital Marketing, Branding, Business Development,Inclusive Products And Digital
+              Experiences At <a href="https://www.instagram.com/pitchkart.qa/">An E-Commerce In Qatar</a>.
             </p>
 
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here Are A Few Technologies I’ve Been Working With Recently:</p>
           </div>
 
           <ul className="skills-list">
@@ -173,7 +167,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

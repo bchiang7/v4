@@ -1,14 +1,14 @@
 ---
-date: '2017-11-01'
-title: 'Apple Music Facebook Messenger Integration'
+date: '2020-10-01'
+title: 'GTC Smart Shop'
 github: ''
-external: 'https://www.theverge.com/2017/10/5/16433770/facebook-messenger-apple-music-bot-song-streaming'
+external: 'https://instagram.com/gtcsmartshop?utm_medium=copy_link'
 tech:
-  - Ember
-  - JS
-  - SCSS
-company: 'Apple'
+  - Social Media Marketing
+  - Paper Ad
+  - Customer Relationship
+company: 'GTC Smartshop'
 showInProjects: true
 ---
 
-Facebook Messenger chat bot extension featuring authentication and full song streaming from within the Messenger app. Read more about it on [The Verge](https://www.theverge.com/2017/10/5/16433770/facebook-messenger-apple-music-bot-song-streaming).
+App Install Campaigns, Social Media Brand Awareness Campaigns,Social Media Post.Customer Relationship.
