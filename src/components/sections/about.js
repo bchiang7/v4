@@ -137,9 +137,12 @@ const About = () => {
           <div>
             <p>
               Hello! I am Xavier Elon, a full-stack software engineer based in Orlando, FL who has a
-              passion for technology, blockchain and space. I am currently working for Deloitte for
-              NETCCN (DOD) working on a React Native application for medical professionals, a full
-              REST API and a WickrBot. M
+              passion for technology, blockchain and space exploration. I am currently working for
+              Deloitte interally at the software factory where I am leading the front-end
+              development and design of a Business Model Process Notation application and backend
+              integration currently leading two other engineers. The tech being used to build the
+              application is Typescript, React, NodeJS, Docker, PostgreSQL and Python
+              <a href="https://fastapi.tiangolo.com/">(Fast API).</a>
             </p>
 
             <p>
