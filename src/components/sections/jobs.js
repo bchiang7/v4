@@ -174,6 +174,7 @@ const Jobs = () => {
         edges {
           node {
             frontmatter {
+              type
               title
               company
               location
@@ -188,6 +189,9 @@ const Jobs = () => {
   `);
 
   const jobsData = data.jobs.edges;
+
+  const parcoursData = jobsData.filter(({ node }) => node.frontmatter.type === 'parcours');
+  const experiencesData = jobsData.filter(({ node }) => node.frontmatter.type === 'experiences');
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -244,12 +248,12 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Mon parcours & expériences</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
+          {parcoursData &&
+            parcoursData.map(({ node }, i) => {
               const { company } = node.frontmatter;
               return (
                 <StyledTabButton
@@ -266,12 +270,31 @@ const Jobs = () => {
                 </StyledTabButton>
               );
             })}
+          {(() => <StyledTabButton></StyledTabButton>)()}
+          {experiencesData &&
+            experiencesData.map(({ node }, i) => {
+              const { company } = node.frontmatter;
+              return (
+                <StyledTabButton
+                  key={i + parcoursData.length + 1}
+                  isActive={activeTabId === i + parcoursData.length + 1}
+                  onClick={() => setActiveTabId(i + parcoursData.length + 1)}
+                  ref={el => (tabs.current[i] = el)}
+                  id={`tab-${i + parcoursData.length + 1}`}
+                  role="tab"
+                  tabIndex={activeTabId === i + parcoursData.length + 1 ? '0' : '-1'}
+                  aria-selected={activeTabId === i + parcoursData.length + 1 ? true : false}
+                  aria-controls={`panel-${i + parcoursData.length + 1}`}>
+                  <span>{company}</span>
+                </StyledTabButton>
+              );
+            })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
+          {parcoursData &&
+            parcoursData.map(({ node }, i) => {
               const { frontmatter, html } = node;
               const { title, url, company, range } = frontmatter;
 
@@ -284,6 +307,37 @@ const Jobs = () => {
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
                     hidden={activeTabId !== i}>
+                    <h3>
+                      <span>{title}</span>
+                      <span className="company">
+                        &nbsp;@&nbsp;
+                        <a href={url} className="inline-link">
+                          {company}
+                        </a>
+                      </span>
+                    </h3>
+
+                    <p className="range">{range}</p>
+
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                  </StyledTabPanel>
+                </CSSTransition>
+              );
+            })}
+          {experiencesData &&
+            experiencesData.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { title, url, company, range } = frontmatter;
+
+              return (
+                <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
+                  <StyledTabPanel
+                    id={`panel-${i + parcoursData.length + 1}`}
+                    role="tabpanel"
+                    tabIndex={activeTabId === i ? '0' : '-1'}
+                    aria-labelledby={`tab-${i + parcoursData.length + 1}`}
+                    aria-hidden={activeTabId !== i + parcoursData.length + 1}
+                    hidden={activeTabId !== i + parcoursData.length + 1}>
                     <h3>
                       <span>{title}</span>
                       <span className="company">
