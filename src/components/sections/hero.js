@@ -63,10 +63,10 @@ const Hero = () => {
   const three = <h3 className="big-heading">I work behind the scenes on the web.</h3>;
   const four = (
     <p>
-      I'm a backend engineer specializing in building performant and scalable backend services.
-      Currently, I'm focused on building backend to enable the payments ecosystem at{' '}
-      <a href="https://gojek.io/" target="_blank" rel="noreferrer">
-        Gojek
+      I'm a Senior backend engineer specializing in building performant and scalable backend services.
+      Currently, I'm working as an SDE-3 targeting building the backend to enable the trading and financial ecosystem at{' '}
+      <a href="https://www.angelone.in/" target="_blank" rel="noreferrer">
+        Angel One
       </a>
       .
     </p>

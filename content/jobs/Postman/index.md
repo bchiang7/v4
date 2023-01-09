@@ -2,7 +2,7 @@
 date: '2020-07-17'
 title: 'Software Engineer 2'
 company: 'Postman'
-location: 'Bangalore, India'
+location: 'Bangalore, India (Remote)'
 range: 'August 2020 - September 2021'
 url: 'https://www.postman.com/'
 ---
