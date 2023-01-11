@@ -1,5 +1,3 @@
-import React from 'react';
-
 const IconExternal = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +8,8 @@ const IconExternal = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-external-link">
+    className="feather feather-external-link"
+  >
     <title>External Link</title>
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
     <polyline points="15 3 21 3 21 9"></polyline>

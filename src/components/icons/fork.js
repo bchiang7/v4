@@ -1,5 +1,3 @@
-import React from 'react';
-
 const IconFork = () => (
   <svg
     viewBox="0 0 24 24"
@@ -8,7 +6,8 @@ const IconFork = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-git-branch">
+    className="feather feather-git-branch"
+  >
     <title>Git Fork</title>
     <line x1="6" y1="3" x2="6" y2="15"></line>
     <circle cx="18" cy="6" r="3"></circle>

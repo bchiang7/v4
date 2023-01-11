@@ -1,5 +1,3 @@
-import React from 'react';
-
 const IconPlayStore = () => (
   <svg xmlns="http://www.w3.org/2000/svg" role="img" x="0px" y="0px" viewBox="0 0 512.001 512.001">
     <title>Google Play Store</title>

@@ -157,5 +157,6 @@ module.exports = {
     },
   ],
   jsxRuntime: 'automatic',
+  jsxImportSource: 'react',
   trailingSlash: 'never',
 };

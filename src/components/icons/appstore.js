@@ -1,5 +1,3 @@
-import React from 'react';
-
 const IconAppStore = () => (
   <svg
     version="1.1"
@@ -7,7 +5,8 @@ const IconAppStore = () => (
     x="0px"
     y="0px"
     viewBox="0 0 512 512"
-    xmlSpace="preserve">
+    xmlSpace="preserve"
+  >
     <title>Apple App Store</title>
     <g>
       <g>
