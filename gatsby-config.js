@@ -156,4 +156,6 @@ module.exports = {
       },
     },
   ],
+  jsxRuntime: 'automatic',
+  trailingSlash: 'never',
 };
