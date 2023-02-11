@@ -3,24 +3,16 @@ module.exports = {
 
   socialMedia: [
     {
+      name: 'Linkedin',
+      url: 'https://www.linkedin.com/in/stratonov16',
+    },
+    {
       name: 'GitHub',
       url: 'https://github.com/stratonov16',
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/stratonov16',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/stratonov16',
-    },
-    {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/stratonov16',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/',
     },
   ],
 
