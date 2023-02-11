@@ -1,12 +1,11 @@
 {
-  "name": "portfolio",
-  "description": "Personal Website",
+  "name": "v4",
+  "description": "nikhil Personal Website ",
   "version": "1.0.0",
-  "author": "Nikhil <nikhil07sachdeva@gmail.com>",
+  "author": "nikhil <nikhil07sachdeva@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stratonov16/portfolio",
-    "homepage": "https://stratonov16.github.io/portfolio"
+    "url": "https://github.com/stratononv16/portfolio"
   },
   "keywords": [
     "gatsby"
@@ -14,10 +13,8 @@
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby build && gh-pages",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -36,7 +33,7 @@
   "dependencies": {
     "animejs": "^3.1.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^3.4.1",
+    "gatsby": "^3.15.0",
     "gatsby-plugin-google-analytics": "^3.4.0",
     "gatsby-plugin-image": "^1.4.0",
     "gatsby-plugin-manifest": "^3.4.0",
@@ -53,9 +50,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
-    "gh-pages": "^5.0.0",
     "lodash": "^4.17.19",
-    "nvm": "0.0.4",
     "prismjs": "^1.27.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -72,7 +67,6 @@
     "@upstatement/eslint-config": "^1.0.0",
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^1.4.0",
-    "del-cli": "^5.0.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
