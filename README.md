@@ -2,8 +2,10 @@
   <img alt="Logo" src="https://github.com/Stratonov16/portfolio/blob/main/src/images/logo.png" width="100" />
 </div>
 <h1 align="center">
-  Nikhil Sachdeva Personal website </h1> <h4 align = "center">inspired from [brittanychiang.com](https://brittanychiang.com)<br>
-https://github.com/Stratonov16/portfolio/blob/main/static/og.png
+  Nikhil Sachdeva Personal website </h1> <h4 align = "center">
+  <img alt="demo" src ="https://github.com/Stratonov16/portfolio/blob/main/static/og.png">
+  inspired from [brittanychiang.com](https://brittanychiang.com)<br>
+
 </h4>
 
 ## 🛠 Installation & Set Up
