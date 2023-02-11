@@ -15,7 +15,7 @@
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b master",
+    "deploy": "gh-pages -d build",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
