@@ -5,7 +5,7 @@
   "author": "nikhil <nikhil07sachdeva@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stratononv16/portfolio"
+    "url": "https://github.com/stratononv16/portfolio.github.io"
   },
   "keywords": [
     "gatsby"
@@ -20,7 +20,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
