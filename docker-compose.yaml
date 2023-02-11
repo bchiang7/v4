@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    image: gatsby-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deploy
+    ports:
+      - 8000:80
