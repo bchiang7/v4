@@ -3,9 +3,8 @@
 </div>
 <h1 align="center">
   Nikhil Sachdeva Personal website </h1> <h4 align = "center">inspired from [brittanychiang.com](https://brittanychiang.com)<br>
-(https://user-images.githubusercontent.com/70238901/218259531-32572299-940b-4f49-b156-a8d1af091ddc.png)
+https://github.com/Stratonov16/portfolio/blob/main/static/og.png
 </h4>
-
 
 ## 🛠 Installation & Set Up
 
