@@ -1,0 +1,33 @@
+name: Build New Image
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Match PR Label
+      id: bump
+      uses: zwaldowski/match-label-action@v4
+      with:
+        allowed: major, minor, patch
+    
+    - name: Bump version
+      id: semver
+      uses: zwaldowski/semver-release-action@v3
+      with:
+        bump: ${{ steps.bump.outputs.match }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag dhoeppner/website:${{ steps.semver.version }}
+
