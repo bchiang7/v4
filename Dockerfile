@@ -8,7 +8,7 @@ RUN yarn
 RUN yarn gatsby telemetry --disable
 RUN yarn build
 
-EXPOSE 8000
+EXPOSE 80
 
 FROM --platform=linux/amd64 nginx:1.14-alpine AS deploy
 
