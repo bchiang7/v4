@@ -44,9 +44,10 @@ jobs:
   create_github_tag:
     needs: [build]
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
+      - uses: actions/checkout@v2
       - name: Create release entry on GitHub
-        id: uploadAsRelease
         uses: ncipollo/release-action@v1.12.0
         with:
           prerelease: false
