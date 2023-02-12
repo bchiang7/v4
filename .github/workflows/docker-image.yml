@@ -45,8 +45,8 @@ jobs:
         user_format_type: "csv"
         # Prevents pre-v1.0.0 version from automatically incrementing the major version.
         # If enabled, when the major version is 0, major releases will be treated as minor and minor as patch. Note that the version_type output is unchanged.
-        enable_prerelease_mode: true
+        # enable_prerelease_mode: true
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dhoeppner/website:${{ steps.semver.version }}
+      run: docker build . --file Dockerfile --tag dhoeppner/website:${{ steps.semver.outputs.version }}
 
