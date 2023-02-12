@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: website
-        image: dhoeppner/website:1.1.2
+        image: dhoeppner/website:latest
         ports:
         - containerPort: 80

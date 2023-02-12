@@ -2,26 +2,25 @@ name: Build New Image
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "main" ]
 
 jobs:
 
   build:
+
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.version.outputs.version }}
-      version_tag: ${{ steps.version.outputs.version_tag }}
-      commit: ${{ env.GITHUB_SHA }}
+
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - uses: paulhatch/semantic-version@v5.0.2
+
+    - name: calculate semantic version
+      uses: paulhatch/semantic-version@v5.0.2
       id: semver
-      name: Calculate Semantic Version
       with:
         # The prefix to use to identify tags
-        tag_prefix: "v"
+        tag_prefix: ""
         # A string which, if present in a git commit, indicates that a change represents a
         # major (breaking) change, supports regular expressions wrapped with '/'
         major_pattern: "feat"
@@ -47,34 +46,7 @@ jobs:
         # Prevents pre-v1.0.0 version from automatically incrementing the major version.
         # If enabled, when the major version is 0, major releases will be treated as minor and minor as patch. Note that the version_type output is unchanged.
         # enable_prerelease_mode: true
-    - name: Debug Version
-      run: |
-        Write-Host "Output of version: ${{ steps.version.outputs.version }}"         
-        Write-Host "Output of version_tag: ${{ steps.version.outputs.version_tag }}"         
-        Write-Host "Output of major: ${{ steps.version.outputs.major }}"         
-        Write-Host "Output of minor: ${{ steps.version.outputs.minor }}"         
-        Write-Host "Output of patch: ${{ steps.version.outputs.patch }}"    
 
-  create_github_tag:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create release entry on GitHub
-        id: uploadAsRelease
-        uses: ncipollo/release-action@v1.12.0
-        with:
-          prerelease: false
-          tag: ${{ needs.build.outputs.version_tag }}
-          commit: ${{ needs.build.outputs.commit }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          generateReleaseNotes: true
-  
-  create_docker_tag:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create docker release
-        run: docker build . --file Dockerfile --tag dhoeppner/website:${{ needs.build.outputs.version }}
-      - name: Upload to docker hub
-        run: docker push dhoeppner/website:${{ needs.build.outputs.version }}
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag dhoeppner/website:${{ steps.semver.outputs.version }}
 
