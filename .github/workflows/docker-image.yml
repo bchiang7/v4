@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.version.outputs.version }}
-      version_tag: ${{ steps.version.outputs.version_tag }}
+      version: ${{ steps.semver.outputs.version }}
+      version_tag: ${{ steps.semver.outputs.version_tag }}
       commit: ${{ env.GITHUB_SHA }}
     steps:
     - uses: actions/checkout@v3
@@ -20,41 +20,26 @@ jobs:
       id: semver
       name: Calculate Semantic Version
       with:
-        # The prefix to use to identify tags
         tag_prefix: "v"
         # A string which, if present in a git commit, indicates that a change represents a
         # major (breaking) change, supports regular expressions wrapped with '/'
         major_pattern: "feat:"
-        # A string which indicates the flags used by the `major_pattern` regular expression. Supported flags: idgs
-        major_regexp_flags: ""
         # Same as above except indicating a minor change, supports regular expressions wrapped with '/'
         minor_pattern: "fix:"
-        # A string which indicates the flags used by the `minor_pattern` regular expression. Supported flags: idgs
-        minor_regexp_flags: ""
         # A string to determine the format of the version output
         version_format: "${major}.${minor}.${patch}"
-        # Optional path to check for changes. If any changes are detected in the path the
-        # 'changed' output will true. Enter multiple paths separated by spaces.
-        # change_path: ""
-        # Named version, will be used as suffix for name version tag
-        # namespace: my-services
         # If this is set to true, *every* commit will be treated as a new version.
         bump_each_commit: false
         # If true, the body of commits will also be searched for major/minor patterns to determine the version type.
         search_commit_body: false
-        # The output method used to generate list of users, 'csv' or 'json'.
-        user_format_type: "csv"
-        # Prevents pre-v1.0.0 version from automatically incrementing the major version.
-        # If enabled, when the major version is 0, major releases will be treated as minor and minor as patch. Note that the version_type output is unchanged.
-        # enable_prerelease_mode: true
     - name: Debug Version
       continue-on-error: true
       run: |
-        echo "Output of version: ${{ steps.version.outputs.version }}"         
-        echo "Output of version_tag: ${{ steps.version.outputs.version_tag }}"         
-        echo "Output of major: ${{ steps.version.outputs.major }}"         
-        echo "Output of minor: ${{ steps.version.outputs.minor }}"         
-        echo "Output of patch: ${{ steps.version.outputs.patch }}"    
+        echo "Output of version: ${{ steps.semver.outputs.version }}"         
+        echo "Output of version_tag: ${{ steps.semver.outputs.version_tag }}"         
+        echo "Output of major: ${{ steps.semver.outputs.major }}"         
+        echo "Output of minor: ${{ steps.semver.outputs.minor }}"         
+        echo "Output of patch: ${{ steps.semver.outputs.patch }}"    
 
   create_github_tag:
     needs: [build]
