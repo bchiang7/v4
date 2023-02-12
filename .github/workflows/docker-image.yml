@@ -68,9 +68,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: dhoeppner/website:${{ steps.semver.outputs.version }}
+      - name: Create docker release
+        run: docker build . --file Dockerfile --tag dhoeppner/website:${{ needs.build.outputs.version }}
+        
+      - name: Upload to docker hub
+        run: docker push dhoeppner/website:${{ needs.build.outputs.version }}
 
