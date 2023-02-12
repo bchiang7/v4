@@ -17,30 +17,30 @@ jobs:
       with:
         fetch-depth: 0
     - name: Bump version and push tag
-      id: semver
-      uses: hennejg/github-tag-action@v4.3.1
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.1
       with:
-        release_branches: develop
         github_token: ${{ secrets.GITHUB_TOKEN }}
+      
     - name: Debug Version
       continue-on-error: true
       run: |
         echo "Output of version: ${{ steps.semver.outputs.new_version }}"
         echo "Output of version_tag: ${{ steps.semver.outputs.new_tag }}"
 
-  # create_github_tag:
-  #   needs: [build]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Create release entry on GitHub
-  #       uses: ncipollo/release-action@v1.12.0
-  #       with:
-  #         prerelease: false
-  #         tag: ${{ needs.build.outputs.version_tag }}
-  #         commit: ${{ needs.build.outputs.commit }}
-  #         token: ${{ secrets.GITHUB_TOKEN }}
-  #         generateReleaseNotes: true
+  create_github_tag:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create release entry on GitHub
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          prerelease: false
+          tag: ${{ needs.build.outputs.version_tag }}
+          commit: ${{ needs.build.outputs.commit }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          generateReleaseNotes: true
   
   create_docker_tag:
     needs: [build]
