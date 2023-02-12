@@ -1,4 +1,4 @@
-FROM node:14-alpine AS build
+FROM --platform=linux/amd64 node:14-alpine AS build
 
 WORKDIR /app
 COPY . .
@@ -8,7 +8,9 @@ RUN yarn
 RUN yarn gatsby telemetry --disable
 RUN yarn build
 
-FROM nginx:1.14-alpine AS deploy
+EXPOSE 8000
+
+FROM --platform=linux/amd64 nginx:1.14-alpine AS deploy
 
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
