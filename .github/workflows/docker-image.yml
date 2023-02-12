@@ -22,7 +22,6 @@ jobs:
       with:
         release_branches: develop
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        dry_run: true
     - name: Debug Version
       continue-on-error: true
       run: |
@@ -43,22 +42,22 @@ jobs:
   #         token: ${{ secrets.GITHUB_TOKEN }}
   #         generateReleaseNotes: true
   
-  # create_docker_tag:
-  #   needs: [build]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Check out the repo
-  #       uses: actions/checkout@v3
+  create_docker_tag:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
 
-  #     - name: Log in to Docker Hub
-  #       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
-  #       with:
-  #         username: ${{ secrets.DOCKER_USERNAME }}
-  #         password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-  #     - name: Create docker release
-  #       run: docker build . --file Dockerfile --tag dhoeppner/website:${{ needs.build.outputs.version }}
+      - name: Create docker release
+        run: docker build . --file Dockerfile --tag dhoeppner/website:${{ needs.build.outputs.version }}
         
-  #     - name: Upload to docker hub
-  #       run: docker push dhoeppner/website:${{ needs.build.outputs.version }}
+      - name: Upload to docker hub
+        run: docker push dhoeppner/website:${{ needs.build.outputs.version }}
 
