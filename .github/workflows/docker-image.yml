@@ -48,12 +48,13 @@ jobs:
         # If enabled, when the major version is 0, major releases will be treated as minor and minor as patch. Note that the version_type output is unchanged.
         # enable_prerelease_mode: true
     - name: Debug Version
+      continue-on-error: true
       run: |
-        Write-Host "Output of version: ${{ steps.version.outputs.version }}"         
-        Write-Host "Output of version_tag: ${{ steps.version.outputs.version_tag }}"         
-        Write-Host "Output of major: ${{ steps.version.outputs.major }}"         
-        Write-Host "Output of minor: ${{ steps.version.outputs.minor }}"         
-        Write-Host "Output of patch: ${{ steps.version.outputs.patch }}"    
+        echo "Output of version: ${{ steps.version.outputs.version }}"         
+        echo "Output of version_tag: ${{ steps.version.outputs.version_tag }}"         
+        echo "Output of major: ${{ steps.version.outputs.major }}"         
+        echo "Output of minor: ${{ steps.version.outputs.minor }}"         
+        echo "Output of patch: ${{ steps.version.outputs.patch }}"    
 
   create_github_tag:
     needs: [build]
