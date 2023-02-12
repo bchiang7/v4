@@ -21,7 +21,7 @@ jobs:
       uses: mathieudutour/github-tag-action@v6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        append_to_pre_release_tag: ""
+        release_branches: main,develop
       
     - name: Debug Version
       continue-on-error: true
