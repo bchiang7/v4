@@ -60,7 +60,7 @@ const Contact = () => {
       <h2 className="title">Je suis disponible</h2>
 
       <p>
-        Je ne suis pas actuelement à la recherche d'offre de stage ou de travail, mais je reste
+        Je ne suis actuelement pas à la recherche d'offre de stage ou de travail, mais je reste
         joignable par mail pour toutes questions ou information sur moi.
       </p>
 
