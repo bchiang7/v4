@@ -64,8 +64,8 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a full-stack software engineer specializing in React, Typescript, Java and Spring Boot
-        working at{' '}
+        I’m a full-stack software engineer specializing in React, Typescript, Node, Express, and
+        MongoDB. I am currently working at{' '}
         <a href="https://deloitte.com/" target="_blank" rel="noreferrer">
           Deloitte
         </a>{' '}

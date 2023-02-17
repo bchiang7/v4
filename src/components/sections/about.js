@@ -126,7 +126,15 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'Java', 'SpringBoot'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React',
+    'Node.js',
+    'MongoDB',
+    'Express',
+    'AWS',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -137,9 +145,9 @@ const About = () => {
           <div>
             <p>
               Hello! I am Xavier Elon, a full-stack software engineer based in Orlando, FL who has a
-              passion for technology, blockchain and space. I am currently working for Deloitte for
-              NETCCN (DOD) working on a React Native application for medical professionals, a full
-              REST API and a WickrBot. M
+              passion for technology, and space. I am currently working for Deloitte internally at
+              the software factory where I am the front-end lead and full-stack engineer building
+              and architecting a business process modeler (Camunda) and a file management system!
             </p>
 
             <p>
@@ -148,8 +156,8 @@ const About = () => {
               <a href="https://asurance.com/">a tech insurance company</a>,{' '}
               <a href="https://www.getaboard.org/">a non-profit based in Orlando</a>, and{' '}
               <a href="https://ole.org/">an internal non-profit company</a>. My main focus now is
-              sharpening my Java and React skills as well as working on a social media
-              <a href="https://github.com/SkyV0/just-b3vts"> website </a> with a couple of friends.
+              building my startup XSJ where I am currently leading two other engineers in building a
+              full-stack application.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
