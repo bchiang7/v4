@@ -3,7 +3,7 @@ date: '2016-12-21'
 title: 'Business Owner'
 company: 'Great Lakes Property Management'
 location: 'Orlando, FL'
-range: 'August 2016 - August 2021'
+range: 'January 2016 - November 2020'
 ---
 
 - Successfully built business from the ground up which allowed me to develop business, entrepreneurial, marketing, and financial skills.

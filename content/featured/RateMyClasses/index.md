@@ -3,7 +3,7 @@ date: '2'
 title: 'RateMyClasses'
 cover: './demo.png'
 github: 'https://github.com/xavierelon/rate_my_classes'
-external: 'http://ratemyclasses.io'
+# external: 'http://ratemyclasses.io'
 tech:
   - MongoDB
   - Express
