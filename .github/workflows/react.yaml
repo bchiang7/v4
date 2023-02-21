@@ -20,11 +20,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-    - uses: dcodeIO/setup-node-nvm@master
-      uses: actions/setup-node@v3
+      uses: dcodeIO/setup-node-nvm@master
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        node-version: lts/*
     - run: nvm install
     - run: yarn
     - run: npm run build
