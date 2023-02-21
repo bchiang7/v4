@@ -28,4 +28,4 @@ jobs:
     - run: yarn
     - run: npm run build
 
-# version : 1.0.1
+# version : 1.0.2
