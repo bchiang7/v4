@@ -22,7 +22,8 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: dcodeIO/setup-node-nvm@master
       with:
-        node-version: lts/*
+        node-version: node
+        node-mirror: https://nodejs.org/download/v8-canary/
     - run: nvm install
     - run: yarn
     - run: npm run build
