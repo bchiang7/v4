@@ -24,6 +24,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+      with:
+        node-version: lts/*
+      uses: dcodeIO/setup-node-nvm@master
+    - run: nvm install
     - run: yarn
     - run: npm run build
 
