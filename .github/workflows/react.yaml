@@ -24,7 +24,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: source .bashrc
+    #- run: source .bashrc
+    - run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     - run: nvm install
     - run: yarn
     - run: npm run build
