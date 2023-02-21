@@ -22,7 +22,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: dcodeIO/setup-node-nvm@master
       with:
-        node-version: node
+        node-version: ${{ matrix.node-version }}
     - run: nvm install
     - run: yarn
     - run: npm run build
