@@ -27,3 +27,5 @@ jobs:
     - run: nvm install
     - run: yarn
     - run: npm run build
+
+# version : 1.0.1
