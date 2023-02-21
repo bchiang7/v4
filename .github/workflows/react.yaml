@@ -12,9 +12,9 @@ jobs:
 
     runs-on: self-hosted
 
-    # strategy:
-    #   matrix:
-    #     node-version: [18.x]
+    strategy:
+      matrix:
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
