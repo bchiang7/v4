@@ -40,7 +40,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
-      - run: source ~/.bashrc
       - run: nvm install
       - run: yarn
       - run: npm run build
