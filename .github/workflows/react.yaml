@@ -20,11 +20,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: dcodeIO/setup-node-nvm@master
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: nvm install
-    - run: yarn
+        cache: 'npm'
+    # - run: nvm install
+    # - run: yarn
+    - run: npm install
     - run: npm run build
 
 # version : 1.0.2
