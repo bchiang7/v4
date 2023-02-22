@@ -26,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: yarn
-    # - run: npm start
+    - run: nvm install
     - run: npm run build
 
     # version : 1.0.0
