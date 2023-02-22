@@ -28,3 +28,5 @@ jobs:
     - run: yarn
     - run: npm start
     - run: npm run build
+
+    # version : 1.0.0
