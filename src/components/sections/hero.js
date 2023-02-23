@@ -70,7 +70,7 @@ const Hero = () => {
         <a href="https://www.scrinfo.net/" target="_blank" rel="noreferrer">
           SCR-Informatiques
         </a>{' '}
-        en alternance. J'étudie actuellement au lycée Carcouët à Nantes en deuxième année de BTS SIO
+        en alternance. J'étudie actuellement au lycée Carcouët à Nantes en seconde année de BTS SIO
         (Services Informatiques aux Organisations).
       </p>
     </>
