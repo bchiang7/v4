@@ -10,5 +10,5 @@ url: 'https://www.onisep.fr/Ressources/univers-formation/Formations/Post-bac/bts
 
 - Support et mise à disposition de services informatiques
 - Cybersécurité des services informatiques
-- Ce BTS comporte deux spécialité SLAM et SISR
+- Ce BTS comporte deux spécialités SLAM et SISR
 - Pour ma part j'ai choisi l'option SLAM (Solution Logiciel et Application Métier) pour la conception et développement d'applications
