@@ -8,6 +8,6 @@ range: "Juillet 2022 - Aujourd'hui"
 url: 'https://www.scrinfo.net'
 ---
 
-- Je travail en alternance actuellement dans l'entreprise SCR Informatique situé à Châteaubriant.
-- Durant cette première année d'alternance j'ai pus mettre mes compétence à profis dans diverse projets.
-- J'ai travailler dans des projets de développement de logiciel et d'application web.
+- Je travail actuellement en alternance dans l'entreprise SCR Informatiques situé à Châteaubriant.
+- Durant cette première année d'alternance j'ai pu mettre mes compétencs à profis dans diverses projets.
+- J'ai travaillé dans des projets de développement de logiciels et d'applications web.
