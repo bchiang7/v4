@@ -135,7 +135,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Salut ! Moi c'est Maxime, je suis développeur web et logiciel. Je suis passionné par
+              Bonjour, je m'appelle Maxime, je suis développeur web et logiciel. Je suis passionné par
               l'informatique depuis tout jeune. J'ai commencé à programmer mes premières applications
               à mes 13 ans dans le langage VB (Visual Basic). J'ai ensuite appris le C#, le python
               et les langage web. Après l'obtention de mon{' '}
@@ -143,11 +143,11 @@ const About = () => {
                 BAC STI2D (Sciences et Technologies de l'Industrie et du Développement Durable)
               </a>{' '}
               j'ai donc décidé de continuer mes études dans le domaine de l'informatique pour
-              acquérir de nouvelles compétences. Aujourd'hui je passionne pour le développement web
-              et mobile et je compte bien continuer dans ce domaine.
+              acquérir de nouvelles compétences. Aujourd'hui je me passionne pour le développement web
+              et mobile et je compte poursuivre dans ce domaine.
             </p>
 
-            <p>Voici quelques technologies que j'ai pu apprendre :</p>
+            <p>Voici quelques technologies que e maitrise :</p>
           </div>
 
           <ul className="skills-list">
