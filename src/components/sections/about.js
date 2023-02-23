@@ -147,7 +147,7 @@ const About = () => {
               et mobile et je compte poursuivre dans ce domaine.
             </p>
 
-            <p>Voici quelques technologies que e maitrise :</p>
+            <p>Voici quelques technologies que je maitrise :</p>
           </div>
 
           <ul className="skills-list">
