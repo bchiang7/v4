@@ -8,7 +8,7 @@ range: '9 Mai 2022 - 17 Juin 2022'
 url: 'https://www.scrinfo.net'
 ---
 
-- J'ai éfféctuer mon stage de prémière année de BTS SIO dans l'entreprise SCR Informatiques situé à Châteaubriant.
-- J'ai pus durant mon stage travailler sur différent projet en lien avec mes études. Et j'ai donc appris de nouvelles choses qui m'on été très utile.
-- J'ai bien aimé ce stage, l'équipe m'a bien accuilli et m'a mis à l'aise trés rapidement.
-- A la fin de ce stage ont à décider de continuer enssemble pour une alternance en seconde année de BTS.
+- J'ai effectué mon stage de première année de BTS SIO dans l'entreprise SCR Informatiques situé à Châteaubriant.
+- J'ai pu durant mon stage travailler sur différents projets en lien avec mes études. Et j'ai donc acquis de nouvelles compétences qui m'ont été très utile.
+- J'ai bien aimé ce stage, l'équipe m'a bien accueilli et m'a mis à l'aise trés rapidement.
+- A la fin de ce stage on à décidé de continuer ensemble pour une alternance en seconde année de BTS.
