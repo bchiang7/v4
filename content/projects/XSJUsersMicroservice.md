@@ -1,7 +1,7 @@
 ---
 date: '2022-01-01'
 title: 'XSJ-Users-Microservice'
-github: 'https://github.com/XavierElon/xsj-microservice'
+github: 'https://github.com/XavierElon/xsj-users-microservice'
 external: ''
 tech:
   - Typescript
