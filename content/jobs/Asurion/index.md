@@ -1,9 +1,9 @@
 ---
-date: '2020-04-01'
+date: '2020-01-01'
 title: 'DevOps Engineer'
 company: 'Asurion'
 location: 'Orlando, FL'
-range: 'June 2020 - April 2021'
+range: 'January 2020 - April 2021'
 url: 'https://www.asurion.com'
 ---
 

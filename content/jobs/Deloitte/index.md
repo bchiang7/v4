@@ -1,9 +1,9 @@
 ---
 date: '2021-12-04'
-title: 'Full-Stack Software Engineer'
+title: 'Front-end Lead / Full-Stack Software Engineer'
 company: 'Deloitte'
 location: 'Orlando, FL'
-range: 'April 2021 - Present'
+range: 'April 2021 - February 2023'
 url: 'https://www2.deloitte.com/us/en.html'
 ---
 
