@@ -66,11 +66,11 @@ const Hero = () => {
       <p>
         I’m a full-stack software engineer specializing in React, Typescript, Node, Express, and
         MongoDB. I am currently working at{' '}
-        <a href="https://deloitte.com/" target="_blank" rel="noreferrer">
-          Deloitte
+        <a href="https://boozallen.com/" target="_blank" rel="noreferrer">
+          Booz Allen
         </a>{' '}
-        . I have 3 years of professional experience. I am currently seeking to work in the forefront
-        of technology or aerospace.
+        . I have 3.5 years of professional experience. I am also working on building my own
+        technology startup where I am currently leading 3 other software engineers.
       </p>
     </>
   );

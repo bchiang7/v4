@@ -145,14 +145,14 @@ const About = () => {
           <div>
             <p>
               Hello! I am Xavier Elon, a full-stack software engineer based in Orlando, FL who has a
-              passion for technology, and space. I am currently working for Deloitte internally at
-              the software factory where I am the front-end lead and full-stack engineer building
-              and architecting a business process modeler (Camunda) and a file management system!
+              passion for technology, and space. I am currently working for Booz Allen as a Staff
+              Engineer / Full stack software engineer!
             </p>
 
             <p>
               I’ve had the privilege of working at{' '}
-              <a href="https://deloitte.com/">a consulting firm</a>,{' '}
+              <a href="https://boozallen.com/">Booz Allen, a consulting firm</a>,{' '}
+              <a href="https://deloitte.com/"> Deloitte, another consulting firm</a>,{' '}
               <a href="https://asurance.com/">a tech insurance company</a>,{' '}
               <a href="https://www.getaboard.org/">a non-profit based in Orlando</a>, and{' '}
               <a href="https://ole.org/">an internal non-profit company</a>. My main focus now is
