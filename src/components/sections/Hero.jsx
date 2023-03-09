@@ -61,7 +61,7 @@ const Hero = () => {
 
   const heroPreface = <h1>Hi, my name is</h1>;
   const heroName = <h2 className="big-heading">Joshua Lu</h2>;
-  const heroStatement = <h3 className="big-heading">I like to design and build</h3>;
+  const heroStatement = <h3 className="big-heading">I like to design and build 😀</h3>;
   const heroDescription = (
     <>
       <p>
@@ -75,12 +75,8 @@ const Hero = () => {
     </>
   );
   const heroButton = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer">
-      Check out my course!
+    <a className="email-link" href="https://soppro.dev" target="_blank" rel="noreferrer">
+      Check out my other website!
     </a>
   );
 
