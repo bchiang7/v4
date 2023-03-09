@@ -59,34 +59,32 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
-  const four = (
+  const heroPreface = <h1>Hi, my name is</h1>;
+  const heroName = <h2 className="big-heading">Joshua Lu</h2>;
+  const heroStatement = <h3 className="big-heading">I like to design and build</h3>;
+  const heroDescription = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        I&apos;m a software engineer who enjoys making cohesive, elegant digital experiences.
+        Currently, I&apos;m focused on web projects at{' '}
+        <a href="https://nab.com.au/" target="_blank" rel="noreferrer">
+          NAB
         </a>
         .
       </p>
     </>
   );
-  const five = (
+  const heroButton = (
     <a
       className="email-link"
       href="https://www.newline.co/courses/build-a-spotify-connected-app"
       target="_blank"
-      rel="noreferrer"
-    >
+      rel="noreferrer">
       Check out my course!
     </a>
   );
 
-  const items = [one, two, three, four, five];
+  const items = [heroPreface, heroName, heroStatement, heroDescription, heroButton];
 
   return (
     <StyledHeroSection>
@@ -101,7 +99,7 @@ const Hero = () => {
           {isMounted &&
             items.map((item, i) => (
               <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
+                <div style={{ transitionDelay: `${(i + 1) * 100}ms` }}>{item}</div>
               </CSSTransition>
             ))}
         </TransitionGroup>
