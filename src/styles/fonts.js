@@ -24,6 +24,16 @@ import SFMonoRegularItalicWoff2 from '@/fonts/SFMono/SFMono-RegularItalic.woff2'
 import SFMonoSemiboldItalicWoff from '@/fonts/SFMono/SFMono-SemiboldItalic.woff';
 import SFMonoSemiboldItalicWoff2 from '@/fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
+import HubotSansRegularWoff from '@/fonts/Hubot Sans/WOFF/Hubot-Sans-Regular.woff';
+import HubotSansRegularWoff2 from '@/fonts/Hubot Sans/WOFF2/Hubot-Sans-Regular.woff2';
+import HubotSansSemiboldWoff from '@/fonts/Hubot Sans/WOFF/Hubot-Sans-SemiBold.woff';
+import HubotSansSemiboldWoff2 from '@/fonts/Hubot Sans/WOFF2/Hubot-Sans-SemiBold.woff2';
+
+import HubotSansRegularItalicWoff from '@/fonts/Hubot Sans/WOFF/Hubot-Sans-RegularItalic.woff';
+import HubotSansRegularItalicWoff2 from '@/fonts/Hubot Sans/WOFF2/Hubot-Sans-RegularItalic.woff2';
+import HubotSansSemiboldItalicWoff from '@/fonts/Hubot Sans/WOFF/Hubot-Sans-SemiBoldItalic.woff';
+import HubotSansSemiboldItalicWoff2 from '@/fonts/Hubot Sans/WOFF2/Hubot-Sans-SemiBoldItalic.woff2';
+
 const calibreNormalWeights = {
   400: [CalibreRegularWoff, CalibreRegularWoff2],
   500: [CalibreMediumWoff, CalibreMediumWoff2],
@@ -46,6 +56,16 @@ const sfMonoItalicWeights = {
   600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2],
 };
 
+const hubotSansNormalWeights = {
+  400: [HubotSansRegularWoff, HubotSansRegularWoff2],
+  600: [HubotSansSemiboldWoff, HubotSansSemiboldWoff2],
+};
+
+const hubotSansItalicWeights = {
+  400: [HubotSansRegularItalicWoff, HubotSansRegularItalicWoff2],
+  600: [HubotSansSemiboldItalicWoff, HubotSansSemiboldItalicWoff2],
+};
+
 const calibre = {
   name: 'Calibre',
   normal: calibreNormalWeights,
@@ -56,6 +76,12 @@ const sfMono = {
   name: 'SF Mono',
   normal: sfMonoNormalWeights,
   italic: sfMonoItalicWeights,
+};
+
+const hubotSans = {
+  name: 'Hubot Sans',
+  normal: hubotSansNormalWeights,
+  italic: hubotSansItalicWeights,
 };
 
 const createFontFaces = (family, style = 'normal') => {
@@ -73,6 +99,7 @@ const createFontFaces = (family, style = 'normal') => {
         font-weight: ${weight};
         font-style: ${style};
         font-display: auto;
+        letter-spacing: -0.025em
       }
     `;
   }
@@ -86,8 +113,11 @@ const calibreItalic = createFontFaces(calibre, 'italic');
 const sfMonoNormal = createFontFaces(sfMono);
 const sfMonoItalic = createFontFaces(sfMono, 'italic');
 
+const hubotSansNormal = createFontFaces(hubotSans);
+const hubotSansItalic = createFontFaces(hubotSans, 'italic');
+
 const Fonts = css`
-  ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic}
+  ${calibreNormal + calibreItalic + hubotSansNormal + hubotSansItalic + sfMonoNormal + sfMonoItalic}
 `;
 
 export default Fonts;

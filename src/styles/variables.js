@@ -19,7 +19,7 @@ const variables = css`
 
     --font-sans: -apple-system, BlinkMacSystemFont, 'Calibre', 'Inter', 'San Francisco',
       'SF Pro Text', system-ui, sans-serif;
-    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    --font-mono: 'Hubot Sans', 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
     --fz-xxs: 12px;
     --fz-xs: 13px;
