@@ -65,8 +65,8 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software engineer who is addicted to learning, delights in collaborating, and loves to
-        build full-stack solutions from idea to production.
+        I’m a software engineer who is addicted to learning and delights in collaborating. I love
+        bringing ideas to glorious, pixel-perfect, full-stack fruition.
       </p>
     </>
   );
