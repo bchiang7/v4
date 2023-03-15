@@ -74,16 +74,14 @@ const StyledPic = styled.div`
 
       .img {
         filter: none;
-        mix-blend-mode: normal;
       }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
+      transition: var(--transition-alt);
     }
 
     &:before,
@@ -94,7 +92,7 @@ const StyledPic = styled.div`
       width: 100%;
       height: 100%;
       border-radius: var(--border-radius);
-      transition: var(--transition);
+      transition: var(--transition-alt);
     }
 
     &:before {

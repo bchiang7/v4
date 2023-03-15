@@ -80,7 +80,7 @@ const mixins = {
       position: relative;
       bottom: 0.16em;
       background-color: var(--green);
-      transition: var(--transition);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
       opacity: 0.5;
     }
   `,
@@ -116,7 +116,7 @@ const mixins = {
     border: 1px solid var(--green);
     border-radius: var(--border-radius);
     padding: 1.25rem 1.75rem;
-    font-size: var(--fz-sm);
+    font-size: var(--fz-md);
     font-family: var(--font-mono);
     line-height: 1;
     text-decoration: none;
