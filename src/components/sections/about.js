@@ -125,7 +125,21 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'HTML',
+    'CSS',
+    'React',
+    'Bootstrap',
+    'Tailwind',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'Python',
+    'Django',
+    'PostgreSQL',
+    'MySQL',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,30 +149,29 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              I’m a software engineer who is addicted to learning and delights in collaborating. I
+              love bringing ideas to glorious, pixel-perfect, full-stack fruition.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              I'm currently working on a cross-functional Agile team with UX designers as well as
+              tutoring in a{' '}
+              <a href="https://codethedream.org/">coding course for underresourced communities</a>.
+              I'm pivoting from a progressive career in academia, where I gained a Ph.D. and worked
+              as an adjunct professor. With a background in education, tech, and customer service, I
+              have a strong foundation in communication and empathetic collaboration among diverse
+              stakeholders which I am excited to leverage to deliver excellent software products
+              that enrich lives.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              In other news, I <span className="strikethrough">like</span>{' '}
+              <span className="bold">LOVE</span> coffee ☕️. I'm particularly strange in that I enjoy
+              riding my bike 🚴🏻‍♂️{' '}
+              <a href="https://www.strava.com/activities/6089368002">painfully long distances</a> up{' '}
+              <a href="https://www.strava.com/activities/4177904179">painfully long mountains</a> 🏔.
+              If you're interesting in connecting (for coffee, coding, or cycling!), you can find my
+              contact info below.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
