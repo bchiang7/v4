@@ -174,8 +174,9 @@ const About = () => {
               Fast-forward to today, and I've had the privilege of working at a few startups like{' '}
               <a href="#jobs">Seraro Solutions</a> and <a href="#jobs">Blocknomic Technologies</a>,{' '}
               <a href="https://mf.paisabazaar.com/">a fintech corporation</a>,{' '}
-              <a href="https://postman.com/">one of the most popular API collaboration platforms</a>
-              , and currently, <a href="https://gojek.io/">one of the biggest super apps ever</a>.
+              <a href="https://postman.com/">one of the most popular API collaboration platforms</a>,{' '}
+              <a href="https://gojek.io/">one of the biggest super apps ever</a> and
+              , currently, <a href="https://www.angelone.in/">one of India's biggest trading and stock brocking platforms</a>.
             </p>
 
             <p>Here is a non-exhaustive list of technologies I've worked with:</p>
