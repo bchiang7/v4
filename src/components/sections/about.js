@@ -127,7 +127,18 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript', 'Ruby on Rails', 'React', 'Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Git', 'GitHub', 'C++'];
+  const skills = [
+    'JavaScript',
+    'Ruby on Rails',
+    'React',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'MySQL',
+    'Git',
+    'GitHub',
+    'C++',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,19 +147,47 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p className='about_para'>
-              Hello! My name is Vedant Jain. I am undergrad student pursuing my bachelors degree in computer science branch from Gyan Ganga Institute of Technology and Sciences, Jabalpur (M.P.), India.
+            <p className="about_para">
+              Hello! My name is Vedant Jain. I am undergrad student pursuing my bachelors degree in
+              computer science branch from Gyan Ganga Institute of Technology and Sciences, Jabalpur
+              (M.P.), India.
             </p>
 
-            <p className='about_para'>
-              I am Enthusiastic about Open Source, Full-stack Development, Software Development and Hackathons. Currently I am working as developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization, as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization. I am past-MLH prep fellow.
+            <p className="about_para">
+              I am Enthusiastic about Open Source, Full-stack Development, Software Development and
+              Hackathons. I am currently working as SDE intern at Farmako,previously worked as
+              developer in{' '}
+              <a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">
+                Google Summer of Code
+              </a>{' '}
+              with the{' '}
+              <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">
+                CircuitVerse
+              </a>{' '}
+              Organization, as a Technical Writer in{' '}
+              <a
+                href="https://developers.google.com/season-of-docs"
+                target="_blank"
+                rel="noreferrer">
+                Google season of Docs
+              </a>{' '}
+              with The{' '}
+              <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">
+                Palisadoes
+              </a>{' '}
+              Organization. I am past-MLH prep fellow.
             </p>
 
-            <p className='about_para'>
-              I am also Beta-Microsoft Learn Student Developer. I have mentored many students in Open Source Programs namely Girls-script Summer of Code 22, Script Winter of Codes 21. I have participated as Maintainer and Contributor in HacktoberFest'21. I with m team the Metadaters have been qualified for Microsoft Imagine Cup(2021-22).
+            <p className="about_para">
+              I am also Beta-Microsoft Learn Student Developer. I have mentored many students in
+              Open Source Programs namely Girls-script Summer of Code 22, Script Winter of Codes 21.
+              I have participated as Maintainer and Contributor in HacktoberFest'21. I with m team
+              the Metadaters have been qualified for Microsoft Imagine Cup(2021-22).
             </p>
 
-            <p className='about_para'>Here are a few language, platforms & technologies I’ve been working with recently:</p>
+            <p className="about_para">
+              Here are a few language, platforms & technologies I’ve been working with recently:
+            </p>
           </div>
 
           <ul className="skills-list">
