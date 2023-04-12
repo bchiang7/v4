@@ -9,6 +9,7 @@ url: 'https://www.postman.com/'
 
 As a part of the Version Control team at Postman, I was responsible for evaluating specifications and building systems in alignment with business OKRs to allow for a better collaborative and versioning ecosystem for our users.
 
-- Spearheaded the design and development for a new change management platform, via which any team across the organization can integrate with the Version Control platform on a self-serve basis to provide version control experience for their entities.
-- Converted user stories into actionable items based on requirements in alignment with business OKRs.
-- Led the optimisation of core product workflows, causing an E2E improvement of upto 70%.
+- Pioneered a self-serve change management platform, empowering organization-wide teams to effortlessly integrate with Version Control and enhance version control experiences.
+- Transformed user stories into actionable tasks aligned with business OKRs, driving efficient project execution.
+- Championed core product workflow optimizations, achieving up to a 70% end-to-end performance improvement.
+

@@ -7,10 +7,11 @@ range: 'December 2022 - Present'
 url: 'hhttps://www.angelone.in/'
 ---
 
-- Developed Proofs of Concept and performed performance, load and feasibility testing of Kafka based async communication leading to switch over from synchronous to asynchronous communication between services in the ecosystem.
-- Performed domain-research, designed, reviewed and peer-reviewed domain data models and DB design.
-- Created and presented release milestones and execution plans to streamline product delivery.
-- Collaborated with relevant business stakeholders, operations teams and other teams to clarify requirements and define technical tasks for execution by self and other engineers.
-- Built monitoring system based on Prometheus and Grafana, and alerting systems using alertmanager.
-- Led multiple focus groups of junior engineers to execute and deliver multiple technical milestones across components.
-- Organized and conducted regular knowledge sharing sessions with the team leading to upskilling of the team, as well as breaking up knowledge silos.
+- Collaborated with the team to design and implement a Kafka-based asynchronous communication system, significantly enhancing the system's performance, scalability, and reliability.
+- Conducted domain research, designed, and peer-reviewed robust domain data models and database architectures, driving efficient and reliable data management.
+- Spearheaded release milestones and execution plans, optimizing product delivery timelines and ensuring seamless collaboration across teams.
+- Effectively liaised with business stakeholders, operations teams, and engineering personnel to define and delegate technical tasks, ensuring successful project execution and alignment with organizational goals.
+- Developed a comprehensive monitoring and alerting system utilizing Prometheus, Grafana, and Alertmanager, bolstering system reliability and facilitating proactive issue resolution.
+- Led junior engineers across multiple focus groups, expediting the delivery of critical technical milestones and fostering a culture of continuous improvement.
+- Initiated knowledge sharing sessions to boost team expertise, promote cross-functional collaboration, and dismantle knowledge silos.
+

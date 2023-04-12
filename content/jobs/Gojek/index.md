@@ -9,7 +9,8 @@ url: 'https://www.gojek.io/'
 
 As a part of the GoPay Plus team, I was responsible for leading the development of new workflows and new systems to enable automate our Customer Identity Verification process across the GoPay ecosystem.
 
-- Performed Proof of Concept and Proof of Feasibility analysis for switching over to RabbitMQ from Sidekiq for our asynchronous workloads.
-- Broke down ambiguous business requirements into actionable engineering initiatives by collaborating with various stakeholders and peers.
-- Designed end-to-end architecture, user flow, and data flow diagrams for new mission-critical requirements from scratch.
-- Led focus groups to plan and execute the implementation of the new end-to-end automated central document processing platform, and played a key role in all initiatives across the team.
+- Pioneered RabbitMQ integration, conducting Proof of Concepts and Feasibility analysis to optimize asynchronous workloads and replace Sidekiq.
+- Collaborated with internal and external stakeholders to translate engineering initiatives into actionable items, ensuring efficient project execution.
+- Conceptualized and designed end-to-end architecture, user flow, and data flow diagrams for mission-critical requirements, driving innovation and robust system performance.
+- Led a 6-person engineering team in developing and implementing a cutting-edge automated central document processing platform, significantly contributing to all team initiatives.
+
