@@ -4,7 +4,7 @@ title: 'SDE-3'
 company: 'Angel One'
 location: 'Bangalore, India (Remote)'
 range: 'December 2022 - Present'
-url: 'hhttps://www.angelone.in/'
+url: 'https://www.angelone.in/'
 ---
 
 - Collaborated with the team to design and implement a Kafka-based asynchronous communication system, significantly enhancing the system's performance, scalability, and reliability.
