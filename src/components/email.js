@@ -31,6 +31,8 @@ const StyledLinkWrapper = styled.div`
     &:hover,
     &:focus {
       transform: translateY(-3px);
+      text-decoration: underline;
+      text-underline-offset: 50%;
     }
   }
 `;

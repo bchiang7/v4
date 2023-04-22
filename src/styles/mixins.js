@@ -12,13 +12,11 @@ const button = css`
   cursor: pointer;
   transition: var(--transition);
   padding: 1.25rem 1.75rem;
-
   &:hover,
   &:focus,
   &:active {
     outline: none;
-    box-shadow: 4px 4px 0 0 var(--green);
-    transform: translate(-5px, -5px);
+    background-color: var(--green-tint);
   }
   &:after {
     display: none !important;
@@ -104,8 +102,7 @@ const mixins = {
     &:focus,
     &:active {
       outline: none;
-      box-shadow: 3px 3px 0 0 var(--green);
-      transform: translate(-4px, -4px);
+      background-color: var(--green-tint);
     }
     &:after {
       display: none !important;
@@ -128,8 +125,7 @@ const mixins = {
     &:focus,
     &:active {
       outline: none;
-      box-shadow: 4px 4px 0 0 var(--green);
-      transform: translate(-5px, -5px);
+      background-color: var(--green-tint);
     }
     &:after {
       display: none !important;

@@ -30,9 +30,9 @@ const variables = css`
     --fz-xxl: 22px;
     --fz-heading: 32px;
 
-    --border-radius: 4px;
-    --nav-height: 100px;
-    --nav-scroll-height: 70px;
+    --border-radius: 2px;
+    --nav-height: 70px;
+    --nav-scroll-height: 60px;
 
     --tab-height: 42px;
     --tab-width: 120px;
