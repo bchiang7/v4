@@ -34,8 +34,12 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Travail',
+      name: 'Projets',
       url: '/#projects',
+    },
+    {
+      name: 'Veille technologique',
+      url: '/#techwatch',
     },
     {
       name: 'Contact',
@@ -45,6 +49,7 @@ module.exports = {
 
   colors: {
     green: '#64ffda',
+    // #FF82A9
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },
