@@ -125,7 +125,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'HTML',
+    'Css',
+    'Sass',
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'Angular',
+    'Java',
+    'PostgreSQL',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,30 +144,51 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
-            </p>
-
-            <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
-            </p>
-
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
+              I finished my bachelor's in computer science from{' '}
+              <a href="http://www.unipune.ac.in/" target="_blank" rel="noreferrer">
+                Savitribai Phule Pune University
               </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              in 2021. During my studies, I discovered a passion for web development and have been
+              hooked ever since.
+            </p>
+
+            <p>
+              In addition to programming, I have a keen interest in designing interactive UIs.
+              Whether it's creating a user-friendly app or designing an eye-catching website, I
+              enjoy the creative process of making digital experiences that are both functional and
+              aesthetically pleasing.
+            </p>
+
+            <p>
+              I'm a firm believer in continuous learning, and I'm always on the lookout for new
+              challenges and opportunities to expand my skillset. Currently, I'm working on some
+              exciting projects related to the healthcare and real estate domains, and I'm eager to
+              see where these projects will take me.
+            </p>
+
+            <p>
+              I am a strong advocate for open source, and I am always interested in working on new
+              projects with new people. Do check out my{' '}
+              <a
+                href="https://github.com/akolate?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                repositories
+              </a>{' '}
+              and feel free to reach out on{' '}
+              <a
+                href="https://api.whatsapp.com/send?phone=8956181856&text=hi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>{' '}
+              or{' '}
+              <a href="mailto:%20aniketkolte18@gmail.com" target="_blank" rel="noreferrer">
+                email
+              </a>{' '}
+              if you would like to collaborate on any project.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
@@ -175,7 +205,7 @@ const About = () => {
               className="img"
               src="../../images/me.jpg"
               width={500}
-              quality={95}
+              quality={100}
               formats={['AUTO', 'WEBP', 'AVIF']}
               alt="Headshot"
             />
