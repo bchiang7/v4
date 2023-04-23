@@ -1,11 +1,11 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "personal-portfolio",
+  "description": "Personal Portfolio Website",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": " Aniket Kolte <aniketkolte18@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/akolate/personal-portfolio"
   },
   "keywords": [
     "gatsby"
@@ -57,6 +57,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.3.0",
+    "react-scroll-progress-bar": "^1.1.13",
     "scrollreveal": "^4.0.5",
     "styled-components": "^5.3.0"
   },
