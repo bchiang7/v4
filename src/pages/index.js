@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Layout, Hero, About, Jobs, Featured, Contact } from '@components';
+import { inject } from '@vercel/analytics';
+
+inject();
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
