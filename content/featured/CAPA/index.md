@@ -3,7 +3,7 @@ date: '1'
 title: 'CAPA'
 cover: './capa.png'
 github: 'https://github.com/SCR-Informatiques/Capa'
-external: 'https://capainterimportail.fr/'
+external: '/capa'
 tech:
   - VS Code
   - Windev
