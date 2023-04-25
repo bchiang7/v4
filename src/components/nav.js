@@ -77,7 +77,9 @@ const StyledNav = styled.nav`
         top: 0;
         left: 0;
         z-index: -1;
-        transition: var(--transition);
+        @media (prefers-reduced-motion: no-preference) {
+          transition: var(--transition);
+        }
       }
 
       .logo-container {
@@ -85,8 +87,10 @@ const StyledNav = styled.nav`
         z-index: 1;
         svg {
           fill: none;
-          transition: var(--transition);
           user-select: none;
+          @media (prefers-reduced-motion: no-preference) {
+            transition: var(--transition);
+          }
           polygon {
             fill: var(--navy);
           }
