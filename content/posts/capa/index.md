@@ -4,9 +4,9 @@ description: Dark mode without the flash of default theme
 date: 2022-09-04
 draft: false
 slug: /capa
-#tags:
-#  - Theming
-#  - Dark Mode
+tags:
+  - PHP Symfony
+  - Site web
 ---
 
 Application intranet web de gestion pour la société [CAPA Intérim](https://www.capainterim.com/)
