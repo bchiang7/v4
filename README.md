@@ -47,7 +47,7 @@ Yes, you can fork this repo. Please give me proper credit by linking back to [br
    nvm install
    ```
 
-3. Install dependencies
+3. Install dependencies. Use `yarn`, don't use `npm`
 
    ```sh
    yarn
