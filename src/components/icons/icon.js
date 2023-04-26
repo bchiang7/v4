@@ -15,6 +15,8 @@ import {
   IconPlayStore,
   IconStar,
   IconTwitter,
+  IconGitLab,
+  IconStackOverflow,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -47,6 +49,10 @@ const Icon = ({ name }) => {
       return <IconStar />;
     case 'Twitter':
       return <IconTwitter />;
+    case 'GitLab':
+      return <IconGitLab />;
+    case 'StackOverflow':
+      return <IconStackOverflow />;
     default:
       return <IconExternal />;
   }
