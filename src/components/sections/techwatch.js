@@ -17,6 +17,17 @@ const StyledAboutSection = styled.section`
       display: block;
     }
   }
+
+  .more-button {
+    ${({ theme }) => theme.mixins.button};
+    margin: 20px auto 0;
+    padding: 15px 20px;
+  }
+
+  .cta {
+    ${({ theme }) => theme.mixins.smallButton};
+    margin: 10px;
+  }
 `;
 const StyledText = styled.div`
   ul.skills-list {
@@ -146,6 +157,9 @@ const TechWatch = () => {
             <p>
               Ma veille c'est principalement faite sur le sujet du {' '}<a href="https://quels-outils-nocode.fr/">no-code</a>{' '}.
             </p>
+            <a href='techwatch' aria-label="Course Link" className="cta">
+              Voir plus
+            </a>
           </div>
         </StyledText>
 
