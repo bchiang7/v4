@@ -33,45 +33,94 @@ Please also note that I did not build this site with the intention of it being a
 
 Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
 
-## 🛠 Installation & Set Up
 
-1. Install the Gatsby CLI
+# Steps to push to deployment
 
-   ```sh
-   npm install -g gatsby-cli
-   ```
-
-2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
+1. open git bash in your current project directory and use
 
    ```sh
-   nvm install
+   source ~/.nvm/nvm.sh
    ```
 
-3. Install dependencies
+2. nvm install node (version 16);
+
+   ```sh
+   nvm install 16
+   ```
+
+3. if nvm isn't installed, install it first
+
+   ```sh
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+   ```
+
+4. incase of any errors with graph-ql or anything, read the error log properly and if needed, use --legacy-peer-deps after any install command
+
+   ```sh
+   npm install --legacy-peer-deps
+   ```
+
+5. Install yarn
+
+   ```sh
+   npm install -g yarn
+   ```
+
+6. Install dependencies
 
    ```sh
    yarn
    ```
 
-4. Start the development server
+7. Install Gatsby CLI
 
    ```sh
-   npm start
+   npm install -g gatsby-cli
    ```
 
-## 🚀 Building and Running for Production
-
-1. Generate a full static production build
+8. Install dependencies
 
    ```sh
-   npm run build
+   npm install
    ```
 
-1. Preview the site as it will appear once deployed
+9. Install GitHub Pages
+
+   [Remember: if any error and if needed, use --legacy-peer-deps with install command]
 
    ```sh
-   npm run serve
+   npm install gh-pages
    ```
+
+10. Add changes in the working directory to the staging area
+
+    ```sh
+    git add
+    ```
+
+11. Commit 
+
+    ```sh
+    git commit -am "changes"
+    ```
+
+12. Generate a full static production build
+
+    ```sh
+    gatsby build
+    ```
+
+13. Preview the site as it will appear once deployed
+
+    ```sh
+    npm run serve
+    ```
+
+14. Deploy
+
+    ```sh
+    npm run deploy
+    ```
 
 ## 🎨 Color Reference
 
