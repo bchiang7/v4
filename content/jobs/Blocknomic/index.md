@@ -9,11 +9,9 @@ draft: false
 cover: ''
 ---
 
-Worked on developing OpenTradingPlatform. This platform’s aim is to allow users to trade on multiple exchanges through a single platform.
-
-- As the first in-house tech hire, led a team of interns to develop a comprehensive product, making crucial architectural decisions for both frontend and backend systems.
-- Seamlessly integrated with multiple public blockchains, such as Bitcoin, Ethereum, and Bitcoin Cash, enabling near real-time withdrawals and redemptions.
-- Established connections with partner exchanges to facilitate cross-platform trading.
-- Authored design documents and interface specifications, expediting the integration process for new partners.
-- Designed a distributed, real-time data aggregation and analysis system to consolidate trade information from connected partner exchanges, providing users with a unified data view.
-
+- Led 3 engineers in developing comprehensive products and crucial architectural decisions.
+- Led the successful conversion of HTML wireframes to React.js app conversion in 2 weeks.
+- Integrated with public blockchains for real-time transactions.
+- Designed distributed, real-time data aggregation system for unified user data view.
+- Established connections with partner exchanges for cross-platform trading.
+- Authored design documents, expediting new partner integration.
