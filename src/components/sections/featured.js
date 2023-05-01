@@ -7,6 +7,25 @@ import { srConfig } from '@config';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
 
+const StyledProjectsSection = styled.section`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 50px;
+  
+  .project-title {
+    text-align: center;
+  }
+
+  .more-button {
+    ${({ theme }) => theme.mixins.smallButton};
+    margin: 10px;
+  }
+`;
+
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
 
@@ -352,6 +371,15 @@ const Featured = () => {
       </h2>
 
       <StyledProjectsGrid>
+
+        <StyledProjectsSection>
+          <h3 className="project-title">Présentation de mes Réalisations Professionnelles</h3>
+
+          <a href='/Tableau-de-synthèse.pdf' aria-label="Tableau de synthèse" className="more-button">
+            Tableau de synthèse
+          </a>
+        </StyledProjectsSection>
+
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
