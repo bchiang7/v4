@@ -146,11 +146,11 @@ const TechWatch = () => {
         <StyledText>
           <div>
             <p>
-              Depuis plusieurs année je m'informe sur un tas de sujets différent que je trouve sur le web,
-              grâce au réseaux sociaux comme twitter, à des chaines youtube ou certains site
-              qui mettes en avant de nouvelle technologies. Durant mes deux année de BTS j'ai mis en place
-              une veille technologique grâce à différent outils comme {' '}<a href="https://feedly.com/">Feedly</a>{' '}
-              qui permet d'obtenir des nouvelles sur des sujets suivi et de pouvoir être à jour sur ces dernières actualitées.
+              Depuis plusieurs années je m'informe sur un tas de sujets différents que je trouve sur le web,
+              grâce aux réseaux sociaux comme twitter, à des chaines Youtube ou certains sites
+              qui mettent en avant de nouvelles technologies. Durant mes deux années de BTS j'ai mis en place
+              une veille technologique grâce à différents outils comme {' '}<a href="https://feedly.com/">Feedly</a>{' '}
+              qui permet d'obtenir des nouvelles sur des sujets suivis et de pouvoir être à jour sur ces dernières actualités.
               Mais aussi l'extension chrome {' '}<a href="https://daily.dev/">daily.dev</a>{' '}
               directement sur son navigateur lorsqu'on ouvre une nouvelle page.
             </p>
