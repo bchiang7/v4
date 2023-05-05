@@ -69,8 +69,8 @@ const Hero = () => {
         <a href="https://boozallen.com/" target="_blank" rel="noreferrer">
           Booz Allen
         </a>{' '}
-        . I have 3.5 years of professional experience. I am also working on building my own
-        technology startup where I am currently leading 3 other software engineers.
+        . I have 4 years of professional experience. I am also working on building my own
+        full stack application that can be found here <a href="https://xsj-ui.vercel.app/">Full-stack app</a>
       </p>
     </>
   );
