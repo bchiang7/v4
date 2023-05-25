@@ -65,11 +65,11 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I am detailed-oriented Full Stack Software Engineer located in Austin, Texas with experience
-        building digital products with different technologies. Currently my stack of technologies
-        has a JavaScript as main language, I like to develop solutions that meet high quality
-        metrics in terms of performance, accessibility and good practices. I am looking for job
-        opportunities to grow professionally with an innovation team to provide solutions to
+        I am a detailed-oriented Full Stack Software Engineer located in Austin, Texas with
+        experience building digital products with different technologies. Currently my stack of
+        technologies has JavaScript as the main language, I like to develop solutions that meet high
+        quality metrics in terms of performance, accessibility and good practices. I am looking for
+        job opportunities to grow professionally with an innovation team to provide solutions to
         different problems.
       </p>
     </>
