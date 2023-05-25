@@ -125,7 +125,26 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'Python',
+    'HTML',
+    'CSS',
+    'Node.js',
+    'React',
+    'Express.js',
+    'Django',
+    'Bootstrap',
+    'Flask',
+    'Vue.js',
+    'MongoDB',
+    'DynamoDB',
+    'SQL',
+    'PostgreSQL',
+    'Git',
+    'Heroku',
+    'Object Oriented Programming',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,13 +154,14 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello ! My name is Chikodi and I recently found my new passion, turning great ideas
+              into beautiful functioning websites! My passion in web development started when I
+              completed General Assembly's Software Engineering Immersive, where I focused on
+              learning new technologies like Javascript, Python and React and best practices like
+              Object-Orientated Programming!
             </p>
 
-            <p>
+            {/* <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
@@ -159,7 +179,7 @@ const About = () => {
               </a>{' '}
               that covers everything you need to build a web app with the Spotify API using Node
               &amp; React.
-            </p>
+            </p> */}
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
@@ -173,7 +193,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/chikodi1.jpg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
