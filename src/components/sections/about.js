@@ -157,7 +157,7 @@ const About = () => {
               Hello ! My name is Chikodi and I recently found my new passion, turning great ideas
               into beautiful functioning websites! My passion in web development started when I
               completed General Assembly's Software Engineering Immersive, where I focused on
-              learning new technologies like Javascript, Python and React and best practices like
+              learning technologies like Javascript, Python and React and best practices like
               Object-Orientated Programming!
             </p>
 
