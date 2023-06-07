@@ -9,7 +9,7 @@ draft: false
 cover: ''
 ---
 
-- Led 3 engineers in developing comprehensive products and crucial architectural decisions.
+- Led 3 engineers in developing a cryptocurrency exchange aggregator and making crucial architectural decisions.
 - Led the successful conversion of HTML wireframes to React.js app conversion in 2 weeks.
 - Integrated with public blockchains for real-time transactions.
 - Designed distributed, real-time data aggregation system for unified user data view.
