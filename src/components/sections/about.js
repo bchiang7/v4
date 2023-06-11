@@ -135,10 +135,10 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Mrigendra and I enjoy hacking, or should I say pentesting.
+              My interest in offensive security started back in 2017 when I stumbled across discord 
+              servers posing as Anonymous group, not that it worked out very well but eventually I came across
+              HackTheBox where I was able to secure 49th position Nationally (India) and close to 420, internationally.             
             </p>
 
             <p>
