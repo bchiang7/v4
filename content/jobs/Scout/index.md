@@ -1,11 +1,11 @@
 ---
-date: '2017-04-01'
-title: 'Developer'
-company: 'Scout Studio'
-location: 'Northeastern University'
-range: 'Spring 2016 & 2017'
-url: 'https://web.northeastern.edu/scout/'
+date: '2020-07-06'
+title: 'R&D Intern'
+company: 'FireCompass'
+location: 'Remote'
+range: 'July 2020 - Sept 2020'
+url: 'https://firecompass.com'
 ---
 
-- Collaborated with other student designers and engineers on pro-bono projects to create new brands, design systems, and websites for organizations in the community
-- Built and delivered technical solutions according to stakeholder business requirements
+- Collaborated to research about numerous CI-CD and industrial tools, to derive best security practices 
+- Discovering new discover and attack vectors for CI-CD tools 
