@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
 import { navLinks } from '@config';
-import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
+import { KEY_CODES } from '@utils';
+import { Link } from 'gatsby';
+import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
 const StyledMenu = styled.div`
   display: none;
