@@ -4,6 +4,7 @@ title: 'Flight Data Visualisation'
 cover: './data-vis.png'
 github: 'https://github.com/sxppro/vega-lite'
 external: 'https://vega-lite.vercel.app/'
+cta: 'https://vega-lite.vercel.app/'
 tech:
   - React
   - Next.js
