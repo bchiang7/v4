@@ -1,15 +1,15 @@
 ---
 date: '2'
-title: 'Spotify Profile'
+title: 'Project 2'
 cover: './demo.png'
-github: 'https://github.com/bchiang7/spotify-profile'
-external: 'https://spotify-profile.herokuapp.com/'
+github: 'https://github.com/link'
+external: 'https://url.hosting.comlink/'
 tech:
-  - React
-  - Styled Components
-  - Express
-  - Spotify API
-  - Heroku
+  - Solidity
+  - EVM
+  - Tech 3
+  - Tech 4
+  - Tech 5
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+A solidity project. Available on [text holder](https://marketplace.link.com/), [text holder](https://marketplace.link.com/), [text holder](https://marketplace.link.com/), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
