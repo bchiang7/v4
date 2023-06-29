@@ -155,34 +155,12 @@ const About = () => {
 
             <p className="about_para">
               I am Enthusiastic about Open Source, Full-stack Development, Software Development and
-              Hackathons. I am currently working as SDE intern at Farmako,previously worked as
-              developer in{' '}
-              <a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">
-                Google Summer of Code
-              </a>{' '}
-              with the{' '}
-              <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">
-                CircuitVerse
-              </a>{' '}
-              Organization, as a Technical Writer in{' '}
-              <a
-                href="https://developers.google.com/season-of-docs"
-                target="_blank"
-                rel="noreferrer">
-                Google season of Docs
-              </a>{' '}
-              with The{' '}
-              <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">
-                Palisadoes
-              </a>{' '}
-              Organization. I am past-MLH prep fellow.
+              Hackathons.
             </p>
 
             <p className="about_para">
-              I am also Beta-Microsoft Learn Student Developer. I have mentored many students in
-              Open Source Programs namely Girls-script Summer of Code 22, Script Winter of Codes 21.
-              I have participated as Maintainer and Contributor in HacktoberFest'21. I with m team
-              the Metadaters have been qualified for Microsoft Imagine Cup(2021-22).
+              I am working as SDE intern @Atlan, GSoC'23 Mentor & GSoC'22 Mentee @CircuitVerse,
+              x-SDE intern @Farmako, GSoD'22 @Talawa.
             </p>
 
             <p className="about_para">
@@ -198,8 +176,8 @@ const About = () => {
         <StyledPic>
           <div className="wrapper">
             <StaticImage
+              src="../../images/me2.jpeg"
               className="img"
-              src="../../images/me.jpeg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

@@ -64,20 +64,34 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Vedant Jain.</h2>;
-  const three = <h3 className="big-heading big-heading-two">Open Source Enthusiast and Software Developer.</h3>;
+  const three = (
+    <h3 className="big-heading big-heading-two">Open Source Enthusiast and Software Developer.</h3>
+  );
   const four = (
     <>
       <p>
-        I have worked as Student Developer in {' '}<a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">Google Summer of Code</a> with the <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">CircuitVerse</a> Organization and as a Technical Writer in {' '}<a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">Google season of Docs</a> with The <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">Palisadoes</a> Organization.
+        I am working as SDE intern at Atlan, worked as Student Developer in{' '}
+        <a href="https://summerofcode.withgoogle.com/" target="_blank" rel="noreferrer">
+          Google Summer of Code' 22
+        </a>{' '}
+        with the{' '}
+        <a href="https://github.com/CircuitVerse" target="_blank" rel="noreferrer">
+          CircuitVerse
+        </a>{' '}
+        Organization and as a Technical Writer in{' '}
+        <a href="https://developers.google.com/season-of-docs" target="_blank" rel="noreferrer">
+          Google season of Docs' 22
+        </a>{' '}
+        with The{' '}
+        <a href="https://github.com/PalisadoesFoundation" target="_blank" rel="noreferrer">
+          Palisadoes
+        </a>{' '}
+        Organization.
       </p>
     </>
   );
   const five = (
-    <Link
-      className="email-link"
-      to="/blog"
-      target="_blank"
-      rel="noreferrer">
+    <Link className="email-link" to="/blog" target="_blank" rel="noreferrer">
       Check out my blogs!
     </Link>
   );
