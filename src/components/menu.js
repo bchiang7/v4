@@ -267,7 +267,7 @@ const Menu = () => {
             )}
 
             <a href="/resume.pdf" className="resume-link">
-              Resume
+              Download CV
             </a>
           </nav>
         </StyledSidebar>

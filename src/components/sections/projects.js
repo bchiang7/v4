@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -22,6 +22,13 @@ const StyledProjectsSection = styled.section`
     &:after {
       bottom: 0.1em;
     }
+  }
+
+  .more-projects-info {
+    font-size: var(--fz-md);
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
   }
 
   .projects-grid {
@@ -138,6 +145,7 @@ const StyledProject = styled.li`
   .project-description {
     color: var(--light-slate);
     font-size: 17px;
+    text-align: justify;
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
@@ -267,10 +275,6 @@ const Projects = () => {
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
 
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link>
-
       <ul className="projects-grid">
         {prefersReducedMotion ? (
           <>
@@ -301,6 +305,13 @@ const Projects = () => {
           </TransitionGroup>
         )}
       </ul>
+
+      {projectsToShow.length === projects.length && (
+        <p className="more-projects-info">
+          And there are many more projects that have been created but cannot be displayed for some
+          reason.
+        </p>
+      )}
 
       <button className="more-button" onClick={() => setShowMore(!showMore)}>
         Show {showMore ? 'Less' : 'More'}

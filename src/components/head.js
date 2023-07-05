@@ -18,7 +18,7 @@ const Head = ({ title, description, image }) => {
             defaultDescription: description
             siteUrl
             defaultImage: image
-            twitterUsername
+            authorUsername
           }
         }
       }
@@ -30,7 +30,7 @@ const Head = ({ title, description, image }) => {
     defaultDescription,
     siteUrl,
     defaultImage,
-    twitterUsername,
+    authorUsername,
   } = site.siteMetadata;
 
   const seo = {
@@ -54,7 +54,7 @@ const Head = ({ title, description, image }) => {
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:creator" content={authorUsername} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />

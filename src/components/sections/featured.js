@@ -160,6 +160,7 @@ const StyledProject = styled.li`
     background-color: var(--light-navy);
     color: var(--light-slate);
     font-size: var(--fz-lg);
+    text-align: justify;
 
     @media (max-width: 768px) {
       padding: 20px 0;
@@ -246,6 +247,8 @@ const StyledProject = styled.li`
     grid-row: 1 / -1;
     position: relative;
     z-index: 1;
+    max-height: 370px;
+    overflow-y: auto;
 
     @media (max-width: 768px) {
       grid-column: 1 / -1;
@@ -387,14 +390,15 @@ const Featured = () => {
                           Learn More
                         </a>
                       )}
+                      {external && (
+                        <a href={external} aria-label="External Link" className="cta">
+                          Open Project
+                          {/* <Icon name="External" /> */}
+                        </a>
+                      )}
                       {github && (
                         <a href={github} aria-label="GitHub Link">
                           <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && !cta && (
-                        <a href={external} aria-label="External Link" className="external">
-                          <Icon name="External" />
                         </a>
                       )}
                     </div>
