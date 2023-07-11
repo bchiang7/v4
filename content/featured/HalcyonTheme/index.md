@@ -1,15 +1,12 @@
 ---
 date: '1'
-title: 'Project 1'
+title: 'Solidity Scanner'
 cover: './halcyon.png'
-github: 'https://github.com/link'
-external: 'https://url.hosting.comlink/'
+github: 'https://github.com/Mrig26/SolidityScanner'
+external: 'https://github.com/Mrig26/SolidityScanner'
 tech:
+  - Python
   - Solidity
-  - EVM
-  - Tech 3
-  - Tech 4
-  - Tech 5
 ---
 
-A solidity project. Available on [text holder](https://marketplace.link.com/), [text holder](https://marketplace.link.com/), [text holder](https://marketplace.link.com/), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+A security recon tool to scan solidity code files for basic security issues/bugs. Integrated checks for publicly declared functions, solidity versions to detect overflow/underflow conditions. Currently in-development to integrate more checks.
