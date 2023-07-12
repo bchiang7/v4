@@ -6,7 +6,6 @@ external: 'https://blog.hexbyte.in/understanding-evm-storage'
 tech:
   - EVM
   - Blockchain
-  - PHP
 company: ''
 showInProjects: true
 ---
