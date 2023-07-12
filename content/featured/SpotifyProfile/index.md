@@ -1,15 +1,14 @@
 ---
 date: '2'
-title: 'Project 2'
-cover: './demo.png'
-github: 'https://github.com/link'
-external: 'https://url.hosting.comlink/'
+title: 'ScanForMe'
+cover: './sfm.png'
+github: 'https://github.com/Mrig26/ScanForMe'
+external: 'https://github.com/Mrig26/ScanForMe'
 tech:
-  - Solidity
-  - EVM
-  - Tech 3
-  - Tech 4
-  - Tech 5
+  - Python
+  - Socket
+  - Scapy
+  - ArgParse
 ---
 
-A solidity project. Available on [text holder](https://marketplace.link.com/), [text holder](https://marketplace.link.com/), [text holder](https://marketplace.link.com/), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+A fast Python-based network scanner to discover hosts within a subnet. It also displays the MAC addresses for the discovered hosts.
