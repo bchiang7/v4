@@ -1,14 +1,14 @@
 ---
 date: '2020-03-27'
-title: 'Integrating Algolia Search with WordPress Multisite'
+title: 'Understanding EVM Storage'
 github: ''
-external: 'https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c'
+external: 'https://blog.hexbyte.in/understanding-evm-storage'
 tech:
-  - Algolia
-  - WordPress
+  - EVM
+  - Blockchain
   - PHP
-company: 'Upstatement'
+company: ''
 showInProjects: true
 ---
 
-Building a custom multisite compatible WordPress plugin to build global search with Algolia
+A crisp and concise blog about the storage structures in Ethereum Virtual Machine (EVM).
