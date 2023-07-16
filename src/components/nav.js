@@ -72,6 +72,16 @@ const StyledNav = styled.nav`
       position: relative;
       z-index: 1;
 
+      .hex-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @media (prefers-reduced-motion: no-preference) {
+          transition: var(--transition);
+        }
+      }
+
       .logo-container {
         position: relative;
         z-index: 1;
@@ -91,7 +101,7 @@ const StyledNav = styled.nav`
       &:focus {
         outline: 0;
         transform: translate(-4px, -4px);
-        .logo-container {
+        .hex-container {
           transform: translate(4px, 3px);
         }
       }
@@ -175,18 +185,18 @@ const Nav = ({ isHome }) => {
     <div className="logo" tabIndex="-1">
       {isHome ? (
         <a href="/" aria-label="home">
-          // <div className="hex-container">
-          //   <IconHex />
-          // </div>
+          <div className="hex-container">
+            <IconHex />
+          </div>
           <div className="logo-container">
             <IconLogo />
           </div>
         </a>
       ) : (
         <Link to="/" aria-label="home">
-          // <div className="hex-container">
-          //   <IconHex />
-          // </div>
+          <div className="hex-container">
+            <IconHex />
+          </div>
           <div className="logo-container">
             <IconLogo />
           </div>
