@@ -72,16 +72,6 @@ const StyledNav = styled.nav`
       position: relative;
       z-index: 1;
 
-      .hex-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        @media (prefers-reduced-motion: no-preference) {
-          transition: var(--transition);
-        }
-      }
-
       .logo-container {
         position: relative;
         z-index: 1;
@@ -101,7 +91,7 @@ const StyledNav = styled.nav`
       &:focus {
         outline: 0;
         transform: translate(-4px, -4px);
-        .hex-container {
+        .logo-container {
           transform: translate(4px, 3px);
         }
       }
