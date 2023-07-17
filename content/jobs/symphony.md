@@ -1,7 +1,7 @@
 ---
 date: '2020-04-30'
 title: 'Project Intern'
-company: 'Symphony Technologies Private Limited'
+company: 'Symphony Technologies'
 location: 'Pune, India'
 range: 'July 2019 - April 2020'
 url: 'https://www.symphonytech.com/'
