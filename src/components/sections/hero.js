@@ -61,14 +61,13 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Avaneesh Khandekar</h2>;
-  const three = <h3 className="big-heading">Masters student majoring in CS at{' '} <a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer"> University of Florida</h3>;
+  const three = <h3 className="big-heading">Masters student majoring in CS at{' '} <a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer"> University of Florida</a></h3>;
   const four = (
     <>
       <p>
         I’m a full stack software engineer with over three years of experience building cloud native solutions.
         With a deep understanding of both front-end and back-end development, coupled with expertise in cloud technologies,
         I bring a holistic approach to crafting scalable, resilient and efficient applications.
-        </a>
       </p>
     </>
   );
