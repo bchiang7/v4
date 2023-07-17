@@ -264,8 +264,8 @@ const Projects = () => {
   };
 
   return (
-    <StyledProjectsSection>
-      <h2 id="projects" className="numbered-heading" ref={revealTitle}>Some things I've built</h2>
+    <StyledProjectsSection id="projects">
+      <h2 className="numbered-heading" ref={revealTitle}>Some things I've built</h2>
       <ul className="projects-grid">
         {prefersReducedMotion ? (
           <>
