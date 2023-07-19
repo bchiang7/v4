@@ -222,19 +222,27 @@ const Projects = () => {
             <div className="folder">
               <Icon name="Folder" />
             </div>
-            
+            <div className="project-links">
               {github && (
                 <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
                   <Icon name="GitHub" />
                 </a>
               )}
-
+              {external && (
+                <a
+                  href={external}
+                  aria-label="External Link"
+                  className="external"
+                  target="_blank"
+                  rel="noreferrer">
+                  <Icon name="External" />
+                </a>
+              )}
+            </div>
           </div>
 
           <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
               {title}
-            </a>
           </h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
