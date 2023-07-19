@@ -1,4 +1,4 @@
-personal Website
+## personal Website
 
 ## 🛠 Installation & Set Up
 
