@@ -139,8 +139,15 @@ const About = () => {
               3 years of experience at{' '}
               <a href="https://www.tcs.com/">Tata Consultancy Services</a>. While working there, I gained expertise in building cloud solutions
               and acquired the{' '}<a href="https://www.credly.com/badges/cfa8afa0-ee04-4491-9ed5-73b09b786cb9/public_url">AWS Developer Certification</a>.
-              However, my interests and talents extend far beyond the realm of cloud computing. My other iterests include computer vision,
-              neural networks and data science for which I have dedicated personal time and effort to execute personal projects in these domains.
+              However, my interests and talents extend far beyond the realm of cloud computing.
+            </p>
+            <p>
+              In addition to my primary pursuits,
+              I have a keen interest in computer vision, neural networks, and data science.
+              Fostering this interest, I have invested personal time and effort into executing various projects in these domains including
+              my capstone undergrad project at{' '}<a href="https://www.symphonytech.com/" target="_blank" rel="noreferrer">Symphony Technologies Private Limited</a>.
+              There I created an application that detected defects in fuse box assemblies by identifying incorrect fuse placements based on their colors using
+              object detection and neural networks.
             </p>
 
             <p>
