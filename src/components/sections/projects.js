@@ -222,13 +222,13 @@ const Projects = () => {
             <div className="folder">
               <Icon name="Folder" />
             </div>
-            <div className="project-links">
+            
               {github && (
                 <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
                   <Icon name="GitHub" />
                 </a>
               )}
-            </div>
+
           </div>
 
           <h3 className="project-title">
