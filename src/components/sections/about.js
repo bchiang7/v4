@@ -138,10 +138,9 @@ const About = () => {
               Hello there! My name is Avaneesh and I am a skilled full stack developer with a passion for technology and a strong track record of
               3 years of experience at{' '}
               <a href="https://www.tcs.com/">Tata Consultancy Services</a>. While working there, I gained expertise in building cloud solutions
-              and acquired the<a href="https://www.credly.com/badges/cfa8afa0-ee04-4491-9ed5-73b09b786cb9/public_url">AWS Developer Certification</a>.
+              and acquired the{' '}<a href="https://www.credly.com/badges/cfa8afa0-ee04-4491-9ed5-73b09b786cb9/public_url">AWS Developer Certification</a>.
               However, my interests and talents extend far beyond the realm of cloud computing. My other iterests include computer vision,
-              neural networks and data science for which I have dedicated personal time and effort to execute personal projects in these domains, showcasing
-               my commitment to continuous learning.
+              neural networks and data science for which I have dedicated personal time and effort to execute personal projects in these domains.
             </p>
 
             <p>
@@ -153,7 +152,7 @@ const About = () => {
 
             <p>
               I am currently a Master's student majoring in Computer Science at the <a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer">University of Florida</a>.
-              If I can be of any help, feel free to contect me: <a href="mailto:avaneesh.khandekargmail.com:" target="_blank" rel="noreferrer">Say Hi</a>
+              If I can be of any help, feel free to contect me:{' '}<a href="mailto:avaneesh.khandekargmail.com:" target="_blank" rel="noreferrer">Say Hi!</a>
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
