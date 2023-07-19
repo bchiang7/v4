@@ -228,16 +228,6 @@ const Projects = () => {
                   <Icon name="GitHub" />
                 </a>
               )}
-              {external && (
-                <a
-                  href={external}
-                  aria-label="External Link"
-                  className="external"
-                  target="_blank"
-                  rel="noreferrer">
-                  <Icon name="External" />
-                </a>
-              )}
             </div>
           </div>
 
@@ -297,7 +287,7 @@ const Projects = () => {
         )}
       </ul>
 
-      
+
     </StyledProjectsSection>
   );
 };
