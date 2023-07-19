@@ -151,7 +151,7 @@ const About = () => {
             </p>
 
             <p>
-              I am currently a Master's student majoring in Computer Science at the <a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer">University of Florida</a>.
+              I am currently a Master's student majoring in Computer Science at the{' '}<a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer">University of Florida, Gainesville</a>.
               If I can be of any help, feel free to contect me:{' '}<a href="mailto:avaneesh.khandekargmail.com:" target="_blank" rel="noreferrer">Say Hi!</a>
             </p>
 
