@@ -146,12 +146,12 @@ const About = () => {
               I have a keen interest in computer vision, neural networks, and data science.
               Fostering this interest, I have invested personal time and effort into executing various projects in these domains including
               my capstone undergrad project at{' '}<a href="https://www.symphonytech.com/" target="_blank" rel="noreferrer">Symphony Technologies Private Limited</a>.
-              There I created an application that detected defects in fuse box assemblies by identifying incorrect fuse placements based on their colors using
+              There, I created an application that detected defects in fuse box assemblies by identifying incorrect fuse placements based on their colors using
               object detection and neural networks.
             </p>
 
             <p>
-              Outside of the tech world, I am a huge Star Wars fan and I actively follow sports.
+              Outside the tech world, I am a huge Star Wars fan and actively follow sports.
               I am an avid football fan, with a heart devoted to FC Barcelona, and equally enthusiastic about Formula One racing.
               My unique dream is to unite my love for sports and technology by becoming an integral part of the sporting industry,
               where I can leverage my technical skills to contribute to the development and advancement of sports-related technologies.
@@ -159,7 +159,7 @@ const About = () => {
 
             <p>
               I am currently a Master's student majoring in Computer Science at the{' '}<a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer">University of Florida, Gainesville</a>.
-              If I can be of any help, feel free to contect me:{' '}<a href="mailto:avaneesh.khandekargmail.com:" target="_blank" rel="noreferrer">Say Hi!</a>
+              If I can be of any help, feel free to contact me:{' '}<a href="mailto:avaneesh.khandekargmail.com:" target="_blank" rel="noreferrer">Say Hi!</a>
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
