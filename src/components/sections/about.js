@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import { email } from '@config';
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
@@ -159,7 +160,7 @@ const About = () => {
 
             <p>
               I am currently a Master's student majoring in Computer Science at the{' '}<a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer">University of Florida, Gainesville</a>.
-              If I can be of any help, feel free to contact me:{' '}<a href="mailto:avaneesh.khandekar@gmail.com" target="_blank" rel="noreferrer">Say Hi!</a>
+              If I can be of any help, feel free to contact me:{' '}<a href={`mailto:${email}`}>Say Hi!</a>
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
