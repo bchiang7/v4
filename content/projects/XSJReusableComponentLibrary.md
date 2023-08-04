@@ -1,5 +1,5 @@
 ---
-date: '2023-010-01'
+date: '2023-01-01'
 title: 'XSJ Reusable Component Library'
 github: 'https://github.com/XavierElon/xsj-reusable-component-library'
 external: ''
