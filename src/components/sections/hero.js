@@ -64,13 +64,13 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a full-stack software engineer specializing in React, Typescript, Node, Express, and
+        I an a full-stack software engineer specializing in React, Typescript, Node, Express, and
         MongoDB. I am currently working at{' '}
         <a href="https://boozallen.com/" target="_blank" rel="noreferrer">
           Booz Allen
         </a>{' '}
         . I have 4 years of professional experience. I am also working on building my own full stack
-        application that can be found here <a href="https://xsj-ui.vercel.app/">Full-stack app</a>
+        application that can be found here <a href="https://xsj-ui.vercel.app/">Full-Stack App</a>
       </p>
     </>
   );
@@ -79,8 +79,7 @@ const Hero = () => {
       className="email-link"
       href="https://github.com/XavierElon/XavierElon/blob/main/README.md"
       target="_blank"
-      rel="noreferrer"
-    >
+      rel="noreferrer">
       Check out my Github
     </a>
   );
