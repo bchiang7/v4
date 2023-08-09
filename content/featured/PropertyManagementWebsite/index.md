@@ -12,4 +12,4 @@ tech:
 show: 'true'
 ---
 
-Implemented HTML/CSS, Javascript, MySQL and Node.js to create a website using the Python Flask framework that connects to a database and mimics property management website. Unfortunately I had to take the site down due to Heroku charging me large amounts of money to host on their database.
+Implemented HTML/CSS, Javascript, MySQL and Node.js to create a website using the Python Flask framework that connects to a database and mimics property management website. Site shutdown due to heavy Heroku costs.
