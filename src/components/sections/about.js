@@ -125,7 +125,18 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'Go',
+    'Python',
+    'Kubernetes',
+    'Docker',
+    'Prometheus',
+    'ArgoCD',
+    'Jenkins',
+    'Shell Scripting',
+    'SQL',
+    'EFK Stack',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,30 +146,27 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Sashank and I am currently pursuing my Masters of Science in
+              Computer Science at University of Southern California.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              I've excelled at Intuit by efficiently managing cloud infrastructure and leading
+              observability efforts. As an active contributor to keikoproj, I enhanced high
+              availability and scaling. At Red Hat, I streamlined log management, co-developed the
+              Loki Operator, and created predictive tools for optimized resource allocation.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              I'm enthusiastic about contributing to open source projects. My experience in the tech
+              industry has reinforced my belief in the power of collaborative development, and I'm
+              eager to bring my skills to projects that have a positive impact on the community.
+            </p>
+
+            <p>
+              I am currently in search of exciting Summer Internship opportunities beginning in May
+              2024. With a strong technical background and a passion for innovative solutions, I am
+              eager to contribute and learn in a dynamic team environment during this internship.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
