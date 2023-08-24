@@ -1,15 +1,16 @@
 ---
 date: '2'
 title: 'Spotify Profile'
-cover: './demo.png'
-github: 'https://github.com/bchiang7/spotify-profile'
-external: 'https://spotify-profile.herokuapp.com/'
+cover: './solar.png'
+github: 'https://github.com/techyalok'
+youtube: 'https://youtube.com/shorts/TXxSVq89o7Y?feature=share'
+external: ''
 tech:
-  - React
-  - Styled Components
-  - Express
-  - Spotify API
-  - Heroku
+  - Solar Panel
+  - 2 Axis Arm
+  - Servo motor
+  - LDR Sensor
+  - Arduino Nano
 ---
 
-A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+Introducing our innovative Solar Tracker, a cutting-edge project that harnesses technology to optimize solar panel efficiency and energy output. By combining Arduino Nano, Light Dependent Resistor (LDR) sensors, a solar panel, and a 2-axis arm which is control by Servo motors, a smart solution that maximizes solar power generation throughout the day.

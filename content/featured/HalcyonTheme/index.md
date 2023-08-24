@@ -1,15 +1,16 @@
 ---
 date: '1'
-title: 'Halcyon Theme'
-cover: './halcyon.png'
-github: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
+title: 'Bin-Box'
+cover: './binbox.png'
+github: 'https://github.com/techyalok'
+youtube: 'https://youtu.be/LbXl0at2ssQ'
+external: ''
 tech:
-  - VS Code
-  - Sublime Text
-  - Atom
-  - iTerm2
-  - Hyper
+  - Arduino IDE
+  - UltraSonic Sensor
+  - Servo motor
+  - LED
+  - Arduino Uno
 ---
 
-A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+When a person reaches to the Bin-box it open its lid with indication of blinking LEDs. All happens by sensing through an Ultrasonic sensor. Available on my [Youtube Channel](https://youtu.be/LbXl0at2ssQ).
