@@ -3,6 +3,7 @@ date: '2018-05-01'
 title: 'blistabloc'
 github: ''
 external: 'https://blistabloc.com/'
+ios: 'https://apps.apple.com/us/app/threadable/id1550995547'
 tech:
   - WordPress
   - Timber
