@@ -135,30 +135,41 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
-            </p>
-
-            <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
-            </p>
-
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
+              I am pursing my bachelors from{' '}
+              <a href="https://www.srmist.edu.in/" target="_blank" rel="noreferrer">
+                SRM University
               </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              , Chennai. I was introduced to Embedded System using Arduino in my Grade 10 and
+              Androud Development in my 4<sup>th</sup> semester, have been interested ever since. On
+              an off day you'll find me bundelled up with in a corner either exploring more with
+              Arduino or watching sci-fi movies, web-series.
+            </p>
+
+            <p>
+              I am always looking to learn new things. I am currently working on a project related
+              to <b>Computer Vision</b> using <b>Arduino</b>. At the same time I am actively on the
+              lookout for internships which I can pursue in field of Android Development or Embedded
+              Systems.
+            </p>
+
+            <p>
+              I am a strong advocate for open source and I am always interested in working on new
+              projects with new people. Do check out my{' '}
+              <a
+                href="https://github.com/techyalok?tab=repositories"
+                target="_blank"
+                rel="noreferrer">
+                repositories
+              </a>{' '}
+              and feel free to reach out on{' '}
+              <a href="www.linkedin.com/in/alok705" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>{' '}
+              or{' '}
+              <a href="mailto:%20prasadalok705@gmail.com" target="_blank" rel="noreferrer">
+                email
+              </a>{' '}
+              if you would like to collaborate on any project.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
