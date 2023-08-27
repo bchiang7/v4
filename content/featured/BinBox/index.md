@@ -3,8 +3,7 @@ date: '1'
 title: 'Bin-Box'
 cover: './binbox.png'
 github: 'https://github.com/techyalok'
-youtube: 'https://youtu.be/LbXl0at2ssQ'
-external: ''
+external: 'https://youtu.be/LbXl0at2ssQ'
 tech:
   - Arduino IDE
   - UltraSonic Sensor

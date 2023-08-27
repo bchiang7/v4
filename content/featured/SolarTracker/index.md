@@ -3,8 +3,8 @@ date: '2'
 title: 'Spotify Profile'
 cover: './solar.png'
 github: 'https://github.com/techyalok'
-youtube: 'https://youtube.com/shorts/TXxSVq89o7Y?feature=share'
-external: ''
+external: 'https://youtube.com/shorts/TXxSVq89o7Y?feature=share'
+cta: ''
 tech:
   - Solar Panel
   - 2 Axis Arm
