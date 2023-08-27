@@ -4,13 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-import { resolve as _resolve } from 'path';
-import { kebabCase } from 'lodash';
+const path = require('path');
+const _ = require('lodash');
 
-export async function createPages({ actions, graphql, reporter }) {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-  const postTemplate = _resolve(`src/templates/post.js`);
-  const tagTemplate = _resolve('src/templates/tag.js');
+  const postTemplate = path.resolve(`src/templates/post.js`);
+  const tagTemplate = path.resolve('src/templates/tag.js');
 
   const result = await graphql(`
     {
@@ -57,17 +57,17 @@ export async function createPages({ actions, graphql, reporter }) {
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/pensieve/tags/${kebabCase(tag.fieldValue)}/`,
+      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
       },
     });
   });
-}
+};
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
-export function onCreateWebpackConfig({ stage, loaders, actions }) {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
   if (stage === 'build-html' || stage === 'develop-html') {
     actions.setWebpackConfig({
@@ -93,15 +93,15 @@ export function onCreateWebpackConfig({ stage, loaders, actions }) {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        '@components': _resolve(__dirname, 'src/components'),
-        '@config': _resolve(__dirname, 'src/config'),
-        '@fonts': _resolve(__dirname, 'src/fonts'),
-        '@hooks': _resolve(__dirname, 'src/hooks'),
-        '@images': _resolve(__dirname, 'src/images'),
-        '@pages': _resolve(__dirname, 'src/pages'),
-        '@styles': _resolve(__dirname, 'src/styles'),
-        '@utils': _resolve(__dirname, 'src/utils'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@config': path.resolve(__dirname, 'src/config'),
+        '@fonts': path.resolve(__dirname, 'src/fonts'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@images': path.resolve(__dirname, 'src/images'),
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@styles': path.resolve(__dirname, 'src/styles'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
       },
     },
   });
-}
+};
