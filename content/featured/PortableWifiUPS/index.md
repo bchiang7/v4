@@ -3,8 +3,6 @@ date: '3'
 title: 'Portable Wi-Fi UPS'
 cover: './Portable Wifi UPS.png'
 external: ''
-cta: ''
-youtube: ''
 tech:
   - Buck Converter(LM2596)
   - BMS Module
