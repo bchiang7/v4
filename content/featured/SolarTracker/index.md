@@ -1,6 +1,6 @@
 ---
 date: '2'
-title: 'Spotify Profile'
+title: 'Automated Solar Tracker'
 cover: './solar.png'
 github: 'https://github.com/techyalok'
 external: 'https://youtube.com/shorts/TXxSVq89o7Y?feature=share'

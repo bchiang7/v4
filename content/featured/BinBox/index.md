@@ -12,4 +12,5 @@ tech:
   - Arduino Uno
 ---
 
+
 When a person reaches to the Bin-box it open its lid with indication of blinking LEDs. All happens by sensing through an Ultrasonic sensor. Available on my [Youtube Channel](https://youtu.be/LbXl0at2ssQ).
