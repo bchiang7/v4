@@ -11,10 +11,6 @@ module.exports = {
       url: 'https://www.instagram.com/mr.alok._/',
     },
     {
-      name: 'Twitter',
-      url: '',
-    },
-    {
       name: 'Linkedin',
       url: 'www.linkedin.com/in/alok705',
     },
