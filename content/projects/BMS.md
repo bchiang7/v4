@@ -3,6 +3,7 @@ date: '2022-06-05'
 title: 'Bank Management System'
 github: 'https://github.com/techyalok/PPS-PROJECT-REPORT'
 external: ''
+ios: 'https://www.apple.com/in/app-store/'
 tech:
   - C
   - CLion
