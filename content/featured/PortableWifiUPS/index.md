@@ -1,7 +1,7 @@
 ---
 date: '3'
 title: 'Portable Wi-Fi UPS'
-cover: './Portable Wifi UPS.png'
+cover: './PortableUPS.png'
 external: ''
 tech:
   - Buck Converter(LM2596)
