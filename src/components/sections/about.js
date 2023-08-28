@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['C++', 'Java', 'Kotlin', 'Android Studio','IntelliJ IDE', 'Arduino IDE', 'Tinkercad', 'Adobe Premiere Pro', 'Linux', 'IoT'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -162,7 +162,7 @@ const About = () => {
                 repositories
               </a>{' '}
               and feel free to reach out on{' '}
-              <a href="www.linkedin.com/in/alok705" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/alok705" target="_blank" rel="noreferrer">
                 LinkedIn
               </a>{' '}
               or{' '}
