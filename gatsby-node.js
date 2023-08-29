@@ -35,6 +35,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
+  //Added my @techyalok, hope to fix graphql error
+  exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
+      type AuthorJson implements Node {
+        joinedAt: Date
+      }
+    `
+    createTypes(typeDefs)
+  }
+
+
+
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);

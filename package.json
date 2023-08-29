@@ -1,11 +1,11 @@
 {
   "name": "v4",
-  "description": "Personal Website V4",
+  "description": "Personal Website",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Alok Prasad <prasadalok705@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/techyalok/protfolio"
   },
   "keywords": [
     "gatsby"
@@ -50,6 +50,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
+    "graphql-http": "^1.21.0",
     "lodash": "^4.17.19",
     "prismjs": "^1.27.0",
     "prop-types": "^15.7.2",
