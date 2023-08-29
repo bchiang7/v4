@@ -22,7 +22,8 @@
 
 </div>
 
-![demo](https://raw.githubusercontent.com/pycoder2000/portfolio-v4/main/src/images/demo.png)
+<img width="1408" alt="Screenshot 2023-08-29 at 6 15 53 PM" src="https://github.com/techyalok/protfolio/assets/73772700/28f98ef0-eef1-4469-b1fc-9c01382b185c">
+
 
 ## 🛠 Installation & Set Up
 
