@@ -139,8 +139,8 @@ const About = () => {
               <a href="https://www.srmist.edu.in/" target="_blank" rel="noreferrer">
                 SRM University
               </a>{' '}
-              , Chennai. I was introduced to Embedded System using Arduino in my Grade 10 and
-              Androud Development in my 4<sup>th</sup> semester, have been interested ever since. On
+              , Chennai. I was introduced to Embedded System using Arduino in my 10<sup>th</sup> Grade and
+              Android Development in my 4<sup>th</sup> semester, have been interested ever since. On
               an off day you'll find me bundelled up with in a corner either exploring more with
               Arduino or watching sci-fi movies, web-series.
             </p>
