@@ -1,4 +1,5 @@
 Live site: [xavierelon.com](https://xavierelon.com)
+
 <!--
 ## 🚨 Forking this repo (please read!)
 
@@ -10,8 +11,8 @@ Please also note that I did not build this site with the intention of it being a
 
 ### TL;DR
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
 -->
+
 ## 🛠 Installation & Set Up
 
 1. Install the Gatsby CLI
