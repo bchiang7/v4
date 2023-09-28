@@ -1,11 +1,6 @@
-# Project dependencies
-.cache
 node_modules
+.cache
 yarn-error.log
-package-lock.json
-
-# Build directory
 /public
 .DS_Store
-
 .vscode/
