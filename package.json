@@ -22,7 +22,7 @@
     "clean": "gatsby clean",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "deploy": "gatsby build && npx gh-pages -d public"
+    "push:gh-pages": "gatsby build && cd public && git add . && gitp commit -m 'Update to gh-pages' && gitp push -u --force origin gh-pages"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
