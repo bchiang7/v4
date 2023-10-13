@@ -125,23 +125,22 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'React-Native', 'Node.js', 'Next.js'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
-
       <div className="inner">
         <StyledText>
           <div>
-            <p>
+            {/* <p>
               Hello! My name is Brittany and I enjoy creating things that live on the internet. My
               interest in web development started back in 2012 when I decided to try editing custom
               Tumblr themes — turns out hacking together a custom reblog button taught me a lot
               about HTML &amp; CSS!
-            </p>
+            </p> */}
 
-            <p>
+            {/* <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
@@ -150,18 +149,36 @@ const About = () => {
               main focus these days is building accessible, inclusive products and digital
               experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
               clients.
-            </p>
+            </p> */}
 
-            <p>
+            {/* <p>
               I also recently{' '}
               <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
                 launched a course
               </a>{' '}
               that covers everything you need to build a web app with the Spotify API using Node
               &amp; React.
+            </p> */}
+
+            <p>
+              Hello! My name is Nate and I enjoy problem solving, especially when it comes to the
+              web. My interest in web development began in 2015 when I needed a career change.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>
+              I started off doing algorithms on{' '}
+              <a href="https://projecteuler.net/">Project Euler</a> while taking evening classes at{' '}
+              <a href="https://www.linkedin.com/school/makersquare/">MakerSquare</a>. I went all in
+              in by attending{' '}
+              <a href="https://www.linkedin.com/school/hack-reactor/">Hack Reactor</a> and doing a 3
+              month paid internship at{' '}
+              <a href="https://www.linkedin.com/company/qubika/">Moove-It</a>. For the past 5+ years
+              I have been privileged to work at{' '}
+              <a href="https://www.integratedauctionsolutions.com/">Integrated Auction Solutions</a>{' '}
+              where I am a lead engineer.
+            </p>
+
+            <p>These are a few of my favorite technologies:</p>
           </div>
 
           <ul className="skills-list">
