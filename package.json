@@ -20,7 +20,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "surge": "surge public --domain https://nathan-dunn-test.surge.sh/"
   },
   "lint-staged": {
     "*.{js,css,json,md}": [
