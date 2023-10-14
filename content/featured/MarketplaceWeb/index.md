@@ -1,8 +1,8 @@
 ---
-date: '1'
+date: '2'
 title: 'Marketplace Web'
-cover: './frontrange_2.png'
-# github: ''
+cover: './mpweb_3.png'
+github: 'https://github.com/IAS-DEV/marketplace-web/'
 external: 'https://www.integratedauctionsolutions.com/marketplace/'
 tech:
   - React

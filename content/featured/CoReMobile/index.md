@@ -1,14 +1,13 @@
 ---
-date: '3'
-title: 'Build a Spotify Connected App'
-cover: './course-card.png'
-external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
-cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+date: '4'
+title: 'CoRe Mobile'
+cover: './core_1.png'
+external: 'https://www.integratedauctionsolutions.com/core/'
+github: 'https://github.com/IAS-DEV/core-native/'
 tech:
-  - React
-  - Express
-  - Spotify API
-  - Styled Components
+  - React Native
+  - Redux
+  - iOS
 ---
 
 Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had.
