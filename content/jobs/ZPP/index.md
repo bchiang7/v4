@@ -8,5 +8,6 @@ url: 'https://zpp.de/'
 ---
 
 - looking for security issues, bugs and unwanted behaviour
-- i am involved in the application development
-- writing and analyzing source code
+- involved in web development
+- working with Java, Python and Docker
+- occasionally some cool smaller projects
