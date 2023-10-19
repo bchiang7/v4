@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
   --deg: 1;
   --x: -50%;
   --y: -50%;
-  --speed: 150ms;
+  --speed: 100ms;
 
   position: absolute;
   top: 50%;
@@ -37,7 +37,9 @@ const StyledDiv = styled.div`
   filter: hue-rotate(0deg);
   animation: ${wobble} calc(var(--speed) * var(--t)) linear infinite;
   transform-origin: calc(-1 * var(--y)) calc(-1 * var(--x));
-  box-shadow: 0 0 .5em .2em #000 inset, 0 0 .15em 0 #fff;
+  box-shadow:
+    0 0 0.5em 0.2em #000 inset,
+    0 0 0.15em 0 #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +76,11 @@ const StyledDiv = styled.div`
   }
 `;
 
-const WobbleComponent = () => (
+interface WobbleComponentProps {
+  showImages: boolean;
+}
+
+const WobbleComponent = (props: WobbleComponentProps) => (
   <StyledContainer>
     <StyledDiv />
     <StyledDiv />

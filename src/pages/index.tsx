@@ -15,11 +15,16 @@ const PortalContainer = styled.div<PortalContainerProps>`
   position: fixed;
   top: 10px; // Always stay 10px from the top
   left: ${props => (props.centered ? '50%' : '10px')};
-  transform: ${props => (props.centered ? 'translateX(-50%) scale(1)' : 'scale(0.1)')};
+  transform: ${props => (props.centered ? 'translateX(-50%) scale(1)' : 'scale(0.15)')};
   transition:
     left 0.5s ease-in-out,
     transform 0.5s ease-in-out;
   z-index: 1000;
+  cursor: pointer; // Makes the div appear clickable
+
+  &:hover {
+    transform: ${props => (props.centered ? 'translateX(-50%) scale(1)' : 'scale(0.25)')};
+  }
 `;
 
 interface IndexPageProps {
@@ -96,7 +101,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
         <Layout location={location}>
           <StyledMainContainer>
             <PortalContainer centered={showPortal} onClick={handleContainerClick} ref={portalRef}>
-              <WobbleComponent />
+              <WobbleComponent showImages={showPortal} />
             </PortalContainer>
 
             <Hero />
