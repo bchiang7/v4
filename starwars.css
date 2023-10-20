@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-* {
+/* * {
   padding: 0;
   margin: 0;
-}
+} */
 
-body,
+/* body,
 html {
   width: 100%;
   height: 100%;
@@ -14,7 +14,7 @@ html {
   color: #ff6;
   background-color: #000;
   overflow: hidden;
-}
+} */
 
 img {
   font-size: 10em;
@@ -30,37 +30,37 @@ img {
   transform: (per);
 }
 
-/* .imgA {
-    -webkit-transform: perspective(300px) rotateX(50deg);
-	-moz-transform: perspective(300px) rotateX(50deg);
-	-ms-transform: perspective(3000px) rotateX(50deg);
-	-o-transform: perspective(300px) rotateX(50deg);
-	transform: perspective(300px) rotateX(50deg) translateZ(100px);
+.imgA {
+  -webkit-transform: perspective(300px) rotateX(50deg);
+  -moz-transform: perspective(300px) rotateX(50deg);
+  -ms-transform: perspective(3000px) rotateX(50deg);
+  -o-transform: perspective(300px) rotateX(50deg);
+  transform: perspective(300px) rotateX(25deg) translateZ(100px);
 }
 
 .imgB {
-    -webkit-transform: perspective(300px) rotateX(50deg);
-	-moz-transform: perspective(300px) rotateX(50deg);
-	-ms-transform: perspective(3000px) rotateX(50deg);
-	-o-transform: perspective(300px) rotateX(50deg);
-    transform: perspective(300px) rotateX(50deg) translateZ(100px);
+  -webkit-transform: perspective(300px) rotateX(50deg);
+  -moz-transform: perspective(300px) rotateX(50deg);
+  -ms-transform: perspective(3000px) rotateX(50deg);
+  -o-transform: perspective(300px) rotateX(50deg);
+  transform: perspective(300px) rotateX(25deg) translateZ(100px);
 }
 
 .imgC {
-    -webkit-transform: perspective(300px) rotateX(50deg);
-	-moz-transform: perspective(300px) rotateX(50deg);
-	-ms-transform: perspective(3000px) rotateX(50deg);
-	-o-transform: perspective(300px) rotateX(50deg);
-	transform: perspective(300px) rotateX(50deg);
+  -webkit-transform: perspective(300px) rotateX(50deg);
+  -moz-transform: perspective(300px) rotateX(50deg);
+  -ms-transform: perspective(3000px) rotateX(50deg);
+  -o-transform: perspective(300px) rotateX(50deg);
+  transform: perspective(300px) rotateX(25deg);
 }
 
 .imgD {
-    -webkit-transform: perspective(300px) rotateX(50deg);
-	-moz-transform: perspective(300px) rotateX(50deg);
-	-ms-transform: perspective(3000px) rotateX(50deg);
-	-o-transform: perspective(300px) rotateX(50deg);
-	transform: perspective(300px) rotateX(50deg);
-} */
+  -webkit-transform: perspective(300px) rotateX(50deg);
+  -moz-transform: perspective(300px) rotateX(50deg);
+  -ms-transform: perspective(3000px) rotateX(50deg);
+  -o-transform: perspective(300px) rotateX(50deg);
+  transform: perspective(300px) rotateX(25deg);
+}
 
 .imgB,
 .imgD {

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import StarWars from './StarWars';
 
 const wobble = keyframes`
   to {
@@ -14,7 +15,6 @@ const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: serif;
   background: radial-gradient(circle at 50% 35%, #334455, #000);
 `;
 
@@ -80,14 +80,19 @@ interface WobbleComponentProps {
   showImages: boolean;
 }
 
-const WobbleComponent = (props: WobbleComponentProps) => (
-  <StyledContainer>
-    <StyledDiv />
-    <StyledDiv />
-    <StyledDiv />
-    <StyledDiv />
-    <StyledDiv />
-  </StyledContainer>
-);
+const WobbleComponent = (props: WobbleComponentProps) => {
+  const { showImages } = props;
+  return (
+    <StyledContainer>
+      {/* {showImages && <StarWars />} */}
+
+      <StyledDiv />
+      <StyledDiv />
+      <StyledDiv />
+      <StyledDiv />
+      <StyledDiv />
+    </StyledContainer>
+  );
+};
 
 export default WobbleComponent;
