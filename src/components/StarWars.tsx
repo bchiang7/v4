@@ -43,6 +43,31 @@ const HoverBlurImage = styled.img`
   }
 `;
 
+const ImageWrapper = styled.div`
+  position: relative;
+  display: inline-block; // This will keep the size of the container matching the image
+  &:hover ${HoverBlurImage} {
+    filter: blur(3px);
+  }
+  &:hover div {
+    opacity: 1;
+  }
+`;
+
+const ImageOverlayText = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  //   background-color: rgba(0, 0, 0, 0.6); // semi-transparent black background
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+`;
+
 const StarWars: React.FC = () => {
   return (
     <StyledContainer>
@@ -53,14 +78,17 @@ const StarWars: React.FC = () => {
               className="block transition-all"
               href="https://xsj-ui.vercel.app/"
               aria-label="XXX Chat App">
-              <HoverBlurImage
-                alt="Screenshot of XXX"
-                width="280"
-                height="92"
-                className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
-                src={'/resized/xxx-resized.png'}
-                style={{ color: 'transparent' }}
-              />
+              <ImageWrapper>
+                <HoverBlurImage
+                  alt="Screenshot of XXX"
+                  width="280"
+                  height="92"
+                  className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
+                  src={'/resized/xxx-resized.png'}
+                  style={{ color: 'transparent' }}
+                />
+                <ImageOverlayText>XXX</ImageOverlayText>
+              </ImageWrapper>
             </a>
           </li>
           <li>
