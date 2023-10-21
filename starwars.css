@@ -20,8 +20,6 @@ img {
   font-size: 10em;
   text-align: center;
   margin-left: -1.3em;
-  line-height: 0.8em;
-  letter-spacing: -0.05em;
   padding-right: 50px;
   /* color: #000; */
   /* text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6; */
@@ -35,7 +33,12 @@ img {
   -moz-transform: perspective(300px) rotateX(50deg);
   -ms-transform: perspective(3000px) rotateX(50deg);
   -o-transform: perspective(300px) rotateX(50deg);
-  transform: perspective(300px) rotateX(25deg) translateZ(100px);
+  transform: perspective(300px) rotateX(25deg);
+  border-radius: 8px;
+  border-color: gray;
+  border-width: 10px;
+  height: 90%;
+  width: 90%;
 }
 
 .imgB {
@@ -43,7 +46,12 @@ img {
   -moz-transform: perspective(300px) rotateX(50deg);
   -ms-transform: perspective(3000px) rotateX(50deg);
   -o-transform: perspective(300px) rotateX(50deg);
-  transform: perspective(300px) rotateX(25deg) translateZ(100px);
+  transform: perspective(300px) rotateX(25deg);
+  border-radius: 8px;
+  border-color: gray;
+  border-width: 10px;
+  height: 90%;
+  width: 90%;
 }
 
 .imgC {
@@ -51,7 +59,7 @@ img {
   -moz-transform: perspective(300px) rotateX(50deg);
   -ms-transform: perspective(3000px) rotateX(50deg);
   -o-transform: perspective(300px) rotateX(50deg);
-  transform: perspective(300px) rotateX(25deg);
+  transform: perspective(400px) scaleY(1.5);
 }
 
 .imgD {
@@ -59,7 +67,12 @@ img {
   -moz-transform: perspective(300px) rotateX(50deg);
   -ms-transform: perspective(3000px) rotateX(50deg);
   -o-transform: perspective(300px) rotateX(50deg);
-  transform: perspective(300px) rotateX(25deg);
+  transform: perspective(400px) scaleY(1.5);
+  border-radius: 8px;
+  border-color: gray;
+  border-width: 50px;
+  height: 90%;
+  width: 90%;
 }
 
 .imgB,
@@ -73,15 +86,15 @@ img {
   align-items: center;
   height: 100vh; /* taking full viewport height to center vertically */
   position: absolute;
-  left: 50%;
-  transform: perspective(400px) rotateX(25deg) translateZ(-100px);
+  left: 25%;
+  /* transform: perspective(400px) rotateX(25deg) translateZ(-100px); */
 }
 
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px; /* adjust this value to change spacing between images */
-  max-width: 300px; /* adjust this value to fit the images as per your requirement */
+  max-width: 50%; /* adjust this value to fit the images as per your requirement */
   margin: 0 auto;
 }
 
