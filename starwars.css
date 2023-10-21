@@ -16,18 +16,6 @@ html {
   overflow: hidden;
 } */
 
-img {
-  font-size: 10em;
-  text-align: center;
-  margin-left: -1.3em;
-  padding-right: 50px;
-  /* color: #000; */
-  /* text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6; */
-  opacity: 1;
-  z-index: 1;
-  transform: (per);
-}
-
 .imgA {
   -webkit-transform: perspective(300px) rotateX(50deg);
   -moz-transform: perspective(300px) rotateX(50deg);

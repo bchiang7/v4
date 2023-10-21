@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '../components';
 import WobbleComponent from '@components/portal';
+import StarWars from '@components/StarWars';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -103,7 +104,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
             <PortalContainer centered={showPortal} onClick={handleContainerClick} ref={portalRef}>
               <WobbleComponent showImages={showPortal} />
             </PortalContainer>
-
+            <StarWars />
             <Hero />
             <About />
             <Jobs />

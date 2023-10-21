@@ -57,6 +57,7 @@ const Layout = ({ children, location }) => {
       <Head />
 
       <div id="root">
+        {/* <GlobalStateProvider> */}
         <ThemeProvider theme={theme}>
           <GlobalStyle />
 
@@ -79,6 +80,7 @@ const Layout = ({ children, location }) => {
             </StyledContent>
           )}
         </ThemeProvider>
+        {/* </GlobalStateProvider> */}
       </div>
     </>
   );

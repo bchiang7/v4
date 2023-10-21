@@ -84,8 +84,6 @@ const WobbleComponent = (props: WobbleComponentProps) => {
   const { showImages } = props;
   return (
     <StyledContainer>
-      {/* {showImages && <StarWars />} */}
-
       <StyledDiv />
       <StyledDiv />
       <StyledDiv />

@@ -77,24 +77,6 @@ const Hero = () => {
         authentication and allows users to message each other instantly as well as message Chat GPT.
         It was created in Next/Typescript/React, MongoDB, Node, Express, PostgreSQL and Firebase.
       </p>
-      <a
-        className="group relative block transition-all"
-        href="https://xsj-ui.vercel.app/"
-        aria-label="XXX Chat App">
-        <img
-          alt="Screenshot of XXX"
-          //   loading="lazy"
-          width="180"
-          height="48"
-          //   decoding="async"
-          className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
-          src={'./github.png'}
-          style={{ color: 'transparent' }}>
-          {/* <div className="absolute left-0 top-0 hidden h-full w-full items-center justify-center rounded border-4 border-teal-400/0 bg-zinc-900/30 align-middle opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 lg:flex">
-                <h3 className="not-sr-only text-xl font-semibold text-white">v1</h3>
-              </div> */}
-        </img>
-      </a>
     </>
   );
   const five = (
