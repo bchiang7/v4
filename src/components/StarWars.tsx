@@ -111,14 +111,17 @@ const StarWars: React.FC = () => {
               className="block transition-all"
               href="https://github.com/XavierElon/xsj-users-microservice"
               aria-label="User Authentication/Authorization Microservice">
-              <HoverBlurImage
-                alt="Screenshot User Authentication/Authorization Microservice"
-                width="280"
-                height="92"
-                className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
-                src={'/resized/users-microservice-resized.png'}
-                style={{ color: 'transparent' }}
-              />
+              <ImageWrapper>
+                <HoverBlurImage
+                  alt="Screenshot User Authentication/Authorization Microservice"
+                  width="280"
+                  height="92"
+                  className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
+                  src={'/resized/users-microservice-resized.png'}
+                  style={{ color: 'transparent' }}
+                />
+                <ImageOverlayText>User Auth MicroService</ImageOverlayText>
+              </ImageWrapper>
             </a>
           </li>
           <li>
