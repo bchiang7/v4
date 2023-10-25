@@ -157,10 +157,9 @@ const About = () => {
               <a href="https://deloitte.com/"> Deloitte, another consulting firm</a>,{' '}
               <a href="https://asurance.com/">a tech insurance company</a>,{' '}
               <a href="https://www.getaboard.org/">a non-profit based in Orlando</a>, and{' '}
-              <a href="https://ole.org/">an internal non-profit company</a>. My main focus now is
-              building my startup XSJ where I am currently leading two other engineers in building a
-              full-stack application.
+              <a href="https://ole.org/">an international non-profit company</a>.
             </p>
+            <p></p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
