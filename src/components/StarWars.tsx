@@ -12,7 +12,6 @@ const StyledContainer = styled.div`
   top: -5%;
   left: 25%;
   z-index: 1000;
-  //   background: radial-gradient(circle at 50% 35%, #334455, #000);
 `;
 
 const StarWarsDiv = styled.div`
@@ -76,34 +75,37 @@ const StarWars: React.FC = () => {
           <li>
             <a
               className="block transition-all"
-              href="https://xsj-ui.vercel.app/"
-              aria-label="XXX Chat App">
+              href="https://github.com/XavierElon/rate_my_classes"
+              aria-label="Rate My Classes">
               <ImageWrapper>
                 <HoverBlurImage
-                  alt="Screenshot of XXX"
+                  alt="Screenshot of Rate My Classes"
                   width="280"
                   height="92"
                   className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
-                  src={'/resized/xxx-resized.png'}
+                  src={'/resized/rate-my-classes-resized.png'}
                   style={{ color: 'transparent' }}
                 />
-                <ImageOverlayText>XXX</ImageOverlayText>
+                <ImageOverlayText>Rate My Classes</ImageOverlayText>
               </ImageWrapper>
             </a>
           </li>
           <li>
             <a
               className="block transition-all"
-              href="https://github.com/XavierElon"
-              aria-label="XavierElon's Github">
-              <HoverBlurImage
-                alt="Screenshot of Xavier Elon's Github"
-                width="280"
-                height="92"
-                className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
-                src={'/resized/github-resized.png'}
-                style={{ color: 'transparent' }}
-              />
+              href="https://youtube.com/channel/UCkzn_i33n79ljur943FlMqw"
+              aria-label="Xavier Elon Youtube Channel">
+              <ImageWrapper>
+                <HoverBlurImage
+                  alt="Xavier Elon Youtube Channel"
+                  width="280"
+                  height="92"
+                  className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
+                  src={'/resized/youtube-resized.png'}
+                  style={{ color: 'transparent' }}
+                />
+                <ImageOverlayText>Algo/DS Youtube Channel</ImageOverlayText>
+              </ImageWrapper>
             </a>
           </li>
           <li>
@@ -127,19 +129,37 @@ const StarWars: React.FC = () => {
           <li>
             <a
               className="block transition-all"
-              href="https://github.com/XavierElon/rate_my_classes"
-              aria-label="Rate My Classes">
-              <HoverBlurImage
-                alt="Screenshot of Rate My Classes"
-                width="280"
-                height="92"
-                className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
-                src={'/resized/rate-my-classes-resized.png'}
-                style={{ color: 'transparent' }}
-              />
-              {/* <div className="absolute left-0 top-0 hidden h-full w-full items-center justify-center rounded border-4 border-teal-400/0 bg-zinc-900/30 align-middle opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 lg:flex">
-                <h3 className="not-sr-only text-xl font-semibold text-white">Rate My Classes</h3>
-              </div> */}
+              href="https://github.com/XavierElon"
+              aria-label="XavierElon's Github">
+              <ImageWrapper>
+                <HoverBlurImage
+                  alt="Screenshot of Xavier Elon's Github"
+                  width="280"
+                  height="92"
+                  className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
+                  src={'/resized/github-resized.png'}
+                  style={{ color: 'transparent' }}
+                />
+                <ImageOverlayText>Github</ImageOverlayText>
+              </ImageWrapper>
+            </a>
+          </li>
+          <li>
+            <a
+              className="block transition-all"
+              href="https://xsj-ui.vercel.app/"
+              aria-label="XXX Chat App">
+              <ImageWrapper>
+                <HoverBlurImage
+                  alt="Screenshot of XXX"
+                  width="280"
+                  height="92"
+                  className="mx-auto rounded border-2 border-zinc-900/30 drop-shadow-md group-hover:drop-shadow-xl"
+                  src={'/resized/xxx-resized.png'}
+                  style={{ color: 'transparent' }}
+                />
+                <ImageOverlayText>XXX</ImageOverlayText>
+              </ImageWrapper>
             </a>
           </li>
         </ul>
