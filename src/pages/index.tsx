@@ -67,6 +67,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
+      console.log('Clicked target: ', event.target); // Check the clicked element
+
       if (
         showPortal &&
         portalRef.current &&
@@ -74,6 +76,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
         starWarsRef.current &&
         !starWarsRef.current.contains(event.target as Node)
       ) {
+        console.log('Closing portal.'); // Check if the portal is being closed
+
         setShowPortal(false);
       }
     };
@@ -109,8 +113,9 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
           <StyledMainContainer>
             <PortalContainer centered={showPortal} onClick={handleContainerClick} ref={portalRef}>
               <WobbleComponent showImages={showPortal} />
+              {showPortal && <StarWars isPortalOpen={showPortal} ref={starWarsRef} />}
             </PortalContainer>
-            {showPortal && <StarWars isPortalOpen={showPortal} ref={starWarsRef} />}
+
             <Hero />
             <About />
             <Jobs />

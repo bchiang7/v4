@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div.attrs<{ isPortalOpen?: boolean }>(props => ({
+  // Here, we don't pass down the isPortalOpen prop to the DOM element
+}))<{ isPortalOpen?: boolean }>`
   margin: 0;
   min-height: 100vh;
-  min-width: 25vh;
+  min-width: 35vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: -12%;
-  left: 45%;
+  top: ${props => (props.isPortalOpen ? '0%' : '-12%')};
+  left: ${props => (props.isPortalOpen ? '30%' : '40%')};
+  transform: ${props => (props.isPortalOpen ? 'translate(-50%, -50%) scale(1)' : 'none')};
   z-index: 1000;
   transition:
-    left 1.5s ease-in-out,
-    transform 1.5s ease-in-out;
+    left 2s ease-in-out,
+    top 2s ease-in-out,
+    transform 2s ease-in-out;
 `;
 
 const StarWarsDiv = styled.div`
   position: relative;
   top: 46%;
-  left: 50%
+  left: 0%
   -webkit-transform: perspective(300px) rotateX(50deg);
   -moz-transform: perspective(300px) rotateX(50deg);
   -ms-transform: perspective(3000px) rotateX(50deg);
@@ -52,7 +56,7 @@ const HoverBlurImage = styled.img`
   }
 `;
 
-const ImageWrapper = styled.div<{ isPortalOpen?: boolean }>`
+const ImageWrapper = styled.div`
   position: relative;
   display: inline-block; // This will keep the size of the container matching the image
 
@@ -79,10 +83,12 @@ const ImageOverlayText = styled.div<{ color?: string }>`
 
 interface StarWarsProps {
   isPortalOpen: boolean;
-  ref: React.RefObject<HTMLDivElement>;
 }
 
-const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
+const StarWars = React.forwardRef<HTMLDivElement, StarWarsProps>(({ isPortalOpen }, ref) => {
+  useEffect(() => {
+    console.log(isPortalOpen);
+  }, [isPortalOpen]);
   return (
     <StyledContainer>
       <StarWarsDiv ref={ref}>
@@ -92,8 +98,10 @@ const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
             <a
               className="block transition-all"
               href="https://github.com/XavierElon/rate_my_classes"
-              aria-label="Rate My Classes">
-              <ImageWrapper isPortalOpen={isPortalOpen}>
+              aria-label="Rate My Classes"
+              target="_blank"
+              rel="noopener noreferrer">
+              <ImageWrapper>
                 <HoverBlurImage
                   alt="Screenshot of Rate My Classes"
                   width="280"
@@ -110,8 +118,10 @@ const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
             <a
               className="block transition-all"
               href="https://youtube.com/channel/UCkzn_i33n79ljur943FlMqw"
-              aria-label="Xavier Elon Youtube Channel">
-              <ImageWrapper isPortalOpen={isPortalOpen}>
+              aria-label="Xavier Elon Youtube Channel"
+              target="_blank"
+              rel="noopener noreferrer">
+              <ImageWrapper>
                 <HoverBlurImage
                   alt="Xavier Elon Youtube Channel"
                   width="280"
@@ -128,8 +138,10 @@ const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
             <a
               className="block transition-all"
               href="https://github.com/XavierElon/xsj-users-microservice"
-              aria-label="User Authentication/Authorization Microservice">
-              <ImageWrapper isPortalOpen={isPortalOpen}>
+              aria-label="User Authentication/Authorization Microservice"
+              target="_blank"
+              rel="noopener noreferrer">
+              <ImageWrapper>
                 <HoverBlurImage
                   alt="Screenshot User Authentication/Authorization Microservice"
                   width="280"
@@ -146,8 +158,10 @@ const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
             <a
               className="block transition-all"
               href="https://github.com/XavierElon"
-              aria-label="XavierElon's Github">
-              <ImageWrapper isPortalOpen={isPortalOpen}>
+              aria-label="XavierElon's Github"
+              target="_blank"
+              rel="noopener noreferrer">
+              <ImageWrapper>
                 <HoverBlurImage
                   alt="Screenshot of Xavier Elon's Github"
                   width="280"
@@ -164,8 +178,10 @@ const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
             <a
               className="block transition-all"
               href="https://xsj-ui.vercel.app/"
-              aria-label="XXX Chat App">
-              <ImageWrapper isPortalOpen={isPortalOpen}>
+              aria-label="XXX Chat App"
+              target="_blank"
+              rel="noopener noreferrer">
+              <ImageWrapper>
                 <HoverBlurImage
                   alt="Screenshot of XXX"
                   width="280"
@@ -182,6 +198,6 @@ const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
       </StarWarsDiv>
     </StyledContainer>
   );
-};
+});
 
 export default StarWars;
