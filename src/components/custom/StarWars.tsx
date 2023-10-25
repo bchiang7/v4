@@ -11,8 +11,8 @@ const StyledContainer = styled.div.attrs<{ isPortalOpen?: boolean }>(props => ({
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: ${props => (props.isPortalOpen ? '0%' : '-12%')};
-  left: ${props => (props.isPortalOpen ? '30%' : '40%')};
+  top: ${props => (props.isPortalOpen ? '-20%' : '-12%')};
+  left: ${props => (props.isPortalOpen ? '50%' : '40%')};
   transform: ${props => (props.isPortalOpen ? 'translate(-50%, -50%) scale(1)' : 'none')};
   z-index: 1000;
   transition:
@@ -22,9 +22,9 @@ const StyledContainer = styled.div.attrs<{ isPortalOpen?: boolean }>(props => ({
 `;
 
 const StarWarsDiv = styled.div`
-  position: relative;
-  top: 46%;
-  left: 0%
+  position: fixed;
+  top: 0%;
+  right: 10%
   -webkit-transform: perspective(300px) rotateX(50deg);
   -moz-transform: perspective(300px) rotateX(50deg);
   -ms-transform: perspective(3000px) rotateX(50deg);

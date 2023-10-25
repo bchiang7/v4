@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '../components';
-import WobbleComponent from '@components/portal';
-import StarWars from '@components/StarWars';
+import WobbleComponent from '@components/custom/Portal';
+import StarWars from '@components/custom/StarWars';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -14,9 +14,10 @@ interface PortalContainerProps {
 
 const PortalContainer = styled.div<PortalContainerProps>`
   position: fixed;
-  top: 10px; // Always stay 10px from the top
+  top: 100px; // Always stay 10px from the top
   left: ${props => (props.centered ? '50%' : '10px')};
   transform: ${props => (props.centered ? 'translateX(-50%) scale(1)' : 'scale(0.15)')};
+  width: ${props => (props.centered ? '35%' : '0%')};
   transition:
     left 0.5s ease-in-out,
     transform 0.5s ease-in-out;
@@ -112,7 +113,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
         <Layout location={location}>
           <StyledMainContainer>
             <PortalContainer centered={showPortal} onClick={handleContainerClick} ref={portalRef}>
-              <WobbleComponent showImages={showPortal} />
+              <WobbleComponent />
               {showPortal && <StarWars isPortalOpen={showPortal} ref={starWarsRef} />}
             </PortalContainer>
 
