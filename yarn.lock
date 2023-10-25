@@ -7952,7 +7952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0":
   version: 3.3.1
   resolution: "fast-glob@npm:3.3.1"
   dependencies:
@@ -10823,7 +10823,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.18.2":
+"jiti@npm:^1.19.1":
   version: 1.20.0
   resolution: "jiti@npm:1.20.0"
   bin:
@@ -16006,19 +16006,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "tailwindcss@npm:3.3.3"
+"tailwindcss@npm:^3.3.4":
+  version: 3.3.4
+  resolution: "tailwindcss@npm:3.3.4"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
     arg: "npm:^5.0.2"
     chokidar: "npm:^3.5.3"
     didyoumean: "npm:^1.2.2"
     dlv: "npm:^1.1.3"
-    fast-glob: "npm:^3.2.12"
+    fast-glob: "npm:^3.3.0"
     glob-parent: "npm:^6.0.2"
     is-glob: "npm:^4.0.3"
-    jiti: "npm:^1.18.2"
+    jiti: "npm:^1.19.1"
     lilconfig: "npm:^2.1.0"
     micromatch: "npm:^4.0.5"
     normalize-path: "npm:^3.0.0"
@@ -16035,7 +16035,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: c2435382cd27522a988aaba7e7d98a5ac20f4b3cb5049deb0c58d128302e4158bcca5e7bffbdc97927b6eedba45f0ca1abe76cbae8041e2c3fb3e1c001fe44d2
+  checksum: a1a0c8c1793b1b1b67503484fe924dc84f79e74c1ddc576095d616eaecc18bbd8fcdbf7c62e07a181673466f4913ebc20d92b93b87da730148b05f7c95e6c83e
   languageName: node
   linkType: hard
 
@@ -17076,7 +17076,7 @@ __metadata:
     scrollreveal: "npm:^4.0.9"
     smooth-scroll: "npm:^16.1.3"
     styled-components: "npm:^6.1.0"
-    tailwindcss: "npm:^3.3.3"
+    tailwindcss: "npm:^3.3.4"
     ts-node: "npm:10.9.1"
     ts-node-dev: "npm:2.0.0"
     typescript: "npm:>=2.7"

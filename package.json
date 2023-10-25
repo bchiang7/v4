@@ -93,7 +93,7 @@
     "lint-staged": "^15.0.2",
     "node-notifier": "*",
     "prettier": "^3.0.3",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.4",
     "webpack": "^5.89.0"
   }
 }
