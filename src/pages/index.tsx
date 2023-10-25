@@ -20,8 +20,7 @@ const PortalContainer = styled.div<PortalContainerProps>`
   transition:
     left 0.5s ease-in-out,
     transform 0.5s ease-in-out;
-  z-index: 1000;
-  cursor: pointer; // Makes the div appear clickable
+  z-index: 500;
 
   &:hover {
     transform: ${props => (props.centered ? 'translateX(-50%) scale(1)' : 'scale(0.25)')};
@@ -40,6 +39,7 @@ interface IndexPageProps {
 const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const portalRef = useRef<HTMLDivElement | null>(null);
+  const starWarsRef = useRef<HTMLDivElement | null>(null);
   const [showPortal, setShowPortal] = useState<boolean>(false);
 
   const handleContainerClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -67,7 +67,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
-      if (showPortal && portalRef.current && !portalRef.current.contains(event.target as Node)) {
+      if (
+        showPortal &&
+        portalRef.current &&
+        !portalRef.current.contains(event.target as Node) &&
+        starWarsRef.current &&
+        !starWarsRef.current.contains(event.target as Node)
+      ) {
         setShowPortal(false);
       }
     };
@@ -104,7 +110,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
             <PortalContainer centered={showPortal} onClick={handleContainerClick} ref={portalRef}>
               <WobbleComponent showImages={showPortal} />
             </PortalContainer>
-            <StarWars />
+            {showPortal && <StarWars isPortalOpen={showPortal} ref={starWarsRef} />}
             <Hero />
             <About />
             <Jobs />

@@ -4,19 +4,22 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
   margin: 0;
   min-height: 100vh;
-  min-width: 50vw;
+  min-width: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: -5%;
-  left: 25%;
+  top: -12%;
+  left: 45%;
   z-index: 1000;
+  transition:
+    left 1.5s ease-in-out,
+    transform 1.5s ease-in-out;
 `;
 
 const StarWarsDiv = styled.div`
   position: relative;
-  top: 50%;
+  top: 46%;
   left: 50%
   -webkit-transform: perspective(300px) rotateX(50deg);
   -moz-transform: perspective(300px) rotateX(50deg);
@@ -34,6 +37,13 @@ const StarWarsDiv = styled.div`
   }
 `;
 
+const StyledHeader = styled.div`
+  color: var(--green);
+  font-size: 2rem;
+  position: relative;
+  right: 12%;
+`;
+
 const HoverBlurImage = styled.img`
   transition: filter 0.4s ease;
 
@@ -42,9 +52,10 @@ const HoverBlurImage = styled.img`
   }
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.div<{ isPortalOpen?: boolean }>`
   position: relative;
   display: inline-block; // This will keep the size of the container matching the image
+
   &:hover ${HoverBlurImage} {
     filter: blur(3px);
   }
@@ -53,31 +64,36 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ImageOverlayText = styled.div`
+const ImageOverlayText = styled.div<{ color?: string }>`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-  color: white;
-  //   background-color: rgba(0, 0, 0, 0.6); // semi-transparent black background
+  color: ${props => props.color || 'white'};
   padding: 8px;
   border-radius: 4px;
   font-weight: bold;
 `;
 
-const StarWars: React.FC = () => {
+interface StarWarsProps {
+  isPortalOpen: boolean;
+  ref: React.RefObject<HTMLDivElement>;
+}
+
+const StarWars: React.FC<StarWarsProps> = ({ isPortalOpen, ref }) => {
   return (
     <StyledContainer>
-      <StarWarsDiv>
+      <StarWarsDiv ref={ref}>
+        <StyledHeader>Travel Back in Time</StyledHeader>
         <ul className="inline-grid grid-cols-2 grid-rows-2 gap-2 float-right" aria-label="XXX">
           <li>
             <a
               className="block transition-all"
               href="https://github.com/XavierElon/rate_my_classes"
               aria-label="Rate My Classes">
-              <ImageWrapper>
+              <ImageWrapper isPortalOpen={isPortalOpen}>
                 <HoverBlurImage
                   alt="Screenshot of Rate My Classes"
                   width="280"
@@ -86,7 +102,7 @@ const StarWars: React.FC = () => {
                   src={'/resized/rate-my-classes-resized.png'}
                   style={{ color: 'transparent' }}
                 />
-                <ImageOverlayText>Rate My Classes</ImageOverlayText>
+                <ImageOverlayText color="black">Rate My Classes</ImageOverlayText>
               </ImageWrapper>
             </a>
           </li>
@@ -95,7 +111,7 @@ const StarWars: React.FC = () => {
               className="block transition-all"
               href="https://youtube.com/channel/UCkzn_i33n79ljur943FlMqw"
               aria-label="Xavier Elon Youtube Channel">
-              <ImageWrapper>
+              <ImageWrapper isPortalOpen={isPortalOpen}>
                 <HoverBlurImage
                   alt="Xavier Elon Youtube Channel"
                   width="280"
@@ -113,7 +129,7 @@ const StarWars: React.FC = () => {
               className="block transition-all"
               href="https://github.com/XavierElon/xsj-users-microservice"
               aria-label="User Authentication/Authorization Microservice">
-              <ImageWrapper>
+              <ImageWrapper isPortalOpen={isPortalOpen}>
                 <HoverBlurImage
                   alt="Screenshot User Authentication/Authorization Microservice"
                   width="280"
@@ -131,7 +147,7 @@ const StarWars: React.FC = () => {
               className="block transition-all"
               href="https://github.com/XavierElon"
               aria-label="XavierElon's Github">
-              <ImageWrapper>
+              <ImageWrapper isPortalOpen={isPortalOpen}>
                 <HoverBlurImage
                   alt="Screenshot of Xavier Elon's Github"
                   width="280"
@@ -149,7 +165,7 @@ const StarWars: React.FC = () => {
               className="block transition-all"
               href="https://xsj-ui.vercel.app/"
               aria-label="XXX Chat App">
-              <ImageWrapper>
+              <ImageWrapper isPortalOpen={isPortalOpen}>
                 <HoverBlurImage
                   alt="Screenshot of XXX"
                   width="280"
