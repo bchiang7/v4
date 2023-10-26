@@ -134,6 +134,8 @@ const About = () => {
     'MongoDB',
     'Express',
     'AWS',
+    'Firebase',
+    'PostgreSQL',
   ];
 
   return (
@@ -145,8 +147,8 @@ const About = () => {
           <div>
             <p>
               Hello! I am Xavier Elon, a full-stack software engineer based in Orlando, FL who has a
-              passion for technology, and space. I am currently working for Booz Allen as a Staff
-              Engineer / Full stack software engineer!
+              passion for technology, artificial intelligence, space and blockchain. I am currently
+              working for Booz Allen as a Staff Engineer / Full stack software engineer!
             </p>
 
             <p>

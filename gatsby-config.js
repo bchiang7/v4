@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Xavier Hollingsworth',
     description:
-      'Xavier Elon Hollingsworth is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
+      'Xavier Elon Hollingsworth is a software engineer who specializes in building full stack applications (React/Typescript/Javascript/Node) and is studying AI/ML at GATECH.',
     siteUrl: 'https://xavierelon.com', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: 'elon_xavier',
