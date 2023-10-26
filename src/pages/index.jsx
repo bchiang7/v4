@@ -8,7 +8,7 @@ const StyledMainContainer = styled.main`
 `;
 
 const IndexPage = ({ location }) => {
-  const heroRef = useRef(null)
+  const heroRef = useRef(null);
 
   useEffect(() => {
     const updateMousePosition = ev => {
@@ -16,9 +16,7 @@ const IndexPage = ({ location }) => {
       const { clientX, clientY } = ev;
       document.documentElement.style.setProperty('--x', `${clientX}px`);
       document.documentElement.style.setProperty('--y', `${clientY}px`);
-      console.log(clientX, clientY)
     };
-    
 
     window.addEventListener('mousemove', updateMousePosition);
 
@@ -29,8 +27,8 @@ const IndexPage = ({ location }) => {
 
   return (
     <div ref={heroRef}>
-     <style jsx global>{`
-        html body{
+      <style jsx global>{`
+        html body {
           height: 100vh;
           width: 100%;
           background-color: var(--navy) !important;
@@ -41,19 +39,19 @@ const IndexPage = ({ location }) => {
             var(--navy) 100%
           ) !important;
         }
-`}</style>
-  <div >
-      <Layout location={location}>
-        <StyledMainContainer >
-          <Hero />
-          <About />
-          <Jobs />
-          <Featured />
-          <Projects />
-          <Contact />
-        </StyledMainContainer>
-      </Layout>
-    </div>
+      `}</style>
+      <div>
+        <Layout location={location}>
+          <StyledMainContainer>
+            <Hero />
+            <About />
+            <Jobs />
+            <Featured />
+            <Projects />
+            <Contact />
+          </StyledMainContainer>
+        </Layout>
+      </div>
     </div>
   );
 };
