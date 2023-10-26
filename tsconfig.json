@@ -12,9 +12,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
-    "typeRoots": ["./typings", "./node_modules/@types"],
-    "types": ["styled-jsx"]
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "public", ".cache"]
 }
