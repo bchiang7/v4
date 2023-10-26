@@ -15,9 +15,9 @@
   "engine": "20",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "cross-env NODE_OPTIONS=--trace-deprecation gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
@@ -35,6 +35,7 @@
     "animejs": "^3.2.1",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.12.5",
+    "gatsby-cli": "^5.12.4",
     "gatsby-plugin-google-analytics": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
@@ -60,16 +61,12 @@
     "react-transition-group": "^4.4.5",
     "scrollreveal": "^4.0.9",
     "smooth-scroll": "^16.1.3",
-    "styled-components": "^6.0.8",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.2.2"
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
-    "@types/react": "^18.2.25",
-    "@types/react-dom": "^18.2.11",
     "@upstatement/eslint-config": "^2.0.0",
     "@upstatement/prettier-config": "^1.1.0",
     "babel-preset-gatsby": "^3.12.0",
@@ -79,7 +76,7 @@
     "eslint-plugin-react": "^7.33.2",
     "gatsby-remark-code-titles": "^1.1.0",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.0.2",
     "prettier": "^3.0.3"
   }
 }
