@@ -21,7 +21,7 @@ const StyledLoader = styled.div`
     width: max-content;
     max-width: 100px;
     transition: var(--transition);
-    opacity: ${props => (props.isMounted ? 1 : 0)};
+    opacity: ${props => (props.$isMounted ? 1 : 0)};
     svg {
       display: block;
       width: 100%;
@@ -82,7 +82,7 @@ const Loader = ({ finishLoading }) => {
   }, []);
 
   return (
-    <StyledLoader className="loader" isMounted={isMounted}>
+    <StyledLoader className="loader" $isMounted={isMounted}>
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
       <div className="logo-wrapper">
