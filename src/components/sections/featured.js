@@ -59,7 +59,7 @@ const StyledProject = styled.li`
     .project-tech-list {
       justify-content: flex-end;
 
-      @media (max-width: 768px) {
+      @media (max-width: 763px) {
         justify-content: flex-start;
       }
 
@@ -125,7 +125,7 @@ const StyledProject = styled.li`
 
   .project-title {
     color: var(--lightest-slate);
-    font-size: clamp(24px, 5vw, 28px);
+    font-size: clamp(20px, 5vw, 21px);
 
     @media (min-width: 768px) {
       margin: 0 0 20px;
@@ -234,10 +234,10 @@ const StyledProject = styled.li`
       }
     }
 
-    .cta {
-      ${({ theme }) => theme.mixins.smallButton};
-      margin: 10px;
-    }
+    // .cta {
+    //   ${({ theme }) => theme.mixins.smallButton};
+    //   margin: 10px;
+    // }
   }
 
   .project-image {
@@ -301,6 +301,13 @@ const StyledProject = styled.li`
       }
     }
   }
+
+  .range {
+    margin-bottom: 25px;
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+  }
 `;
 
 const Featured = () => {
@@ -322,7 +329,7 @@ const Featured = () => {
               tech
               github
               external
-              cta
+              range
             }
             html
           }
@@ -348,25 +355,25 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Education
       </h2>
 
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { external, title, tech, github, cover, range } = frontmatter;
             const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
-
                     <h3 className="project-title">
                       <a href={external}>{title}</a>
                     </h3>
+
+                    <p className="range">{range}</p>
 
                     <div
                       className="project-description"
@@ -381,23 +388,25 @@ const Featured = () => {
                       </ul>
                     )}
 
-                    <div className="project-links">
-                      {cta && (
+                    {
+                      <div className="project-links">
+                        {/* {cta && (
                         <a href={cta} aria-label="Course Link" className="cta">
                           Learn More
                         </a>
-                      )}
-                      {github && (
-                        <a href={github} aria-label="GitHub Link">
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && !cta && (
-                        <a href={external} aria-label="External Link" className="external">
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
+                      )} */}
+                        {github && (
+                          <a href={github} aria-label="GitHub Link">
+                            <Icon name="GitHub" />
+                          </a>
+                        )}
+                        {external && (
+                          <a href={external} aria-label="External Link" className="external">
+                            <Icon name="External" />
+                          </a>
+                        )}
+                      </div>
+                    }
                   </div>
                 </div>
 

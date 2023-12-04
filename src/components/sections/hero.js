@@ -59,33 +59,30 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const one = <h1 style={{ fontStyle: 'italic' }}>Hi, my name is</h1>;
+  const two = (
+    <h2 style={{ fontSize: '90px', fontStyle: 'italic' }} className="big-heading">
+      Tejas Manjunatha Devang.
+    </h2>
+  );
+  const three = (
+    <h3 style={{ fontSize: '70px', fontStyle: 'italic' }} className="big-heading">
+      I Engineer Dreams.
+    </h3>
+  );
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
+        Currently pursuing an MS in Computer Science at Syracuse University - New York, with
+        graduation expected in May 2025.
+        <span role="img" aria-label="Graduation Cap">
+          🎓
+        </span>
       </p>
     </>
   );
-  const five = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer">
-      Check out my course!
-    </a>
-  );
 
-  const items = [one, two, three, four, five];
+  const items = [one, two, three, four];
 
   return (
     <StyledHeroSection>
