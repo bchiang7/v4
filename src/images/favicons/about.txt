@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: AR One Sans
+- Font Author: Copyright 2018 The AR One Project Authors (https://github.com/niteeshy/ar-one-sans)
+- Font Source: http://fonts.gstatic.com/s/aronesans/v4/TUZezwhrmbFp0Srr_tH6fv6RcUejHO_u7GF5aXfv-U2QzBLF6gslWn_9DW03no5mBF4.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
