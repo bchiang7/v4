@@ -1,18 +1,23 @@
 import mixins from './mixins';
 
-const theme = {
-  bp: {
-    mobileS: `max-width: 330px`,
-    mobileM: `max-width: 400px`,
-    mobileL: `max-width: 480px`,
-    tabletS: `max-width: 600px`,
-    tabletL: `max-width: 768px`,
-    desktopXS: `max-width: 900px`,
-    desktopS: `max-width: 1080px`,
-    desktopM: `max-width: 1200px`,
-    desktopL: `max-width: 1400px`,
-  },
+// Breakpoints for responsive design
+const breakpointValues = {
+  mobileS: 330,
+  mobileM: 400,
+  mobileL: 480,
+  tabletS: 600,
+  tabletL: 768,
+  desktopXS: 900,
+  desktopS: 1080,
+  desktopM: 1200,
+  desktopL: 1400,
+};
 
+const theme = {
+  bp: Object.keys(breakpointValues).reduce((acc, key) => {
+    acc[key] = `max-width: ${breakpointValues[key]}px`;
+    return acc;
+  }, {}),
   mixins,
 };
 
