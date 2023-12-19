@@ -49,14 +49,15 @@ const StyledHamburgerButton = styled.button`
     background-color: var(--green);
     transition-duration: 0.22s;
     transition-property: transform;
-    transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-    transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+    transition-delay: ${props => (props.menuOpen ? '0.12s' : '0s')};
+    transform: rotate(${props => (props.menuOpen ? '225deg' : '0deg')});
     transition-timing-function: cubic-bezier(
-      ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
+      ${props =>
+    props.menuOpen ? '0.215, 0.61, 0.355, 1' : '0.55, 0.055, 0.675, 0.19'}
     );
     &:before,
     &:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       left: auto;
@@ -70,17 +71,18 @@ const StyledHamburgerButton = styled.button`
       transition-property: transform;
     }
     &:before {
-      width: ${props => (props.menuOpen ? `100%` : `120%`)};
-      top: ${props => (props.menuOpen ? `0` : `-10px`)};
+      width: ${props => (props.menuOpen ? '100%' : '120%')};
+      top: ${props => (props.menuOpen ? '0' : '-10px')};
       opacity: ${props => (props.menuOpen ? 0 : 1)};
       transition: ${({ menuOpen }) =>
     menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
     }
     &:after {
-      width: ${props => (props.menuOpen ? `100%` : `80%`)};
-      bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-      transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-      transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
+      width: ${props => (props.menuOpen ? '100%' : '80%')};
+      bottom: ${props => (props.menuOpen ? '0' : '-10px')};
+      transform: rotate(${props => (props.menuOpen ? '-90deg' : '0')});
+      transition: ${({ menuOpen }) =>
+    menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)'};
     }
   }
 `;
@@ -132,7 +134,7 @@ const StyledSidebar = styled.aside`
       }
 
       &:before {
-        content: '0' counter(item) '.';
+        content: "0" counter(item) ".";
         display: block;
         margin-bottom: 5px;
         color: var(--green);
@@ -168,7 +170,10 @@ const Menu = () => {
   let lastFocusableEl;
 
   const setFocusables = () => {
-    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+    menuFocusables = [
+      buttonRef.current,
+      ...Array.from(navRef.current.querySelectorAll('a')),
+    ];
     firstFocusableEl = menuFocusables[0];
     lastFocusableEl = menuFocusables[menuFocusables.length - 1];
   };
@@ -244,15 +249,20 @@ const Menu = () => {
       <div ref={wrapperRef}>
         <StyledHamburgerButton
           onClick={toggleMenu}
-          menuOpen={menuOpen}
+          $menuOpen={menuOpen}
           ref={buttonRef}
-          aria-label="Menu">
+          aria-label="Menu"
+        >
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>
         </StyledHamburgerButton>
 
-        <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
+        <StyledSidebar
+          $menuOpen={menuOpen}
+          aria-hidden={!menuOpen}
+          tabIndex={menuOpen ? 1 : -1}
+        >
           <nav ref={navRef}>
             {navLinks && (
               <ol>

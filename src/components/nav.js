@@ -33,8 +33,8 @@ const StyledHeader = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     ${props =>
-    props.scrollDirection === 'up' &&
-      !props.scrolledToTop &&
+    props.$scrollDirection === 'up' &&
+      !props.$scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
@@ -43,8 +43,8 @@ const StyledHeader = styled.header`
       `};
 
     ${props =>
-    props.scrollDirection === 'down' &&
-      !props.scrolledToTop &&
+    props.$scrollDirection === 'down' &&
+      !props.$scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
@@ -218,8 +218,8 @@ const Nav = ({ isHome }) => {
 
   return (
     <StyledHeader
-      scrollDirection={scrollDirection}
-      scrolledToTop={scrolledToTop}
+      $scrollDirection={scrollDirection}
+      $scrolledToTop={scrolledToTop}
     >
       <StyledNav>
         {prefersReducedMotion ? (
