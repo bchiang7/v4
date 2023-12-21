@@ -275,7 +275,7 @@ const Jobs = () => {
                 </StyledTabButton>
               );
             })}
-          <StyledHighlight $activeTabId={activeTabId} />
+          <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
