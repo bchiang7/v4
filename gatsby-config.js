@@ -6,7 +6,7 @@ module.exports = {
     description:
       'Phu D. Nguyen is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
     siteUrl: 'https://techwithmew.com', // No trailing slash allowed!
-    image: './static/mew_face.svg', // Path to your image you placed in the 'static' folder
+    image: './static/logo.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@phuducnguyen',
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: './src/images/favicon.ico',
+        icon: './src/images/logo.png',
       },
     },
     'gatsby-plugin-offline',
