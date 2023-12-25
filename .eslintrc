@@ -1,4 +1,7 @@
 {
   "root": true,
-  "extends": "@upstatement/eslint-config/react"
+  "extends": "@upstatement/eslint-config/react",
+  "rules": {
+    "quotes": [2, "single", { "avoidEscape": true }]
+  }
 }

@@ -36,7 +36,7 @@ const StyledText = styled.div`
       font-size: var(--fz-xs);
 
       &:before {
-        content: '▹';
+        content: "▹";
         position: absolute;
         left: 0;
         color: var(--green);
@@ -88,7 +88,7 @@ const StyledPic = styled.div`
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       width: 100%;
@@ -125,7 +125,14 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React',
+    'Eleventy',
+    'Node.js',
+    'Java Spring',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,10 +142,11 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Holla! My name is Duc-Phu and I enjoy creating things that live on
+              the internet. My interest in web development started back in 2022
+              when I decided to try editing my client's custom website — turns
+              out hacking together a custom reblog button taught me a lot about
+              HTML &amp; CSS!
             </p>
 
             <p>
@@ -146,10 +154,13 @@ const About = () => {
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
               <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              <a href="https://scout.camd.northeastern.edu/">
+                a student-led design studio
+              </a>
+              . My main focus these days is building accessible, inclusive
+              products and digital experiences at{' '}
+              <a href="https://upstatement.com/">Upstatement</a> for a variety
+              of clients.
             </p>
 
             <p>
@@ -157,8 +168,8 @@ const About = () => {
               <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
                 launched a course
               </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              that covers everything you need to build a web app with the
+              Spotify API using Node &amp; React.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
@@ -173,11 +184,11 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/margelo_faces_marc.svg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Headshot"
+              alt="Phu D. Nguyen Headshot"
             />
           </div>
         </StyledPic>
