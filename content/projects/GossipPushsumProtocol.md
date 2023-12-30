@@ -1,4 +1,5 @@
 ---
+order: '4'
 date: '2023-11-15'
 title: 'Gossip & Push-sum Communication Protocol'
 github: 'https://github.com/AvaneeshKhandekar/Gossip-Pushsum-Communication'
