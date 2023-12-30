@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -60,28 +61,24 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Avaneesh Khandekar</h2>;
+  const three = <h3 className="big-heading">MS CS at{' '} <a href="https://www.cise.ufl.edu/" target="_blank" rel="noreferrer"><u>University of Florida</u></a></h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
+        I’m a full stack software engineer with over three years of experience building cloud native solutions.
+        With a deep understanding of both front-end and back-end development, coupled with expertise in cloud technologies,
+        I bring a holistic approach to crafting scalable, resilient and efficient applications.
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href={`mailto:${email}`}
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Get in touch!
     </a>
   );
 

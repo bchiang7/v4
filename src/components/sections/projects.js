@@ -173,7 +173,7 @@ const Projects = () => {
           fileAbsolutePath: { regex: "/content/projects/" }
           frontmatter: { showInProjects: { ne: false } }
         }
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {
           node {
@@ -206,7 +206,7 @@ const Projects = () => {
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const GRID_LIMIT = 6;
+  const GRID_LIMIT = 9;
   const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
@@ -242,9 +242,7 @@ const Projects = () => {
           </div>
 
           <h3 className="project-title">
-            <a href={external} target="_blank" rel="noreferrer">
               {title}
-            </a>
           </h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
@@ -264,13 +262,8 @@ const Projects = () => {
   };
 
   return (
-    <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
-
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link>
-
+    <StyledProjectsSection id="projects">
+      <h2 className="numbered-heading" ref={revealTitle}>Some things I've built</h2>
       <ul className="projects-grid">
         {prefersReducedMotion ? (
           <>
@@ -302,9 +295,7 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </button>
+
     </StyledProjectsSection>
   );
 };
