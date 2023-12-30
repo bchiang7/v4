@@ -13,5 +13,4 @@ tech:
 showInProjects: true
 ---
 
-Developed a full desktop application that takes input as a questionnaire, generates organized resumes in PDF format, and
-stores the student data in an SQLite Database. Designed the user interface with Java Swing GUI and developed the logic and functions in Java. Student Login, admin control, admin search, and changing existing resumes are among the few features
+Developed a full desktop application that takes input as a questionnaire, generates organized resumes in PDF format, and stores the student data in an SQLite Database. Designed the user interface with Java Swing GUI and developed the logic and functions in Java. Student Login, admin control, admin search, and changing existing resumes are among the few features.

@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-Developed machine learning models that predict applicants’ loan eligibility based on historical data and previous grant cases
+Developed machine learning models that predict applicants’ loan eligibility based on historical data and previous grant cases.

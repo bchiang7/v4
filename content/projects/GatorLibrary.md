@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-A library management system that uses a red black tree as the database to store books and a priority min heap to manage the reservation queue for the books
+A library management system that uses a red black tree as the database to store books and a priority min heap to manage the reservation queue for the books.
