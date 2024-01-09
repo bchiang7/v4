@@ -1,13 +1,11 @@
-import { Icon } from '@components/icons';
 import { srConfig } from '@config';
 import { usePrefersReducedMotion } from '@hooks';
 import sr from '@utils/sr';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const StyledProjectsGrid = styled.ul`
+const StyledBlogsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
 
   a {
@@ -16,7 +14,7 @@ const StyledProjectsGrid = styled.ul`
   }
 `;
 
-const StyledProject = styled.li`
+const StyledBlog = styled.li`
   position: relative;
   display: grid;
   grid-gap: 10px;
@@ -36,58 +34,6 @@ const StyledProject = styled.li`
 
     @media (max-width: 480px) {
       margin-bottom: 30px;
-    }
-  }
-
-  &:nth-of-type(odd) {
-    .project-content {
-      grid-column: 7 / -1;
-      text-align: right;
-
-      @media (max-width: 1080px) {
-        grid-column: 5 / -1;
-      }
-      @media (max-width: 768px) {
-        grid-column: 1 / -1;
-        padding: 40px 40px 30px;
-        text-align: left;
-      }
-      @media (max-width: 480px) {
-        padding: 25px 25px 20px;
-      }
-    }
-    .project-tech-list {
-      justify-content: flex-end;
-
-      @media (max-width: 768px) {
-        justify-content: flex-start;
-      }
-
-      li {
-        margin: 0 0 5px 20px;
-
-        @media (max-width: 768px) {
-          margin: 0 10px 5px 0;
-        }
-      }
-    }
-    .project-links {
-      justify-content: flex-end;
-      margin-left: 0;
-      margin-right: -10px;
-
-      @media (max-width: 768px) {
-        justify-content: flex-start;
-        margin-left: -10px;
-        margin-right: 0;
-      }
-    }
-    .project-image {
-      grid-column: 1 / 8;
-
-      @media (max-width: 768px) {
-        grid-column: 1 / -1;
-      }
     }
   }
 
@@ -303,11 +249,11 @@ const StyledProject = styled.li`
   }
 `;
 
-const Featured = () => {
+const Blogs = () => {
   const data = useStaticQuery(graphql`
     {
-      featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/featured/" } }
+      blogs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/blogs/" } }
         sort: { fields: [frontmatter___date], order: ASC }
       ) {
         edges {
@@ -330,10 +276,10 @@ const Featured = () => {
     }
   `);
 
-  const featuredProjects = data.featured.edges.filter(({ node }) => node);
+  const blogs = data.blogs.edges.filter(({ node }) => node);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
-  const revealProjects = useRef([]);
+  const revealBlogs = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -342,30 +288,29 @@ const Featured = () => {
     }
 
     sr.reveal(revealTitle.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    revealBlogs.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
   return (
-    <section id="projects">
+    <section id="blogs">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Blogs
       </h2>
 
-      <StyledProjectsGrid>
-        {featuredProjects &&
-          featuredProjects.map(({ node }, i) => {
+      <StyledBlogsGrid>
+        {blogs &&
+          blogs.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
-            const image = getImage(cover);
+            const { link, title, tech } = frontmatter;
 
             return (
-              <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+              <StyledBlog key={i} ref={el => (revealBlogs.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
+                    {/* <p className="project-overline">Featured Project</p> */}
 
                     <h3 className="project-title">
-                      <a href={external}>{title}</a>
+                      <a href={link}>{title}</a>
                     </h3>
 
                     <div
@@ -381,7 +326,7 @@ const Featured = () => {
                       </ul>
                     )}
 
-                    <div className="project-links">
+                    {/* <div className="project-links">
                       {cta && (
                         <a href={cta} aria-label="Course Link" className="cta">
                           Learn More
@@ -397,28 +342,29 @@ const Featured = () => {
                           <Icon name="External" />
                         </a>
                       )}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
-                <div className="project-image">
+                {/* <div className="project-image">
                   <a href={external ? external : github ? github : '#'}>
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
-                </div>
-              </StyledProject>
+                </div> */}
+              </StyledBlog>
             );
           })}
-      </StyledProjectsGrid>
+      </StyledBlogsGrid>
       <Link
         className="inline-link archive-link"
-        to="/archive"
+        to="https://medium.com/@raykipkorir/"
+        target="_blank"
         ref={revealArchiveLink}
         style={{ marginTop: '20px' }}>
-        More projects
+        More blogs
       </Link>
     </section>
   );
 };
 
-export default Featured;
+export default Blogs;

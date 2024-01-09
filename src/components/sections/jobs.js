@@ -245,7 +245,9 @@ const Jobs = () => {
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
       <h2 className="numbered-heading">Where I’ve Worked</h2>
-
+      <p style={{ paddingBottom: '20px' }}>
+        I am available for contract work, remote and full-time job.
+      </p>
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
