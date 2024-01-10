@@ -74,7 +74,7 @@ const Footer = () => {
   });
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NODE_ENV !== 'development') {
       return;
     }
     fetch('https://api.github.com/repos/bchiang7/v4')
@@ -105,22 +105,20 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabindex="-1">
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+        <div>Built by Brittany Chiang</div>
 
-          {githubInfo.stars && githubInfo.forks && (
-            <div className="github-stats">
-              <span>
-                <Icon name="Star" />
-                <span>{githubInfo.stars.toLocaleString()}</span>
-              </span>
-              <span>
-                <Icon name="Fork" />
-                <span>{githubInfo.forks.toLocaleString()}</span>
-              </span>
-            </div>
-          )}
-        </a>
+        {githubInfo.stars && githubInfo.forks && (
+          <div className="github-stats">
+            <span>
+              {/* <Icon name="Star" />
+                <span>{githubInfo.stars.toLocaleString()}</span> */}
+            </span>
+            <span>
+              {/* <Icon name="Fork" />
+                <span>{githubInfo.forks.toLocaleString()}</span> */}
+            </span>
+          </div>
+        )}
       </StyledCredit>
     </StyledFooter>
   );
