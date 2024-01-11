@@ -132,7 +132,7 @@ const About = () => {
     'Angular / Node',
     'Elasticsearch',
     'MySQL / Postgres',
-    'MongoDB',
+    'MongoDB / CouchDB',
     'Redis / Kafka',
     'AWS / GCP',
     'Gitlab / CI-CD',
@@ -141,7 +141,7 @@ const About = () => {
     'Postman / Swagger',
     'Restful API / RestAPI',
     'Unit Testing / AB testing',
-    'Microservices',
+    'Microservices / Distributed Systems',
     'ML / Deep learning',
     'Transformars and LLMs',
   ];
