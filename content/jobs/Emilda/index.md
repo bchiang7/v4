@@ -1,10 +1,10 @@
 ---
-date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
-location: 'Boston, MA'
-range: 'July - December 2015'
-url: 'https://us.mullenlowe.com/'
+date: '2019-04-01'
+title: 'Cross Platform Mobile Developer'
+company: 'Emilda Solutions'
+location: 'Bengaluru, India'
+range: 'April 2019 - April 2020'
+url: 'https://www.emildasolutions.com'
 ---
 
 - Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery

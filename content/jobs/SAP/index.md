@@ -1,10 +1,10 @@
 ---
-date: '2017-12-21'
-title: 'UI Engineer Co-op'
-company: 'Apple'
-location: 'Cupertino, CA'
-range: 'July - December 2017'
-url: 'https://www.apple.com/music/'
+date: '2020-08-01'
+title: 'Frontend Developer'
+company: 'SAP labs India'
+location: 'Bengaluru, India'
+range: 'August 2020 - Present'
+url: 'https://www.sap.com/india/about/labs-india.html'
 ---
 
 - Developed and styled interactive web applications for Apple Music using Ember and SCSS

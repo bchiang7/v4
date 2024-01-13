@@ -59,29 +59,28 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const one = <h1>Hello, I'm</h1>;
+  const two = <h2 className="big-heading">Abin Babu.</h2>;
+  const three = <h3 className="big-heading">I build web and mobile experiences. </h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        I’m a software Engineer, based in Bangalore, India. Currently building CRM v2 for {' '}
+        <a href="https://help.sap.com/docs/CX_NG_SALES" target="_blank" rel="noreferrer">
+          SAP
         </a>
         .
+        Along with exploring new technologies and solving new problems, I also enjoy <span className="bike-image"> Motorcycling, Travelling</span>..
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="https://www.linkedin.com/in/abinbabuabk/"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Lets Connect!
     </a>
   );
 
