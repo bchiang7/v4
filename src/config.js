@@ -3,6 +3,10 @@ module.exports = {
 
   socialMedia: [
     {
+      name: 'Linkedin',
+      url: 'https://www.linkedin.com/in/abinbabuabk/',
+    },
+    {
       name: 'GitHub',
       url: 'https://github.com/abinbabuabu',
     },
@@ -11,12 +15,12 @@ module.exports = {
       url: 'mailto:abinbabuabu@gmail.com',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.linkedin.com/in/abinbabuabk/',
+      name: 'LeetCode',
+      url: 'https://leetcode.com/abinbabuabk/',
     },
     {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/abinbabuabk/',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/arrackal._abu?igsh=ZzFzdHByamx2N2Nx&utm_source=qr',
     },
   ],
 

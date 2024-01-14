@@ -125,7 +125,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Angular', 'TypeScript', 'SpringBoot', 'Java', 'Flutter', 'Dart'];
+  const skills = [
+    'Angular',
+    'TypeScript',
+    'SpringBoot',
+    'Java',
+    'Flutter',
+    'Dart',
+    'Redux',
+    'NgRX',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -134,29 +143,21 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
+            <p>I use code to solve real-world problems :-)</p>
+
             <p>
-              Hello! My name is Abin
+              I started my journey as a software engineer while pursuing my Bachelor's degree from
+              Christ. Met few amazing people there and we bootstrapped{' '}
+              <a href="https://www.emildasolutions.com/">emilda solutions</a>, to solve customer
+              problems through web & mobile solutions. Fast-forward to today, I'm helping the world
+              run better with <a href="https://www.sap.com/india/index.html">SAP</a>.
             </p>
 
-            {/*<p>*/}
-            {/*  Fast-forward to today, and I’ve had the privilege of working at{' '}*/}
-            {/*  <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}*/}
-            {/*  <a href="https://starry.com/">a start-up</a>,{' '}*/}
-            {/*  <a href="https://www.apple.com/">a huge corporation</a>, and{' '}*/}
-            {/*  <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My*/}
-            {/*  main focus these days is building accessible, inclusive products and digital*/}
-            {/*  experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of*/}
-            {/*  clients.*/}
-            {/*</p>*/}
-
-            {/*<p>*/}
-            {/*  I also recently{' '}*/}
-            {/*  <a href="https://www.newline.co/courses/build-a-spotify-connected-app">*/}
-            {/*    launched a course*/}
-            {/*  </a>{' '}*/}
-            {/*  that covers everything you need to build a web app with the Spotify API using Node*/}
-            {/*  &amp; React.*/}
-            {/*</p>*/}
+            <p>
+              In my <a href="/#jobs">career</a>, I've worn multiple hats as a mobile developer,
+              backend developer, and frontend developer. Passion for tinkering and figuring out new
+              things keeps me moving...
+            </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>

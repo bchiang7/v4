@@ -65,25 +65,28 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software Engineer, based in Bangalore, India. Currently building Sales Cloud v2 for {' '}
+        I’m a software Engineer, based in Bangalore, India. Currently building Sales Cloud v2 for{' '}
         <a href="https://help.sap.com/docs/CX_NG_SALES" target="_blank" rel="noreferrer">
           SAP
         </a>
-        .
-        Along with exploring new technologies and solving new problems, I also enjoy <span className="bike-image" id="dynamicText"> Motorcycling, Travelling</span>..
+        . Along with exploring new technologies and solving new problems, I also enjoy Exploring new
+        places in my{' '}
+        <span className="bike-image" id="dynamicText">
+          {' '}
+          motorcycle..{' '}
+        </span>
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://www.linkedin.com/in/abinbabuabk/"
+      href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=abinbabuabk"
       target="_blank"
       rel="noreferrer">
       Lets Connect!
     </a>
   );
-
   const items = [one, two, three, four, five];
 
   return (

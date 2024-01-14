@@ -5,9 +5,9 @@ module.exports = {
     title: 'Abin Babu',
     description:
       'Abin Babu is an Experienced Full Stack Developer skilled in Angular, TypeScript, and Java, dedicated to creating high-quality, scalable solutions.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+    siteUrl: 'https://abinbabu.com/', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -152,7 +152,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-45666519-2',
+        trackingId: '',
       },
     },
   ],
