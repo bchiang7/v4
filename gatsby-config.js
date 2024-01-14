@@ -3,9 +3,8 @@ const config = require('./src/config');
 module.exports = {
   siteMetadata: {
     title: 'Abin Babu',
-    description:
-      'Abin Babu is an Experienced Full Stack Developer skilled in Angular, TypeScript, and Java, dedicated to creating high-quality, scalable solutions.',
-    siteUrl: 'https://abinbabu.com/', // No trailing slash allowed!
+    description: 'Abin Babu is a Software Engineer, building web and mobile experiences.',
+    siteUrl: 'https://abinbabu.com', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '',
   },
