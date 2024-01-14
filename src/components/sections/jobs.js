@@ -79,7 +79,8 @@ const StyledTabButton = styled.button`
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
-  white-space: nowrap;
+  white-space: pre-line;
+
 
   @media (max-width: 768px) {
     padding: 0 15px 2px;
@@ -88,6 +89,7 @@ const StyledTabButton = styled.button`
     ${({ theme }) => theme.mixins.flexCenter};
     min-width: 120px;
     padding: 0 15px;
+    margin-bottom: 6px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
     text-align: center;
@@ -174,6 +176,7 @@ const Jobs = () => {
         edges {
           node {
             frontmatter {
+              team
               title
               company
               location
@@ -250,7 +253,7 @@ const Jobs = () => {
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
             jobsData.map(({ node }, i) => {
-              const { title } = node.frontmatter;
+              const { team } = node.frontmatter;
               return (
                 <StyledTabButton
                   key={i}
@@ -262,7 +265,7 @@ const Jobs = () => {
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
                   aria-controls={`panel-${i}`}>
-                  <span>{title}</span>
+                  <span>{team}</span>
                 </StyledTabButton>
               );
             })}

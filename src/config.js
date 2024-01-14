@@ -7,6 +7,14 @@ module.exports = {
       url: 'https://github.com/abinbabuabu',
     },
     {
+      name: 'Email',
+      url: 'mailto:abinbabuabu@gmail.com',
+    },
+    {
+      name: 'Instagram',
+      url: 'https://www.linkedin.com/in/abinbabuabk/',
+    },
+    {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/abinbabuabk/',
     },
@@ -20,10 +28,6 @@ module.exports = {
     {
       name: 'Experience',
       url: '/#jobs',
-    },
-    {
-      name: 'Work',
-      url: '/#projects',
     },
     {
       name: 'Contact',
