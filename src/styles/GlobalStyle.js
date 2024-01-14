@@ -452,11 +452,6 @@ const GlobalStyle = createGlobalStyle`
     -webkit-background-clip: text; /* For Safari/Chrome */
   }
 
-  .bike-cursor:hover {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bicycle" viewBox="0 0 16 16"><path d="M13 11a3 3 0 0 0 3-3V3H8.5a3.5 3.5 0 0 0-3 1.573A3.5 3.5 0 0 0 2 8a3.5 3.5 0 0 0 3 3H1v2h2.5a.5.5 0 0 0 0-1h-1a2.5 2.5 0 0 1 0-5h6a2.5 2.5 0 0 1 0 5h-1a.5.5 0 0 0 0 1H14v-2a1 1 0 0 0-1-1H9.707L11 5.707 12.293 7H13a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-1a1 1 0 0 0-.986.835A2.497 2.497 0 0 1 11 4.5 2.5 2.5 0 0 1 13.5 7a2.5 2.5 0 0 1 0 5H13v2z"/></svg>'), auto;
-    transform: scale(1.2); /* Optional: Add a scaling effect on hover */
-  }
-
   ${TransitionStyles};
 
   ${PrismStyles};
