@@ -5,8 +5,9 @@
   "author": "Abhinav Ramesh <abhinavramesh03@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AbhiByte/AbhiByte.github.io/"
+    "url": "https://abhibyte.github.io"
   },
+  "homepage": "https://abhibyte.github.io",
   "keywords": [
     "gatsby"
   ],

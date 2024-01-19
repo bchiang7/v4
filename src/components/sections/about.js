@@ -125,7 +125,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'PyTorch',
+    'Scikit-Learn',
+    'React',
+    'Express.js',
+    'Node.js',
+    'Django',
+    'Tkinter',
+    'Embedded C',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -134,31 +143,23 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
+            <p>I love working with great people to solve big problems.</p>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hey there! My name is Abhinav and I'm currently a 3rd-year mechatronics engineering
+              student at the University of Waterloo.
+            </p>
+            <p>
+              So far I've completed 3 internships in software engineering and am well-versed in Full
+              Stack, ML/AI, and embedded systems programming.
+            </p>
+            <p>
+              Currently interested in SWE, ML/AI, and hardware/software integration, and I am
+              currently looking for summer 2024 internships in this domain.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
-            </p>
-
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              Avid reader 📚. Space 🚀 and sports ⚽️ enthusiast. You can view all the books I've
+              read <a href="https://www.goodreads.com/user/show/152602134-abhinav-ramesh">here.</a>{' '}
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

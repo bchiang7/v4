@@ -1,6 +1,6 @@
 ---
 date: '2024-01-9'
-title: 'UI Engineer Co-op'
+title: 'Software Engineer Intern'
 company: 'QEYnet'
 location: 'Remote, Toronto, ON'
 range: 'September - December 2023'
