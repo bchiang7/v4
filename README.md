@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/main/src/images/logo.png" width="100" />
+  <img alt="Logo" src="https://raw.githubusercontent.com/ayushsaklani/ayushsaklani.com/main/src/images/logo.png" width="100" />
 </div>
 <h1 align="center">
   ayushsaklani.com - v1
@@ -8,7 +8,7 @@
   The first iteration of <a href="https://ayushsaklani.com" target="_blank">ayushsaklani.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="" target="_blank"></a>
 </p>
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
+![demo](https://raw.githubusercontent.com/ayushsaklani/ayushsaklani.com/main/src/images/demo.png)
 
 ## 🛠 Installation & Set Up
 
