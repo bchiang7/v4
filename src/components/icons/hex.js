@@ -1,17 +1,19 @@
 import React from 'react';
 
 const IconHex = () => (
-  <svg id="hex" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96">
+  <svg id="hex" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 256 268">
     <title>Hexagon</title>
     <g transform="translate(-8.000000, -2.000000)">
       <g transform="translate(11.000000, 5.000000)">
-        <polygon
-          stroke="currentColor"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          points="39 0 0 22 0 67 39 90 78 68 78 23"
-          fill="currentColor"
+        <rect
+          x="1.5"
+          y="1.5"
+          width="253"
+          height="253"
+          rx="13.5"
+          fill="#64FFDA"
+          stroke="#64FFDA"
+          strokeWidth="3"
         />
       </g>
     </g>
