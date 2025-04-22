@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-js",
+    "path": "/pensieve/tags/docker/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"frontmatter":{"title":"Docker Compose Error","description":"docker-compose version discrepancies","date":"2019-12-13","slug":"/pensieve/docker-error","tags":["WordPress","Docker"]}}}]}},"pageContext":{"tag":"Docker"}},
+    "staticQueryHashes": ["1994492073","2009693873","2031412112","3825832676"]}

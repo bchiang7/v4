@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-js",
+    "path": "/pensieve/tags/css/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"frontmatter":{"title":"Accessible Clickable Cards","description":"Clickable cards with multiple child links","date":"2021-04-21T00:00:00.000Z","slug":"/pensieve/clickable-cards","tags":["Accessibility","CSS"]}}}]}},"pageContext":{"tag":"CSS"}},
+    "staticQueryHashes": ["1994492073","2009693873","2031412112","3825832676"]}

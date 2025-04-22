@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-pensieve-tags-js",
+    "path": "/pensieve/tags/",
+    "result": {"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Accessibility","totalCount":1},{"fieldValue":"CSS","totalCount":1},{"fieldValue":"Dark Mode","totalCount":1},{"fieldValue":"Docker","totalCount":1},{"fieldValue":"Theming","totalCount":1},{"fieldValue":"WordPress","totalCount":2}]}},"pageContext":{}},
+    "staticQueryHashes": ["1994492073","2009693873","2031412112","3825832676"]}

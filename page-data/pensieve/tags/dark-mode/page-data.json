@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-js",
+    "path": "/pensieve/tags/dark-mode/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"frontmatter":{"title":"Dark Mode Toggle","description":"Dark mode without the flash of default theme","date":"2021-04-21T00:00:00.000Z","slug":"/pensieve/dark-mode-toggle","tags":["Theming","Dark Mode"]}}}]}},"pageContext":{"tag":"Dark Mode"}},
+    "staticQueryHashes": ["1994492073","2009693873","2031412112","3825832676"]}
