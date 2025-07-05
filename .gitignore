@@ -9,3 +9,10 @@ package-lock.json
 .DS_Store
 
 .vscode/
+.idea/misc.xml
+.idea/modules.xml
+.idea/personal-website.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml

@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -60,28 +61,24 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Avaneesh Khandekar</h2>;
+  const three = <h3 className="big-heading">SWE at{' '} <a href="https://www.kaseya.com/" target="_blank" rel="noreferrer"><u>Kaseya</u></a></h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
+        I'm a full-stack engineer with 3+ years building scalable, cloud-native, serverless applications.
+        I help build <a href="https://saasalerts.com/" target="_blank" rel="noreferrer">SaaS Alerts</a> at <a href="https://www.kaseya.com/" target="_blank" rel="noreferrer">Kaseya</a>,
+        enhancing real-time threat detection for MSPs. I also have a strong interest in applying AI and machine learning to solve real-world problems.
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href={`mailto:${email}`}
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Get in touch!
     </a>
   );
 

@@ -2,12 +2,12 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Brittany Chiang',
+    title: 'Avaneesh Khandekar',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+      'Avaneesh Khandekar is a software engineer who specializes in building cloud solutions.',
+    siteUrl: 'https://avaneeshk.vercel.app', // No trailing slash allowed!
+    image: 'src/images/me.jpeg', // Path to your image you placed in the 'static' folder
+    twitterUsername: '4v4neesh',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brittany Chiang',
-        short_name: 'Brittany Chiang',
+        name: 'Avaneesh Khandekar',
+        short_name: 'Avaneesh Khandekar',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
@@ -56,6 +56,13 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/recommendations`,
+        name: `recommendations`,
       },
     },
     {
