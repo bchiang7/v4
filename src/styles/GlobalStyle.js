@@ -74,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--navy);
+    background-color: #010026;
     color: var(--slate);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
@@ -237,8 +237,14 @@ const GlobalStyle = createGlobalStyle`
 
   img[alt=""],
   img:not([alt]) {
-    filter: blur(5px);
+  filter: none;
   }
+
+  img {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  }
+
 
   svg {
     width: 100%;

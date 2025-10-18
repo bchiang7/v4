@@ -266,9 +266,10 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
+            {/* Temporarily removed resume button */}
+            {/* <a href="/resume-v2.pdf" className="resume-link">
               Resume
-            </a>
+            </a> */}
           </nav>
         </StyledSidebar>
       </div>
