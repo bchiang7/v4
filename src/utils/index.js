@@ -3,8 +3,8 @@ export const hex2rgba = (hex, alpha = 1) => {
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-export const navDelay = 1000;
-export const loaderDelay = 2000;
+export const navDelay = 200;
+export const loaderDelay = 200;
 
 export const KEY_CODES = {
   ARROW_LEFT: 'ArrowLeft',

@@ -3,18 +3,17 @@ import React from 'react';
 const IconLinkedin = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
+    width="60" // Adjust the width as needed
+    height="60" // Adjust the height as needed
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="feather feather-linkedin">
-    <title>LinkedIn</title>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
+    style={{
+      fill: '#a8b2d1', // Default fill color
+      transition: 'fill 0.3s', // Smooth transition
+    }}
+    onMouseEnter={e => (e.currentTarget.style.fill = '#64ffda')} // Color on hover (accent)
+    onMouseLeave={e => (e.currentTarget.style.fill = '#a8b2d1')} // Default color when not hovered
+  >
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
   </svg>
 );
 

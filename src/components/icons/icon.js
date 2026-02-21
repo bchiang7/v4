@@ -16,6 +16,8 @@ import {
   IconStar,
   IconTwitter,
 } from '@components/icons';
+import IconEmailFolder from './email';
+import IconResume from './resume';
 
 const Icon = ({ name }) => {
   switch (name) {
@@ -37,6 +39,10 @@ const Icon = ({ name }) => {
       return <IconInstagram />;
     case 'Linkedin':
       return <IconLinkedin />;
+    case 'Resume':
+      return <IconResume />;
+    case 'Email':
+      return <IconEmailFolder />;
     case 'Loader':
       return <IconLoader />;
     case 'Logo':

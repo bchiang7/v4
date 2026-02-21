@@ -20,10 +20,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
-  }
+
 
   /* Provide basic, default focus styles.*/
   :focus {
@@ -165,7 +162,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--lightest-slate);
+    color: var(--dark-slate);
     line-height: 1.1;
   }
 
@@ -188,23 +185,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;
 
-    &:before {
-      position: relative;
-      bottom: 4px;
-      counter-increment: section;
-      content: '0' counter(section) '.';
-      margin-right: 10px;
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-      font-weight: 400;
-
-      @media (max-width: 480px) {
-        margin-bottom: -3px;
-        margin-right: 5px;
-      }
-    }
-
+    
     &:after {
       content: '';
       display: block;
@@ -227,6 +208,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+ 
   img,
   svg,
   .gatsby-image-wrapper {
@@ -292,7 +274,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     margin: 0 0 15px 0;
-
+    
     &:last-child,
     &:last-of-type {
       margin: 0;
@@ -397,7 +379,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .subtitle {
-    color: var(--green);
+    color: var(--slate);
     margin: 0 0 20px 0;
     font-size: var(--fz-md);
     font-family: var(--font-mono);

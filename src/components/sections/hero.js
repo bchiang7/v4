@@ -3,18 +3,46 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import Jobs from './jobs'; // Ensure the path to Jobs component is correct
+import About from './about'; // Ensure the path to About component is correct
 
 const StyledHeroSection = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Allocate more space to the hero content */
   min-height: 100vh;
-  height: 100vh;
-  padding: 0;
+  padding: 5px;
+  align-items: start;
+  position: relative;
 
-  @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
-    height: auto;
-    padding-top: var(--nav-height);
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 175px; /* Adjust this value to position the content */
+    padding-right: 20px; /* Add padding to the right */
+    width: 200%; /* Ensure full width */
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-left: -200px;
+    h2,
+    h3 {
+      width: 200%; /* Ensure full width for headings and paragraphs */
+      margin-bottom: 10px;
+    }
+    p {
+      width: 200%; /* Ensure full width for headings and paragraphs */
+      margin-bottom: 10px;
+    }
+  }
+
+  .jobs-content {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    padding-top: 75px; /* Adjust this value to position the content */
+    margin-right: 20px;
+  }
+
+  .big-heading {
+    color: #ffffff;
   }
 
   h1 {
@@ -44,6 +72,31 @@ const StyledHeroSection = styled.section`
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
   }
+
+  .scroll-down-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: jump 2s infinite;
+
+    svg {
+      width: 75px;
+      height: 75px;
+      color: var(--dark-slate);
+    }
+  }
+
+  @keyframes jump {
+    0%,
+    100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, -10px);
+    }
+  }
 `;
 
 const Hero = () => {
@@ -59,52 +112,54 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
-  const four = (
-    <>
-      <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
-        </a>
-        .
-      </p>
-    </>
-  );
-  const five = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer">
-      Check out my course!
-    </a>
-  );
+  const two = <h2 className="big-heading">Grant Chiu</h2>;
+  const three = <h3 className="medium-heading">Software Engineer</h3>;
 
-  const items = [one, two, three, four, five];
+  const items = [two, three];
 
   return (
     <StyledHeroSection>
-      {prefersReducedMotion ? (
-        <>
-          {items.map((item, i) => (
-            <div key={i}>{item}</div>
-          ))}
-        </>
-      ) : (
-        <TransitionGroup component={null}>
-          {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
+      <div className="hero-content">
+        {prefersReducedMotion ? (
+          <>
+            {items.map((item, i) => (
+              <div key={i}>{item}</div>
             ))}
-        </TransitionGroup>
-      )}
+          </>
+        ) : (
+          <TransitionGroup component={null}>
+            {isMounted &&
+              items.map((item, i) => (
+                <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
+                  <div style={{ transitionDelay: `${i + 1}0ms` }}>{item}</div>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
+        )}
+        <About style={{ marginTop: '20px' }} /> {/* Add the About component with top margin */}
+      </div>
+
+      <div className="jobs-content">
+        <Jobs />
+      </div>
+
+      <a href="#contact" className="scroll-down-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M11.29 14.46 6 9.17 7.41 7.75l4.59 4.58 4.59-4.58 1.41 1.42-5.29 5.29a1 1 0 0 1-1.42 0Z"
+          />
+          <path
+            fill="currentColor"
+            d="m11.29 19.46-5.29-5.29L7.41 12.75l4.59 4.58 4.59-4.58 1.41 1.42-5.29 5.29a1 1 0 0 1-1.42 0Z"
+          />
+        </svg>
+      </a>
     </StyledHeroSection>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { useLocation } from '@reach/router';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
@@ -7,7 +8,8 @@ import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
-import { IconLogo, IconHex } from '@components/icons';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import IconResume from './icons/resume';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -17,12 +19,14 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--navy);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
   backdrop-filter: blur(10px);
   transition: var(--transition);
+  border-bottom: 1px solid var(--light-navy);
+  box-shadow: 0 4px 10px -5px var(--navy-shadow); /* Less intense shadow */
 
   @media (max-width: 1080px) {
     padding: 0 40px;
@@ -38,7 +42,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
+        background-color: var(--navy);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
 
@@ -57,55 +61,19 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--lightest-slate);
-  font-family: var(--font-mono);
+  color: var(--light-slate);
+  font-family: var(--font-sans);
   counter-reset: item 0;
   z-index: 12;
 
-  .logo {
-    ${({ theme }) => theme.mixins.flexCenter};
+  .left {
+    display: flex;
+    align-items: center;
+  }
 
-    a {
-      color: var(--green);
-      width: 42px;
-      height: 42px;
-      position: relative;
-      z-index: 1;
-
-      .hex-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        @media (prefers-reduced-motion: no-preference) {
-          transition: var(--transition);
-        }
-      }
-
-      .logo-container {
-        position: relative;
-        z-index: 1;
-        svg {
-          fill: none;
-          user-select: none;
-          @media (prefers-reduced-motion: no-preference) {
-            transition: var(--transition);
-          }
-          polygon {
-            fill: var(--navy);
-          }
-        }
-      }
-
-      &:hover,
-      &:focus {
-        outline: 0;
-        transform: translate(-4px, -4px);
-        .hex-container {
-          transform: translate(4px, 3px);
-        }
-      }
-    }
+  .right {
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -127,17 +95,17 @@ const StyledLinks = styled.div`
       margin: 0 5px;
       position: relative;
       counter-increment: item 1;
-      font-size: var(--fz-xs);
+      font-size: var(--fz-base);
 
       a {
-        padding: 10px;
+        padding: 25px;
+        color: var(--light-slate);
+        transition: color 0.2s, border-bottom 0.2s;
 
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
+        &:hover,
+        &:focus,
+        &.active {
           color: var(--green);
-          font-size: var(--fz-xxs);
-          text-align: right;
         }
       }
     }
@@ -145,12 +113,13 @@ const StyledLinks = styled.div`
 
   .resume-button {
     ${({ theme }) => theme.mixins.smallButton};
-    margin-left: 15px;
+    margin-right: 15px; /* Adjusted for left alignment */
     font-size: var(--fz-xs);
   }
 `;
 
 const Nav = ({ isHome }) => {
+  const location = useLocation();
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -181,67 +150,42 @@ const Nav = ({ isHome }) => {
   const fadeClass = isHome ? 'fade' : '';
   const fadeDownClass = isHome ? 'fadedown' : '';
 
-  const Logo = (
-    <div className="logo" tabIndex="-1">
-      {isHome ? (
-        <a href="/" aria-label="home">
-          <div className="hex-container">
-            <IconHex />
-          </div>
-          <div className="logo-container">
-            <IconLogo />
-          </div>
-        </a>
-      ) : (
-        <Link to="/" aria-label="home">
-          <div className="hex-container">
-            <IconHex />
-          </div>
-          <div className="logo-container">
-            <IconLogo />
-          </div>
-        </Link>
-      )}
-    </div>
-  );
-
   const ResumeLink = (
     <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
+      <IconResume />
+      <span style={{ marginLeft: '8px' }}></span>
     </a>
   );
 
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <StyledNav>
+        <div className="left">{ResumeLink}</div>
         {prefersReducedMotion ? (
-          <>
-            {Logo}
-
+          <div className="right">
             <StyledLinks>
               <ol>
                 {navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <li key={i}>
-                      <Link to={url}>{name}</Link>
+                      <Link to={url} className={location.pathname === url ? 'active' : ''}>
+                        {name}
+                      </Link>
                     </li>
                   ))}
               </ol>
-              <div>{ResumeLink}</div>
             </StyledLinks>
-
             <Menu />
-          </>
+          </div>
         ) : (
-          <>
+          <div className="right">
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  <>{Logo}</>
+                  <div />
                 </CSSTransition>
               )}
             </TransitionGroup>
-
             <StyledLinks>
               <ol>
                 <TransitionGroup component={null}>
@@ -250,24 +194,15 @@ const Nav = ({ isHome }) => {
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                         <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{name}</Link>
+                          <Link to={url} className={location.pathname === url ? 'active' : ''}>
+                            {name}
+                          </Link>
                         </li>
                       </CSSTransition>
                     ))}
                 </TransitionGroup>
               </ol>
-
-              <TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                      {ResumeLink}
-                    </div>
-                  </CSSTransition>
-                )}
-              </TransitionGroup>
             </StyledLinks>
-
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>
@@ -275,7 +210,7 @@ const Nav = ({ isHome }) => {
                 </CSSTransition>
               )}
             </TransitionGroup>
-          </>
+          </div>
         )}
       </StyledNav>
     </StyledHeader>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, Nav, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
 const StyledContent = styled.div`
@@ -28,9 +28,7 @@ const Layout = ({ children, location }) => {
   };
 
   useEffect(() => {
-    if (isLoading) {
-      return;
-    }
+    setIsLoading(false); // Instantly finish loading
 
     if (location.hash) {
       const id = location.hash.substring(1); // location.hash without the '#'
@@ -44,7 +42,7 @@ const Layout = ({ children, location }) => {
     }
 
     handleExternalLinks();
-  }, [isLoading]);
+  }, []);
 
   return (
     <>
@@ -63,8 +61,7 @@ const Layout = ({ children, location }) => {
           ) : (
             <StyledContent>
               <Nav isHome={isHome} />
-              <Social isHome={isHome} />
-              <Email isHome={isHome} />
+              {/* <Social isHome={isHome} /> */}
 
               <div id="content">
                 {children}
