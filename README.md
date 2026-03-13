@@ -1,87 +1,127 @@
-<div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/main/src/images/logo.png" width="100" />
-</div>
-<h1 align="center">
-  brittanychiang.com - v4
-</h1>
-<p align="center">
-  The fourth iteration of <a href="https://brittanychiang.com" target="_blank">brittanychiang.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-</p>
-<p align="center">
-  Previous iterations:
-  <a href="https://github.com/bchiang7/v1" target="_blank">v1</a>,
-  <a href="https://github.com/bchiang7/v2" target="_blank">v2</a>,
-  <a href="https://github.com/bchiang7/bchiang7.github.io" target="_blank">v3</a>
-</p>
-<p align="center">
-  <a href="https://app.netlify.com/sites/brittanychiang/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
-  </a>
-</p>
+# Bijay Subedi Portfolio
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
+Production-ready Gatsby portfolio focused on client project contributions, engineering impact, and resume-aligned experience.
 
-## 🚨 Forking this repo (please read!)
+## Overview
 
-Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
+This portfolio highlights:
 
-I value keeping my site open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
+- Client projects contributed to: **Helios**, **Quoting**, **AListEngine**
+- Software engineering experience and skills from the latest resume
+- Search across portfolio content (About, Experience, Featured Work, Pensieve)
+- Resume download and responsive, sticky navigation
 
-Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
+## Tech Stack
 
-### TL;DR
+- Gatsby 3
+- React 17
+- Styled Components
+- GraphQL (Gatsby data layer)
+- Markdown-driven content (`content/`)
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
+## Project Structure
 
-## 🛠 Installation & Set Up
+- `src/components/sections/` - Homepage sections (`hero`, `about`, `jobs`, `featured`, `contact`)
+- `content/featured/` - Featured client projects shown in “Client Projects I’ve Contributed To”
+- `content/jobs/` - Experience timeline content
+- `static/resume.pdf` - Resume file opened by the Resume button
+- `src/components/global-search.js` - Global search index + modal
 
-1. Install the Gatsby CLI
+## Run Locally
 
-   ```sh
-   npm install -g gatsby-cli
-   ```
+1. Install dependencies
 
-2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
+```bash
+npm install
+```
 
-   ```sh
-   nvm install
-   ```
+2. Start development server
 
-3. Install dependencies
+```bash
+npm start
+```
 
-   ```sh
-   yarn
-   ```
+3. Build for production
 
-4. Start the development server
+```bash
+npm run build
+```
 
-   ```sh
-   npm start
-   ```
+4. Serve production build locally
 
-## 🚀 Building and Running for Production
+```bash
+npm run serve
+```
 
-1. Generate a full static production build
+## Content Editing
 
-   ```sh
-   npm run build
-   ```
+### Featured projects
 
-1. Preview the site as it will appear once deployed
+Edit markdown files:
 
-   ```sh
-   npm run serve
-   ```
+- `content/featured/Helios/index.md`
+- `content/featured/Quoting/index.md`
+- `content/featured/AListEngine/index.md`
 
-## 🎨 Color Reference
+Each file supports fields like:
 
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
-| Navy           | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) `#0a192f` |
-| Light Navy     | ![#112240](https://via.placeholder.com/10/0a192f?text=+) `#112240` |
-| Lightest Navy  | ![#233554](https://via.placeholder.com/10/303C55?text=+) `#233554` |
-| Slate          | ![#8892b0](https://via.placeholder.com/10/8892b0?text=+) `#8892b0` |
-| Light Slate    | ![#a8b2d1](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` |
-| Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
-| White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
-| Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
+- `title`, `cover`, `external`, `tech`
+- `domain`, `role`
+- `projectTypes`, `estimationInputs`, `workflow`, `outcomes`
+
+### Experience
+
+Edit:
+
+- `content/jobs/Upstatement/index.md`
+- `content/jobs/Apple/index.md`
+
+### About & skills
+
+Edit:
+
+- `src/components/sections/about.js`
+
+### Resume file
+
+Replace:
+
+- `static/resume.pdf`
+
+## Deploy to GitHub Pages (Free)
+
+This repo is already prepared for GitHub Pages deployment.
+
+### Local deploy command
+
+Use your values below:
+
+```bash
+GH_PAGES_REPO=YOUR_REPO_NAME \
+GATSBY_SITE_URL=https://YOUR_GITHUB_USERNAME.github.io \
+npm run deploy
+```
+
+### GitHub settings (one-time)
+
+1. Push code to GitHub.
+2. Open repository **Settings -> Pages**.
+3. Source: **Deploy from a branch**.
+4. Branch: **gh-pages** / **root**.
+5. Save.
+
+Your site URL will be:
+
+- `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/`
+
+If repo name is `YOUR_GITHUB_USERNAME.github.io`, run:
+
+```bash
+GATSBY_SITE_URL=https://YOUR_GITHUB_USERNAME.github.io npm run deploy
+```
+
+## Notes
+
+- Archive is intentionally cleared for irrelevant legacy projects.
+- Search index is focused on current portfolio-relevant content.
+- Build may show non-blocking warnings from older Gatsby ecosystem packages.

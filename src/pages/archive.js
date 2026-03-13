@@ -153,33 +153,25 @@ const ArchivePage = ({ location, data }) => {
       <main>
         <header ref={revealTitle}>
           <h1 className="big-heading">Archive</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <p className="subtitle">Selected archived projects</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
-          <table>
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Title</th>
-                <th className="hide-on-mobile">Made at</th>
-                <th className="hide-on-mobile">Built with</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {projects.length > 0 &&
-                projects.map(({ node }, i) => {
-                  const {
-                    date,
-                    github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                  } = node.frontmatter;
+          {projects.length > 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th className="hide-on-mobile">Made at</th>
+                  <th className="hide-on-mobile">Built with</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                {projects.map(({ node }, i) => {
+                  const { date, github, external, ios, android, title, tech, company } =
+                    node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -228,8 +220,11 @@ const ArchivePage = ({ location, data }) => {
                     </tr>
                   );
                 })}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          ) : (
+            <p>No archived projects to display.</p>
+          )}
         </StyledTableContainer>
       </main>
     </Layout>
@@ -245,7 +240,7 @@ export default ArchivePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
+      filter: { fileAbsolutePath: { regex: "/content/projects/__archive__/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -254,10 +249,7 @@ export const pageQuery = graphql`
             date
             title
             tech
-            github
             external
-            ios
-            android
             company
           }
           html

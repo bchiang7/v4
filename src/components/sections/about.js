@@ -125,7 +125,44 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'Ruby',
+    'JavaScript (ES6+)',
+    'HTML5',
+    'CSS3',
+    'SQL',
+    'Ruby on Rails',
+    'React.js',
+    'Redux',
+    'Hotwire (Turbo + Stimulus)',
+    'Sidekiq',
+    'PostgreSQL',
+    'MySQL',
+    'MongoDB',
+    'Redis',
+    'AWS (EC2, S3, Lambda, RDS, CodePipeline)',
+    'Docker',
+    'Kubernetes',
+    'Nginx',
+    'RESTful API Design',
+    'GraphQL',
+    'Third-Party API Integration',
+    'RSpec',
+    'Jest',
+    'TDD / BDD',
+    'Integration Testing',
+    'GitLab CI',
+    'CircleCI',
+    'GitHub Actions',
+    'Git',
+    'GitHub',
+    'GitLab',
+    'Agile/Scrum',
+    'Microservices Architecture',
+    'System Design',
+    'Code Review',
+    'Technical Documentation',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +172,19 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              I am a results-driven Software Engineer with 5+ years of hands-on experience building
+              scalable, high-performance systems with Ruby on Rails and React.js.
             </p>
-
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              At Truemark, I have led development of multiple client applications, migrated
+              monoliths to microservices on AWS, built APIs serving 500K+ monthly requests at 99.9%
+              uptime, and improved key query performance by up to 60%.
             </p>
-
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              I also mentor junior engineers, improve CI/CD automation, and translate business
+              requirements into reliable, production-ready systems.
             </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are the technologies and practices I use regularly:</p>
           </div>
 
           <ul className="skills-list">
@@ -173,7 +196,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/bijay.jpg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

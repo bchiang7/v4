@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, GlobalSearch, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
 const StyledContent = styled.div`
@@ -13,6 +13,7 @@ const StyledContent = styled.div`
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
@@ -62,7 +63,7 @@ const Layout = ({ children, location }) => {
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
             <StyledContent>
-              <Nav isHome={isHome} />
+              <Nav isHome={isHome} onOpenSearch={() => setIsSearchOpen(true)} />
               <Social isHome={isHome} />
               <Email isHome={isHome} />
 
@@ -72,6 +73,8 @@ const Layout = ({ children, location }) => {
               </div>
             </StyledContent>
           )}
+
+          <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </ThemeProvider>
       </div>
     </>

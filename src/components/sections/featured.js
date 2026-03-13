@@ -82,6 +82,25 @@ const StyledProject = styled.li`
         margin-right: 0;
       }
     }
+    .project-meta,
+    .workflow-list,
+    .outcomes-list,
+    .inputs-list {
+      justify-content: flex-end;
+
+      @media (max-width: 768px) {
+        justify-content: flex-start;
+      }
+    }
+    .workflow-list li,
+    .outcomes-list li,
+    .inputs-list li {
+      margin: 0 0 8px 12px;
+
+      @media (max-width: 768px) {
+        margin: 0 12px 8px 0;
+      }
+    }
     .project-image {
       grid-column: 1 / 8;
 
@@ -121,6 +140,13 @@ const StyledProject = styled.li`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     font-weight: 400;
+  }
+
+  .section-intro {
+    margin: 0 0 28px;
+    max-width: 760px;
+    color: var(--slate);
+    font-size: var(--fz-lg);
   }
 
   .project-title {
@@ -179,6 +205,108 @@ const StyledProject = styled.li`
       color: var(--white);
       font-weight: normal;
     }
+  }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 4px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .meta-pill {
+    border: 1px solid rgba(100, 255, 218, 0.35);
+    border-radius: 999px;
+    padding: 6px 12px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .project-subtitle {
+    margin: 18px 0 10px;
+    color: var(--lightest-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .workflow-list,
+  .outcomes-list,
+  .inputs-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .workflow-list {
+    counter-reset: workflow-step;
+  }
+
+  .workflow-list li,
+  .outcomes-list li,
+  .inputs-list li {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 12px 8px 0;
+    border-radius: var(--border-radius);
+    background: rgba(17, 34, 64, 0.65);
+    padding: 7px 10px;
+    color: var(--light-slate);
+    font-size: var(--fz-xs);
+    line-height: 1.5;
+  }
+
+  .workflow-list li:before {
+    counter-increment: workflow-step;
+    content: counter(workflow-step);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: rgba(100, 255, 218, 0.2);
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .outcomes-list li {
+    border: 1px dashed rgba(100, 255, 218, 0.28);
+  }
+
+  .inputs-list li {
+    border: 1px solid rgba(136, 146, 176, 0.38);
+  }
+
+  .outcomes-list li:before {
+    content: 'Outcome';
+    margin-right: 8px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .inputs-list li:before {
+    content: 'Input';
+    margin-right: 8px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
 
   .project-tech-list {
@@ -301,13 +429,28 @@ const StyledProject = styled.li`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .meta-pill {
+      border-color: rgba(100, 255, 218, 0.55);
+      color: var(--lightest-slate);
+      background: rgba(2, 12, 27, 0.35);
+    }
+
+    .workflow-list li,
+    .outcomes-list li,
+    .inputs-list li {
+      color: var(--lightest-slate);
+      background: rgba(2, 12, 27, 0.45);
+    }
+  }
 `;
 
 const Featured = () => {
   const data = useStaticQuery(graphql`
     {
       featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/featured/" } }
+        filter: { fileAbsolutePath: { regex: "/content/featured/(Helios|Quoting|AListEngine)//" } }
         sort: { fields: [frontmatter___date], order: ASC }
       ) {
         edges {
@@ -323,6 +466,12 @@ const Featured = () => {
               github
               external
               cta
+              domain
+              role
+              projectTypes
+              estimationInputs
+              workflow
+              outcomes
             }
             html
           }
@@ -348,22 +497,37 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Client Projects I’ve Contributed To
       </h2>
+      <p className="section-intro">
+        A selection of client products and platforms where I contributed across architecture,
+        implementation, integrations, and delivery workflows.
+      </p>
 
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const {
+              external,
+              title,
+              tech,
+              github,
+              cover,
+              cta,
+              domain,
+              role,
+              projectTypes,
+              estimationInputs,
+              workflow,
+              outcomes,
+            } = frontmatter;
             const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
-
                     <h3 className="project-title">
                       <a href={external}>{title}</a>
                     </h3>
@@ -372,6 +536,59 @@ const Featured = () => {
                       className="project-description"
                       dangerouslySetInnerHTML={{ __html: html }}
                     />
+
+                    {(domain || role) && (
+                      <ul className="project-meta">
+                        {domain && <li className="meta-pill">{domain}</li>}
+                        {role && <li className="meta-pill">{role}</li>}
+                      </ul>
+                    )}
+
+                    {projectTypes && projectTypes.length > 0 && (
+                      <>
+                        <h4 className="project-subtitle">Project Types</h4>
+                        <ul className="project-meta">
+                          {projectTypes.map((type, idx) => (
+                            <li key={idx} className="meta-pill">
+                              {type}
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+
+                    {estimationInputs && estimationInputs.length > 0 && (
+                      <>
+                        <h4 className="project-subtitle">Estimation Inputs</h4>
+                        <ul className="inputs-list">
+                          {estimationInputs.map((input, idx) => (
+                            <li key={idx}>{input}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+
+                    {workflow && workflow.length > 0 && (
+                      <>
+                        <h4 className="project-subtitle">Translation Workflow</h4>
+                        <ol className="workflow-list">
+                          {workflow.map((step, idx) => (
+                            <li key={idx}>{step}</li>
+                          ))}
+                        </ol>
+                      </>
+                    )}
+
+                    {outcomes && outcomes.length > 0 && (
+                      <>
+                        <h4 className="project-subtitle">Project Outcomes</h4>
+                        <ul className="outcomes-list">
+                          {outcomes.map((outcome, idx) => (
+                            <li key={idx}>{outcome}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
 
                     {tech.length && (
                       <ul className="project-tech-list">

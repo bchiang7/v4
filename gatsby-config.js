@@ -1,11 +1,15 @@
 const config = require('./src/config');
+const repoName = process.env.GH_PAGES_REPO || '';
+const pathPrefix = repoName ? `/${repoName}` : '';
+const siteUrl = process.env.GATSBY_SITE_URL || 'https://YOUR_USERNAME.github.io';
 
 module.exports = {
+  pathPrefix,
   siteMetadata: {
     title: 'Brittany Chiang',
     description:
       'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+    siteUrl, // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@bchiang7',
   },
@@ -22,7 +26,7 @@ module.exports = {
       options: {
         name: 'Brittany Chiang',
         short_name: 'Brittany Chiang',
-        start_url: '/',
+        start_url: pathPrefix ? `${pathPrefix}/` : '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',

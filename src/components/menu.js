@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navLinks } from '@config';
 import { KEY_CODES } from '@utils';
@@ -153,9 +154,16 @@ const StyledSidebar = styled.aside`
     margin: 10% auto 0;
     width: max-content;
   }
+
+  .search-link {
+    ${({ theme }) => theme.mixins.bigButton};
+    padding: 18px 50px;
+    margin: 0 auto;
+    width: max-content;
+  }
 `;
 
-const Menu = () => {
+const Menu = ({ onOpenSearch }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -168,7 +176,10 @@ const Menu = () => {
   let lastFocusableEl;
 
   const setFocusables = () => {
-    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+    menuFocusables = [
+      buttonRef.current,
+      ...Array.from(navRef.current.querySelectorAll('a, button')),
+    ];
     firstFocusableEl = menuFocusables[0];
     lastFocusableEl = menuFocusables[menuFocusables.length - 1];
   };
@@ -266,6 +277,16 @@ const Menu = () => {
               </ol>
             )}
 
+            <button
+              type="button"
+              className="search-link"
+              onClick={() => {
+                setMenuOpen(false);
+                onOpenSearch();
+              }}>
+              Search
+            </button>
+
             <a href="/resume.pdf" className="resume-link">
               Resume
             </a>
@@ -274,6 +295,10 @@ const Menu = () => {
       </div>
     </StyledMenu>
   );
+};
+
+Menu.propTypes = {
+  onOpenSearch: PropTypes.func.isRequired,
 };
 
 export default Menu;
