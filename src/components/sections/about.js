@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['Java', 'C++', 'Python', 'MATLAB', 'LTspice'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +135,22 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Adam, and I'm an electrical engineering student with a deep interest
+              in quantum hardware engineering. My fascination with quantum computing began with the
+              release of Microsoft’s Majorana 1. The complexity and the limitless potential of these
+              systems instantly captivated me and set me on a path to explore the intersection of
+              hardware, physics, and computation.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              While I’m still early in my journey, I’ve been actively building foundational skills
+              through hands-on projects. I'm currently building a 6502 computer from scratch to
+              better understand processor design at the transistor level. I also co-developed{' '}
+              <a href="https://github.com/adinashby-vanier-college/ElectriSim">ElectriSim </a>, a
+              collaborative educational app that simulates electrical circuits.
             </p>
 
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I’m familiar with:</p>
           </div>
 
           <ul className="skills-list">
