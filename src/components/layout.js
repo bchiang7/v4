@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
+import { Analytics } from '@vercel/analytics/react';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
@@ -16,7 +17,8 @@ const Layout = ({ children, location }) => {
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
-    const allLinks = Array.from(document.querySelectorAll('a'));
+    const content = document.getElementById('content');
+    const allLinks = Array.from((content || document).querySelectorAll('a'));
     if (allLinks.length > 0) {
       allLinks.forEach(link => {
         if (link.host !== window.location.host) {
@@ -49,6 +51,7 @@ const Layout = ({ children, location }) => {
   return (
     <>
       <Head />
+      <Analytics />
 
       <div id="root">
         <ThemeProvider theme={theme}>

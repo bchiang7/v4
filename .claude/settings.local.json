@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/admin/OneDrive/3. Personal/Personal Website/v1-tks-bchiang7/.husky/**)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\admin\\\\OneDrive\\\\3. Personal\\\\Personal Website\\\\v1-tks-bchiang7\\\\.husky/_\")",
+      "Bash(cat)",
+      "Bash(gh pr create --title 'Security hardening and performance improvements' --body ' *)",
+      "Bash(where gh *)",
+      "Read(//usr/local/bin/**)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Bash(cmd /c \"where gh\")",
+      "Bash(cmd /c \"where gh 2>NUL || echo not found\")",
+      "Read(//mnt/c/Users/admin/AppData/Local/**)",
+      "Bash(cmd /c \"gh pr create --help\")",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell -Command ' *)",
+      "Bash(git credential *)",
+      "Bash(curl -s \"https://api.github.com/repos/bachngb/v1-tks-bchiang7/pulls?head=bachngb:claude%2Fsweet-hugle-14f9cb&state=open\")"
+    ]
+  }
+}

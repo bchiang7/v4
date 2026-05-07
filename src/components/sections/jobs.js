@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
@@ -222,25 +222,28 @@ const Jobs = () => {
   useEffect(() => focusTab(), [tabFocus]);
 
   // Focus on tabs when using up & down arrow keys
-  const onKeyDown = e => {
-    switch (e.key) {
-      case KEY_CODES.ARROW_UP: {
-        e.preventDefault();
-        setTabFocus(tabFocus - 1);
-        break;
-      }
+  const onKeyDown = useCallback(
+    e => {
+      switch (e.key) {
+        case KEY_CODES.ARROW_UP: {
+          e.preventDefault();
+          setTabFocus(tabFocus - 1);
+          break;
+        }
 
-      case KEY_CODES.ARROW_DOWN: {
-        e.preventDefault();
-        setTabFocus(tabFocus + 1);
-        break;
-      }
+        case KEY_CODES.ARROW_DOWN: {
+          e.preventDefault();
+          setTabFocus(tabFocus + 1);
+          break;
+        }
 
-      default: {
-        break;
+        default: {
+          break;
+        }
       }
-    }
-  };
+    },
+    [tabFocus],
+  );
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>

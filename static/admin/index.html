@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+    <script>
+      // Unregister any stale Gatsby service worker and clear its caches so
+      // Decap CMS always loads a fresh config.yml.
+      (function () {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            var hadSW = regs.length > 0;
+            regs.forEach(function (r) { r.unregister(); });
+            if (window.caches && caches.keys) {
+              caches.keys().then(function (keys) {
+                keys.forEach(function (k) { caches.delete(k); });
+                if (hadSW) window.location.reload();
+              });
+            } else if (hadSW) {
+              window.location.reload();
+            }
+          });
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>

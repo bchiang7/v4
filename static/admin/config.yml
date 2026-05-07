@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: bachngb/v1-tks-bchiang7
+  branch: main
+  base_url: https://bachngo.com
+  auth_endpoint: /api/auth
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: community
+    label: Community Events
+    folder: content/community
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Event Photo, name: image, widget: image, required: false, allow_multiple: false }
+      - { label: Event Type, name: type, widget: select, options: ['upcoming', 'past'] }
+      - { label: Event URL, name: url, widget: string, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Description, name: body, widget: markdown }
+
+  - name: writing
+    label: Writing (Substack Posts)
+    folder: content/writing
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Substack URL, name: external, widget: string }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Excerpt / Description, name: body, widget: markdown }

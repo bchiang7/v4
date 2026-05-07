@@ -45,8 +45,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.postsRemark.edges;
 
   posts.forEach(({ node }) => {
+    const slug = node.frontmatter.slug;
+    if (!slug || !/^[a-z0-9/-]+$/.test(slug)) {
+      reporter.warn(`Skipping page with invalid slug: "${slug}"`);
+      return;
+    }
     createPage({
-      path: node.frontmatter.slug,
+      path: slug,
       component: postTemplate,
       context: {},
     });

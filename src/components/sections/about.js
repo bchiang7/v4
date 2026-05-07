@@ -84,6 +84,7 @@ const StyledPic = styled.div`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
+      will-change: filter;
     }
 
     &:before,
@@ -125,7 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['AWS', 'Azure', 'GCP', 'Splunk', 'RStudio', 'Kali Linux'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -134,32 +135,19 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
-            </p>
+            <p>I’m a security engineer who lives by one simple rule:</p>
 
-            <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
-            </p>
+            <p>I build secure systems because I’m a big fan of uninterrupted sleep.</p>
+            
+            <p>My journey started as a "sponge" at <a href="https://iahn.fpt.edu.vn/" target="_blank" rel="noopener noreferrer">a tech university</a> and grew
+            through five years at <a href="https://fpt-is.com/en/" target="_blank" rel="noopener noreferrer">a leading regional systems integrator</a>. <a href="https://fpt-is.com/en/fpt-eagleeye/" target="_blank" rel="noopener noreferrer">My team</a> there
+            taught me the real deal: security isn’t a bandage
+            you slap on at the end—it’s an architectural choice. If it’s not secure by design from the first line
+            of code, it’s just not finished.</p>
 
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p>
+            <p>After building on five years in Vietnam, I moved to Australia to broaden my scope. I’m currently
+              working toward <a href="https://adelaide.edu.au/study/degrees/master-of-information-technology-cyber-security/" target="_blank" rel="noopener noreferrer">my Master of IT</a>
+              , fueled by plenty of coffee and collaborating with some brilliant minds on the 2026 frontiers of <a href="https://hoaio.com/" target="_blank" rel="noopener noreferrer">Quantum</a>, <a href="https://www.aisa.org.au/" target="_blank" rel="noopener noreferrer">Cloud Security</a>, and <a href="https://www.aicollective.com/" target="_blank" rel="noopener noreferrer">AI</a>.</p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
@@ -173,7 +161,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
