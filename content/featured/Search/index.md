@@ -2,7 +2,7 @@
 date: '1'
 title: 'Provider Search'
 cover: './search2x.jpg'
-external: '/search.pdf'
+external: '/case-studies/search'
 company: 'Florida Blue'
 tech:
   - Adobe XD

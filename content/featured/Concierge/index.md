@@ -2,7 +2,7 @@
 date: '1'
 title: 'Concierge Service Model'
 cover: './concierge2x.jpg'
-external: '/concierge.pdf'
+external: '/case-studies/concierge'
 company: 'Florida Blue'
 tech:
   - Adobe XD

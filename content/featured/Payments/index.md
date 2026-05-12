@@ -2,7 +2,7 @@
 date: '2'
 title: 'Payments'
 cover: './payments2x.jpg'
-external: '/payments.pdf'
+external: '/case-studies/payments'
 company: 'Florida Blue'
 tech:
   - Adobe XD

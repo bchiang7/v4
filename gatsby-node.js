@@ -86,11 +86,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       caseStudiesRemark: allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "/content/featured/" }
-          frontmatter: { slug: { ne: null } }
-        }
-        sort: { frontmatter: { date: ASC } }
+        filter: { fileAbsolutePath: { regex: "/content/case-studies/" } }
         limit: 1000
       ) {
         edges {

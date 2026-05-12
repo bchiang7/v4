@@ -2,7 +2,7 @@
 date: '1'
 title: 'Customer Portal'
 cover: './portal2x.jpg'
-external: '/portal.pdf'
+external: '/case-studies/portal'
 company: 'Florida Blue'
 tech:
   - Adobe XD
