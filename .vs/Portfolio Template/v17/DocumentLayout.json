@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\02.Work Projects\\Coding\\Portfolio Template\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\02.Work Projects\\Coding\\Portfolio Template\\content\\featured\\HalcyonTheme\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:content\\featured\\HalcyonTheme\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\02.Work Projects\\Coding\\Portfolio Template\\content\\featured\\HalcyonTheme\\demo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:content\\featured\\HalcyonTheme\\demo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\02.Work Projects\\Coding\\Portfolio Template\\gatsby-browser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gatsby-browser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.md",
+              "DocumentMoniker": "D:\\02.Work Projects\\Coding\\Portfolio Template\\content\\featured\\HalcyonTheme\\index.md",
+              "RelativeDocumentMoniker": "content\\featured\\HalcyonTheme\\index.md",
+              "ToolTip": "D:\\02.Work Projects\\Coding\\Portfolio Template\\content\\featured\\HalcyonTheme\\index.md",
+              "RelativeToolTip": "content\\featured\\HalcyonTheme\\index.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-07-21T17:08:58.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "demo.png",
+              "DocumentMoniker": "D:\\02.Work Projects\\Coding\\Portfolio Template\\content\\featured\\HalcyonTheme\\demo.png",
+              "RelativeDocumentMoniker": "content\\featured\\HalcyonTheme\\demo.png",
+              "ToolTip": "D:\\02.Work Projects\\Coding\\Portfolio Template\\content\\featured\\HalcyonTheme\\demo.png",
+              "RelativeToolTip": "content\\featured\\HalcyonTheme\\demo.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-07-21T17:08:43.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "gatsby-browser.js",
+              "DocumentMoniker": "D:\\02.Work Projects\\Coding\\Portfolio Template\\gatsby-browser.js",
+              "RelativeDocumentMoniker": "gatsby-browser.js",
+              "ToolTip": "D:\\02.Work Projects\\Coding\\Portfolio Template\\gatsby-browser.js",
+              "RelativeToolTip": "gatsby-browser.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-07-21T17:08:26.986Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

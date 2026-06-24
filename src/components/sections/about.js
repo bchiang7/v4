@@ -125,7 +125,14 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'Mechatronics',
+    'Product Design',
+    'Tech Leadership',
+    'Electronics',
+    'Agile for Hardware',
+    'Prototyping',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +142,30 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Lumbi and I'm a dedicated climate tech engineer with extensive
+              experience in driving innovative and sustainable solutions. Starting as a Mechatronics
+              Engineer, I have honed my skills in product management and cross-functional leadership
+              to address complex climate challenges.
+            </p>
+            <p>
+              My journey has been defined by a commitment of excellence, from spearheading
+              initiatives that transform ideas into impactful products to fostering collaborative
+              environments where innovation thrives. Whether it's identifying emerging trends or
+              executing scalable solutions, I thrive on making a tangible difference in the industry
+              and in the world.
             </p>
 
             <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              <a href="https://www.roam-electric.com/">a fast growing automotive company </a>,{' '}
+              <a href="https://www.sirona.tech/">a CO2 Direct Air Capture start-up</a>,{' '}
+              <a href="https://www.kpc.co.ke/">a huge oil and gas corporation</a>, and{' '}
+              <a href="https://www.ketraco.co.ke/">a nation-wide utility provider</a>. My main focus
+              these days is designing and building sustainable, accessible, and inclusive hardware
+              products.
             </p>
 
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
-            </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are some of my skills:</p>
           </div>
 
           <ul className="skills-list">
