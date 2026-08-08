@@ -23,7 +23,7 @@ const StyledSocialLinks = styled.div`
     width: 100%;
     max-width: 270px;
     margin: 0 auto 10px;
-    color: var(--light-slate);
+    color: var(--light-text-color);
   }
 
   ul {
@@ -43,7 +43,7 @@ const StyledSocialLinks = styled.div`
 `;
 
 const StyledCredit = styled.div`
-  color: var(--light-slate);
+  color: var(--text-color);
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
   line-height: 1;
@@ -89,7 +89,16 @@ const StyledCredit = styled.div`
   }
 
   .footer-how-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease, opacity 0.2s ease;
+    opacity: 0;
+  }
+
+  .footer-how-wrap.expanded {
+    grid-template-rows: 1fr;
     margin-top: 6px;
+    opacity: 1;
   }
 
   .footer-how-trigger {
@@ -112,23 +121,13 @@ const StyledCredit = styled.div`
   }
 
   .footer-how-stack {
-    margin-top: 6px;
+    overflow: hidden;
+    min-height: 0;
     padding: 8px 12px;
-    font-size: 11px;
+    font-size: var(--fz-xxs);
     color: var(--text-color);
     background: var(--light-bg-color);
-    border-radius: 6px;
-    max-height: 80px;
-    overflow: hidden;
-    transition: max-height 0.25s ease, opacity 0.2s ease;
-  }
-
-  .footer-how-stack.collapsed {
-    max-height: 0;
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    opacity: 0;
+    border-radius: var(--border-radius);
   }
 
   .footer-time-msg {
@@ -191,9 +190,9 @@ const Footer = () => {
             · {t('footer_how_trigger')}
           </button>
         </div>
-        <div className="footer-how-wrap">
+        <div className={`footer-how-wrap${showHow ? ' expanded' : ''}`}>
           <div
-            className={`footer-how-stack ${showHow ? '' : 'collapsed'}`}
+            className="footer-how-stack"
             role="region"
             aria-label={t('footer_how_stack')}
             aria-hidden={!showHow}>

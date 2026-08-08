@@ -39,8 +39,9 @@ const StyledHeroSection = styled.section`
 
   h3 {
     margin-top: 10px;
-    color: var(--slate);
-    line-height: 0.9;
+    color: var(--light-text-color);
+    line-height: 1.0;
+    font-size: var(--fz-heading);
   }
 
   p {
@@ -55,7 +56,7 @@ const StyledHeroSection = styled.section`
 
 const CreaiLine = styled.p`
   margin: 20px 0 0;
-  color: var(--slate);
+  color: var(--light-text-color);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -112,7 +113,7 @@ const Hero = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const seq = [];
-  for (const greeting of shuffleArray(translations)) {
+  for (const greeting of shuffleArray([...translations])) {
     seq.push(`${greeting.flag}  ${greeting.text}`);
     seq.push(1200);
     seq.push(``);
@@ -130,11 +131,14 @@ const Hero = () => {
 
   const { t } = useLanguage();
 
-  const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
-  //const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
+  const one = prefersReducedMotion ? (
+    <h1>{translations[0].flag}&nbsp;&nbsp;{translations[0].text}</h1>
+  ) : (
+    <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />
+  );
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
   const three = (
-    <h3 className="big-heading" style={{ fontSize: 30 }}>
+    <h3 className="big-heading">
       {t('hero_txt_keywords')}
     </h3>
   );
@@ -156,7 +160,7 @@ const Hero = () => {
   const proudly = <p>{t('hero_text_proud')}</p>;
   const five = (
     <a className="email-link" href="#contact">
-      {t('hero_btn_resume')}
+      {t('hero_btn_cta')}
     </a>
   );
 

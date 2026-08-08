@@ -17,8 +17,9 @@ const StyledScrollToTopContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     color: var(--primary-color);
     background-color: transparent;
     border-radius: 50%;

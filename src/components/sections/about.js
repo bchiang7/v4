@@ -26,11 +26,6 @@ const pingpongBounce = keyframes`
   80% { transform: translateY(0); }
 `;
 
-const ResumeLink = styled.a`
-  ${({ theme }) => theme.mixins.smallButton};
-  margin-top: 30px;
-`;
-
 const StyledText = styled.div`
   .pingpong-emoji {
     display: inline-block;
@@ -64,7 +59,7 @@ const StyledText = styled.div`
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--green);
+        color: var(--primary-color);
         font-size: var(--fz-sm);
         line-height: 12px;
       }
@@ -127,7 +122,7 @@ const StyledPic = styled.div`
     }
 
     &:after {
-      border: 2px solid var(--green);
+      border: 2px solid var(--signal-color);
       top: 20px;
       left: 20px;
       z-index: -1;
@@ -191,10 +186,6 @@ const About = () => {
               </a>
               playlists.
             </p>
-
-            <ResumeLink href="/angelortizv_cv.pdf" target="_blank" rel="noopener noreferrer">
-              {t('about_text_resume')}
-            </ResumeLink>
           </div>
         </StyledText>
 
@@ -206,7 +197,7 @@ const About = () => {
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Headshot"
+              alt="Angelo Ortiz Vega"
             />
           </div>
           <AboutFooter />

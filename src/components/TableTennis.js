@@ -29,18 +29,23 @@ const paddleR = keyframes`
 `;
 
 const Wrap = styled.div`
+  --tt-table: #0d5c3d;
+  --tt-table-shadow: #0a4a30;
+  --tt-surface: #f5f5f5;
+  --tt-surface-dark: #e8e8e8;
+
   width: 180px;
   height: 56px;
   margin: 14px auto 0;
   position: relative;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   overflow: hidden;
 
   .table {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, #0d5c3d 0%, #0a4a30 100%);
-    border-radius: 4px;
+    background: linear-gradient(180deg, var(--tt-table) 0%, var(--tt-table-shadow) 100%);
+    border-radius: var(--border-radius);
     box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.08);
   }
 
@@ -60,7 +65,7 @@ const Wrap = styled.div`
     width: 8px;
     height: 8px;
     margin-left: -4px;
-    background: radial-gradient(circle at 30% 30%, #fff, #f5f5f5);
+    background: radial-gradient(circle at 30% 30%, #fff, var(--tt-surface));
     border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     animation: ${ballX} 2s ease-in-out infinite, ${ballY} 2s ease-in-out infinite;
@@ -71,8 +76,8 @@ const Wrap = styled.div`
     top: 50%;
     width: 10px;
     height: 22px;
-    background: linear-gradient(180deg, #fff 0%, #e8e8e8 100%);
-    border-radius: 2px;
+    background: linear-gradient(180deg, #fff 0%, var(--tt-surface-dark) 100%);
+    border-radius: var(--border-radius);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 

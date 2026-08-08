@@ -91,7 +91,7 @@ const StyledNav = styled.nav`
       background: none;
       border: none;
       padding: 0 !important;
-      border-radius: 9999px;
+      border-radius: var(--border-radius-circle);
       cursor: pointer;
       color: var(--primary-color);
       width: 48px;

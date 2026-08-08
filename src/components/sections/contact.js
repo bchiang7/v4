@@ -63,19 +63,19 @@ const StyledContactSection = styled.section`
     font-size: clamp(40px, 5vw, 60px);
   }
 
-  .contact-cta {
-    margin-top: 24px;
-    margin-bottom: 8px;
-    font-size: var(--fz-lg);
-    font-weight: 500;
-    color: var(--primary-color);
+  .response-time {
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.7;
   }
 
   .location {
     margin-top: 16px;
     font-family: var(--font-mono);
     font-size: var(--fz-sm);
-    color: var(--light-slate);
+    color: var(--light-text-color);
   }
 
   .contact-actions {
@@ -147,11 +147,9 @@ const Contact = () => {
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="numbered-heading overline">{t('contact_text_over')}</h2>
 
-      <h2 className="title">{t('contact_text_title')}</h2>
+      <h2 className="title">{t('contact_text_cta')}</h2>
 
       <p>{t('contact_text_desc')}</p>
-
-      <p className="contact-cta">{t('contact_text_cta')}</p>
 
       <p className="location" aria-label={t('contact_location_aria')}>
         {t('contact_location')}
@@ -161,6 +159,7 @@ const Contact = () => {
         <a className="email-link" href={`mailto:${email}`}>
           {t('contact_btn_hello')}
         </a>
+        <p className="response-time">{t('contact_response_time')}</p>
         <button
           type="button"
           className="copy-email-btn"

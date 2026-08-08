@@ -84,7 +84,7 @@ const ScrollHint = styled.button`
     color: var(--primary-color);
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: var(--fz-sm);
     cursor: pointer;
     box-shadow: 0 2px 8px var(--bg-color-shadow);
     transition: var(--transition);

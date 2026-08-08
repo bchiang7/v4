@@ -14,7 +14,7 @@ const StyledProjectsSection = styled.section`
   align-items: center;
 
   h2 {
-    font-size: clamp(24px, 5vw, var(--fz-heading));
+    font-size: clamp(22px, 5vw, 34px);
   }
 
   .archive-link {
@@ -170,7 +170,7 @@ const StyledProject = styled.li`
 
   .project-description {
     color: var(--light-text-color);
-    font-size: 17px;
+    font-size: var(--fz-lg);
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
@@ -389,6 +389,11 @@ const Projects = () => {
       {hasMore && !showMore && (
         <button type="button" className="more-button" onClick={() => setShowMore(true)}>
           {t('projects_show_more')}
+        </button>
+      )}
+      {showMore && (
+        <button type="button" className="more-button" onClick={() => setShowMore(false)}>
+          {t('projects_show_less')}
         </button>
       )}
     </StyledProjectsSection>

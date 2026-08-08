@@ -57,7 +57,7 @@ const List = styled.ul`
       padding: 4px 8px;
       background: var(--light-bg-color);
       border: 1px solid var(--outline-light);
-      border-radius: 4px;
+      border-radius: var(--border-radius);
       margin-right: 12px;
       flex-shrink: 0;
     }

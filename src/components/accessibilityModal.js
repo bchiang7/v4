@@ -27,7 +27,7 @@ const ModalBox = styled.div`
   background-color: var(--bg-color);
   color: var(--text-color);
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   max-width: 420px;
   width: 90%;
   max-height: 90vh;
@@ -69,7 +69,7 @@ const OptionCell = styled.div`
 const OptionButton = styled.button`
   background: var(--highlight-tint);
   border: none;
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   width: 100%;
   max-width: 160px;
   height: 90px;
@@ -92,7 +92,7 @@ const OptionButton = styled.button`
 
 const OptionLabel = styled.div`
   margin-top: 0.25rem;
-  font-size: 0.85rem;
+  font-size: var(--fz-sm);
   color: var(--text-color);
 `;
 
@@ -100,7 +100,7 @@ const CloseButton = styled.button`
   margin-top: 1rem;
   padding: 0.5rem 1.25rem;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   border: 1px solid var(--primary-color);
   background: none;
   color: var(--primary-color);
@@ -114,6 +114,16 @@ const ButtonRow = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+`;
+
+const ZoomFallback = styled.p`
+  grid-column: 1 / -1;
+  font-size: var(--fz-xs);
+  color: var(--light-text-color);
+  font-family: var(--font-mono);
+  text-align: center;
+  padding: 0.5rem 0;
+  margin: 0;
 `;
 
 const STYLE_ID = 'big-cursor-style';
@@ -138,11 +148,24 @@ const getStoredZoom = () => {
 const AccessibilityModal = ({ isOpen, onClose }) => {
   const [bigCursor, setBigCursor] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(getStoredZoom);
+  const [zoomSupported, setZoomSupported] = useState(true);
   const { t } = useLanguage();
   const { openShortcuts } = useKeyboardShortcuts();
 
   const [isGrayscale, setIsGrayscale] = useState(false);
   const [isInverted, setIsInverted] = useState(false);
+
+  useEffect(() => {
+    const supported =
+      typeof CSS !== 'undefined' &&
+      typeof CSS.supports === 'function' &&
+      CSS.supports('zoom', '1');
+    setZoomSupported(supported);
+    if (!supported) {
+      document.documentElement.style.removeProperty('zoom');
+      document.body.style.removeProperty('zoom');
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.style.filter = isGrayscale ? 'grayscale(100%)' : 'none';
@@ -221,14 +244,15 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
 
   // === Zoom ===
   useEffect(() => {
+    if (!zoomSupported) {return;}
     const value = Math.round(zoomLevel * 10) / 10;
-    document.body.style.zoom = String(value);
+    document.documentElement.style.zoom = String(value);
     try {
       localStorage.setItem(ZOOM_STORAGE_KEY, String(value));
     } catch {
       // ignore storage errors (private mode, quota, etc.)
     }
-  }, [zoomLevel]);
+  }, [zoomLevel, zoomSupported]);
 
   const handleZoomIn = () => {
     setZoomLevel(prev => Math.min(prev + ZOOM_STEP, ZOOM_MAX));
@@ -272,25 +296,31 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
         <h2 id="accessibility-modal-title">{t('accessibility_text_title')}</h2>
 
         <Grid>
-          <OptionCell>
-            <OptionButton
-              type="button"
-              onClick={handleZoomIn}
-              title={t('accessibility_text_zoomIn')}>
-              <IconZoomIn />
-            </OptionButton>
-            <OptionLabel>{t('accessibility_text_zoomIn')}</OptionLabel>
-          </OptionCell>
+          {zoomSupported ? (
+            <>
+              <OptionCell>
+                <OptionButton
+                  type="button"
+                  onClick={handleZoomIn}
+                  title={t('accessibility_text_zoomIn')}>
+                  <IconZoomIn />
+                </OptionButton>
+                <OptionLabel>{t('accessibility_text_zoomIn')}</OptionLabel>
+              </OptionCell>
 
-          <OptionCell>
-            <OptionButton
-              type="button"
-              onClick={handleZoomOut}
-              title={t('accessibility_text_zoomOut')}>
-              <IconZoomOut />
-            </OptionButton>
-            <OptionLabel>{t('accessibility_text_zoomOut')}</OptionLabel>
-          </OptionCell>
+              <OptionCell>
+                <OptionButton
+                  type="button"
+                  onClick={handleZoomOut}
+                  title={t('accessibility_text_zoomOut')}>
+                  <IconZoomOut />
+                </OptionButton>
+                <OptionLabel>{t('accessibility_text_zoomOut')}</OptionLabel>
+              </OptionCell>
+            </>
+          ) : (
+            <ZoomFallback>{t('accessibility_zoom_unsupported')}</ZoomFallback>
+          )}
 
           <OptionCell>
             <OptionButton

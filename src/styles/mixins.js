@@ -54,6 +54,10 @@ const mixins = {
       color: var(--primary-color);
       outline: 0;
     }
+    &:focus-visible {
+      outline: 2px solid var(--signal-color);
+      outline-offset: 3px;
+    }
   `,
 
   inlineLink: css`
@@ -75,6 +79,10 @@ const mixins = {
         color: var(--primary-color) !important;
         transition: var(--transition);
       }
+    }
+    &:focus-visible {
+      outline: 2px solid var(--signal-color);
+      outline-offset: 3px;
     }
     &:after {
       content: '';

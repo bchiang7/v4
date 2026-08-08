@@ -10,7 +10,7 @@
 
   "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
   "hero_txt_about": "I build software that creates real business value. As a Fullstack AI Engineer and Tech Lead, I specialize in shipping AI-powered products, scalable systems, and automation solutions — owning the full stack from architecture and ML integration to the interfaces people use.",
-  "hero_btn_resume": "Get in touch",
+  "hero_btn_cta": "Get in touch",
   "hero_text_proud": "Proudly from 🇨🇷",
   "hero_txt_creai": "Currently shipping features at",
 
@@ -20,7 +20,6 @@
   "about_text_desc_2": "My work spans the full product lifecycle: designing and shipping full-stack applications, REST APIs, cloud-native solutions, and ML systems across startups and product companies. I help teams move faster, automate repetitive processes, and integrate AI effectively — owning business-critical domains, driving architectural decisions with a cross-functional team of 20+, and partnering with Data Science to bring ML capabilities into production.",
   "about_text_desc_3_1": "I am currently completing a degree in Computer Engineering at the ",
   "about_text_desc_3_2": ", building a strong theoretical foundation in systems and architecture. Alongside, I have spent more than three years as a University Lecturer — teaching Artificial Intelligence, Data Analysis, Machine Learning, and Full Stack Development at ",
-  "about_text_desc_4_1": "In parallel, I have worked as a university lecturer for over three years, teaching Artificial Intelligence, Data Analysis, Full Stack Development, and UX Design at ",
   "about_text_desc_4_2": " — bridging academia and industry through hands-on, project-based learning.",
   "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
   "about_text_desc_5_a": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, ",
@@ -116,12 +115,13 @@
   "projects_filter_label": "Filter projects by technology",
   "projects_filter_all": "All",
   "projects_show_more": "Show more",
+  "projects_show_less": "Show less",
 
   "blog_section_title": "Latest on the Blog",
   "blog_section_intro": "Recent writing on software, AI, and what I'm learning.",
   "blog_section_link": "View all posts at angelortizv.com",
 
-  "gallery_text_title": "Some things from my life in pictures",
+  "gallery_text_title": "My life in pictures",
   "gallery_text_less": "Show Less",
   "gallery_text_more": "Show More",
   "gallery_empty": "No photos yet.",
@@ -134,7 +134,7 @@
 
   "contact_text_over": "What's Next?",
   "contact_text_title": "Get In Touch",
-  "contact_text_desc": "Although I'm not currently looking for freelance opportunities, my inbox is always open. If you have any questions or just want to say hello, I'll do my best to get back to you!",
+  "contact_text_desc": "Working on something interesting? Have a question, or just want to say hi — I'll get back to you.",
   "contact_text_cta": "Let's build your next AI-powered product.",
   "contact_location": "San José, Costa Rica · UTC−6",
   "contact_location_aria": "Location and timezone",
@@ -142,6 +142,7 @@
   "contact_btn_copy": "Copy email",
   "contact_btn_copied": "Copied!",
   "contact_btn_copy_aria": "Copy email address",
+  "contact_response_time": "Usually responds within 24 hours",
 
   "footer_text_designed": "Designed by",
   "footer_text_build": "Built with 🫀 by",
@@ -154,9 +155,10 @@
   "full_archive_text_table_made": "Made at",
   "full_archive_text_table_tech": "Built with",
 
-  "accessibility_text_title": "Accessiblity Options",
+  "accessibility_text_title": "Accessibility Options",
   "accessibility_text_zoomIn": "Zoom In",
   "accessibility_text_zoomOut": "Zoom Out",
+  "accessibility_zoom_unsupported": "Use Ctrl +/− (Win) or ⌘ +/− (Mac) to zoom",
   "accessibility_text_biggerCursor": "Large Cursor",
   "accessibility_text_undoChanges": "Undo Changes",
   "accessibility_text_shortcuts": "Keyboard shortcuts (?)",

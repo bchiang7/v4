@@ -33,10 +33,11 @@ const variables = css`
     --fz-heading: 30px;
 
     --border-radius: 2px;
+    --border-radius-circle: 50%;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
 
-    --tab-height: 42px;
+    --tab-height: 44px;
     --tab-width: 120px;
 
     --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);

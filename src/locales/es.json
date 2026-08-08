@@ -10,7 +10,7 @@
 
   "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
   "hero_txt_about": "Construyo software que genera valor real de negocio. Como Fullstack AI Engineer y Tech Lead, me especializo en llevar a producción productos con IA, sistemas escalables y soluciones de automatización — con ownership del stack completo, desde la arquitectura e integración de ML hasta las interfaces.",
-  "hero_btn_resume": "Ponte en contacto",
+  "hero_btn_cta": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
   "hero_txt_creai": "Actualmente desarrollando en",
 
@@ -20,7 +20,6 @@
   "about_text_desc_2": "Mi trabajo abarca el ciclo completo del producto: diseñar y llevar a producción aplicaciones full-stack, APIs, soluciones cloud-native y sistemas de ML en startups y empresas de producto. Ayudo a los equipos a moverse más rápido, automatizar procesos repetitivos e integrar IA de forma efectiva — con ownership de dominios de negocio críticos, tomando decisiones arquitectónicas en equipos de más de 20 personas y colaborando con Data Science para llevar capacidades de ML a producción.",
   "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el ",
   "about_text_desc_3_2": ", construyendo una base teórica sólida en sistemas y arquitectura. Paralelamente, llevo más de tres años como Profesor Universitario — impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Machine Learning y Desarrollo Full Stack en la ",
-  "about_text_desc_4_1": "Paralelamente, he trabajado como docente universitario/profesor durante más de tres años, impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Desarrollo Full Stack y Diseño de Experiencia de Usuario en la ",
   "about_text_desc_4_2": " — conectando academia e industria a través de aprendizaje práctico y basado en proyectos.",
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
   "about_text_desc_5_a": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos, ",
@@ -116,12 +115,13 @@
   "projects_filter_label": "Filtrar proyectos por tecnología",
   "projects_filter_all": "Todos",
   "projects_show_more": "Ver más",
+  "projects_show_less": "Ver menos",
 
   "blog_section_title": "Últimos en el blog",
   "blog_section_intro": "Escritos recientes sobre software, IA y lo que estoy aprendiendo.",
   "blog_section_link": "Ver todos los posts en angelortizv.com",
 
-  "gallery_text_title": "Algunas cosas de mi vida en imágenes",
+  "gallery_text_title": "Mi vida en imágenes",
   "gallery_text_less": "Ver Menos",
   "gallery_text_more": "Ver Más",
   "gallery_empty": "Aún no hay fotos.",
@@ -134,7 +134,7 @@
 
   "contact_text_over": "¿Qué sigue?",
   "contact_text_title": "Ponte en contacto",
-  "contact_text_desc": "Aunque actualmente no estoy buscando oportunidades de freelance, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responderte!",
+  "contact_text_desc": "¿Estás trabajando en algo interesante? ¿Tienes alguna pregunta o simplemente quieres saludar? Te respondo.",
   "contact_text_cta": "Construyamos tu próximo producto con IA.",
   "contact_location": "San José, Costa Rica · UTC−6",
   "contact_location_aria": "Ubicación y zona horaria",
@@ -142,6 +142,7 @@
   "contact_btn_copy": "Copiar correo",
   "contact_btn_copied": "¡Copiado!",
   "contact_btn_copy_aria": "Copiar dirección de correo",
+  "contact_response_time": "Normalmente responde en 24 horas",
 
   "footer_text_designed": "Diseñado por ",
   "footer_text_build": "Construido con 🫀 por ",
@@ -157,6 +158,7 @@
   "accessibility_text_title": "Opciones de Accesibilidad",
   "accessibility_text_zoomIn": "Zoom In",
   "accessibility_text_zoomOut": "Zoom Out",
+  "accessibility_zoom_unsupported": "Usa Ctrl +/− (Win) o ⌘ +/− (Mac) para hacer zoom",
   "accessibility_text_biggerCursor": "Cursor Grande",
   "accessibility_text_undoChanges": "Revertir Cambios",
   "accessibility_text_shortcuts": "Atajos de teclado (?)",

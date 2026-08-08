@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-07T00:00:00Z",
+  "title": "Design System: Angelo Ortiz Vega — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "amber-signal":   { "role": "signal",   "displayName": "Amber Signal",    "canonical": "#e8813a", "tonalRamp": ["#1a0500", "#3a1000", "#5c1e00", "#7d3200", "#a84c10", "#e8813a", "#f0a875", "#f8d4b8"] },
+      "signal-tint":    { "role": "signal",   "displayName": "Signal Tint",     "canonical": "rgba(232, 129, 58, 0.12)" },
+      "pure-white":     { "role": "primary",  "displayName": "Bone White",      "canonical": "#ffffff", "tonalRamp": ["#111111", "#222222", "#333333", "#555555", "#777777", "#aaaaaa", "#dddddd", "#ffffff"] },
+      "white-tint":     { "role": "primary",  "displayName": "White Tint",      "canonical": "rgba(255, 255, 255, 0.08)" },
+      "highlight-tint": { "role": "neutral",  "displayName": "Highlight Tint",  "canonical": "rgba(255, 255, 255, 0.04)" },
+      "outline-light":  { "role": "neutral",  "displayName": "Outline Light",   "canonical": "rgba(255, 255, 255, 0.12)" },
+      "bright-text":    { "role": "neutral",  "displayName": "Bright Text",     "canonical": "#e0e0e0", "tonalRamp": ["#0a0a0a", "#111111", "#1a1a1a", "#333333", "#555555", "#888888", "#aaaaaa", "#e0e0e0"] },
+      "light-text":     { "role": "neutral",  "displayName": "Light Text",      "canonical": "#aaaaaa" },
+      "muted-text":     { "role": "neutral",  "displayName": "Muted Text",      "canonical": "#888888" },
+      "dim-text":       { "role": "neutral",  "displayName": "Dim Text",        "canonical": "#444444" },
+      "lifted-surface": { "role": "neutral",  "displayName": "Lifted Surface",  "canonical": "#1a1a1a" },
+      "dim-surface":    { "role": "neutral",  "displayName": "Dim Surface",     "canonical": "#111111" },
+      "studio-canvas":  { "role": "neutral",  "displayName": "Studio Canvas",   "canonical": "#0a0a0a", "tonalRamp": ["#000000", "#0a0a0a", "#111111", "#1a1a1a", "#2a2a2a", "#444444", "#666666", "#888888"] },
+      "void-black":     { "role": "neutral",  "displayName": "Void Black",      "canonical": "#000000" },
+      "shadow-deep":    { "role": "neutral",  "displayName": "Shadow Deep",     "canonical": "rgba(0, 0, 0, 0.8)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display",  "purpose": "Hero name. Ultra-light at large scale — mass through size, not weight." },
+      "headline": { "displayName": "Headline", "purpose": "Page-level subheadings and archive titles." },
+      "title":    { "displayName": "Title",    "purpose": "Numbered section headings. Always paired with amber signal counter." },
+      "body":     { "displayName": "Body",     "purpose": "Primary prose. Dense and technical — no decorative line spacing." },
+      "label":    { "displayName": "Label / Mono", "purpose": "Buttons, nav, chips, overlines. UI chrome is always monospaced." }
+    },
+    "shadows": [
+      { "name": "ambient-lift",  "value": "0 10px 30px -15px rgba(0, 0, 0, 0.8)", "purpose": "Project cards and elevated containers at rest." },
+      { "name": "hover-depth",   "value": "0 20px 30px -15px rgba(0, 0, 0, 0.8)", "purpose": "Cards on hover — distance increases, spread widens." },
+      { "name": "nav-scroll",    "value": "0 10px 30px -10px rgba(0, 0, 0, 0.8)", "purpose": "Header shadow when user has scrolled past the hero." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Default easing for all state transitions." },
+      { "name": "duration-base", "value": "0.3s", "purpose": "Universal transition duration." },
+      { "name": "transition-all", "value": "all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Shorthand applied to every interactive element." }
+    ],
+    "breakpoints": [
+      { "name": "mobileS",   "value": "330px" },
+      { "name": "mobileM",   "value": "400px" },
+      { "name": "mobileL",   "value": "480px" },
+      { "name": "tabletS",   "value": "600px" },
+      { "name": "tabletL",   "value": "768px" },
+      { "name": "desktopXS", "value": "900px" },
+      { "name": "desktopS",  "value": "1080px" },
+      { "name": "desktopM",  "value": "1200px" },
+      { "name": "desktopL",  "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Big)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hero CTA and section-level actions. Ghost at rest, solid white fill on contact.",
+      "html": "<button class=\"ds-btn-primary\">GET IN TOUCH</button>",
+      "css": ".ds-btn-primary { color: #ffffff; background-color: transparent; border: 1px solid #ffffff; border-radius: 2px; padding: 1.25rem 2rem; font-size: 12px; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; text-decoration: none; cursor: pointer; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: inline-block; } .ds-btn-primary:hover, .ds-btn-primary:focus { background-color: #ffffff; color: #0a0a0a; outline: none; }"
+    },
+    {
+      "name": "Small Button",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "Compact actions within cards and job panels.",
+      "html": "<button class=\"ds-btn-small\">VIEW PROJECT</button>",
+      "css": ".ds-btn-small { color: #ffffff; background-color: transparent; border: 1px solid #ffffff; border-radius: 2px; padding: 0.75rem 1rem; font-size: 12px; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1; text-decoration: none; cursor: pointer; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: inline-block; } .ds-btn-small:hover, .ds-btn-small:focus { background-color: #ffffff; color: #0a0a0a; outline: none; }"
+    },
+    {
+      "name": "Numbered Section Heading",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Section structural header — amber counter + uppercase sans + trailing hairline rule.",
+      "html": "<h2 class=\"ds-numbered-heading\">About Me</h2>",
+      "css": ".ds-numbered-heading { display: flex; align-items: center; font-size: clamp(22px, 5vw, 34px); font-weight: 300; letter-spacing: 0.05em; text-transform: uppercase; color: #e0e0e0; font-family: 'Inter', 'Calibre', sans-serif; white-space: nowrap; margin: 10px 0 40px; } .ds-numbered-heading::before { content: '01.'; margin-right: 14px; color: #e8813a; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; flex-shrink: 0; } .ds-numbered-heading::after { content: ''; display: block; height: 1px; width: 100%; margin-left: 20px; background-color: rgba(255, 255, 255, 0.12); }"
+    },
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Animated underline link — width grows from 0 to 100% on hover.",
+      "html": "<a class=\"ds-inline-link\" href=\"#\">my blog</a>",
+      "css": ".ds-inline-link { display: inline-block; text-decoration: none; color: #ffffff; position: relative; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-inline-link::after { content: ''; display: block; width: 0; height: 1px; position: relative; bottom: 0.37em; background-color: #ffffff; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); opacity: 0.5; } .ds-inline-link:hover::after, .ds-inline-link:focus::after { width: 100%; } .ds-inline-link:hover, .ds-inline-link:focus { color: #ffffff; outline: 0; }"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "Monospaced tech-stack label. No background, no border — pure type.",
+      "html": "<span class=\"ds-chip\">React</span><span class=\"ds-chip\">TypeScript</span><span class=\"ds-chip\">AWS</span>",
+      "css": ".ds-chip { color: #aaaaaa; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; font-size: 11px; letter-spacing: 0.05em; background: transparent; border: none; padding: 0; margin-right: 16px; display: inline-block; }"
+    },
+    {
+      "name": "Fancy List Item",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Bullet list with amber signal arrow marker — used in job descriptions and about sections.",
+      "html": "<ul class=\"ds-fancy-list\"><li class=\"ds-fancy-item\">Designed and shipped AI-powered logistics features at scale.</li></ul>",
+      "css": ".ds-fancy-list { padding: 0; margin: 0; list-style: none; } .ds-fancy-item { position: relative; padding-left: 30px; margin-bottom: 10px; font-family: 'Inter', 'Calibre', sans-serif; font-size: 17px; color: #888888; line-height: 1.4; } .ds-fancy-item::before { content: '▹'; position: absolute; left: 0; color: #e8813a; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Top navigation item — monospaced, muted at rest, white on hover.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">About</a>",
+      "css": ".ds-nav-link { color: #aaaaaa; font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; font-size: 13px; letter-spacing: 0.05em; text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); padding: 10px; display: inline-block; } .ds-nav-link:hover, .ds-nav-link:focus { color: #ffffff; outline: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The After-Dark Studio",
+    "overview": "A working space at night — no ambient noise, no borrowed decoration. The near-black canvas (#0a0a0a) is not a stylistic choice; it is an operating condition. Every element on it exists because it needs to. The single warm light is the amber signal (#e8813a), and it burns deliberately: section counters, list markers, the occasional inline CTA. Its rarity is not restraint — it is the mechanism.\n\nThe typographic approach is equally precise. Ultra-light display weights (200) let large text sit without mass. The monospaced font family carries labels, nav items, and buttons — wiring every piece of UI copy to the engineering context it inhabits. Body text sits at a comfortable 19px but reads like documentation: dense, accurate, no padding sentences.\n\nInteraction is fast and binary. Ghost buttons invert to solid fills in 300ms. Inline links grow an underline from left to right. Nothing floats, bounces, or lingers past its purpose. Confidence expressed through exactness, not decoration.",
+    "keyCharacteristics": [
+      "Near-black canvas with a single, sparing warm accent",
+      "Ultra-light to light heading weights — mass through scale, not weight",
+      "All interactive chrome in monospaced uppercase — buttons read as commands",
+      "Binary hover states: ghost → solid fill, instant reversal",
+      "Section structure announced by signal-colored numeric counters",
+      "Virtually zero border radius — 2px across the entire system"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule",       "body": "The amber signal (#e8813a) is never used as a button fill, background block, or text color for long-form copy. It lives on punctuation: list markers, section counters, and a single inline CTA per context. The moment it becomes ambient, it stops being a signal.", "section": "colors" },
+      { "name": "The White Is Active Rule",   "body": "#ffffff means 'interactive or highest contrast.' It does not appear as decorative trim, illustration fill, or background. When you see white, something is clickable or highest-priority.", "section": "colors" },
+      { "name": "The Mono-Is-Chrome Rule",    "body": "Monospaced text signals UI infrastructure: it means button, label, badge, or code — never ambient prose. If a sentence reads as running text, it belongs in the sans-serif stack.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule",   "body": "Surfaces are flat at rest. Shadows appear only as a response to state or scroll. No decorative drop shadows on static text blocks, icons, or dividers.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use #e8813a only on punctuation-scale elements: counters, list markers, a single inline emphasis per view. Never as a fill on large surfaces.",
+      "Do write all button and label copy in SF Mono, uppercase, with letter-spacing ≥ 0.08em.",
+      "Do keep border radius at 2px across all interactive and contained elements — uniform geometry is the system's signature.",
+      "Do let the dark canvas do the work. Use generous whitespace (section padding 100px) rather than visual separators or background fills.",
+      "Do animate state changes at exactly 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) — consistent easing makes the system feel authored.",
+      "Do use font weight 200–300 for all display and heading text. Mass comes from size, not weight."
+    ],
+    "donts": [
+      "Don't use #e8813a as a button fill, section background, or ambient text color. Once it becomes wallpaper it stops being a signal.",
+      "Don't introduce border radius above 2px — no pill buttons, no rounded cards, no circular avatars.",
+      "Don't add decorative shadows to static elements (text, icons, dividers). Shadows respond to state, not decoration.",
+      "Don't use the sans-serif stack for labels, buttons, or nav items. UI chrome is always monospaced.",
+      "Don't set heading weights above 300 except for specific body-weight prose contexts. The system's authority is ultralight text at large scale.",
+      "Don't add color beyond the established palette. No gradients, no secondary accent colors, no colored backgrounds on section blocks."
+    ]
+  }
+}

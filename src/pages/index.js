@@ -15,7 +15,7 @@ import {
 } from '@components';
 
 const StyledMainContainer = styled.main`
-  counter-reset: section;
+  counter-reset: sections;
 `;
 
 const IndexPage = ({ location }) => (

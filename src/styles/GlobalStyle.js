@@ -24,8 +24,14 @@ const GlobalStyle = createGlobalStyle`
     color: var(--lightest-text-color);
   }
 
-  :focus {
-    outline: none
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--signal-color);
+    outline-offset: 3px;
+    border-radius: var(--border-radius);
   }
 
   /* Scrollbar Styles */
@@ -200,6 +206,8 @@ const GlobalStyle = createGlobalStyle`
       height: 1px;
       margin-left: 20px;
       background-color: var(--outline-light);
+      transform-origin: left center;
+      animation: ruleExtend 600ms cubic-bezier(0.16, 1, 0.3, 1) 650ms both;
 
       @media (max-width: 1080px) {
         width: 200px;
@@ -210,7 +218,16 @@ const GlobalStyle = createGlobalStyle`
       @media (max-width: 600px) {
         margin-left: 10px;
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
+  }
+
+  @keyframes ruleExtend {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
   }
 
   img,
@@ -327,7 +344,7 @@ const GlobalStyle = createGlobalStyle`
 
     p {
       font-style: italic;
-      font-size: 24px;
+      font-size: var(--fz-heading);
     }
   }
 

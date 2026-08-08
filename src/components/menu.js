@@ -64,7 +64,7 @@ const StyledHamburgerButton = styled.button`
       right: 0;
       width: var(--hamburger-width);
       height: 2px;
-      border-radius: 4px;
+      border-radius: var(--border-radius);
       background-color: var(--primary-color);
       transition-timing-function: ease;
       transition-duration: 0.15s;

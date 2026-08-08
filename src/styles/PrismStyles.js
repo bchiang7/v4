@@ -84,7 +84,7 @@ const PrismStyles = css`
   .gatsby-highlight-code-line {
     display: block;
     background-color: ${prismColors.lineHighlight};
-    border-left: 2px solid var(--green);
+    border-left: 2px solid ${prismColors.green};
     padding-left: calc(1em + 2px);
     padding-right: 1em;
     margin-right: -1.35em;
@@ -93,14 +93,14 @@ const PrismStyles = css`
 
   /* Language badges */
   .gatsby-highlight pre[class*='language-']::before {
-    background: var(--lightest-navy);
-    color: var(--white);
+    background: var(--lightest-bg-color);
+    color: var(--light-text-color);
     font-size: var(--fz-xxs);
     font-family: var(--font-mono);
     line-height: 1.5;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
     position: absolute;
     top: 0;
     left: 1.25rem;

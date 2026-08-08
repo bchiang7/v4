@@ -14,7 +14,6 @@ const StyledGallerySection = styled.section`
   margin-top: 4rem;
 
   h2 {
-    font-size: clamp(24px, 5vw, var(--fz-heading));
     margin-bottom: 2rem;
   }
 
@@ -95,8 +94,8 @@ const StyledGallerySection = styled.section`
       border: 2px solid var(--lightest-bg-color);
       color: var(--primary-color);
       padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 1.25rem;
+      border-radius: var(--border-radius);
+      font-size: var(--fz-xl);
       cursor: pointer;
       transition: var(--transition);
 
@@ -157,9 +156,9 @@ const LightboxNav = styled.button`
   color: var(--primary-color);
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: var(--fz-xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,7 +179,7 @@ const LightboxNav = styled.button`
   @media (max-width: 600px) {
     width: 36px;
     height: 36px;
-    font-size: 1rem;
+    font-size: var(--fz-lg);
 
     &.prev { left: 8px; }
     &.next { right: 8px; }
@@ -196,9 +195,9 @@ const LightboxClose = styled.button`
   color: var(--lightest-text-color);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: var(--fz-lg);
   display: flex;
   align-items: center;
   justify-content: center;
