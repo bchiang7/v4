@@ -6,20 +6,20 @@
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
-  "meta_description": "Angelo Ortiz Vega — Fullstack AI Engineer based in Costa Rica. I build and ship AI-powered products, lead technical initiatives, and bring ML from research to production. 4+ years in startups and product teams.",
+  "meta_description": "Angelo Ortiz Vega — Fullstack Engineer based in Costa Rica. I build and ship production-grade systems, lead technical initiatives, and drive end-to-end ownership across the full stack. 4+ years in startups and product teams.",
 
   "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
-  "hero_txt_about": "I build software that creates real business value. As a Fullstack AI Engineer and Tech Lead, I specialize in shipping AI-powered products, scalable systems, and automation solutions — owning the full stack from architecture and ML integration to the interfaces people use.",
+  "hero_txt_about": "I build and ship full-stack systems at scale — from architecture to production, end to end. As a Fullstack Engineer and Tech Lead, I specialize in scalable architectures, real-time operational platforms, and integrating ML where it has the most impact.",
   "hero_btn_cta": "Get in touch",
   "hero_text_proud": "Proudly from 🇨🇷",
   "hero_txt_creai": "Currently shipping features at",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
-  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — a Fullstack AI Engineer, Tech Lead, and University Lecturer. I build software that creates real business value, specializing in turning complex challenges into AI-powered products, scalable systems, and automation solutions. My work sits at the intersection of software engineering, artificial intelligence, and product development — where technology drives meaningful outcomes for users and organizations.",
-  "about_text_desc_2": "My work spans the full product lifecycle: designing and shipping full-stack applications, REST APIs, cloud-native solutions, and ML systems across startups and product companies. I help teams move faster, automate repetitive processes, and integrate AI effectively — owning business-critical domains, driving architectural decisions with a cross-functional team of 20+, and partnering with Data Science to bring ML capabilities into production.",
-  "about_text_desc_3_1": "I am currently completing a degree in Computer Engineering at the ",
-  "about_text_desc_3_2": ", building a strong theoretical foundation in systems and architecture. Alongside, I have spent more than three years as a University Lecturer — teaching Artificial Intelligence, Data Analysis, Machine Learning, and Full Stack Development at ",
+  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — a Fullstack Engineer, Tech Lead, and Computer Engineering graduate from the Technological Institute of Costa Rica. I build production systems where the constraint isn't features — it's reliability, latency, and scale. My work spans full-stack applications, real-time operational platforms, and cloud-native infrastructure, with ML integration as part of the stack.",
+  "about_text_desc_2": "I take end-to-end technical ownership — designing, building, and operating full-stack applications, REST APIs, and cloud-native infrastructure in production environments. I drive architectural decisions across teams of 20+, define system design strategies, and collaborate with Data Science teams to ship ML capabilities into production.",
+  "about_text_desc_3_1": "I hold a degree in Computer Engineering from the ",
+  "about_text_desc_3_2": ", with a strong foundation in systems and computer architecture. Alongside, I have spent more than three years as a University Lecturer — teaching Artificial Intelligence, Data Analysis, Machine Learning, and Full Stack Development at ",
   "about_text_desc_4_2": " — bridging academia and industry through hands-on, project-based learning.",
   "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
   "about_text_desc_5_a": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, ",
@@ -49,21 +49,21 @@
 
   "job_title_freelancer1": "Freelance Consultant",
   "jobs_freelancer1": [
-    "Delivered more than 15 custom software solutions for startups, entrepreneurs, and organizations — ranging from marketing platforms and web applications to automation systems and cloud-native APIs.",
-    "Led projects end-to-end: requirements gathering, solution architecture, development, deployment, and ongoing support.",
-    "Designed and implemented scalable systems using React, Node.js, Python, and AWS, helping clients improve operational efficiency and accelerate digital transformation.",
-    "Collaborated directly with founders and business stakeholders to translate business challenges into practical, maintainable, and scalable software products.",
-    "Built automation solutions and custom integrations that reduced manual processes and enabled clients to focus on growth and core business activities."
+    "Engineered custom software solutions for startups and organizations under real-world constraints — automation systems, cloud-native APIs, and full-stack platforms with production requirements.",
+    "Led projects end-to-end with full technical ownership: architecture, development, deployment, and ongoing operations.",
+    "Designed and implemented scalable systems using React, Node.js, Python, and AWS — optimizing for reliability and performance under production conditions.",
+    "Worked directly with technical founders and engineering stakeholders to translate hard constraints into practical, maintainable system designs.",
+    "Built automation pipelines and custom integrations that eliminated manual processes and improved operational reliability."
   ],
 
   "job_title_creai": "Fullstack AI Engineer",
   "jobs_creai": [
-    "Lead the development of AI-powered products and mission-critical logistics solutions, taking ownership of core platform capabilities that support day-to-day business operations.",
-    "Own key business domains including routes, services, and trip management systems — building the operational backbone of a large-scale logistics platform serving customers in Mexico.",
+    "Lead the development of AI-powered products and mission-critical logistics systems — where reliability and uptime are non-negotiable and operational failures have immediate real-world consequences.",
+    "Own the operational core of a real-time logistics platform: routing algorithms, trip state machines, and service orchestration that coordinate live fleet operations at scale.",
     "Architect, develop, and maintain scalable full-stack applications and APIs using React, Ember.js, Laravel, PHP, and Python.",
-    "Collaborate cross-functionally with a team of 20+ professionals — engineers, designers, product owners, delivery managers, and AI specialists — to deliver high-impact product initiatives.",
-    "Drive technical decisions, system design discussions, and implementation strategies to ensure scalability and alignment with business objectives.",
-    "Partner with Data Science and Product teams to integrate AI and ML capabilities into production, accelerating automation and operational efficiency."
+    "Drive technical decisions, system design discussions, and implementation strategies across a cross-functional team of 20+ engineers, designers, product owners, and AI specialists.",
+    "Define architecture and technical strategy to ensure scalability, fault tolerance, and alignment with operational requirements.",
+    "Partner with Data Science teams to integrate ML capabilities into production — accelerating automation and bringing model-driven decisions into live systems."
   ],
 
   "job_title_easyhop": "Fullstack Developer",
@@ -77,8 +77,8 @@
 
   "job_title_qubosystems": "Software Engineer",
   "jobs_qubosystems": [
-    "Served as technical lead for the development of a payroll management platform for a private university, coordinating a team of 5 developers and driving architectural and implementation decisions.",
-    "Designed and developed a machine learning module that automated faculty salary classification processes, improving efficiency and reducing manual administrative effort.",
+    "Designed and shipped a production ML module that automated faculty compensation classification — trained, validated, deployed, and maintained in a live payroll environment, reducing manual administrative overhead.",
+    "Served as technical lead for a payroll management platform for a private university, coordinating a team of 5 developers and driving architectural and implementation decisions.",
     "Built a faculty information management platform enabling academic staff to manage profile data and publish content to the university's public-facing 'Claustro Docente' portal.",
     "Developed secure REST APIs, administrative platforms, and frontend applications using React and modern backend technologies.",
     "Designed and implemented a data encryption module for a third-party mobile point-of-sale solution used by a Costa Rican banking institution.",

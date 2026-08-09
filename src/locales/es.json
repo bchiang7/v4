@@ -6,20 +6,20 @@
   "menu_text_gallery": "Galeria",
   "menu_text_contact": "Contacto",
 
-  "meta_description": "Angelo Ortiz Vega — Fullstack AI Engineer en Costa Rica. Construyo productos con IA, lidero iniciativas técnicas y llevo ML de la investigación a producción. Más de 4 años en startups y equipos de producto.",
+  "meta_description": "Angelo Ortiz Vega — Fullstack Engineer en Costa Rica. Construyo sistemas en producción, lidero iniciativas técnicas y tomo ownership end-to-end del stack completo. Más de 4 años en startups y equipos de producto.",
 
   "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
-  "hero_txt_about": "Construyo software que genera valor real de negocio. Como Fullstack AI Engineer y Tech Lead, me especializo en llevar a producción productos con IA, sistemas escalables y soluciones de automatización — con ownership del stack completo, desde la arquitectura e integración de ML hasta las interfaces.",
+  "hero_txt_about": "Construyo y llevo a producción sistemas full-stack a escala — desde la arquitectura hasta producción, de punta a punta. Como Fullstack Engineer y Tech Lead, me especializo en arquitecturas escalables, plataformas operacionales en tiempo real e integración de ML donde genera mayor impacto.",
   "hero_btn_cta": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
   "hero_txt_creai": "Actualmente desarrollando en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Fullstack AI Engineer, Tech Lead y Profesor Universitario. Construyo software que genera valor real de negocio, especializándome en transformar desafíos complejos en productos con IA, sistemas escalables y soluciones de automatización. Mi trabajo está en la intersección del desarrollo de software, la inteligencia artificial y el desarrollo de producto — donde la tecnología genera resultados significativos para usuarios y organizaciones.",
-  "about_text_desc_2": "Mi trabajo abarca el ciclo completo del producto: diseñar y llevar a producción aplicaciones full-stack, APIs, soluciones cloud-native y sistemas de ML en startups y empresas de producto. Ayudo a los equipos a moverse más rápido, automatizar procesos repetitivos e integrar IA de forma efectiva — con ownership de dominios de negocio críticos, tomando decisiones arquitectónicas en equipos de más de 20 personas y colaborando con Data Science para llevar capacidades de ML a producción.",
-  "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el ",
-  "about_text_desc_3_2": ", construyendo una base teórica sólida en sistemas y arquitectura. Paralelamente, llevo más de tres años como Profesor Universitario — impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Machine Learning y Desarrollo Full Stack en la ",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Fullstack Engineer, Tech Lead y graduado en Ingeniería en Computadores del Instituto Tecnológico de Costa Rica. Construyo sistemas en producción donde la restricción no son las funcionalidades, sino la confiabilidad, la latencia y la escala. Mi trabajo abarca aplicaciones full-stack, plataformas operacionales en tiempo real e infraestructura cloud-native, con integración de ML como parte del stack.",
+  "about_text_desc_2": "Tomo ownership técnico end-to-end — diseñando, construyendo y operando aplicaciones full-stack, APIs e infraestructura cloud-native en entornos de producción. Lidero decisiones arquitectónicas en equipos de más de 20 personas, defino estrategias de diseño de sistemas y colaboro con equipos de Data Science para llevar capacidades de ML a producción.",
+  "about_text_desc_3_1": "Soy graduado en Ingeniería en Computadores del ",
+  "about_text_desc_3_2": ", con una base sólida en sistemas y arquitectura de computadoras. Paralelamente, llevo más de tres años como Profesor Universitario — impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Machine Learning y Desarrollo Full Stack en la ",
   "about_text_desc_4_2": " — conectando academia e industria a través de aprendizaje práctico y basado en proyectos.",
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
   "about_text_desc_5_a": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos, ",
@@ -49,21 +49,21 @@
 
   "job_title_freelancer1": "Consultor Freelance",
   "jobs_freelancer1": [
-    "Entregué más de 15 soluciones de software personalizadas para startups, emprendedores y organizaciones — desde plataformas de marketing y aplicaciones web hasta sistemas de automatización y APIs cloud-native.",
-    "Lideré proyectos de punta a punta: levantamiento de requerimientos, arquitectura de solución, desarrollo, despliegue y soporte continuo.",
-    "Diseñé e implementé sistemas escalables con React, Node.js, Python y AWS, ayudando a los clientes a mejorar la eficiencia operacional y acelerar su transformación digital.",
-    "Colaboré directamente con founders y stakeholders de negocio para traducir desafíos empresariales en productos de software prácticos, mantenibles y escalables.",
-    "Construí soluciones de automatización e integraciones personalizadas que redujeron procesos manuales y permitieron a los clientes enfocarse en su crecimiento."
+    "Desarrollé soluciones de software a medida para startups y organizaciones bajo restricciones reales — sistemas de automatización, APIs cloud-native y plataformas full-stack con requisitos de producción.",
+    "Lideré proyectos con ownership técnico completo: arquitectura, desarrollo, despliegue y operación continua.",
+    "Diseñé e implementé sistemas escalables con React, Node.js, Python y AWS — optimizando para confiabilidad y rendimiento en condiciones de producción.",
+    "Trabajé directamente con founders técnicos y stakeholders de ingeniería para traducir restricciones reales en diseños de sistemas prácticos y mantenibles.",
+    "Construí pipelines de automatización e integraciones personalizadas que eliminaron procesos manuales y mejoraron la confiabilidad operacional."
   ],
 
   "job_title_creai": "Fullstack AI Engineer",
   "jobs_creai": [
-    "Lidero el desarrollo de productos con IA y soluciones logísticas críticas para el negocio, con ownership de las capacidades centrales de la plataforma que soportan las operaciones diarias.",
-    "Soy responsable de dominios de negocio clave como rutas, servicios y gestión de viajes — construyendo la columna vertebral operacional de una plataforma logística a gran escala que sirve a clientes en México.",
+    "Lidero el desarrollo de productos con IA y sistemas logísticos de misión crítica — donde la disponibilidad y la confiabilidad son innegociables y los fallos operacionales tienen consecuencias reales e inmediatas.",
+    "Soy responsable del núcleo operacional de una plataforma logística en tiempo real: algoritmos de ruteo, máquinas de estado de viajes y orquestación de servicios que coordinan operaciones de flota en vivo a escala.",
     "Arquitecto, desarrollo y mantengo aplicaciones full-stack y APIs escalables usando React, Ember.js, Laravel, PHP y Python.",
-    "Colaboro de forma transversal con un equipo de más de 20 personas — ingenieros, diseñadores, product owners, delivery managers y especialistas en IA — para entregar iniciativas de alto impacto.",
-    "Tomo decisiones técnicas, lidero discusiones de diseño de sistemas y defino estrategias de implementación para garantizar escalabilidad y alineación con los objetivos del negocio.",
-    "Colaboro con los equipos de Data Science y Producto para integrar capacidades de IA y ML en producción, acelerando la automatización y la eficiencia operacional."
+    "Tomo decisiones técnicas y lidero discusiones de diseño de sistemas en un equipo transversal de más de 20 ingenieros, diseñadores, product owners y especialistas en IA.",
+    "Defino arquitectura y estrategia técnica para garantizar escalabilidad, tolerancia a fallos y alineación con los requisitos operacionales.",
+    "Colaboro con los equipos de Data Science para integrar capacidades de ML en producción — acelerando la automatización y llevando decisiones basadas en modelos a sistemas en vivo."
   ],
 
   "job_title_easyhop": "Desarrollador Fullstack",
@@ -77,8 +77,8 @@
 
   "job_title_qubosystems": "Ingeniero de Software",
   "jobs_qubosystems": [
-    "Actué como líder técnico en el desarrollo de un sistema de planillas para una universidad privada, coordinando un equipo de 5 desarrolladores y tomando decisiones de arquitectura e implementación.",
-    "Diseñé y desarrollé un módulo de machine learning que automatizó la clasificación de categorías salariales de docentes, mejorando la eficiencia y reduciendo el esfuerzo administrativo manual.",
+    "Diseñé y puse en producción un módulo de ML que automatizó la clasificación salarial de docentes — entrenado, validado, desplegado y mantenido en un entorno de planillas en producción, reduciendo la carga administrativa manual.",
+    "Actué como líder técnico en el desarrollo de una plataforma de gestión de planillas para una universidad privada, coordinando un equipo de 5 desarrolladores y tomando decisiones de arquitectura e implementación.",
     "Construí una plataforma de gestión de información docente que permite al personal académico administrar sus datos de perfil y publicar contenido al portal público 'Claustro Docente' de la universidad.",
     "Desarrollé APIs REST seguras, plataformas administrativas y aplicaciones frontend usando React y tecnologías backend modernas.",
     "Diseñé e implementé un módulo de encriptación de datos para una solución móvil de punto de venta de terceros utilizada por una institución bancaria costarricense.",
