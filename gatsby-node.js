@@ -7,6 +7,47 @@
 const path = require('path');
 const _ = require('lodash');
 
+// Explicitly type the markdown frontmatter so that optional fields (e.g. a project
+// without `company`, or a publication without `urlLabel`) don't break query extraction
+// when no content file happens to use them.
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFrontmatter {
+      date: Date @dateformat
+      title: String
+      description: String
+      slug: String
+      tags: [String]
+      draft: Boolean
+
+      # jobs
+      company: String
+      location: String
+      range: String
+      url: String
+
+      # projects
+      tech: [String]
+      github: String
+      external: String
+      showInProjects: Boolean
+      ios: String
+      android: String
+
+      # publications
+      authors: String
+      venue: String
+      urlLabel: String
+    }
+  `);
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
@@ -15,7 +56,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       postsRemark: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/posts/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/content/posts/" }
+          frontmatter: { draft: { ne: true } }
+        }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -23,6 +67,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               slug
+              title
             }
           }
         }
@@ -44,11 +89,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create post detail pages
   const posts = result.data.postsRemark.edges;
 
-  posts.forEach(({ node }) => {
+  // Posts are sorted newest-first, so the *next* entry in the array is the older post.
+  posts.forEach(({ node }, index) => {
+    const older = index === posts.length - 1 ? null : posts[index + 1].node.frontmatter;
+    const newer = index === 0 ? null : posts[index - 1].node.frontmatter;
+
     createPage({
       path: node.frontmatter.slug,
       component: postTemplate,
-      context: {},
+      context: {
+        older: older && { slug: older.slug, title: older.title },
+        newer: newer && { slug: newer.slug, title: newer.title },
+      },
     });
   });
 
@@ -57,7 +109,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/blog/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue,
