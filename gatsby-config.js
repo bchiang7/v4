@@ -1,11 +1,16 @@
 const config = require('./src/config');
 
+// Set SITE_URL in your host's environment variables (e.g. Cloudflare Pages)
+// once a custom domain is live. It drives canonical URLs, the sitemap,
+// robots.txt and the citation block on blog posts. No trailing slash.
+const siteUrl = process.env.SITE_URL || 'https://szcheng0702.github.io';
+
 module.exports = {
   siteMetadata: {
     title: 'Lindsay Cheng',
     description:
       'Lindsay Cheng is a Senior Software Engineer at Google DeepMind working on orchestration infrastructure and quality for long-running agents.',
-    siteUrl: 'https://szcheng0702.github.io', // No trailing slash allowed!
+    siteUrl, // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@lindsayscheng72',
   },

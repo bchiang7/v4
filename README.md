@@ -117,14 +117,55 @@ Disqus, utterances or anything else means changing that one file. Disqus is wort
 considering if you'd rather not require commenters to have a GitHub account — the
 trade-off is ads and third-party tracking on the free tier.
 
-## Deploying
+## Deploying (Cloudflare Pages)
 
-`yarn build` outputs a static site to `public/`, which can be hosted anywhere
-(GitHub Pages, Netlify, Vercel, Cloudflare Pages).
+`yarn build` outputs a static site to `public/`. The site is deployed with
+[Cloudflare Pages](https://developers.cloudflare.com/pages/), which watches this
+repository and rebuilds on every push.
 
-If you deploy somewhere other than `https://szcheng0702.github.io`, update
-`siteUrl` in `gatsby-config.js` so canonical URLs, the sitemap and the blog post
-citation blocks point at the right domain.
+### One-time setup
+
+1. Sign in at [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers &
+   Pages** → **Create** → **Pages** → **Connect to Git**, and pick this
+   repository.
+2. Set the build settings:
+
+   | Setting                | Value        |
+   | ---------------------- | ------------ |
+   | Framework preset       | Gatsby       |
+   | Build command          | `yarn build` |
+   | Build output directory | `public`     |
+
+3. Add these environment variables (**Settings** → **Environment variables**),
+   for both Production and Preview:
+
+   | Variable       | Value                     | Why                                                                     |
+   | -------------- | ------------------------- | ----------------------------------------------------------------------- |
+   | `NODE_VERSION` | `18.20.4`                 | Matches `.nvmrc`; Gatsby 3 does not build on very new Node.             |
+   | `SITE_URL`     | `https://your-domain.com` | Canonical URLs, sitemap, robots.txt, post citations. No trailing slash. |
+
+4. Deploy. Every push to `main` publishes production; every other branch and
+   pull request gets its own preview URL.
+
+`static/_headers` sets security and caching headers; Cloudflare Pages picks it
+up automatically from the build output.
+
+### Custom domain
+
+Cloudflare Pages gives you a `*.pages.dev` URL for free. To use your own domain:
+
+1. Buy the domain — [Cloudflare Registrar](https://developers.cloudflare.com/registrar/)
+   sells at wholesale cost with free WHOIS privacy, and skips the DNS step below
+   since the domain is already on Cloudflare. Any other registrar works too; you
+   then point its nameservers at Cloudflare.
+2. In your Pages project: **Custom domains** → **Set up a domain** → enter the
+   domain. Cloudflare adds the DNS record itself when the domain is on your
+   account, and issues the TLS certificate automatically.
+3. Update `SITE_URL` to the new domain and redeploy, so canonical URLs and the
+   sitemap stop pointing at the old address.
+
+If you keep the old GitHub Pages site at `szcheng0702.github.io`, add a redirect
+there pointing at the new domain, so existing links and search rankings follow.
 
 ## License
 
