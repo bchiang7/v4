@@ -1,30 +1,37 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
+  email: 'szcheng0702@gmail.com',
+
+  // Giscus comments (GitHub Discussions backed).
+  // See README "Blog comments" for how to fill these in.
+  giscus: {
+    repo: 'szcheng0702/v4-personal-website',
+    repoId: '',
+    category: 'Announcements',
+    categoryId: '',
+    mapping: 'pathname',
+    reactionsEnabled: '1',
+    inputPosition: 'top',
+    lang: 'en',
+  },
 
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://github.com/szcheng0702',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
+      url: 'https://www.linkedin.com/in/sizhu-lindsay-cheng',
     },
     {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      name: 'Twitter',
+      url: 'https://twitter.com/lindsayscheng72',
     },
   ],
 
   navLinks: [
+    // The first five match the numbered sections on the home page, so the numbers
+    // shown in the nav line up with the numbers on the section headings.
     {
       name: 'About',
       url: '/#about',
@@ -34,19 +41,33 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Projects',
       url: '/#projects',
+    },
+    {
+      name: 'Publications',
+      url: '/#publications',
     },
     {
       name: 'Contact',
       url: '/#contact',
     },
+    {
+      name: 'Blog',
+      url: '/blog',
+    },
+    {
+      name: 'Misc',
+      url: '/misc',
+    },
   ],
 
+  // Kept in sync with src/styles/variables.js — used for the PWA manifest
+  // theme colours and the traced-SVG placeholder colour for markdown images.
   colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
-    darkNavy: '#020c1b',
+    green: '#f0b429',
+    navy: '#16161a',
+    darkNavy: '#0f0f12',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

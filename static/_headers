@@ -1,0 +1,19 @@
+# Cloudflare Pages reads this file from the build output root.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Fingerprinted assets (images, fonts) can be cached indefinitely.
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# These must never be served stale, or visitors get pinned to an old build.
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/page-data/*
+  Cache-Control: public, max-age=0, must-revalidate

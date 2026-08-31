@@ -10,13 +10,10 @@ import { usePrefersReducedMotion } from '@hooks';
 const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  h2 {
-    font-size: clamp(24px, 5vw, var(--fz-heading));
-  }
+  align-items: flex-start;
 
   .archive-link {
+    align-self: center;
     font-family: var(--font-mono);
     font-size: var(--fz-sm);
     &:after {
@@ -26,11 +23,12 @@ const StyledProjectsSection = styled.section`
 
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
-    margin-top: 50px;
+    margin-top: 30px;
 
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -264,8 +262,10 @@ const Projects = () => {
   };
 
   return (
-    <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+    <StyledProjectsSection id="projects">
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Things I’ve Built
+      </h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive

@@ -1,13 +1,18 @@
 const config = require('./src/config');
 
+// Set SITE_URL in your host's environment variables (e.g. Cloudflare Pages)
+// once a custom domain is live. It drives canonical URLs, the sitemap,
+// robots.txt and the citation block on blog posts. No trailing slash.
+const siteUrl = process.env.SITE_URL || 'https://szcheng0702.github.io';
+
 module.exports = {
   siteMetadata: {
-    title: 'Brittany Chiang',
+    title: 'Lindsay Cheng',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+      'Lindsay Cheng is a Senior Software Engineer at Google DeepMind working on orchestration infrastructure and quality for long-running agents.',
+    siteUrl, // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '@lindsayscheng72',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brittany Chiang',
-        short_name: 'Brittany Chiang',
+        name: 'Lindsay Cheng',
+        short_name: 'Lindsay Cheng',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
@@ -59,9 +64,33 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `publications`,
+        path: `${__dirname}/content/publications`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers
+            // Adds anchor ids to headings so the post table of contents can link to them.
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false,
+              elements: ['h2', 'h3', 'h4'],
+            },
+          },
+          {
+            // https://www.gatsbyjs.org/packages/gatsby-remark-katex
+            // LaTeX math in posts: $inline$ and $$block$$.
+            resolve: 'gatsby-remark-katex',
+            options: {
+              strict: 'ignore',
+            },
+          },
           {
             // https://www.gatsbyjs.org/packages/gatsby-remark-external-links
             resolve: 'gatsby-remark-external-links',
@@ -147,12 +176,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-45666519-2',
       },
     },
   ],
