@@ -2,20 +2,26 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
-    --pink: #f57dff;
-    --blue: #57cbff;
+    /* Palette: warm charcoal + amber.
+       The variable names (navy / green / slate) are inherited from the v4
+       template and describe each colour's ROLE, not its hue — --navy is the
+       page background, --green the accent, --slate the body text. */
+
+    --dark-navy: #0f0f12;
+    --navy: #16161a;
+    --light-navy: #212127;
+    --lightest-navy: #2e2e36;
+    --navy-shadow: rgba(15, 15, 18, 0.7);
+    --navy-translucent: rgba(22, 22, 26, 0.85);
+    --dark-slate: #6b6b76;
+    --slate: #a1a1aa;
+    --light-slate: #c4c4cd;
+    --lightest-slate: #ececf1;
+    --white: #fafafa;
+    --green: #f0b429;
+    --green-tint: rgba(240, 180, 41, 0.1);
+    --pink: #f2779a;
+    --blue: #7cc4e8;
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;

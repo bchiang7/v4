@@ -1,16 +1,18 @@
 import { css } from 'styled-components';
 
+// Syntax theme for code blocks, tuned to sit on the warm charcoal palette
+// in src/styles/variables.js rather than the template's original navy.
 const prismColors = {
-  bg: `#112340`,
-  lineHighlight: `#1d2d50`,
-  blue: `#5ccfe6`,
-  purple: `#c3a6ff`,
-  green: `#bae67e`,
-  yellow: `#ffd580`,
-  orange: `#ffae57`,
-  red: `#ef6b73`,
-  grey: `#a2aabc`,
-  comment: `#8695b799`,
+  bg: `#1c1c21`,
+  lineHighlight: `#2a2a31`,
+  blue: `#7cc4e8`,
+  purple: `#c9a8f0`,
+  green: `#b5cf87`,
+  yellow: `#f0b429`,
+  orange: `#e8a05c`,
+  red: `#ef7d7d`,
+  grey: `#b4b4bd`,
+  comment: `#7a7a86`,
 };
 
 // https://www.gatsbyjs.org/packages/gatsby-remark-prismjs

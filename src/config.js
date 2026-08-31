@@ -62,10 +62,12 @@ module.exports = {
     },
   ],
 
+  // Kept in sync with src/styles/variables.js — used for the PWA manifest
+  // theme colours and the traced-SVG placeholder colour for markdown images.
   colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
-    darkNavy: '#020c1b',
+    green: '#f0b429',
+    navy: '#16161a',
+    darkNavy: '#0f0f12',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({
