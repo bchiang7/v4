@@ -1,9 +1,9 @@
 const config = require('./src/config');
 
-// Set SITE_URL in your host's environment variables (e.g. Cloudflare Pages)
-// once a custom domain is live. It drives canonical URLs, the sitemap,
-// robots.txt and the citation block on blog posts. No trailing slash.
-const siteUrl = process.env.SITE_URL || 'https://szcheng0702.github.io';
+// SITE_URL can be overridden in the host's environment variables (e.g. to point
+// a preview deployment at its own address). It drives canonical URLs, the
+// sitemap, robots.txt and the citation block on blog posts. No trailing slash.
+const siteUrl = process.env.SITE_URL || 'https://lindsay-cheng.com';
 
 module.exports = {
   siteMetadata: {

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lindsay Cheng — moved to lindsay-cheng.com</title>
+
+    <link rel="canonical" href="https://lindsay-cheng.com/" />
+    <meta name="robots" content="noindex, follow" />
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #16161a;
+        color: #a1a1aa;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        text-align: center;
+        padding: 24px;
+        line-height: 1.6;
+      }
+      a {
+        color: #f0b429;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>This site has moved to <a href="https://lindsay-cheng.com/">lindsay-cheng.com</a>.</p>
+      <p>Redirecting you now…</p>
+    </main>
+
+    <script>
+      // GitHub Pages serves this file for any path that no longer exists, so it
+      // doubles as the redirect map for the old Jekyll site's URLs. Anything not
+      // listed falls back to the new home page.
+      (function () {
+        var NEW_SITE = 'https://lindsay-cheng.com';
+
+        var MAP = {
+          '/cv': '/#jobs',
+          '/resume': '/#jobs',
+          '/publications': '/#publications',
+          '/projects': '/#projects',
+          '/portfolio': '/#projects',
+          '/miscellaneous': '/misc',
+          '/year-archive': '/blog',
+          '/talks': '/',
+          '/teaching': '/',
+          '/markdown': '/',
+        };
+
+        // Normalise: lowercase, drop any trailing slash, drop a trailing
+        // index.html, so "/CV/", "/cv" and "/cv/index.html" all match.
+        var path = window.location.pathname
+          .toLowerCase()
+          .replace(/\/index\.html$/, '')
+          .replace(/\/+$/, '');
+
+        window.location.replace(NEW_SITE + (MAP[path] || '/'));
+      })();
+    </script>
+  </body>
+</html>

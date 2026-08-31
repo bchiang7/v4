@@ -152,20 +152,24 @@ up automatically from the build output.
 
 ### Custom domain
 
-Cloudflare Pages gives you a `*.pages.dev` URL for free. To use your own domain:
+The site is served at **https://lindsay-cheng.com**, which is also the default
+`siteUrl` in `gatsby-config.js` — so no environment variable is needed for a
+normal production build.
 
-1. Buy the domain — [Cloudflare Registrar](https://developers.cloudflare.com/registrar/)
-   sells at wholesale cost with free WHOIS privacy, and skips the DNS step below
-   since the domain is already on Cloudflare. Any other registrar works too; you
-   then point its nameservers at Cloudflare.
-2. In your Pages project: **Custom domains** → **Set up a domain** → enter the
-   domain. Cloudflare adds the DNS record itself when the domain is on your
-   account, and issues the TLS certificate automatically.
-3. Update `SITE_URL` to the new domain and redeploy, so canonical URLs and the
-   sitemap stop pointing at the old address.
+To attach the domain in Cloudflare: Pages project → **Custom domains** → **Set up
+a domain** → `lindsay-cheng.com`. Cloudflare adds the DNS record and issues the
+TLS certificate itself when the domain is on your account. Add `www.lindsay-cheng.com`
+as a second custom domain if you want the `www` form to resolve too.
 
-If you keep the old GitHub Pages site at `szcheng0702.github.io`, add a redirect
-there pointing at the new domain, so existing links and search rankings follow.
+`SITE_URL` still overrides the default if it is set, which is useful if you ever
+want a preview deployment to advertise its own address instead of the production
+one.
+
+### The old GitHub Pages site
+
+`szcheng0702.github.io` served the previous Jekyll site. It now redirects here —
+see `old-site-redirect/README.md` in this repository for the files that live in
+the `szcheng0702/szcheng0702.github.io` repository and how they work.
 
 ## License
 
