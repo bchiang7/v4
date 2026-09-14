@@ -19,7 +19,7 @@ const StyledLoader = styled.div`
 
   .logo-wrapper {
     width: max-content;
-    max-width: 120px;
+    max-width: 100px;
     transition: var(--transition);
     opacity: ${props => (props.isMounted ? 1 : 0)};
     svg {
@@ -29,7 +29,6 @@ const StyledLoader = styled.div`
       margin: 0 auto;
       fill: none;
       user-select: none;
-      color: #ffffff;
       #B {
         opacity: 0;
       }
@@ -55,17 +54,17 @@ const Loader = ({ finishLoading }) => {
       })
       .add({
         targets: '#logo #B',
-        duration: 600,
+        duration: 700,
         easing: 'easeInOutQuart',
         opacity: 1,
       })
       .add({
         targets: '#logo',
-        delay: 400,
-        duration: 700,
-        easing: 'easeInQuart',
+        delay: 500,
+        duration: 300,
+        easing: 'easeInOutQuart',
         opacity: 0,
-        translateY: -180,
+        scale: 0.1,
       })
       .add({
         targets: '.loader',
