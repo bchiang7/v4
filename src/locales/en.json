@@ -6,21 +6,21 @@
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
-  "meta_description": "Angelo Ortiz Vega — Fullstack Engineer based in Costa Rica. I build and ship production-grade systems, lead technical initiatives, and drive end-to-end ownership across the full stack. 4+ years in startups and product teams.",
+  "meta_description": "Angelo Ortiz Vega — Full Stack AI Engineer & Team Lead based in Costa Rica. I build AI systems that run in production at scale: LLM agents, real-time telemetry, and ML that ships. 6 years across startups, logistics, and banking.",
 
-  "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
-  "hero_txt_about": "I build and ship full-stack systems at scale — from architecture to production, end to end. As a Fullstack Engineer and Tech Lead, I specialize in scalable architectures, real-time operational platforms, and integrating ML where it has the most impact.",
+  "hero_txt_keywords": "Full Stack AI Engineer · Team Lead · Builder",
+  "hero_txt_about": "I build AI systems that run in production, at scale, where failure has consequences. I work at the point where machine learning stops being a notebook and starts being infrastructure — LLM agents, real-time systems, and the full stack that makes them usable.",
   "hero_btn_cta": "Get in touch",
   "hero_text_proud": "Proudly from 🇨🇷",
   "hero_txt_creai": "Currently shipping features at",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
-  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — a Fullstack Engineer, Tech Lead, and Computer Engineering graduate from the Technological Institute of Costa Rica. I build production systems where the constraint isn't features — it's reliability, latency, and scale. My work spans full-stack applications, real-time operational platforms, and cloud-native infrastructure, with ML integration as part of the stack.",
-  "about_text_desc_2": "I take end-to-end technical ownership — designing, building, and operating full-stack applications, REST APIs, and cloud-native infrastructure in production environments. I drive architectural decisions across teams of 20+, define system design strategies, and collaborate with Data Science teams to ship ML capabilities into production.",
+  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — a Full Stack AI Engineer, Team Lead, and University Lecturer from Costa Rica. I build AI systems that run in production. Most of my work lives in the gap where models, LLM agents, and optimization algorithms meet legacy systems, real-time data streams, and businesses that can't stop running while you deploy. At Creai I lead development on a logistics platform handling 220K weekly trips, where I drove the build of a real-time monitoring system unifying telemetry, vehicle, driver, and incident data — and designed the ETA prediction algorithm behind it.",
+  "about_text_desc_2": "I'm a Computer Engineer from the Technological Institute of Costa Rica, with a foundation that runs deeper than web: FPGA and Verilog signal processing, CUDA parallel computing, computer architecture, and compilers. That background is why I'm drawn to software that touches the physical world — vehicles, sensors, telemetry, systems where something real depends on the output.",
   "about_text_desc_3_1": "I hold a degree in Computer Engineering from the ",
-  "about_text_desc_3_2": ", with a strong foundation in systems and computer architecture. Alongside, I have spent more than three years as a University Lecturer — teaching Artificial Intelligence, Data Analysis, Machine Learning, and Full Stack Development at ",
-  "about_text_desc_4_2": " — bridging academia and industry through hands-on, project-based learning.",
+  "about_text_desc_3_2": ", with a foundation in systems and computer architecture. Since 2022 I've also taught Artificial Intelligence, Machine Learning, Deep Learning, and Full Stack Development at ",
+  "about_text_desc_4_2": " — where I also authored the complete UX Design Certification Program.",
   "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
   "about_text_desc_5_a": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, ",
   "about_text_desc_5_b": "playing table tennis",
@@ -31,77 +31,84 @@
 
   "skills_text_title": "Skills & Stack",
   "skills_text_subtitle": "Technologies and tools I work with",
-  "skills_text_dw": "Web Development",
-  "skills_text_ds": "Data Science & Analytics",
-  "skills_text_ml": "ML & AI",
-  "skills_text_di": "DevOps & Infrastructure",
+  "skills_text_ai": "AI & Machine Learning",
+  "skills_text_backend": "Backend & APIs",
+  "skills_text_frontend": "Frontend",
+  "skills_text_infra": "Infrastructure",
+  "skills_text_systems": "Systems & Hardware",
 
   "experience_text_title": "Where I've Worked",
   "experience_text_subtitle": "Roles where I've led and shipped products.",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
-    "Design and deliver industry-focused courses in Artificial Intelligence, Machine Learning, Deep Learning, Data Analysis, Python Development, AWS, and Full Stack Software Engineering.",
-    "Mentor students through the creation of production-ready applications, AI solutions, and capstone projects aligned with current industry practices and emerging technologies.",
-    "Authored and structured the complete UX Design Certification Program, developing curriculum, learning outcomes, practical workshops, and evaluation frameworks.",
-    "Bridge academia and industry by integrating real-world case studies, agile methodologies, cloud technologies, and modern software engineering practices into the classroom.",
-    "Help prepare the next generation of developers, AI practitioners, and product professionals through hands-on, project-based learning experiences."
+    "Teach industry-focused courses in Artificial Intelligence, Machine Learning, Deep Learning, Data Analysis, Python, AWS, and Full Stack Engineering, drawing directly from active production experience.",
+    "Mentor students through capstone projects and production-ready AI applications, guiding them from problem framing to deployed solutions using the tooling and practices teams use in industry.",
+    "Authored the complete UX Design Certification Program, from curriculum design to hands-on workshops and assessment.",
+    "Bring real-world case studies, agile delivery, and cloud infrastructure into the classroom, keeping course content aligned with what engineering teams are actually shipping."
   ],
 
   "job_title_freelancer1": "Freelance Consultant",
   "jobs_freelancer1": [
-    "Engineered custom software solutions for startups and organizations under real-world constraints — automation systems, cloud-native APIs, and full-stack platforms with production requirements.",
-    "Led projects end-to-end with full technical ownership: architecture, development, deployment, and ongoing operations.",
-    "Designed and implemented scalable systems using React, Node.js, Python, and AWS — optimizing for reliability and performance under production conditions.",
-    "Worked directly with technical founders and engineering stakeholders to translate hard constraints into practical, maintainable system designs.",
-    "Built automation pipelines and custom integrations that eliminated manual processes and improved operational reliability."
+    "Delivered 15+ custom software solutions for startups, founders, and organizations — from marketing platforms and web applications to automation systems and cloud-native APIs.",
+    "Owned projects end-to-end: requirements discovery, solution architecture, development, deployment, and ongoing support, acting as the sole technical decision-maker.",
+    "Designed and shipped scalable systems with React, Node.js, Python, and AWS, integrating AI and automation where it removed real operational bottlenecks rather than adding complexity.",
+    "Worked directly with founders and business stakeholders to translate ambiguous business problems into maintainable, production-ready software under tight budget and timeline constraints.",
+    "Built custom integrations and automation pipelines that eliminated manual processes, cutting turnaround times and freeing client teams to focus on core operations."
   ],
 
-  "job_title_creai": "Fullstack AI Engineer",
+  "job_title_creai_lead": "Team Lead",
+  "jobs_creai_lead": [
+    "Lead a team building AI-powered products and mission-critical logistics systems, owning technical direction and delivery across core platform capabilities.",
+    "Drive architecture decisions, system design discussions, and implementation strategy inside a cross-functional group of 20+ engineers, designers, product owners, delivery managers, and AI specialists.",
+    "Set technical standards and mentor engineers while staying hands-on across the stack."
+  ],
+
+  "job_title_creai": "Full Stack AI Engineer",
   "jobs_creai": [
-    "Lead the development of AI-powered products and mission-critical logistics systems — where reliability and uptime are non-negotiable and operational failures have immediate real-world consequences.",
-    "Own the operational core of a real-time logistics platform: routing algorithms, trip state machines, and service orchestration that coordinate live fleet operations at scale.",
-    "Architect, develop, and maintain scalable full-stack applications and APIs using React, Ember.js, Laravel, PHP, and Python.",
-    "Drive technical decisions, system design discussions, and implementation strategies across a cross-functional team of 20+ engineers, designers, product owners, and AI specialists.",
-    "Define architecture and technical strategy to ensure scalability, fault tolerance, and alignment with operational requirements.",
-    "Partner with Data Science teams to integrate ML capabilities into production — accelerating automation and bringing model-driven decisions into live systems."
+    "Delivered AI-powered logistics products at scale: 220K weekly trips, 8.5K drivers, and 10K vehicles in production, with adoption measured against operational KPIs.",
+    "Shipped LLM-based agents and optimization algorithms integrated with legacy systems, turning fragmented manual processes into traceable, automated digital workflows.",
+    "Led the development of a real-time monitoring system unifying driver, vehicle, telemetry, bucket, and incident data into a single live operational view.",
+    "Designed and implemented the ETA prediction algorithm powering that system, improving trip visibility and enabling proactive incident response across the network.",
+    "Owned core business domains — routes, services, and trip management — building the operational backbone of a large-scale logistics platform serving customers in Mexico.",
+    "Architected and maintained scalable full-stack applications and APIs with React, Ember.js, Laravel, PHP, and Python, bridging ML models and production systems end to end.",
+    "Partnered with Data Science and Product to move AI/ML capabilities from experimentation into production environments."
   ],
 
   "job_title_easyhop": "Fullstack Developer",
   "jobs_easyhop": [
-    "Contributed to the development of both driver and passenger platforms, delivering business-critical functionality across mobile and web applications.",
-    "Developed the driver mobile application, implementing route management, map integrations, pickup workflows, and geolocation-based experiences using OpenStreetMap technologies.",
-    "Led a UX research initiative that identified product opportunities and influenced strategic investment in a web-based driver platform, supporting business growth and operational improvements.",
-    "Collaborated with product stakeholders to design and implement features that improved user experience, route visibility, and operational workflows.",
-    "Expanded responsibilities from mobile development to full-stack product development, contributing to frontend, backend, and product-focused initiatives across the platform ecosystem."
+    "Built the driver mobile application from the ground up, implementing route management, OpenStreetMap integrations, pickup workflows, and geolocation-based experiences.",
+    "Initiated and led a UX research effort with real drivers to understand how the product was actually used in the field — findings that reframed the team's MVP strategy and redirected development toward the passenger platform.",
+    "Joined the passenger web application team following that pivot, delivering business-critical functionality across frontend and backend and extending the product from a single mobile app into a multi-platform ecosystem.",
+    "Partnered with product stakeholders to translate user research into shipped features, improving route visibility, usability, and day-to-day operational workflows.",
+    "Grew from a mobile-focused role into full-stack product development, contributing across mobile, web, backend, and product strategy."
   ],
 
   "job_title_qubosystems": "Software Engineer",
   "jobs_qubosystems": [
-    "Designed and shipped a production ML module that automated faculty compensation classification — trained, validated, deployed, and maintained in a live payroll environment, reducing manual administrative overhead.",
-    "Served as technical lead for a payroll management platform for a private university, coordinating a team of 5 developers and driving architectural and implementation decisions.",
-    "Built a faculty information management platform enabling academic staff to manage profile data and publish content to the university's public-facing 'Claustro Docente' portal.",
-    "Developed secure REST APIs, administrative platforms, and frontend applications using React and modern backend technologies.",
-    "Designed and implemented a data encryption module for a third-party mobile point-of-sale solution used by a Costa Rican banking institution.",
-    "Delivered solutions across the full software lifecycle: architecture, development, testing, deployment, and stakeholder collaboration."
+    "Served as technical lead for a payroll management platform built for a private university in Costa Rica, coordinating a team of 5 developers and owning architectural and implementation decisions end-to-end.",
+    "Designed and deployed a machine learning module that automated faculty salary classification, replacing a manual administrative process with a reproducible, auditable system.",
+    "Built a faculty information management platform that let academic staff maintain their own profile data and auto-publish to the university's public 'Claustro Docente' portal, eliminating a recurring editorial bottleneck.",
+    "Developed secure REST APIs, administrative platforms, and React frontends, including a data encryption module for a mobile point-of-sale solution used by a Costa Rican banking institution under financial-sector security requirements.",
+    "Delivered across the full software lifecycle — architecture, development, testing, deployment, and stakeholder collaboration."
   ],
 
   "jobs_scroll_left": "Scroll tabs left",
   "jobs_scroll_right": "Scroll tabs right",
   "job_title_csi": "Electronic Technician",
   "jobs_csi": [
-    "Corrective and preventive maintenance of electrical equipment.",
-    "Support to engineers in the development and design of electronic equipment that will improve the cap production process.",
-    "Accompaniment in the elaboration of the main electrical maintenance plan of the plant."
+    "Performed corrective and preventive maintenance on industrial electrical equipment in a manufacturing plant.",
+    "Supported engineers in designing and developing electronic equipment to improve the cap production process.",
+    "Contributed to the plant's primary electrical maintenance plan."
   ],
 
   "projects_text_title": "Some Things I've Built",
   "projects_text_featured": "Featured Project",
-  "projects_angelortizvcom": "angelortizv.com is a website where whenever I have the opportunity, I leave a few minutes of what I am doing to share what I am learning or what I am thinking.",
+  "projects_angelortizvcom": "A space where I share what I'm learning and thinking, whenever I get a few minutes.",
   "projects_easyhop": "Problem: drivers had no single app to see routes, stops, and validate passenger tickets. I built the driver mobile app end-to-end — map with stop points, routes, and ticket validation — a core product the platform still uses today.",
-  "projects_topspinai": "Problem: coaches and analysts had no automated way to analyze table tennis video for ball bounces and net hits. I built an AI system using computer vision (ball detection and semantic segmentation) so they can get real-time insights from match footage.",
+  "projects_topspinai": "Problem: coaches and analysts had no automated way to analyze table tennis video for ball bounces and net hits. I built an AI system using computer vision — ball detection and semantic segmentation — that surfaces real-time insights from match footage.",
   "projects_aiengineering": "A structured knowledge base built chapter by chapter from Chip Huyen's AI Engineering (O'Reilly, 2025). Covers foundation models, evaluation, fine-tuning, and how to ship reliable AI applications to production — organized for quick review in reading order.",
-  "projects_uxarc": "ux-arc is a personal blog and repository dedicated to sharing knowledge, experiences, and resources about the world of user experience design. Over the years, I have collected valuable information on various aspects of digital design, and this space was born with the intention of organizing and disseminating that knowledge in an accessible way for those looking to improve their skills and understanding in the field of UX.",
-  "projects_ceitcr": "ce-itcr is the repository where the programming projects that I have carried out throughout my career in Computer Engineering courses are housed. The respective documentation on each course and code is on github.",
+  "projects_uxarc": "A personal blog and repository for knowledge, experiences, and resources on user experience design — organized to be accessible for anyone looking to sharpen their UX skills.",
+  "projects_ceitcr": "Engineering projects from my Computer Engineering degree: FPGA/Verilog signal processing, CUDA parallel computing, cache coherence protocols, computer vision, and compiler design.",
 
   "projects_ngClone": "This is a Google Keep clone built with Angular to practice and improve my Angular skills. It follows the original app's design principles and includes many core features.",
   "projects_karaoke": "Karaoke is a project for the course SOA41D - Software Architecture. A simple Karaoke Streaming App build with React for the Front-end and Nodejs for Server-side.",

@@ -6,21 +6,21 @@
   "menu_text_gallery": "Galeria",
   "menu_text_contact": "Contacto",
 
-  "meta_description": "Angelo Ortiz Vega — Fullstack Engineer en Costa Rica. Construyo sistemas en producción, lidero iniciativas técnicas y tomo ownership end-to-end del stack completo. Más de 4 años en startups y equipos de producto.",
+  "meta_description": "Angelo Ortiz Vega — Full Stack AI Engineer & Team Lead en Costa Rica. Construyo sistemas de IA que corren en producción a escala: agentes LLM, telemetría en tiempo real y ML que llega a producción. 6 años en startups, logística y banca.",
 
-  "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
-  "hero_txt_about": "Construyo y llevo a producción sistemas full-stack a escala — desde la arquitectura hasta producción, de punta a punta. Como Fullstack Engineer y Tech Lead, me especializo en arquitecturas escalables, plataformas operacionales en tiempo real e integración de ML donde genera mayor impacto.",
+  "hero_txt_keywords": "Full Stack AI Engineer · Team Lead · Builder",
+  "hero_txt_about": "Construyo sistemas de IA que corren en producción, a escala, donde el fallo tiene consecuencias. Trabajo en el punto donde el machine learning deja de ser un notebook y se convierte en infraestructura — agentes LLM, sistemas en tiempo real y el stack completo que los hace usables.",
   "hero_btn_cta": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
   "hero_txt_creai": "Actualmente desarrollando en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Fullstack Engineer, Tech Lead y graduado en Ingeniería en Computadores del Instituto Tecnológico de Costa Rica. Construyo sistemas en producción donde la restricción no son las funcionalidades, sino la confiabilidad, la latencia y la escala. Mi trabajo abarca aplicaciones full-stack, plataformas operacionales en tiempo real e infraestructura cloud-native, con integración de ML como parte del stack.",
-  "about_text_desc_2": "Tomo ownership técnico end-to-end — diseñando, construyendo y operando aplicaciones full-stack, APIs e infraestructura cloud-native en entornos de producción. Lidero decisiones arquitectónicas en equipos de más de 20 personas, defino estrategias de diseño de sistemas y colaboro con equipos de Data Science para llevar capacidades de ML a producción.",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Full Stack AI Engineer, Team Lead y Profesor Universitario de Costa Rica. Construyo sistemas de IA que corren en producción. La mayor parte de mi trabajo vive en la brecha donde los modelos, agentes LLM y algoritmos de optimización se encuentran con sistemas legados, flujos de datos en tiempo real y negocios que no pueden detenerse mientras haces deploy. En Creai lidero el desarrollo de una plataforma logística que maneja 220K viajes semanales, donde impulsé la construcción de un sistema de monitoreo en tiempo real que unifica telemetría, vehículo, conductor e incidentes — y diseñé el algoritmo de predicción de ETA que lo alimenta.",
+  "about_text_desc_2": "Soy Ingeniero en Computadores del Instituto Tecnológico de Costa Rica, con una base que va más allá de la web: procesamiento de señales con FPGA y Verilog, computación paralela con CUDA, arquitectura de computadoras y compiladores. Ese background es por qué me atraen los sistemas que tocan el mundo físico — vehículos, sensores, telemetría, sistemas donde algo real depende del resultado.",
   "about_text_desc_3_1": "Soy graduado en Ingeniería en Computadores del ",
-  "about_text_desc_3_2": ", con una base sólida en sistemas y arquitectura de computadoras. Paralelamente, llevo más de tres años como Profesor Universitario — impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Machine Learning y Desarrollo Full Stack en la ",
-  "about_text_desc_4_2": " — conectando academia e industria a través de aprendizaje práctico y basado en proyectos.",
+  "about_text_desc_3_2": ", con una base en sistemas y arquitectura de computadoras. Desde 2022 también enseño Inteligencia Artificial, Machine Learning, Deep Learning y Desarrollo Full Stack en la ",
+  "about_text_desc_4_2": " — donde también autoré el Programa Completo de Certificación en Diseño UX.",
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
   "about_text_desc_5_a": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos, ",
   "about_text_desc_5_b": "jugando ping pong",
@@ -31,77 +31,84 @@
 
   "skills_text_title": "Habilidades & Stack Tecnológico",
   "skills_text_subtitle": "Tecnologías y herramientas con las que trabajo",
-  "skills_text_dw": "Desarrollo Web",
-  "skills_text_ds": "Ciencia de datos y análisis",
-  "skills_text_ml": "ML e IA",
-  "skills_text_di": "DevOps e infraestructura",
+  "skills_text_ai": "IA & Machine Learning",
+  "skills_text_backend": "Backend & APIs",
+  "skills_text_frontend": "Frontend",
+  "skills_text_infra": "Infraestructura",
+  "skills_text_systems": "Sistemas & Hardware",
 
   "experience_text_title": "Donde he trabajado",
   "experience_text_subtitle": "Roles donde he liderado y llevado productos a producción.",
   "job_title_ucreativa": "Profesor Universitario",
   "jobs_ucreativa": [
-    "Diseño e imparto cursos enfocados en la industria: Inteligencia Artificial, Machine Learning, Deep Learning, Análisis de Datos, Desarrollo en Python, AWS y Desarrollo Full Stack.",
-    "Mentorizo a estudiantes en la creación de aplicaciones listas para producción, soluciones de IA y proyectos de graduación alineados con las prácticas actuales de la industria.",
-    "Estructuré y redacté el Programa Completo de Certificación en Diseño UX, desarrollando plan de estudios, resultados de aprendizaje, talleres prácticos y marcos de evaluación.",
-    "Conecto la academia con la industria integrando casos reales, metodologías ágiles, tecnologías cloud y prácticas modernas de ingeniería de software al aula.",
-    "Contribuyo a preparar a la próxima generación de desarrolladores, profesionales de IA y producto a través de experiencias de aprendizaje práctico y basado en proyectos."
+    "Imparto cursos enfocados en la industria en Inteligencia Artificial, Machine Learning, Deep Learning, Análisis de Datos, Python, AWS e Ingeniería Full Stack, basándome directamente en experiencia activa en producción.",
+    "Mentorizo a estudiantes en proyectos de graduación y aplicaciones de IA listas para producción, guiándolos desde el planteamiento del problema hasta soluciones desplegadas usando las herramientas y prácticas que usan los equipos de la industria.",
+    "Autoré el Programa Completo de Certificación en Diseño UX, desde el diseño curricular hasta talleres prácticos y evaluación.",
+    "Llevo al aula casos de estudio del mundo real, entrega ágil e infraestructura cloud, manteniendo el contenido alineado con lo que los equipos de ingeniería realmente están construyendo."
   ],
 
   "job_title_freelancer1": "Consultor Freelance",
   "jobs_freelancer1": [
-    "Desarrollé soluciones de software a medida para startups y organizaciones bajo restricciones reales — sistemas de automatización, APIs cloud-native y plataformas full-stack con requisitos de producción.",
-    "Lideré proyectos con ownership técnico completo: arquitectura, desarrollo, despliegue y operación continua.",
-    "Diseñé e implementé sistemas escalables con React, Node.js, Python y AWS — optimizando para confiabilidad y rendimiento en condiciones de producción.",
-    "Trabajé directamente con founders técnicos y stakeholders de ingeniería para traducir restricciones reales en diseños de sistemas prácticos y mantenibles.",
-    "Construí pipelines de automatización e integraciones personalizadas que eliminaron procesos manuales y mejoraron la confiabilidad operacional."
+    "Entregué más de 15 soluciones de software a medida para startups, founders y organizaciones — desde plataformas de marketing y aplicaciones web hasta sistemas de automatización y APIs cloud-native.",
+    "Fui responsable end-to-end de los proyectos: descubrimiento de requisitos, arquitectura de la solución, desarrollo, despliegue y soporte continuo, actuando como el único tomador de decisiones técnicas.",
+    "Diseñé y desplegué sistemas escalables con React, Node.js, Python y AWS, integrando IA y automatización donde eliminaba cuellos de botella operacionales reales en lugar de añadir complejidad.",
+    "Trabajé directamente con founders y stakeholders de negocio para traducir problemas de negocio ambiguos en software mantenible y listo para producción bajo restricciones ajustadas de presupuesto y tiempo.",
+    "Construí integraciones personalizadas y pipelines de automatización que eliminaron procesos manuales, reduciendo tiempos de entrega y liberando a los equipos de clientes para enfocarse en operaciones core."
   ],
 
-  "job_title_creai": "Fullstack AI Engineer",
+  "job_title_creai_lead": "Team Lead",
+  "jobs_creai_lead": [
+    "Lidero un equipo que construye productos con IA y sistemas logísticos de misión crítica, siendo responsable de la dirección técnica y la entrega en las capacidades core de la plataforma.",
+    "Impulso decisiones de arquitectura, discusiones de diseño de sistemas y estrategia de implementación dentro de un grupo transversal de más de 20 ingenieros, diseñadores, product owners, delivery managers y especialistas en IA.",
+    "Establezco estándares técnicos y mentorizo ingenieros mientras me mantengo hands-on en todo el stack."
+  ],
+
+  "job_title_creai": "Full Stack AI Engineer",
   "jobs_creai": [
-    "Lidero el desarrollo de productos con IA y sistemas logísticos de misión crítica — donde la disponibilidad y la confiabilidad son innegociables y los fallos operacionales tienen consecuencias reales e inmediatas.",
-    "Soy responsable del núcleo operacional de una plataforma logística en tiempo real: algoritmos de ruteo, máquinas de estado de viajes y orquestación de servicios que coordinan operaciones de flota en vivo a escala.",
-    "Arquitecto, desarrollo y mantengo aplicaciones full-stack y APIs escalables usando React, Ember.js, Laravel, PHP y Python.",
-    "Tomo decisiones técnicas y lidero discusiones de diseño de sistemas en un equipo transversal de más de 20 ingenieros, diseñadores, product owners y especialistas en IA.",
-    "Defino arquitectura y estrategia técnica para garantizar escalabilidad, tolerancia a fallos y alineación con los requisitos operacionales.",
-    "Colaboro con los equipos de Data Science para integrar capacidades de ML en producción — acelerando la automatización y llevando decisiones basadas en modelos a sistemas en vivo."
+    "Entregué productos logísticos con IA a escala: 220K viajes semanales, 8.5K conductores y 10K vehículos en producción, con adopción medida contra KPIs operacionales.",
+    "Implementé agentes basados en LLM y algoritmos de optimización integrados con sistemas legados, convirtiendo procesos manuales fragmentados en flujos de trabajo digitales trazables y automatizados.",
+    "Lideré el desarrollo de un sistema de monitoreo en tiempo real que unifica datos de conductor, vehículo, telemetría, bucket e incidentes en una vista operacional en vivo.",
+    "Diseñé e implementé el algoritmo de predicción de ETA que alimenta ese sistema, mejorando la visibilidad de viajes y habilitando respuesta proactiva ante incidentes en toda la red.",
+    "Fui responsable de los dominios de negocio core — rutas, servicios y gestión de viajes — construyendo la columna vertebral operacional de una plataforma logística a gran escala que sirve a clientes en México.",
+    "Arquitecté y mantuve aplicaciones full-stack y APIs escalables con React, Ember.js, Laravel, PHP y Python, conectando modelos de ML con sistemas de producción end to end.",
+    "Colaboré con Data Science y Producto para llevar capacidades de IA/ML desde la experimentación a entornos de producción."
   ],
 
   "job_title_easyhop": "Desarrollador Fullstack",
   "jobs_easyhop": [
-    "Contribuí al desarrollo de las plataformas de conductores y pasajeros, entregando funcionalidades críticas para el negocio en aplicaciones móviles y web.",
-    "Desarrollé la aplicación móvil para conductores, implementando gestión de rutas, integraciones de mapas, flujos de recogida y experiencias basadas en geolocalización con tecnologías OpenStreetMap.",
-    "Lideré una iniciativa de investigación en UX que identificó oportunidades de producto e influyó en la inversión estratégica en una plataforma web para conductores.",
-    "Colaboré con stakeholders de producto para diseñar e implementar funcionalidades que mejoraron la experiencia de usuario, la visibilidad de rutas y los flujos operacionales.",
-    "Expandí mis responsabilidades del desarrollo móvil al desarrollo full-stack, contribuyendo a iniciativas de frontend, backend y producto en todo el ecosistema de la plataforma."
+    "Construí la aplicación móvil para conductores de cero, implementando gestión de rutas, integraciones con OpenStreetMap, flujos de recogida y experiencias basadas en geolocalización.",
+    "Inicié y lideré un esfuerzo de investigación UX con conductores reales para entender cómo se usaba el producto en el campo — hallazgos que reencuadraron la estrategia MVP del equipo y redirigieron el desarrollo hacia la plataforma de pasajeros.",
+    "Me uní al equipo de la aplicación web de pasajeros tras ese pivote, entregando funcionalidades críticas en frontend y backend y extendiendo el producto de una sola app móvil a un ecosistema multiplataforma.",
+    "Colaboré con stakeholders de producto para traducir la investigación de usuarios en funcionalidades entregadas, mejorando la visibilidad de rutas, la usabilidad y los flujos operacionales.",
+    "Evolucioné de un rol enfocado en mobile a desarrollo full-stack, contribuyendo en mobile, web, backend y estrategia de producto."
   ],
 
   "job_title_qubosystems": "Ingeniero de Software",
   "jobs_qubosystems": [
-    "Diseñé y puse en producción un módulo de ML que automatizó la clasificación salarial de docentes — entrenado, validado, desplegado y mantenido en un entorno de planillas en producción, reduciendo la carga administrativa manual.",
-    "Actué como líder técnico en el desarrollo de una plataforma de gestión de planillas para una universidad privada, coordinando un equipo de 5 desarrolladores y tomando decisiones de arquitectura e implementación.",
-    "Construí una plataforma de gestión de información docente que permite al personal académico administrar sus datos de perfil y publicar contenido al portal público 'Claustro Docente' de la universidad.",
-    "Desarrollé APIs REST seguras, plataformas administrativas y aplicaciones frontend usando React y tecnologías backend modernas.",
-    "Diseñé e implementé un módulo de encriptación de datos para una solución móvil de punto de venta de terceros utilizada por una institución bancaria costarricense.",
-    "Entregué soluciones en todo el ciclo de vida del software: arquitectura, desarrollo, pruebas, despliegue y colaboración con stakeholders."
+    "Actué como líder técnico de una plataforma de gestión de planillas para una universidad privada en Costa Rica, coordinando un equipo de 5 desarrolladores y siendo responsable de las decisiones de arquitectura e implementación end-to-end.",
+    "Diseñé y desplegué un módulo de machine learning que automatizó la clasificación salarial del cuerpo docente, reemplazando un proceso administrativo manual por un sistema reproducible y auditable.",
+    "Construí una plataforma de gestión de información docente que permite al personal académico mantener sus propios datos de perfil y autopublicarlos en el portal público 'Claustro Docente' de la universidad, eliminando un cuello de botella editorial recurrente.",
+    "Desarrollé APIs REST seguras, plataformas administrativas y frontends en React, incluyendo un módulo de encriptación de datos para una solución de punto de venta móvil utilizada por una institución bancaria costarricense bajo requisitos de seguridad del sector financiero.",
+    "Entregué a lo largo del ciclo de vida completo del software — arquitectura, desarrollo, pruebas, despliegue y colaboración con stakeholders."
   ],
 
   "jobs_scroll_left": "Desplazar pestañas a la izquierda",
   "jobs_scroll_right": "Desplazar pestañas a la derecha",
   "job_title_csi": "Técnico en Electrónica",
   "jobs_csi": [
-    "Mantenimiento correctivo y preventivo de equipos eléctricos.",
-    "Apoyo a los ingenieros en el desarrollo y diseño de equipos electrónicos para mejorar el proceso de producción de tapas.",
-    "Acompañamiento en la elaboración del plan principal de mantenimiento eléctrico de la planta."
+    "Realicé mantenimiento correctivo y preventivo de equipos eléctricos industriales en una planta de manufactura.",
+    "Apoyé a los ingenieros en el diseño y desarrollo de equipos electrónicos para mejorar el proceso de producción de tapas.",
+    "Contribuí al plan principal de mantenimiento eléctrico de la planta."
   ],
 
   "projects_text_title": "Algunas cosas que he construido",
   "projects_text_featured": "Proyecto Destacado",
-  "projects_angelortizvcom": "angelortizv.com es un sitio web donde, siempre que tengo la oportunidad, dedico unos minutos de lo que estoy haciendo para compartir lo que estoy aprendiendo o lo que estoy pensando.",
+  "projects_angelortizvcom": "Un espacio donde comparto lo que estoy aprendiendo y pensando, cuando tengo unos minutos.",
   "projects_easyhop": "Problema: los conductores no tenían una sola app para ver rutas, paradas y validar boletos. Construí la app móvil para conductores de punta a punta — mapa con puntos de parada, rutas y validación de boletos — un producto central que la plataforma sigue usando hoy.",
-  "projects_topspinai": "Problema: entrenadores y analistas no tenían forma automatizada de analizar video de tenis de mesa (rebotes, toques de red). Construí un sistema con IA y visión por computadora (detección de pelota y segmentación semántica) para dar insights en tiempo real a partir del video.",
-  "projects_aiengineering": "Resúmenes y apuntes organizados por capítulo a partir de AI Engineering de Chip Huyen (O'Reilly, 2025). Un solo lugar para repasar el libro en orden de lectura: qué son los modelos fundacionales, cómo evaluarlos y adaptarlos, y cómo llevar aplicaciones de IA fiables a producción.",
-  "projects_uxarc": "ux-arc es un blog personal y repositorio dedicado a compartir conocimientos, experiencias y recursos sobre el mundo del diseño de experiencia de usuario. A lo largo de los años, he recopilado información valiosa sobre diversos aspectos del diseño digital, y este espacio nació con la intención de organizar y difundir ese conocimiento de forma accesible para quienes buscan mejorar sus habilidades y comprensión en el campo de la UX.",
-  "projects_ceitcr": "ce-itcr es el repositorio donde se encuentran los proyectos de programación que he realizado a lo largo de mi carrera en los cursos de Ingeniería en Computadores. La documentación respectiva de cada curso y su código se encuentran en GitHub.",
+  "projects_topspinai": "Problema: entrenadores y analistas no tenían forma automatizada de analizar video de tenis de mesa para rebotes y toques de red. Construí un sistema de IA usando visión por computadora — detección de pelota y segmentación semántica — que extrae insights en tiempo real del video de partidos.",
+  "projects_aiengineering": "Una base de conocimiento estructurada construida capítulo por capítulo a partir de AI Engineering de Chip Huyen (O'Reilly, 2025). Cubre modelos fundacionales, evaluación, fine-tuning y cómo llevar aplicaciones de IA confiables a producción — organizada para repaso rápido en orden de lectura.",
+  "projects_uxarc": "Un blog personal y repositorio de conocimiento, experiencias y recursos sobre diseño de experiencia de usuario — organizado para ser accesible para quien quiera mejorar sus habilidades en UX.",
+  "projects_ceitcr": "Proyectos de ingeniería de mi carrera en Ingeniería en Computadores: procesamiento de señales con FPGA/Verilog, computación paralela con CUDA, protocolos de coherencia de caché, visión por computadora y diseño de compiladores.",
 
   "projects_ngClone": "Este es un clon de Google Keep desarrollado con Angular para practicar y mejorar mis habilidades en Angular. Sigue los principios de diseño de la aplicación original e incluye muchas funciones básicas.",
   "projects_karaoke": "Karaoke es un proyecto para el curso SOA41D - Arquitectura de Software. Una sencilla aplicación de karaoke en streaming desarrollada con React para el front-end y Node.js para el servidor.",

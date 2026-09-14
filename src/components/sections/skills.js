@@ -99,10 +99,11 @@ const SkillPill = styled.li`
 
 // Icon component expects exact names (e.g. 'HTML', 'CSS', 'REST API', 'GCP', 'AWS')
 const SKILL_CATEGORIES = {
-  dw: ['TypeScript', 'React', 'Ember.js', 'PHP', 'Laravel', 'GraphQL', 'REST API'],
-  ds: ['Python', 'PostgreSQL'],
-  ml: ['PyTorch', 'TensorFlow', 'scikit-learn'],
-  di: ['AWS', 'GCP', 'Docker', 'GitHub'],
+  ai: ['Python', 'PyTorch', 'TensorFlow', 'scikit-learn', 'LLM Agents', 'OpenCV'],
+  backend: ['FastAPI', 'Flask', 'Node.js', 'PHP', 'Laravel', 'REST API', 'GraphQL', 'PostgreSQL'],
+  frontend: ['TypeScript', 'React', 'React Native', 'Ember.js'],
+  infra: ['AWS', 'GCP', 'Docker', 'CI/CD'],
+  systems: ['C++', 'CUDA', 'Verilog/FPGA'],
 };
 
 const Skills = () => {
@@ -116,10 +117,11 @@ const Skills = () => {
   }, []);
 
   const categoryKeys = [
-    { key: 'dw', titleKey: 'skills_text_dw' },
-    { key: 'ds', titleKey: 'skills_text_ds' },
-    { key: 'ml', titleKey: 'skills_text_ml' },
-    { key: 'di', titleKey: 'skills_text_di' },
+    { key: 'ai', titleKey: 'skills_text_ai' },
+    { key: 'backend', titleKey: 'skills_text_backend' },
+    { key: 'frontend', titleKey: 'skills_text_frontend' },
+    { key: 'infra', titleKey: 'skills_text_infra' },
+    { key: 'systems', titleKey: 'skills_text_systems' },
   ];
 
   return (

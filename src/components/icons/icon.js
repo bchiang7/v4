@@ -45,6 +45,16 @@ import {
   IconPhp,
   IconLaravel,
   IconFigma,
+  IconLLMAgents,
+  IconOpenCV,
+  IconFastAPI,
+  IconFlask,
+  IconNodeJS,
+  IconReactNative,
+  IconCICD,
+  IconCpp,
+  IconCUDA,
+  IconVerilogFPGA,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -137,6 +147,26 @@ const Icon = ({ name }) => {
       return <IconLaravel />;
     case 'Figma':
       return <IconFigma />;
+    case 'LLM Agents':
+      return <IconLLMAgents />;
+    case 'OpenCV':
+      return <IconOpenCV />;
+    case 'FastAPI':
+      return <IconFastAPI />;
+    case 'Flask':
+      return <IconFlask />;
+    case 'Node.js':
+      return <IconNodeJS />;
+    case 'React Native':
+      return <IconReactNative />;
+    case 'CI/CD':
+      return <IconCICD />;
+    case 'C++':
+      return <IconCpp />;
+    case 'CUDA':
+      return <IconCUDA />;
+    case 'Verilog/FPGA':
+      return <IconVerilogFPGA />;
     default:
       return <IconExternal />;
   }
