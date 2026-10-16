@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -27,6 +27,13 @@ const StyledJobsSection = styled.section`
     @media (min-width: 700px) {
       min-height: 340px;
     }
+  }
+
+  .archive-link {
+    margin-top: 50px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    color: var(--light-text-color);
   }
 `;
 
@@ -112,7 +119,7 @@ const StyledTabButton = styled.button`
   width: 100%;
   height: var(--tab-height);
   padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-bg-color);
+  border-left: 2px solid var(--outline-light);
   background-color: transparent;
   color: ${({ isActive }) => (isActive ? 'var(--signal-color)' : 'var(--text-color)')};
   font-family: var(--font-mono);
@@ -140,7 +147,7 @@ const StyledTabButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: var(--light-bg-color);
+    background-color: var(--signal-color-tint);
   }
 `;
 
@@ -152,7 +159,7 @@ const StyledHighlight = styled.div`
   width: 2px;
   height: var(--tab-height);
   border-radius: var(--border-radius);
-  background: var(--signal-color);
+  background: linear-gradient(180deg, var(--signal-color), var(--signal-soft));
   transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
@@ -192,6 +199,12 @@ const StyledTabPanel = styled.div`
     }
   }
 
+  .role + .role {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--outline-light);
+  }
+
   .range {
     color: var(--light-text-color);
     font-family: var(--font-mono);
@@ -225,7 +238,20 @@ const Jobs = () => {
     }
   `);
 
-  const jobsData = data.jobs.edges;
+  // Roles at the same company share one tab (edges arrive sorted newest first)
+  const jobsData = React.useMemo(() => {
+    const groups = [];
+    data.jobs.edges.forEach(({ node }) => {
+      const { company } = node.frontmatter;
+      const group = groups.find(g => g.company === company);
+      if (group) {
+        group.roles.push(node);
+      } else {
+        groups.push({ company, roles: [node] });
+      }
+    });
+    return groups;
+  }, [data.jobs.edges]);
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -352,70 +378,75 @@ const Jobs = () => {
             aria-label="Job tabs"
             onKeyDown={e => onKeyDown(e)}>
             {jobsData &&
-              jobsData.map(({ node }, i) => {
-                const { company } = node.frontmatter;
-                return (
-                  <StyledTabButton
-                    key={i}
-                    isActive={activeTabId === i}
-                    onClick={() => setActiveTabId(i)}
-                    ref={el => (tabs.current[i] = el)}
-                    id={`tab-${i}`}
-                    role="tab"
-                    tabIndex={activeTabId === i ? '0' : '-1'}
-                    aria-selected={activeTabId === i ? true : false}
-                    aria-controls={`panel-${i}`}>
-                    <span>{company}</span>
-                  </StyledTabButton>
-                );
-              })}
+              jobsData.map(({ company }, i) => (
+                <StyledTabButton
+                  key={i}
+                  isActive={activeTabId === i}
+                  onClick={() => setActiveTabId(i)}
+                  ref={el => (tabs.current[i] = el)}
+                  id={`tab-${i}`}
+                  role="tab"
+                  tabIndex={activeTabId === i ? '0' : '-1'}
+                  aria-selected={activeTabId === i ? true : false}
+                  aria-controls={`panel-${i}`}>
+                  <span>{company}</span>
+                </StyledTabButton>
+              ))}
             <StyledHighlight activeTabId={activeTabId} />
           </StyledTabList>
         </TabListWrapper>
 
         <StyledTabPanels>
           {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { frontmatter } = node;
-              const { title, url, company, range, type, location, desc } = frontmatter;
-              const jobKeys = Array.isArray(t(`jobs_${desc}`))
-                ? t(`jobs_${desc}`)
-                : [t(`jobs_${desc}`)];
+            jobsData.map(({ roles }, i) => (
+              <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
+                <StyledTabPanel
+                  id={`panel-${i}`}
+                  role="tabpanel"
+                  tabIndex={activeTabId === i ? '0' : '-1'}
+                  aria-labelledby={`tab-${i}`}
+                  aria-hidden={activeTabId !== i}
+                  hidden={activeTabId !== i}>
+                  {roles.map(({ frontmatter }, roleIndex) => {
+                    const { title, url, company, range, type, location, desc } = frontmatter;
+                    const bullets = t(`jobs_${desc}`);
+                    const jobKeys = Array.isArray(bullets) ? bullets : [bullets];
 
-              return (
-                <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
-                  <StyledTabPanel
-                    id={`panel-${i}`}
-                    role="tabpanel"
-                    tabIndex={activeTabId === i ? '0' : '-1'}
-                    aria-labelledby={`tab-${i}`}
-                    aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}>
-                    <h3>
-                      <span>{t(title)}</span>
-                      <span className="company">
-                        &nbsp;@&nbsp;
-                        <a href={url} className="inline-link">
-                          {company}
-                        </a>
-                      </span>
-                    </h3>
+                    return (
+                      <div className="role" key={desc}>
+                        <h3>
+                          <span>{t(title)}</span>
+                          {roleIndex === 0 && (
+                            <span className="company">
+                              &nbsp;@&nbsp;
+                              <a href={url} className="inline-link">
+                                {company}
+                              </a>
+                            </span>
+                          )}
+                        </h3>
 
-                    <p className="range">
-                      {range} | {location} | {type}
-                    </p>
+                        <p className="range">
+                          {range} | {location} | {type}
+                        </p>
 
-                    <ul>
-                      {jobKeys.map((i, index) => (
-                        <li key={index}>{t(i)}</li>
-                      ))}
-                    </ul>
-                  </StyledTabPanel>
-                </CSSTransition>
-              );
-            })}
+                        <ul>
+                          {jobKeys.map((key, index) => (
+                            <li key={index}>{t(key)}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </StyledTabPanel>
+              </CSSTransition>
+            ))}
         </StyledTabPanels>
       </div>
+
+      <Link className="inline-link archive-link" to="/archive">
+        {t('experience_text_archive')}
+      </Link>
     </StyledJobsSection>
   );
 };

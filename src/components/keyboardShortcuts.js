@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { navigate } from 'gatsby';
 import { navLinks } from '@config';
 import { useLanguage } from '../hooks/LanguageContext';
 import { useKeyboardShortcuts } from '../hooks/KeyboardShortcutsContext';
@@ -86,20 +87,29 @@ const KeyboardShortcuts = () => {
 
       if (e.key === '?' && !e.ctrlKey && !e.metaKey && !e.altKey && !isInput) {
         e.preventDefault();
-        if (isOpen) {closeShortcuts();} else {openShortcuts();}
+        if (isOpen) {
+          closeShortcuts();
+        } else {
+          openShortcuts();
+        }
         return;
       }
 
       const num = parseInt(e.key, 10);
-      if (num >= 1 && num <= 6 && !e.ctrlKey && !e.metaKey && !e.altKey && !isInput) {
+      if (num >= 1 && num <= navLinks.length && !e.ctrlKey && !e.metaKey && !e.altKey && !isInput) {
         e.preventDefault();
         const link = navLinks[num - 1];
         if (link) {
-          const id = link.url.replace('/#', '');
-          const el = document.getElementById(id);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-            if (isOpen) {closeShortcuts();}
+          if (link.url.startsWith('/#')) {
+            const el = document.getElementById(link.url.replace('/#', ''));
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+              if (isOpen) {
+                closeShortcuts();
+              }
+            }
+          } else {
+            navigate(link.url);
           }
         }
       }
@@ -109,7 +119,9 @@ const KeyboardShortcuts = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, openShortcuts, closeShortcuts]);
 
-  if (!isOpen) {return null;}
+  if (!isOpen) {
+    return null;
+  }
 
   const sectionName = name => t(`menu_text_${name}`);
 
