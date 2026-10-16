@@ -4,10 +4,26 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { useLanguage } from '../../hooks/LanguageContext';
+import { spotlight, onSpotlightMove } from '../fx';
 
 const StyledSkillsSection = styled.section`
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+
+    > article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
 
   .skills-intro {
     margin: -10px 0 40px;
@@ -19,11 +35,12 @@ const StyledSkillsSection = styled.section`
 `;
 
 const CategoryCard = styled.article`
+  ${spotlight};
+  backdrop-filter: blur(10px);
   background: var(--light-bg-color);
   border: 1px solid var(--outline-light);
   border-radius: var(--border-radius);
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 1.25rem;
+  padding: 1.25rem 1.5rem;
   transition: var(--transition);
 
   &:hover {
@@ -36,15 +53,15 @@ const CategoryHeader = styled.header`
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--outline-light);
 
   .category-accent {
     width: 4px;
     height: 24px;
     border-radius: 2px;
-    background: var(--signal-color);
+    background: var(--gradient-text);
   }
 
   h3 {
@@ -68,9 +85,9 @@ const SkillPill = styled.li`
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  background: var(--bg-color);
+  background: var(--highlight-tint);
   border: 1px solid var(--outline-light);
-  border-radius: var(--border-radius);
+  border-radius: 999px;
   color: var(--light-text-color);
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
@@ -83,6 +100,13 @@ const SkillPill = styled.li`
     height: 22px;
     color: var(--light-text-color);
     transition: var(--transition);
+
+    /* one accent: icons rest in monochrome and regain their color on hover */
+    svg {
+      filter: grayscale(1) brightness(1.25);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
   }
 
   &:hover {
@@ -93,14 +117,30 @@ const SkillPill = styled.li`
 
     .pill-icon {
       color: var(--primary-color);
+
+      svg {
+        filter: none;
+        opacity: 1;
+      }
     }
   }
 `;
 
 // Icon component expects exact names (e.g. 'HTML', 'CSS', 'REST API', 'GCP', 'AWS')
 const SKILL_CATEGORIES = {
-  ai: ['Python', 'PyTorch', 'TensorFlow', 'scikit-learn', 'LLM Agents', 'OpenCV'],
-  backend: ['FastAPI', 'Flask', 'Node.js', 'PHP', 'Laravel', 'REST API', 'GraphQL', 'PostgreSQL'],
+  ai: ['Python', 'PyTorch', 'TensorFlow', 'scikit-learn', 'LLM Agents', 'Evals', 'OpenCV'],
+  backend: [
+    'FastAPI',
+    'Flask',
+    'Node.js',
+    'PHP',
+    'Laravel',
+    'REST API',
+    'GraphQL',
+    'PostgreSQL',
+    'Real-Time Systems',
+    'System Design',
+  ],
   frontend: ['TypeScript', 'React', 'React Native', 'Ember.js'],
   infra: ['AWS', 'GCP', 'Docker', 'CI/CD'],
   systems: ['C++', 'CUDA', 'Verilog/FPGA'],
@@ -129,24 +169,26 @@ const Skills = () => {
       <h2 className="numbered-heading">{t('skills_text_title')}</h2>
       <p className="skills-intro">{t('skills_text_subtitle')}</p>
 
-      {categoryKeys.map(({ key, titleKey }) => (
-        <CategoryCard key={key}>
-          <CategoryHeader>
-            <div className="category-accent" aria-hidden="true" />
-            <h3>{t(titleKey)}</h3>
-          </CategoryHeader>
-          <SkillGrid>
-            {SKILL_CATEGORIES[key].map(skill => (
-              <SkillPill key={skill}>
-                <span className="pill-icon" aria-hidden="true">
-                  <Icon name={skill} />
-                </span>
-                <span>{skill}</span>
-              </SkillPill>
-            ))}
-          </SkillGrid>
-        </CategoryCard>
-      ))}
+      <div className="skills-grid">
+        {categoryKeys.map(({ key, titleKey }) => (
+          <CategoryCard key={key} onMouseMove={onSpotlightMove}>
+            <CategoryHeader>
+              <div className="category-accent" aria-hidden="true" />
+              <h3>{t(titleKey)}</h3>
+            </CategoryHeader>
+            <SkillGrid>
+              {SKILL_CATEGORIES[key].map(skill => (
+                <SkillPill key={skill}>
+                  <span className="pill-icon" aria-hidden="true">
+                    <Icon name={skill} />
+                  </span>
+                  <span>{skill}</span>
+                </SkillPill>
+              ))}
+            </SkillGrid>
+          </CategoryCard>
+        ))}
+      </div>
     </StyledSkillsSection>
   );
 };

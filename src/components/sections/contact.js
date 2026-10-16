@@ -33,12 +33,30 @@ const CheckIcon = props => (
 );
 
 const StyledContactSection = styled.section`
+  position: relative;
   max-width: 600px;
   margin: 0 auto 100px;
   text-align: center;
 
   @media (max-width: 768px) {
     margin: 0 auto 50px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: radial-gradient(
+      ellipse 45% 55% at 50% 45%,
+      var(--signal-color-tint),
+      transparent 70%
+    );
+    pointer-events: none;
   }
 
   .overline {

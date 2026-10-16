@@ -5,11 +5,18 @@ import { Head, Loader, Nav, Social, Email, Footer, KeyboardShortcuts } from '@co
 import { KeyboardShortcutsProvider } from '../hooks/KeyboardShortcutsContext';
 import { GlobalStyle, theme } from '@styles';
 import ScrollProgressBar from './scrollProgressBar';
+import { AuroraBackground } from './fx';
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+
+  #content {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 const Layout = ({ children, location }) => {
@@ -65,6 +72,7 @@ const Layout = ({ children, location }) => {
           ) : (
             <KeyboardShortcutsProvider>
               <StyledContent>
+                <AuroraBackground />
                 <Nav isHome={isHome} />
                 <Social isHome={isHome} />
                 <Email isHome={isHome} />

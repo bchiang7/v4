@@ -5,6 +5,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { useLanguage } from '../../hooks/LanguageContext';
+import { spotlight, onSpotlightMove } from '../fx';
 
 const BLOG_URL = 'https://angelortizv.com';
 
@@ -37,6 +38,7 @@ const StyledBlogSection = styled.section`
       align-items: center;
       gap: 16px;
       padding: 1.25rem 1.5rem;
+      ${spotlight};
       background: var(--light-bg-color);
       border: 1px solid var(--outline-light);
       border-radius: var(--border-radius);
@@ -45,9 +47,9 @@ const StyledBlogSection = styled.section`
       transition: var(--transition);
 
       &:hover {
-        border-color: var(--primary-color);
+        border-color: var(--signal-color);
         color: var(--primary-color);
-        box-shadow: 0 4px 20px -2px var(--primary-color-tint);
+        box-shadow: 0 4px 24px -4px var(--glow-color);
 
         .blog-item-icon {
           color: var(--primary-color);
@@ -96,7 +98,9 @@ const StyledBlogSection = styled.section`
 `;
 
 const formatDate = (dateStr, locale) => {
-  if (!dateStr) {return '';}
+  if (!dateStr) {
+    return '';
+  }
   const date = new Date(dateStr);
   return new Intl.DateTimeFormat(locale === 'es' ? 'es' : 'en', {
     year: 'numeric',
@@ -106,8 +110,12 @@ const formatDate = (dateStr, locale) => {
 };
 
 const toAbsoluteUrl = link => {
-  if (!link) {return BLOG_URL;}
-  if (link.startsWith('http://') || link.startsWith('https://')) {return link;}
+  if (!link) {
+    return BLOG_URL;
+  }
+  if (link.startsWith('http://') || link.startsWith('https://')) {
+    return link;
+  }
   const base = BLOG_URL.replace(/\/$/, '');
   const path = link.startsWith('/') ? link : `/${link}`;
   return `${base}${path}`;
@@ -154,7 +162,11 @@ const Blog = () => {
       <ul className="blog-list">
         {posts.map(({ node }) => (
           <li key={node.id} className="blog-item">
-            <a href={toAbsoluteUrl(node.link)} target="_blank" rel="noopener noreferrer">
+            <a
+              href={toAbsoluteUrl(node.link)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseMove={onSpotlightMove}>
               <span className="blog-item-title">{node.title}</span>
               <span className="blog-item-date">{formatDate(node.pubDate, locale)}</span>
               <span className="blog-item-icon" aria-hidden="true">

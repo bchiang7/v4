@@ -7,6 +7,7 @@ import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
+import { spotlight, onSpotlightMove } from '../fx';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -38,8 +39,8 @@ const StyledProjectsSection = styled.section`
       font-family: var(--font-mono);
       font-size: var(--fz-xs);
       padding: 8px 14px;
-      border-radius: var(--border-radius);
-      border: 1px solid var(--lightest-bg-color);
+      border-radius: 999px;
+      border: 1px solid var(--outline-light);
       background: transparent;
       color: var(--light-text-color);
       cursor: pointer;
@@ -51,9 +52,9 @@ const StyledProjectsSection = styled.section`
       }
 
       &.active {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-        color: var(--light-bg-color);
+        background: var(--signal-color);
+        border-color: var(--signal-color);
+        color: #060010;
       }
     }
   }
@@ -65,6 +66,7 @@ const StyledProjectsSection = styled.section`
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
+    scroll-margin-top: 200px;
 
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -97,6 +99,8 @@ const StyledProject = styled.li`
   }
 
   .project-inner {
+    ${spotlight};
+    border: 1px solid var(--outline-light);
     ${({ theme }) => theme.mixins.boxShadow};
     ${({ theme }) => theme.mixins.flexBetween};
     flex-direction: column;
@@ -228,6 +232,7 @@ const Projects = () => {
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
+  const gridRef = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const { t } = useLanguage();
@@ -250,8 +255,22 @@ const Projects = () => {
   }, [projects, activeFilter]);
 
   const handleFilterChange = tech => {
-    setActiveFilter(prev => (prev === tech ? null : tech));
-    setShowMore(() => tech === null);
+    const next = activeFilter === tech ? null : tech;
+    if (next !== activeFilter) {
+      setActiveFilter(next);
+      setShowMore(false);
+    }
+  };
+
+  // Collapsing removes most of the grid, so bring the section back into view
+  const toggleShowMore = () => {
+    if (showMore && gridRef.current) {
+      gridRef.current.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    }
+    setShowMore(prev => !prev);
   };
 
   const firstBatch = filteredProjects.slice(0, GRID_LIMIT);
@@ -273,7 +292,7 @@ const Projects = () => {
     const { github, external, title, tech, desc } = frontmatter;
 
     return (
-      <div className="project-inner">
+      <div className="project-inner" onMouseMove={onSpotlightMove}>
         <header>
           <div className="project-top">
             <div className="folder">
@@ -356,7 +375,7 @@ const Projects = () => {
         </ul>
       )}
 
-      <ul className="projects-grid">
+      <ul className="projects-grid" ref={gridRef}>
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&
@@ -386,14 +405,13 @@ const Projects = () => {
         )}
       </ul>
 
-      {hasMore && !showMore && (
-        <button type="button" className="more-button" onClick={() => setShowMore(true)}>
-          {t('projects_show_more')}
-        </button>
-      )}
-      {showMore && (
-        <button type="button" className="more-button" onClick={() => setShowMore(false)}>
-          {t('projects_show_less')}
+      {hasMore && (
+        <button
+          type="button"
+          className="more-button"
+          aria-expanded={showMore}
+          onClick={toggleShowMore}>
+          {showMore ? t('projects_show_less') : t('projects_show_more')}
         </button>
       )}
     </StyledProjectsSection>

@@ -25,7 +25,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: var(--bg-color);
+  background-color: transparent;
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -46,7 +46,8 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: var(--bg-color);
+        background-color: var(--nav-bg);
+        border-bottom: 1px solid var(--outline-light);
         box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
       `};
 
@@ -55,6 +56,7 @@ const StyledHeader = styled.header`
       !props.scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
+        background-color: var(--nav-bg);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
         box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
       `};
@@ -71,6 +73,8 @@ const StyledNav = styled.nav`
 
   .logo {
     ${({ theme }) => theme.mixins.flexCenter};
+    flex: 1;
+    justify-content: flex-start;
 
     a {
       color: var(--primary-color);
@@ -112,6 +116,8 @@ const StyledNav = styled.nav`
   }
 
   .tools-switcher {
+    flex: 1;
+    justify-content: flex-end;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -146,9 +152,12 @@ const StyledLinks = styled.div`
         font-weight: 400;
         color: var(--light-text-color);
 
+        border-radius: 999px;
+
         &:hover,
         &:focus {
           color: var(--contrast-color);
+          background-color: var(--signal-color-tint);
         }
       }
     }
@@ -169,7 +178,9 @@ const Nav = ({ isHome }) => {
 
   // Restore theme from localStorage (or system preference) on mount
   useEffect(() => {
-    if (typeof window === 'undefined') {return;}
+    if (typeof window === 'undefined') {
+      return;
+    }
 
     const saved = window.localStorage.getItem(THEME_KEY);
     const mode = saved === 'dark' || saved === 'light' ? saved : 'dark';

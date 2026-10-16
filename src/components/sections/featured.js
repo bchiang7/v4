@@ -157,14 +157,18 @@ const StyledProject = styled.li`
     position: relative;
     z-index: 2;
     padding: 25px;
+    border: 1px solid var(--outline-light);
     border-radius: var(--border-radius);
     background-color: var(--light-bg-color);
+    backdrop-filter: blur(10px);
     color: var(--light-text-color);
     font-size: var(--fz-lg);
 
     @media (max-width: 768px) {
       padding: 20px 0;
       background-color: transparent;
+      border: none;
+      backdrop-filter: none;
       box-shadow: none;
 
       &:hover {
@@ -339,13 +343,13 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        {t("projects_text_title")}
+        {t('projects_text_title')}
       </h2>
 
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
-            const { frontmatter, html } = node;
+            const { frontmatter } = node;
             const { external, title, tech, github, cover, desc } = frontmatter;
             const image = getImage(cover);
 
@@ -353,16 +357,14 @@ const Featured = () => {
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">{t("projects_text_featured")}</p>
+                    <p className="project-overline">{t('projects_text_featured')}</p>
 
                     <h3 className="project-title">
                       <a href={external}>{title}</a>
                     </h3>
 
                     <div className="project-description">
-                      <p>
-                        {t("projects_" + desc) }
-                      </p>
+                      <p>{t(`projects_${  desc}`)}</p>
                     </div>
 
                     {tech.length && (
