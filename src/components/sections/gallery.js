@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -45,7 +46,7 @@ const StyledGallerySection = styled.section`
     align-items: center;
     background: var(--light-bg-color);
     cursor: pointer;
-    border: none;
+    border: 1px solid var(--outline-light);
     font: inherit;
     text-align: left;
 
@@ -91,21 +92,20 @@ const StyledGallerySection = styled.section`
 
     button {
       background: none;
-      border: 2px solid var(--lightest-bg-color);
+      border: 1px solid var(--outline-light);
       color: var(--primary-color);
-      padding: 8px 14px;
-      border-radius: var(--border-radius);
+      padding: 8px 18px;
+      border-radius: 999px;
       font-size: var(--fz-xl);
       cursor: pointer;
       transition: var(--transition);
 
       &:hover {
         background: var(--primary-color-tint);
-        border-color: var(--primary-color);
+        border-color: var(--signal-color);
       }
     }
   }
-
 `;
 
 const LightboxOverlay = styled.div`
@@ -126,15 +126,15 @@ const LightboxContent = styled.div`
   max-height: 90vh;
   cursor: default;
 
-  img,
   .gatsby-image-wrapper {
-    max-width: 90vw;
-    max-height: 85vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: min(90vw, 1200px);
+    height: 76vh;
     border-radius: var(--border-radius);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 600px) {
+      height: 70vh;
+    }
   }
 `;
 
@@ -181,8 +181,12 @@ const LightboxNav = styled.button`
     height: 36px;
     font-size: var(--fz-lg);
 
-    &.prev { left: 8px; }
-    &.next { right: 8px; }
+    &.prev {
+      left: 8px;
+    }
+    &.next {
+      right: 8px;
+    }
   }
 `;
 
@@ -210,8 +214,7 @@ const LightboxClose = styled.button`
   }
 `;
 
-const formatName = name =>
-  name.replace(/^\d+[-_]/, '').replace(/[-_]/g, ' ');
+const formatName = name => name.replace(/^\d+[-_]/, '').replace(/[-_]/g, ' ');
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`
@@ -240,6 +243,10 @@ const Gallery = () => {
   const scrollRef = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const openerRef = useRef(null);
+  const closeBtnRef = useRef(null);
+  const touchStartX = useRef(null);
+  const isOpen = lightboxIndex !== null;
 
   const orderedPhotos = useMemo(
     () => [...photos].sort((a, b) => (a.node.name || '').localeCompare(b.node.name || '')),
@@ -247,28 +254,45 @@ const Gallery = () => {
   );
 
   useEffect(() => {
-    if (prefersReducedMotion) {return;}
+    if (prefersReducedMotion) {
+      return;
+    }
     sr.reveal(revealContainer.current, srConfig());
   }, [prefersReducedMotion]);
 
   const scroll = useCallback(direction => {
-    if (!scrollRef.current) {return;}
+    if (!scrollRef.current) {
+      return;
+    }
     const amount = direction === 'left' ? -380 : 380;
     scrollRef.current.scrollBy({ left: amount, behavior: 'smooth' });
   }, []);
 
+  const step = useCallback(
+    dir =>
+      setLightboxIndex(i => {
+        const last = orderedPhotos.length - 1;
+        return dir > 0 ? (i >= last ? 0 : i + 1) : i <= 0 ? last : i - 1;
+      }),
+    [orderedPhotos.length],
+  );
+
   const handleKeyDown = useCallback(
     e => {
-      if (lightboxIndex === null) {return;}
-      if (e.key === 'Escape') {setLightboxIndex(null);}
+      if (lightboxIndex === null) {
+        return;
+      }
+      if (e.key === 'Escape') {
+        setLightboxIndex(null);
+      }
       if (e.key === 'ArrowLeft') {
-        setLightboxIndex(i => (i <= 0 ? orderedPhotos.length - 1 : i - 1));
+        step(-1);
       }
       if (e.key === 'ArrowRight') {
-        setLightboxIndex(i => (i >= orderedPhotos.length - 1 ? 0 : i + 1));
+        step(1);
       }
     },
-    [lightboxIndex, orderedPhotos.length],
+    [lightboxIndex, step],
   );
 
   useEffect(() => {
@@ -276,9 +300,63 @@ const Gallery = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
-  const openLightbox = index => setLightboxIndex(index);
+  // Lock page scroll and move focus into the dialog while it is open; restore both on close.
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+    const { overflow: prevOverflow, paddingRight: prevPadding } = document.body.style;
+    // compensate for the vanishing scrollbar so the page doesn't shift sideways
+    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    if (scrollbar > 0) {
+      document.body.style.paddingRight = `${scrollbar}px`;
+    }
+    closeBtnRef.current?.focus();
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = prevPadding;
+      openerRef.current?.focus();
+    };
+  }, [isOpen]);
+
+  const openLightbox = (index, e) => {
+    openerRef.current = e.currentTarget;
+    setLightboxIndex(index);
+  };
   const closeLightbox = e => {
-    if (e.target === e.currentTarget) {setLightboxIndex(null);}
+    if (e.target === e.currentTarget) {
+      setLightboxIndex(null);
+    }
+  };
+  const handleTouchStart = e => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = e => {
+    if (touchStartX.current === null) {
+      return;
+    }
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(dx) > 50) {
+      step(dx < 0 ? 1 : -1);
+    }
+  };
+  // Keep Tab inside the dialog
+  const trapFocus = e => {
+    if (e.key !== 'Tab') {
+      return;
+    }
+    const focusable = e.currentTarget.querySelectorAll('button');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   };
 
   if (photos.length === 0) {
@@ -301,7 +379,9 @@ const Gallery = () => {
       <div className="gallery-wrapper" ref={scrollRef} role="list">
         {orderedPhotos.map(({ node }, i) => {
           const imageData = node.childImageSharp?.gatsbyImageData;
-          if (!imageData) {return null;}
+          if (!imageData) {
+            return null;
+          }
           const fullIndex = orderedPhotos.findIndex(p => p.node === node);
 
           return (
@@ -309,7 +389,7 @@ const Gallery = () => {
               type="button"
               className={`photo-card ${prefersReducedMotion ? 'no-motion' : ''}`}
               key={node.name || i}
-              onClick={() => openLightbox(fullIndex)}
+              onClick={e => openLightbox(fullIndex, e)}
               aria-label={t('gallery_open_lightbox')}>
               <GatsbyImage image={imageData} alt={node.name || ''} />
               <span className="photo-description">{formatName(node.name || '')}</span>
@@ -322,60 +402,72 @@ const Gallery = () => {
         <button type="button" onClick={() => scroll('left')} aria-label={t('gallery_scroll_left')}>
           ←
         </button>
-        <button type="button" onClick={() => scroll('right')} aria-label={t('gallery_scroll_right')}>
+        <button
+          type="button"
+          onClick={() => scroll('right')}
+          aria-label={t('gallery_scroll_right')}>
           →
         </button>
       </div>
 
-      {lightboxIndex !== null && currentLightboxNode && (
-        <LightboxOverlay
-          onClick={closeLightbox}
-          role="dialog"
-          aria-modal="true"
-          aria-label={t('gallery_lightbox_label')}>
-          <LightboxClose
-            type="button"
-            onClick={() => setLightboxIndex(null)}
-            aria-label={t('general_close')}>
-            ✕
-          </LightboxClose>
+      {isOpen &&
+        currentLightboxNode &&
+        createPortal(
+          <LightboxOverlay
+            onClick={closeLightbox}
+            onKeyDown={trapFocus}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('gallery_lightbox_label')}>
+            <LightboxClose
+              ref={closeBtnRef}
+              type="button"
+              onClick={() => setLightboxIndex(null)}
+              aria-label={t('general_close')}>
+              ✕
+            </LightboxClose>
 
-          {orderedPhotos.length > 1 && (
-            <>
-              <LightboxNav
-                type="button"
-                className="prev"
-                onClick={e => {
-                  e.stopPropagation();
-                  setLightboxIndex(i => (i <= 0 ? orderedPhotos.length - 1 : i - 1));
-                }}
-                aria-label={t('gallery_prev')}>
-                ←
-              </LightboxNav>
-              <LightboxNav
-                type="button"
-                className="next"
-                onClick={e => {
-                  e.stopPropagation();
-                  setLightboxIndex(i => (i >= orderedPhotos.length - 1 ? 0 : i + 1));
-                }}
-                aria-label={t('gallery_next')}>
-                →
-              </LightboxNav>
-            </>
-          )}
+            {orderedPhotos.length > 1 && (
+              <>
+                <LightboxNav
+                  type="button"
+                  className="prev"
+                  onClick={e => {
+                    e.stopPropagation();
+                    step(-1);
+                  }}
+                  aria-label={t('gallery_prev')}>
+                  ←
+                </LightboxNav>
+                <LightboxNav
+                  type="button"
+                  className="next"
+                  onClick={e => {
+                    e.stopPropagation();
+                    step(1);
+                  }}
+                  aria-label={t('gallery_next')}>
+                  →
+                </LightboxNav>
+              </>
+            )}
 
-          <LightboxContent onClick={e => e.stopPropagation()}>
-            {currentLightboxNode.childImageSharp?.gatsbyImageData ? (
-              <GatsbyImage
-                image={currentLightboxNode.childImageSharp.gatsbyImageData}
-                alt={currentLightboxNode.name || ''}
-              />
-            ) : null}
-            <LightboxCaption>{formatName(currentLightboxNode.name || '')}</LightboxCaption>
-          </LightboxContent>
-        </LightboxOverlay>
-      )}
+            <LightboxContent onClick={e => e.stopPropagation()}>
+              {currentLightboxNode.childImageSharp?.gatsbyImageData ? (
+                <GatsbyImage
+                  image={currentLightboxNode.childImageSharp.gatsbyImageData}
+                  alt={currentLightboxNode.name || ''}
+                  objectFit="contain"
+                  loading="eager"
+                />
+              ) : null}
+              <LightboxCaption>{formatName(currentLightboxNode.name || '')}</LightboxCaption>
+            </LightboxContent>
+          </LightboxOverlay>,
+          document.body,
+        )}
     </StyledGallerySection>
   );
 };
