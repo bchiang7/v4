@@ -48,7 +48,7 @@ Senior-level, English-fluent Fullstack AI Engineer and Tech Lead based in Costa 
 - Real photography in `/src/images/gallery/` (hiking, travel, Costa Rica locations).
 - Real profile photos: `angelortizv.jpg`, `angelortizv-new.jpg`, `angelortizv-hiking.jpeg`.
 - Logo asset: `logo-v2.png`.
-- Real work history and job descriptions in EN/ES locale files covering Creai, EasyHop, QUBOSystems, UCreativa, and freelance work.
+- Real work history and job descriptions in EN/ES locale files covering Silia, Creai, EasyHop, QUBOSystems, UCreativa, and freelance work.
 - Real project archive in `/content/` (not yet inspected — treat as canonical project data).
 - No fabricated testimonials, benchmarks, or case study numbers should be added.
 

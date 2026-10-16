@@ -6,20 +6,20 @@
   "menu_text_gallery": "Galeria",
   "menu_text_contact": "Contacto",
 
-  "meta_description": "Angelo Ortiz Vega — Full Stack AI Engineer & Team Lead en Costa Rica. Construyo sistemas de IA que corren en producción a escala: agentes LLM, telemetría en tiempo real y ML que llega a producción. 6 años en startups, logística y banca.",
+  "meta_description": "Angelo Ortiz Vega — Technical Lead, Implementations en Silia e AI Engineer en Costa Rica. Hago que los sistemas de IA sobrevivan el contacto con producción: agentes LLM, evals y sistemas en tiempo real. 6 años en startups, consultoría, banca y logística empresarial.",
 
-  "hero_txt_keywords": "Full Stack AI Engineer · Team Lead · Builder",
-  "hero_txt_about": "Construyo sistemas de IA que corren en producción, a escala, donde el fallo tiene consecuencias. Trabajo en el punto donde el machine learning deja de ser un notebook y se convierte en infraestructura — agentes LLM, sistemas en tiempo real y el stack completo que los hace usables.",
+  "hero_txt_keywords": "Technical Lead, Implementations · AI Engineer · Builder",
+  "hero_txt_about": "Hago que los sistemas de IA sobrevivan el contacto con producción. Trabajo donde se encuentran los requerimientos del cliente, los límites de la plataforma y los compromisos del negocio — agentes LLM, evals, sistemas en tiempo real y el stack completo que los hace usables.",
   "hero_btn_cta": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
-  "hero_txt_creai": "Actualmente desarrollando en",
+  "hero_txt_silia": "Actualmente Technical Lead, Implementations en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Full Stack AI Engineer, Team Lead y Profesor Universitario de Costa Rica. Construyo sistemas de IA que corren en producción. La mayor parte de mi trabajo vive en la brecha donde los modelos, agentes LLM y algoritmos de optimización se encuentran con sistemas legados, flujos de datos en tiempo real y negocios que no pueden detenerse mientras haces deploy. En Creai lidero el desarrollo de una plataforma logística que maneja 220K viajes semanales, donde impulsé la construcción de un sistema de monitoreo en tiempo real que unifica telemetría, vehículo, conductor e incidentes — y diseñé el algoritmo de predicción de ETA que lo alimenta.",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Technical Lead de Implementations en Silia, AI Engineer y ex Profesor Universitario de Costa Rica. Hago que los sistemas de IA sobrevivan el contacto con producción: firmo estimaciones técnicas, decido cuándo un agente de IA está listo para salir a producción y soy la contraparte técnica de los equipos de TI de los clientes. Antes lideré el desarrollo de una plataforma logística que maneja 220K viajes semanales, donde impulsé la construcción de un sistema de monitoreo en tiempo real que unifica telemetría, vehículo, conductor e incidentes — y diseñé el algoritmo de predicción de ETA que lo alimenta.",
   "about_text_desc_2": "Soy Ingeniero en Computadores del Instituto Tecnológico de Costa Rica, con una base que va más allá de la web: procesamiento de señales con FPGA y Verilog, computación paralela con CUDA, arquitectura de computadoras y compiladores. Ese background es por qué me atraen los sistemas que tocan el mundo físico — vehículos, sensores, telemetría, sistemas donde algo real depende del resultado.",
   "about_text_desc_3_1": "Soy graduado en Ingeniería en Computadores del ",
-  "about_text_desc_3_2": ", con una base en sistemas y arquitectura de computadoras. Desde 2022 también enseño Inteligencia Artificial, Machine Learning, Deep Learning y Desarrollo Full Stack en la ",
+  "about_text_desc_3_2": ", con una base en sistemas y arquitectura de computadoras. De 2022 a 2026 también enseñé Inteligencia Artificial, Machine Learning, Deep Learning y Desarrollo Full Stack en la ",
   "about_text_desc_4_2": " — donde también autoré el Programa Completo de Certificación en Diseño UX.",
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
   "about_text_desc_5_a": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos, ",
@@ -38,13 +38,23 @@
   "skills_text_systems": "Sistemas & Hardware",
 
   "experience_text_title": "Donde he trabajado",
+  "experience_text_archive": "¿Buscas proyectos personales y trabajos anteriores? Explora el archivo →",
   "experience_text_subtitle": "Roles donde he liderado y llevado productos a producción.",
   "job_title_ucreativa": "Profesor Universitario",
   "jobs_ucreativa": [
-    "Imparto cursos enfocados en la industria en Inteligencia Artificial, Machine Learning, Deep Learning, Análisis de Datos, Python, AWS e Ingeniería Full Stack, basándome directamente en experiencia activa en producción.",
-    "Mentorizo a estudiantes en proyectos de graduación y aplicaciones de IA listas para producción, guiándolos desde el planteamiento del problema hasta soluciones desplegadas usando las herramientas y prácticas que usan los equipos de la industria.",
+    "Impartí cursos enfocados en la industria en Inteligencia Artificial, Machine Learning, Deep Learning, Análisis de Datos, Python, AWS, Ingeniería Full Stack y Diseño de Experiencia de Usuario a más de 250 estudiantes en múltiples cohortes, basándome directamente en experiencia activa en producción.",
+    "Mentoricé a estudiantes en proyectos de graduación y aplicaciones de IA listas para producción, guiándolos desde el planteamiento del problema hasta soluciones desplegadas usando las herramientas y prácticas que usan los equipos de la industria.",
     "Autoré el Programa Completo de Certificación en Diseño UX, desde el diseño curricular hasta talleres prácticos y evaluación.",
-    "Llevo al aula casos de estudio del mundo real, entrega ágil e infraestructura cloud, manteniendo el contenido alineado con lo que los equipos de ingeniería realmente están construyendo."
+    "Llevé al aula casos de estudio del mundo real, entrega ágil e infraestructura cloud, manteniendo el contenido alineado con lo que los equipos de ingeniería realmente están construyendo."
+  ],
+
+  "job_title_silia": "Technical Lead, Implementations",
+  "jobs_silia": [
+    "Soy responsable de la solución técnica del área de Implementación: firmo estimaciones, decido cuándo un agente de IA está listo para salir a producción y defino la ventana de hypercare de cada pase.",
+    "Soy la contraparte técnica de los equipos de TI de los clientes en integraciones, accesos, infraestructura y seguridad.",
+    "Destrabo al equipo cuando se topa con un límite de la plataforma, reparto el trabajo técnico entre los implementadores y escalo diagnósticos —no síntomas— al equipo de plataforma.",
+    "Resuelvo la factibilidad probando, no opinando: levanto un agente de prueba y lo verifico de punta a punta antes de responder si algo se puede hacer.",
+    "Acoto por escrito cada PoC y demo —qué muestra, qué no y qué es simulado— para que nunca se convierta en un compromiso no planeado."
   ],
 
   "job_title_freelancer1": "Consultor Freelance",
@@ -58,20 +68,18 @@
 
   "job_title_creai_lead": "Team Lead",
   "jobs_creai_lead": [
-    "Lidero un equipo que construye productos con IA y sistemas logísticos de misión crítica, siendo responsable de la dirección técnica y la entrega en las capacidades core de la plataforma.",
-    "Impulso decisiones de arquitectura, discusiones de diseño de sistemas y estrategia de implementación dentro de un grupo transversal de más de 20 ingenieros, diseñadores, product owners, delivery managers y especialistas en IA.",
-    "Establezco estándares técnicos y mentorizo ingenieros mientras me mantengo hands-on en todo el stack."
+    "Lideré la dirección técnica de dominios de negocio core (rutas, servicios y gestión de viajes) en una plataforma logística a gran escala que sirve a clientes en México.",
+    "Impulsé decisiones técnicas, revisiones de diseño de sistemas y estrategia de implementación en un equipo transversal de más de 20 ingenieros, diseñadores, product owners, delivery managers y especialistas en IA.",
+    "Coordiné con Data Science y Producto para llevar capacidades de IA/ML desde la experimentación a producción."
   ],
 
   "job_title_creai": "Full Stack AI Engineer",
   "jobs_creai": [
     "Entregué productos logísticos con IA a escala: 220K viajes semanales, 8.5K conductores y 10K vehículos en producción, con adopción medida contra KPIs operacionales.",
-    "Implementé agentes basados en LLM y algoritmos de optimización integrados con sistemas legados, convirtiendo procesos manuales fragmentados en flujos de trabajo digitales trazables y automatizados.",
     "Lideré el desarrollo de un sistema de monitoreo en tiempo real que unifica datos de conductor, vehículo, telemetría, bucket e incidentes en una vista operacional en vivo.",
     "Diseñé e implementé el algoritmo de predicción de ETA que alimenta ese sistema, mejorando la visibilidad de viajes y habilitando respuesta proactiva ante incidentes en toda la red.",
-    "Fui responsable de los dominios de negocio core — rutas, servicios y gestión de viajes — construyendo la columna vertebral operacional de una plataforma logística a gran escala que sirve a clientes en México.",
-    "Arquitecté y mantuve aplicaciones full-stack y APIs escalables con React, Ember.js, Laravel, PHP y Python, conectando modelos de ML con sistemas de producción end to end.",
-    "Colaboré con Data Science y Producto para llevar capacidades de IA/ML desde la experimentación a entornos de producción."
+    "Implementé agentes basados en LLM y algoritmos de optimización integrados con sistemas legados, convirtiendo procesos manuales fragmentados en flujos de trabajo digitales trazables y automatizados.",
+    "Arquitecté y mantuve aplicaciones full-stack y APIs escalables con React, Ember.js, Laravel, PHP y Python, conectando modelos de ML con sistemas de producción end to end."
   ],
 
   "job_title_easyhop": "Desarrollador Fullstack",
@@ -89,7 +97,7 @@
     "Diseñé y desplegué un módulo de machine learning que automatizó la clasificación salarial del cuerpo docente, reemplazando un proceso administrativo manual por un sistema reproducible y auditable.",
     "Construí una plataforma de gestión de información docente que permite al personal académico mantener sus propios datos de perfil y autopublicarlos en el portal público 'Claustro Docente' de la universidad, eliminando un cuello de botella editorial recurrente.",
     "Desarrollé APIs REST seguras, plataformas administrativas y frontends en React, incluyendo un módulo de encriptación de datos para una solución de punto de venta móvil utilizada por una institución bancaria costarricense bajo requisitos de seguridad del sector financiero.",
-    "Entregué a lo largo del ciclo de vida completo del software — arquitectura, desarrollo, pruebas, despliegue y colaboración con stakeholders."
+    "Entregué a lo largo del ciclo de vida completo del software — arquitectura, desarrollo, pruebas, despliegue y colaboración con stakeholders — trabajando directamente con equipos de negocio para traducir necesidades operativas en software entregado."
   ],
 
   "jobs_scroll_left": "Desplazar pestañas a la izquierda",
@@ -142,7 +150,7 @@
   "contact_text_over": "¿Qué sigue?",
   "contact_text_title": "Ponte en contacto",
   "contact_text_desc": "¿Estás trabajando en algo interesante? ¿Tienes alguna pregunta o simplemente quieres saludar? Te respondo.",
-  "contact_text_cta": "Construyamos tu próximo producto con IA.",
+  "contact_text_cta": "¿Necesitas un agente de IA que sobreviva a producción? Hablemos.",
   "contact_location": "San José, Costa Rica · UTC−6",
   "contact_location_aria": "Ubicación y zona horaria",
   "contact_btn_hello": "Decir Hola",
@@ -181,7 +189,7 @@
   "shortcuts_title": "Atajos de teclado",
   "shortcuts_help": "Mostrar esta ayuda",
   "shortcuts_close": "Cerrar modal",
-  "shortcuts_hint": "Pulsa 1–6 para ir a una sección",
+  "shortcuts_hint": "Pulsa 1–4 para ir a una sección",
   "footer_how_trigger": "¿cómo?",
   "footer_how_stack": "Gatsby · React · Styled Components · Netlify",
   "footer_time_morning": "Buen día ☀️",

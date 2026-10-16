@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Angelo Ortiz Vega',
     description:
-      'Angelo Ortiz Vega — Fullstack AI Engineer based in Costa Rica. I build and ship AI-powered products, lead technical initiatives, and bring ML from research to production. 4+ years in startups and product teams.',
+      'Angelo Ortiz Vega — Technical Lead, Implementations at Silia, and AI Engineer based in Costa Rica. I make AI systems survive contact with production: LLM agents, evals, and real-time systems.',
     siteUrl: 'https://www.angelortizv.me/', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },

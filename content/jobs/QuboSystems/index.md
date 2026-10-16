@@ -4,7 +4,7 @@ title: 'job_title_qubosystems'
 desc: 'qubosystems'
 company: 'Qubo Systems'
 location: 'Alajuela, Costa Rica'
-range: 'Jun 2023 - Feb 2024'
+range: 'Jun 2023 - May 2024'
 type: 'Remote'
 url: ''
 ---

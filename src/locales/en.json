@@ -6,20 +6,20 @@
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
-  "meta_description": "Angelo Ortiz Vega — Full Stack AI Engineer & Team Lead based in Costa Rica. I build AI systems that run in production at scale: LLM agents, real-time telemetry, and ML that ships. 6 years across startups, logistics, and banking.",
+  "meta_description": "Angelo Ortiz Vega — Technical Lead, Implementations at Silia, and AI Engineer based in Costa Rica. I make AI systems survive contact with production: LLM agents, evals, and real-time systems. 6 years across startups, consulting, banking, and enterprise logistics.",
 
-  "hero_txt_keywords": "Full Stack AI Engineer · Team Lead · Builder",
-  "hero_txt_about": "I build AI systems that run in production, at scale, where failure has consequences. I work at the point where machine learning stops being a notebook and starts being infrastructure — LLM agents, real-time systems, and the full stack that makes them usable.",
+  "hero_txt_keywords": "Technical Lead, Implementations · AI Engineer · Builder",
+  "hero_txt_about": "I make AI systems survive contact with production. I work where client requirements, platform limits, and business commitments meet — LLM agents, evals, real-time systems, and the full stack that makes them usable.",
   "hero_btn_cta": "Get in touch",
   "hero_text_proud": "Proudly from 🇨🇷",
-  "hero_txt_creai": "Currently shipping features at",
+  "hero_txt_silia": "Currently Technical Lead, Implementations at",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
-  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — a Full Stack AI Engineer, Team Lead, and University Lecturer from Costa Rica. I build AI systems that run in production. Most of my work lives in the gap where models, LLM agents, and optimization algorithms meet legacy systems, real-time data streams, and businesses that can't stop running while you deploy. At Creai I lead development on a logistics platform handling 220K weekly trips, where I drove the build of a real-time monitoring system unifying telemetry, vehicle, driver, and incident data — and designed the ETA prediction algorithm behind it.",
+  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — Technical Lead for Implementations at Silia, AI Engineer, and former University Lecturer from Costa Rica. I make AI systems survive contact with production: I sign off technical estimates, decide when an AI agent is ready to go live, and act as the technical counterpart to client IT teams. Before that, I led development on a logistics platform handling 220K weekly trips, where I drove the build of a real-time monitoring system unifying telemetry, vehicle, driver, and incident data — and designed the ETA prediction algorithm behind it.",
   "about_text_desc_2": "I'm a Computer Engineer from the Technological Institute of Costa Rica, with a foundation that runs deeper than web: FPGA and Verilog signal processing, CUDA parallel computing, computer architecture, and compilers. That background is why I'm drawn to software that touches the physical world — vehicles, sensors, telemetry, systems where something real depends on the output.",
   "about_text_desc_3_1": "I hold a degree in Computer Engineering from the ",
-  "about_text_desc_3_2": ", with a foundation in systems and computer architecture. Since 2022 I've also taught Artificial Intelligence, Machine Learning, Deep Learning, and Full Stack Development at ",
+  "about_text_desc_3_2": ", with a foundation in systems and computer architecture. From 2022 to 2026 I also taught Artificial Intelligence, Machine Learning, Deep Learning, and Full Stack Development at ",
   "about_text_desc_4_2": " — where I also authored the complete UX Design Certification Program.",
   "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
   "about_text_desc_5_a": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, ",
@@ -38,13 +38,23 @@
   "skills_text_systems": "Systems & Hardware",
 
   "experience_text_title": "Where I've Worked",
+  "experience_text_archive": "Looking for side projects and older work? Browse the archive →",
   "experience_text_subtitle": "Roles where I've led and shipped products.",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
-    "Teach industry-focused courses in Artificial Intelligence, Machine Learning, Deep Learning, Data Analysis, Python, AWS, and Full Stack Engineering, drawing directly from active production experience.",
-    "Mentor students through capstone projects and production-ready AI applications, guiding them from problem framing to deployed solutions using the tooling and practices teams use in industry.",
+    "Taught industry-focused courses in Artificial Intelligence, Machine Learning, Deep Learning, Data Analysis, Python, AWS, Full Stack Engineering, and User Experience Design to 250+ students across multiple cohorts, drawing directly from active production experience.",
+    "Mentored students through capstone projects and production-ready AI applications, guiding them from problem framing to deployed solutions using the tooling and practices teams use in industry.",
     "Authored the complete UX Design Certification Program, from curriculum design to hands-on workshops and assessment.",
-    "Bring real-world case studies, agile delivery, and cloud infrastructure into the classroom, keeping course content aligned with what engineering teams are actually shipping."
+    "Brought real-world case studies, agile delivery, and cloud infrastructure into the classroom, keeping course content aligned with what engineering teams are actually shipping."
+  ],
+
+  "job_title_silia": "Technical Lead, Implementations",
+  "jobs_silia": [
+    "Own the technical solution for the Implementations area: sign off estimates, decide when an AI agent is ready to go live, and define the hypercare window for each release.",
+    "Act as the technical counterpart to client IT teams on integrations, access, infrastructure, and security.",
+    "Unblock the team when it hits a platform limit, distribute technical work across implementers, and escalate diagnoses — not symptoms — to the platform team.",
+    "Settle feasibility by testing, not opinion: stand up a test agent and verify end to end before answering whether something can be done.",
+    "Scope every PoC and demo in writing — what it shows, what it doesn't, and what is simulated — so it never turns into an unplanned commitment."
   ],
 
   "job_title_freelancer1": "Freelance Consultant",
@@ -58,20 +68,18 @@
 
   "job_title_creai_lead": "Team Lead",
   "jobs_creai_lead": [
-    "Lead a team building AI-powered products and mission-critical logistics systems, owning technical direction and delivery across core platform capabilities.",
-    "Drive architecture decisions, system design discussions, and implementation strategy inside a cross-functional group of 20+ engineers, designers, product owners, delivery managers, and AI specialists.",
-    "Set technical standards and mentor engineers while staying hands-on across the stack."
+    "Led technical direction for core business domains (routes, services, and trip management) on a large-scale logistics platform serving customers in Mexico.",
+    "Drove technical decisions, system design reviews, and implementation strategy across a cross-functional team of 20+ engineers, designers, product owners, delivery managers, and AI specialists.",
+    "Coordinated with Data Science and Product to move AI/ML capabilities from experimentation into production."
   ],
 
   "job_title_creai": "Full Stack AI Engineer",
   "jobs_creai": [
     "Delivered AI-powered logistics products at scale: 220K weekly trips, 8.5K drivers, and 10K vehicles in production, with adoption measured against operational KPIs.",
-    "Shipped LLM-based agents and optimization algorithms integrated with legacy systems, turning fragmented manual processes into traceable, automated digital workflows.",
     "Led the development of a real-time monitoring system unifying driver, vehicle, telemetry, bucket, and incident data into a single live operational view.",
     "Designed and implemented the ETA prediction algorithm powering that system, improving trip visibility and enabling proactive incident response across the network.",
-    "Owned core business domains — routes, services, and trip management — building the operational backbone of a large-scale logistics platform serving customers in Mexico.",
-    "Architected and maintained scalable full-stack applications and APIs with React, Ember.js, Laravel, PHP, and Python, bridging ML models and production systems end to end.",
-    "Partnered with Data Science and Product to move AI/ML capabilities from experimentation into production environments."
+    "Shipped LLM-based agents and optimization algorithms integrated with legacy systems, turning fragmented manual processes into traceable, automated digital workflows.",
+    "Architected and maintained scalable full-stack applications and APIs with React, Ember.js, Laravel, PHP, and Python, bridging ML models and production systems end to end."
   ],
 
   "job_title_easyhop": "Fullstack Developer",
@@ -89,7 +97,7 @@
     "Designed and deployed a machine learning module that automated faculty salary classification, replacing a manual administrative process with a reproducible, auditable system.",
     "Built a faculty information management platform that let academic staff maintain their own profile data and auto-publish to the university's public 'Claustro Docente' portal, eliminating a recurring editorial bottleneck.",
     "Developed secure REST APIs, administrative platforms, and React frontends, including a data encryption module for a mobile point-of-sale solution used by a Costa Rican banking institution under financial-sector security requirements.",
-    "Delivered across the full software lifecycle — architecture, development, testing, deployment, and stakeholder collaboration."
+    "Delivered across the full software lifecycle — architecture, development, testing, deployment, and stakeholder collaboration — working directly with business teams to translate operational needs into shipped software."
   ],
 
   "jobs_scroll_left": "Scroll tabs left",
@@ -142,7 +150,7 @@
   "contact_text_over": "What's Next?",
   "contact_text_title": "Get In Touch",
   "contact_text_desc": "Working on something interesting? Have a question, or just want to say hi — I'll get back to you.",
-  "contact_text_cta": "Let's build your next AI-powered product.",
+  "contact_text_cta": "Need an AI agent that survives production? Let's talk.",
   "contact_location": "San José, Costa Rica · UTC−6",
   "contact_location_aria": "Location and timezone",
   "contact_btn_hello": "Say Hello",
@@ -181,7 +189,7 @@
   "shortcuts_title": "Keyboard shortcuts",
   "shortcuts_help": "Show this help",
   "shortcuts_close": "Close modal",
-  "shortcuts_hint": "Press 1–6 to jump to a section",
+  "shortcuts_hint": "Press 1–4 to jump to a section",
   "footer_how_trigger": "how?",
   "footer_how_stack": "Gatsby · React · Styled Components · Netlify",
   "footer_time_morning": "Good morning ☀️",
