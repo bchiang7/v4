@@ -55,6 +55,9 @@ import {
   IconCpp,
   IconCUDA,
   IconVerilogFPGA,
+  IconEvals,
+  IconRealTimeSystems,
+  IconSystemDesign,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -167,6 +170,12 @@ const Icon = ({ name }) => {
       return <IconCUDA />;
     case 'Verilog/FPGA':
       return <IconVerilogFPGA />;
+    case 'Evals':
+      return <IconEvals />;
+    case 'Real-Time Systems':
+      return <IconRealTimeSystems />;
+    case 'System Design':
+      return <IconSystemDesign />;
     default:
       return <IconExternal />;
   }
