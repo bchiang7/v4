@@ -2,22 +2,26 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-bg-color: #000000;
-    --bg-color: #0a0a0a;
-    --light-bg-color: #111111;
-    --lightest-bg-color: #1a1a1a;
-    --bg-color-shadow: rgba(0, 0, 0, 0.8);
-    --dark-text-color: #444444;
-    --text-color: #888888;
-    --light-text-color: #aaaaaa;
-    --lightest-text-color: #e0e0e0;
+    --dark-bg-color: #030008;
+    --bg-color: #060010;
+    --light-bg-color: #0e0824;
+    --lightest-bg-color: #1b1236;
+    --bg-color-shadow: rgba(3, 0, 8, 0.8);
+    --dark-text-color: #4b4568;
+    --text-color: #9a94b8;
+    --light-text-color: #bcb7d6;
+    --lightest-text-color: #ece9ff;
     --contrast-color: #ffffff;
     --primary-color: #ffffff;
-    --primary-color-tint: rgba(255, 255, 255, 0.08);
-    --highlight-tint: rgba(255, 255, 255, 0.04);
-    --outline-light: rgba(255, 255, 255, 0.12);
-    --signal-color: #e8813a;
-    --signal-color-tint: rgba(232, 129, 58, 0.12);
+    --primary-color-tint: rgba(167, 139, 250, 0.14);
+    --highlight-tint: rgba(167, 139, 250, 0.06);
+    --outline-light: rgba(167, 139, 250, 0.18);
+    --signal-color: #a78bfa;
+    --signal-color-tint: rgba(167, 139, 250, 0.14);
+    --signal-soft: #c4b5fd;
+    --glow-color: rgba(124, 92, 255, 0.35);
+    --aurora-opacity: 1;
+    --nav-bg: rgba(6, 0, 16, 0.55);
 
     --font-sans: 'Inter', 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
@@ -32,7 +36,9 @@ const variables = css`
     --fz-xxl: 21px;
     --fz-heading: 30px;
 
-    --border-radius: 2px;
+    --border-radius: 14px;
+    --border-radius-sm: 8px;
+    --gradient-text: linear-gradient(110deg, var(--signal-color) 0%, var(--signal-soft) 100%);
     --border-radius-circle: 50%;
     --nav-height: 100px;
     --nav-scroll-height: 70px;

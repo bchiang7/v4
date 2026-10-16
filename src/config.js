@@ -26,10 +26,6 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'work',
-      url: '/#projects',
-    },
-{
       name: 'gallery',
       url: '/#gallery',
     },
@@ -41,9 +37,9 @@ module.exports = {
 
   colors: {
     primary: '#ffffff',
-    signal: '#e8813a',
-    bg: '#0a0a0a',
-    darkBg: '#000000',
+    signal: '#a78bfa',
+    bg: '#060010',
+    darkBg: '#030008',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

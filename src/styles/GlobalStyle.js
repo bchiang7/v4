@@ -20,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-bg-color);
-    color: var(--lightest-text-color);
+    background-color: var(--signal-color);
+    color: #060010;
   }
 
   :focus:not(:focus-visible) {
@@ -131,15 +131,15 @@ const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 72px 0;
     max-width: 1000px;
 
     @media (max-width: 768px) {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     @media (max-width: 480px) {
-      padding: 60px 0;
+      padding: 48px 0;
     }
   }
 
@@ -188,7 +188,10 @@ const GlobalStyle = createGlobalStyle`
     &::before {
       content: counter(sections, decimal-leading-zero) '.';
       margin-right: 14px;
-      color: var(--signal-color);
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
       font-family: var(--font-mono);
       font-size: clamp(var(--fz-sm), 2vw, var(--fz-md));
       font-weight: 400;
@@ -205,7 +208,7 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--outline-light);
+      background: linear-gradient(90deg, var(--outline-light), transparent);
       transform-origin: left center;
       animation: ruleExtend 600ms cubic-bezier(0.16, 1, 0.3, 1) 650ms both;
 

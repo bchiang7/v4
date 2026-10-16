@@ -3,8 +3,8 @@ import { css } from 'styled-components';
 const button = css`
   color: var(--primary-color);
   background-color: transparent;
-  border: 1px solid var(--primary-color);
-  border-radius: var(--border-radius);
+  border: 1px solid var(--outline-light);
+  border-radius: 999px;
   font-size: var(--fz-xs);
   font-family: var(--font-mono);
   font-weight: 400;
@@ -19,8 +19,10 @@ const button = css`
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
+    background-color: var(--signal-color);
+    border-color: var(--signal-color);
+    color: #060010;
+    box-shadow: 0 0 28px -4px var(--glow-color);
     outline: none;
   }
   &:after {
@@ -102,8 +104,8 @@ const mixins = {
   smallButton: css`
     color: var(--primary-color);
     background-color: transparent;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius);
+    border: 1px solid var(--outline-light);
+    border-radius: 999px;
     padding: 0.75rem 1rem;
     font-size: var(--fz-xs);
     font-family: var(--font-mono);
@@ -117,8 +119,10 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--primary-color);
-      color: var(--bg-color);
+      background-color: var(--signal-color);
+      border-color: var(--signal-color);
+      color: #060010;
+      box-shadow: 0 0 28px -4px var(--glow-color);
       outline: none;
     }
     &:after {
@@ -129,8 +133,8 @@ const mixins = {
   bigButton: css`
     color: var(--primary-color);
     background-color: transparent;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius);
+    border: 1px solid var(--outline-light);
+    border-radius: 999px;
     padding: 1.25rem 2rem;
     font-size: var(--fz-xs);
     font-family: var(--font-mono);
@@ -144,8 +148,10 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--primary-color);
-      color: var(--bg-color);
+      background-color: var(--signal-color);
+      border-color: var(--signal-color);
+      color: #060010;
+      box-shadow: 0 0 28px -4px var(--glow-color);
       outline: none;
     }
     &:after {
