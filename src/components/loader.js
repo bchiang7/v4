@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
@@ -17,7 +17,21 @@ const StyledLoader = styled.div`
   background-color: var(--dark-bg-color);
   z-index: 99;
 
+  /* soft aurora glow behind the logo */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--glow-color), transparent 65%);
+    filter: blur(30px);
+    opacity: ${props => (props.isMounted ? 1 : 0)};
+    transition: opacity 1.2s ease;
+  }
+
   .logo-wrapper {
+    position: relative;
     width: max-content;
     max-width: 100px;
     transition: var(--transition);
@@ -29,7 +43,7 @@ const StyledLoader = styled.div`
       margin: 0 auto;
       fill: none;
       user-select: none;
-      color: var(--signal-color);
+      filter: drop-shadow(0 0 14px var(--glow-color));
       #B {
         opacity: 0;
       }
@@ -37,39 +51,56 @@ const StyledLoader = styled.div`
   }
 `;
 
+const SEEN_KEY = 'portfolio-loader-seen';
+
 const Loader = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState(false);
 
+  const timeline = useRef(null);
+  const finished = useRef(false);
+
+  const finish = () => {
+    if (finished.current) {
+      return;
+    }
+    finished.current = true;
+    try {
+      window.sessionStorage.setItem(SEEN_KEY, '1');
+    } catch (e) {
+      // storage unavailable: the loader simply plays again next visit
+    }
+    finishLoading();
+  };
+
   const animate = () => {
-    const loader = anime.timeline({
-      complete: () => finishLoading(),
-    });
+    const loader = anime.timeline({ complete: finish });
+    timeline.current = loader;
 
     loader
       .add({
         targets: '#logo path',
-        delay: 300,
-        duration: 1500,
+        delay: 100,
+        duration: 900,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
         targets: '#logo #B',
-        duration: 700,
+        duration: 350,
         easing: 'easeInOutQuart',
         opacity: 1,
       })
       .add({
         targets: '#logo',
-        delay: 500,
-        duration: 300,
+        delay: 150,
+        duration: 250,
         easing: 'easeInOutQuart',
         opacity: 0,
         scale: 0.1,
       })
       .add({
         targets: '.loader',
-        duration: 200,
+        duration: 150,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,
@@ -77,9 +108,35 @@ const Loader = ({ finishLoading }) => {
   };
 
   useEffect(() => {
+    // Play once per browser session, and never for users who prefer reduced motion
+    let seen = false;
+    try {
+      seen = window.sessionStorage.getItem(SEEN_KEY) === '1';
+    } catch (e) {
+      seen = false;
+    }
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (seen || reduced) {
+      finish();
+      return;
+    }
+
     const timeout = setTimeout(() => setIsMounted(true), 10);
     animate();
-    return () => clearTimeout(timeout);
+
+    // Any click or key press skips the intro
+    const skip = () => {
+      timeline.current?.pause();
+      finish();
+    };
+    window.addEventListener('click', skip);
+    window.addEventListener('keydown', skip);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('click', skip);
+      window.removeEventListener('keydown', skip);
+      timeline.current?.pause();
+    };
   }, []);
 
   return (
